@@ -16,12 +16,12 @@
       tocHref: /cli/azure/authenticate-azure-cli
       topicHref: /cli/azure/authenticate-azure-cli
       items:
-      - name: Create a ervice principal
+      - name: Create a service principal
         tocHref: /cli/azure/create-an-azure-service-principal-azure-cli
         topicHref: /cli/azure/create-an-azure-service-principal-azure-cli
     - name: Output formats
-      tocHref: /cli/azure/format-outputs-azure-cli
-      topicHref: /cli/azure/format-outputs-azure-cli
+      tocHref: /cli/azure/format-output-azure-cli
+      topicHref: /cli/azure/format-output-azure-cli
     - name: Query
       tocHref: /cli/azure/query-azure-cli
       topicHref: /cli/azure/query-azure-cli
@@ -45,9 +45,6 @@
       - name: SQL Database
         tocHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
         topicHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: Redis Cache
-        tocHref: /azure/redis-cache/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-        topicHref: /azure/redis-cache/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: Reference
       tocHref: /cli/azure
       topicHref: /cli/azure
