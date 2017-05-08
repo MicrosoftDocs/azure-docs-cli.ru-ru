@@ -1,0 +1,15 @@
+# [Azure CLI 2.0](overview.md)
+## [Установка](install-azure-cli.md)
+## [Приступая к работе](get-started-with-azure-cli.md)
+## [Вход](authenticate-azure-cli.md)
+### [Создание субъекта-службы](create-an-azure-service-principal-azure-cli.md)
+## [Форматы входных данных](format-output-azure-cli.md)
+## [Запрос](query-azure-cli.md)
+## [Подписки](manage-azure-subscriptions-azure-cli.md).
+## [Заметки о выпуске](release-notes-azure-cli.md)
+# Примеры сценариев
+## [Виртуальные машины Linux](/azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+## [Виртуальные машины Windows](/azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+## [Веб-приложения](/azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+## [База данных SQL](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+# [Справочные материалы](../docs-ref-autogen/refTOC.md)
