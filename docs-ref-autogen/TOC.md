@@ -5,7 +5,7 @@
 ### [Создание субъекта-службы](../docs-ref-conceptual/create-an-azure-service-principal-azure-cli.md)
 ## [Форматы входных данных](../docs-ref-conceptual/format-output-azure-cli.md)
 ## [Запрос](../docs-ref-conceptual/query-azure-cli.md)
-## [Подписки](../docs-ref-conceptual/manage-azure-subscriptions-azure-cli.md).
+## [Подписки](../docs-ref-conceptual/manage-azure-subscriptions-azure-cli.md)
 ## [Заметки о выпуске](../docs-ref-conceptual/release-notes-azure-cli.md)
 # Sample Scripts
 ## [Linux VMs](/azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
