@@ -12,10 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: f5a88012b21e814262436a864b13f053d836cf07
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
+ms.openlocfilehash: 0f8e494ffdd73c666b8361488db0966af01d6876
+ms.sourcegitcommit: 66d997a5afcf32143a4d4817ec1608cbdf58a59f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 05/11/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
@@ -45,7 +46,7 @@ Azure CLI 2.0 — это новый интерфейс командной ст
 
 1. Выполните следующую команду из командной строки.
 
-   ```azurecli
+   ```azurecli-interactive
    az login
    ```
    
@@ -65,7 +66,7 @@ Azure CLI 2.0 — это новый интерфейс командной ст
 
 Создайте группу ресурсов с именем MyResourceGroup в регионе Azure *westus2*.  Используйте для этого следующую команду:
 
-```azurecli
+```azurecli-interactive
 az group create -n MyResourceGroup -l westus2 
 ```
 
@@ -90,13 +91,13 @@ az group create -n MyResourceGroup -l westus2
 
 Вы можете создать виртуальную машину Linux из популярного образа UbuntuTLS с двумя подключенными дисками объемом от 10 до 20 ГБ с помощью следующей команды:
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --data-disk-sizes-gb 10 20
 ```
 
 Во время выполнения предыдущей команды Azure CLI 2.0 ищет пару ключей SSH, которые хранятся в каталоге ~/.ssh.  Если в этом каталоге нет пары ключей SSH, вы можете автоматически создать ее с помощью Azure CLI. Для этого передайте параметр --generate-ssh-keys:
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --generate-ssh-keys
 ```
 
@@ -117,7 +118,7 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS --generate-ssh-ke
 
 Вы можете войти на созданную виртуальную машину Linux, используя **SSH** и общедоступный IP-адрес этой виртуальной машины:
 
-```azurecli
+```azurecli-interactive
 ssh xx.xxx.xxx.xxx
 ```
 
@@ -161,7 +162,7 @@ my-login@MyLinuxVM:~$
 > [!NOTE]
 > При выполнении этой команды вам будет предложено ввести имя пользователя и пароль.
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyWinVM -g MyResourceGroup --image Win2016Datacenter
 ```
 
@@ -183,7 +184,7 @@ az vm create -n MyWinVM -g MyResourceGroup --image Win2016Datacenter
 Теперь войдите на созданную виртуальную машину Windows Server, используя протокол RDP и общедоступный IP-адрес этой виртуальной машины (они отображаются в результате выполнения команды `az vm create`).  
 Если вы работаете на компьютере Windows, вы можете отобразить IP-адрес, выполнив команду `mstsc` в командной строке:
 
-```azurecli
+```azurecli-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -195,13 +196,13 @@ mstsc /v:xx.xxx.xx.xxx
 
 Все новые ресурсы создаются с помощью согласованного шаблона именования `az <resource type name> create`.  Например, чтобы создать подсистему балансировки нагрузки Azure, которую можно затем связать с новой виртуальной машиной, выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 az network lb create -n MyLoadBalancer -g MyResourceGroup
 ```
 
 Также для своей инфраструктуры вы можете создать новую частную виртуальную сеть, используя следующую команду создания:
 
-```azurecli
+```azurecli-interactive
 az network vnet create -n MyVirtualNetwork -g MyResourceGroup --address-prefix 10.0.0.0/16
 ```
 
@@ -209,13 +210,13 @@ az network vnet create -n MyVirtualNetwork -g MyResourceGroup --address-prefix 1
 
 Например, используя Azure CLI, можно создать службу приложений Azure.  Служба приложений Azure — это управляемая служба платформы, на которой можно размещать веб-приложения, не беспокоясь об инфраструктуре.  Создав службу приложений Azure, можно создать два новых веб-приложения Azure с помощью следующих команд:
 
-```azurecli
+```azurecli-interactive
 # Create an Azure AppService that we can host any number of web apps within
 az appservice plan create -n MyAppServicePlan -g MyResourceGroup
 
 # Create Two Web Apps within the AppService (note: name param must be a unique DNS entry)
-az appservice web create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan 
-az appservice web create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan 
+az webapp create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan 
+az webapp create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan 
 ```
 
 Ознакомившись с основами шаблона `az <resource type name> create`, вы можете легко создавать любые ресурсы. Ниже приведены некоторые популярные типы ресурсов Azure и соответствующие команды Azure CLI для их создания.
@@ -231,7 +232,7 @@ Managed Disk                az disk create
 Storage account             az storage account create
 Virtual Machine Scale Set   az vmss create
 Azure Container Service     az acs create
-Web App                     az appservice web create
+Web App                     az webapp create
 SQL Database Server         az sql server create
 Document DB                 az documentdb create
 ```
@@ -248,7 +249,7 @@ Document DB                 az documentdb create
 
 Например, если использовать команду `az vm create`, как показано ниже, она запускает развертывание виртуальной машины и очень быстро возвращает результаты (еще до полной загрузки виртуальной машины):
 
-```azurecli
+```azurecli-interactive
 az vm create -n MyLinuxVM2 -g MyResourceGroup --image UbuntuLTS --no-wait
 ```
 
@@ -262,7 +263,7 @@ az vm create -n MyLinuxVM2 -g MyResourceGroup --image UbuntuLTS --no-wait
 
 Например, команда `az vm list` отображает список всех ваших виртуальных машин.   
 
-```azurecli
+```azurecli-interactive
 az vm list 
 ```
 Результаты по умолчанию возвращаются в формате JSON (для краткости отображается только часть результата).
@@ -297,7 +298,7 @@ az vm list
 
 С помощью параметра `--output` при необходимости можно изменить формат результата.  Выполните команду `az vm list`, чтобы увидеть виртуальные машины Windows Server и Linux, созданные ранее, а также общие свойства виртуальной машины в удобном для чтения формате *таблицы*:
 
-```azurecli
+```azurecli-interactive
 az vm list --output table
 ```
 
@@ -310,7 +311,7 @@ MyWinVM    MyResourceGroup  westus2
 
 Параметр *tsv* можно использовать для вывода результатов в виде текста, разделенного символами табуляции без заголовков.  Этот формат удобен в тех случаях, когда требуется передать результат в другой текстовый инструмент, например grep. 
 
-```azurecli
+```azurecli-interactive
 az vm list --output tsv
 ```
 
@@ -326,8 +327,9 @@ None    None            /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/reso
 
 Команда `list` оснащена встроенной функцией, которая упрощает фильтрацию ресурсов по имени группы ресурсов.  Например, вы можете передать параметр `--ResourceGroup` или `-g` в команду `list`, чтобы извлечь только эти ресурсы в определенной группе ресурсов:
 
+
 ```azurecli
-az vm list -g MyResouceGroup --output table
+az vm list -g MyResourceGroup --output table
 ```
 
 ```Output
@@ -341,7 +343,7 @@ MyWinVM    MyResourceGroup  westus2
 
 Например, выполните следующую команду, чтобы запросить любой ресурс виртуальной машины в любой группе ресурсов, который содержит буквы "My":
 
-```azurecli
+```azurecli-interactive
 az vm list --output table --query "[?contains(resourceGroup,'MY')]" 
 ```
 
@@ -354,7 +356,7 @@ MYRESOURCEGROUP  Succeeded            MyWinVM    westus2     XXXXXXXX-XXXX-XXXX-
 
 Затем можно еще раз уточнить результаты с помощью функции формирования запросов JMESPath, чтобы вывести другие значения.  Например, следующая команда извлекает тип диска операционной системы виртуальной машины, чтобы определить, работает ли виртуальная машина на ОС Linux или Windows:
 
-```azurecli
+```azurecli-interactive
 az vm list --output table --query "[?contains(resourceGroup,'MY')].{ VMName:name,OSType:storageProfile.osDisk.osType }" 
 ```
 
@@ -371,7 +373,7 @@ MyWinVM    Windows
 
 Используйте в Azure CLI команду `delete` для удаления ресурсов, которые больше не нужны. Команду `delete`, как и команду `create`, можно применять к любому ресурсу.
 
-```azurecli
+```azurecli-interactive
 az vm delete -n MyLinuxVM -g MyResourceGroup
 ```
 
@@ -386,7 +388,7 @@ EndTime                           Name                                  StartTim
 
 С помощью команды `delete` можно удалить несколько ресурсов одновременно. Например, следующая команда удаляет всю группу ресурсов MyResourceGroup, которая использовалась во всех примерах в этом руководстве по началу работы.
 
-```azurecli
+```azurecli-interactive
 az group delete -n MyResourceGroup
 ```
 
@@ -406,19 +408,19 @@ Are you sure you want to perform this operation? (y/n): y
 
 Azure CLI содержит встроенную справочную документацию, которая соответствует документации на веб-сайте. Ее можно открыть из командной строки:
 
-```azurecli
+```azurecli-interactive
 az [command-group [command]] -h
 ```
 
 Например, чтобы узнать, какие команды и подгруппы доступны для виртуальных машин, выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 az vm -h
 ```
 
 Чтобы получить справку по команде, которая создает виртуальную машину, используйте следующую команду:
 
-```azurecli
+```azurecli-interactive
 az vm create -h
 ```
 
@@ -430,6 +432,6 @@ az vm create -h
 
 ## <a name="send-us-your-feedback"></a>Отправка отзывов
 
-```azurecli
+```azurecli-interactive
 az feedback
 ```
