@@ -12,10 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 664535701ad814f8ff85fefe8ecc45772777d0ba
-ms.sourcegitcommit: ec22ff07aedb5c47e5f636f2a9a341c3edbe7ca1
+ms.openlocfilehash: 7065ed5270ef9bfc70beea81d0bc442a7b4df38c
+ms.sourcegitcommit: c077bd5cbe07f7225714c41714d3981fa0d9928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 05/16/2017
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
@@ -51,10 +52,19 @@ ms.contentlocale: ru-RU
 
 ## <a name="windows"></a>Windows
 
-Azure CLI 2.0 поддерживает синтаксис команд Bash. Благодаря этому вы можете использовать интерфейс командной строки в Bash на платформе Ubuntu в Windows.
-Если вы не используете Bash, вы можете установить и использовать интерфейс командной строки в командной строке Windows.
+Интерфейс командной строки можно установить с помощью MSI-файла и использовать его в командной строке Windows или установить его на платформе Ubuntu в Windows с помощью apt-get для Bash.
 
-### <a name="bash-on-ubuntu-on-windows"></a>Bash на платформе Ubuntu в Windows
+### <a name="msi-for-the-windows-command-line"></a>MSI-файл для командной строки Windows 
+
+Чтобы установить интерфейс командной строки в Windows и использовать его в окне командной строке Windows, скачайте и запустите соответствующий [MSI](https://aka.ms/InstallAzureCliWindows)-файл.
+
+> [!NOTE]
+> При установке с помощью MSI-файла `az component` не поддерживается.
+> Для обновления до последней версии интерфейса командной строки запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл еще раз.
+> 
+> Чтобы удалить интерфейс командной строки, запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл еще раз и щелкните "Удалить".
+
+### <a name="apt-get-for-bash-on-ubuntu-on-windows"></a>apt-get для Bash на платформе Ubuntu в Windows
 
 1. Если у вас не установлена командная оболочка Bash в Windows, [установите ее](https://msdn.microsoft.com/commandline/wsl/install_guide).
 
@@ -80,38 +90,6 @@ Azure CLI 2.0 поддерживает синтаксис команд Bash. Б
 > Чтобы обновить интерфейс командной строки, выполните `sudo apt-get update && sudo apt-get install azure-cli` еще раз.
 > 
 > Для удаления выполните команду `sudo apt-get remove azure-cli`.
-
-### <a name="windows-command-line"></a>Командная строка Windows 
-
-1. Перейдите на сайт Python и [скачайте Python](https://www.python.org/downloads/) для Windows.
-   При установке Python не забудьте установить компонент Pip.
-   После завершения установки добавьте Python в переменную среды PATH (программа установки отобразит соответствующий запрос).
-
-2. Проверьте установку Python из командной строки.
-
-   ```bash
-   python --version
-   ```
-
-3. Установите Azure CLI 2.0 с помощью `pip`.
-
-   ```bash
-   pip install --user azure-cli
-   ```
-
-4. Добавьте в путь папку, содержащую файл az.bat.
-   Файл `az.bat` интерфейса командной строки может быть установлен в папке `%USERPROFILE%\AppData\Roaming\Python\Scripts` или `%USERPROFILE%\AppData\Roaming\Python\PythonXY\Scripts`, где `XY` — установленная версия Python (например, `%USERPROFILE%\AppData\Roaming\Python\Python27\Scripts`).
-   Добавьте в путь папку, содержащую файл `az.bat`.
-   
-4. Запустите Azure CLI 2.0 из командной строки с помощью команды `az`.
-
-> [!NOTE]
-> Если на компьютере есть Azure CLI 2.0 и вы хотите проверить, установлена ли у вас последняя версия, используйте команду `az --version` для просмотра номера версии.
-> Сравните ее с последней версией, доступной на сайте [https://pypi.python.org/pypi/azure-cli](https://pypi.python.org/pypi/azure-cli).
-> 
-> Для обновления до последней версии интерфейса командной строки выполните команду `az component update`.
-> 
-> Чтобы удалить интерфейс командной строки, выполните команду `pip uninstall azure-cli`.
 
 ## <a name="linux"></a>Linux
 
@@ -213,7 +191,6 @@ docker run azuresdk/azure-cli-python:<version>
    ```
 
 ## <a name="troubleshooting"></a>Устранение неполадок
--------------------------------
 
 ### <a name="errors-with-curl-redirection"></a>Ошибки, связанные с перенаправлением curl
 
@@ -232,70 +209,6 @@ bash: line 1: syntax error near unexpected token `<'
 curl https://azurecliprod.blob.core.windows.net/install | bash
 ```
 
-
-### <a name="errors-on-install-with-cffi-or-cryptography"></a>Ошибки при установке с помощью `cffi` или при шифровании
-
-Если при установке в OS X возникли ошибки, обновите `pip`.
-
-```bash
-pip install --upgrade --force-reinstall pip
-```
-
-Если возникают ошибки при установке в **Debian** или **Ubuntu**, как показано в примерах ниже, установите `libssl-dev` и `libffi-dev`.
-
-```bash
-sudo apt-get update
-sudo apt-get install -y libssl-dev libffi-dev
-```
-
-Также установите среду разработки Python для своей версии Python.
-
-Python 2:
-
-```bash
-sudo apt-get install -y python-dev
-```
-
-Python 3:
-
-```bash
-sudo apt-get install -y python3-dev
-```
-
-Для Ubuntu 15 также может потребоваться `build-essential`:
-
-```bash
-sudo apt-get install -y build-essential
-```
-
-### <a name="example-errors"></a>Примеры ошибок
-
-```
-Downloading cffi-1.5.2.tar.gz (388kB)
-    100% |################################| 389kB 3.9MB/s
-    Complete output from command python setup.py egg_info:
-
-        No working compiler found, or bogus compiler options
-        passed to the compiler from Python's distutils module.
-        See the error messages above.
-        (If they are about -mno-fused-madd and you are on OS/X 10.8,
-        see http://stackoverflow.com/questions/22313407/ .)
-
-    ----------------------------------------
-Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-77i2fido/cffi/
-```
-
-```
-#include <openssl/e_os2.h>
-                            ^
-compilation terminated.
-error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
-
-Failed building wheel for cryptography
-```
-
-См. вопрос на сайте Stack Overflow: [Failed to install Python Cryptography package with PIP and setup.py](http://stackoverflow.com/questions/22073516/failed-to-install-python-cryptography-package-with-pip-and-setup-py) (Не удалось установить пакет шифрования Python с помощью PIP и setup.py).
-
 ## <a name="uninstall"></a>Удаление
 
 Если для установки интерфейса командной строки использовался скрипт со страницы https://aka.ms/InstallAzureCli, для удаления можно выполнить следующие действия.
@@ -312,7 +225,7 @@ Failed building wheel for cryptography
 > [!Note]
 > Расположение установки по умолчанию — `/Users/<username>`.
 
-Если вы использовали pip, apt-get или Docker для установки интерфейса командной строки, используйте то же средство для его удаления.
+Если вы использовали apt-get, Docker или MSI-файл для установки интерфейса командной строки, используйте тот же инструмент для его удаления.
 
 ## <a name="reporting-issues-and-feedback"></a>Создание отчетов о проблемах и обратная связь
 

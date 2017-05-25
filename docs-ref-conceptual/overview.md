@@ -12,10 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 80ae9f6c-adb7-483c-bfb4-fbb958e075ba
-ms.openlocfilehash: 2f4f9950dd663ae85f41bf4efe114b15770ace5d
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
+ms.openlocfilehash: 35e754b4ecd75481bd60d95dd1545b798c2e85b3
+ms.sourcegitcommit: c077bd5cbe07f7225714c41714d3981fa0d9928f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 05/16/2017
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
@@ -27,7 +28,8 @@ Azure CLI 2.0 — это новый интерфейс командной ст
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 ```
 
-См. статью об [установке](install-azure-cli.md), чтобы установить и запустить Azure CLI 2.0 на компьютере. Прежде чем начать использовать эту среду, прочтите статью о [начале работы](get-started-with-azure-cli.md).
+Ознакомьтесь со [статьей об установке](install-azure-cli.md), чтобы установить и запустить Azure CLI 2.0 в своей системе, или воспользуйтесь [Cloud Shell](/azure/cloud-shell/overview), чтобы запустить интерфейс командной строки в браузере.
+Прежде чем начать использовать интерфейс командной строки, прочтите статью о [начале работы](get-started-with-azure-cli.md).
 Сведения о последнем выпуске см. в [заметках о выпуске](release-notes-azure-cli.md).
 
 Приведенные ниже примеры помогут вам понять, как реализовать типичные сценарии с помощью Azure CLI 2.0:

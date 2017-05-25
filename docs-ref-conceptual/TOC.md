@@ -1,8 +1,14 @@
 # [Azure CLI 2.0](overview.md)
 ## [Установка](install-azure-cli.md)
 ## [Приступая к работе](get-started-with-azure-cli.md)
+## [Cloud Shell](/azure/cloud-shell/overview)
 ## [Вход](authenticate-azure-cli.md)
 ### [Создание субъекта-службы](create-an-azure-service-principal-azure-cli.md)
+## [Интерактивный режим](interactive-azure-cli.md)
+## Развернуть
+### [Использование шаблонов](/azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+### [Экспорт шаблонов](/azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
+### [Использование частных шаблонов](/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 ## [Форматы входных данных](format-output-azure-cli.md)
 ## [Запрос](query-azure-cli.md)
 ## [Подписки](manage-azure-subscriptions-azure-cli.md).
