@@ -12,15 +12,16 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 80ae9f6c-adb7-483c-bfb4-fbb958e075ba
-ms.openlocfilehash: 35e754b4ecd75481bd60d95dd1545b798c2e85b3
-ms.sourcegitcommit: c077bd5cbe07f7225714c41714d3981fa0d9928f
+ms.openlocfilehash: 2f2fe7e8643256f72ff5dd48c784b96e53c4c281
+ms.sourcegitcommit: 21c42ed07c9f7679e4860013ac5647cf31213f4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2017
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
-Azure CLI 2.0 — это новый интерфейс командной строки Azure для управления ресурсами Azure.  Его можно использовать в Windows, Linux и macOS. 
+Azure CLI 2.0 — это новый интерфейс командной строки Azure для управления ресурсами Azure.
+Его можно использовать в браузере с [Azure Cloud Shell](/azure/cloud-shell/overview) или [установить](install-azure-cli.md) в macOS, Linux или Windows и запускать из командной строки.
 
 Интерфейс Azure CLI 2.0 предназначен для администрирования ресурсов Azure из командной строки, а также для создания скриптов автоматизации, которые работают с Azure Resource Manager. С помощью Azure CLI 2.0 можно легко создавать виртуальные машины в Azure простым вводом следующей команды:
 
@@ -28,7 +29,7 @@ Azure CLI 2.0 — это новый интерфейс командной ст
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 ```
 
-Ознакомьтесь со [статьей об установке](install-azure-cli.md), чтобы установить и запустить Azure CLI 2.0 в своей системе, или воспользуйтесь [Cloud Shell](/azure/cloud-shell/overview), чтобы запустить интерфейс командной строки в браузере.
+Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](/azure/cloud-shell/overview) либо [установите](install-azure-cli.md) его на платформе macOS, Linux или Windows.
 Прежде чем начать использовать интерфейс командной строки, прочтите статью о [начале работы](get-started-with-azure-cli.md).
 Сведения о последнем выпуске см. в [заметках о выпуске](release-notes-azure-cli.md).
 
