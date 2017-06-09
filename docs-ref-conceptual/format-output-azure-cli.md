@@ -12,10 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 74bdb727-481d-45f7-a44e-15d18dc55483
-ms.openlocfilehash: de37b1ad6aa55c9ac73b5b6b89d9507c86cc1245
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
+ms.openlocfilehash: d1440cc1e99ccddb18d23306cc0fcdb4b8babf14
+ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 06/05/2017
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Форматы выходных данных для команд Azure CLI 2.0
 
@@ -28,11 +29,13 @@ Azure CLI 2.0 использует JSON в качестве формата вы
 `table`  | Таблица с заголовками столбцов.
 `tsv`    | Значения, разделенные табуляцией.
 
+[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
+
 ## <a name="using-the-json-option"></a>Использование параметра JSON
 
 Следующий пример отображает список виртуальных машин в подписках в стандартном формате JSON.
 
-```azurecli
+```azurecli-interactive
 az vm list --output json
 ```
 
@@ -70,7 +73,7 @@ az vm list --output json
 
 Табличное представление позволяет легко читать набор выходных данных, однако в результатах не отображаются вложенные объекты с простым параметром `--output table` в отличие от формата JSON из предыдущего примера.  При использовании того же примера с форматом выходных данных "таблица" отображается проверенный список наиболее распространенных значений свойств.
 
-```azurecli
+```azurecli-interactive
 az vm list --out table
 ```
 
@@ -86,7 +89,7 @@ KBDemo020    RGDEMO001        westus
 
 Вы можете использовать параметр `--query` для настройки свойств и столбцов, которые будут отображаться в списке. Следующий пример показывает, как выбрать только имя виртуальной машины и имя группы ресурсов в команде `list`.
 
-```azurecli
+```azurecli-interactive
 az vm list --query "[].{ resource: resourceGroup, name: name }" -o table
 ```
 
@@ -104,7 +107,7 @@ RGDEMO001   KBDemo020
 
 Формат выходных данных TSV возвращает простой текст, разделенный табуляцией, без заголовков и дефисов. Такой формат позволяет использовать выходные данные в других командах и инструментах, необходимых для обработки текста в определенной форме. Если применить для предыдущего примера параметр `tsv`, отобразится результат в виде текста, разделенного табуляцией.
 
-```azurecli
+```azurecli-interactive
 az vm list --out tsv
 ```
 

@@ -12,10 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 98fb955e-6dbf-47e2-80ac-170d6d95cb70
-ms.openlocfilehash: a28b24dd186fc567f36e52f8a0f5a7c2b0af060c
-ms.sourcegitcommit: c2d380f4ad8e7606850530db690855bcccfd6e86
+ms.openlocfilehash: 383fb6ebd90ac79f60869187b402d53d4f1791fd
+ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 06/05/2017
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 
@@ -23,9 +24,11 @@ ms.contentlocale: ru-RU
 Но если вы уже пользуетесь Azure какое-то время, возможно, вы уже успели создать несколько подписок.
 Вы можете настроить Azure CLI 2.0 для выполнения команд, связанных с определенной подпиской.
 
+[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
+
 1. Получите список всех подписок в своей учетной записи.
 
-   ```azurecli
+   ```azurecli-interactive
    az account list --output table
    ```
 
@@ -39,7 +42,7 @@ ms.contentlocale: ru-RU
 
 1. Определите подписку по умолчанию.
  
-   ```azurecli
+   ```azurecli-interactive
    az account set --subscription "My Demos"
    ```
 
