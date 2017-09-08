@@ -13,10 +13,10 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 65becd3a-9d69-4415-8a30-777d13a0e7aa
 ms.openlocfilehash: 4ab4f0de38614eff00f55bad96ea886bb007f3c0
-ms.sourcegitcommit: 4fd631a58cf19c494162510d073fbbbdf0524d16
+ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2017
+ms.lasthandoff: 09/04/2017
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 

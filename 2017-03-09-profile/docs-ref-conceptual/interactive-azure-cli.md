@@ -13,10 +13,10 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 
 ms.openlocfilehash: de6a366b84efa5475fd6146ff29c32e32dfe4672
-ms.sourcegitcommit: 1791991b82e6ce8ad4a050cab1695e0c93734e08
+ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2017
+ms.lasthandoff: 09/04/2017
 ---
 # <a name="interactive-azure-cli-20"></a>Интерактивный Azure CLI 2.0
 
