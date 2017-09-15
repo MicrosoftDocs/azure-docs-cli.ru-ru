@@ -1,7 +1,7 @@
 ---
 title: "Установка Azure CLI 2.0"
 description: "Справочная документация по установке Azure CLI 2.0"
-keywords: Azure CLI 2.0, Azure CLI 2.0 Reference, Install Azure CLI 2.0, Azure Python CLI, Uninstall Azure CLI 2.0, Azure CLI, Install Azure CLI, Azure CLI Reference
+keywords: Azure CLI, Install Azure CLI, Azure Python CLI, Azure CLI Reference
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 00d5b555975007d7e57f04ce5d69f4f29e6d0219
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: a61f47076854d0ff0a7056f82240794b7533fe3e
+ms.sourcegitcommit: 3db5fb207db551a0d3fe0a88fe09e8f5e2ec184d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
@@ -105,15 +105,63 @@ Azure CLI 2.0 можно установить с помощью MSI-файла, 
 
 3.  Запустите CLI из командной строки с помощью команды `az`.
 
+## <a name="install-on-rhel-fedora-and-centos-with-yum"></a>Установка в RHEL, Fedora и CentOS с помощью yum
+
+Для любого дистрибутива на базе RedHat, который содержит диспетчер пакетов `yum`, Azure CLI 2.0 можно установить с помощью `yum`.
+
+1. Импортируйте ключ репозитория Майкрософт:
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   ```
+
+2. Создайте сведения о локальном репозитории `azure-cli`:
+
+   ```bash
+   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+   ```
+
+3. Обновите индекс пакета `yum` и выполните установку: 
+
+   ```bash
+   yum check-update
+   sudo yum install azure-cli
+   ```
+
+4. Запустите CLI из командной строки с помощью команды `az`.
+
+## <a name="install-on-opensuse-and-sle-with-zypper"></a>Установка в openSUSE и SLE с помощью zypper
+
+1. Импортируйте ключ репозитория Майкрософт:
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   ```
+
+2. Создайте сведения о локальном репозитории `azure-cli`:
+
+   ```bash
+   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/azure-cli.repo'
+   ```
+
+3. Обновите индекс пакета `zypper` и выполните установку:
+
+   ```bash
+   sudo zypper refresh
+   sudo zypper install azure-cli
+   ```
+
+4. Запустите CLI из командной строки с помощью команды `az`.
+
 ## <a name="install-with-docker"></a>Установка с помощью Docker
 
 Мы поддерживаем образ Docker, предварительно настроенный с помощью Azure CLI 2.0.
 
 Установите CLI с помощью команды `docker run`.
 
-  ```bash
-  docker run azuresdk/azure-cli-python:<version>
-  ```
+   ```bash
+   docker run azuresdk/azure-cli-python:<version>
+   ```
 
 См. доступные версии на странице с [тегами Docker](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/).
 
@@ -128,7 +176,7 @@ CLI устанавливается в образ как команда `az` в �
 
 ## <a name="a-namelinuxinstall-on-linux-without-apt-get"></a><a name="Linux"/>Установка в Linux без использования apt-get
 
-Рекомендуется по возможности устанавливать CLI с помощью `apt-get`. Для дистрибутивов, которые не используют диспетчер пакетов `apt`, можно установить CLI вручную.
+Рекомендуется по возможности устанавливать CLI с помощью диспетчера пакетов (если вы знаете, как это сделать). Для дистрибутивов, для которых диспетчер пакетов не предоставляется, CLI можно установить вручную.
 
 1. Установите необходимые компоненты с учетом дистрибутива Linux.
 
@@ -289,26 +337,26 @@ brew uninstall azure-cli
 
 1. Получите данные о контейнерах, на которых запущен образ azure-cli.
 
-  ```bash
-  docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
-  ```
+   ```bash
+   docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
+   ```
 
-  ```output
-  CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
-  34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
-  ```
+   ```output
+   CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
+   34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
+   ```
 
 2. Удалите все контейнеры с образом CLI.
 
-  ```bash
-  docker rm 34a868beb2ab
-  ```
+   ```bash
+   docker rm 34a868beb2ab
+   ```
 
 3. Удалите локально установленный образ CLI.
 
-  ```bash
-  docker rmi azuresdk/azure-cli-python
-  ```
+   ```bash
+   docker rmi azuresdk/azure-cli-python
+   ```
 
 > [!NOTE]
 > Если вы установили определенную версию образа, вам нужно добавить `:<version>` в конец имени образа.

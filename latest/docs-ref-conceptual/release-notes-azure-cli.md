@@ -12,13 +12,87 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: e893b99349bbf2a5eec8af254158eb07001f1da7
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: ad30efeb7efafcc5816160ee130665d37adb62c6
+ms.sourcegitcommit: e866977985ba0286fa05f41729dd7e7d9ce86f8e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="september-11-2017"></a>11 сентября 2017 г.
+
+Версия 2.0.17
+
+### <a name="core"></a>Core
+
+* Включен командный модуль для настройки собственного идентификатора корреляции в телеметрии.
+* Исправлена проблема с дампом JSON, когда для телеметрии настроен режим диагностики.
+
+### <a name="acs"></a>ACS
+
+* Добавлена команда `acs list-locations`.
+* Для `ssh-key-file` предоставляется ожидаемое значение по умолчанию.
+
+### <a name="appservice"></a>Служба приложений
+
+* Добавлена возможность создавать веб-приложения в группе ресурсов в рамках плана службы, отличной от активной.
+
+### <a name="cdn"></a>CDN
+
+* Исправлена ошибка "CustomDomain не пригоден к итерации" для `cdn custom-domain create`.
+
+### <a name="extension"></a>Добавочный номер
+
+* Первый выпуск.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* Исправлена проблема с зависимостью разрешений от регистра для `keyvault set-policy`.
+
+### <a name="network"></a>Сеть
+
+* Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
+* Аргумент `--private-access-services` переименован в `--service-endpoints` для команды `vnet subnet create/update`.
+* Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule create/update`.
+* Добавлена поддержка номера SKU в команде `lb create`.
+* Добавлена поддержка номера SKU в команде `public-ip create`.
+
+### <a name="resource"></a>Ресурс
+
+* Разрешена передача в определениях параметров политики ресурсов в командах `policy definition create` и `policy definition update`.
+* Разрешена передача значений параметров для команды `policy assignment create`.
+* Разрешена передача JSON или файла для всех параметров.
+* Версия API изменена на более позднюю.
+
+### <a name="sql"></a>SQL
+
+* Добавлены команды `sql server vnet-rule`.
+
+### <a name="vm"></a>ВМ
+
+* Исправлено: не назначать доступ, если `--scope` не предоставляется.
+* Исправлено: использование тех же расширений имен, что и для портала.
+* Удалено `subscription` из выходных данных `[vm|vmss] create`.
+* Исправлено: номер SKU хранилища `[vm|vmss] create` неприменим для дисков данных с образом.
+* Исправлено: `vm format-secret --secrets` не принимает идентификаторы, разделенные строками.
+
+## <a name="august-31-2017"></a>31 августа 2017 г.
+
+Версия 2.0.16
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* Исправлена ошибка при попытке автоматически разрешить шифрование секрета с помощью `secret download`.
+
+### <a name="sf"></a>Sf
+
+* Объявлены неподдерживаемыми все команды; вместо них используется Service Fabric CLI (sfctl).
+
+### <a name="storage"></a>Хранилище
+
+* Исправлена проблема, когда учетные записи хранения нельзя было создавать в регионах, которые не поддерживают функцию NetworkACLs.
+* Определение типа и кодировки содержимого во время передачи больших двоичных объектов и файла, если оба свойства не указаны.
 
 ## <a name="august-28-2017"></a>28 августа 2017 г.
 
