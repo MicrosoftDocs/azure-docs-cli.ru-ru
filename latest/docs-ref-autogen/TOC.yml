@@ -141,6 +141,137 @@
             - name: Показать
               uid: az_ad_user_show
               displayName: az ad user show
+    - name: Резервное копирование
+      uid: az_backup
+      displayName: az backup
+      items:
+        - name: Контейнер
+          uid: az_backup_container
+          displayName: az backup container
+          items:
+            - name: список
+              uid: az_backup_container_list
+              displayName: az backup container list
+            - name: Показать
+              uid: az_backup_container_show
+              displayName: az backup container show
+        - name: Элемент
+          uid: az_backup_item
+          displayName: az backup item
+          items:
+            - name: список
+              uid: az_backup_item_list
+              displayName: az backup item list
+            - name: Set-Policy
+              uid: az_backup_item_set_policy
+              displayName: az backup item set-policy
+            - name: Показать
+              uid: az_backup_item_show
+              displayName: az backup item show
+        - name: Задание
+          uid: az_backup_job
+          displayName: az backup job
+          items:
+            - name: список
+              uid: az_backup_job_list
+              displayName: az backup job list
+            - name: Показать
+              uid: az_backup_job_show
+              displayName: az backup job show
+            - name: Остановить
+              uid: az_backup_job_stop
+              displayName: az backup job stop
+            - name: Ожидание
+              uid: az_backup_job_wait
+              displayName: az backup job wait
+        - name: Политика
+          uid: az_backup_policy
+          displayName: az backup policy
+          items:
+            - name: Удалить
+              uid: az_backup_policy_delete
+              displayName: az backup policy delete
+            - name: Get-Default-For-Vm
+              uid: az_backup_policy_get_default_for_vm
+              displayName: az backup policy get-default-for-vm
+            - name: список
+              uid: az_backup_policy_list
+              displayName: az backup policy list
+            - name: List-Associated-Items
+              uid: az_backup_policy_list_associated_items
+              displayName: az backup policy list-associated-items
+            - name: Set
+              uid: az_backup_policy_set
+              displayName: az backup policy set
+            - name: Показать
+              uid: az_backup_policy_show
+              displayName: az backup policy show
+        - name: Защита
+          uid: az_backup_protection
+          displayName: az backup protection
+          items:
+            - name: Backup-Now
+              uid: az_backup_protection_backup_now
+              displayName: az backup protection backup-now
+            - name: Disable
+              uid: az_backup_protection_disable
+              displayName: az backup protection disable
+            - name: Enable-For-Vm
+              uid: az_backup_protection_enable_for_vm
+              displayName: az backup protection enable-for-vm
+        - name: Recoverypoint
+          uid: az_backup_recoverypoint
+          displayName: az backup recoverypoint
+          items:
+            - name: список
+              uid: az_backup_recoverypoint_list
+              displayName: az backup recoverypoint list
+            - name: Показать
+              uid: az_backup_recoverypoint_show
+              displayName: az backup recoverypoint show
+        - name: восстановление;
+          uid: az_backup_restore
+          displayName: az backup restore
+          items:
+            - name: Restore-Disks
+              uid: az_backup_restore_restore_disks
+              displayName: az backup restore restore-disks
+            - name: Файлы
+              uid: az_backup_restore_files
+              displayName: az backup restore files
+              items:
+                - name: Mount-Rp
+                  uid: az_backup_restore_files_mount_rp
+                  displayName: az backup restore files mount-rp
+                - name: Unmount-Rp
+                  uid: az_backup_restore_files_unmount_rp
+                  displayName: az backup restore files unmount-rp
+        - name: Хранилище
+          uid: az_backup_vault
+          displayName: az backup vault
+          items:
+            - name: Создание
+              uid: az_backup_vault_create
+              displayName: az backup vault create
+            - name: Удалить
+              uid: az_backup_vault_delete
+              displayName: az backup vault delete
+            - name: список
+              uid: az_backup_vault_list
+              displayName: az backup vault list
+            - name: Показать
+              uid: az_backup_vault_show
+              displayName: az backup vault show
+            - name: Backup-Properties
+              uid: az_backup_vault_backup_properties
+              displayName: az backup vault backup-properties
+              items:
+                - name: Set
+                  uid: az_backup_vault_backup_properties_set
+                  displayName: az backup vault backup-properties set
+                - name: Показать
+                  uid: az_backup_vault_backup_properties_show
+                  displayName: az backup vault backup-properties show
     - name: Пакетная служба
       uid: az_batch
       displayName: az batch
@@ -2666,6 +2797,25 @@
                 - name: Показать
                   uid: az_network_application_gateway_waf_config_show
                   displayName: az network application-gateway waf-config show
+        - name: Asg
+          uid: az_network_asg
+          displayName: az network asg
+          items:
+            - name: Создание
+              uid: az_network_asg_create
+              displayName: az network asg create
+            - name: Удалить
+              uid: az_network_asg_delete
+              displayName: az network asg delete
+            - name: список
+              uid: az_network_asg_list
+              displayName: az network asg list
+            - name: Показать
+              uid: az_network_asg_show
+              displayName: az network asg show
+            - name: Блокировка изменений
+              uid: az_network_asg_update
+              displayName: az network asg update
         - name: DNS
           uid: az_network_dns
           displayName: az network dns
@@ -3547,6 +3697,9 @@
                 - name: Generate
                   uid: az_network_vnet_gateway_vpn_client_generate
                   displayName: az network vnet-gateway vpn-client generate
+                - name: Show-Url
+                  uid: az_network_vnet_gateway_vpn_client_show_url
+                  displayName: az network vnet-gateway vpn-client show-url
         - name: Наблюдатель за сетями
           uid: az_network_watcher
           displayName: az network watcher
@@ -4186,49 +4339,10 @@
       uid: az_sf
       displayName: az sf
       items:
-        - name: Sfctl
-          uid: az_sf_sfctl
-          displayName: az sf sfctl
         - name: Приложение
           uid: az_sf_application
           displayName: az sf application
           items:
-            - name: Создание
-              uid: az_sf_application_create
-              displayName: az sf application create
-            - name: Удалить
-              uid: az_sf_application_delete
-              displayName: az sf application delete
-            - name: Health
-              uid: az_sf_application_health
-              displayName: az sf application health
-            - name: список
-              uid: az_sf_application_list
-              displayName: az sf application list
-            - name: Manifest
-              uid: az_sf_application_manifest
-              displayName: az sf application manifest
-            - name: Package-Delete
-              uid: az_sf_application_package_delete
-              displayName: az sf application package-delete
-            - name: Подготовка
-              uid: az_sf_application_provision
-              displayName: az sf application provision
-            - name: Report-Health
-              uid: az_sf_application_report_health
-              displayName: az sf application report-health
-            - name: Тип
-              uid: az_sf_application_type
-              displayName: az sf application type
-            - name: Unprovision
-              uid: az_sf_application_unprovision
-              displayName: az sf application unprovision
-            - name: Обновление
-              uid: az_sf_application_upgrade
-              displayName: az sf application upgrade
-            - name: Отправить
-              uid: az_sf_application_upload
-              displayName: az sf application upload
             - name: Сертификат
               uid: az_sf_application_certificate
               displayName: az sf application certificate
@@ -4236,38 +4350,16 @@
                 - name: Добавить
                   uid: az_sf_application_certificate_add
                   displayName: az sf application certificate add
-        - name: Chaos
-          uid: az_sf_chaos
-          displayName: az sf chaos
-          items:
-            - name: Начало
-              uid: az_sf_chaos_start
-              displayName: az sf chaos start
         - name: HDInsight
           uid: az_sf_cluster
           displayName: az sf cluster
           items:
-            - name: Code-Version
-              uid: az_sf_cluster_code_version
-              displayName: az sf cluster code-version
-            - name: Config-Version
-              uid: az_sf_cluster_config_version
-              displayName: az sf cluster config-version
             - name: Создание
               uid: az_sf_cluster_create
               displayName: az sf cluster create
-            - name: Health
-              uid: az_sf_cluster_health
-              displayName: az sf cluster health
             - name: список
               uid: az_sf_cluster_list
               displayName: az sf cluster list
-            - name: Manifest
-              uid: az_sf_cluster_manifest
-              displayName: az sf cluster manifest
-            - name: Выберите пункт
-              uid: az_sf_cluster_select
-              displayName: az sf cluster select
             - name: Показать
               uid: az_sf_cluster_show
               displayName: az sf cluster show
@@ -4339,125 +4431,6 @@
                 - name: Set
                   uid: az_sf_cluster_upgrade_type_set
                   displayName: az sf cluster upgrade-type set
-        - name: Docker Compose
-          uid: az_sf_compose
-          displayName: az sf compose
-          items:
-            - name: Создание
-              uid: az_sf_compose_create
-              displayName: az sf compose create
-            - name: список
-              uid: az_sf_compose_list
-              displayName: az sf compose list
-            - name: Удалить
-              uid: az_sf_compose_remove
-              displayName: az sf compose remove
-            - name: Состояние
-              uid: az_sf_compose_status
-              displayName: az sf compose status
-        - name: Узел
-          uid: az_sf_node
-          displayName: az sf node
-          items:
-            - name: Code-Package
-              uid: az_sf_node_code_package
-              displayName: az sf node code-package
-            - name: список
-              uid: az_sf_node_list
-              displayName: az sf node list
-            - name: загрузить
-              uid: az_sf_node_load
-              displayName: az sf node load
-            - name: Remove-State
-              uid: az_sf_node_remove_state
-              displayName: az sf node remove-state
-            - name: Replica-List
-              uid: az_sf_node_replica_list
-              displayName: az sf node replica-list
-            - name: Report-Health
-              uid: az_sf_node_report_health
-              displayName: az sf node report-health
-            - name: Перезагрузить
-              uid: az_sf_node_restart
-              displayName: az sf node restart
-            - name: Service-Package
-              uid: az_sf_node_service_package
-              displayName: az sf node service-package
-            - name: Service-Package-List
-              uid: az_sf_node_service_package_list
-              displayName: az sf node service-package-list
-            - name: Service-Package-Upload
-              uid: az_sf_node_service_package_upload
-              displayName: az sf node service-package-upload
-            - name: Service-Type
-              uid: az_sf_node_service_type
-              displayName: az sf node service-type
-            - name: Service-Type-List
-              uid: az_sf_node_service_type_list
-              displayName: az sf node service-type-list
-            - name: Начало
-              uid: az_sf_node_start
-              displayName: az sf node start
-            - name: Остановить
-              uid: az_sf_node_stop
-              displayName: az sf node stop
-        - name: Секция
-          uid: az_sf_partition
-          displayName: az sf partition
-          items:
-            - name: Health
-              uid: az_sf_partition_health
-              displayName: az sf partition health
-            - name: Сведения
-              uid: az_sf_partition_info
-              displayName: az sf partition info
-            - name: Report-Health
-              uid: az_sf_partition_report_health
-              displayName: az sf partition report-health
-            - name: Service-Name
-              uid: az_sf_partition_service_name
-              displayName: az sf partition service-name
-        - name: Реплика
-          uid: az_sf_replica
-          displayName: az sf replica
-          items:
-            - name: Health
-              uid: az_sf_replica_health
-              displayName: az sf replica health
-            - name: Report-Health
-              uid: az_sf_replica_report_health
-              displayName: az sf replica report-health
-        - name: служба
-          uid: az_sf_service
-          displayName: az sf service
-          items:
-            - name: Application-Name
-              uid: az_sf_service_application_name
-              displayName: az sf service application-name
-            - name: Создание
-              uid: az_sf_service_create
-              displayName: az sf service create
-            - name: Описание
-              uid: az_sf_service_description
-              displayName: az sf service description
-            - name: Health
-              uid: az_sf_service_health
-              displayName: az sf service health
-            - name: список
-              uid: az_sf_service_list
-              displayName: az sf service list
-            - name: Manifest
-              uid: az_sf_service_manifest
-              displayName: az sf service manifest
-            - name: Report-Health
-              uid: az_sf_service_report_health
-              displayName: az sf service report-health
-            - name: Разрешить
-              uid: az_sf_service_resolve
-              displayName: az sf service resolve
-            - name: Блокировка изменений
-              uid: az_sf_service_update
-              displayName: az sf service update
     - name: Хранилище
       uid: az_storage
       displayName: az storage
@@ -5134,6 +5107,19 @@
             - name: Detach
               uid: az_vmss_disk_detach
               displayName: az vmss disk detach
+        - name: Шифрование
+          uid: az_vmss_encryption
+          displayName: az vmss encryption
+          items:
+            - name: Disable
+              uid: az_vmss_encryption_disable
+              displayName: az vmss encryption disable
+            - name: Включение
+              uid: az_vmss_encryption_enable
+              displayName: az vmss encryption enable
+            - name: Показать
+              uid: az_vmss_encryption_show
+              displayName: az vmss encryption show
         - name: расширения.
           uid: az_vmss_extension
           displayName: az vmss extension
@@ -5256,6 +5242,9 @@
         - name: Open-Port
           uid: az_vm_open_port
           displayName: az vm open-port
+        - name: Perform-Maintenance
+          uid: az_vm_perform_maintenance
+          displayName: az vm perform-maintenance
         - name: Повторное развертывание
           uid: az_vm_redeploy
           displayName: az vm redeploy
@@ -5411,6 +5400,19 @@
             - name: Показать
               uid: az_vm_nic_show
               displayName: az vm nic show
+        - name: Run-Command
+          uid: az_vm_run_command
+          displayName: az vm run-command
+          items:
+            - name: Invoke
+              uid: az_vm_run_command_invoke
+              displayName: az vm run-command invoke
+            - name: список
+              uid: az_vm_run_command_list
+              displayName: az vm run-command list
+            - name: Показать
+              uid: az_vm_run_command_show
+              displayName: az vm run-command show
         - name: Диски хранилища
           uid: az_vm_disk
           displayName: az vm disk
@@ -5478,6 +5480,16 @@
         - name: Остановить
           uid: az_webapp_stop
           displayName: az webapp stop
+        - name: Auth
+          uid: az_webapp_auth
+          displayName: az webapp auth
+          items:
+            - name: Показать
+              uid: az_webapp_auth_show
+              displayName: az webapp auth show
+            - name: Блокировка изменений
+              uid: az_webapp_auth_update
+              displayName: az webapp auth update
         - name: Настройка
           uid: az_webapp_config
           displayName: az webapp config
