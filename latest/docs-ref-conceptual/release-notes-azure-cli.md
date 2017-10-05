@@ -12,13 +12,73 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: ad30efeb7efafcc5816160ee130665d37adb62c6
-ms.sourcegitcommit: e866977985ba0286fa05f41729dd7e7d9ce86f8e
+ms.openlocfilehash: 72630c52b5e6afd69809ff19145717c0d65e0252
+ms.sourcegitcommit: 3a490ae3a2a1b2e63a062806f9b720fa4c6be01e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 09/25/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="september-22-2017"></a>22 сентября 2017 г.
+
+Версия 2.0.18
+
+### <a name="resource"></a>Ресурс
+
+* Добавлена поддержка отображения определений встроенных политик
+* Добавлена поддержка параметра mode для создания определения политик
+* Добавлена поддержка шаблонов и определений пользовательского интерфейса для команды `managedapp definition create`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`
+
+### <a name="network"></a>Сеть
+
+* Добавлена поддержка зоны доступности для подкоманд `network lb` и `network public-ip`
+* Добавлена поддержка IPv6 (пиринг Майкрософт) для `express-route`
+* Добавлены команды группы безопасности приложения `asg`
+* Добавлен аргумент `--application-security-groups` для команды `nic [create|ip-config create|ip-config update]`
+* Добавлены аргументы `--source-asgs` и `--destination-asgs` для команды `nsg rule [create|update]`
+* Добавлены аргументы `--ddos-protection` и `--vm-protection` для команды `vnet [create|update]`
+* Добавлены команды `network [vnet-gateway|vpn-client|show-url]`.
+
+### <a name="storage"></a>Хранилище
+
+* Исправлена проблема, когда команды `storage account network-rule` могут не работать после обновления пакета SDK
+
+### <a name="eventgrid"></a>Сетка событий
+
+* Обновлен пакет SDK Python для службы "Сетка событий Azure" для использования новой версии API 2017-09-15-preview
+
+### <a name="sql"></a>SQL
+
+* Аргумент `--resource-group` для команды `sql server list` сделан необязательным. Если он не указан, возвращаются все серверы SQL Server в подписке
+* Добавлен параметр `--no-wait` для команд `db [create|copy|restore|update|replica create|create|update]` и `dw [create|update]`
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* Добавлена поддержка команд хранилища ключей за прокси-сервером
+
+### <a name="vm"></a>ВМ
+
+* Добавлена поддержка зоны доступности для команды `[vm|vmss|disk] create`
+* Исправлена проблема, когда использование аргумента `--app-gateway ID` с командой `vmss create` приводило к сбою
+* Добавлен аргумент `--asgs` для команды `vm create`
+* Добавлена поддержка выполнения команд на виртуальных машинах с помощью команды `vm run-command`
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка шифрования диска VMSS с помощью команды `vmss encryption`
+* Добавлена поддержка обслуживания виртуальных машин с помощью команды `vm perform-maintenance`
+
+### <a name="acs"></a>ACS
+
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлен аргумент `--orchestrator-release` для команды `acs create` для регионов служб ACS (предварительная версия)
+
+### <a name="appservice"></a>Служба приложений
+
+* Добавлена возможность обновлять и отображать параметры аутентификации с помощью команды `webapp auth [update|show]`
+
+### <a name="backup"></a>Резервное копирование
+
+* Предварительный выпуск.
+
 
 ## <a name="september-11-2017"></a>11 сентября 2017 г.
 
