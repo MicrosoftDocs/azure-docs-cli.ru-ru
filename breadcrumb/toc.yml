@@ -2,63 +2,60 @@
   tocHref: /azure/
   topicHref: /azure/index
   items:
-  - name: "Azure CLI\_2.0"
-    tocHref: /cli/azure/overview
-    topicHref: /cli/azure/overview
-    items:
-    - name: Установить
-      tocHref: /cli/azure/install-azure-cli
-      topicHref: /cli/azure/install-azure-cli
-    - name: Начало работы
-      tocHref: /cli/azure/get-started-with-azure-cli
-      topicHref: /cli/azure/get-started-with-azure-cli
-    - name: Вход в систему
-      tocHref: /cli/azure/authenticate-azure-cli
-      topicHref: /cli/azure/authenticate-azure-cli
+    - name: "Azure CLI\_2.0"
+      tocHref: /cli/azure/overview
+      topicHref: /cli/azure/overview
       items:
-      - name: Создание субъекта-службы
-        tocHref: /cli/azure/create-an-azure-service-principal-azure-cli
-        topicHref: /cli/azure/create-an-azure-service-principal-azure-cli
-    - name: Интерактивный режим
-      tocHref: /cli/azure/interactive-azure-cli
-      topicHref: /cli/azure/interactive-azure-cli
-    - name: Развернуть
-      items:
-      - name: Использование шаблонов
-        tocHref: /azure/azure-resource-manager/resource-group-template-deploy-cli
-        topicHref: /azure/azure-resource-manager/resource-group-template-deploy-cli
-      - name: Экспорт шаблонов
-        tocHref: /azure/azure-resource-manager/resource-manager-export-template-cli
-        topicHref: /azure/azure-resource-manager/resource-manager-export-template-cli
-      - name: Использование частных шаблонов
-        tocHref: /azure-resource-manager/resource-manager-cli-sas-token
-        topicHref: /azure-resource-manager/resource-manager-cli-sas-token
-    - name: Форматы выходных данных
-      tocHref: /cli/azure/format-output-azure-cli
-      topicHref: /cli/azure/format-output-azure-cli
-    - name: Запрос
-      tocHref: /cli/azure/query-azure-cli
-      topicHref: /cli/azure/query-azure-cli
-    - name: Подписки
-      tocHref: /cli/azure/manage-azure-subscriptions-azure-cli
-      topicHref: /cli/azure/manage-azure-subscriptions-azure-cli
-    - name: Заметки о выпуске
-      tocHref: /cli/azure/release-notes-azure-cli
-      topicHref: /cli/azure/release-notes-azure-cli
-    - name: Примеры сценариев
-      items:
-      - name: Виртуальные машины Linux
-        tocHref: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-        topicHref: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: Виртуальные машины Windows
-        tocHref: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-        topicHref: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: Веб-приложения
-        tocHref: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-        topicHref: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: База данных SQL
-        tocHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-        topicHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: Справочные материалы
-      tocHref: /cli/azure
-      topicHref: /cli/azure
+        - name: Установить
+          tocHref: /cli/azure/install-azure-cli
+          topicHref: /cli/azure/install-azure-cli
+        - name: Начало работы
+          tocHref: /cli/azure/get-started-with-azure-cli
+          topicHref: /cli/azure/get-started-with-azure-cli
+        - name: Вход в систему
+          tocHref: /cli/azure/authenticate-azure-cli
+          topicHref: /cli/azure/authenticate-azure-cli
+          items:
+            - name: Создание субъекта-службы
+              tocHref: /cli/azure/create-an-azure-service-principal-azure-cli
+              topicHref: /cli/azure/create-an-azure-service-principal-azure-cli
+        - name: Интерактивный режим
+          tocHref: /cli/azure/interactive-azure-cli
+          topicHref: /cli/azure/interactive-azure-cli
+        - name: Шаблоны развертывания
+          items:
+            - name: Использование шаблонов развертывания
+              tocHref: /azure/azure-resource-manager/resource-group-template-deploy-cli
+              topicHref: /azure/azure-resource-manager/resource-group-template-deploy-cli
+            - name: Экспорт шаблонов развертывания
+              tocHref: /azure/azure-resource-manager/resource-manager-export-template-cli
+              topicHref: /azure/azure-resource-manager/resource-manager-export-template-cli
+            - name: Развертывание с помощью частного шаблона
+              tocHref: /azure/azure-resource-manager/resource-manager-cli-sas-token
+              topicHref: /azure/azure-resource-manager/resource-manager-cli-sas-token
+        - name: Форматы выходных данных
+          tocHref: /cli/azure/format-output-azure-cli
+          topicHref: /cli/azure/format-output-azure-cli
+        - name: Запрос
+          tocHref: /cli/azure/query-azure-cli
+          topicHref: /cli/azure/query-azure-cli
+        - name: Подписки
+          tocHref: /cli/azure/manage-azure-subscriptions-azure-cli
+          topicHref: /cli/azure/manage-azure-subscriptions-azure-cli
+        - name: Заметки о выпуске
+          tocHref: /cli/azure/release-notes-azure-cli
+          topicHref: /cli/azure/release-notes-azure-cli
+        - name: Примеры сценариев
+          items:
+            - name: Виртуальные машины Linux
+              tocHref: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+              topicHref: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+            - name: Виртуальные машины Windows
+              tocHref: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+              topicHref: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+            - name: Веб-приложения
+              tocHref: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+              topicHref: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+            - name: База данных SQL
+              tocHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+              topicHref: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json

@@ -14,14 +14,14 @@
           href: create-an-azure-service-principal-azure-cli.md
     - name: Интерактивный режим
       href: interactive-azure-cli.md
-    - name: Развернуть
+    - name: Шаблоны развертывания
       items:
-        - name: Использование шаблонов
+        - name: Использование шаблонов развертывания
           href: /azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-        - name: Экспорт шаблонов
+        - name: Экспорт шаблонов развертывания
           href: /azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-        - name: Использование частных шаблонов
-          href: /azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+        - name: Развертывание с помощью частного шаблона
+          href: /azure/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: Форматы выходных данных
       href: format-output-azure-cli.md
     - name: Запрос
