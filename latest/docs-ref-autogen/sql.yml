@@ -38,12 +38,24 @@ commands:
 - uid: az_sql_db_list
   name: az sql db list
   summary: List databases a server or elastic pool.
+- uid: az_sql_db_list_deleted
+  name: az sql db list-deleted
+  summary: Gets a list of deleted databases that can be restored.
 - uid: az_sql_db_list_editions
   name: az sql db list-editions
   summary: Show database editions available for the currently active subscription.
 - uid: az_sql_db_list_usages
   name: az sql db list-usages
   summary: Returns database usages.
+- uid: az_sql_db_op
+  name: az sql db op
+  summary: Manage operations on a database.
+- uid: az_sql_db_op_cancel
+  name: az sql db op cancel
+  summary: Cancels the asynchronous operation on the database.
+- uid: az_sql_db_op_list
+  name: az sql db op list
+  summary: Gets a list of operations performed on the database.
 - uid: az_sql_db_replica
   name: az sql db replica
   summary: Manage replication between databases.
@@ -65,6 +77,21 @@ commands:
 - uid: az_sql_db_show
   name: az sql db show
   summary: Get the details for a database.
+- uid: az_sql_db_show_connection_string
+  name: az sql db show-connection-string
+  summary: Generates a connection string to a database.
+- uid: az_sql_db_tde
+  name: az sql db tde
+  summary: Manage a database's transparent data encryption.
+- uid: az_sql_db_tde_list_activity
+  name: az sql db tde list-activity
+  summary: Returns a database's transparent data encryption operation result.
+- uid: az_sql_db_tde_set
+  name: az sql db tde set
+  summary: Sets a database's transparent data encryption configuration.
+- uid: az_sql_db_tde_show
+  name: az sql db tde show
+  summary: Gets a database's transparent data encryption configuration.
 - uid: az_sql_db_threat_policy
   name: az sql db threat-policy
   summary: Manage a database's threat detection policies.
@@ -167,6 +194,21 @@ commands:
 - uid: az_sql_server_firewall_rule_update
   name: az sql server firewall-rule update
   summary: Update a firewall rule.
+- uid: az_sql_server_key
+  name: az sql server key
+  summary: Manage a server's keys.
+- uid: az_sql_server_key_create
+  name: az sql server key create
+  summary: Creates a server key.
+- uid: az_sql_server_key_delete
+  name: az sql server key delete
+  summary: Deletes a server key.
+- uid: az_sql_server_key_list
+  name: az sql server key list
+  summary: Gets a list of server keys.
+- uid: az_sql_server_key_show
+  name: az sql server key show
+  summary: Shows a server key.
 - uid: az_sql_server_list
   name: az sql server list
   summary: List available servers.
@@ -176,6 +218,15 @@ commands:
 - uid: az_sql_server_show
   name: az sql server show
   summary: Gets a server.
+- uid: az_sql_server_tde_key
+  name: az sql server tde-key
+  summary: Manage a server's encryption protector.
+- uid: az_sql_server_tde_key_set
+  name: az sql server tde-key set
+  summary: Sets the server's encryption protector.
+- uid: az_sql_server_tde_key_show
+  name: az sql server tde-key show
+  summary: Gets a server encryption protector.
 - uid: az_sql_server_update
   name: az sql server update
   summary: Update a server.
@@ -213,6 +264,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/c85bdbe4002a5e52a2402bf5add66bdaf84d000d/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-updated_at: 9/14/2017 9:54:13 PM
-ms.date: 9/14/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/f7cea5a6cd73d5b09d2b59deed28b1081d400e2a/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+updated_at: 10/11/2017 8:05:50 PM
+ms.date: 10/11/2017

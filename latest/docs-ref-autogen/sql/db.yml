@@ -13,10 +13,12 @@ items:
   - az_sql_db_export
   - az_sql_db_import
   - az_sql_db_list
+  - az_sql_db_list_deleted
   - az_sql_db_list_editions
   - az_sql_db_list_usages
   - az_sql_db_restore
   - az_sql_db_show
+  - az_sql_db_show_connection_string
   - az_sql_db_update
 - uid: az_sql_db_copy
   name: az sql db copy
@@ -192,7 +194,7 @@ items:
     name: --storage-uri
     summary: The storage uri to use.
     description: ''
-  - name: --auth-type
+  - name: --auth-type -a
     defaultValue: SQL
     parameterValueGroup: ADPassword, SQL
     summary: The authentication type.
@@ -253,7 +255,7 @@ items:
     name: --storage-uri
     summary: The storage uri to use.
     description: ''
-  - name: --auth-type
+  - name: --auth-type -a
     defaultValue: SQL
     parameterValueGroup: ADPassword, SQL
     summary: The authentication type.
@@ -281,6 +283,27 @@ items:
     description: ''
   - name: --elastic-pool
     summary: If specified, lists only the databases in this elastic pool.
+    description: ''
+  source:
+    path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+    remote:
+      branch: master
+      path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+      repo: https://github.com/Azure/azure-cli.git
+- uid: az_sql_db_list_deleted
+  name: az sql db list-deleted
+  summary: Gets a list of deleted databases that can be restored.
+  description: ''
+  langs:
+  - azurecli
+  parameters:
+  - isRequired: true
+    name: --resource-group -g
+    summary: Name of resource group. You can configure the default group using `az configure --defaults group=&lt;name&gt;`.
+    description: ''
+  - isRequired: true
+    name: --server -s
+    summary: Name of the Azure SQL server.
     description: ''
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
@@ -373,10 +396,6 @@ items:
     name: --server -s
     summary: Name of the Azure SQL server.
     description: ''
-  - isRequired: true
-    name: --time -t
-    summary: The point in time of the source database that will be restored to create the new database. Must be greater than or equal to the source database's earliestRestoreDate value.
-    description: ''
   - name: --edition
     summary: The edition for the new database.
     description: ''
@@ -391,6 +410,12 @@ items:
     description: ''
   - name: --tags
     summary: Resource tags.
+    description: ''
+  - name: --deleted-time
+    summary: If specified, restore from a deleted database instead of from an existing database. Must match the deleted time of a deleted database in the same server. Either --time or --deleted-time (or both) must be specified.
+    description: ''
+  - name: --time -t
+    summary: The point in time of the source database that will be restored to create the new database. Must be greater than or equal to the source database's earliestRestoreDate value. Either --time or --deleted-time (or both) must be specified.
     description: ''
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
@@ -416,6 +441,41 @@ items:
   - isRequired: true
     name: --server -s
     summary: Name of the Azure SQL server.
+    description: ''
+  source:
+    path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+    remote:
+      branch: master
+      path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+      repo: https://github.com/Azure/azure-cli.git
+- uid: az_sql_db_show_connection_string
+  name: az sql db show-connection-string
+  summary: Generates a connection string to a database.
+  description: ''
+  langs:
+  - azurecli
+  examples:
+  - summary: Generate connection string for ado.net
+    syntax:
+      content: az sql db show-connection-string -s myserver -n mydb -c ado.net
+  parameters:
+  - isRequired: true
+    name: --client -c
+    parameterValueGroup: ado.net, jdbc, odbc, php, php_pdo, sqlcmd
+    summary: Type of client connection provider.
+    description: ''
+  - name: --name -n
+    defaultValue: <databasename>
+    summary: Name of the Azure SQL Database.
+    description: ''
+  - name: --server -s
+    defaultValue: <servername>
+    summary: Name of the Azure SQL server.
+    description: ''
+  - name: --auth-type -a
+    defaultValue: SqlPassword
+    parameterValueGroup: ADIntegrated, ADPassword, SqlPassword
+    summary: Type of authentication.
     description: ''
   source:
     path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
@@ -497,12 +557,24 @@ commands:
 - uid: az_sql_db_list
   name: az sql db list
   summary: List databases a server or elastic pool.
+- uid: az_sql_db_list_deleted
+  name: az sql db list-deleted
+  summary: Gets a list of deleted databases that can be restored.
 - uid: az_sql_db_list_editions
   name: az sql db list-editions
   summary: Show database editions available for the currently active subscription.
 - uid: az_sql_db_list_usages
   name: az sql db list-usages
   summary: Returns database usages.
+- uid: az_sql_db_op
+  name: az sql db op
+  summary: Manage operations on a database.
+- uid: az_sql_db_op_cancel
+  name: az sql db op cancel
+  summary: Cancels the asynchronous operation on the database.
+- uid: az_sql_db_op_list
+  name: az sql db op list
+  summary: Gets a list of operations performed on the database.
 - uid: az_sql_db_replica
   name: az sql db replica
   summary: Manage replication between databases.
@@ -524,6 +596,21 @@ commands:
 - uid: az_sql_db_show
   name: az sql db show
   summary: Get the details for a database.
+- uid: az_sql_db_show_connection_string
+  name: az sql db show-connection-string
+  summary: Generates a connection string to a database.
+- uid: az_sql_db_tde
+  name: az sql db tde
+  summary: Manage a database's transparent data encryption.
+- uid: az_sql_db_tde_list_activity
+  name: az sql db tde list-activity
+  summary: Returns a database's transparent data encryption operation result.
+- uid: az_sql_db_tde_set
+  name: az sql db tde set
+  summary: Sets a database's transparent data encryption configuration.
+- uid: az_sql_db_tde_show
+  name: az sql db tde show
+  summary: Gets a database's transparent data encryption configuration.
 - uid: az_sql_db_threat_policy
   name: az sql db threat-policy
   summary: Manage a database's threat detection policies.
@@ -552,6 +639,6 @@ globalParameters:
 doc_source_url_repo: https://github.com/Azure/azure-cli/blob/master/
 doc_source_url_path: src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
 original_content_git_url: https://github.com/Azure/azure-cli/blob/master/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-gitcommit: https://github.com/Azure/azure-cli/blob/c85bdbe4002a5e52a2402bf5add66bdaf84d000d/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
-updated_at: 9/14/2017 9:54:13 PM
-ms.date: 9/14/2017
+gitcommit: https://github.com/Azure/azure-cli/blob/f7cea5a6cd73d5b09d2b59deed28b1081d400e2a/src/command_modules/azure-cli-sql/azure/cli/command_modules/sql/_help.py
+updated_at: 10/11/2017 8:05:50 PM
+ms.date: 10/11/2017
