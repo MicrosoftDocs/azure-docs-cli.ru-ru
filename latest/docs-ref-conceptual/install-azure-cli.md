@@ -12,87 +12,87 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 935814d56d0a6be00f626da860dc643adbf14804
-ms.sourcegitcommit: 9f38efbb7efd800ee5cab80d6641770d268c5a68
+ms.openlocfilehash: 1b47bd5603f5214dd11d772caaebe8cf380df5c0
+ms.sourcegitcommit: 5e862fd0a93cf668fa76a74ae1c7505d3c8c45f2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/09/2017
 ---
-# <a name="install-azure-cli-20"></a><span data-ttu-id="e250d-104">Установка Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="e250d-104">Install Azure CLI 2.0</span></span>
+# <a name="install-azure-cli-20"></a><span data-ttu-id="26498-104">Установка Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="26498-104">Install Azure CLI 2.0</span></span>
 
-<span data-ttu-id="e250d-105">Установите новую версию интерфейса командной строки Azure прямо сейчас!</span><span class="sxs-lookup"><span data-stu-id="e250d-105">Install the new version of the Azure CLI today!</span></span>
-<span data-ttu-id="e250d-106">Мы усовершенствовали и обновили его, предоставив удобный встроенный интерфейс командной строки для управления ресурсами Azure.</span><span class="sxs-lookup"><span data-stu-id="e250d-106">We've improved and updated it to provide a great native command-line experience for managing Azure resources.</span></span>
-<span data-ttu-id="e250d-107">Его можно использовать в Windows, Linux и macOS.</span><span class="sxs-lookup"><span data-stu-id="e250d-107">It can be used on macOS, Linux, and Windows.</span></span>
-<span data-ttu-id="e250d-108">Сведения о последнем выпуске см. в [заметках о выпуске](release-notes-azure-cli.md).</span><span class="sxs-lookup"><span data-stu-id="e250d-108">For information about the latest release, see the [release notes](release-notes-azure-cli.md).</span></span>
+<span data-ttu-id="26498-105">Установите новую версию интерфейса командной строки Azure прямо сейчас!</span><span class="sxs-lookup"><span data-stu-id="26498-105">Install the new version of the Azure CLI today!</span></span>
+<span data-ttu-id="26498-106">Мы усовершенствовали и обновили его, предоставив удобный встроенный интерфейс командной строки для управления ресурсами Azure.</span><span class="sxs-lookup"><span data-stu-id="26498-106">We've improved and updated it to provide a great native command-line experience for managing Azure resources.</span></span>
+<span data-ttu-id="26498-107">Его можно использовать в Windows, Linux и macOS.</span><span class="sxs-lookup"><span data-stu-id="26498-107">It can be used on macOS, Linux, and Windows.</span></span>
+<span data-ttu-id="26498-108">Сведения о последнем выпуске см. в [заметках о выпуске](release-notes-azure-cli.md).</span><span class="sxs-lookup"><span data-stu-id="26498-108">For information about the latest release, see the [release notes](release-notes-azure-cli.md).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e250d-109">Если вам нужна предыдущая версия Azure CLI, см. руководство по [установке Azure CLI 1.0](/azure/cli-install-nodejs).</span><span class="sxs-lookup"><span data-stu-id="e250d-109">If you need the previous version of the Azure CLI, here's how to [install Azure CLI 1.0](/azure/cli-install-nodejs).</span></span>
+> <span data-ttu-id="26498-109">Если вам нужна предыдущая версия Azure CLI, см. руководство по [установке Azure CLI 1.0](/azure/cli-install-nodejs).</span><span class="sxs-lookup"><span data-stu-id="26498-109">If you need the previous version of the Azure CLI, here's how to [install Azure CLI 1.0](/azure/cli-install-nodejs).</span></span>
 
-## <a name="a-namemacosinstall-on-macos"></a><span data-ttu-id="e250d-110"><a name="macOS"/>Установка в macOS</span><span class="sxs-lookup"><span data-stu-id="e250d-110"><a name="macOS"/>Install on macOS</span></span>
+## <a name="a-namemacosinstall-on-macos"></a><span data-ttu-id="26498-110"><a name="macOS"/>Установка в macOS</span><span class="sxs-lookup"><span data-stu-id="26498-110"><a name="macOS"/>Install on macOS</span></span>
 
-<span data-ttu-id="e250d-111">В macOS установку можно выполнить с помощью [Homebrew](https://brew.sh/) или вручную.</span><span class="sxs-lookup"><span data-stu-id="e250d-111">On macOS, you are able to install either with [Homebrew](https://brew.sh/) or manually.</span></span>
+<span data-ttu-id="26498-111">В macOS установку можно выполнить с помощью [Homebrew](https://brew.sh/) или вручную.</span><span class="sxs-lookup"><span data-stu-id="26498-111">On macOS, you are able to install either with [Homebrew](https://brew.sh/) or manually.</span></span>
 
-### <a name="install-with-homebrew"></a><span data-ttu-id="e250d-112">Установка с помощью Homebrew</span><span class="sxs-lookup"><span data-stu-id="e250d-112">Install with Homebrew</span></span>
+### <a name="install-with-homebrew"></a><span data-ttu-id="26498-112">Установка с помощью Homebrew</span><span class="sxs-lookup"><span data-stu-id="26498-112">Install with Homebrew</span></span>
 
-1. <span data-ttu-id="e250d-113">Если у вас нет этой программы, выполните [инструкции по установке Homebrew](https://docs.brew.sh/Installation.html).</span><span class="sxs-lookup"><span data-stu-id="e250d-113">If you don't have it already, install Homebrew by following the [Homebrew installation instructions](https://docs.brew.sh/Installation.html).</span></span>
+1. <span data-ttu-id="26498-113">Если у вас нет этой программы, выполните [инструкции по установке Homebrew](https://docs.brew.sh/Installation.html).</span><span class="sxs-lookup"><span data-stu-id="26498-113">If you don't have it already, install Homebrew by following the [Homebrew installation instructions](https://docs.brew.sh/Installation.html).</span></span>
 
-2. <span data-ttu-id="e250d-114">Если CLI устанавливался вручную, следуйте инструкциям по [удалению вручную](#UninstallManually).</span><span class="sxs-lookup"><span data-stu-id="e250d-114">If you have previously installed the CLI manually, follow the [manual uninstall](#UninstallManually) instructions.</span></span>
+2. <span data-ttu-id="26498-114">Если CLI устанавливался вручную, следуйте инструкциям по [удалению вручную](#UninstallManually).</span><span class="sxs-lookup"><span data-stu-id="26498-114">If you have previously installed the CLI manually, follow the [manual uninstall](#UninstallManually) instructions.</span></span>
 
-3. <span data-ttu-id="e250d-115">Обновите свои локальные репозитории Homebrew.</span><span class="sxs-lookup"><span data-stu-id="e250d-115">Update your local Homebrew repositories.</span></span>
+3. <span data-ttu-id="26498-115">Обновите свои локальные репозитории Homebrew.</span><span class="sxs-lookup"><span data-stu-id="26498-115">Update your local Homebrew repositories.</span></span>
 
    ```bash
    brew update
    ```
 
-4. <span data-ttu-id="e250d-116">Установите пакет `azure-cli`.</span><span class="sxs-lookup"><span data-stu-id="e250d-116">Install the `azure-cli` package.</span></span>
+4. <span data-ttu-id="26498-116">Установите пакет `azure-cli`.</span><span class="sxs-lookup"><span data-stu-id="26498-116">Install the `azure-cli` package.</span></span>
 
   ```bash
   brew install azure-cli
   ```
 
 > [!NOTE]
-> <span data-ttu-id="e250d-117">Если вы ранее установили Azure CLI 1.0 с помощью Homebrew, вместо установки пакета можно получить CLI 2.0 при регулярном обновлении Homebrew.</span><span class="sxs-lookup"><span data-stu-id="e250d-117">If you previously installed the Azure CLI 1.0 with Homebrew, instead of installing the package you can get CLI 2.0 through the regular Homebrew upgrade process.</span></span>
+> <span data-ttu-id="26498-117">Если вы ранее установили Azure CLI 1.0 с помощью Homebrew, вместо установки пакета можно получить CLI 2.0 при регулярном обновлении Homebrew.</span><span class="sxs-lookup"><span data-stu-id="26498-117">If you previously installed the Azure CLI 1.0 with Homebrew, instead of installing the package you can get CLI 2.0 through the regular Homebrew upgrade process.</span></span>
 >
 > ```bash
 > brew upgrade
 > ```
 
-### <a name="install-manually"></a><span data-ttu-id="e250d-118">Установка вручную</span><span class="sxs-lookup"><span data-stu-id="e250d-118">Install manually</span></span>
+### <a name="install-manually"></a><span data-ttu-id="26498-118">Установка вручную</span><span class="sxs-lookup"><span data-stu-id="26498-118">Install manually</span></span>
 
-1. <span data-ttu-id="e250d-119">Установите Azure CLI 2.0 с помощью команды `curl`.</span><span class="sxs-lookup"><span data-stu-id="e250d-119">Install Azure CLI 2.0 with `curl`.</span></span>
+1. <span data-ttu-id="26498-119">Установите Azure CLI 2.0 с помощью команды `curl`.</span><span class="sxs-lookup"><span data-stu-id="26498-119">Install Azure CLI 2.0 with `curl`.</span></span>
 
    ```bash
    curl -L https://aka.ms/InstallAzureCli | bash
    ```
 
-2. <span data-ttu-id="e250d-120">Чтобы некоторые изменения вступили в силу, может потребоваться перезапуск оболочки.</span><span class="sxs-lookup"><span data-stu-id="e250d-120">You may have to restart your shell for some changes to take effect.</span></span>
+2. <span data-ttu-id="26498-120">Чтобы некоторые изменения вступили в силу, может потребоваться перезапуск оболочки.</span><span class="sxs-lookup"><span data-stu-id="26498-120">You may have to restart your shell for some changes to take effect.</span></span>
 
    ```bash
    exec -l $SHELL
    ```
    
-3. <span data-ttu-id="e250d-121">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="e250d-121">Run the CLI from the command prompt with the `az` command.</span></span>
+3. <span data-ttu-id="26498-121">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="26498-121">Run the CLI from the command prompt with the `az` command.</span></span>
 
-## <a name="install-on-windows"></a><span data-ttu-id="e250d-122">Установка в Windows</span><span class="sxs-lookup"><span data-stu-id="e250d-122">Install on Windows</span></span>
+## <a name="install-on-windows"></a><span data-ttu-id="26498-122">Установка в Windows</span><span class="sxs-lookup"><span data-stu-id="26498-122">Install on Windows</span></span>
 
-### <a name="install-with-msi-for-the-windows-command-line"></a><span data-ttu-id="e250d-123">Установка с помощью MSI-файла для командной строки Windows</span><span class="sxs-lookup"><span data-stu-id="e250d-123">Install with MSI for the Windows command-line</span></span> 
+### <a name="install-with-msi-for-the-windows-command-line"></a><span data-ttu-id="26498-123">Установка с помощью MSI-файла для командной строки Windows</span><span class="sxs-lookup"><span data-stu-id="26498-123">Install with MSI for the Windows command-line</span></span> 
 
-<span data-ttu-id="e250d-124">Чтобы установить CLI в Windows и использовать его в окне командной строки Windows, скачайте и запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows).</span><span class="sxs-lookup"><span data-stu-id="e250d-124">To install the CLI on Windows and use it in the Windows command-line, download and run the [Azure CLI Installer (MSI)](https://aka.ms/InstallAzureCliWindows).</span></span>
+<span data-ttu-id="26498-124">Чтобы установить CLI в Windows и использовать его в окне командной строки Windows, скачайте и запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows).</span><span class="sxs-lookup"><span data-stu-id="26498-124">To install the CLI on Windows and use it in the Windows command-line, download and run the [Azure CLI Installer (MSI)](https://aka.ms/InstallAzureCliWindows).</span></span>
 
-### <a name="install-with-apt-get-for-bash-on-ubuntu-on-windows"></a><span data-ttu-id="e250d-125">Установка с помощью apt-get для Bash на платформе Ubuntu в Windows</span><span class="sxs-lookup"><span data-stu-id="e250d-125">Install with apt-get for Bash on Ubuntu on Windows</span></span>
+### <a name="install-with-apt-get-for-bash-on-ubuntu-on-windows"></a><span data-ttu-id="26498-125">Установка с помощью apt-get для Bash на платформе Ubuntu в Windows</span><span class="sxs-lookup"><span data-stu-id="26498-125">Install with apt-get for Bash on Ubuntu on Windows</span></span>
 
-1. <span data-ttu-id="e250d-126">Если у вас не установлена командная оболочка Bash в Windows, [установите ее](https://msdn.microsoft.com/commandline/wsl/install_guide).</span><span class="sxs-lookup"><span data-stu-id="e250d-126">If you don't have Bash on Windows, [install it](https://msdn.microsoft.com/commandline/wsl/install_guide).</span></span>
+1. <span data-ttu-id="26498-126">Если у вас не установлена командная оболочка Bash в Windows, [установите ее](https://msdn.microsoft.com/commandline/wsl/install_guide).</span><span class="sxs-lookup"><span data-stu-id="26498-126">If you don't have Bash on Windows, [install it](https://msdn.microsoft.com/commandline/wsl/install_guide).</span></span>
 
-2. <span data-ttu-id="e250d-127">Откройте оболочку Bash.</span><span class="sxs-lookup"><span data-stu-id="e250d-127">Open the Bash shell.</span></span>
+2. <span data-ttu-id="26498-127">Откройте оболочку Bash.</span><span class="sxs-lookup"><span data-stu-id="26498-127">Open the Bash shell.</span></span>
 
-3. <span data-ttu-id="e250d-128">Измените список источников.</span><span class="sxs-lookup"><span data-stu-id="e250d-128">Modify your sources list.</span></span>
+3. <span data-ttu-id="26498-128">Измените список источников.</span><span class="sxs-lookup"><span data-stu-id="26498-128">Modify your sources list.</span></span>
 
    ```bash
    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
         sudo tee /etc/apt/sources.list.d/azure-cli.list
    ```
 
-4. <span data-ttu-id="e250d-129">Выполните следующие команды sudo:</span><span class="sxs-lookup"><span data-stu-id="e250d-129">Run the following sudo commands:</span></span>
+4. <span data-ttu-id="26498-129">Выполните следующие команды sudo:</span><span class="sxs-lookup"><span data-stu-id="26498-129">Run the following sudo commands:</span></span>
 
    ```bash
    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
@@ -100,29 +100,32 @@ ms.lasthandoff: 09/22/2017
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
-5.  <span data-ttu-id="e250d-130">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="e250d-130">Run the CLI from the command prompt with the `az` command.</span></span>
+5.  <span data-ttu-id="26498-130">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="26498-130">Run the CLI from the command prompt with the `az` command.</span></span>
 
-## <a name="install-on-debianubuntu-with-apt-get"></a><span data-ttu-id="e250d-131">Установка на Debian или Ubuntu с помощью apt-get</span><span class="sxs-lookup"><span data-stu-id="e250d-131">Install on Debian/Ubuntu with apt-get</span></span>
+## <a name="install-on-debianubuntu-with-apt-get"></a><span data-ttu-id="26498-131">Установка на Debian или Ubuntu с помощью apt-get</span><span class="sxs-lookup"><span data-stu-id="26498-131">Install on Debian/Ubuntu with apt-get</span></span>
 
-<span data-ttu-id="e250d-132">В системах на базе Debian и Ubuntu можно установить Azure CLI 2.0 с помощью `apt-get`.</span><span class="sxs-lookup"><span data-stu-id="e250d-132">For Debian/Ubuntu based systems, you can install Azure CLI 2.0 via `apt-get`.</span></span>
+<span data-ttu-id="26498-132">Для дистрибутивов с поддержкой диспетчера пакетов `apt` можно установить Azure CLI 2.0, используя `apt-get`.</span><span class="sxs-lookup"><span data-stu-id="26498-132">For distributions using the `apt` package manager, you can install Azure CLI 2.0 via `apt-get`.</span></span>
 
-1. <span data-ttu-id="e250d-133">Измените список источников.</span><span class="sxs-lookup"><span data-stu-id="e250d-133">Modify your sources list:</span></span>
+> [!NOTE]
+> <span data-ttu-id="26498-133">Для работы с CLI дистрибутив должен поддерживать Python 2.7.x или Python 3.x.</span><span class="sxs-lookup"><span data-stu-id="26498-133">Your distribution must have support for Python 2.7.x or Python 3.x in order to use the CLI.</span></span>
+
+1. <span data-ttu-id="26498-134">Измените список источников.</span><span class="sxs-lookup"><span data-stu-id="26498-134">Modify your sources list:</span></span>
  
-   - <span data-ttu-id="e250d-134">32-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="e250d-134">32-bit system</span></span>
+   - <span data-ttu-id="26498-135">32-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="26498-135">32-bit system</span></span>
 
      ```bash
      echo "deb https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
           sudo tee /etc/apt/sources.list.d/azure-cli.list
      ```
 
-   - <span data-ttu-id="e250d-135">64-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="e250d-135">64-bit system</span></span>
+   - <span data-ttu-id="26498-136">64-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="26498-136">64-bit system</span></span>
 
      ```bash
      echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
           sudo tee /etc/apt/sources.list.d/azure-cli.list
      ```
 
-2. <span data-ttu-id="e250d-136">Выполните следующие команды sudo:</span><span class="sxs-lookup"><span data-stu-id="e250d-136">Run the following sudo commands:</span></span>
+2. <span data-ttu-id="26498-137">Выполните следующие команды sudo:</span><span class="sxs-lookup"><span data-stu-id="26498-137">Run the following sudo commands:</span></span>
 
    ```bash
    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
@@ -130,82 +133,90 @@ ms.lasthandoff: 09/22/2017
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
-3.  <span data-ttu-id="e250d-137">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="e250d-137">Run the CLI from the command prompt with the `az` command.</span></span>
+3.  <span data-ttu-id="26498-138">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="26498-138">Run the CLI from the command prompt with the `az` command.</span></span>
 
-## <a name="install-on-rhel-fedora-and-centos-with-yum"></a><span data-ttu-id="e250d-138">Установка в RHEL, Fedora и CentOS с помощью yum</span><span class="sxs-lookup"><span data-stu-id="e250d-138">Install on RHEL, Fedora, and CentOS with yum</span></span>
+## <a name="install-on-rhel-fedora-and-centos-with-yum"></a><span data-ttu-id="26498-139">Установка в RHEL, Fedora и CentOS с помощью yum</span><span class="sxs-lookup"><span data-stu-id="26498-139">Install on RHEL, Fedora, and CentOS with yum</span></span>
 
-<span data-ttu-id="e250d-139">Для любого дистрибутива на базе RedHat, который содержит диспетчер пакетов `yum`, Azure CLI 2.0 можно установить с помощью `yum`.</span><span class="sxs-lookup"><span data-stu-id="e250d-139">For any distribution which is based off of RedHat and contains the `yum` package manager, you can install Azure CLI 2.0 via `yum`.</span></span>
+<span data-ttu-id="26498-140">Для дистрибутивов с поддержкой диспетчера пакетов `yum` можно установить Azure CLI 2.0, используя `yum`.</span><span class="sxs-lookup"><span data-stu-id="26498-140">For distributions which use the `yum` package manager, you can install Azure CLI 2.0 via `yum`.</span></span>
 
-1. <span data-ttu-id="e250d-140">Импортируйте ключ репозитория Майкрософт:</span><span class="sxs-lookup"><span data-stu-id="e250d-140">Import the Microsoft repository key:</span></span>
+> [!NOTE]
+> <span data-ttu-id="26498-141">Для работы с CLI дистрибутив должен поддерживать Python 2.7.x или Python 3.x.</span><span class="sxs-lookup"><span data-stu-id="26498-141">Your distribution must have support for Python 2.7.x or Python 3.x in order to use the CLI.</span></span>
+
+1. <span data-ttu-id="26498-142">Импортируйте ключ репозитория Майкрософт:</span><span class="sxs-lookup"><span data-stu-id="26498-142">Import the Microsoft repository key:</span></span>
 
    ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
    ```
 
-2. <span data-ttu-id="e250d-141">Создайте сведения о локальном репозитории `azure-cli`:</span><span class="sxs-lookup"><span data-stu-id="e250d-141">Create local `azure-cli` repository information:</span></span>
+2. <span data-ttu-id="26498-143">Создайте сведения о локальном репозитории `azure-cli`:</span><span class="sxs-lookup"><span data-stu-id="26498-143">Create local `azure-cli` repository information:</span></span>
 
    ```bash
    sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
    ```
 
-3. <span data-ttu-id="e250d-142">Обновите индекс пакета `yum` и выполните установку:</span><span class="sxs-lookup"><span data-stu-id="e250d-142">Update the `yum` package index and install:</span></span>
+3. <span data-ttu-id="26498-144">Обновите индекс пакета `yum` и выполните установку:</span><span class="sxs-lookup"><span data-stu-id="26498-144">Update the `yum` package index and install:</span></span>
 
    ```bash
    yum check-update
    sudo yum install azure-cli
    ```
 
-4. <span data-ttu-id="e250d-143">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="e250d-143">Run the CLI from the command prompt with the `az` command.</span></span>
+4. <span data-ttu-id="26498-145">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="26498-145">Run the CLI from the command prompt with the `az` command.</span></span>
 
-## <a name="install-on-opensuse-and-sle-with-zypper"></a><span data-ttu-id="e250d-144">Установка в openSUSE и SLE с помощью zypper</span><span class="sxs-lookup"><span data-stu-id="e250d-144">Install on openSUSE and SLE with zypper</span></span>
+## <a name="install-on-opensuse-and-sle-with-zypper"></a><span data-ttu-id="26498-146">Установка в openSUSE и SLE с помощью zypper</span><span class="sxs-lookup"><span data-stu-id="26498-146">Install on openSUSE and SLE with zypper</span></span>
 
-1. <span data-ttu-id="e250d-145">Импортируйте ключ репозитория Майкрософт:</span><span class="sxs-lookup"><span data-stu-id="e250d-145">Import the Microsoft repository key:</span></span>
+<span data-ttu-id="26498-147">Для дистрибутивов с поддержкой диспетчера пакетов `zypper` можно установить Azure CLI 2.0, используя `zypper`.</span><span class="sxs-lookup"><span data-stu-id="26498-147">For distributions which use the `zypper` package manager, you can install Azure CLI 2.0 via `zypper`.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="26498-148">Для работы с CLI дистрибутив должен поддерживать Python 2.7.x или Python 3.x.</span><span class="sxs-lookup"><span data-stu-id="26498-148">Your distribution must have support for Python 2.7.x or Python 3.x in order to use the CLI.</span></span>
+
+1. <span data-ttu-id="26498-149">Импортируйте ключ репозитория Майкрософт:</span><span class="sxs-lookup"><span data-stu-id="26498-149">Import the Microsoft repository key:</span></span>
 
    ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
    ```
 
-2. <span data-ttu-id="e250d-146">Создайте сведения о локальном репозитории `azure-cli`:</span><span class="sxs-lookup"><span data-stu-id="e250d-146">Create local `azure-cli` repository information:</span></span>
+2. <span data-ttu-id="26498-150">Создайте сведения о локальном репозитории `azure-cli`:</span><span class="sxs-lookup"><span data-stu-id="26498-150">Create local `azure-cli` repository information:</span></span>
 
    ```bash
    sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/azure-cli.repo'
    ```
 
-3. <span data-ttu-id="e250d-147">Обновите индекс пакета `zypper` и выполните установку:</span><span class="sxs-lookup"><span data-stu-id="e250d-147">Update the `zypper` package index and install:</span></span>
+3. <span data-ttu-id="26498-151">Обновите индекс пакета `zypper` и выполните установку:</span><span class="sxs-lookup"><span data-stu-id="26498-151">Update the `zypper` package index and install:</span></span>
 
    ```bash
    sudo zypper refresh
    sudo zypper install azure-cli
    ```
 
-4. <span data-ttu-id="e250d-148">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="e250d-148">Run the CLI from the command prompt with the `az` command.</span></span>
+4. <span data-ttu-id="26498-152">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="26498-152">Run the CLI from the command prompt with the `az` command.</span></span>
 
-## <a name="install-with-docker"></a><span data-ttu-id="e250d-149">Установка с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="e250d-149">Install with Docker</span></span>
+## <a name="install-with-docker"></a><span data-ttu-id="26498-153">Установка с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="26498-153">Install with Docker</span></span>
 
-<span data-ttu-id="e250d-150">Мы поддерживаем образ Docker, предварительно настроенный с помощью Azure CLI 2.0.</span><span class="sxs-lookup"><span data-stu-id="e250d-150">We maintain a Docker image preconfigured with the Azure CLI 2.0.</span></span>
+<span data-ttu-id="26498-154">Мы поддерживаем образ Docker, предварительно настроенный с помощью Azure CLI 2.0.</span><span class="sxs-lookup"><span data-stu-id="26498-154">We maintain a Docker image preconfigured with the Azure CLI 2.0.</span></span>
 
-<span data-ttu-id="e250d-151">Установите CLI с помощью команды `docker run`.</span><span class="sxs-lookup"><span data-stu-id="e250d-151">Install the CLI using `docker run`.</span></span>
+<span data-ttu-id="26498-155">Установите CLI с помощью команды `docker run`.</span><span class="sxs-lookup"><span data-stu-id="26498-155">Install the CLI using `docker run`.</span></span>
 
    ```bash
    docker run azuresdk/azure-cli-python:<version>
    ```
 
-<span data-ttu-id="e250d-152">См. доступные версии на странице с [тегами Docker](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/).</span><span class="sxs-lookup"><span data-stu-id="e250d-152">See our [Docker tags](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/) for available versions.</span></span>
+<span data-ttu-id="26498-156">См. доступные версии на странице с [тегами Docker](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/).</span><span class="sxs-lookup"><span data-stu-id="26498-156">See our [Docker tags](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/) for available versions.</span></span>
 
-<span data-ttu-id="e250d-153">CLI устанавливается в образ как команда `az` в папку `/usr/local/bin`.</span><span class="sxs-lookup"><span data-stu-id="e250d-153">The CLI is installed on the image as the `az` command in `/usr/local/bin`.</span></span>
+<span data-ttu-id="26498-157">CLI устанавливается в образ как команда `az` в папку `/usr/local/bin`.</span><span class="sxs-lookup"><span data-stu-id="26498-157">The CLI is installed on the image as the `az` command in `/usr/local/bin`.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="e250d-154">Если вы хотите взять ключи SSH из среды пользователя, можно использовать `-v ${HOME}:/root`, чтобы подключить $HOME как `/root`.</span><span class="sxs-lookup"><span data-stu-id="e250d-154">If you want to pick up the SSH keys from your user environment, you can use `-v ${HOME}:/root` to mount $HOME as `/root`.</span></span>
+> <span data-ttu-id="26498-158">Если вы хотите взять ключи SSH из среды пользователя, можно использовать `-v ${HOME}:/root`, чтобы подключить $HOME как `/root`.</span><span class="sxs-lookup"><span data-stu-id="26498-158">If you want to pick up the SSH keys from your user environment, you can use `-v ${HOME}:/root` to mount $HOME as `/root`.</span></span>
 
 > ```bash
 > docker run -v ${HOME}:/root azuresdk/azure-cli-python:<version>
 > ```
 
-## <a name="a-namelinuxinstall-on-linux-without-apt-get"></a><span data-ttu-id="e250d-155"><a name="Linux"/>Установка в Linux без использования apt-get</span><span class="sxs-lookup"><span data-stu-id="e250d-155"><a name="Linux"/>Install on Linux without apt-get</span></span>
+## <a name="a-namelinuxinstall-on-linux-without-a-package-manager"></a><span data-ttu-id="26498-159"><a name="Linux"/>Установка в Linux без использования диспетчера пакетов</span><span class="sxs-lookup"><span data-stu-id="26498-159"><a name="Linux"/>Install on Linux without a package manager</span></span>
 
-<span data-ttu-id="e250d-156">Рекомендуется по возможности устанавливать CLI с помощью диспетчера пакетов (если вы знаете, как это сделать).</span><span class="sxs-lookup"><span data-stu-id="e250d-156">It is recommended that you install the CLI with a package manager if you are able to.</span></span> <span data-ttu-id="e250d-157">Для дистрибутивов, для которых диспетчер пакетов не предоставляется, CLI можно установить вручную.</span><span class="sxs-lookup"><span data-stu-id="e250d-157">For distributions which do not have a package provided for them, you can manually install.</span></span>
+<span data-ttu-id="26498-160">Рекомендуется по возможности устанавливать CLI с помощью диспетчера пакетов (если вы знаете, как это сделать).</span><span class="sxs-lookup"><span data-stu-id="26498-160">It is recommended that you install the CLI with a package manager if you are able to.</span></span> <span data-ttu-id="26498-161">Если вы не хотите добавлять репозитории Майкрософт или работаете с дистрибутивами, которые не поддерживают указанный пакет, CLI можно установить вручную.</span><span class="sxs-lookup"><span data-stu-id="26498-161">If you do not want to add Microsoft's repositories, or are working with a distribution which does not have a provided package, you can manually install the CLI.</span></span>
 
-1. <span data-ttu-id="e250d-158">Установите необходимые компоненты с учетом дистрибутива Linux.</span><span class="sxs-lookup"><span data-stu-id="e250d-158">Install the prerequisites based on your Linux distribution.</span></span>
+1. <span data-ttu-id="26498-162">Установите необходимые компоненты с учетом дистрибутива Linux.</span><span class="sxs-lookup"><span data-stu-id="26498-162">Install the prerequisites based on your Linux distribution.</span></span>
 
    ```
    Platform              | Prerequisites
@@ -219,116 +230,116 @@ ms.lasthandoff: 09/22/2017
    SUSE OpenSUSE 13.2    | sudo zypper refresh && sudo zypper --non-interactive install curl gcc python python-xml libffi-devel python-devel openssl-devel
    ```
 
-<span data-ttu-id="e250d-159">Если дистрибутив не указан в списке выше, вам нужно установить [Python](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/) и [OpenSSL](https://www.openssl.org/source/).</span><span class="sxs-lookup"><span data-stu-id="e250d-159">If your distribution is not listed above, you will need to install [Python](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/), and [OpenSSL](https://www.openssl.org/source/).</span></span>
+<span data-ttu-id="26498-163">Если дистрибутив не указан в списке выше, вам нужно установить [Python 2.7 или более поздней версии](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/) и [OpenSSL](https://www.openssl.org/source/).</span><span class="sxs-lookup"><span data-stu-id="26498-163">If your distribution is not listed above, you will need to install [Python 2.7 or later](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/), and [OpenSSL](https://www.openssl.org/source/).</span></span>
 
-2. <span data-ttu-id="e250d-160">Установите CLI с помощью команды `curl`.</span><span class="sxs-lookup"><span data-stu-id="e250d-160">Install the CLI with  `curl`.</span></span>
+2. <span data-ttu-id="26498-164">Установите CLI с помощью команды `curl`.</span><span class="sxs-lookup"><span data-stu-id="26498-164">Install the CLI with  `curl`.</span></span>
 
    ```bash
    curl -L https://aka.ms/InstallAzureCli | bash
    ```
 
-3. <span data-ttu-id="e250d-161">Чтобы некоторые изменения вступили в силу, может потребоваться перезапуск оболочки.</span><span class="sxs-lookup"><span data-stu-id="e250d-161">You may have to restart your shell for some changes to take effect.</span></span>
+3. <span data-ttu-id="26498-165">Чтобы некоторые изменения вступили в силу, может потребоваться перезапуск оболочки.</span><span class="sxs-lookup"><span data-stu-id="26498-165">You may have to restart your shell for some changes to take effect.</span></span>
 
    ```bash
    exec -l $SHELL
    ```
 
-4. <span data-ttu-id="e250d-162">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="e250d-162">Run the CLI from the command prompt with the `az` command.</span></span>
+4. <span data-ttu-id="26498-166">Запустите CLI из командной строки с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="26498-166">Run the CLI from the command prompt with the `az` command.</span></span>
 
-## <a name="troubleshooting"></a><span data-ttu-id="e250d-163">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="e250d-163">Troubleshooting</span></span>
+## <a name="troubleshooting"></a><span data-ttu-id="26498-167">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="26498-167">Troubleshooting</span></span>
 
-<span data-ttu-id="e250d-164">Если при установке CLI возникла проблема, ознакомьтесь с этим разделом, чтобы найти описание своего случая.</span><span class="sxs-lookup"><span data-stu-id="e250d-164">If you encounter an issue during CLI install, check this section to see if your particular case is covered.</span></span> <span data-ttu-id="e250d-165">Если ваш случай не описан в этом разделе, сообщите о проблеме на [сайте GitHub](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="e250d-165">If your issue is not here, please [file a Github issue](https://github.com/Azure/azure-cli/issues).</span></span>
+<span data-ttu-id="26498-168">Если при установке CLI возникла проблема, ознакомьтесь с этим разделом, чтобы найти описание своего случая.</span><span class="sxs-lookup"><span data-stu-id="26498-168">If you encounter an issue during CLI install, check this section to see if your particular case is covered.</span></span> <span data-ttu-id="26498-169">Если ваш случай не описан в этом разделе, сообщите о проблеме на [сайте GitHub](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="26498-169">If your issue is not here, please [file a Github issue](https://github.com/Azure/azure-cli/issues).</span></span>
 
-### <a name="curl-object-moved-error"></a><span data-ttu-id="e250d-166">Ошибка "Объект перемещен" при выполнении команды curl</span><span class="sxs-lookup"><span data-stu-id="e250d-166">curl "Object Moved" error</span></span>
+### <a name="curl-object-moved-error"></a><span data-ttu-id="26498-170">Ошибка "Объект перемещен" при выполнении команды curl</span><span class="sxs-lookup"><span data-stu-id="26498-170">curl "Object Moved" error</span></span>
 
-<span data-ttu-id="e250d-167">Если при выполнении команды `curl` появляется сообщение об ошибке относительно параметра `-L` или сообщение об ошибке "Объект перемещен", попробуйте использовать полный URL-адрес вместо URL-адреса перенаправления `aka.ms`:</span><span class="sxs-lookup"><span data-stu-id="e250d-167">If you get an error from `curl` related to the `-L` parameter, or an error message including the text "Object Moved", try using the full URL instead of the `aka.ms` redirect:</span></span>
+<span data-ttu-id="26498-171">Если при выполнении команды `curl` появляется сообщение об ошибке относительно параметра `-L` или сообщение об ошибке "Объект перемещен", попробуйте использовать полный URL-адрес вместо URL-адреса перенаправления `aka.ms`:</span><span class="sxs-lookup"><span data-stu-id="26498-171">If you get an error from `curl` related to the `-L` parameter, or an error message including the text "Object Moved", try using the full URL instead of the `aka.ms` redirect:</span></span>
 
 ```bash
 curl https://azurecliprod.blob.core.windows.net/install | bash
 ```
 
-### <a name="az-command-not-found"></a><span data-ttu-id="e250d-168">Команда `az` не найдена</span><span class="sxs-lookup"><span data-stu-id="e250d-168">`az` command not found</span></span>
+### <a name="az-command-not-found"></a><span data-ttu-id="26498-172">Команда `az` не найдена</span><span class="sxs-lookup"><span data-stu-id="26498-172">`az` command not found</span></span>
 
-<span data-ttu-id="e250d-169">Попробуйте очистить кэш хэша команд оболочки.</span><span class="sxs-lookup"><span data-stu-id="e250d-169">You may need to clear your shell's command hash cache.</span></span> <span data-ttu-id="e250d-170">Выполните это</span><span class="sxs-lookup"><span data-stu-id="e250d-170">Run</span></span>
+<span data-ttu-id="26498-173">Попробуйте очистить кэш хэша команд оболочки.</span><span class="sxs-lookup"><span data-stu-id="26498-173">You may need to clear your shell's command hash cache.</span></span> <span data-ttu-id="26498-174">Выполнить</span><span class="sxs-lookup"><span data-stu-id="26498-174">Run</span></span>
 
 ```bash
 hash -r
 ```
 
-<span data-ttu-id="e250d-171">и посмотрите, будет ли устранена проблема.</span><span class="sxs-lookup"><span data-stu-id="e250d-171">and see if the problem is resolved.</span></span>
+<span data-ttu-id="26498-175">и посмотрите, будет ли устранена проблема.</span><span class="sxs-lookup"><span data-stu-id="26498-175">and see if the problem is resolved.</span></span>
 
-## <a name="uninstall-cli-1x-versions"></a><span data-ttu-id="e250d-172">Удаление версий CLI 1.x</span><span class="sxs-lookup"><span data-stu-id="e250d-172">Uninstall CLI 1.x versions</span></span>
+## <a name="uninstall-cli-1x-versions"></a><span data-ttu-id="26498-176">Удаление версий CLI 1.x</span><span class="sxs-lookup"><span data-stu-id="26498-176">Uninstall CLI 1.x versions</span></span>
 
-<span data-ttu-id="e250d-173">Если в системе установлена более ранняя версия CLI 1.x, вы можете удалить ее с учетом примененного типа установки.</span><span class="sxs-lookup"><span data-stu-id="e250d-173">If you have an earlier CLI 1.x version available on your system, you can uninstall it based upon the type of install used.</span></span>
+<span data-ttu-id="26498-177">Если в системе установлена более ранняя версия CLI 1.x, вы можете удалить ее с учетом примененного типа установки.</span><span class="sxs-lookup"><span data-stu-id="26498-177">If you have an earlier CLI 1.x version available on your system, you can uninstall it based upon the type of install used.</span></span>
 
-### <a name="uninstall-with-npm"></a><span data-ttu-id="e250d-174">Удаление с помощью npm</span><span class="sxs-lookup"><span data-stu-id="e250d-174">Uninstall with npm</span></span>
+### <a name="uninstall-with-npm"></a><span data-ttu-id="26498-178">Удаление с помощью npm</span><span class="sxs-lookup"><span data-stu-id="26498-178">Uninstall with npm</span></span>
 
-<span data-ttu-id="e250d-175">Удалите устаревшую версию CLI с помощью команды `npm uninstall`.</span><span class="sxs-lookup"><span data-stu-id="e250d-175">Remove the older CLI with `npm uninstall`.</span></span>
+<span data-ttu-id="26498-179">Удалите устаревшую версию CLI с помощью команды `npm uninstall`.</span><span class="sxs-lookup"><span data-stu-id="26498-179">Remove the older CLI with `npm uninstall`.</span></span>
 
   ```bash
   npm uninstall -g azure-cli
   ```
 
-### <a name="uninstall-with-distributable"></a><span data-ttu-id="e250d-176">Удаление с помощью распространяемых компонентов</span><span class="sxs-lookup"><span data-stu-id="e250d-176">Uninstall with distributable</span></span>
+### <a name="uninstall-with-distributable"></a><span data-ttu-id="26498-180">Удаление с помощью распространяемых компонентов</span><span class="sxs-lookup"><span data-stu-id="26498-180">Uninstall with distributable</span></span>
 
-<span data-ttu-id="e250d-177">Если установка выполнялась с использованием [установщика Azure CLI (MSI)](http://aka.ms/webpi-azure-cli) или [пакета macOS](http://aka.ms/mac-azure-cli), используйте то же средство для удаления файлов установки.</span><span class="sxs-lookup"><span data-stu-id="e250d-177">If you installed via the [Azure CLI Installer (MSI)](http://aka.ms/webpi-azure-cli) or a [macOS package](http://aka.ms/mac-azure-cli), use the same tool to remove your install.</span></span>
+<span data-ttu-id="26498-181">Если установка выполнялась с использованием [установщика Azure CLI (MSI)](http://aka.ms/webpi-azure-cli) или [пакета macOS](http://aka.ms/mac-azure-cli), используйте то же средство для удаления файлов установки.</span><span class="sxs-lookup"><span data-stu-id="26498-181">If you installed via the [Azure CLI Installer (MSI)](http://aka.ms/webpi-azure-cli) or a [macOS package](http://aka.ms/mac-azure-cli), use the same tool to remove your install.</span></span>
 
-### <a name="uninstall-with-docker"></a><span data-ttu-id="e250d-178">Удаление с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="e250d-178">Uninstall with Docker</span></span>
+### <a name="uninstall-with-docker"></a><span data-ttu-id="26498-182">Удаление с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="26498-182">Uninstall with Docker</span></span>
 
-<span data-ttu-id="e250d-179">Если вы установили образ Docker, чтобы использовать более раннюю версию CLI, удалите этот образ и все связанные контейнеры.</span><span class="sxs-lookup"><span data-stu-id="e250d-179">If you installed a Docker image to use the earlier CLI version, remove that image and any associated containers.</span></span> <span data-ttu-id="e250d-180">Позже вы сможете повторно создать контейнеры, установив новый образ Docker, как описано в инструкциях по установке.</span><span class="sxs-lookup"><span data-stu-id="e250d-180">You can then re-create the containers after installing the new Docker image as described in the install instructions.</span></span>
+<span data-ttu-id="26498-183">Если вы установили образ Docker, чтобы использовать более раннюю версию CLI, удалите этот образ и все связанные контейнеры.</span><span class="sxs-lookup"><span data-stu-id="26498-183">If you installed a Docker image to use the earlier CLI version, remove that image and any associated containers.</span></span> <span data-ttu-id="26498-184">Позже вы сможете повторно создать контейнеры, установив новый образ Docker, как описано в инструкциях по установке.</span><span class="sxs-lookup"><span data-stu-id="26498-184">You can then re-create the containers after installing the new Docker image as described in the install instructions.</span></span>
 
   ```bash
   docker rmi -f microsoft/azure-cli
   ```
 
-## <a name="update-the-cli"></a><span data-ttu-id="e250d-181">Обновление интерфейса командной строки</span><span class="sxs-lookup"><span data-stu-id="e250d-181">Update the CLI</span></span>
+## <a name="update-the-cli"></a><span data-ttu-id="26498-185">Обновление интерфейса командной строки</span><span class="sxs-lookup"><span data-stu-id="26498-185">Update the CLI</span></span>
 
-<span data-ttu-id="e250d-182">Чтобы обновить Azure CLI, используйте тот же метод, что и для установки.</span><span class="sxs-lookup"><span data-stu-id="e250d-182">To update the Azure CLI, use the same method that you used to install it.</span></span>
+<span data-ttu-id="26498-186">Чтобы обновить Azure CLI, используйте тот же метод, что и для установки.</span><span class="sxs-lookup"><span data-stu-id="26498-186">To update the Azure CLI, use the same method that you used to install it.</span></span>
 
-### <a name="update-with-homebrew"></a><span data-ttu-id="e250d-183">Обновление с помощью Homebrew</span><span class="sxs-lookup"><span data-stu-id="e250d-183">Update with Homebrew</span></span>
+### <a name="update-with-homebrew"></a><span data-ttu-id="26498-187">Обновление с помощью Homebrew</span><span class="sxs-lookup"><span data-stu-id="26498-187">Update with Homebrew</span></span>
 
-1. <span data-ttu-id="e250d-184">Если установка выполнялась вручную, следуйте инструкциям по [установке с помощью Homebrew](#macOS).</span><span class="sxs-lookup"><span data-stu-id="e250d-184">If you previously installed manually, follow the [install with Homebrew](#macOS) instructions.</span></span>
+1. <span data-ttu-id="26498-188">Если установка выполнялась вручную, следуйте инструкциям по [установке с помощью Homebrew](#macOS).</span><span class="sxs-lookup"><span data-stu-id="26498-188">If you previously installed manually, follow the [install with Homebrew](#macOS) instructions.</span></span>
 
-2. <span data-ttu-id="e250d-185">Обновите свои данные в локальном репозитории Homebrew.</span><span class="sxs-lookup"><span data-stu-id="e250d-185">Update your local Homebrew repository information.</span></span>
+2. <span data-ttu-id="26498-189">Обновите свои данные в локальном репозитории Homebrew.</span><span class="sxs-lookup"><span data-stu-id="26498-189">Update your local Homebrew repository information.</span></span>
 
    ```bash
    brew update
    ```
 
-3. <span data-ttu-id="e250d-186">Обновите установленные пакеты.</span><span class="sxs-lookup"><span data-stu-id="e250d-186">Upgrade your installed packages.</span></span>
+3. <span data-ttu-id="26498-190">Обновите установленные пакеты.</span><span class="sxs-lookup"><span data-stu-id="26498-190">Upgrade your installed packages.</span></span>
 
    ```bash
    brew upgrade
    ```
 
-### <a name="update-with-msi"></a><span data-ttu-id="e250d-187">Обновление с помощью MSI-файла</span><span class="sxs-lookup"><span data-stu-id="e250d-187">Update with MSI</span></span>
+### <a name="update-with-msi"></a><span data-ttu-id="26498-191">Обновление с помощью MSI-файла</span><span class="sxs-lookup"><span data-stu-id="26498-191">Update with MSI</span></span>
 
-<span data-ttu-id="e250d-188">Запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows) еще раз.</span><span class="sxs-lookup"><span data-stu-id="e250d-188">Run the [Azure CLI Installer (MSI)](https://aka.ms/InstallAzureCliWindows) again.</span></span>
+<span data-ttu-id="26498-192">Запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows) еще раз.</span><span class="sxs-lookup"><span data-stu-id="26498-192">Run the [Azure CLI Installer (MSI)](https://aka.ms/InstallAzureCliWindows) again.</span></span>
 
-### <a name="update-with-apt-get"></a><span data-ttu-id="e250d-189">Обновление с помощью apt-get</span><span class="sxs-lookup"><span data-stu-id="e250d-189">Update with apt-get</span></span>
+### <a name="update-with-apt-get"></a><span data-ttu-id="26498-193">Обновление с помощью apt-get</span><span class="sxs-lookup"><span data-stu-id="26498-193">Update with apt-get</span></span>
 
-<span data-ttu-id="e250d-190">Используйте `apt-get upgrade`, чтобы обновить пакет CLI.</span><span class="sxs-lookup"><span data-stu-id="e250d-190">Use `apt-get upgrade` to update the CLI package.</span></span>
+<span data-ttu-id="26498-194">Используйте `apt-get upgrade`, чтобы обновить пакет CLI.</span><span class="sxs-lookup"><span data-stu-id="26498-194">Use `apt-get upgrade` to update the CLI package.</span></span>
 
    ```bash
    sudo apt-get update && sudo apt-get upgrade
    ```
 
 > [!NOTE]
-> <span data-ttu-id="e250d-191">В результате обновятся все установленные в системе пакеты, зависимости которых не были изменены.</span><span class="sxs-lookup"><span data-stu-id="e250d-191">This will upgrade all of the installed packages on your system which have not had a dependency change.</span></span>
-> <span data-ttu-id="e250d-192">Чтобы обновить только CLI, используйте команду `apt-get install`.</span><span class="sxs-lookup"><span data-stu-id="e250d-192">To upgrade only the CLI, use `apt-get install`.</span></span>
+> <span data-ttu-id="26498-195">В результате обновятся все установленные в системе пакеты, зависимости которых не были изменены.</span><span class="sxs-lookup"><span data-stu-id="26498-195">This will upgrade all of the installed packages on your system which have not had a dependency change.</span></span>
+> <span data-ttu-id="26498-196">Чтобы обновить только CLI, используйте команду `apt-get install`.</span><span class="sxs-lookup"><span data-stu-id="26498-196">To upgrade only the CLI, use `apt-get install`.</span></span>
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```
 
-### <a name="update-with-docker"></a><span data-ttu-id="e250d-193">Обновление с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="e250d-193">Update with Docker</span></span>
+### <a name="update-with-docker"></a><span data-ttu-id="26498-197">Обновление с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="26498-197">Update with Docker</span></span>
 
-1. <span data-ttu-id="e250d-194">Обновите локальный образ с помощью команды `docker pull`.</span><span class="sxs-lookup"><span data-stu-id="e250d-194">Update your local image with `docker pull`.</span></span>
+1. <span data-ttu-id="26498-198">Обновите локальный образ с помощью команды `docker pull`.</span><span class="sxs-lookup"><span data-stu-id="26498-198">Update your local image with `docker pull`.</span></span>
 
    ```bash
    docker pull azuresdk/azure-cli-python
    ```
 
-2. <span data-ttu-id="e250d-195">Получите данные о контейнерах, которые используют образ CLI.</span><span class="sxs-lookup"><span data-stu-id="e250d-195">Get the containers currently using the CLI image.</span></span>
+2. <span data-ttu-id="26498-199">Получите данные о контейнерах, которые используют образ CLI.</span><span class="sxs-lookup"><span data-stu-id="26498-199">Get the containers currently using the CLI image.</span></span>
 
    ```bash
    docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
@@ -340,9 +351,9 @@ hash -r
    ```
 
 > [!NOTE]
-> <span data-ttu-id="e250d-196">Если вы установили определенную версию образа, вам нужно добавить `:<version>` в конец имени образа.</span><span class="sxs-lookup"><span data-stu-id="e250d-196">If you installed a specific version of the image, you will need to add `:<version>` to the end of the image name.</span></span>
+> <span data-ttu-id="26498-200">Если вы установили определенную версию образа, вам нужно добавить `:<version>` в конец имени образа.</span><span class="sxs-lookup"><span data-stu-id="26498-200">If you installed a specific version of the image, you will need to add `:<version>` to the end of the image name.</span></span>
 
-3. <span data-ttu-id="e250d-197">Остановите и заново создайте контейнеры.</span><span class="sxs-lookup"><span data-stu-id="e250d-197">Halt and recreate the containers.</span></span>
+3. <span data-ttu-id="26498-201">Остановите и заново создайте контейнеры.</span><span class="sxs-lookup"><span data-stu-id="26498-201">Halt and recreate the containers.</span></span>
 
    ```bash
    docker stop inspiring_benz
@@ -350,39 +361,39 @@ hash -r
    docker run azuresdk/azure-cli-python
    ```
 
-### <a name="update-manually"></a><span data-ttu-id="e250d-198">Обновление вручную</span><span class="sxs-lookup"><span data-stu-id="e250d-198">Update manually</span></span>
+### <a name="update-manually"></a><span data-ttu-id="26498-202">Обновление вручную</span><span class="sxs-lookup"><span data-stu-id="26498-202">Update manually</span></span>
 
-<span data-ttu-id="e250d-199">Следуйте инструкциям по установке вручную для обновления в [macOS](#macOS) или [Linux](#Linux).</span><span class="sxs-lookup"><span data-stu-id="e250d-199">Follow the manual installation instructions for [macOS](#macOS) or [Linux](#Linux) to update.</span></span>
+<span data-ttu-id="26498-203">Следуйте инструкциям по установке вручную для обновления в [macOS](#macOS) или [Linux](#Linux).</span><span class="sxs-lookup"><span data-stu-id="26498-203">Follow the manual installation instructions for [macOS](#macOS) or [Linux](#Linux) to update.</span></span>
 
-## <a name="uninstall"></a><span data-ttu-id="e250d-200">Удаление</span><span class="sxs-lookup"><span data-stu-id="e250d-200">Uninstall</span></span>
+## <a name="uninstall"></a><span data-ttu-id="26498-204">Удаление</span><span class="sxs-lookup"><span data-stu-id="26498-204">Uninstall</span></span>
 
-<span data-ttu-id="e250d-201">Нам будет очень жаль, если вы решите удалить CLI.</span><span class="sxs-lookup"><span data-stu-id="e250d-201">If you decide to uninstall the CLI, we're sorry to see you go.</span></span> <span data-ttu-id="e250d-202">Чтобы удалить CLI, используйте тот же метод, что и для установки.</span><span class="sxs-lookup"><span data-stu-id="e250d-202">You should uninstall using the same method that you used to install the CLI.</span></span>
+<span data-ttu-id="26498-205">Нам будет очень жаль, если вы решите удалить CLI.</span><span class="sxs-lookup"><span data-stu-id="26498-205">If you decide to uninstall the CLI, we're sorry to see you go.</span></span> <span data-ttu-id="26498-206">Чтобы удалить CLI, используйте тот же метод, что и для установки.</span><span class="sxs-lookup"><span data-stu-id="26498-206">You should uninstall using the same method that you used to install the CLI.</span></span>
 
-### <a name="uninstall-with-homebrew"></a><span data-ttu-id="e250d-203">Удаление с помощью Homebrew</span><span class="sxs-lookup"><span data-stu-id="e250d-203">Uninstall with Homebrew</span></span>
+### <a name="uninstall-with-homebrew"></a><span data-ttu-id="26498-207">Удаление с помощью Homebrew</span><span class="sxs-lookup"><span data-stu-id="26498-207">Uninstall with Homebrew</span></span>
 
-<span data-ttu-id="e250d-204">Удалите пакет `azure-cli`.</span><span class="sxs-lookup"><span data-stu-id="e250d-204">Uninstall the `azure-cli` package.</span></span>
+<span data-ttu-id="26498-208">Удалите пакет `azure-cli`.</span><span class="sxs-lookup"><span data-stu-id="26498-208">Uninstall the `azure-cli` package.</span></span>
 
    ```bash
    brew uninstall azure-cli
    ```
 
-### <a name="uninstall-with-msi"></a><span data-ttu-id="e250d-205">Удаление с помощью MSI-файла</span><span class="sxs-lookup"><span data-stu-id="e250d-205">Uninstall with MSI</span></span>
+### <a name="uninstall-with-msi"></a><span data-ttu-id="26498-209">Удаление с помощью MSI-файла</span><span class="sxs-lookup"><span data-stu-id="26498-209">Uninstall with MSI</span></span>
 
-<span data-ttu-id="e250d-206">Запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл еще раз и щелкните "Удалить".</span><span class="sxs-lookup"><span data-stu-id="e250d-206">Run the [MSI](https://aka.ms/InstallAzureCliWindows) again and choose uninstall.</span></span>
+<span data-ttu-id="26498-210">Запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл еще раз и щелкните "Удалить".</span><span class="sxs-lookup"><span data-stu-id="26498-210">Run the [MSI](https://aka.ms/InstallAzureCliWindows) again and choose uninstall.</span></span>
 
-### <a name="uninstall-with-apt-get"></a><span data-ttu-id="e250d-207">Удаление с помощью apt-get</span><span class="sxs-lookup"><span data-stu-id="e250d-207">Uninstall with apt-get</span></span>
+### <a name="uninstall-with-apt-get"></a><span data-ttu-id="26498-211">Удаление с помощью apt-get</span><span class="sxs-lookup"><span data-stu-id="26498-211">Uninstall with apt-get</span></span>
 
-<span data-ttu-id="e250d-208">Выполните удаление с помощью `apt-get remove`.</span><span class="sxs-lookup"><span data-stu-id="e250d-208">Uninstall via `apt-get remove`:</span></span>
+<span data-ttu-id="26498-212">Выполните удаление с помощью `apt-get remove`.</span><span class="sxs-lookup"><span data-stu-id="26498-212">Uninstall via `apt-get remove`:</span></span>
 
   ```bash
   sudo apt-get remove -y azure-cli
   ```
 
-### <a name="uninstall-with-docker"></a><span data-ttu-id="e250d-209">Удаление с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="e250d-209">Uninstall with Docker</span></span>
+### <a name="uninstall-with-docker"></a><span data-ttu-id="26498-213">Удаление с помощью Docker</span><span class="sxs-lookup"><span data-stu-id="26498-213">Uninstall with Docker</span></span>
 
-<span data-ttu-id="e250d-210">Если вы установили образ Docker, вам нужно сначала удалить все контейнеры, на которых он запущен, а затем — локальный образ.</span><span class="sxs-lookup"><span data-stu-id="e250d-210">If you installed a docker image, you will need to remove any containers running it, and then delete the local image.</span></span>
+<span data-ttu-id="26498-214">Если вы установили образ Docker, вам нужно сначала удалить все контейнеры, на которых он запущен, а затем — локальный образ.</span><span class="sxs-lookup"><span data-stu-id="26498-214">If you installed a docker image, you will need to remove any containers running it, and then delete the local image.</span></span>
 
-1. <span data-ttu-id="e250d-211">Получите данные о контейнерах, на которых запущен образ azure-cli.</span><span class="sxs-lookup"><span data-stu-id="e250d-211">Get the containers which are running the azure-cli image.</span></span>
+1. <span data-ttu-id="26498-215">Получите данные о контейнерах, на которых запущен образ azure-cli.</span><span class="sxs-lookup"><span data-stu-id="26498-215">Get the containers which are running the azure-cli image.</span></span>
 
    ```bash
    docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
@@ -393,38 +404,44 @@ hash -r
    34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
    ```
 
-2. <span data-ttu-id="e250d-212">Удалите все контейнеры с образом CLI.</span><span class="sxs-lookup"><span data-stu-id="e250d-212">Delete any containers with the CLI image.</span></span>
+2. <span data-ttu-id="26498-216">Удалите все контейнеры с образом CLI.</span><span class="sxs-lookup"><span data-stu-id="26498-216">Delete any containers with the CLI image.</span></span>
 
    ```bash
    docker rm 34a868beb2ab
    ```
 
-3. <span data-ttu-id="e250d-213">Удалите локально установленный образ CLI.</span><span class="sxs-lookup"><span data-stu-id="e250d-213">Remove the locally installed CLI image.</span></span>
+3. <span data-ttu-id="26498-217">Удалите локально установленный образ CLI.</span><span class="sxs-lookup"><span data-stu-id="26498-217">Remove the locally installed CLI image.</span></span>
 
    ```bash
    docker rmi azuresdk/azure-cli-python
    ```
 
 > [!NOTE]
-> <span data-ttu-id="e250d-214">Если вы установили определенную версию образа, вам нужно добавить `:<version>` в конец имени образа.</span><span class="sxs-lookup"><span data-stu-id="e250d-214">If you installed a specific version of the image, you will need to add `:<version>` to the end of the image name.</span></span>
+> <span data-ttu-id="26498-218">Если вы установили определенную версию образа, вам нужно добавить `:<version>` в конец имени образа.</span><span class="sxs-lookup"><span data-stu-id="26498-218">If you installed a specific version of the image, you will need to add `:<version>` to the end of the image name.</span></span>
 
-###<a name="a-nameuninstallmanuallyuninstall-manually"></a><span data-ttu-id="e250d-215"><a name="UninstallManually"/>Удаление вручную</span><span class="sxs-lookup"><span data-stu-id="e250d-215"><a name="UninstallManually"/>Uninstall manually</span></span>
+###<a name="a-nameuninstallmanuallyuninstall-manually"></a><span data-ttu-id="26498-219"><a name="UninstallManually"/>Удаление вручную</span><span class="sxs-lookup"><span data-stu-id="26498-219"><a name="UninstallManually"/>Uninstall manually</span></span>
 
-<span data-ttu-id="e250d-216">Если для установки интерфейса командной строки использовался скрипт со страницы https://aka.ms/InstallAzureCli, для удаления можно выполнить следующие действия.</span><span class="sxs-lookup"><span data-stu-id="e250d-216">If you used the script at https://aka.ms/InstallAzureCli to install the CLI, you can uninstall it with these steps.</span></span>
+<span data-ttu-id="26498-220">Если для установки интерфейса командной строки использовался скрипт со страницы https://aka.ms/InstallAzureCli, для удаления можно выполнить следующие действия.</span><span class="sxs-lookup"><span data-stu-id="26498-220">If you used the script at https://aka.ms/InstallAzureCli to install the CLI, you can uninstall it with these steps.</span></span>
 
-1. <span data-ttu-id="e250d-217">Удалите установленные файлы.</span><span class="sxs-lookup"><span data-stu-id="e250d-217">Remove the installed files.</span></span>
+1. <span data-ttu-id="26498-221">Удалите установленные файлы.</span><span class="sxs-lookup"><span data-stu-id="26498-221">Remove the installed files.</span></span>
 
    ```bash
    rm -r <install location>/lib/azure-cli
    rm <install location>/bin/az
    ```
 
-2. <span data-ttu-id="e250d-218">Удалите строку `<install location>/lib/azure-cli/az.completion` из `<install location>/.bash_profile`.</span><span class="sxs-lookup"><span data-stu-id="e250d-218">Delete the line `<install location>/lib/azure-cli/az.completion` from `<install location>/.bash_profile`.</span></span>
+2. <span data-ttu-id="26498-222">Удалите строку `<install location>/lib/azure-cli/az.completion` из `<install location>/.bash_profile`.</span><span class="sxs-lookup"><span data-stu-id="26498-222">Delete the line `<install location>/lib/azure-cli/az.completion` from `<install location>/.bash_profile`.</span></span>
+
+3. <span data-ttu-id="26498-223">Если оболочка использует кэш команд, перезагрузите его.</span><span class="sxs-lookup"><span data-stu-id="26498-223">If your shell uses a command cache, reload it.</span></span>
+
+   ```bash
+   hash -r
+   ```
 
 > [!Note]
-> <span data-ttu-id="e250d-219">Расположение установки по умолчанию — `/Users/<username>`.</span><span class="sxs-lookup"><span data-stu-id="e250d-219">The default install location is `/Users/<username>`.</span></span>
+> <span data-ttu-id="26498-224">Расположение установки по умолчанию — `/Users/<username>`.</span><span class="sxs-lookup"><span data-stu-id="26498-224">The default install location is `/Users/<username>`.</span></span>
 
-## <a name="report-cli-issues-and-feedback"></a><span data-ttu-id="e250d-220">Создание отчетов о проблемах CLI и обратная связь</span><span class="sxs-lookup"><span data-stu-id="e250d-220">Report CLI issues and feedback</span></span>
+## <a name="report-cli-issues-and-feedback"></a><span data-ttu-id="26498-225">Создание отчетов о проблемах CLI и обратная связь</span><span class="sxs-lookup"><span data-stu-id="26498-225">Report CLI issues and feedback</span></span>
 
-<span data-ttu-id="e250d-221">Если при работе со средством возникают ошибки, сообщите об этом в разделе репозитория GitHub, посвященном [проблемам](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="e250d-221">If you encounter any bugs with the tool, file an issue in the [Issues](https://github.com/Azure/azure-cli/issues) section of our GitHub repository.</span></span>
-<span data-ttu-id="e250d-222">Чтобы отправить отзыв из командной строки, используйте команду `az feedback`.</span><span class="sxs-lookup"><span data-stu-id="e250d-222">To provide feedback from the command line, use the `az feedback` command.</span></span>
+<span data-ttu-id="26498-226">Если при работе со средством возникают ошибки, сообщите об этом в разделе репозитория GitHub, посвященном [проблемам](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="26498-226">If you encounter any bugs with the tool, file an issue in the [Issues](https://github.com/Azure/azure-cli/issues) section of our GitHub repository.</span></span>
+<span data-ttu-id="26498-227">Чтобы отправить отзыв из командной строки, используйте команду `az feedback`.</span><span class="sxs-lookup"><span data-stu-id="26498-227">To provide feedback from the command line, use the `az feedback` command.</span></span>
