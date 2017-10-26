@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 1b47bd5603f5214dd11d772caaebe8cf380df5c0
-ms.sourcegitcommit: 5e862fd0a93cf668fa76a74ae1c7505d3c8c45f2
+ms.openlocfilehash: 4703a192e23b04d0ad42daf60e415d798610cce0
+ms.sourcegitcommit: 932cc86172ab55c00346f62504787c096ed7b2bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
@@ -95,7 +95,7 @@ ms.lasthandoff: 10/09/2017
 4. Выполните следующие команды sudo:
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
@@ -128,7 +128,7 @@ ms.lasthandoff: 10/09/2017
 2. Выполните следующие команды sudo:
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
@@ -198,7 +198,7 @@ ms.lasthandoff: 10/09/2017
 Установите CLI с помощью команды `docker run`.
 
    ```bash
-   docker run azuresdk/azure-cli-python:<version>
+   docker run -it azuresdk/azure-cli-python:<version>
    ```
 
 См. доступные версии на странице с [тегами Docker](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/).
@@ -209,7 +209,7 @@ CLI устанавливается в образ как команда `az` в �
 > Если вы хотите взять ключи SSH из среды пользователя, можно использовать `-v ${HOME}:/root`, чтобы подключить $HOME как `/root`.
 
 > ```bash
-> docker run -v ${HOME}:/root azuresdk/azure-cli-python:<version>
+> docker run -it -v ${HOME}:/root azuresdk/azure-cli-python:<version>
 > ```
 
 ## <a name="a-namelinuxinstall-on-linux-without-a-package-manager"></a><a name="Linux"/>Установка в Linux без использования диспетчера пакетов
