@@ -12,13 +12,54 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: 2ea9daa558200204750f19b5d22685587ff097ef
-ms.sourcegitcommit: 376bc0601aba890630dadd55908c1a65ddf40f5a
+ms.openlocfilehash: 429b099dabd27d9356e88791f955ec52acd2a5f9
+ms.sourcegitcommit: 9b36c15dc0e10024e23b8018604f5ef63c025de1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="october-24-2017"></a>24 октября 2017 г.
+
+Версия 2.0.20
+
+### <a name="core"></a>Core
+
+* Обновление `2017-03-09-profile` для использования API `MGMT_STORAGE` версии `2016-01-01`
+
+### <a name="acr"></a>ACR
+
+* Обновление службы управления ресурсами для указания API версии `2017-10-01`
+* Изменение номера SKU BYOS-хранилища на "Классический"
+* Переименование номеров SKU реестра на "Базовый", "Стандартный" и "Премиум"
+
+### <a name="acs"></a>ACS
+
+* [ПРЕДВАРИЕТЛЬНАЯ ВЕРСИЯ] Добавление команд `az aks`
+* Исправление Kubernetes `get-credentials`
+
+### <a name="appservice"></a>Служба приложений
+
+* Исправление проблемы с недопустимыми скачанными журналами `webapp`
+
+### <a name="component"></a>Компонент
+
+* Добавление более понятного сообщения об устаревании для всех установщиков, а также запроса на подтверждение
+
+### <a name="monitor"></a>Монитор
+
+* Добавлены команды `action-group`.
+
+### <a name="resource"></a>Ресурс
+
+* Исправление несовместимости с самой последней версии зависимости msrest в `group export`
+* Исправление `policy assignment create` для работы с определениями встроенных политик и наборов политик
+
+### <a name="vm"></a>ВМ
+
+* Добавлен аргумент `--accelerated-networking` для команды `vmss create`
+
 
 ## <a name="october-9-2017"></a>9 октября 2017 г.
 
