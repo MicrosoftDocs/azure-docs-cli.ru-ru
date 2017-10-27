@@ -12,6 +12,12 @@
       items:
         - name: Создание субъекта-службы
           href: create-an-azure-service-principal-azure-cli.md
+        - name: Использование удостоверений управляемой службы.
+          items:
+            - name: Настройка MSI для виртуальной машины Azure
+              href: /azure/active-directory/msi-qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+            - name: Вход в виртуальную машину Azure с помощью MSI
+              href: /azure/active-directory/msi-how-to-get-access-token-using-msi?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: Интерактивный режим
       href: interactive-azure-cli.md
     - name: Шаблоны развертывания
