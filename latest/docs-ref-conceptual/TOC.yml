@@ -34,6 +34,8 @@
       href: query-azure-cli.md
     - name: Подписки
       href: manage-azure-subscriptions-azure-cli.md
+    - name: расширения.
+      href: azure-cli-extensions.md
     - name: Заметки о выпуске
       href: release-notes-azure-cli.md
 - name: Примеры сценариев
