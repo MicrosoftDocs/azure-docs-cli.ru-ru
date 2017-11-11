@@ -5,18 +5,18 @@ keywords: Azure CLI, Install Azure CLI, Azure Python CLI, Azure CLI Reference
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 08/17/2017
+ms.date: 11/01/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 4703a192e23b04d0ad42daf60e415d798610cce0
-ms.sourcegitcommit: 932cc86172ab55c00346f62504787c096ed7b2bd
+ms.openlocfilehash: 2b56382355cad5313a604ed1f493a2bcbebf3e27
+ms.sourcegitcommit: e9b4c6dd9093980b69ca47f93f44ac54d0e5b68a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
@@ -102,12 +102,12 @@ ms.lasthandoff: 10/24/2017
 
 5.  Запустите CLI из командной строки с помощью команды `az`.
 
-## <a name="install-on-debianubuntu-with-apt-get"></a>Установка на Debian или Ubuntu с помощью apt-get
+## <a name="install-with-apt-package-manager"></a>Установка с помощью диспетчера пакетов apt 
 
-Для дистрибутивов с поддержкой диспетчера пакетов `apt` можно установить Azure CLI 2.0, используя `apt-get`.
+Для дистрибутивов с поддержкой диспетчера пакетов `apt`, например Ubuntu или Debian, можно установить Azure CLI 2.0, используя `apt-get`.
 
 > [!NOTE]
-> Для работы с CLI дистрибутив должен поддерживать Python 2.7.x или Python 3.x.
+> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
 
 1. Измените список источников.
  
@@ -135,12 +135,12 @@ ms.lasthandoff: 10/24/2017
 
 3.  Запустите CLI из командной строки с помощью команды `az`.
 
-## <a name="install-on-rhel-fedora-and-centos-with-yum"></a>Установка в RHEL, Fedora и CentOS с помощью yum
+## <a name="install-with-yum-package-manager"></a>Установка с помощью диспетчера пакетов yum
 
-Для дистрибутивов с поддержкой диспетчера пакетов `yum` можно установить Azure CLI 2.0, используя `yum`.
+Для дистрибутивов с поддержкой диспетчера пакетов `yum`, например Red Hat Enterprise Linux (RHEL), Fedora или CentOS, можно установить Azure CLI 2.0, используя `yum`.
 
 > [!NOTE]
-> Для работы с CLI дистрибутив должен поддерживать Python 2.7.x или Python 3.x.
+> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
 
 1. Импортируйте ключ репозитория Майкрософт:
 
@@ -163,12 +163,12 @@ ms.lasthandoff: 10/24/2017
 
 4. Запустите CLI из командной строки с помощью команды `az`.
 
-## <a name="install-on-opensuse-and-sle-with-zypper"></a>Установка в openSUSE и SLE с помощью zypper
+## <a name="install-with-zypper-package-manager"></a>Установка с помощью диспетчера пакетов zypper
 
-Для дистрибутивов с поддержкой диспетчера пакетов `zypper` можно установить Azure CLI 2.0, используя `zypper`.
+Для дистрибутивов с поддержкой диспетчера пакетов `zypper`, например OpenSUSE или SLE, можно установить Azure CLI 2.0, используя `zypper`.
 
 > [!NOTE]
-> Для работы с CLI дистрибутив должен поддерживать Python 2.7.x или Python 3.x.
+> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
 
 1. Импортируйте ключ репозитория Майкрософт:
 
@@ -266,7 +266,7 @@ curl https://azurecliprod.blob.core.windows.net/install | bash
 hash -r
 ```
 
-и посмотрите, будет ли устранена проблема.
+и посмотрите, будет ли устранена проблема. Кроме того, команда может отсутствовать в `$PATH`. Убедитесь, что `<install path>/bin` отображается в `$PATH` и при необходимости перезапустите оболочку.
 
 ## <a name="uninstall-cli-1x-versions"></a>Удаление версий CLI 1.x
 
@@ -316,7 +316,7 @@ hash -r
 
 Запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows) еще раз.
 
-### <a name="update-with-apt-get"></a>Обновление с помощью apt-get
+### <a name="update-with-apt"></a>Обновление с помощью apt
 
 Используйте `apt-get upgrade`, чтобы обновить пакет CLI.
 
@@ -330,6 +330,24 @@ hash -r
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```
+
+### <a name="update-with-yum"></a>Обновление с помощью yum
+
+Обновите Azure CLI, воспользовавшись командой `yum update`.
+
+```bash
+yum check-update
+sudo yum update azure-cli
+```
+
+### <a name="update-with-zypper"></a>Обновление с помощью zypper
+
+Можно обновить пакет, воспользовавшись командой `zypper update`.
+
+```bash
+sudo zypper refresh
+sudo zypper update azure-cli
+```
 
 ### <a name="update-with-docker"></a>Обновление с помощью Docker
 
@@ -381,12 +399,54 @@ hash -r
 
 Запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл еще раз и щелкните "Удалить".
 
-### <a name="uninstall-with-apt-get"></a>Удаление с помощью apt-get
+### <a name="uninstall-with-apt"></a>Удаление с помощью apt
 
 Выполните удаление с помощью `apt-get remove`.
 
   ```bash
   sudo apt-get remove -y azure-cli
+  ```
+
+### <a name="uninstall-with-yum"></a>Удаление с помощью yum
+
+1. Удалите пакет из системы.
+
+   ```bash
+   sudo yum remove azure-cli
+   ```
+
+2. Если вы не планируете переустанавливать CLI, удалите сведения о репозитории.
+
+   ```bash
+   sudo rm /etc/yum.repos.d/azure-cli.repo
+   ```
+
+3. Если вы удалили сведения о репозитории, также удалите ключ подписи Microsoft GPG.
+
+  ```bash
+  MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
+  rpm -e --allmatches gpg-pubkey-$MSFT_KEY
+  ```
+
+### <a name="uninstall-with-zypper"></a>Удаление с помощью zypper
+
+1. Удалите пакет из системы.
+
+    ```bash
+    sudo zypper remove -y azure-cli
+    ```
+
+2. Если вы не планируете переустанавливать CLI, удалите сведения о репозитории.
+
+  ```bash
+  sudo rm /etc/zypp/repos.d/azure-cli.repo
+  ```
+
+3. Если вы удалили сведения о репозитории, также удалите ключ подписи Microsoft GPG.
+
+  ```bash
+  MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
+  rpm -e --allmatches gpg-pubkey-$MSFT_KEY
   ```
 
 ### <a name="uninstall-with-docker"></a>Удаление с помощью Docker
