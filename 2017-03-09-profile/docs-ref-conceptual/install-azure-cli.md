@@ -1,22 +1,22 @@
 ---
 title: "Установка Azure CLI 2.0"
 description: "Справочная документация по установке Azure CLI 2.0"
-keywords: Azure CLI 2.0, Azure CLI 2.0 Reference, Install Azure CLI 2.0, Azure Python CLI, Uninstall Azure CLI 2.0, Azure CLI, Install Azure CLI, Azure CLI Reference
+keywords: Azure CLI, Install Azure CLI, Azure Python CLI, Azure CLI Reference
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 08/17/2017
+ms.date: 11/01/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 00d5b555975007d7e57f04ce5d69f4f29e6d0219
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 2b56382355cad5313a604ed1f493a2bcbebf3e27
+ms.sourcegitcommit: e9b4c6dd9093980b69ca47f93f44ac54d0e5b68a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
@@ -29,6 +29,35 @@ ms.lasthandoff: 09/04/2017
 > Если вам нужна предыдущая версия Azure CLI, см. руководство по [установке Azure CLI 1.0](/azure/cli-install-nodejs).
 
 ## <a name="a-namemacosinstall-on-macos"></a><a name="macOS"/>Установка в macOS
+
+В macOS установку можно выполнить с помощью [Homebrew](https://brew.sh/) или вручную.
+
+### <a name="install-with-homebrew"></a>Установка с помощью Homebrew
+
+1. Если у вас нет этой программы, выполните [инструкции по установке Homebrew](https://docs.brew.sh/Installation.html).
+
+2. Если CLI устанавливался вручную, следуйте инструкциям по [удалению вручную](#UninstallManually).
+
+3. Обновите свои локальные репозитории Homebrew.
+
+   ```bash
+   brew update
+   ```
+
+4. Установите пакет `azure-cli`.
+
+  ```bash
+  brew install azure-cli
+  ```
+
+> [!NOTE]
+> Если вы ранее установили Azure CLI 1.0 с помощью Homebrew, вместо установки пакета можно получить CLI 2.0 при регулярном обновлении Homebrew.
+>
+> ```bash
+> brew upgrade
+> ```
+
+### <a name="install-manually"></a>Установка вручную
 
 1. Установите Azure CLI 2.0 с помощью команды `curl`.
 
@@ -46,11 +75,9 @@ ms.lasthandoff: 09/04/2017
 
 ## <a name="install-on-windows"></a>Установка в Windows
 
-Azure CLI 2.0 можно установить с помощью MSI-файла, чтобы использовать в командной строке Windows, или установить с помощью `apt-get` для Bash, чтобы использовать на платформе Ubuntu в Windows.
-
 ### <a name="install-with-msi-for-the-windows-command-line"></a>Установка с помощью MSI-файла для командной строки Windows 
 
-Чтобы установить CLI в Windows и использовать его в окне командной строки Windows, скачайте и запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл.
+Чтобы установить CLI в Windows и использовать его в окне командной строки Windows, скачайте и запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows).
 
 ### <a name="install-with-apt-get-for-bash-on-ubuntu-on-windows"></a>Установка с помощью apt-get для Bash на платформе Ubuntu в Windows
 
@@ -68,16 +95,19 @@ Azure CLI 2.0 можно установить с помощью MSI-файла, 
 4. Выполните следующие команды sudo:
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
 5.  Запустите CLI из командной строки с помощью команды `az`.
 
-## <a name="install-on-debianubuntu-with-apt-get"></a>Установка на Debian или Ubuntu с помощью apt-get
+## <a name="install-with-apt-package-manager"></a>Установка с помощью диспетчера пакетов apt 
 
-В системах на базе Debian и Ubuntu можно установить Azure CLI 2.0 с помощью `apt-get`.
+Для дистрибутивов с поддержкой диспетчера пакетов `apt`, например Ubuntu или Debian, можно установить Azure CLI 2.0, используя `apt-get`.
+
+> [!NOTE]
+> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
 
 1. Измените список источников.
  
@@ -98,12 +128,68 @@ Azure CLI 2.0 можно установить с помощью MSI-файла, 
 2. Выполните следующие команды sudo:
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
 3.  Запустите CLI из командной строки с помощью команды `az`.
+
+## <a name="install-with-yum-package-manager"></a>Установка с помощью диспетчера пакетов yum
+
+Для дистрибутивов с поддержкой диспетчера пакетов `yum`, например Red Hat Enterprise Linux (RHEL), Fedora или CentOS, можно установить Azure CLI 2.0, используя `yum`.
+
+> [!NOTE]
+> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
+
+1. Импортируйте ключ репозитория Майкрософт:
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   ```
+
+2. Создайте сведения о локальном репозитории `azure-cli`:
+
+   ```bash
+   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+   ```
+
+3. Обновите индекс пакета `yum` и выполните установку:
+
+   ```bash
+   yum check-update
+   sudo yum install azure-cli
+   ```
+
+4. Запустите CLI из командной строки с помощью команды `az`.
+
+## <a name="install-with-zypper-package-manager"></a>Установка с помощью диспетчера пакетов zypper
+
+Для дистрибутивов с поддержкой диспетчера пакетов `zypper`, например OpenSUSE или SLE, можно установить Azure CLI 2.0, используя `zypper`.
+
+> [!NOTE]
+> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
+
+1. Импортируйте ключ репозитория Майкрософт:
+
+   ```bash
+   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+   ```
+
+2. Создайте сведения о локальном репозитории `azure-cli`:
+
+   ```bash
+   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/azure-cli.repo'
+   ```
+
+3. Обновите индекс пакета `zypper` и выполните установку:
+
+   ```bash
+   sudo zypper refresh
+   sudo zypper install azure-cli
+   ```
+
+4. Запустите CLI из командной строки с помощью команды `az`.
 
 ## <a name="install-with-docker"></a>Установка с помощью Docker
 
@@ -111,9 +197,9 @@ Azure CLI 2.0 можно установить с помощью MSI-файла, 
 
 Установите CLI с помощью команды `docker run`.
 
-  ```bash
-  docker run azuresdk/azure-cli-python:<version>
-  ```
+   ```bash
+   docker run -it azuresdk/azure-cli-python:<version>
+   ```
 
 См. доступные версии на странице с [тегами Docker](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/).
 
@@ -123,12 +209,12 @@ CLI устанавливается в образ как команда `az` в �
 > Если вы хотите взять ключи SSH из среды пользователя, можно использовать `-v ${HOME}:/root`, чтобы подключить $HOME как `/root`.
 
 > ```bash
-> docker run -v ${HOME}:/root azuresdk/azure-cli-python:<version>
+> docker run -it -v ${HOME}:/root azuresdk/azure-cli-python:<version>
 > ```
 
-## <a name="a-namelinuxinstall-on-linux-without-apt-get"></a><a name="Linux"/>Установка в Linux без использования apt-get
+## <a name="a-namelinuxinstall-on-linux-without-a-package-manager"></a><a name="Linux"/>Установка в Linux без использования диспетчера пакетов
 
-Рекомендуется по возможности устанавливать CLI с помощью `apt-get`. Для дистрибутивов, которые не используют диспетчер пакетов `apt`, можно установить CLI вручную.
+Рекомендуется по возможности устанавливать CLI с помощью диспетчера пакетов (если вы знаете, как это сделать). Если вы не хотите добавлять репозитории Майкрософт или работаете с дистрибутивами, которые не поддерживают указанный пакет, CLI можно установить вручную.
 
 1. Установите необходимые компоненты с учетом дистрибутива Linux.
 
@@ -144,7 +230,7 @@ CLI устанавливается в образ как команда `az` в �
    SUSE OpenSUSE 13.2    | sudo zypper refresh && sudo zypper --non-interactive install curl gcc python python-xml libffi-devel python-devel openssl-devel
    ```
 
-Если дистрибутив не указан в списке выше, вам нужно установить [Python](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/) и [OpenSSL](https://www.openssl.org/source/).
+Если дистрибутив не указан в списке выше, вам нужно установить [Python 2.7 или более поздней версии](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/) и [OpenSSL](https://www.openssl.org/source/).
 
 2. Установите CLI с помощью команды `curl`.
 
@@ -172,11 +258,15 @@ CLI устанавливается в образ как команда `az` в �
 curl https://azurecliprod.blob.core.windows.net/install | bash
 ```
 
-### <a name="homebrew-on-macos-installing-older-version"></a>Homebrew на macOS устанавливает устаревшую версию
+### <a name="az-command-not-found"></a>Команда `az` не найдена
 
-Текущая формула `azure-cli` Homebrew для macOS устарела. При ее использовании будет устанавливаться CLI версии 1.x. Вы можете узнать о ее обновлении, выполнив команду `brew info azure-cli`.
+Попробуйте очистить кэш хэша команд оболочки. Выполнить
 
-А пока [удалите устаревшую версию](#uninstall_brew) и следуйте [инструкциям по установке для macOS](#macOS).
+```bash
+hash -r
+```
+
+и посмотрите, будет ли устранена проблема. Кроме того, команда может отсутствовать в `$PATH`. Убедитесь, что `<install path>/bin` отображается в `$PATH` и при необходимости перезапустите оболочку.
 
 ## <a name="uninstall-cli-1x-versions"></a>Удаление версий CLI 1.x
 
@@ -190,17 +280,9 @@ curl https://azurecliprod.blob.core.windows.net/install | bash
   npm uninstall -g azure-cli
   ```
 
-### <a name="a-nameuninstallbrewuninstall-with-homebrew-on-macos"></a><a name="uninstall_brew"/>Удаление с помощью Homebrew на macOS
-
-Удалите устаревшую версию CLI с помощью команды `brew uninstall`.
-
-```bash
-brew uninstall azure-cli
-```
-
 ### <a name="uninstall-with-distributable"></a>Удаление с помощью распространяемых компонентов
 
-Если установка выполнялась с использованием [MSI](http://aka.ms/webpi-azure-cli)-файла или [пакета macOS](http://aka.ms/mac-azure-cli), используйте то же средство для удаления файлов установки.
+Если установка выполнялась с использованием [установщика Azure CLI (MSI)](http://aka.ms/webpi-azure-cli) или [пакета macOS](http://aka.ms/mac-azure-cli), используйте то же средство для удаления файлов установки.
 
 ### <a name="uninstall-with-docker"></a>Удаление с помощью Docker
 
@@ -214,11 +296,27 @@ brew uninstall azure-cli
 
 Чтобы обновить Azure CLI, используйте тот же метод, что и для установки.
 
+### <a name="update-with-homebrew"></a>Обновление с помощью Homebrew
+
+1. Если установка выполнялась вручную, следуйте инструкциям по [установке с помощью Homebrew](#macOS).
+
+2. Обновите свои данные в локальном репозитории Homebrew.
+
+   ```bash
+   brew update
+   ```
+
+3. Обновите установленные пакеты.
+
+   ```bash
+   brew upgrade
+   ```
+
 ### <a name="update-with-msi"></a>Обновление с помощью MSI-файла
 
-Запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл еще раз.
+Запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows) еще раз.
 
-### <a name="update-with-apt-get"></a>Обновление с помощью apt-get
+### <a name="update-with-apt"></a>Обновление с помощью apt
 
 Используйте `apt-get upgrade`, чтобы обновить пакет CLI.
 
@@ -232,6 +330,24 @@ brew uninstall azure-cli
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```
+
+### <a name="update-with-yum"></a>Обновление с помощью yum
+
+Обновите Azure CLI, воспользовавшись командой `yum update`.
+
+```bash
+yum check-update
+sudo yum update azure-cli
+```
+
+### <a name="update-with-zypper"></a>Обновление с помощью zypper
+
+Можно обновить пакет, воспользовавшись командой `zypper update`.
+
+```bash
+sudo zypper refresh
+sudo zypper update azure-cli
+```
 
 ### <a name="update-with-docker"></a>Обновление с помощью Docker
 
@@ -271,16 +387,66 @@ brew uninstall azure-cli
 
 Нам будет очень жаль, если вы решите удалить CLI. Чтобы удалить CLI, используйте тот же метод, что и для установки.
 
+### <a name="uninstall-with-homebrew"></a>Удаление с помощью Homebrew
+
+Удалите пакет `azure-cli`.
+
+   ```bash
+   brew uninstall azure-cli
+   ```
+
 ### <a name="uninstall-with-msi"></a>Удаление с помощью MSI-файла
 
 Запустите [MSI](https://aka.ms/InstallAzureCliWindows)-файл еще раз и щелкните "Удалить".
 
-### <a name="uninstall-with-apt-get"></a>Удаление с помощью apt-get
+### <a name="uninstall-with-apt"></a>Удаление с помощью apt
 
 Выполните удаление с помощью `apt-get remove`.
 
   ```bash
   sudo apt-get remove -y azure-cli
+  ```
+
+### <a name="uninstall-with-yum"></a>Удаление с помощью yum
+
+1. Удалите пакет из системы.
+
+   ```bash
+   sudo yum remove azure-cli
+   ```
+
+2. Если вы не планируете переустанавливать CLI, удалите сведения о репозитории.
+
+   ```bash
+   sudo rm /etc/yum.repos.d/azure-cli.repo
+   ```
+
+3. Если вы удалили сведения о репозитории, также удалите ключ подписи Microsoft GPG.
+
+  ```bash
+  MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
+  rpm -e --allmatches gpg-pubkey-$MSFT_KEY
+  ```
+
+### <a name="uninstall-with-zypper"></a>Удаление с помощью zypper
+
+1. Удалите пакет из системы.
+
+    ```bash
+    sudo zypper remove -y azure-cli
+    ```
+
+2. Если вы не планируете переустанавливать CLI, удалите сведения о репозитории.
+
+  ```bash
+  sudo rm /etc/zypp/repos.d/azure-cli.repo
+  ```
+
+3. Если вы удалили сведения о репозитории, также удалите ключ подписи Microsoft GPG.
+
+  ```bash
+  MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
+  rpm -e --allmatches gpg-pubkey-$MSFT_KEY
   ```
 
 ### <a name="uninstall-with-docker"></a>Удаление с помощью Docker
@@ -289,31 +455,31 @@ brew uninstall azure-cli
 
 1. Получите данные о контейнерах, на которых запущен образ azure-cli.
 
-  ```bash
-  docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
-  ```
+   ```bash
+   docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
+   ```
 
-  ```output
-  CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
-  34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
-  ```
+   ```output
+   CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
+   34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
+   ```
 
 2. Удалите все контейнеры с образом CLI.
 
-  ```bash
-  docker rm 34a868beb2ab
-  ```
+   ```bash
+   docker rm 34a868beb2ab
+   ```
 
 3. Удалите локально установленный образ CLI.
 
-  ```bash
-  docker rmi azuresdk/azure-cli-python
-  ```
+   ```bash
+   docker rmi azuresdk/azure-cli-python
+   ```
 
 > [!NOTE]
 > Если вы установили определенную версию образа, вам нужно добавить `:<version>` в конец имени образа.
 
-### <a name="uninstall-manually"></a>Удаление вручную
+###<a name="a-nameuninstallmanuallyuninstall-manually"></a><a name="UninstallManually"/>Удаление вручную
 
 Если для установки интерфейса командной строки использовался скрипт со страницы https://aka.ms/InstallAzureCli, для удаления можно выполнить следующие действия.
 
@@ -325,6 +491,12 @@ brew uninstall azure-cli
    ```
 
 2. Удалите строку `<install location>/lib/azure-cli/az.completion` из `<install location>/.bash_profile`.
+
+3. Если оболочка использует кэш команд, перезагрузите его.
+
+   ```bash
+   hash -r
+   ```
 
 > [!Note]
 > Расположение установки по умолчанию — `/Users/<username>`.

@@ -5,18 +5,18 @@ keywords: "Azure CLI 2.0, Azure Active Directory, Azure Active Directory, AD, R
 author: rloutlaw
 ms.author: routlaw
 manager: douge
-ms.date: 02/27/2017
+ms.date: 10/12/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: fab89cb8-dac1-4e21-9d34-5eadd5213c05
-ms.openlocfilehash: f37df762a9a605ea649b215f38f2e9866614f4ac
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: a6ad5611f3e507b65e160122c87e22ec44546588
+ms.sourcegitcommit: e8fe15e4f7725302939d726c75ba0fb3cad430be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 10/27/2017
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>Создание субъекта-службы Azure с помощью Azure CLI 2.0
 
@@ -29,11 +29,11 @@ ms.lasthandoff: 09/04/2017
 
 ## <a name="what-is-a-service-principal"></a>Что такое субъект-служба?
 
-Субъект-служба Azure — это идентификатор безопасности, который используют созданные пользователем приложения, службы и средства автоматизации для доступа к определенным ресурсам Azure. Это что-то вроде удостоверения пользователя (имя для входа и пароль или сертификат) с определенной ролью и строго контролируемыми разрешениями на доступ к ресурсам. Субъект-служба должен выполнять только конкретные задачи, в отличие от удостоверений пользователей. Для повышения безопасности следует предоставить ему только минимально необходимый уровень разрешений для выполнения задач управления. 
+Субъект-служба Azure — это идентификатор безопасности, который используют созданные пользователем приложения, службы и средства автоматизации для доступа к определенным ресурсам Azure. Это что-то вроде удостоверения пользователя (имя для входа и пароль или сертификат) с определенной ролью и строго контролируемыми разрешениями на доступ к ресурсам. Субъект-служба должен выполнять только конкретные задачи, в отличие от удостоверений пользователей. Это решение повышает безопасность, если вы предоставите ему минимальный уровень разрешений для выполнения задач управления. 
 
-Сейчас Azure CLI 2.0 поддерживает только создание учетных данных с проверкой подлинности на основе пароля. В этой статье мы рассмотрим создание субъекта-службы с определенным паролем и дополнительное назначение ему конкретных ролей.
+Azure CLI 2.0 поддерживает создание учетных данных для аутентификации на основе пароля и учетных данных сертификата. В этой статье рассматриваются оба типа учетных данных.
 
-## <a name="verify-your-own-permission-level"></a>Проверка вашего уровня разрешений
+## <a name="verify-your-own-permission-level"></a>Проверка уровня разрешений
 
 Во-первых, у вас должен быть достаточный уровень разрешений в Azure Active Directory и подписке Azure. В частности, у вас должно быть право создавать приложения в Active Directory и назначать роли субъекту-службе. 
 
@@ -76,9 +76,9 @@ az ad app list --display-name MyDemoWebApp
 
 Параметр `--display-name` фильтрует возвращаемый список приложений, чтобы показать те, которые содержат `displayName`, начиная с MyDemoWebApp.
 
-### <a name="create-the-service-principal"></a>Создание субъекта-службы
+### <a name="create-a-service-principal-with-a-password"></a>Создание субъекта-службы с паролем
 
-Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac). 
+Чтобы создать субъект-службу с паролем, используйте команду [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) и параметр `--password`. Если роль или область не указаны, по умолчанию используется роль **участника** для текущей подписки. При создании субъекта-службы без использования параметра `--password` или `--cert` используется проверка подлинности на основе пароля, а сам пароль создается автоматически.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name {appId} --password "{strong password}" 
@@ -96,6 +96,29 @@ az ad sp create-for-rbac --name {appId} --password "{strong password}"
 
  > [!WARNING] 
  > Не используйте ненадежный пароль.  Следуйте руководству по [правилам и ограничениям для паролей Azure AD](/azure/active-directory/active-directory-passwords-policy).
+
+### <a name="create-a-service-principal-with-a-self-signed-certificate"></a>Создание субъекта-службы с самозаверяющим сертификатом
+
+Чтобы создать самозаверяющий сертификат, используйте команду [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) и параметр `--create-cert`.
+
+```azurecli-interactive
+az ad sp create-for-rbac --name {appId} --create-cert
+```
+
+```json
+{
+  "appId": "c495db57-82e0-4e2e-9369-069dff176858",
+  "displayName": "azure-cli-2017-10-12-22-15-38",
+  "fileWithCertAndPrivateKey": "<path>/<file-name>.pem",
+  "name": "http://MyDemoWebApp",
+  "password": null,
+  "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
+}
+```
+
+Скопируйте значение ответа `fileWithCertAndPrivateKey`. Это файл сертификата, который будет использоваться для аутентификации.
+
+Дополнительные параметры для сертификатов см. в разделе [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac).
 
 ### <a name="get-information-about-the-service-principal"></a>Получение сведений о субъекте-службе
 
@@ -118,10 +141,10 @@ az ad sp show --id a487e0c1-82af-47d9-9a0b-af184eb87646d
 
 ### <a name="sign-in-using-the-service-principal"></a>Вход с помощью субъекта-службы
 
-Теперь вы можете войти от имени нового субъекта-службы вашего приложения, используя *идентификатор приложения* и *пароль*, указанные в команде `az ad sp show`.  Укажите значение параметра *tenant*, полученное в результате выполнения команды `az ad sp create-for-rbac`.
+Теперь вы можете войти от имени нового субъекта-службы для приложения с использованием *appId* из `az ad sp show`, а также *пароля* либо пути к созданному сертификату.  Укажите значение параметра *tenant*, полученное в результате выполнения команды `az ad sp create-for-rbac`.
 
 ```azurecli-interactive
-az login --service-principal -u a487e0c1-82af-47d9-9a0b-af184eb87646d --password {password} --tenant {tenant}
+az login --service-principal -u a487e0c1-82af-47d9-9a0b-af184eb87646d --password {password-or-path-to-cert} --tenant {tenant}
 ``` 
 
 После успешного входа отобразится следующее:

@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 5d6d7abb34fa2be571a9a49f0f84380538592807
-ms.sourcegitcommit: f107cf927ea1ef51de181d87fc4bc078e9288e47
+ms.openlocfilehash: 11153c13fb9868897b0bb21dac9d64072c3af16e
+ms.sourcegitcommit: 70c4d7a14591e5b761e261105cd2d376753f2a54
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
@@ -40,7 +40,7 @@ Azure CLI 2.0 — это новый интерфейс командной ст
 
    ![Создайте учетную запись хранения.](media/get-started-with-azure-cli/storage-prompt.png)
 
-Вы также можете [установить](install-azure-cli.md) интерфейс командной строки и запускать его локально из командной строки.
+Вы также можете [установить](install-azure-cli.md) интерфейс командной строки и запускать его локально из командной строки. После установки CLI запустите `az login`, чтобы выполнить вход с помощью подписки по умолчанию.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
