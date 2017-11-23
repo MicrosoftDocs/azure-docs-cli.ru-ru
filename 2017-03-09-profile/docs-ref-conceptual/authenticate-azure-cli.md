@@ -1,22 +1,22 @@
 ---
 title: "Вход с помощью Azure CLI 2.0"
 description: "Вход с помощью Azure CLI 2.0 на виртуальные машины Mac, Windows или Linux."
-keywords: Azure CLI 2.0, Linux, Mac, Windows, OS X, Ubuntu, Debian, CentOS, RHEL, SUSE, CoreOS, Docker, Windows, Python, PIP
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 02/27/2017
+keywords: Azure CLI 2.0, login, Azure CLI, authentication, authorize, log in
+author: sptramer
+ms.author: stttramer
+manager: routlaw
+ms.date: 11/13/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 65becd3a-9d69-4415-8a30-777d13a0e7aa
-ms.openlocfilehash: 3ba1dd840102c738ccd9eb62a0b9db612cec48d1
-ms.sourcegitcommit: 5cfbea569fef193044da712708bc6957d3fb557c
+ms.openlocfilehash: dd05868f7378673836f47e743ed4088f2efd3dca
+ms.sourcegitcommit: 5db22de971cf3983785cb209d92cbed1bbd69ecf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 10/14/2017
 
 Учетные данные являются конфиденциальными и не хранятся локально. Маркер проверки подлинности создается и сохраняется в Azure. После входа в систему локальный маркер для входа остается действительным в течение 14 дней без использования. На этом этапе необходимо пройти повторную аутентификацию.
 
-Команды, которые вы выполняете с помощью интерфейса командной строки, выполняются в вашей подписке по умолчанию.  Если у вас несколько подписок, может потребоваться [подтвердить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md) и изменить ее соответствующим образом.
+Когда вы войдете, команды интерфейса командной строки будут выполняться в вашей подписке по умолчанию. Если у вас несколько подписок, вы можете [изменить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md).
 
 ## <a name="interactive-log-in"></a>Интерактивный вход
 
@@ -46,35 +46,18 @@ az login -u <username> -p <password>
 ## <a name="logging-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
 Субъекты-службы похожи на учетные записи пользователей, к которым можно применять правила, используя Azure Active Directory.
-Проверка подлинности с помощью субъекта-службы — это самый безопасный способ использования ресурсов Azure из сценариев или приложений, которые работают с ресурсами.
-Вы можете определить роли пользователей с помощью набора команд `az role`.
-Дополнительные сведения и примеры ролей субъекта-службы см. в [справочных статьях о ролях az](https://docs.microsoft.com/cli/azure/role.md).
+Проверка подлинности с помощью субъекта-службы — это самый безопасный способ использования ресурсов Azure из сценариев или приложений, которые работают с ресурсами. Если у вас нет доступного субъекта-службы и вы хотите создать его, см. руководство по [созданию субъекта-службы Azure с помощью Azure CLI](create-an-azure-service-principal-azure-cli.md).
 
-1. Если у вас еще нет субъекта-службы, [создайте](create-an-azure-service-principal-azure-cli.md) его.
+Чтобы войти с помощью субъекта-службы, укажите имя пользователя, пароль или сертификат PEM-файла, а также клиент, связанный с субъектом-службой:
 
-1. Войдите с помощью субъекта-службы.
+```azurecli-interactive
+az login --service-principal -u <user> -p <password-or-cert> --tenant <tenant>
+```
 
-   ```azurecli-interactive
-   az login --service-principal -u "http://my-app" -p <password> --tenant <tenant>
-   ```
+Значение клиента — это клиент Azure Active Directory, связанный с субъектом-службой. Это может быть домен onmicrosoft.com или идентификатор объекта Azure для клиента.
+Узнать идентификатор объекта клиента для текущего сеанса входа можно с помощью следующей команды:
 
-   Чтобы получить свой клиент, войдите в интерактивном режиме, а затем получите идентификатор из подписки.
+```azurecli
+az account show --query 'tenanatId' -o tsv
+```
 
-   ```azurecli
-   az account show
-   ```
-
-   ```json
-   {
-       "environmentName": "AzureCloud",
-       "id": "********-****-****-****-************",
-       "isDefault": true,
-       "name": "Pay-As-You-Go",
-       "state": "Enabled",
-       "tenantId": "********-****-****-****-************",
-       "user": {
-       "name": "********",
-       "type": "user"
-       }
-   }
-   ```
