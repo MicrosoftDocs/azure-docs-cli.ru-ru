@@ -1,78 +1,63 @@
 ---
 title: "Вход с помощью Azure CLI 2.0"
 description: "Вход с помощью Azure CLI 2.0 на виртуальные машины Mac, Windows или Linux."
-keywords: Azure CLI 2.0, Linux, Mac, Windows, OS X, Ubuntu, Debian, CentOS, RHEL, SUSE, CoreOS, Docker, Windows, Python, PIP
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 02/27/2017
+keywords: Azure CLI 2.0, login, Azure CLI, authentication, authorize, log in
+author: sptramer
+ms.author: stttramer
+manager: routlaw
+ms.date: 11/13/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 65becd3a-9d69-4415-8a30-777d13a0e7aa
-ms.openlocfilehash: fea893ebd55811527e0e92375ffc081a52cdbb57
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
+ms.openlocfilehash: dd05868f7378673836f47e743ed4088f2efd3dca
+ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 11/20/2017
 ---
-# <a name="log-in-with-azure-cli-20"></a><span data-ttu-id="fdd0c-104">Вход с помощью Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="fdd0c-104">Log in with Azure CLI 2.0</span></span>
+# <a name="log-in-with-azure-cli-20"></a><span data-ttu-id="6317f-104">Вход с помощью Azure CLI 2.0</span><span class="sxs-lookup"><span data-stu-id="6317f-104">Log in with Azure CLI 2.0</span></span>
 
-<span data-ttu-id="fdd0c-105">Используя Azure CLI, можно входить и выполнять проверку подлинности несколькими способами.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-105">There are several ways to log in and authenticate with the Azure CLI.</span></span> <span data-ttu-id="fdd0c-106">Проще всего начать со входа в интерактивном режиме из браузера или командной строки.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-106">The simplest way to get started is to log in interactively through your browser, or to log in at the command line.</span></span> <span data-ttu-id="fdd0c-107">Рекомендуется использовать субъекты-службы. Они позволяют создавать неинтерактивные учетные записи, которые можно использовать для управления ресурсами.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-107">Our recommended approach is to use service principals, which provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="fdd0c-108">Предоставляя только нужные разрешения, необходимые для субъекта-службы, вы можете обеспечить безопасность скриптов службы автоматизации.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-108">By granting just the appropriate permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
+<span data-ttu-id="6317f-105">Используя Azure CLI, можно входить и выполнять проверку подлинности несколькими способами.</span><span class="sxs-lookup"><span data-stu-id="6317f-105">There are several ways to log in and authenticate with the Azure CLI.</span></span> <span data-ttu-id="6317f-106">Проще всего начать со входа в интерактивном режиме из браузера или командной строки.</span><span class="sxs-lookup"><span data-stu-id="6317f-106">The simplest way to get started is to log in interactively through your browser, or to log in at the command line.</span></span> <span data-ttu-id="6317f-107">Рекомендуется использовать субъекты-службы. Они позволяют создавать неинтерактивные учетные записи, которые можно использовать для управления ресурсами.</span><span class="sxs-lookup"><span data-stu-id="6317f-107">Our recommended approach is to use service principals, which provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="6317f-108">Предоставляя только нужные разрешения, необходимые для субъекта-службы, вы можете обеспечить безопасность скриптов службы автоматизации.</span><span class="sxs-lookup"><span data-stu-id="6317f-108">By granting just the appropriate permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span> 
 
-<span data-ttu-id="fdd0c-109">Команды, которые вы выполняете с помощью интерфейса командной строки, выполняются в вашей подписке по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-109">Commands that you run with the CLI are run against your default subscription.</span></span>  <span data-ttu-id="fdd0c-110">Если у вас несколько подписок, может потребоваться [подтвердить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md) и изменить ее соответствующим образом.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-110">If you have more than one subscription, you may want to [confirm your default subscription](manage-azure-subscriptions-azure-cli.md) and change it appropriately.</span></span>
+<span data-ttu-id="6317f-109">Учетные данные являются конфиденциальными и не хранятся локально.</span><span class="sxs-lookup"><span data-stu-id="6317f-109">None of your private credential information is stored locally.</span></span> <span data-ttu-id="6317f-110">Маркер проверки подлинности создается и сохраняется в Azure.</span><span class="sxs-lookup"><span data-stu-id="6317f-110">Instead, an authentication token is generated by Azure and stored.</span></span> <span data-ttu-id="6317f-111">После входа в систему локальный маркер для входа остается действительным в течение 14 дней без использования.</span><span class="sxs-lookup"><span data-stu-id="6317f-111">After logging in, your local login token is valid until it goes for 14 days without being used.</span></span> <span data-ttu-id="6317f-112">На этом этапе необходимо пройти повторную аутентификацию.</span><span class="sxs-lookup"><span data-stu-id="6317f-112">At that point, you will need to re-authenticate.</span></span>
 
-## <a name="interactive-log-in"></a><span data-ttu-id="fdd0c-111">Интерактивный вход</span><span class="sxs-lookup"><span data-stu-id="fdd0c-111">Interactive log-in</span></span>
+<span data-ttu-id="6317f-113">Когда вы войдете, команды интерфейса командной строки будут выполняться в вашей подписке по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="6317f-113">After logging in, CLI Commands are run against your default subscription.</span></span> <span data-ttu-id="6317f-114">Если у вас несколько подписок, вы можете [изменить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md).</span><span class="sxs-lookup"><span data-stu-id="6317f-114">If you have more than one subscription, you may want to [change your default subscription](manage-azure-subscriptions-azure-cli.md).</span></span>
 
-<span data-ttu-id="fdd0c-112">Выполните интерактивный вход из веб-браузера.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-112">Log in interactively from your web browser.</span></span>
+## <a name="interactive-log-in"></a><span data-ttu-id="6317f-115">Интерактивный вход</span><span class="sxs-lookup"><span data-stu-id="6317f-115">Interactive log-in</span></span>
+
+<span data-ttu-id="6317f-116">Выполните интерактивный вход из веб-браузера.</span><span class="sxs-lookup"><span data-stu-id="6317f-116">Log in interactively from your web browser.</span></span>
 
 [!INCLUDE [interactive_login](includes/interactive-login.md)]
 
-## <a name="command-line"></a><span data-ttu-id="fdd0c-113">Команда</span><span class="sxs-lookup"><span data-stu-id="fdd0c-113">Command line</span></span>
+## <a name="command-line"></a><span data-ttu-id="6317f-117">Команда</span><span class="sxs-lookup"><span data-stu-id="6317f-117">Command line</span></span>
 
-<span data-ttu-id="fdd0c-114">Укажите свои учетные данные в командной строке.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-114">Provide your credentials on the command line.</span></span>
+<span data-ttu-id="6317f-118">Укажите свои учетные данные в командной строке.</span><span class="sxs-lookup"><span data-stu-id="6317f-118">Provide your credentials on the command line.</span></span>
 
 > [!Note]
-> <span data-ttu-id="fdd0c-115">Этот способ не работает с учетными записями Майкрософт или с учетными записями, которые используют двухфакторную проверку подлинности.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-115">This approach doesn't work with Microsoft accounts or accounts that have two-factor authentication enabled.</span></span>
+> <span data-ttu-id="6317f-119">Этот способ не работает с учетными записями Майкрософт или с учетными записями, которые используют двухфакторную проверку подлинности.</span><span class="sxs-lookup"><span data-stu-id="6317f-119">This approach doesn't work with Microsoft accounts or accounts that have two-factor authentication enabled.</span></span>
 
-```azurecli
+```azurecli-interactive
 az login -u <username> -p <password>
 ```
 
-## <a name="logging-in-with-a-service-principal"></a><span data-ttu-id="fdd0c-116">Вход с использованием субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="fdd0c-116">Logging in with a service principal</span></span>
+## <a name="logging-in-with-a-service-principal"></a><span data-ttu-id="6317f-120">Вход с использованием субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="6317f-120">Logging in with a service principal</span></span>
 
-<span data-ttu-id="fdd0c-117">Субъекты-службы похожи на учетные записи пользователей, к которым можно применять правила, используя Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-117">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span>
-<span data-ttu-id="fdd0c-118">Проверка подлинности с помощью субъекта-службы — это самый безопасный способ использования ресурсов Azure из сценариев или приложений, которые работают с ресурсами.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-118">Authenticating with a service principal is the best way to secure the usage of your Azure resources from either your scripts or applications that manipulate resources.</span></span>
-<span data-ttu-id="fdd0c-119">Вы можете определить роли пользователей с помощью набора команд `az role`.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-119">You define the roles you want your users to have via the `az role` set of commands.</span></span>
-<span data-ttu-id="fdd0c-120">Дополнительные сведения и примеры ролей субъекта-службы см. в [справочных статьях о ролях az](https://docs.microsoft.com/cli/azure/role.md).</span><span class="sxs-lookup"><span data-stu-id="fdd0c-120">You can learn more and see examples of service principal roles in our [az role reference articles](https://docs.microsoft.com/cli/azure/role.md).</span></span>
+<span data-ttu-id="6317f-121">Субъекты-службы похожи на учетные записи пользователей, к которым можно применять правила, используя Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="6317f-121">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span>
+<span data-ttu-id="6317f-122">Проверка подлинности с помощью субъекта-службы — это самый безопасный способ использования ресурсов Azure из сценариев или приложений, которые работают с ресурсами.</span><span class="sxs-lookup"><span data-stu-id="6317f-122">Authenticating with a service principal is the best way to secure the usage of your Azure resources from either your scripts or applications that manipulate resources.</span></span> <span data-ttu-id="6317f-123">Если у вас нет доступного субъекта-службы и вы хотите создать его, см. руководство по [созданию субъекта-службы Azure с помощью Azure CLI](create-an-azure-service-principal-azure-cli.md).</span><span class="sxs-lookup"><span data-stu-id="6317f-123">If you don't already have a service principal available and would like to create one, see [Create an Azure service principal with the Azure CLI](create-an-azure-service-principal-azure-cli.md).</span></span>
 
-1. <span data-ttu-id="fdd0c-121">Если у вас еще нет субъекта-службы, [создайте](create-an-azure-service-principal-azure-cli.md) его.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-121">If you don't already have a service principal, [create one](create-an-azure-service-principal-azure-cli.md).</span></span>
+<span data-ttu-id="6317f-124">Чтобы войти с помощью субъекта-службы, укажите имя пользователя, пароль или сертификат PEM-файла, а также клиент, связанный с субъектом-службой:</span><span class="sxs-lookup"><span data-stu-id="6317f-124">To log in with a service principal, you provide the username, password or certificate PEM file, and the tenant associated with the service principal:</span></span>
 
-1. <span data-ttu-id="fdd0c-122">Войдите с помощью субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-122">Log in with the service principal.</span></span>
+```azurecli-interactive
+az login --service-principal -u <user> -p <password-or-cert> --tenant <tenant>
+```
 
-   ```azurecli
-   az login --service-principal -u "http://my-app" -p <password> --tenant <tenant>
-   ```
+<span data-ttu-id="6317f-125">Значение клиента — это клиент Azure Active Directory, связанный с субъектом-службой.</span><span class="sxs-lookup"><span data-stu-id="6317f-125">The tenant value is the Azure Active Directory tenant associated with the service principal.</span></span> <span data-ttu-id="6317f-126">Это может быть домен onmicrosoft.com или идентификатор объекта Azure для клиента.</span><span class="sxs-lookup"><span data-stu-id="6317f-126">This can either be an .onmicrosoft.com domain, or the Azure object ID for the tenant.</span></span>
+<span data-ttu-id="6317f-127">Узнать идентификатор объекта клиента для текущего сеанса входа можно с помощью следующей команды:</span><span class="sxs-lookup"><span data-stu-id="6317f-127">You can get the tenant object ID for your current login by using the following command:</span></span>
 
-   <span data-ttu-id="fdd0c-123">Чтобы получить свой клиент, войдите в интерактивном режиме, а затем получите идентификатор из подписки.</span><span class="sxs-lookup"><span data-stu-id="fdd0c-123">To get your tenant, log in interactively and then get the tenantId from your subscription.</span></span>
+```azurecli
+az account show --query 'tenanatId' -o tsv
+```
 
-   ```azurecli
-   az login
-   az account show
-   ```
-
-   ```json
-   {
-       "environmentName": "AzureCloud",
-       "id": "********-****-****-****-************",
-       "isDefault": true,
-       "name": "Pay-As-You-Go",
-       "state": "Enabled",
-       "tenantId": "********-****-****-****-************",
-       "user": {
-       "name": "********",
-       "type": "user"
-       }
-   }
-   ```
