@@ -1,66 +1,60 @@
-items:
-- name: "Azure CLI 2.0"
+- name: "Azure CLI\_2.0"
   href: overview.md
   items:
-  - name: "Установить"
-    href: install-azure-cli.md
-  - name: "Начало работы"
-    href: get-started-with-azure-cli.md
-  - name: Cloud Shell
-    href: /azure/cloud-shell/overview
-  - name: "Вход в систему"
-    href: authenticate-azure-cli.md
-    items:
-    - name: "Создание субъекта-службы"
-      href: create-an-azure-service-principal-azure-cli.md
-    - name: "Использование удостоверений управляемой службы."
+    - name: Установить
+      href: install-azure-cli.md
+    - name: Начало работы
+      href: get-started-with-azure-cli.md
+    - name: Cloud Shell
+      href: /azure/cloud-shell/overview
+    - name: Вход в систему
+      href: authenticate-azure-cli.md
       items:
-      - name: "Настройка MSI для виртуальной машины Azure"
-        href: /azure/active-directory/msi-qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-      - name: "Вход в виртуальную машину Azure с помощью MSI"
-        href: /azure/active-directory/msi-how-to-get-access-token-using-msi?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "Интерактивный режим"
-    href: interactive-azure-cli.md
-  - name: "Шаблоны развертывания"
-    items:
-    - name: "Использование шаблонов развертывания"
-      href: /azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: "Экспорт шаблонов развертывания"
-      href: /azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: "Развертывание с помощью частного шаблона"
-      href: /azure/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "Управление подписками"
-    href: manage-azure-subscriptions-azure-cli.md
-  - name: "Использование нескольких облаков"
-    href: manage-clouds-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "Форматы выходных данных"
-    href: format-output-azure-cli.md
-  - name: "Запрос"
-    href: query-azure-cli.md
-  - name: "расширения."
-    href: azure-cli-extensions.md
-  - name: "Заметки о выпуске"
-    href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  ms.openlocfilehash: 91483df716b0bc25a316c1b46422adf467717d8f
-  ms.sourcegitcommit: 37d816f4d08142eb16bf22f7d4cd22fa7a21ad53
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 11/28/2017
-- name: "Примеры сценариев"
+        - name: Создание субъекта-службы
+          href: create-an-azure-service-principal-azure-cli.md
+        - name: Использование удостоверений управляемой службы.
+          items:
+            - name: Настройка MSI для виртуальной машины Azure
+              href: /azure/active-directory/msi-qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+            - name: Вход в виртуальную машину Azure с помощью MSI
+              href: /azure/active-directory/msi-how-to-get-access-token-using-msi?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Интерактивный режим
+      href: interactive-azure-cli.md
+    - name: Шаблоны развертывания
+      items:
+        - name: Использование шаблонов развертывания
+          href: /azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+        - name: Экспорт шаблонов развертывания
+          href: /azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+        - name: Развертывание с помощью частного шаблона
+          href: /azure/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Управление подписками
+      href: manage-azure-subscriptions-azure-cli.md
+    - name: Использование нескольких облаков
+      href: manage-clouds-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Форматы выходных данных
+      href: format-output-azure-cli.md
+    - name: Запрос
+      href: query-azure-cli.md
+    - name: расширения.
+      href: azure-cli-extensions.md
+    - name: Заметки о выпуске
+      href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+- name: Примеры сценариев
   items:
-  - name: "Виртуальные машины Linux"
-    href: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "Виртуальные машины Windows"
-    href: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "Веб-приложения"
-    href: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "Функции"
-    href: /azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "База данных SQL"
-    href: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: PostgreSQL
-    href: /azure/postgresql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: MySQL
-    href: /azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  - name: "База данных Cosmos"
-    href: /azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Виртуальные машины Linux
+      href: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Виртуальные машины Windows
+      href: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Веб-приложения
+      href: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Функции
+      href: /azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: База данных SQL
+      href: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: PostgreSQL
+      href: /azure/postgresql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: MySQL
+      href: /azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: База данных Cosmos
+      href: /azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
