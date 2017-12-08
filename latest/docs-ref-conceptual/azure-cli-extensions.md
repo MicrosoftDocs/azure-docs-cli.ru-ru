@@ -12,10 +12,10 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.openlocfilehash: 930073324d68f9719ce5035388120e7b6ac41a98
-ms.sourcegitcommit: 0149f195a0d9f0ea9b7ff5c6e00ad4242223a1a8
+ms.sourcegitcommit: 93f6bd2c199774fcb3b43c6b14d714196873ed04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
 
