@@ -12,13 +12,71 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ce0428f7-0a59-4e72-9237-d907b171af51
-ms.openlocfilehash: 761bd61474e7c72fb2daeb756828f00196b56c3a
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: e02b84891f4bf60cde12591b8e85987f4b3c9e79
+ms.sourcegitcommit: a3c8e15eafac1ddc2289110d513b39714a23353b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="december-5-2017"></a>5 декабря 2017 г.
+
+Версия 2.0.22
+
+* Удалена команда `az component`. Вместо нее следует использовать `az extension`.
+
+### <a name="core"></a>Core
+* Конечная точка `AZURE_US_GOV_CLOUD` центра AAD изменена с login.microsoftonline.com на login.microsoftonline.us.
+* Исправлена проблема с непрерывной отправкой телеметрии.
+
+### <a name="acs"></a>ACS
+
+* Добавлены команды `aks install-connector` и `aks remove-connector`.
+* Улучшены сообщения об ошибках для команды `acs create`.
+* Добавлена возможность использования команды `aks get-credentials -f` без полного пути.
+
+### <a name="advisor"></a>Помощник
+
+* Первый выпуск
+
+### <a name="appservice"></a>Служба приложений
+
+* Добавлена возможность создания имени сертификата с помощью команды `webapp config ssl upload`.
+* Исправлены команды `webapp [list|show]` и `functionapp [list|show]` для отображения правильных приложений.
+* Добавлено стандартное значение для переменной `WEBSITE_NODE_DEFAULT_VERSION`.
+
+### <a name="consumption"></a>Потребление
+
+* Добавлена поддержка API версии 2017-11-30.
+
+### <a name="container"></a>Контейнер
+
+* Исправлены стандартные порты регрессии.
+
+### <a name="monitor"></a>Монитор
+
+* Добавлена поддержка нескольких измерений для команд метрик.
+
+### <a name="resource"></a>Ресурс
+
+* Добавлен аргумент `--include-response-body` для команды `resource show`
+
+### <a name="role"></a>Роль
+
+* Добавлено отображение стандартных назначений "классических" администраторов для команды `role assignment list`.
+* Добавлена поддержка команды `ad sp reset-credentials` для добавления учетных данных вместо перезаписи.
+* Улучшены сообщения об ошибках для команды `ad sp create-for-rbac`.
+
+### <a name="sql"></a>SQL
+
+* Добавлены команды `sql db list-usages` и `sql db show-usage`.
+* Добавлены команды `sql server conn-policy show` и `sql server conn-policy update`.
+
+### <a name="vm"></a>ВМ
+
+* Добавлены сведения о зонах для команды `az vm list-skus`.
+
 
 ## <a name="november-14-2017"></a>14 ноября 2017 г.
 
@@ -408,7 +466,7 @@ ms.lasthandoff: 11/20/2017
 
 * Появилась возможность задавать уровень большого двоичного объекта.
 * Добавлены аргументы `--bypass` и `--default-action` в командах `storage account [create|update]` для поддержки туннелирования службы.
-* Добавлены команды для добавления правил виртуальной сети и правил на основе IP-адресов в `storage account network-rule`.  
+* Добавлены команды для добавления правил виртуальной сети и правил на основе IP-адресов в `storage account network-rule`.
 * Разрешено шифрование службы с управляемым пользователем ключом.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--encryption` переименован в `--encryption-services` в команде `az storage account create and az storage account update`.
 * Исправление 4220. Несоответствие синтаксиса `az storage account update encryption`.
@@ -416,8 +474,8 @@ ms.lasthandoff: 11/20/2017
 ### <a name="vm"></a>ВМ
 
 * Исправлена проблема, из-за которой для команды `vmss get-instance-view` отображались лишние и неправильные сведения при использовании параметра `--instance-id *`.
-* Добавлена поддержка параметра `--lb-sku` в команде `vmss create`. 
-* Из черного списка имен администраторов для команд `[vm|vmss] create` удалены имена людей. 
+* Добавлена поддержка параметра `--lb-sku` в команде `vmss create`.
+* Из черного списка имен администраторов для команд `[vm|vmss] create` удалены имена людей.
 * Исправлена проблема, из-за которой команда `[vm|vmss] create` выдавала ошибку, если из образа не удавалось извлечь сведения о плане.
 * Исправлена проблема, которая приводила к сбою при создании масштабируемого набора виртуальных машин с внутренней подсистемой балансировки нагрузки.
 * Исправлена проблема, из-за которой аргумент `--no-wait` не работал с командой `vm availability-set create`.
@@ -505,43 +563,43 @@ ms.lasthandoff: 11/20/2017
 * Добавлены модули выставления счетов и потребления ресурсов.
 
 ```
-azure-cli (2.0.12)  
+azure-cli (2.0.12)
 
-acr (2.0.9)  
-acs (2.0.11)  
-appservice (0.1.11)  
-batch (3.0.3)  
-billing (0.1.3)  
-cdn (0.0.6)  
-cloud (2.0.7)  
-cognitiveservices (0.1.6)  
-command-modules-nspkg (2.0.1)  
-component (2.0.6)  
-configure (2.0.10)  
-consumption (0.1.3)  
-container (0.1.7)  
-core (2.0.12)  
-cosmosdb (0.1.11)  
-dla (0.0.10)  
-dls (0.0.11)  
-feedback (2.0.6)  
-find (0.2.6)  
-interactive (0.3.7)  
-iot (0.1.10)  
-keyvault (2.0.8)  
-lab (0.0.9)  
-monitor (0.0.8)  
-network (2.0.11)  
-nspkg (3.0.1)  
-profile (2.0.9)  
-rdbms (0.0.5)  
-redis (0.2.7)  
-resource (2.0.11)  
-role (2.0.9)  
-sf (1.0.5)  
-sql (2.0.8)  
-storage (2.0.11)  
-vm (2.0.11) 
+acr (2.0.9)
+acs (2.0.11)
+appservice (0.1.11)
+batch (3.0.3)
+billing (0.1.3)
+cdn (0.0.6)
+cloud (2.0.7)
+cognitiveservices (0.1.6)
+command-modules-nspkg (2.0.1)
+component (2.0.6)
+configure (2.0.10)
+consumption (0.1.3)
+container (0.1.7)
+core (2.0.12)
+cosmosdb (0.1.11)
+dla (0.0.10)
+dls (0.0.11)
+feedback (2.0.6)
+find (0.2.6)
+interactive (0.3.7)
+iot (0.1.10)
+keyvault (2.0.8)
+lab (0.0.9)
+monitor (0.0.8)
+network (2.0.11)
+nspkg (3.0.1)
+profile (2.0.9)
+rdbms (0.0.5)
+redis (0.2.7)
+resource (2.0.11)
+role (2.0.9)
+sf (1.0.5)
+sql (2.0.8)
+storage (2.0.11)
+vm (2.0.11)
 ```
 
 ### <a name="core"></a>Core
@@ -754,8 +812,8 @@ vm (2.0.11)
 * Удален параметр `--marker` из команд `storage blob list`, `storage container list` и `storage share list` (3745).
 * Включено создание учетных записей хранения с поддержкой только HTTPS.
 * Обновлены метрики хранилища, команды входа и CORS (3495).
-* Перефразировано сообщение об исключении, которое выводит команда добавления CORS (3638) (3362)  
-* Генератор преобразован в список в режиме пробного выполнения команды пакетной загрузки (3592). 
+* Перефразировано сообщение об исключении, которое выводит команда добавления CORS (3638) (3362)
+* Генератор преобразован в список в режиме пробного выполнения команды пакетной загрузки (3592).
 * Исправлена проблема при пробном выполнении команды пакетной загрузки больших двоичных объектов (3640) (3592).
 
 ### <a name="vm"></a>ВМ
@@ -821,7 +879,7 @@ vm (2.0.6)
 
 ### <a name="core"></a>Core
 
-* Ядро: запись исключений, порожденных незарегистрированным поставщиком, и его автоматическая регистрация.   
+* Ядро: запись исключений, порожденных незарегистрированным поставщиком, и его автоматическая регистрация.
 * Производительность: сохранение кэша маркеров библиотеки ADAL в памяти до завершения работы процесса ([№ 2603](https://github.com/Azure/azure-cli/issues/2603)).
 * Исправление байтов, возвращаемых из шестнадцатеричных отпечатков -o tsv ([№ 3053](https://github.com/Azure/azure-cli/issues/3053)).
 * Улучшенное скачивание сертификатов Key Vault и интеграция субъектов-служб AAD ([№ 3003](https://github.com/Azure/azure-cli/issues/3003)).
@@ -915,7 +973,7 @@ vm (2.0.6)
 * Исправлена ошибка `vpn-connection create`, возникавшая при использовании параметра `--no-wait` или `--validate`.
 * Добавлена поддержка шлюзов виртуальной сети "активный-активный".
 * Удалены значения NULL из выходных данных команды `network vpn-connection list/show`.
-* BC: исправлена ошибка в выходных данных `vpn-connection create`. 
+* BC: исправлена ошибка в выходных данных `vpn-connection create`.
 * Исправлена ошибка, приводившая к неправильному анализу аргумента --key-length команды vpn-connection create.
 * Исправлена ошибка в `dns zone import`, из-за которой записи не импортировались правильно.
 * Исправлена ошибка, из-за которой команда `traffic-manager endpoint update` не работала.
@@ -981,7 +1039,7 @@ vm (2.0.6)
 
 ```
 azure-cli (2.0.2)
- 
+
 acr (2.0.0)
 acs (2.0.2)
 appservice (0.1.2)
@@ -1019,26 +1077,26 @@ vm (2.0.2)
 * Добавлен запрос для отсутствующих параметров шаблона ([#2364](https://github.com/Azure/azure-cli/pull/2364)).
 * Добавлена поддержка установки параметров по умолчанию для таких распространенных аргументов, как группа ресурсов по умолчанию, веб-страница по умолчанию, виртуальная машина по умолчанию.
 * Добавлена поддержка входа на конкретный клиент.
- 
+
 ### <a name="acs"></a>ACS
 
 * [ACS] Добавлена поддержка настройки кластера ACS по умолчанию ([#2554](https://github.com/Azure/azure-cli/pull/2554)).
 * Добавлена поддержка запроса пароля для ключа SSH ([#2044](https://github.com/Azure/azure-cli/pull/2044)).
 * Добавлена поддержка кластеров Windows ([#2211](https://github.com/Azure/azure-cli/pull/2211)).
 * Добавлена возможность изменения роли "Владелец" на роль "Участник" ([#2321](https://github.com/Azure/azure-cli/pull/2321)).
- 
+
 ### <a name="appservice"></a>AppService
 
 * AppService: добавлена поддержка получения внешнего IP-адреса, используемого для записей DNS типа A ([#2627](https://github.com/Azure/azure-cli/pull/2627)).
 * AppService: добавлена поддержка привязки групповых сертификатов ([#2625](https://github.com/Azure/azure-cli/pull/2625)).
 * AppService: добавлена поддержка профилей для публикации списком ([#2504](https://github.com/Azure/azure-cli/pull/2504)).
 * AppService: добавлен триггер синхронизации с системой управления версиями после настройки ([#2326](https://github.com/Azure/azure-cli/pull/2326)).
- 
+
 ### <a name="datalake"></a>DataLake
 
 * Первоначальный выпуск модуля Data Lake Analytics.
 * Первоначальный выпуск модуля Data Lake Store.
- 
+
 ### <a name="docuemntdb"></a>DocumentDB
 
 * DocumentDB: добавлена поддержка для получения списка строк подключения ([#2580](https://github.com/Azure/azure-cli/pull/2580)).
@@ -1097,8 +1155,8 @@ role (2.0.0)
 sql (0.1.1b5)
 storage (2.0.0)
 vm (2.0.0)
- 
-Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32) 
+
+Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 [GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)]
 ```
 
