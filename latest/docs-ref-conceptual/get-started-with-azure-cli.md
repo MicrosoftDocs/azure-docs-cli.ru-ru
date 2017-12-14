@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 85c418a8-6177-4833-bb8d-ff4ce2233c1a
-ms.openlocfilehash: 3354d1c6518ea2d0ef0db227a13b86cb59d0575e
-ms.sourcegitcommit: 0149f195a0d9f0ea9b7ff5c6e00ad4242223a1a8
+ms.openlocfilehash: 689b8f4d77af5a6f398c0dd85e922baa398f767a
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
@@ -51,7 +51,7 @@ Azure CLI 2.0 — это новый интерфейс командной ст
 Создайте группу ресурсов с именем MyResourceGroup в регионе Azure *westus2*.  Используйте для этого следующую команду:
 
 ```azurecli-interactive
-az group create -n MyResourceGroup -l westus2 
+az group create -n MyResourceGroup -l westus2
 ```
 
 После создания группы ресурсов команда `az group create` выводит несколько свойств только что созданного ресурса:
@@ -141,7 +141,7 @@ my-login@MyLinuxVM:~$
 
 Теперь создадим виртуальную машину на основе центра обработки данных Windows Server 2016 с помощью команды `az vm create` и добавим ее в ту же группу ресурсов MyResourceGroup, которую мы использовали для виртуальной машины Linux.  Как и в примере с виртуальной машиной Linux, мы подключим два диска хранилища с помощью параметра `--data-disk-sizes-gb`.
 
-Не используйте в Azure имена пользователей и пароли, которые можно легко подобрать. Существуют правила, которые описывают, какие символы можно использовать, и указывают минимальную длину имени пользователя и пароля.  
+Не используйте в Azure имена пользователей и пароли, которые можно легко подобрать. Существуют правила, которые описывают, какие символы можно использовать, и указывают минимальную длину имени пользователя и пароля.
 
 > [!NOTE]
 > При выполнении этой команды вам будет предложено ввести имя пользователя и пароль.
@@ -165,7 +165,7 @@ az vm create -n MyWinVM -g MyResourceGroup --image Win2016Datacenter
 }
 ```
 
-Теперь войдите на созданную виртуальную машину Windows Server, используя протокол RDP и общедоступный IP-адрес этой виртуальной машины (они отображаются в результате выполнения команды `az vm create`).  
+Теперь войдите на созданную виртуальную машину Windows Server, используя протокол RDP и общедоступный IP-адрес этой виртуальной машины (они отображаются в результате выполнения команды `az vm create`).
 Если вы работаете на компьютере Windows, вы можете отобразить IP-адрес, выполнив команду `mstsc` в командной строке:
 
 ```azurecli-interactive
@@ -176,7 +176,7 @@ mstsc /v:xx.xxx.xx.xxx
 
 ## <a name="creating-other-resources-in-azure"></a>Создание других ресурсов в Azure
 
-Вы узнали, как создавать группы ресурсов, а также виртуальные машины Linux и Windows Server. Но вы также можете создать в Azure много других ресурсов.  
+Вы узнали, как создавать группы ресурсов, а также виртуальные машины Linux и Windows Server. Но вы также можете создать в Azure много других ресурсов.
 
 Все новые ресурсы создаются с помощью согласованного шаблона именования `az <resource type name> create`.  Например, чтобы создать подсистему балансировки нагрузки Azure, которую можно затем связать с новой виртуальной машиной, выполните следующую команду:
 
@@ -199,8 +199,8 @@ az network vnet create -n MyVirtualNetwork -g MyResourceGroup --address-prefix 1
 az appservice plan create -n MyAppServicePlan -g MyResourceGroup
 
 # Create Two Web Apps within the AppService (note: name param must be a unique DNS entry)
-az webapp create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan 
-az webapp create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan 
+az webapp create -n MyWebApp43432 -g MyResourceGroup --plan MyAppServicePlan
+az webapp create -n MyWebApp43433 -g MyResourceGroup --plan MyAppServicePlan
 ```
 
 Ознакомившись с основами шаблона `az <resource type name> create`, вы можете легко создавать любые ресурсы. Ниже приведены некоторые популярные типы ресурсов Azure и соответствующие команды Azure CLI для их создания.
@@ -221,7 +221,7 @@ SQL Database Server         az sql server create
 Document DB                 az documentdb create
 ```
 
-Сведения о дополнительных параметрах для каждого ресурса, которые можно передать соответствующей команде, и типы ресурсов, которые можно создать, см. в [справочной документации](/cli/azure). 
+Сведения о дополнительных параметрах для каждого ресурса, которые можно передать соответствующей команде, и типы ресурсов, которые можно создать, см. в [справочной документации](/cli/azure).
 
 ## <a name="useful-tip-optimizing-create-operations-using---no-wait"></a>Полезный совет: оптимизируйте операции создания с помощью параметра --no-wait
 
@@ -241,14 +241,14 @@ az vm create -n MyLinuxVM2 -g MyResourceGroup --image UbuntuLTS --no-wait
 
 ## <a name="listing-resources-and-formatting-output"></a>Вывод списка ресурсов и форматирование результатов
 
-С помощью команды `list` в Azure CLI можно найти и вывести список ресурсов, работающих в Azure. 
+С помощью команды `list` в Azure CLI можно найти и вывести список ресурсов, работающих в Azure.
 
 Как и при использовании команды создания, вы можете вывести список ресурсов с помощью стандартного для Azure CLI 2.0 шаблона именования `az <resource type name> list`, одинакового для всех типов ресурсов.  Используя различные доступные форматы и варианты запросов, можно фильтровать и сортировать список ресурсов, чтобы его было удобно просматривать.
 
-Например, команда `az vm list` отображает список всех ваших виртуальных машин.   
+Например, команда `az vm list` отображает список всех ваших виртуальных машин.
 
 ```azurecli-interactive
-az vm list 
+az vm list
 ```
 Результаты по умолчанию возвращаются в формате JSON (для краткости отображается только часть результата).
 
@@ -276,7 +276,7 @@ az vm list
     },
           ...
           ...
-          ...   
+          ...
 ]
 ```
 
@@ -293,7 +293,7 @@ MyLinuxVM  MyResourceGroup  westus2
 MyWinVM    MyResourceGroup  westus2
 ```
 
-Параметр *tsv* можно использовать для вывода результатов в виде текста, разделенного символами табуляции без заголовков.  Этот формат удобен в тех случаях, когда требуется передать результат в другой текстовый инструмент, например grep. 
+Параметр *tsv* можно использовать для вывода результатов в виде текста, разделенного символами табуляции без заголовков.  Этот формат удобен в тех случаях, когда требуется передать результат в другой текстовый инструмент, например grep.
 
 ```azurecli-interactive
 az vm list --output tsv
@@ -307,7 +307,7 @@ None    None            /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/reso
 
 ## <a name="querying-resources-and-shaping-outputs"></a>Запрос ресурсов и предоставление доступа к результатам
 
-Часто необходимо иметь возможность запросить только те ресурсы, которые отвечают определенному условию.  
+Часто необходимо иметь возможность запросить только те ресурсы, которые отвечают определенному условию.
 
 Команда `list` оснащена встроенной функцией, которая упрощает фильтрацию ресурсов по имени группы ресурсов.  Например, вы можете передать параметр `--ResourceGroup` или `-g` в команду `list`, чтобы извлечь только эти ресурсы в определенной группе ресурсов:
 
@@ -328,7 +328,7 @@ MyWinVM    MyResourceGroup  westus2
 Например, выполните следующую команду, чтобы запросить любой ресурс виртуальной машины в любой группе ресурсов, который содержит буквы "My":
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup, 'MY')]" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')]"
 ```
 
 ```Output
@@ -341,7 +341,7 @@ MYRESOURCEGROUP  Succeeded            MyWinVM    westus2     XXXXXXXX-XXXX-XXXX-
 Затем можно еще раз уточнить результаты с помощью функции формирования запросов JMESPath, чтобы вывести другие значения.  Например, следующая команда извлекает тип диска операционной системы виртуальной машины, чтобы определить, работает ли виртуальная машина на ОС Linux или Windows:
 
 ```azurecli-interactive
-az vm list --output table --query "[?contains(resourceGroup, 'MY')].{ VMName:name, OSType:storageProfile.osDisk.osType }" 
+az vm list --output table --query "[?contains(resourceGroup, 'MY')].{ VMName:name, OSType:storageProfile.osDisk.osType }"
 ```
 
 ```Output

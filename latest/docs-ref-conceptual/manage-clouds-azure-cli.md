@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
-ms.openlocfilehash: cb470d179daf7cb4ecf535903adb12071602034e
-ms.sourcegitcommit: 5db22de971cf3983785cb209d92cbed1bbd69ecf
+ms.openlocfilehash: 0eb07d2919f6e640e1d594db9e18f9ada4d9f59f
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>Управление несколькими облаками с помощью Azure CLI 2.0
 
@@ -86,7 +86,7 @@ az cloud set --name AzureChinaCloud
 
 ## <a name="register-a-cloud"></a>Регистрация облака
 
-Зарегистрируйте новое облако, если у вас есть свои конечные точки для Azure Stack. Облако создается с помощью команды [cloud register](/cli/azure/cloud#register). Для этой команды требуется имя облака и набор функций для связанных конечных точек. Дополнительные сведения о регистрации в облаке для использования Azure Stack см. в руководстве по [установке и настройке CLI для использования с Azure Stack](/azure/azure-stack/user/azure-stack-connect-cli#connect-to-azure-stack).  
+Зарегистрируйте новое облако, если у вас есть свои конечные точки для Azure Stack. Облако создается с помощью команды [cloud register](/cli/azure/cloud#register). Для этой команды требуется имя облака и набор функций для связанных конечных точек. Дополнительные сведения о регистрации в облаке для использования Azure Stack см. в руководстве по [установке и настройке CLI для использования с Azure Stack](/azure/azure-stack/user/azure-stack-connect-cli#connect-to-azure-stack).
 
 Вам не нужно регистрировать свое облако в таких регионах, как Китай или Германия, а также для использования в государственных организациях США. Эти облака управляются корпорацией Майкрософт и доступны по умолчанию.  Дополнительные сведения обо всех доступных конечных точках см. в [документации по `az cloud register`](/cli/azure/cloud?view=azure-cli-latest#az_cloud_register).
 
