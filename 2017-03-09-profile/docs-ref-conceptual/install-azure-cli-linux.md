@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: f792d3fc84eedade52ddfb3f351e48689e474d53
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.openlocfilehash: cf1405cae70762146f63bc6629edc0dd1d949fff
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>Установка Azure CLI 2.0 в Linux вручную
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/20/2017
 
 * [Python 2.7 или Python 3.x](https://www.python.org/downloads/)
 * [libffi](https://sourceware.org/libffi/)
-* [OpenSSL](https://www.openssl.org/source/)
+* [OpenSSL 1.0.2](https://www.openssl.org/source/)
 
 ## <a name="install-or-update-manually"></a>Установка или обновление вручную
 
@@ -58,7 +58,7 @@ curl https://azurecliprod.blob.core.windows.net/install | bash
 hash -r
 ```
 
-и посмотрите, будет ли устранена проблема. 
+и посмотрите, будет ли устранена проблема.
 
 Это также может произойти, если вы не перезапустили оболочку после установки. Убедитесь, что команда `az` добавлена в переменную `$PATH`.
 

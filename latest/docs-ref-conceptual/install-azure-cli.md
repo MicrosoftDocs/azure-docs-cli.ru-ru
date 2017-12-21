@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
-ms.openlocfilehash: 36429bb23f392ff6210a9c99885df83f53768386
-ms.sourcegitcommit: 5fc7d8ccf2304c5a12fb99a80f0b00a0ad2c34e9
+ms.openlocfilehash: 5a667ad8720100b45ff714601225535ef442545c
+ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/09/2017
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
@@ -70,12 +70,12 @@ ms.lasthandoff: 12/01/2017
    ```bash
    exec -l $SHELL
    ```
-   
+
 3. Запустите CLI из командной строки с помощью команды `az`.
 
 ## <a name="install-on-windows"></a>Установка в Windows
 
-### <a name="install-with-msi-for-the-windows-command-line"></a>Установка с помощью MSI-файла для командной строки Windows 
+### <a name="install-with-msi-for-the-windows-command-line"></a>Установка с помощью MSI-файла для командной строки Windows
 
 Чтобы установить CLI в Windows и использовать его в окне командной строки Windows, скачайте и запустите [установщик Azure CLI (MSI)](https://aka.ms/InstallAzureCliWindows).
 
@@ -102,15 +102,14 @@ ms.lasthandoff: 12/01/2017
 
 5.  Запустите CLI из командной строки с помощью команды `az`.
 
-## <a name="install-with-apt-package-manager"></a>Установка с помощью диспетчера пакетов apt 
+## <a name="install-with-apt-package-manager"></a>Установка с помощью диспетчера пакетов apt
 
 Для дистрибутивов с поддержкой диспетчера пакетов `apt`, например Ubuntu или Debian, можно установить Azure CLI 2.0, используя `apt-get`.
 
-> [!NOTE]
-> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
 1. Измените список источников.
- 
+
    - 32-разрядная система:
 
      ```bash
@@ -139,8 +138,7 @@ ms.lasthandoff: 12/01/2017
 
 Для дистрибутивов с поддержкой диспетчера пакетов `yum`, например Red Hat Enterprise Linux (RHEL), Fedora или CentOS, можно установить Azure CLI 2.0, используя `yum`.
 
-> [!NOTE]
-> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
 1. Импортируйте ключ репозитория Майкрософт:
 
@@ -167,8 +165,7 @@ ms.lasthandoff: 12/01/2017
 
 Для дистрибутивов с поддержкой диспетчера пакетов `zypper`, например OpenSUSE или SLE, можно установить Azure CLI 2.0, используя `zypper`.
 
-> [!NOTE]
-> Для работы с CLI необходимо установить Python 2.7.x или Python 3.x. Если в дистрибутиве нет соответствующих пакетов, [установите Python](https://www.python.org/downloads/).
+[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
 1. Импортируйте ключ репозитория Майкрософт:
 
@@ -230,7 +227,7 @@ CLI устанавливается в образ как команда `az` в �
    SUSE OpenSUSE 13.2    | sudo zypper refresh && sudo zypper --non-interactive install curl gcc python python-xml libffi-devel python-devel openssl-devel
    ```
 
-Если дистрибутив не указан в списке выше, вам нужно установить [Python 2.7 или более поздней версии](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/) и [OpenSSL](https://www.openssl.org/source/).
+Если дистрибутив не указан в списке выше, вам нужно установить [Python 2.7 или более поздней версии](https://www.python.org/downloads/), [libffi](https://sourceware.org/libffi/) и [OpenSSL 1.0.2](https://www.openssl.org/source/).
 
 2. Установите CLI с помощью команды `curl`.
 
