@@ -1,7 +1,7 @@
 - name: "Azure CLI\_2.0"
   href: overview.md
   items:
-    - name: Установить
+    - name: Install
       href: install-azure-cli.md
     - name: Начало работы
       href: get-started-with-azure-cli.md
@@ -38,6 +38,8 @@
       href: query-azure-cli.md
     - name: расширения.
       href: azure-cli-extensions.md
+    - name: Параметры конфигурации
+      href: azure-cli-Configuration.md
     - name: Заметки о выпуске
       href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
 - name: Примеры сценариев
@@ -48,7 +50,7 @@
       href: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: Веб-приложения
       href: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: Функции
+    - name: Functions
       href: /azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: База данных SQL
       href: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json

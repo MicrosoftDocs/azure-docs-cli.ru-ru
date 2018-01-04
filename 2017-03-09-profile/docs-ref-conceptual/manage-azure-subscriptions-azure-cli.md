@@ -3,46 +3,56 @@ title: "Manage Azure subscriptions with Azure CLI 2.0 (Управление по
 description: "Manage Azure subscriptions with Azure CLI 2.0 on Linux, Mac, or Windows (Управление подписками Azure с помощью Azure CLI 2.0 на платформах Windows, Mac или Linux)."
 keywords: "Azure CLI 2.0, Linux, Mac, Windows, OS X, подписка"
 author: kamaljit
-ms.author: routlaw
-manager: douge
-ms.date: 02/27/2017
+ms.author: sttramer
+manager: routlaw
+ms.date: 10/30/2017
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 98fb955e-6dbf-47e2-80ac-170d6d95cb70
-ms.openlocfilehash: c3538077e05d61f3c40880bb8b804226eb99dc85
-ms.sourcegitcommit: bcf93ad8ed8802072249cd8187cd4420da89b4c6
+ms.openlocfilehash: 0f453ad1bff621250c8aa3147b5f5e916e712e30
+ms.sourcegitcommit: 16426a08c0f2f62d0b9dca3df8132cece659acff
 ms.translationtype: HT
 ms.contentlocale: ru-RU
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="6e216-104">Управление несколькими подписками Azure</span><span class="sxs-lookup"><span data-stu-id="6e216-104">Manage multiple Azure subscriptions</span></span>
+# <a name="manage-multiple-azure-subscriptions"></a><span data-ttu-id="a073d-104">Управление несколькими подписками Azure</span><span class="sxs-lookup"><span data-stu-id="a073d-104">Manage multiple Azure subscriptions</span></span>
 
-<span data-ttu-id="6e216-105">Если вы только приступаете к работе с Azure, скорее всего, у вас есть только одна подписка.</span><span class="sxs-lookup"><span data-stu-id="6e216-105">If you are brand new to Azure, you probably only have a single subscription.</span></span>
-<span data-ttu-id="6e216-106">Но если вы уже пользуетесь Azure какое-то время, возможно, вы уже успели создать несколько подписок.</span><span class="sxs-lookup"><span data-stu-id="6e216-106">But if you have been using Azure for a while, you may have created multiple Azure subscriptions.</span></span>
-<span data-ttu-id="6e216-107">Вы можете настроить Azure CLI 2.0 для выполнения команд, связанных с определенной подпиской.</span><span class="sxs-lookup"><span data-stu-id="6e216-107">If so, you can configure Azure CLI 2.0 to execute commands against a particular subscription.</span></span>
+<span data-ttu-id="a073d-105">Большинство пользователей Azure обычно используют только одну подписку.</span><span class="sxs-lookup"><span data-stu-id="a073d-105">Most Azure users will only ever have a single subscription.</span></span> <span data-ttu-id="a073d-106">Но если вы работаете в нескольких организациях или если доступ к определенным ресурсам в вашей организации разделен по группам, это значит, что у вас, скорее всего, есть несколько подписок Azure.</span><span class="sxs-lookup"><span data-stu-id="a073d-106">However, if you are part of multiple organizations or your organization has divided up access to certain resources across groupings, you may have multiple subscriptions within Azure.</span></span> <span data-ttu-id="a073d-107">Для управления несколькими подписками можно использовать CLI, а для выполнения операций достаточно выбрать нужную подписку.</span><span class="sxs-lookup"><span data-stu-id="a073d-107">Multiple subscriptions can be easily managed with the CLI, and operations can be performed by selecting a subscription.</span></span>
 
-1. <span data-ttu-id="6e216-108">Получите список всех подписок в своей учетной записи.</span><span class="sxs-lookup"><span data-stu-id="6e216-108">Get a list of all subscriptions in your account.</span></span>
+## <a name="tenants-users-and-subscriptions"></a><span data-ttu-id="a073d-108">Клиенты, пользователи и подписки</span><span class="sxs-lookup"><span data-stu-id="a073d-108">Tenants, users, and subscriptions</span></span>
 
-   ```azurecli
-   az account list --output table
-   ```
+<span data-ttu-id="a073d-109">При определении различий между клиентами, пользователями и подписками в Azure может возникнуть путаница.</span><span class="sxs-lookup"><span data-stu-id="a073d-109">You might have some confusion over the difference between tenants, users, and subscriptions within Azure.</span></span> <span data-ttu-id="a073d-110">В общих чертах, _клиент_ — это сущность Azure Active Directory, которая условно представляет всю организацию.</span><span class="sxs-lookup"><span data-stu-id="a073d-110">In general, a _tenant_ is the Azure Active Directory entity which encompasses a whole organization.</span></span> <span data-ttu-id="a073d-111">Клиент предполагает наличие минимум одной _подписки_ и одного _пользователя_.</span><span class="sxs-lookup"><span data-stu-id="a073d-111">This tenant has at least one _subscription_ and _user_.</span></span> <span data-ttu-id="a073d-112">Пользователь — это человек, который связан только с одним клиентом — организацией, в которой он работает.</span><span class="sxs-lookup"><span data-stu-id="a073d-112">A user is an individual, and is associated with only one tenant, the organization that they belong to.</span></span> <span data-ttu-id="a073d-113">У всех пользователей есть учетные записи, с помощью которых они входят в Azure, подготавливают и используют ресурсы.</span><span class="sxs-lookup"><span data-stu-id="a073d-113">Users are those accounts which log in to Azure to provision and use resources.</span></span> <span data-ttu-id="a073d-114">Пользователь может иметь доступ к нескольким _подпискам_. Подписки — это соглашения с корпорацией Майкрософт на использование облачных служб, в том числе Azure.</span><span class="sxs-lookup"><span data-stu-id="a073d-114">A user may have access to multiple _subscriptions_, which are the agreements with Microsoft to use cloud services, including Azure.</span></span> <span data-ttu-id="a073d-115">Каждый ресурс связан с подпиской.</span><span class="sxs-lookup"><span data-stu-id="a073d-115">Every resource is associated with a subscription.</span></span>
 
-   ```Output
-   Name                                         CloudName    SubscriptionId                        State     IsDefault
-   -------------------------------------------  -----------  ------------------------------------  --------  -----------
-   My Production Subscription                   AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
-   My DevTest Subscription                      AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled   True
-   My Demos                                     AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
-   ```
+<span data-ttu-id="a073d-116">Дополнительные сведения о различиях между клиентами, пользователями и подписками см. в [словаре терминов, связанных с облачной платформой Azure](/azure/azure-glossary-cloud-terminology).</span><span class="sxs-lookup"><span data-stu-id="a073d-116">To learn more about the differences between tenants, users, and subscriptions, see the [Azure cloud terminology dictionary](/azure/azure-glossary-cloud-terminology).</span></span>
+<span data-ttu-id="a073d-117">Чтобы узнать, как добавить новую подписку в клиент Azure Active Directory, см. статью [Как добавить подписку Azure в Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).</span><span class="sxs-lookup"><span data-stu-id="a073d-117">To learn how to add a new subscription to your Azure Active Directory tenant, see [How to add an Azure subscription to Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).</span></span>
 
-1. <span data-ttu-id="6e216-109">Определите подписку по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="6e216-109">Set the default.</span></span>
- 
-   ```azurecli
-   az account set --subscription "My Demos"
-   ```
+## <a name="working-with-multiple-subscriptions"></a><span data-ttu-id="a073d-118">Использование нескольких подписок</span><span class="sxs-lookup"><span data-stu-id="a073d-118">Working with multiple subscriptions</span></span>
 
-<span data-ttu-id="6e216-110">Проверьте изменения, выполнив команду `az account list --output table` еще раз.</span><span class="sxs-lookup"><span data-stu-id="6e216-110">You can verify the change by running the `az account list --output table` command again.</span></span>
+<span data-ttu-id="a073d-119">Чтобы получить доступ к ресурсам, содержащимся в другой подписке, необходимо переключиться на нее с активной подписки.</span><span class="sxs-lookup"><span data-stu-id="a073d-119">To access the resources contained within a subscription, you need to switch your active subscription.</span></span> <span data-ttu-id="a073d-120">Все операции с подписками выполняются с помощью команды `az account`. Эта команда связана с соглашением об обслуживании, которое представляет подписка, а не с учетной записью пользователя.</span><span class="sxs-lookup"><span data-stu-id="a073d-120">All work with subscriptions is done through the `az account` command, which refers to the service agreement that a subscription represents and not your individual account.</span></span>
 
-<span data-ttu-id="6e216-111">Когда вы определите подписку по умолчанию, все последующие выполняемые команды Azure CLI будут связаны с ней.</span><span class="sxs-lookup"><span data-stu-id="6e216-111">Once you set your default subscription, all subsequent Azure CLI commands run against this subscription.</span></span>
+[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
+
+<span data-ttu-id="a073d-121">Чтобы начать работу с подписками, отобразите список доступных подписок в вашей учетной записи:</span><span class="sxs-lookup"><span data-stu-id="a073d-121">To start working with your available subscriptions, get a list of those available in your account:</span></span>
+
+```azurecli-interactive
+az account list --output table
+```
+
+```Output
+Name                                         CloudName    SubscriptionId                        State     IsDefault
+-------------------------------------------  -----------  ------------------------------------  --------  -----------
+My Production Subscription                   AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
+My DevTest Subscription                      AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled   True
+My Demos                                     AzureCloud   XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  Enabled
+```
+
+<span data-ttu-id="a073d-122">Чтобы сменить активную подписку, можно использовать команду `az account set`:</span><span class="sxs-lookup"><span data-stu-id="a073d-122">In order to change the active subscription, you can use `az account set`:</span></span>
+
+```azurecli-interactive
+az account set --subscription "My Demos"
+```
+
+<span data-ttu-id="a073d-123">Для выбора подписки можно указать имя или идентификатор подписки.</span><span class="sxs-lookup"><span data-stu-id="a073d-123">You can use either the subscription ID or the subscription name to select the subscription.</span></span>
