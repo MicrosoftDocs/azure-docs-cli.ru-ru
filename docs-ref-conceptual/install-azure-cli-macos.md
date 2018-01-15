@@ -13,10 +13,10 @@ ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: e615d2b3ab3b1307e982cb1d4d456633440afdf6
-ms.sourcegitcommit: 905939cc44764b4d1cc79a9b36c0793f7055a686
+ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="install-azure-cli-20-on-macos"></a>Установка Azure CLI 2.0 в macOS
 
