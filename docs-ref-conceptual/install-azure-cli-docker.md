@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 76ecf2c9cd0e6e694a31ac160112d1348863f118
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: 7a12da712cd2aad5bb5fb56e27267a8e05df34a6
+ms.sourcegitcommit: c95a0cde5819cfe8a4f6b058a52f09a8f87c9696
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="install-azure-cli-20-with-docker"></a>Установка Azure CLI 2.0 с помощью Docker
 
@@ -27,10 +27,10 @@ Docker можно использовать для установки изоли�
 Установите CLI с помощью команды `docker run`.
 
    ```bash
-   docker run -it azuresdk/azure-cli-python:<version>
+   docker run -it microsoft/azure-cli:<version>
    ```
 
-См. доступные версии на странице с [тегами Docker](https://hub.docker.com/r/azuresdk/azure-cli-python/tags/).
+См. доступные версии на странице с [тегами Docker](https://hub.docker.com/r/microsoft/azure-cli/tags/).
 
 CLI устанавливается в образ как команда `az` в папку `/usr/local/bin`.
 
@@ -38,7 +38,7 @@ CLI устанавливается в образ как команда `az` в �
 > Если вы хотите взять ключи SSH из среды пользователя, можно использовать `-v ${HOME}:/root`, чтобы подключить $HOME как `/root`.
 
 > ```bash
-> docker run -it -v ${HOME}:/root azuresdk/azure-cli-python:<version>
+> docker run -it -v ${HOME}:/root microsoft/azure-cli:<version>
 > ```
 
 ### <a name="update-with-docker"></a>Обновление с помощью Docker
@@ -48,18 +48,18 @@ CLI устанавливается в образ как команда `az` в �
 1. Обновите локальный образ с помощью команды `docker pull`.
 
    ```bash
-   docker pull azuresdk/azure-cli-python
+   docker pull microsoft/azure-cli
    ```
 
 2. Получите данные о контейнерах, которые используют образ CLI.
 
    ```bash
-   docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
+   docker container ls -a --filter 'ancestor=microsoft/azure-cli'
    ```
 
    ```output
    CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
-   34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
+   34a868beb2ab        microsoft/azure-cli:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
    ```
 
   > [!NOTE]
@@ -70,7 +70,7 @@ CLI устанавливается в образ как команда `az` в �
    ```bash
    docker stop inspiring_benz
    docker rm inspiring_benz
-   docker run azuresdk/azure-cli-python
+   docker run microsoft/azure-cli
    ```
 
 ### <a name="uninstall-with-docker"></a>Удаление с помощью Docker
@@ -82,12 +82,12 @@ CLI устанавливается в образ как команда `az` в �
 1. Получите данные о контейнерах, на которых запущен образ azure-cli.
 
    ```bash
-   docker container ls -a --filter 'ancestor=azuresdk/azure-cli-python'
+   docker container ls -a --filter 'ancestor=microsoft/azure-cli'
    ```
 
    ```output
    CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS                        PORTS               NAMES
-   34a868beb2ab        azuresdk/azure-cli-python:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
+   34a868beb2ab        microsoft/azure-cli:latest      "/bin/sh -c bash"   8 minutes ago       Exited (0) 8 minutes ago                       inspiring_benz
    ```
   > [!NOTE]
   > Если вы установили определенную версию образа, вам нужно добавить `:<version>` в конец имени образа.
@@ -101,6 +101,6 @@ CLI устанавливается в образ как команда `az` в �
 3. Удалите локально установленный образ CLI.
 
    ```bash
-   docker rmi azuresdk/azure-cli-python
+   docker rmi microsoft/azure-cli
    ```
 
