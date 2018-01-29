@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 75c531a13a4b730158cd2e874cb6c5d581a27598
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: 65e8e78275b0f40a2298934fe8bc9368bbf796a7
+ms.sourcegitcommit: 59f0b667f2202bae8914e6fc8dc5c9dc79fef91c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
@@ -51,6 +51,24 @@ ms.lasthandoff: 01/06/2018
    ```
 
 Запустите Azure CLI с помощью команды `az`.
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+### <a name="apt-key-fails-with-no-dirmngr"></a>Команда apt-key завершается сбоем с сообщением "No dirmngr" (Нет диспетчера каталогов)
+
+При выполнении команды `apt-key` может появиться примерно такая ошибка.
+
+```output
+gpg: failed to start the dirmngr '/usr/bin/dirmngr': No such file or directory
+gpg: connecting dirmngr at '/tmp/apt-key-gpghome.kt5zo27tp1/S.dirmngr' failed: No such file or directory
+gpg: keyserver receive failed: No dirmngr
+```
+
+Сбой возникает из-за отсутствия компонента, обязательного для `apt-key`. Ошибку можно устранить, установив пакет `dirmngr`.
+
+```bash
+sudo apt-get install dirmngr
+```
 
 ## <a name="update"></a>Блокировка изменений
 
