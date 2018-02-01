@@ -12,11 +12,11 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 5979acc5-21a5-41e2-a4b6-3183bfe6aa22
-ms.openlocfilehash: b086785f7b20622111e0a05e7cc7c27ddb5449b5
-ms.sourcegitcommit: 2e4d0bdd94c626e061434883032367b5619de4fe
+ms.openlocfilehash: 0de18adc91589377d4f96a306a70c9adfeabdcab
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="using-jmespath-queries-with-azure-cli-20"></a>Использование запросов JMESPath в Azure CLI 2.0
 
@@ -46,7 +46,7 @@ KBDemo020    RGDEMO001        westus
 
 ```azurecli-interactive
 az vm list \
-  --query [*].[name, resourceGroup] --out table
+  --query "[].[name, resourceGroup]" --out table
 ```
 
 ```

@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 71d9f57846cb83591ca5e3d338735b3c525987af
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: d60ede5b971ee2489482fb5a72bde9bf5389d37c
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Настройка Azure CLI 2.0
 
@@ -30,7 +30,7 @@ Azure CLI 2.0 позволяет применять пользовательск
 ## <a name="cli-configuration-with-az-configure"></a>Настройка CLI с использованием команды az configure
 
 Задать значения по умолчанию для CLI можно с помощью команды [az configure](/cli/azure/?view=azure-cli-latest#az_configure).
-Эта команда принимает один аргумент `--defaults`, который является разделенным пробелами списком пар `key=value`. Предоставленные значения используются CLI вместо обязательных аргументов. 
+Эта команда принимает один аргумент `--defaults`, который является разделенным пробелами списком пар `key=value`. Предоставленные значения используются CLI вместо обязательных аргументов.
 
 Ниже приведен список доступных параметров, которые можно использовать.
 
@@ -52,7 +52,7 @@ az configure --defaults "location=westus2 group=MyResourceGroup"
 
 ## <a name="cli-configuration-file"></a>Файл конфигурации CLI
 
-Файл конфигурации CLI содержит другие параметры, которые используются для управления поведением CLI. Файл конфигурации расположен здесь: `$AZURE_CONFIG_DIR/config`. По умолчанию для `AZURE_CONFIG_DIR` устанавливается значение `$HOME/.azure/config` в Linux и macOS и `%USERPROFILE%\.azure\config` в Windows. 
+Файл конфигурации CLI содержит другие параметры, которые используются для управления поведением CLI. Файл конфигурации расположен здесь: `$AZURE_CONFIG_DIR/config`. По умолчанию для `AZURE_CONFIG_DIR` устанавливается значение `$HOME/.azure/config` в Linux и macOS и `%USERPROFILE%\.azure\config` в Windows.
 
 Файлы конфигурации записываются в формате INI. Эти файлы состоят из разделов, которые начинаются с заголовка `[section-name]` и списка записей `key=value`. Имена разделов зависят от регистра, а сами параметры — нет.
 Комментарии — это любая строка, начинающаяся с `#` или `;`. Встроенные комментарии не допускаются. Логические операторы не зависят от регистра и представлены следующими значениями:

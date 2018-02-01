@@ -11,10 +11,10 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.openlocfilehash: 6f4cfec45becc0c4940e9066af53396b41db779d
-ms.sourcegitcommit: 16426a08c0f2f62d0b9dca3df8132cece659acff
+ms.sourcegitcommit: dd5b2c7b0b56608ef9ea8730c7dc76e6c532d5ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>Управление несколькими облаками с помощью Azure CLI 2.0
 

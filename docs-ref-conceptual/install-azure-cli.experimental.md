@@ -13,10 +13,10 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: ea5c0ee1-c530-4a1e-a83f-e1be71f6d416
 ms.openlocfilehash: 7d9c503c4e66f07795d5fec99c206fe7d3afb6a7
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.sourcegitcommit: cae66f994cb7b7f829f75ac528093fdb6851f64e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 01/31/2018
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 

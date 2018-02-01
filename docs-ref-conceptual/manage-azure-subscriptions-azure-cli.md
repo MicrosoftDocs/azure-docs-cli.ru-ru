@@ -13,10 +13,10 @@ ms.devlang: azurecli
 ms.service: multiple
 ms.assetid: 98fb955e-6dbf-47e2-80ac-170d6d95cb70
 ms.openlocfilehash: 0f453ad1bff621250c8aa3147b5f5e916e712e30
-ms.sourcegitcommit: 16426a08c0f2f62d0b9dca3df8132cece659acff
+ms.sourcegitcommit: dd5b2c7b0b56608ef9ea8730c7dc76e6c532d5ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 

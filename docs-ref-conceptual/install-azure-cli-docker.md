@@ -13,10 +13,10 @@ ms.devlang: azurecli
 ms.service: multiple
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 7a12da712cd2aad5bb5fb56e27267a8e05df34a6
-ms.sourcegitcommit: c95a0cde5819cfe8a4f6b058a52f09a8f87c9696
+ms.sourcegitcommit: cae66f994cb7b7f829f75ac528093fdb6851f64e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/31/2018
 ---
 # <a name="install-azure-cli-20-with-docker"></a>Установка Azure CLI 2.0 с помощью Docker
 
