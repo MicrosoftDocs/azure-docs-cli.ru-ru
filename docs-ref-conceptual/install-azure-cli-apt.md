@@ -1,26 +1,25 @@
 ---
-title: "Установка Azure CLI 2.0 с помощью apt"
+title: "Установка Azure CLI 2.0 в Linux с помощью apt"
 description: "Как установить Azure CLI 2.0 с помощью apt"
 keywords: Azure CLI,Install Azure CLI,azure apt, azure debian, azure ubuntu
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 11/01/2017
+ms.date: 01/29/18
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 65e8e78275b0f40a2298934fe8bc9368bbf796a7
-ms.sourcegitcommit: 59f0b667f2202bae8914e6fc8dc5c9dc79fef91c
+ms.openlocfilehash: fdd9f0061d5d38ed5a349b11eb0f5f27786bc1ab
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
-Если вы используете дистрибутив, который поставляется с диспетчером пакетов `apt`, например Ubuntu или Debian, в системе можно установить доступный пакет для Azure CLI.
+Если вы используете дистрибутив, который поставляется с `apt`, например Ubuntu или Debian, можно применить пакет для Azure CLI. Этот пакет протестирован с Ubuntu Wheezy и Ubuntu Xenial.
 
 [!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
@@ -54,9 +53,11 @@ ms.lasthandoff: 01/25/2018
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
+Ниже описаны некоторые распространенные проблемы при установке с помощью `apt`. Если ваш случай не описан в этом разделе, сообщите о проблеме на [сайте GitHub](https://github.com/Azure/azure-cli/issues).
+
 ### <a name="apt-key-fails-with-no-dirmngr"></a>Команда apt-key завершается сбоем с сообщением "No dirmngr" (Нет диспетчера каталогов)
 
-При выполнении команды `apt-key` может появиться примерно такая ошибка.
+При выполнении команды `apt-key` может появиться примерно такая ошибка:
 
 ```output
 gpg: failed to start the dirmngr '/usr/bin/dirmngr': No such file or directory
@@ -79,15 +80,15 @@ sudo apt-get install dirmngr
    ```
 
 > [!NOTE]
-> В результате обновятся все установленные в системе пакеты, зависимости которых не были изменены.
-> Чтобы обновить только CLI, используйте команду `apt-get install`.
+> Эта команда позволяет обновить все установленные в системе пакеты, зависимости которых не были изменены.
+> Чтобы обновить только CLI, используйте `apt-get install`.
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```
 
-### <a name="uninstall"></a>Удаление
+## <a name="uninstall"></a>Удаление
 
-Нам будет очень жаль, если вы решите удалить Azure CLI. Перед удалением воспользуйтесь командой `az feedback`, чтобы оставить отзыв с описанием причин вашего решения и предложениями того, как мы могли бы улучшить этот продукт. Мы хотим убедиться, что Azure CLI не содержит ошибок и удобен в использовании. Вы также можете [отправить описание проблемы на GitHub](https://github.com/Azure/azure-cli/issues).
+[!INCLUDE [uninstall-boilerplate.md](includes/uninstall-boilerplate.md)]
 
 1. Удалите CLI с помощью команды `apt-get remove`.
 

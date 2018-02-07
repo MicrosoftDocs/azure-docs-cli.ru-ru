@@ -1,26 +1,25 @@
 ---
-title: "Установка Azure CLI 2.0 с помощью zypper"
+title: "Установка Azure CLI 2.0 в Linux с помощью zypper"
 description: "Как установить Azure CLI 2.0 с помощью zypper"
 keywords: azure cli, azure cli install, azure cli zypper, azure cli opensuse, azure cli sle
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 11/01/2017
+ms.date: 01/29/18
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 6b9a97e73f45c8271f1e8f19d5a8cf5f9f748d07
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: c0b566f96e47d34d20f7bf85db0fae32913ed596
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>Установка Azure CLI 2.0 с помощью zypper
 
-Если вы используете дистрибутив, который поставляется с диспетчером пакетов `zypper`, например OpenSUSE или SLE, в системе можно установить доступный пакет для Azure CLI.
+Если используется дистрибутив в составе `zypper`, например openSUSE или SLES, вы можете работать с доступным пакетом для Azure CLI. Этот пакет протестирован с openSUSE 42.2 и пакетом обновления 2 для SLES 12.
 
 [!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
@@ -65,7 +64,7 @@ sudo zypper update azure-cli
 
 ## <a name="uninstall"></a>Удаление
 
-Нам будет очень жаль, если вы решите удалить Azure CLI. Перед удалением воспользуйтесь командой `az feedback`, чтобы оставить отзыв с описанием причин вашего решения и предложениями того, как мы могли бы улучшить этот продукт. Мы хотим убедиться, что Azure CLI не содержит ошибок и удобен в использовании. Вы также можете [отправить описание проблемы на GitHub](https://github.com/Azure/azure-cli/issues).
+[!INCLUDE [uninstall-boilerplate.md](includes/uninstall-boilerplate.md)]
 
 1. Удалите пакет из системы.
 

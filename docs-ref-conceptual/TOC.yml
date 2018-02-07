@@ -3,6 +3,21 @@
   items:
     - name: Install
       href: install-azure-cli.md
+      items:
+        - name: macOS
+          href: install-azure-cli-macos.md
+        - name: Windows
+          href: install-azure-cli-windows.md
+        - name: 'Linux, с помощью apt'
+          href: install-azure-cli-apt.md
+        - name: 'Linux, с помощью yum'
+          href: install-azure-cli-yum.md
+        - name: 'Linux, с помощью zypper'
+          href: install-azure-cli-zypper.md
+        - name: Linux
+          href: install-azure-cli-linux.md
+        - name: Выполнение в Docker
+          href: run-azure-cli-docker.md
     - name: Начало работы
       href: get-started-with-azure-cli.md
     - name: Cloud Shell
