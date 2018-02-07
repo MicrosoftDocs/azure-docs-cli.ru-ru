@@ -1,48 +1,47 @@
 ---
-title: "Установка Azure CLI 2.0 с помощью apt"
+title: "Установка Azure CLI 2.0 в Linux с помощью apt"
 description: "Как установить Azure CLI 2.0 с помощью apt"
 keywords: Azure CLI,Install Azure CLI,azure apt, azure debian, azure ubuntu
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 11/01/2017
+ms.date: 01/29/18
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 65e8e78275b0f40a2298934fe8bc9368bbf796a7
-ms.sourcegitcommit: 59f0b667f2202bae8914e6fc8dc5c9dc79fef91c
+ms.openlocfilehash: fdd9f0061d5d38ed5a349b11eb0f5f27786bc1ab
+ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="install-azure-cli-20-with-apt"></a><span data-ttu-id="551b0-104">Установка Azure CLI 2.0 с помощью apt</span><span class="sxs-lookup"><span data-stu-id="551b0-104">Install Azure CLI 2.0 with apt</span></span>
+# <a name="install-azure-cli-20-with-apt"></a><span data-ttu-id="18b6f-104">Установка Azure CLI 2.0 с помощью apt</span><span class="sxs-lookup"><span data-stu-id="18b6f-104">Install Azure CLI 2.0 with apt</span></span>
 
-<span data-ttu-id="551b0-105">Если вы используете дистрибутив, который поставляется с диспетчером пакетов `apt`, например Ubuntu или Debian, в системе можно установить доступный пакет для Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="551b0-105">If you are running a distirbution that comes with `apt`, such as Ubuntu or Debian, there is an available package for the Azure CLI that you can install on your system.</span></span>
+<span data-ttu-id="18b6f-105">Если вы используете дистрибутив, который поставляется с `apt`, например Ubuntu или Debian, можно применить пакет для Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="18b6f-105">If you are running a distribution that comes with `apt`, such as Ubuntu or Debian, there is a package available for the Azure CLI.</span></span> <span data-ttu-id="18b6f-106">Этот пакет протестирован с Ubuntu Wheezy и Ubuntu Xenial.</span><span class="sxs-lookup"><span data-stu-id="18b6f-106">This package has been tested with Ubuntu Wheezy and Ubuntu Xenial.</span></span>
 
 [!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
 
-## <a name="install"></a><span data-ttu-id="551b0-106">Install</span><span class="sxs-lookup"><span data-stu-id="551b0-106">Install</span></span>
+## <a name="install"></a><span data-ttu-id="18b6f-107">Install</span><span class="sxs-lookup"><span data-stu-id="18b6f-107">Install</span></span>
 
-1. <span data-ttu-id="551b0-107">Измените список источников.</span><span class="sxs-lookup"><span data-stu-id="551b0-107">Modify your sources list:</span></span>
+1. <span data-ttu-id="18b6f-108">Измените список источников.</span><span class="sxs-lookup"><span data-stu-id="18b6f-108">Modify your sources list:</span></span>
 
-   - <span data-ttu-id="551b0-108">32-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="551b0-108">32-bit system</span></span>
+   - <span data-ttu-id="18b6f-109">32-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="18b6f-109">32-bit system</span></span>
 
      ```bash
      echo "deb https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
           sudo tee /etc/apt/sources.list.d/azure-cli.list
      ```
 
-   - <span data-ttu-id="551b0-109">64-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="551b0-109">64-bit system</span></span>
+   - <span data-ttu-id="18b6f-110">64-разрядная система:</span><span class="sxs-lookup"><span data-stu-id="18b6f-110">64-bit system</span></span>
 
      ```bash
      echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
           sudo tee /etc/apt/sources.list.d/azure-cli.list
      ```
 
-2. <span data-ttu-id="551b0-110">Выполните следующие команды sudo:</span><span class="sxs-lookup"><span data-stu-id="551b0-110">Run the following sudo commands:</span></span>
+2. <span data-ttu-id="18b6f-111">Выполните следующие команды sudo:</span><span class="sxs-lookup"><span data-stu-id="18b6f-111">Run the following sudo commands:</span></span>
 
    ```bash
    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
@@ -50,13 +49,15 @@ ms.lasthandoff: 01/25/2018
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
-<span data-ttu-id="551b0-111">Запустите Azure CLI с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="551b0-111">You can run the Azure CLI with the `az` command.</span></span>
+<span data-ttu-id="18b6f-112">Запустите Azure CLI с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="18b6f-112">You can run the Azure CLI with the `az` command.</span></span>
 
-## <a name="troubleshooting"></a><span data-ttu-id="551b0-112">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="551b0-112">Troubleshooting</span></span>
+## <a name="troubleshooting"></a><span data-ttu-id="18b6f-113">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="18b6f-113">Troubleshooting</span></span>
 
-### <a name="apt-key-fails-with-no-dirmngr"></a><span data-ttu-id="551b0-113">Команда apt-key завершается сбоем с сообщением "No dirmngr" (Нет диспетчера каталогов)</span><span class="sxs-lookup"><span data-stu-id="551b0-113">apt-key fails with "No dirmngr"</span></span>
+<span data-ttu-id="18b6f-114">Ниже описаны некоторые распространенные проблемы при установке с помощью `apt`.</span><span class="sxs-lookup"><span data-stu-id="18b6f-114">Here are some common problems seen when installing with `apt`.</span></span> <span data-ttu-id="18b6f-115">Если ваш случай не описан в этом разделе, сообщите о проблеме на [сайте GitHub](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="18b6f-115">If your issue is not listed here, please [file an issue on github](https://github.com/Azure/azure-cli/issues).</span></span>
 
-<span data-ttu-id="551b0-114">При выполнении команды `apt-key` может появиться примерно такая ошибка.</span><span class="sxs-lookup"><span data-stu-id="551b0-114">When running the `apt-key` command, you may see output similar to the following error.</span></span>
+### <a name="apt-key-fails-with-no-dirmngr"></a><span data-ttu-id="18b6f-116">Команда apt-key завершается сбоем с сообщением "No dirmngr" (Нет диспетчера каталогов)</span><span class="sxs-lookup"><span data-stu-id="18b6f-116">apt-key fails with "No dirmngr"</span></span>
+
+<span data-ttu-id="18b6f-117">При выполнении команды `apt-key` может появиться примерно такая ошибка:</span><span class="sxs-lookup"><span data-stu-id="18b6f-117">When running the `apt-key` command, you may see output similar to the following error:</span></span>
 
 ```output
 gpg: failed to start the dirmngr '/usr/bin/dirmngr': No such file or directory
@@ -64,44 +65,44 @@ gpg: connecting dirmngr at '/tmp/apt-key-gpghome.kt5zo27tp1/S.dirmngr' failed: N
 gpg: keyserver receive failed: No dirmngr
 ```
 
-<span data-ttu-id="551b0-115">Сбой возникает из-за отсутствия компонента, обязательного для `apt-key`.</span><span class="sxs-lookup"><span data-stu-id="551b0-115">This is due to a missing component required by `apt-key`.</span></span> <span data-ttu-id="551b0-116">Ошибку можно устранить, установив пакет `dirmngr`.</span><span class="sxs-lookup"><span data-stu-id="551b0-116">You can resolve this by installing the `dirmngr` package.</span></span>
+<span data-ttu-id="18b6f-118">Сбой возникает из-за отсутствия компонента, обязательного для `apt-key`.</span><span class="sxs-lookup"><span data-stu-id="18b6f-118">The error is due to a missing component required by `apt-key`.</span></span> <span data-ttu-id="18b6f-119">Ошибку можно устранить, установив пакет `dirmngr`.</span><span class="sxs-lookup"><span data-stu-id="18b6f-119">You can resolve it by installing the `dirmngr` package.</span></span>
 
 ```bash
 sudo apt-get install dirmngr
 ```
 
-## <a name="update"></a><span data-ttu-id="551b0-117">Блокировка изменений</span><span class="sxs-lookup"><span data-stu-id="551b0-117">Update</span></span>
+## <a name="update"></a><span data-ttu-id="18b6f-120">Блокировка изменений</span><span class="sxs-lookup"><span data-stu-id="18b6f-120">Update</span></span>
 
-<span data-ttu-id="551b0-118">Используйте `apt-get upgrade`, чтобы обновить пакет CLI.</span><span class="sxs-lookup"><span data-stu-id="551b0-118">Use `apt-get upgrade` to update the CLI package.</span></span>
+<span data-ttu-id="18b6f-121">Используйте `apt-get upgrade`, чтобы обновить пакет CLI.</span><span class="sxs-lookup"><span data-stu-id="18b6f-121">Use `apt-get upgrade` to update the CLI package.</span></span>
 
    ```bash
    sudo apt-get update && sudo apt-get upgrade
    ```
 
 > [!NOTE]
-> <span data-ttu-id="551b0-119">В результате обновятся все установленные в системе пакеты, зависимости которых не были изменены.</span><span class="sxs-lookup"><span data-stu-id="551b0-119">This will upgrade all of the installed packages on your system which have not had a dependency change.</span></span>
-> <span data-ttu-id="551b0-120">Чтобы обновить только CLI, используйте команду `apt-get install`.</span><span class="sxs-lookup"><span data-stu-id="551b0-120">To upgrade only the CLI, use `apt-get install`.</span></span>
+> <span data-ttu-id="18b6f-122">Эта команда позволяет обновить все установленные в системе пакеты, зависимости которых не были изменены.</span><span class="sxs-lookup"><span data-stu-id="18b6f-122">This command upgrades all of the installed packages on your system that have not had a dependency change.</span></span>
+> <span data-ttu-id="18b6f-123">Чтобы обновить только CLI, используйте `apt-get install`.</span><span class="sxs-lookup"><span data-stu-id="18b6f-123">To upgrade the CLI only, use `apt-get install`.</span></span>
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```
 
-### <a name="uninstall"></a><span data-ttu-id="551b0-121">Удаление</span><span class="sxs-lookup"><span data-stu-id="551b0-121">Uninstall</span></span>
+## <a name="uninstall"></a><span data-ttu-id="18b6f-124">Удаление</span><span class="sxs-lookup"><span data-stu-id="18b6f-124">Uninstall</span></span>
 
-<span data-ttu-id="551b0-122">Нам будет очень жаль, если вы решите удалить Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="551b0-122">If you ever decide to uninstall the Azure CLI, we're sorry to see you go.</span></span> <span data-ttu-id="551b0-123">Перед удалением воспользуйтесь командой `az feedback`, чтобы оставить отзыв с описанием причин вашего решения и предложениями того, как мы могли бы улучшить этот продукт.</span><span class="sxs-lookup"><span data-stu-id="551b0-123">Before you uninstall, use the `az feedback` command to give us some reasons why you chose to uninstall and how we could improve the CLI experience.</span></span> <span data-ttu-id="551b0-124">Мы хотим убедиться, что Azure CLI не содержит ошибок и удобен в использовании.</span><span class="sxs-lookup"><span data-stu-id="551b0-124">We want to make sure that the Azure CLI is as bug-free and user-friendly as we can make it.</span></span> <span data-ttu-id="551b0-125">Вы также можете [отправить описание проблемы на GitHub](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="551b0-125">You can also [file a github issue](https://github.com/Azure/azure-cli/issues).</span></span>
+[!INCLUDE [uninstall-boilerplate.md](includes/uninstall-boilerplate.md)]
 
-1. <span data-ttu-id="551b0-126">Удалите CLI с помощью команды `apt-get remove`.</span><span class="sxs-lookup"><span data-stu-id="551b0-126">Uninstall with `apt-get remove`.</span></span>
+1. <span data-ttu-id="18b6f-125">Удалите CLI с помощью команды `apt-get remove`.</span><span class="sxs-lookup"><span data-stu-id="18b6f-125">Uninstall with `apt-get remove`.</span></span>
 
     ```bash
     sudo apt-get remove -y azure-cli
     ```
 
-2. <span data-ttu-id="551b0-127">Если вы не планируете переустанавливать CLI, удалите сведения о репозитории Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="551b0-127">If you do not plan to reinstall the CLI, remove the Azure CLI repository information.</span></span>
+2. <span data-ttu-id="18b6f-126">Если вы не планируете переустанавливать CLI, удалите сведения о репозитории Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="18b6f-126">If you do not plan to reinstall the CLI, remove the Azure CLI repository information.</span></span>
 
    ```bash
    sudo rm /etc/apt/sources.list.d/azure-cli.list
    ```
 
-3. <span data-ttu-id="551b0-128">Удалите все ненужные пакеты.</span><span class="sxs-lookup"><span data-stu-id="551b0-128">Remove any unneeded packages.</span></span>
+3. <span data-ttu-id="18b6f-127">Удалите все ненужные пакеты.</span><span class="sxs-lookup"><span data-stu-id="18b6f-127">Remove any unneeded packages.</span></span>
 
    ```bash
    sudo apt autoremove
