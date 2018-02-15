@@ -1,21 +1,20 @@
 ---
 title: "Установка Azure CLI 2.0 в Linux с помощью zypper"
 description: "Как установить Azure CLI 2.0 с помощью zypper"
-keywords: azure cli, azure cli install, azure cli zypper, azure cli opensuse, azure cli sle
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 01/29/18
+ms.date: 01/29/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: c0b566f96e47d34d20f7bf85db0fae32913ed596
-ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
+ms.openlocfilehash: 6ee3aff74f43fab0c80c58c7fe57c9fa74a6ef2f
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>Установка Azure CLI 2.0 с помощью zypper
 

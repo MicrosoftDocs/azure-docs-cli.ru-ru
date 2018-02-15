@@ -1,7 +1,6 @@
 ---
 title: "Azure CLI 2.0"
 description: "Общие сведения об Azure CLI 2.0."
-keywords: Azure CLI 2.0, Linux, Mac, Windows, OS X, Ubuntu, Debian, CentOS, RHEL, SUSE, CoreOS, Docker, Windows, Python, PIP
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,12 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.assetid: 80ae9f6c-adb7-483c-bfb4-fbb958e075ba
-ms.openlocfilehash: 92079f3fa17f69a560e937101aa9e6f09c3080eb
-ms.sourcegitcommit: dd5b2c7b0b56608ef9ea8730c7dc76e6c532d5ea
+ms.openlocfilehash: 5f3d514200b138d498043e0efb2cf5c2f478d108
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
