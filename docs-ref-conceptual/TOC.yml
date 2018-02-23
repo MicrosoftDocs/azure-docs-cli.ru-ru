@@ -27,7 +27,7 @@
       items:
         - name: Создание субъекта-службы
           href: create-an-azure-service-principal-azure-cli.md
-        - name: Использование удостоверений управляемой службы.
+        - name: Управляемые удостоверения службы
           items:
             - name: Настройка MSI для виртуальной машины Azure
               href: /azure/active-directory/msi-qs-configure-cli-windows-vm?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
@@ -57,6 +57,10 @@
       href: azure-cli-Configuration.md
     - name: Заметки о выпуске
       href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+- name: Учебники
+  items:
+    - name: Создание виртуальных машин
+      href: azure-cli-vm-tutorial.yml
 - name: Примеры сценариев
   items:
     - name: Виртуальные машины Linux

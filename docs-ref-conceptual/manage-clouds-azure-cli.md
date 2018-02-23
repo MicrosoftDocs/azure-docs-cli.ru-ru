@@ -1,7 +1,6 @@
 ---
 title: "Управление несколькими облаками с помощью Azure CLI 2.0"
-description: "Создавайте, администрируйте и входите в разные облака с помощью Azure CLI 2.0."
-keywords: Azure CLI 2.0, Azure, clouds, datacenters, government, region, china, germany
+description: "Создание, вход и администрирование нескольких облаков с помощью Azure CLI 2.0."
 author: sptramer
 manager: routlaw
 ms.author: sttramer
@@ -10,11 +9,11 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
-ms.openlocfilehash: 6f4cfec45becc0c4940e9066af53396b41db779d
-ms.sourcegitcommit: dd5b2c7b0b56608ef9ea8730c7dc76e6c532d5ea
+ms.openlocfilehash: ee6b1b6b1e611229ba6e6e0c4b2ca2de6f7ceaee
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>Управление несколькими облаками с помощью Azure CLI 2.0
 

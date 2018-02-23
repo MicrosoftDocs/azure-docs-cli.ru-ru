@@ -1,7 +1,6 @@
 ---
 title: "Результаты выполнения команды запроса в Azure CLI 2.0"
-description: "Использование параметра --query для выполнения запросов JMESPath к результатам команд CLI Azure 2.0."
-keywords: "Azure CLI 2.0, JMESPath, запрос, Linux, Mac, Windows, OS X"
+description: "Выполнение запросов JMESPath к результатам команд CLI Azure 2.0."
 author: rloutlaw
 ms.author: routlaw
 manager: douge
@@ -11,20 +10,19 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.assetid: 5979acc5-21a5-41e2-a4b6-3183bfe6aa22
-ms.openlocfilehash: 0de18adc91589377d4f96a306a70c9adfeabdcab
-ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
+ms.openlocfilehash: 98bc35c1e8136231011a2303901f42c68c9a7758
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
-# <a name="using-jmespath-queries-with-azure-cli-20"></a>Использование запросов JMESPath в Azure CLI 2.0
+# <a name="use-jmespath-queries-with-azure-cli-20"></a>Использование запросов JMESPath в Azure CLI 2.0
 
 Интерфейс Azure CLI 2.0 использует параметр `--query` для выполнения [запроса JMESPath](http://jmespath.org) к результатам выполнения команды `az`. JMESPath — это эффективный язык запросов для выходных данных JSON.  Если вам не приходилось работать с запросами JMESPath, ознакомьтесь с руководством по адресу [JMESPath.org/tutorial](http://JMESPath.org/tutorial.html).
 
 Параметр `Query` поддерживают все типы ресурсов (службы контейнеров, веб-приложения, виртуальные машины и т.д.) в Azure CLI 2.0, и его можно использовать в различных целях.  Ниже перечислены некоторые примеры.
 
-## <a name="selecting-simple-properties"></a>Выбор простых свойств
+## <a name="select-simple-properties"></a>Выбор простых свойств
 
 Простая команда `list` с форматом результатов `table` возвращает проверенный набор наиболее распространенных простых свойств для каждого типа ресурсов в удобном для чтения табличном формате.
 
@@ -85,9 +83,9 @@ RGDEMO001  KBDemo001VM
 RGDEMO001  KBDemo020
 ```
 
-## <a name="selecting-complex-nested-properties"></a>Выбор сложных вложенных свойств
+## <a name="select-complex-nested-properties"></a>Выбор сложных вложенных свойств
 
-Если вы хотите выбрать свойства, которые глубоко вложены во выходные данные JSON, необходимо указать полный путь к такому свойству. Следующий пример показывает, как выбрать имя виртуальной машины и тип ОС с помощью команды vm list.
+Если вы хотите выбрать свойства, которые глубоко вложены в выходные данные JSON, необходимо указать полный путь к такому свойству. Следующий пример показывает, как выбрать имя виртуальной машины и тип ОС с помощью команды vm list.
 
 ```azurecli-interactive
 az vm list \

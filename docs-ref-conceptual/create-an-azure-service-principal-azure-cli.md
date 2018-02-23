@@ -1,238 +1,115 @@
 ---
-title: "Создание субъекта-службы Azure с помощью Azure CLI 2.0"
-description: "Узнайте, как создать субъект-службу для приложения или службы с помощью Azure CLI 2.0."
-keywords: "Azure CLI 2.0, Azure Active Directory, Azure Active Directory, AD, RBAC"
-author: rloutlaw
-ms.author: routlaw
-manager: douge
-ms.date: 10/12/2017
+title: "Использование субъекта-службы Azure с помощью Azure CLI 2.0"
+description: "Использование субъекта-службы Azure с помощью Azure CLI 2.0"
+author: sptramer
+ms.author: sttramer
+manager: carmonm
+ms.date: 02/12/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.assetid: fab89cb8-dac1-4e21-9d34-5eadd5213c05
-ms.openlocfilehash: e473b7289f3b72dc23a1f747e15cea1b88aa89e9
-ms.sourcegitcommit: dd5b2c7b0b56608ef9ea8730c7dc76e6c532d5ea
+ms.openlocfilehash: b46c735a14240bddd07659475ada1c33c75a1e67
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>Создание субъекта-службы Azure с помощью Azure CLI 2.0
 
-Если вы планируете управлять приложением или службой с помощью Azure CLI 2.0, вы должны запустить это приложение или службу с помощью субъекта-службы Azure Active Directory (AAD), а не своих учетных данных.
-В этой статье объясняется, как создать субъект безопасности с помощью Azure CLI 2.0.
+Если вы хотите создать возможность отдельного входа с ограничениями доступа, это можно сделать с помощью субъекта-службы. Субъекты-службы — это отдельные удостоверения, которые можно связывать с учетной записью. Субъекты-службы используются при работе с приложениями и задачами, которые должны выполняться автоматически. В этой статье описывается, как создать субъект-службу.
 
-> [!NOTE]
-> Можно также создать субъект-службу на портале Azure.
-> Дополнительные сведения см. в статье [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
+## <a name="create-the-service-principal"></a>Создание субъекта-службы
 
-## <a name="what-is-a-service-principal"></a>Что такое субъект-служба?
+Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac). Имя субъекта-службы не привязано к существующему приложению или имени пользователя. Можно создать субъект-службу, указав нужный способ аутентификации.
 
-Субъект-служба Azure — это идентификатор безопасности, который используют созданные пользователем приложения, службы и средства автоматизации для доступа к определенным ресурсам Azure. Это что-то вроде удостоверения пользователя (имя для входа и пароль или сертификат) с определенной ролью и строго контролируемыми разрешениями на доступ к ресурсам. Субъект-служба должен выполнять только конкретные задачи, в отличие от удостоверений пользователей. Это решение повышает безопасность, если вы предоставите ему минимальный уровень разрешений для выполнения задач управления.
+* `--password` используется для аутентификации на основе пароля. Создайте надежный пароль, учитывая [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Если вы не укажете пароль, он будет создан автоматически.
 
-Azure CLI 2.0 поддерживает создание учетных данных для аутентификации на основе пароля и учетных данных сертификата. В этой статье рассматриваются оба типа учетных данных.
+  ```azurecli
+  az ad sp create-for-rbac --name ServicePrincipalName --password PASSWORD
+  ```
 
-## <a name="verify-your-own-permission-level"></a>Проверка уровня разрешений
+* `--cert` используется для аутентификации на основе существующего сертификата в формате PEM или DER. Также можно использовать `@{file}` для загрузки файла.
 
-Во-первых, у вас должен быть достаточный уровень разрешений в Azure Active Directory и подписке Azure. В частности, у вас должно быть право создавать приложения в Active Directory и назначать роли субъекту-службе.
+  ```azurecli
+  az ad sp create-for-rbac --name ServicePrincipalName --cert {CertStringOrFile} 
+  ```
 
-Проверить, есть ли у вас соответствующие разрешения, проще всего на портале. Ознакомьтесь с [проверкой наличия необходимых разрешений на портале](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
+  Вы можете добавить аргумент `--keyvault`, чтобы указать, что сертификат хранится в Azure Key Vault. В этом случае значение `--cert` ссылается на имя сертификата в Key Vault.
 
-## <a name="create-a-service-principal-for-your-application"></a>Создание субъекта-службы для приложения
+* `--create-cert` создает _самозаверяющий_ сертификат для аутентификации. Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault.
 
-Необходимо иметь один из следующих параметров для определения приложения, которое нужно создать для субъекта-службы:
+  ```azurecli
+  az ad sp create-for-rbac --name ServicePrincipalName --create-cert
+  ```
 
-  * уникальное имя или URI развернутого приложения (например, MyDemoWebApp в следующих примерах);
-  * идентификатор приложения — глобальный уникальный идентификатор, связанный с развернутым приложением, службой или объектом.
+Если аргумент, указывающий способ аутентификации, не будет включен, по умолчанию используется `--password`.
 
-Эти значения идентифицируют ваше приложение при создании субъекта-службы.
-
-### <a name="get-information-about-your-application"></a>Получение сведений о приложении
-
-Получить сведения для идентификации приложения можно с помощью команды `az ad app list`.
-
-[!INCLUDE [cloud-shell-try-it.md](includes/cloud-shell-try-it.md)]
-
-```azurecli-interactive
-az ad app list --display-name MyDemoWebApp
-```
+Выходные данные команды `create-for-rbac` имеют следующий формат:
 
 ```json
 {
-    "appId": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
-    "appPermissions": null,
-    "availableToOtherTenants": false,
-    "displayName": "MyDemoWebApp",
-    "homepage": "http://MyDemoWebApp.azurewebsites.net",
-    "identifierUris": [
-      "http://MyDemoWebApp"
-    ],
-    "objectId": "bd07205b-629f-4a2e-945e-1ee5dadf610b9",
-    "objectType": "Application",
-    "replyUrls": []
-  }
-```
-
-Параметр `--display-name` фильтрует возвращаемый список приложений, чтобы показать те, которые содержат `displayName`, начиная с MyDemoWebApp.
-
-### <a name="create-a-service-principal-with-a-password"></a>Создание субъекта-службы с паролем
-
-Чтобы создать субъект-службу с паролем, используйте команду [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) и параметр `--password`. Если роль или область не указаны, по умолчанию используется роль **участника** для текущей подписки. При создании субъекта-службы без использования параметра `--password` или `--cert` используется проверка подлинности на основе пароля, а сам пароль создается автоматически.
-
-```azurecli-interactive
-az ad sp create-for-rbac --name {appName} --password "{strong password}"
-```
-
-```json
-{
-  "appId": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
-  "displayName": "MyDemoWebApp",
-  "name": "http://MyDemoWebApp",
-  "password": {strong password},
+  "appId": "APP_ID",
+  "displayName": "ServicePrincipalName",
+  "name": "http://ServicePrincipalName",
+  "password": ...,
   "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
 }
 ```
 
- > [!WARNING]
- > Не используйте ненадежный пароль.  Следуйте руководству по [правилам и ограничениям для паролей Azure AD](/azure/active-directory/active-directory-passwords-policy).
-
-### <a name="create-a-service-principal-with-a-self-signed-certificate"></a>Создание субъекта-службы с самозаверяющим сертификатом
-
-Чтобы создать самозаверяющий сертификат, используйте команду [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac) и параметр `--create-cert`.
-
-```azurecli-interactive
-az ad sp create-for-rbac --name {appName} --create-cert
-```
-
-```json
-{
-  "appId": "c495db57-82e0-4e2e-9369-069dff176858",
-  "displayName": "azure-cli-2017-10-12-22-15-38",
-  "fileWithCertAndPrivateKey": "<path>/<file-name>.pem",
-  "name": "http://MyDemoWebApp",
-  "password": null,
-  "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-}
-```
-
-Скопируйте значение ответа `fileWithCertAndPrivateKey`. Это файл сертификата, который будет использоваться для аутентификации.
-
-Дополнительные параметры для сертификатов см. в разделе [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac).
-
-### <a name="get-information-about-the-service-principal"></a>Получение сведений о субъекте-службе
-
-```azurecli-interactive
-az ad sp show --id {appID}
-```
-
-```json
-{
-  "appId": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
-  "displayName": "MyDemoWebApp",
-  "objectId": "0ceae62e-1a1a-446f-aa56-2300d176659bde",
-  "objectType": "ServicePrincipal",
-  "servicePrincipalNames": [
-    "http://MyDemoWebApp",
-    "a487e0c1-82af-47d9-9a0b-af184eb87646d"
-  ]
-}
-```
-
-### <a name="sign-in-using-the-service-principal"></a>Вход с помощью субъекта-службы
-
-Теперь вы можете войти от имени нового субъекта-службы для приложения с использованием *appId* из `az ad sp show`, а также *пароля* либо пути к созданному сертификату.  Укажите значение параметра *tenant*, полученное в результате выполнения команды `az ad sp create-for-rbac`.
-
-```azurecli-interactive
-az login --service-principal -u {appID} --password {password-or-path-to-cert} --tenant {tenant}
-```
-
-После успешного входа отобразится следующее:
-
-```json
-[
-  {
-    "cloudName": "AzureCloud",
-    "id": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
-    "isDefault": true,
-    "state": "Enabled",
-    "tenantId": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-    "user": {
-      "name": "https://MyDemoWebApp",
-      "type": "servicePrincipal"
-    }
-  }
-]
-```
-
-Используйте значения `id`, `password` и `tenant` в качестве учетных данных для запуска приложения.
-
-## <a name="managing-roles"></a>Управление ролями
+Значения `appId`, `tenant` и `password` используются для аутентификации. `displayName` используется при поиске существующего субъекта-службы.
 
 > [!NOTE]
-> Управление доступом на основе ролей в Azure (RBAC) — это модель для определения ролей пользователя и субъектов-служб и управления этими ролями.
-> Ролям назначаются связанные наборы разрешений, которые определяют ресурсы, доступные субъекту для чтения, доступа, записи или управления.
-> Дополнительные сведения о RBAC и ролях см. в статье [Встроенные роли для управления доступом на основе ролей в Azure](/azure/active-directory/role-based-access-built-in-roles).
+> Если у учетной записи нет достаточных прав на создание субъекта-службы, вы увидите сообщение об ошибке, уведомляющее о "недостаточности привилегий для выполнения операции". Чтобы получить возможность создавать субъекты-службы, обратитесь к администратору Azure Active Directory.
 
-В Azure CLI 2.0 доступны следующие команды для управления назначением ролей:
+## <a name="manage-service-principal-roles"></a>Управление ролями субъекта-службы 
+
+В Azure CLI 2.0 доступны следующие команды для управления назначением ролей:
 
 * [az role assignment list](/cli/azure/role/assignment#list);
 * [az role assignment create](/cli/azure/role/assignment#create);
 * [az role assignment delete](/cli/azure/role/assignment#delete).
 
-По умолчанию субъекту-службе назначена роль **участника**. Возможно, это не лучший выбор для взаимодействия приложения со службами Azure, учитывая широкие разрешения у этой роли. Роль **читателя** имеет больше ограничений и отлично подходит для доступа с правами только для чтения. Вы можете просмотреть сведения о разрешениях каждой роли или создать пользовательские разрешения на портале Azure.
+По умолчанию субъекту-службе назначена роль **участника**. Эта роль предоставляет полные права доступа на чтение и запись для учетной записи Azure. Как правило, она не используется для приложений. Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.  См. дополнительные сведения о [встроенных возможностях управления доступом на основе ролей](/azure/active-directory/role-based-access-built-in-roles).
 
-В этом примере мы добавим роль **читателя** к предыдущему примеру и удалим роль **участника**:
+В этом примере мы добавим роль **читателя** и удалим роль **участника**.
 
-```azurecli-interactive
-az role assignment create --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d --role Reader
-az role assignment delete --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d --role Contributor
+```azurecli
+az role assignment create --assignee APP_ID --role Reader
+az role assignment delete --assignee APP_ID --role Contributor
 ```
 
-Проверьте изменения, отобразив текущие назначенные роли:
+Добавление роли _не_ изменяет назначенные ранее разрешения. Ограничивая разрешения субъекта-службы, роль __участника__ всегда следует удалять.
 
-```azurecli-interactive
-az role assignment list --assignee a487e0c1-82af-47d9-9a0b-af184eb87646d
+Проверить изменения можно, отобразив назначенные роли.
+
+```azurecli
+az role assignment list --assignee APP_ID
 ```
 
-```json
-{
-    "id": "/subscriptions/34345f33-0398-4a99-a42b-f6613d1664ac/providers/Microsoft.Authorization/roleAssignments/c27f78a7-9d3b-404b-ab59-47818f9af9ac",
-    "name": "c27f78a7-9d3b-404b-ab59-47818f9af9ac",
-    "properties": {
-      "principalId": "790525226-46f9-4051-b439-7079e41dfa31",
-      "principalName": "http://MyDemoWebApp",
-      "roleDefinitionId": "/subscriptions/34345f33-0398-4a99-a42b-f6613d1664ac/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7",
-      "roleDefinitionName": "Reader",
-      "scope": "/subscriptions/34345f33-0398-4a99-a42b-f6613d1664ac"
-    },
-    "type": "Microsoft.Authorization/roleAssignments"
-}
+> [!NOTE] 
+> Если ваша учетная запись не позволяет назначать роли, вы увидите сообщение об ошибке о том, что ваша учетная запись "не авторизована выполнять действие Microsoft.Authorization/roleAssignments/write для /subscriptions/{guid}". Чтобы получить возможность управлять ролями, обратитесь к администратору Azure Active Directory.
+
+## <a name="log-in-using-the-service-principal"></a>Вход с помощью субъекта-службы
+
+Вы можете протестировать разрешения и возможность входа с помощью субъекта-службы, выполнив вход в Azure CLI. Войдите с использованием нового субъекта-службы с помощью значений `appId`, `tenant` и учетных данных. Предоставляемые сведения для аутентификации будут зависеть от того, на основе чего был создан субъект-служба — пароля или сертификата.
+
+Чтобы войти с использованием пароля, предоставьте его как параметр аргумента.
+
+```azurecli
+az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
 ```
 
-> [!NOTE]
-> Если у вашей учетной записи нет достаточных разрешений для назначения ролей, вы получите сообщение об ошибке.
-> В нем будет указано, что ваша учетная запись не авторизована для выполнения действия "Microsoft.Authorization/roleAssignments/write в области /subscriptions/{guid}".
+Чтобы войти с использованием сертификата, он должен быть доступен локально как PEM или DER.
 
-## <a name="change-the-credentials-of-a-security-principal"></a>Изменение учетных данных субъекта безопасности
-
-Из соображений безопасности рекомендуется регулярно просматривать разрешения и обновлять пароли. Можно также изменять учетные данные безопасности и управлять ими по мере изменения приложения.
-
-### <a name="reset-a-service-principal-password"></a>Сброс пароля субъекта-службы
-
-Для сброса текущего пароля субъекта-службы используйте команду `az ad sp reset-credentials`.
-
-```azurecli-interactive
-az ad sp reset-credentials --name 20bce7de-3cd7-49f4-ab64-bb5b443838c3 --password {new-password}
+```azurecli
+az login --service-principal --username APP_ID --tenant TENANT_ID --password PATH_TO_CERT
 ```
+## <a name="reset-credentials"></a>Сброс учетных данных
 
-```json
-{
-  "appId": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
-  "name": "a487e0c1-82af-47d9-9a0b-af184eb87646d",
-  "password": {new-password},
-  "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-}
+Если вы забыли учетные данные субъекта-службы, вы можете сбросить их с помощью команды [az ad sp reset-credentials](https://docs.microsoft.com/en-us/cli/azure/ad/sp?view=azure-cli-latest#az_ad_sp_reset_credentials). Здесь применяются те же параметры и ограничения, как и при создании нового субъекта-службы.
+
+```azurecli
+az ad sp reset-credentials --name APP_ID --password NEW_PASSWORD
 ```
-
-Интерфейс командной строки создаст надежный пароль, если не указывать параметр `--password`.

@@ -5,31 +5,31 @@ keywords: "Azure CLI, расширения"
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 10/30/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: a76e58c4430a184d133cca0ef0623f325aeb2f27
-ms.sourcegitcommit: 3eef136ae752eb90c67af604d4ddd298d70b1c9d
+ms.openlocfilehash: 548c06c64cc98598a2bd24bcc5959e59bffb4930
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
 
-Расширения — это отдельные модули, которые не входят в состав Azure CLI. Они позволяют добавлять функциональные возможности с помощью новых команд. Это могут быть предложения в экспериментальной или предварительной версии, специализированные средства, предоставляемые корпорацией Майкрософт в соответствии с вашими требованиями, или даже расширения, которые вы написали самостоятельно. Расширения повышают гибкость работы с CLI, позволяя адаптировать интерфейс для определенных целей. При этом не требуется передавать большое число дополнительных пакетов, которые не входят в набор основных компонентов.
+Расширения — это отдельные модули, которые не входят в состав Azure CLI. Они позволяют добавлять функциональные возможности с помощью новых команд. Это могут быть предложения в экспериментальной или предварительной версии, специализированные средства от Майкрософт или пользовательские решения, которые вы написали самостоятельно. Расширения повышают гибкость работы с CLI, позволяя адаптировать интерфейс для определенных целей. При этом не требуется передавать большое число дополнительных пакетов, которые не входят в набор основных компонентов.
 
 Из этой статьи вы узнаете, как устанавливать, обновлять и удалять расширения для CLI. Кроме того, здесь содержатся ответы на часто задаваемые вопросы о поведении расширений.
 
 ## <a name="finding-extensions"></a>Поиск расширений
 
-Чтобы узнать, какие расширения доступны, вы можете использовать `az extension list-available`. Это команда для перечисления доступных официальных расширений, которые предоставляются и поддерживаются корпорацией Майкрософт.
+Чтобы узнать, какие расширения доступны, вы можете использовать команду [az extension list-available](/cli/azure/extension?view=azure-cli-latest#az_extension_list_available). Это команда для перечисления доступных официальных расширений, которые предоставляются и поддерживаются корпорацией Майкрософт.
 
 ## <a name="installing-extensions"></a>Установка расширений
 
-Когда вы найдете расширение для установки, используйте `az extension add`, чтобы получить его. Официальное расширение Майкрософт из списка `az extension list-available` можно установить по имени.
+Когда вы найдете расширение для установки, используйте команду [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az_extension_add), чтобы получить его. Если расширение включено в список в `az extension list-available`, его можно установить по имени.
 
 ```azurecli
 az extension add --name <extension-name>
@@ -45,7 +45,7 @@ az extension add --source <URL-or-path>
 
 ## <a name="updating-extensions"></a>Обновление расширений
 
-Расширения можно обновлять только по имени.
+Расширения можно обновлять только по имени с помощью команды [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az_extension_update).
 
 ```azurecli
 az extension update --name <extension-name>
@@ -55,7 +55,7 @@ az extension update --name <extension-name>
 
 ## <a name="uninstalling-extensions"></a>Удаление расширений
 
-Если расширение больше не требуется, можно удалить его с помощью `az extension remove`.
+Если расширение больше не нужно, можно удалить его с помощью команды [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az_extension_remove).
 
 ```azurecli
 az extension remove --name <extension-name>

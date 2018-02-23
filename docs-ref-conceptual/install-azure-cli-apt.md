@@ -1,43 +1,35 @@
 ---
 title: "Установка Azure CLI 2.0 в Linux с помощью apt"
 description: "Как установить Azure CLI 2.0 с помощью apt"
-keywords: Azure CLI,Install Azure CLI,azure apt, azure debian, azure ubuntu
 author: sptramer
 ms.author: sttramer
 manager: routlaw
-ms.date: 01/29/18
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: fdd9f0061d5d38ed5a349b11eb0f5f27786bc1ab
-ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
+ms.openlocfilehash: 4076fefb902a324f77f97bc042b9f5ba3e787734
+ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
-Если вы используете дистрибутив, который поставляется с `apt`, например Ubuntu или Debian, можно применить пакет для Azure CLI. Этот пакет протестирован с Ubuntu Wheezy и Ubuntu Xenial.
+Если вы используете дистрибутив, который поставляется с `apt`, например Ubuntu или Debian, можно применить 64-разрядный пакет для Azure CLI. Этот пакет протестирован со следующими версиями:
 
-[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
+* Ubuntu wheezy, xenial и artful
+* Debian wheezy, jessie и stretch
 
 ## <a name="install"></a>Install
 
 1. Измените список источников.
 
-   - 32-разрядная система:
-
      ```bash
-     echo "deb https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
-          sudo tee /etc/apt/sources.list.d/azure-cli.list
-     ```
-
-   - 64-разрядная система:
-
-     ```bash
-     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
+     AZ_REPO=$(lsb_release -cs)
+     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
           sudo tee /etc/apt/sources.list.d/azure-cli.list
      ```
 
