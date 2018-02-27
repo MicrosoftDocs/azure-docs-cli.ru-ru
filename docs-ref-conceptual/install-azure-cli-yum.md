@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 4b92499d2cb81f64bfbb13215428365711b07874
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 5b7afe999d1afe5be40c4957d9cd0f832b680099
+ms.sourcegitcommit: f82774a6f92598c41da9956284f563757f402774
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="install-azure-cli-20-with-yum"></a>Установка Azure CLI 2.0 с помощью yum
 
@@ -24,22 +24,21 @@ ms.lasthandoff: 02/15/2018
 
 ## <a name="install"></a>Install
 
-1. Импортируйте ключ репозитория Майкрософт:
+1. Импортируйте ключ репозитория Майкрософт.
 
    ```bash
    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
    ```
 
-2. Создайте сведения о локальном репозитории `azure-cli`:
+2. Создайте сведения о локальном репозитории `azure-cli`.
 
    ```bash
    sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
    ```
 
-3. Обновите индекс пакета `yum` и выполните установку:
+3. Выполните установку с помощью команды `yum install`. 
 
    ```bash
-   yum check-update
    sudo yum install azure-cli
    ```
 
@@ -50,7 +49,6 @@ ms.lasthandoff: 02/15/2018
 Обновите Azure CLI, воспользовавшись командой `yum update`.
 
 ```bash
-yum check-update
 sudo yum update azure-cli
 ```
 
