@@ -11,10 +11,10 @@ ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
 ms.openlocfilehash: 5f3d514200b138d498043e0efb2cf5c2f478d108
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.sourcegitcommit: f3ab5da6019083ef2482b62c7355817e6170dcfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 

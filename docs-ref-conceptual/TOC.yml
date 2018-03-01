@@ -1,5 +1,5 @@
 - name: "Azure CLI\_2.0"
-  href: overview.md
+  href: index.md
   items:
     - name: Install
       href: install-azure-cli.md
