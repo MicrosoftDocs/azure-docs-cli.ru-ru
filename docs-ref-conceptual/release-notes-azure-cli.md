@@ -3,20 +3,80 @@ title: "Заметки о выпуске Azure CLI 2.0"
 description: "Узнайте о последних обновлениях в Azure CLI 2.0"
 author: sptramer
 ms.author: sttramer
-manager: routlaw
-ms.date: 02/13/2018
+manager: carmonm
+ms.date: 02/27/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 480b646b7230c8fb22f10b28a9204287cd0acc19
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 01078b7a3665f563f0a6b1d809c9a41f18d136d6
+ms.sourcegitcommit: f3ab5da6019083ef2482b62c7355817e6170dcfb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="february-27-2018"></a>27 февраля 2018 г
+
+Версия 2.0.28
+
+### <a name="core"></a>Core
+
+* Исправлена ошибка с установкой Homebrew [№ 5184](https://github.com/Azure/azure-cli/issues/5184).
+* Добавлена поддержка телеметрии расширения с применением пользовательских ключей.
+* Добавлена функция ведения журнала HTTP в `--debug`.
+
+### <a name="acs"></a>ACS
+
+* Изменено для использования диаграмм Helm `virtual-kubelet-for-aks` для `aks install-connector` по умолчанию.
+* Исправлена ошибка с недостаточными разрешениями субъектов-служб на создание групп контейнеров ACI.
+* Добавлены параметры `--aci-container-group`, `--location` и `--image-tag` для `aks install-connector`.
+* Удалено уведомление об устаревании из `aks get-versions`.
+
+### <a name="appservice"></a>Служба приложений
+
+* Обновления для новой версии пакета SDK (azure-mgmt-web 0.35.0)
+* Исправлена ошибка с сообщением `Free` о недопустимом SKU [№ 5538](https://github.com/Azure/azure-cli/issues/5538)
+
+### <a name="cognitive-services"></a>Cognitive Services
+
+* Обновлено уведомление при создании новой учетной записи Cognitive Services.
+
+### <a name="consumption"></a>Потребление
+
+* Добавлены новые команды для резервирования API прейскуранта.
+* Обновлены существующие форматы сведений об использовании и резервировании.
+
+### <a name="container"></a>Контейнер
+
+* Добавлены аргументы `--secrets` и `--secrets-mount-path` в командах `container create` для использования секретов в ACI.
+
+### <a name="network"></a>Сеть
+
+* Исправлена ошибка с отсутствующим клиентом в `network vnet-gateway vpn-client generate` [№ 5559](https://github.com/Azure/azure-cli/issues/5559).
+
+### <a name="resource"></a>Ресурс
+
+* Изменено `group deployment export` для отображения частичного шаблона и ошибок при сбое.
+
+### <a name="role"></a>Роль
+
+* Добавлено `role assignment list-changelogs` для включения аудита ролей субъекта-службы.
+
+### <a name="sql"></a>SQL
+
+* Добавлена поддержка избыточности зон для создания и обновления баз данных и эластичных пулов.
+
+### <a name="storage"></a>Хранилище
+
+* Включено определение пути назначения и префикса для `storage blob [upload-batch|download-batch]`.
+
+### <a name="vm"></a>ВМ
+
+* Добавлена поддержка присоединения и отсоединения дисков на одном экземпляре VMSS.
+
 
 ## <a name="february-13-2018"></a>13 февраля 2018 г.
 
