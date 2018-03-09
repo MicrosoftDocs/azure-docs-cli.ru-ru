@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 9f03e52fa72a8dbd5753904839a833db01ffb59b
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: b0c0b3f5e4d9bc651ad4781cb0906dc98d8531a3
+ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 
@@ -26,6 +26,7 @@ ms.lasthandoff: 02/15/2018
 
 Дополнительные сведения о различиях между клиентами, пользователями и подписками см. в [словаре терминов, связанных с облачной платформой Azure](/azure/azure-glossary-cloud-terminology).
 Чтобы узнать, как добавить новую подписку в клиент Azure Active Directory, см. статью [Как добавить подписку Azure в Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).
+При работе с несколькими клиентами вам может понадобиться войти в какой-то определенный клиент. Сведения о том, как это сделать, см. в статье [Вход с помощью Azure CLI 2.0](/cli/azure/authenticate-azure-cli).
 
 ## <a name="working-with-multiple-subscriptions"></a>Использование нескольких подписок
 

@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: a140f8f54ad72f7f3b5e2d63e2300d0aa2c061ac
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 92c96b7e969de686689ef02bf068392b9f565698
+ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 
@@ -42,6 +42,14 @@ ms.lasthandoff: 02/15/2018
 az login -u <username> -p <password>
 ```
 
+## <a name="log-in-with-a-specific-tenant"></a>Вход в определенный клиент
+
+При работе с несколькими клиентами вы можете войти в определенный клиент с помощью аргумента `--tenant`. Значением этого аргумента может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента. Войти можно либо в интерактивном режиме, либо указав свои учетные данные с помощью аргументов `--user` и `--password`. 
+
+```
+az login --tenant <tenant>
+```
+
 ## <a name="logging-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
 Субъекты-службы — это учетные записи, не связаны с определенным пользователем. Они предоставляют разрешения, назначаемые с помощью предопределенных ролей. Аутентификация с помощью субъекта-службы лучше всего подходит для создания безопасных скриптов и программ, позволяя применять как ограничения разрешений, так и хранимые локально сведения о статических учетных данных. Дополнительные сведения о субъектах-службах см. в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI ](create-an-azure-service-principal-azure-cli.md).
@@ -52,10 +60,9 @@ az login -u <username> -p <password>
 az login --service-principal -u <user> -p <password-or-cert> --tenant <tenant>
 ```
 
-Значение клиента — это клиент Azure Active Directory, связанный с субъектом-службой. Это может быть домен onmicrosoft.com или идентификатор объекта Azure для клиента.
+Значение клиента — это клиент Azure Active Directory, связанный с субъектом-службой. Это может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента.
 Узнать идентификатор объекта клиента для текущего сеанса входа можно с помощью следующей команды:
 
 ```azurecli
 az account show --query 'tenantId' -o tsv
 ```
-
