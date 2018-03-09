@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: d60ede5b971ee2489482fb5a72bde9bf5389d37c
-ms.sourcegitcommit: 8606f36963e8daa6448d637393d1e4ef2c9859a0
+ms.openlocfilehash: a85824cfcd1eb4176c7675a6e38327eccb390ca0
+ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Настройка Azure CLI 2.0
 
@@ -29,7 +29,7 @@ Azure CLI 2.0 позволяет применять пользовательск
 
 ## <a name="cli-configuration-with-az-configure"></a>Настройка CLI с использованием команды az configure
 
-Задать значения по умолчанию для CLI можно с помощью команды [az configure](/cli/azure/?view=azure-cli-latest#az_configure).
+Задать значения по умолчанию для CLI можно с помощью команды [az configure](/cli/azure/reference-index#az_configure).
 Эта команда принимает один аргумент `--defaults`, который является разделенным пробелами списком пар `key=value`. Предоставленные значения используются CLI вместо обязательных аргументов.
 
 Ниже приведен список доступных параметров, которые можно использовать.
@@ -52,7 +52,7 @@ az configure --defaults "location=westus2 group=MyResourceGroup"
 
 ## <a name="cli-configuration-file"></a>Файл конфигурации CLI
 
-Файл конфигурации CLI содержит другие параметры, которые используются для управления поведением CLI. Файл конфигурации расположен здесь: `$AZURE_CONFIG_DIR/config`. По умолчанию для `AZURE_CONFIG_DIR` устанавливается значение `$HOME/.azure/config` в Linux и macOS и `%USERPROFILE%\.azure\config` в Windows.
+Файл конфигурации CLI содержит другие параметры, которые используются для управления поведением CLI. Файл конфигурации расположен здесь: `$AZURE_CONFIG_DIR/config`. По умолчанию для `AZURE_CONFIG_DIR` устанавливается значение `$HOME/.azure` в Linux и macOS и `%USERPROFILE%\.azure` в Windows.
 
 Файлы конфигурации записываются в формате INI. Эти файлы состоят из разделов, которые начинаются с заголовка `[section-name]` и списка записей `key=value`. Имена разделов зависят от регистра, а сами параметры — нет.
 Комментарии — это любая строка, начинающаяся с `#` или `;`. Встроенные комментарии не допускаются. Логические операторы не зависят от регистра и представлены следующими значениями:

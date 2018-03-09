@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 5f3d514200b138d498043e0efb2cf5c2f478d108
-ms.sourcegitcommit: f3ab5da6019083ef2482b62c7355817e6170dcfb
+ms.openlocfilehash: 98f122a9b7a33bf2270664a9e5077d4cd206a6af
+ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 
@@ -37,7 +37,7 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 - [Веб-приложения](/azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 - [База данных SQL](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json)
 
-В подробной [справочной информации](/cli/azure/) также описаны способы использования каждой отдельной команды Azure CLI 2.0.
+В подробной [справочной информации](/cli/azure/reference-index) также описаны способы использования каждой отдельной команды Azure CLI 2.0.
 
 [Начните использовать](get-started-with-azure-cli.md) Azure CLI 2.0 сейчас.
 

@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: c2758922d74080d3a3110b1e3a507ddf0f8d85d1
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 3f5fe1b01a8ce691846126a6c03e7222e9b20e0d
+ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 02/15/2018
 
 Вы можете [установить CLI](install-azure-cli.md) или попробовать поработать с [Azure Cloud Shell](/azure/cloud-shell/overview).
 
-Прежде чем использовать команды CLI при локальной установке, необходимо войти с помощью команды [az login](/cli/azure/index#az_login).
+Прежде чем использовать команды CLI при локальной установке, необходимо войти с помощью команды [az login](/cli/azure/reference-index#az_login).
 
 ```azurecli
 az login
@@ -53,7 +53,7 @@ az login
 Команды в CLI представлены в виде _подкоманд_, входящих в _группы_.
 Каждая группа представляет службу, предоставляемую Azure, а подгруппы позволяют распределить команды для этих служб в логические группы.
 
-Чтобы найти команды, используйте команду [az find](/cli/azure/index#az_find). Например, чтобы найти команды, содержащие `secret`, используйте следующую команду:
+Чтобы найти команды, используйте команду [az find](/cli/azure/reference-index#az_find). Например, чтобы найти команды, содержащие `secret`, используйте следующую команду:
 
 ```azurecli
 az find -q secret
@@ -95,8 +95,8 @@ CLI можно использовать в интерактивном режим
 
 Если вы хотите сосредоточиться на других службах, доступен ряд кратких руководств для соответствующих решений с поддержкой CLI.
 
-* [Создание учетной записи хранения с помощью Azure CLI](/azure/storage/common/storage-quickstart-create-storage-account-cl)
-* [Передача объектов в хранилище BLOB-объектов Azure и обратно с помощью CLI](/storage/blobs/storage-quickstart-blobs-cli)
+* [Создание учетной записи хранения с помощью Azure CLI](/azure/storage/common/storage-quickstart-create-storage-account-cli)
+* [Передача объектов в хранилище BLOB-объектов Azure и обратно с помощью CLI](/azure/storage/blobs/storage-quickstart-blobs-cli)
 * [Создание отдельной базы данных SQL Azure с помощью Azure CLI](/azure/sql-database/sql-database-get-started-cli)
 * [Создание базы данных Azure для сервера MySQL с помощью Azure CLI](/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli)
 * [Create an Azure Database for PostgreSQL by using the Azure CLI](/azure/postgresql/quickstart-create-server-database-azure-cli) (Создание базы данных Azure для PostgreSQL с помощью Azure CLI)
