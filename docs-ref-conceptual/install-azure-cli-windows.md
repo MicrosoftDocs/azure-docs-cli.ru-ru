@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 3e732ea7fae118ddb1564bed28d54d15bab4f7f0
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: df1c2b33589c160525710845cc81d076082a9ecc
+ms.sourcegitcommit: def1a07bfccf26a4178ba6dd836764a1df205929
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="install-azure-cli-20-on-windows"></a>Установка Azure CLI 2.0 в Windows
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 02/15/2018
 Распространяемый MSI-файл используется для установки, обновления и удаления команды `az` в Windows.
 
 > [!div class="nextstepaction"]
-> [Скачать установщик MSI](https://azurecliprod.blob.core.windows.net/msi/azure-cli-latest.msi)
+> [Скачать установщик MSI](https://aka.ms/installazurecliwindows)
 
 Если программа установки запрашивает разрешения на внесение изменений на вашем компьютере, установите флажок "Да".
 
@@ -39,4 +39,4 @@ ms.lasthandoff: 02/15/2018
 Выполнить удаление можно в ходе повторного запуска MSI-файла и выбора команды "Удалить".
 
 > [!div class="nextstepaction"]
-> [Скачать установщик MSI](https://azurecliprod.blob.core.windows.net/msi/azure-cli-latest.msi)
+> [Скачать установщик MSI](https://aka.ms/installazurecliwindows)
