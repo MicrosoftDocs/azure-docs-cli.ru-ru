@@ -45,24 +45,7 @@
       "url": "https://github.com/Microsoft/templates.docs.msft.ru-RU",
       "branch": "master",
       "branch_mapping": {}
-    },
-    {
-      "path_to_root": "_repo.en-us",
-      "url": "https://github.com/Azure/azure-docs-cli-python",
-      "branch": "live",
-      "branch_mapping": {
-        "live": "live",
-        "master": "master"
-      }
-    },
-    { 
-       "path_to_root": "cli-xref", 
-       "url": "https://github.com/MicrosoftDocs/cli-xref", 
-       "branch": "master", 
-       "branch_mapping": { 
-         "master": "master"
-      } 
-    } 
+    }
   ],
   "need_generate_pdf_url_template": false,
   "dependent_packages": [

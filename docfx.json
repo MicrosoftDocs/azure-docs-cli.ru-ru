@@ -336,10 +336,6 @@
     },
     "template": [],
     "exportrawmodel": true,
-    "dest": "",
-    "xref": [
-      "cli-xref/azure-cli-2017-03-09-profile.xrefmap.yml",
-      "cli-xref/azure-cli-latest.xrefmap.yml"
-    ]
+    "dest": ""
   }
 }
