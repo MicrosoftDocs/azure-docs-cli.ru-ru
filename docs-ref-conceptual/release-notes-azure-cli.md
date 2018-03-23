@@ -1,6 +1,6 @@
 ---
-title: "Заметки о выпуске Azure CLI 2.0"
-description: "Узнайте о последних обновлениях в Azure CLI 2.0"
+title: Заметки о выпуске Azure CLI 2.0
+description: Узнайте о последних обновлениях в Azure CLI 2.0
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -10,13 +10,100 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 01078b7a3665f563f0a6b1d809c9a41f18d136d6
-ms.sourcegitcommit: f3ab5da6019083ef2482b62c7355817e6170dcfb
+ms.openlocfilehash: 116fa95e51399b9b97c1b35c38445f30db7efc94
+ms.sourcegitcommit: fefb5bb6a21cab30c44592c0577408a8d1a2ccc7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="march-13-2018"></a>13 марта 2018 г.
+
+Версия 2.0.29
+
+### <a name="acr"></a>ACR
+
+* Добавлена поддержка параметра `--image` для `repository delete`.
+* Параметры `--manifest` и `--tag` команды `repository delete` отмечены как нерекомендуемые.
+* Добавлена команда `repository untag` для удаления тега без удаления данных.
+
+### <a name="acs"></a>ACS
+
+* Добавлена команда `aks upgrade-connector` для обновления существующего соединителя.
+* Изменены файлы конфигурации `kubectl`. Теперь используется более разборчивый стиль YAML с разбивкой на блоки.
+
+### <a name="advisor"></a>Помощник
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration get` переименована в `advisor configuration list`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration set` переименована в `advisor configuration update`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Удалена команда `advisor recommendation generate`. 
+* Добавлен параметр `--refresh` для команды `advisor recommendation list`.
+* Добавлена команда `advisor recommendation show`.
+
+### <a name="appservice"></a>Служба приложений
+
+* Команда `[webapp|functionapp] assign-identity` отмечена как нерекомендуемая.
+* Добавлены команды управляемого удостоверения `webapp identity [assign|show]` и `functionapp identity [assign|show]`.
+
+### <a name="eventhubs"></a>Концентраторы событий
+
+* Первый выпуск
+
+### <a name="extension"></a>Добавочный номер
+
+* Добавлена проверка, позволяющая предупредить пользователя, если используемый дистрибутив отличается от хранящегося в исходном файле пакета, так как это может привести к возникновению ошибок.
+
+### <a name="interactive"></a>Interactive
+
+* Исправлена ошибка [#5625](https://github.com/Azure/azure-cli/issues/5625): теперь записи журнала сохраняются в разных сеансах.
+* Исправлена ошибка [#3016](https://github.com/Azure/azure-cli/issues/3016): при использовании области не создавались записи журнала.
+* Исправлена ошибка [#5688](https://github.com/Azure/azure-cli/issues/5688): если при загрузке таблицы команд возникало исключение, опережающий ввод не выполнялся.
+* Исправлен индикатор хода выполнения для длительных операций.
+
+### <a name="monitor"></a>Мониторинг
+
+* Команды `monitor autoscale-settings` отмечены как нерекомендуемые.
+* Добавлены команды `monitor autoscale`.
+* Добавлены команды `monitor autoscale profile`.
+* Добавлены команды `monitor autoscale rule`.
+
+### <a name="network"></a>Сеть
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Удален параметр `--tags` из `route-filter rule create`.
+* Удалены некоторые ошибочные значения по умолчанию для следующих команд:
+  * `network express-route update`
+  * `network nsg rule update`
+  * `network public-ip update`
+  * `traffic-manager profile update`
+  * `network vnet-gateway update`
+* Добавлены команды `network watcher connection-monitor`.
+* Добавлены параметры `--vnet` и `--subnet` для `network watcher show-topology`.
+
+### <a name="profile"></a>Профиль
+
+* Параметр `--msi` для `az login` отмечен как нерекомендуемый.
+* Добавлен параметр `--identity` для `az login`. Он заменяет `--msi`.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Внесены изменения для использования предварительной версии API 2017-12-01.
+
+### <a name="service-bus"></a>Служебная шина
+
+* Первый выпуск
+
+### <a name="storage"></a>Хранилище
+
+* Исправлена ошибка [#4971](https://github.com/Azure/azure-cli/issues/4971): теперь `storage blob copy` поддерживает другие облака Azure.
+* Исправлена ошибка [#5286](https://github.com/Azure/azure-cli/issues/5286): при пакетном выполнении команд `storage blob [delete-batch|download-batch|upload-batch]` больше не отображается сообщение об ошибке в предусловии.
+
+### <a name="vm"></a>ВМ
+
+* В `[vm|vmss] create` добавлена поддержка присоединения неуправляемых дисков данных и настройки кэширования.
+* `[vm|vmss] assign-identity` и `[vm|vmss] remove-identity` отмечены как нерекомендуемые.
+* Вместо нерекомендуемых команд добавлены команды `vm identity [assign|remove|show]` и `vmss identity [assign|remove|show]`.
+* Для приоритета `vmss create` по умолчанию установлено значение None.
 
 ## <a name="february-27-2018"></a>27 февраля 2018 г
 
@@ -1457,7 +1544,7 @@ vm (2.0.2)
 * ВМ и VMSS: внедрена логика проверки учетных данных, используемая на портале ([#2537](https://github.com/Azure/azure-cli/pull/2537)).
 * Добавлена поддержка команд wait и --no-wait ([#2524](https://github.com/Azure/azure-cli/pull/2524)).
 * Масштабируемый набор виртуальных машин: добавлена поддержка * для представления экземпляров на виртуальных машинах в виде списка ([#2467](https://github.com/Azure/azure-cli/pull/2467)).
-* Добавлена команда --secrets для виртуальных машин и масштабируемого набора виртуальных машин ([#2212}(https://github.com/Azure/azure-cli/pull/2212)).
+* Добавлен параметр --secrets для виртуальной машины и масштабируемого набора виртуальных машин ([#2212}(https://github.com/Azure/azure-cli/pull/2212)).
 * Добавлено разрешение на создание виртуальных машин на основе специализированного образа VHD ([#2256](https://github.com/Azure/azure-cli/pull/2256)).
 
 ## <a name="february-27-2017"></a>27 февраля 2017 г.
@@ -1510,7 +1597,7 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 ```
 
 > [!Note]
-> Некоторые командные модули имеют постфикс b*n* или rc*n*.
+> Некоторые командные модули имеют постфикс "b*n*" или "rc*n*".
 > Эти командные модули все еще находятся на стадии предварительной версии и станут общедоступными в будущем.
 
 У нас также есть предварительные ежедневные сборки интерфейса командной строки.
