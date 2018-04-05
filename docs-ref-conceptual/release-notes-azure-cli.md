@@ -10,13 +10,120 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 116fa95e51399b9b97c1b35c38445f30db7efc94
-ms.sourcegitcommit: fefb5bb6a21cab30c44592c0577408a8d1a2ccc7
+ms.openlocfilehash: 0e81f5723af47242f908b854045deb7d74c50c17
+ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="march-27-2018"></a>27 марта 2018 г.
+
+Версия 2.0.30
+
+### <a name="core"></a>Core
+
+* Отображение сообщения для расширений, которые отмечены в справке как предварительная версия.
+
+### <a name="acs"></a>ACS
+
+* Устранена ошибка с проверкой SSL-сертификата для `aks install-cli` в Cloud Shell.
+
+### <a name="appservice"></a>Служба приложений
+
+* Добавлена поддержка только протокола HTTPS для `webapp update`.
+* Добавлена поддержка слотов для `az webapp identity [assign|show]` и `az functionapp identity [assign|show]`.
+
+### <a name="backup"></a>Архивация
+
+* Добавлена новая команда `az backup protection isenabled-for-vm`. Эта команда используется для проверки резервного копирования виртуальной машины в любое хранилище в подписке.
+* Включены идентификаторы объектов Azure для параметров `--resource-group` и `--vault-name` для следующих команд:
+  * `backup container show`
+  * `backup item set-policy`
+  * `backup item show`
+  * `backup job show`
+  * `backup job stop`
+  * `backup job wait`
+  * `backup policy delete`
+  * `backup policy get-default-for-vm`
+  * `backup policy list-associated-items`
+  * `backup policy set`
+  * `backup policy show`
+  * `backup protection backup-now`
+  * `backup protection disable`
+  * `backup protection enable-for-vm`
+  * `backup recoverypoint show`
+  * `backup restore files mount-rp`
+  * `backup restore files unmount-rp`
+  * `backup restore restore-disks`
+  * `backup vault delete`
+  * `backup vault show`
+* Изменены параметры `--name` для поддержки формата вывода команд `backup ... show`.
+
+### <a name="container"></a>Контейнер
+
+* Добавлена команда `container exec`. Выполнение команды в контейнере для выполняющейся группы контейнеров.
+* Разрешение выходной таблице создавать и обновлять группу контейнеров.
+
+### <a name="extension"></a>Добавочный номер
+
+* Добавлено сообщение для `extension add`, если расширение доступно в режиме предварительной версии.
+* Изменен параметр `extension list-available` для отображения всех данных расширения с использованием `--show-details`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменена команда `extension list-available` для отображения упрощенных данных расширения по умолчанию.
+
+### <a name="interactive"></a>Interactive
+
+* Изменены операции завершения, активируемые сразу после завершения загрузки таблицы команд.
+* Исправлена ошибка с использованием параметра `--style`.
+* Отсутствующий интерактивный лексический анализатор создается после дампа таблицы команд.
+* Улучшена поддержка средства заполнения.
+
+### <a name="lab"></a>Лаборатория
+
+* Исправлены ошибки с командой `create environment`.
+
+### <a name="monitor"></a>Мониторинг
+
+* Добавлена поддержка `--top`, `--orderby` и `--namespace` для `metrics list` [#5785](https://github.com/Azure/azure-cli/issues/5785).
+* Исправлена ошибка [#4529](https://github.com/Azure/azure-cli/issues/5785): `metrics list` принимает разделенный пробелами список метрик для извлечения.
+* Добавлена поддержка `--namespace` для `metrics list-definitions` [#5785](https://github.com/Azure/azure-cli/issues/5785).
+
+### <a name="network"></a>Сеть
+
+* Добавлена поддержка Частных зон DNS.
+
+### <a name="profile"></a>Профиль
+
+* Добавлено предупреждение для `--identity-port` и `--msi-port` в `login`.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Добавлена общедоступная версия 2017-12-01 бизнес-модели API.
+
+### <a name="resource"></a>Ресурс
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Changed `provider operation [list|show]` to not require `--api-version`
+
+### <a name="role"></a>Роль
+
+* Добавлена поддержка конфигурации требуемого уровня доступа и собственных клиентов для `az ad app create`.
+* Изменены команды `rbac`, чтобы возвращать не более 1000 идентификаторов в разрешении объекта.
+* Добавлены команды `ad sp credential [reset|list|delete]` для управления учетными данными.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр properties из выходных данных `az role assignment [list|show]`.
+* Добавлена поддержка разрешений `dataActions` и `notDataActions` для `role definition`.
+
+### <a name="storage"></a>Хранилище
+
+* Исправлена проблема с отправкой файла размером от 195 до 200 ГБ.
+* Исправлена ошибка [#4049](https://github.com/Azure/azure-cli/issues/4049): проблемы, когда при отправке добавочного большого двоичного объекта игнорируются параметры условия.
+
+### <a name="vm"></a>ВМ
+
+* Добавлено предупреждение `vmss create` для предстоящих критически важных изменений для наборов из 100 и более экземпляров.
+* Добавлена поддержка устойчивости зон для `vm [snapshot|image]`.
+* Изменено представление экземпляра диска для улучшения отчета о состоянии шифрования.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] `vm extension delete` Изменена команда, которая больше не возвращает выходные данные.
 
 ## <a name="march-13-2018"></a>13 марта 2018 г.
 
@@ -37,7 +144,7 @@ ms.lasthandoff: 03/17/2018
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration get` переименована в `advisor configuration list`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration set` переименована в `advisor configuration update`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Удалена команда `advisor recommendation generate`. 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `advisor recommendation generate`. 
 * Добавлен параметр `--refresh` для команды `advisor recommendation list`.
 * Добавлена команда `advisor recommendation show`.
 
@@ -70,7 +177,7 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Удален параметр `--tags` из `route-filter rule create`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--tags` из `route-filter rule create`.
 * Удалены некоторые ошибочные значения по умолчанию для следующих команд:
   * `network express-route update`
   * `network nsg rule update`
@@ -175,7 +282,7 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="acs"></a>ACS
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Переименовано `aks get-versions` на `aks get-upgrades` для точности.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименовано `aks get-versions` на `aks get-upgrades` для точности.
 * Изменено `aks get-versions` для отображения версий Kubernetes, доступных для `aks create`.
 * Изменены значения по умолчанию `aks create`, чтобы разрешить серверу выбирать версию Kubernetes.
 * Обновлены справочные сообщения, связанные с субъектом-службой и создаваемые AKS.
@@ -378,9 +485,9 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="event-grid"></a>Служба "Сетка событий Azure"
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Удалена команда `eventgrid event-subscription show-endpoint-url`. Вместо нее следует использовать `eventgrid event-subscription show --include-full-endpoint-url`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `eventgrid event-subscription show-endpoint-url`. Вместо нее следует использовать `eventgrid event-subscription show --include-full-endpoint-url`.
 * Добавлена команда `eventgrid topic update`.
 * Добавлена команда `eventgrid event-subscription update`.
 * Добавлен параметр `--ids` для команд `eventgrid topic`.
@@ -424,8 +531,8 @@ ms.lasthandoff: 03/17/2018
 ### <a name="vm"></a>ВМ
 
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Поддержка разных зон для `vmss`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Значение по умолчанию `vmss` для одной зоны заменено на данные подсистемы балансировки нагрузки уровня "Стандартный".
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Для EMSI параметр `externalIdentities` изменен на `userAssignedIdentities`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию `vmss` для одной зоны заменено данными подсистемы балансировки нагрузки уровня "Стандартный".
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для EMSI параметр `externalIdentities` изменен на `userAssignedIdentities`.
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка переключения дисков ОС.
 * Добавлена поддержка использования образов виртуальных машин из других подписок.
 * В `[vm|vmss] create` добавлены аргументы `--plan-name`, `--plan-product`, `--plan-promotion-code` и `--plan-publisher`.
@@ -728,7 +835,7 @@ ms.lasthandoff: 03/17/2018
 * Добавлена поддержка отображения определений встроенных политик
 * Добавлена поддержка параметра mode для создания определения политик
 * Добавлена поддержка шаблонов и определений пользовательского интерфейса для команды `managedapp definition create`
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`.
 
 ### <a name="network"></a>Сеть
 
@@ -803,7 +910,7 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="extension"></a>Добавочный номер
 
-* Первый выпуск.
+* Первый выпуск
 
 ### <a name="keyvault"></a>Хранилище ключей
 
@@ -859,7 +966,7 @@ ms.lasthandoff: 03/17/2018
 
 ### <a name="cli"></a>Интерфейс командной строки
 
-* К параметру `--version` добавлено юридическое примечание.
+* Для `--version` добавлено юридическое примечание.
 
 ### <a name="acs"></a>ACS
 
@@ -1528,10 +1635,10 @@ vm (2.0.2)
 * AppService: добавлена поддержка профилей для публикации списком ([#2504](https://github.com/Azure/azure-cli/pull/2504)).
 * AppService: добавлен триггер синхронизации с системой управления версиями после настройки ([#2326](https://github.com/Azure/azure-cli/pull/2326)).
 
-### <a name="datalake"></a>DataLake
+### <a name="datalake"></a>Data Lake
 
-* Первоначальный выпуск модуля Data Lake Analytics.
-* Первоначальный выпуск модуля Data Lake Store.
+* Первый выпуск модуля Data Lake Analytics.
+* Первый выпуск модуля Data Lake Store.
 
 ### <a name="docuemntdb"></a>DocumentDB
 
@@ -1551,21 +1658,17 @@ vm (2.0.2)
 
 Версия 2.0.0
 
-Этот первый общедоступный выпуск Azure CLI 2.0.
-Общедоступными являются такие командные модули:
+Этот первый общедоступный выпуск Azure CLI 2.0. Общедоступными являются такие командные модули:
 - служба контейнеров (ACS);
 - вычисления (в том числе Resource Manager, виртуальная машина, масштабируемые наборы виртуальных машин, управляемые диски);
 - Сеть
 - Хранилище
 
-Эти командные модули могут использоваться в рабочих средах и поддерживаются стандартными соглашениями Майкрософт об уровне обслуживания.
-Вы можете отправлять запросы непосредственно в службу технической поддержки Майкрософт или добавлять описание проблем в наш [список на сайте GitHub](https://github.com/azure/azure-cli/issues/).
-Вы можете задавать вопросы на сайте [StackOverflow, используя тег azure-cli](http://stackoverflow.com/questions/tagged/azure-cli), или обращаться к группе разработчиков по адресу электронной почты [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com). Можно отправлять отзывы из командной строки с помощью команды `az feedback`.
+Эти командные модули могут использоваться в рабочих средах. Они поддерживаются стандартными соглашениями Майкрософт об уровне обслуживания. Вы можете отправлять запросы непосредственно в службу технической поддержки Майкрософт или добавлять описание проблем в наш [список на сайте GitHub](https://github.com/azure/azure-cli/issues/). Вы можете задавать вопросы на [сайте StackOverflow, используя тег azure-cli](http://stackoverflow.com/questions/tagged/azure-cli), или обращаться к группе разработчиков по адресу электронной почты [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com). Можно отправлять отзывы из командной строки с помощью команды `az feedback`.
 
-Команды в этих модулях стабильны, и предполагается, что в следующих выпусках этой версии Azure CLI их синтаксис не будет меняться.
+Команды в этих модулях стабильны, и предполагается, что в следующих выпусках этой версии Azure CLI их синтаксис не будет меняться.
 
-Чтобы проверить версию интерфейса командной строки, используйте `az --version`.
-В выходных данных указана версия самого интерфейса командной строки (2.0.0 в этом выпуске), версии отдельных командных модулей и используемые вами версии Python и GCC.
+Проверить версию CLI можно с помощью команды `az --version`. В выходных данных указана версия самого интерфейса командной строки (2.0.0 в этом выпуске), версии отдельных командных модулей и используемые вами версии Python и GCC.
 
 ```
 azure-cli (2.0.0)
@@ -1597,14 +1700,12 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 ```
 
 > [!Note]
-> Некоторые командные модули имеют постфикс "b*n*" или "rc*n*".
-> Эти командные модули все еще находятся на стадии предварительной версии и станут общедоступными в будущем.
+> Некоторые командные модули имеют постфикс b*n* или rc*n*. Эти командные модули все еще находятся на стадии предварительной версии и станут общедоступными в будущем.
 
-У нас также есть предварительные ежедневные сборки интерфейса командной строки.
-Дополнительные сведения см. в инструкциях по [получению ежедневных сборок](https://github.com/Azure/azure-cli#nightly-builds), а также в инструкциях по [настройке среды разработки и участии в написании кода](https://github.com/Azure/azure-cli#developer-setup).
+У нас также есть предварительные ежедневные сборки CLI. Дополнительные сведения см. в инструкциях по [получению ежедневных сборок](https://github.com/Azure/azure-cli#nightly-builds), а также в инструкциях по [настройке среды разработки и участии в написании кода](https://github.com/Azure/azure-cli#developer-setup).
 
 О проблемах с предварительными ежедневными сборками можно сообщить несколькими способами:
 - добавив информацию о проблемах в наш [список на сайте GitHub](https://github.com/azure/azure-cli/issues/);
-- обратившись к специалистам группы разработчиков продукта по адресу электронной почты [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com);
+- Свяжитесь с командой разработчиков ([azfeedback@microsoft.com](mailto:azfeedback@microsoft.com)),
 - отправив отзыв из командной строки с помощью команды `az feedback`.
 
