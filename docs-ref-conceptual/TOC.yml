@@ -52,7 +52,12 @@
     - name: Запрос
       href: query-azure-cli.md
     - name: расширения.
-      href: azure-cli-extensions.md
+      href: azure-cli-extensions-overview.md
+      items:
+        - name: Доступные расширения
+          href: azure-cli-extensions-list.md
+        - name: Расширение псевдонимов
+          href: azure-cli-extension-alias.md
     - name: Параметры конфигурации
       href: azure-cli-Configuration.md
     - name: Заметки о выпуске
