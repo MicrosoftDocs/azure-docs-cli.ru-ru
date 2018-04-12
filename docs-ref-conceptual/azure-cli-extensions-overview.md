@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 5695d1df42689b315dd9d8783232ce35205a0a0e
-ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
+ms.openlocfilehash: a150edbc174ff77f4320a2cb60e031dc3c6ad1cc
+ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/28/2018
 
 ## <a name="find-extensions"></a>Поиск расширений
 
-Чтобы узнать, какие расширения доступны, вы можете использовать команду [az extension list-available](/cli/azure/extension?view=azure-cli-latest#az-extension-list-available). Это команда отображает список доступных официальных расширений, которые предоставляются и обслуживаются корпорацией Майкрософт.
+Чтобы узнать, какие расширения доступны, вы можете использовать команду [az extension list-available](/cli/azure/extension#az-extension-list-available). Это команда отображает список доступных официальных расширений, которые предоставляются и обслуживаются корпорацией Майкрософт.
 
 ```azurecli
 az extension list-available --output table
@@ -35,7 +35,7 @@ az extension list-available --output table
 
 ## <a name="install-extensions"></a>Установка расширений
 
-Когда вы найдете расширение для установки, используйте команду [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-add), чтобы получить его. Если расширение включено в список в `az extension list-available`, его можно установить по имени.
+Когда вы найдете расширение для установки, используйте команду [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-add), чтобы получить его. Если расширение включено в список в `az extension list-available`, его можно установить по имени.
 
 ```azurecli
 az extension add --name <extension-name>
@@ -51,7 +51,7 @@ az extension add --source <URL-or-path>
 
 ## <a name="update-extensions"></a>Обновление расширений
 
-Если расширение устанавливалось по имени, его можно обновить с помощью команды [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-update).
+Если расширение устанавливалось по имени, его можно обновить с помощью команды [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-update).
 
 ```azurecli
 az extension update --name <extension-name>
@@ -63,7 +63,7 @@ az extension update --name <extension-name>
 
 ## <a name="uninstall-extensions"></a>Удаление расширений
 
-Если расширение больше не нужно, можно удалить его с помощью команды [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-remove).
+Если расширение больше не нужно, можно удалить его с помощью команды [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-remove).
 
 ```azurecli
 az extension remove --name <extension-name>

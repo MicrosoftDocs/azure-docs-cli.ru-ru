@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 6970844bf9eba5ccf18b7603115de629e995f2c4
-ms.sourcegitcommit: f57b5666523ef3642bee644eb0e0fe7085b3194a
+ms.openlocfilehash: 7ef6175815014ac3f822e8c1038b4f5af8bba9dc
+ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Настройка Azure CLI 2.0
 
@@ -29,7 +29,7 @@ Azure CLI 2.0 позволяет применять пользовательск
 
 ## <a name="cli-configuration-with-az-configure"></a>Настройка CLI с использованием команды az configure
 
-Задать значения по умолчанию для CLI можно с помощью команды [az configure](/cli/azure/reference-index#az_configure).
+Задать значения по умолчанию для CLI можно с помощью команды [az configure](/cli/azure/reference-index#az-configure).
 Эта команда принимает один аргумент `--defaults`, который является разделенным пробелами списком пар `key=value`. Предоставленные значения используются CLI вместо обязательных аргументов.
 
 Ниже приведен список доступных параметров, которые можно использовать.
