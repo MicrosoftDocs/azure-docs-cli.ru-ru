@@ -1,6 +1,6 @@
 ---
-title: "Начало работы с Azure CLI 2.0"
-description: "Начните работу с Azure CLI 2.0, изучив базовые команды."
+title: Начало работы с Azure CLI 2.0
+description: Начните работу с Azure CLI 2.0, изучив базовые команды.
 keywords: Azure CLI, CLI help, Azure help, query, automation,
 author: sptramer
 ms.author: sttramer
@@ -11,11 +11,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 3f5fe1b01a8ce691846126a6c03e7222e9b20e0d
-ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
+ms.openlocfilehash: 9eec3161a726d6cca53d92f80992059bfd056bf7
+ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/08/2018
 
 Вы можете [установить CLI](install-azure-cli.md) или попробовать поработать с [Azure Cloud Shell](/azure/cloud-shell/overview).
 
-Прежде чем использовать команды CLI при локальной установке, необходимо войти с помощью команды [az login](/cli/azure/reference-index#az_login).
+Прежде чем использовать команды CLI при локальной установке, необходимо войти с помощью команды [az login](/cli/azure/reference-index#az-login).
 
 ```azurecli
 az login
@@ -53,7 +53,7 @@ az login
 Команды в CLI представлены в виде _подкоманд_, входящих в _группы_.
 Каждая группа представляет службу, предоставляемую Azure, а подгруппы позволяют распределить команды для этих служб в логические группы.
 
-Чтобы найти команды, используйте команду [az find](/cli/azure/reference-index#az_find). Например, чтобы найти команды, содержащие `secret`, используйте следующую команду:
+Чтобы найти команды, используйте команду [az find](/cli/azure/reference-index#az-find). Например, чтобы найти команды, содержащие `secret`, используйте следующую команду:
 
 ```azurecli
 az find -q secret
@@ -80,7 +80,7 @@ az network nsg --help
 
 ## <a name="interactive-mode"></a>Интерактивный режим
 
-CLI можно использовать в интерактивном режиме для автоматического отображения справочных сведений и упрощения выбора подкоманд. Перейти в интерактивный режим можно с помощью команды `az interactive`. См. дополнительные сведения об [интерактивной режиме Azure CLI 2.0](interactive-azure-cli.md).
+CLI можно использовать в интерактивном режиме для автоматического отображения справочных сведений и упрощения выбора подкоманд. Перейти в интерактивный режим можно с помощью команды [az interactive](/cli/azure/reference-index#az-interactive). См. дополнительные сведения об [интерактивной режиме Azure CLI 2.0](interactive-azure-cli.md).
 
 Кроме того, доступен [подключаемый модуль Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli), который предусматривает интерактивное взаимодействие для получения документации с помощью автозаполнения и указателя.
 
@@ -105,7 +105,7 @@ CLI можно использовать в интерактивном режим
 
 ## <a name="give-feedback"></a>Обратная связь
 
-Мы рады вашим отзывам о CLI, которые помогают нам улучшать наш продукт и устранять ошибки. Вы можете [опубликовать описание проблемы на Github](https://github.com/azure/azure-cli/issues) или использовать встроенные функции CLI, чтобы оставить отзыв с помощью команды `az feedback`.
+Мы рады вашим отзывам о CLI, которые помогают нам улучшать наш продукт и устранять ошибки. Вы можете [опубликовать описание проблемы на Github](https://github.com/azure/azure-cli/issues) или использовать встроенные функции CLI, чтобы оставить отзыв с помощью команды [az feedback](/cli/azure/reference-index#az-feedback).
 
 ```azurecli
 az feedback
