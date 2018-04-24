@@ -1,6 +1,6 @@
 ---
-title: "Установка Azure CLI 2.0 в Linux с помощью zypper"
-description: "Как установить Azure CLI 2.0 с помощью zypper"
+title: Установка Azure CLI 2.0 в Linux с помощью zypper
+description: Как установить Azure CLI 2.0 с помощью zypper
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 6ee3aff74f43fab0c80c58c7fe57c9fa74a6ef2f
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: 01d293eff229ab8b0eb3a3ff4e23978ea9e00174
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>Установка Azure CLI 2.0 с помощью zypper
 
@@ -50,7 +50,13 @@ ms.lasthandoff: 02/15/2018
    sudo zypper install -y azure-cli
    ```
 
-Запустить CLI можно с помощью команды `az`.
+Запустите Azure CLI с помощью команды `az`. Для входа выполните команду `az login`.
+
+```azurecli
+az login
+```
+
+Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="update"></a>Блокировка изменений
 

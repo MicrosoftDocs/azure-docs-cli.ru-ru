@@ -1,6 +1,6 @@
 ---
-title: "Вход с помощью Azure CLI 2.0"
-description: "Интерактивный вход с помощью Azure CLI 2.0 или вход с использованием локальных учетных данных"
+title: Вход с помощью Azure CLI 2.0
+description: Интерактивный вход с помощью Azure CLI 2.0 или вход с использованием локальных учетных данных
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 92c96b7e969de686689ef02bf068392b9f565698
-ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
+ms.openlocfilehash: a8bdf99d12e988cc6fdfabb5038c99c9430a9acd
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="command-line"></a>Команда
 
-Укажите свои учетные данные в командной строке.
+Укажите свои учетные данные пользователя Azure в командной строке.
 
 > [!Note]
 > Этот способ не работает с учетными записями Майкрософт или с учетными записями, которые используют двухфакторную проверку подлинности.
@@ -41,6 +41,22 @@ ms.lasthandoff: 03/08/2018
 ```azurecli
 az login -u <username> -p <password>
 ```
+
+> [!IMPORTANT]
+> Если вы не хотите, чтобы ваш пароль отображался в консоли, и используете `az login` в интерактивном режиме, используйте команду `read -s` в `bash`.
+> 
+> ```bash
+> read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS
+> ```
+>
+> В PowerShell же для этого нужно использовать командлет `Read-Host -AsSecureString` и безопасное преобразование строк.
+> 
+> ```powershell
+> $securePass =  Read-Host "Azure password: " -AsSecureString;
+> $AzPass = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass));
+> az login -u <username> -p $AzPass;
+> $AzPass = ""
+> ```
 
 ## <a name="log-in-with-a-specific-tenant"></a>Вход в определенный клиент
 
@@ -50,14 +66,14 @@ az login -u <username> -p <password>
 az login --tenant <tenant>
 ```
 
-## <a name="logging-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
+## <a name="log-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
 Субъекты-службы — это учетные записи, не связаны с определенным пользователем. Они предоставляют разрешения, назначаемые с помощью предопределенных ролей. Аутентификация с помощью субъекта-службы лучше всего подходит для создания безопасных скриптов и программ, позволяя применять как ограничения разрешений, так и хранимые локально сведения о статических учетных данных. Дополнительные сведения о субъектах-службах см. в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI ](create-an-azure-service-principal-azure-cli.md).
 
 Чтобы войти с помощью субъекта-службы, укажите имя пользователя, пароль или сертификат PEM-файла, а также клиент, связанный с субъектом-службой:
 
 ```azurecli
-az login --service-principal -u <user> -p <password-or-cert> --tenant <tenant>
+az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant>
 ```
 
 Значение клиента — это клиент Azure Active Directory, связанный с субъектом-службой. Это может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента.
@@ -66,3 +82,19 @@ az login --service-principal -u <user> -p <password-or-cert> --tenant <tenant>
 ```azurecli
 az account show --query 'tenantId' -o tsv
 ```
+
+> [!IMPORTANT]
+> Если вы не хотите, чтобы ваш пароль отображался в консоли, и используете `az login` в интерактивном режиме, используйте команду `read -s` в `bash`.
+> 
+> ```bash
+> read -sp "Azure password: " AZ_PASS && echo && az login --service-principal -u <app-url> -p $AZ_PASS --tenant <tenant>
+> ```
+>
+> В PowerShell же для этого нужно использовать командлет `Read-Host -AsSecureString` и безопасное преобразование строк.
+> 
+> ```powershell
+> $securePass =  Read-Host "Azure password: " -AsSecureString;
+> $AzPass = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass));
+> az login --service-principal -u <app-url> -p $AzPass --tenant <tenant>;
+> $AzPass = ""
+> ```

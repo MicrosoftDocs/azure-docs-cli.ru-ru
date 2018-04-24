@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: fd615c762f997cb8bd4835d387cd96dd9c475928
-ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
+ms.openlocfilehash: fc87e3476d3a58bb16dd37bdde9679679a860f53
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>Создание субъекта-службы Azure с помощью Azure CLI 2.0
 
@@ -38,10 +38,20 @@ ms.lasthandoff: 04/06/2018
 
   Вы можете добавить аргумент `--keyvault`, чтобы указать, что сертификат хранится в Azure Key Vault. В этом случае значение `--cert` ссылается на имя сертификата в Key Vault.
 
-* `--create-cert` создает _самозаверяющий_ сертификат для аутентификации. Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault.
+  ```azurecli
+  az ad sp create-for-rbac --name ServicePrincipalName --cert CertName --keyvault VaultName
+  ```
+
+* `--create-cert` создает _самозаверяющий_ сертификат для аутентификации. Если аргумент `--cert` не указан, создается произвольное имя сертификата.
 
   ```azurecli
   az ad sp create-for-rbac --name ServicePrincipalName --create-cert
+  ```
+
+  Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault. При использовании `--keyvault` аргумент `--cert` также необходим.
+
+  ```azurecli
+  az ad sp create-for-rbac --name ServicePrincipalName --create-cert --cert CertName --keyvault VaultName
   ```
 
 Если аргумент, указывающий способ аутентификации, не будет включен, по умолчанию используется `--password`.

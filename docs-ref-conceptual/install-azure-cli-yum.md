@@ -1,6 +1,6 @@
 ---
-title: "Установка Azure CLI 2.0 в Linux с использованием yum"
-description: "Как установить Azure CLI 2.0 с помощью yum"
+title: Установка Azure CLI 2.0 в Linux с использованием yum
+description: Как установить Azure CLI 2.0 с помощью yum
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 5b7afe999d1afe5be40c4957d9cd0f832b680099
-ms.sourcegitcommit: f82774a6f92598c41da9956284f563757f402774
+ms.openlocfilehash: 6a63d1ccd6b182b0c7144101f7efbf3264a6cb72
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-with-yum"></a>Установка Azure CLI 2.0 с помощью yum
 
@@ -42,7 +42,13 @@ ms.lasthandoff: 02/19/2018
    sudo yum install azure-cli
    ```
 
-Обновите Azure CLI с помощью команды `az`.
+Запустите Azure CLI с помощью команды `az`. Для входа выполните команду `az login`.
+
+```azurecli
+az login
+```
+
+Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="update"></a>Блокировка изменений
 

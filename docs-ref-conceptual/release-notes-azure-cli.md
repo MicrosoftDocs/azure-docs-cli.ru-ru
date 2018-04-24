@@ -4,19 +4,136 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/27/2018
+ms.date: 04/10/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 0e81f5723af47242f908b854045deb7d74c50c17
-ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
+ms.openlocfilehash: 1e6bd4cd8bab853fb417ed9c4dd71d56e5de7cdc
+ms.sourcegitcommit: 204fd027d3668959b98b936969ccb41eada0fd29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="april-10-2018"></a>10 апреля 2018 г.
+
+Версия 2.0.31
+
+### <a name="acr"></a>ACR
+
+* Улучшена обработка ошибок при откате wincred.
+
+### <a name="acs"></a>ACS
+
+* Срок действия имен субъектов-служб, созданных службой контейнеров Azure, изменен до 5 лет.
+
+### <a name="appservice"></a>Служба приложений
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]: Removed `assign-identity`
+* Исправлено неперехватываемое исключение для несуществующих планов веб-приложений.
+
+### <a name="batchai"></a>Batch AI
+
+* Добавлена поддержка API 2018-03-01.
+
+ - Подключение на уровне задания.
+ - Переменные среды со значениями секретов.
+ - Параметры счетчиков производительности.
+ - Предоставление информации о сегменте пути конкретного задания.
+ - Поддержка вложенных папок в API списка файлов.
+ - Предоставление информации об использовании и ограничениях.
+ - Возможность указать тип кэширования для NFS-серверов.
+ - Поддержка пользовательских образов.
+ - Добавлена поддержка инструментария pyTorch.
+
+* Добавлена команда `job wait`, позволяющая дождаться завершения задания и сообщить код выхода задания.
+* Добавлена команда `usage show`, позволяющая получить актуальные сведения об использовании и ограничениях ресурсов Batch AI для различных регионов.
+* Поддержка национальных облаков.
+* Для заданий добавлены аргументы командной строки, которые позволяют подключать файловые системы на уровне заданий. Эти же действия можно выполнять в файлах конфигурации.
+* Добавлены дополнительные параметры для настройки кластеров: приоритет виртуальной машины, подсеть, исходное число узлов для кластеров с автоматическим масштабированием, выбор пользовательского образа.
+* Добавлен параметр командной строки, который позволяет указать тип кэширования для управляемой файловой системы NFS службы Batch AI.
+* Упрощена процедура выбора подключаемой файловой системы в файлах конфигурации. Теперь учетные данные для общего файлового ресурса Azure и контейнеров BLOB-объектов Azure указывать не нужно: CLI получит отсутствующие учетные данные с помощью ключа учетной записи хранения, указанного в параметрах командной строки, или переменной среды либо запросит ключ из службы хранилища Azure (если учетная запись хранения относится к текущей подписке).
+* Команда задания потоковой передачи файлов теперь автоматически завершается при завершении задания (успешное выполнение, сбой, прерывание или удаление).
+* Улучшены выходные данные `table` для операций `show`.
+* Добавлен параметр `--use-auto-storage` для создания кластера. Этот параметр упрощает управление учетными записями хранения, а также подключение общего файлового ресурса Azure и контейнеров BLOB-объектов Azure к кластеру.
+* Добавлен параметр `--generate-ssh-keys` для команд `cluster create` и `file-server create`.
+* Добавлена возможность запустить задачу настройки узла через командную строку.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команды `job stream-file` и `job list-files` перемещены в группу `job file`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В команде `file-server create` параметр `--admin-user-name` переименован в `--user-name` для согласованности с командой `cluster create`.
+
+### <a name="billing"></a>Выставление счетов
+
+* Добавлены команды для учетной записи регистрации.
+
+### <a name="consumption"></a>Потребление
+
+* Добавлены команды `marketplace`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команда `reservations summaries` переименована в `reservation summary`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команда `reservations details` переименована в `reservation detail`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В командах `reservation` удалены короткие параметры `--reservation-order-id` и `--reservation-id`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В командах `reservation summary` удалены короткие параметры `--grain`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В командах `pricesheet` удалены короткие параметры `--include-meter-details`.
+
+### <a name="container"></a>Контейнер
+
+* Добавлены параметры подключения тома репозитория git: `--gitrepo-url`, `--gitrepo-dir`, `--gitrepo-revision` и `--gitrepo-mount-path`.
+* Исправлена ошибка [#5926](https://github.com/Azure/azure-cli/issues/5926): команда `az container exec` возвращает ошибку, когда указан параметр --container-name.
+
+### <a name="extension"></a>Расширение
+
+* Сообщение о проверке распространения перенесено на уровень отладки.
+
+### <a name="interactive"></a>Interactive
+
+* Если команда не распознана, выполнение прерывается.
+* Добавлены перехватчики событий, которые используются до и после создания поддерева команд.
+* Добавлены сведения о выполнении для параметров `--ids`.
+
+### <a name="network"></a>Сеть
+
+* Исправлена ошибка [#5936](https://github.com/Azure/azure-cli/issues/5936): не задаются теги `application-gateway create`.
+* Добавлен аргумент `--auth-certs`, который позволяет подключать сертификаты аутентификации для `application-gateway http-settings [create|update]`. [#4910](https://github.com/Azure/azure-cli/issues/4910).
+* Добавлены команды `ddos-protection` для создания планов защиты от атак DDoS. 
+* В команду `vnet [create|update]` добавлена поддержка `--ddos-protection-plan` для связи виртуальной сети с планом защиты от атак DDoS.
+* Исправлена ошибка с флагом `--disable-bgp-route-propagation` в команде `network route-table [create|update]`.
+* Удалены фиктивные аргументы `--public-ip-address-type` и `--subnet-type` для команды `network lb [create|update]`.
+* В `network dns zone [import|export]` и `network dns record-set txt add-record` добавлена поддержка записей типа TXT с escape-последовательностями RFC 1035.
+
+### <a name="profile"></a>Профиль
+
+* Добавлена поддержка классических учетных записей Azure для команды `account list`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалены аргументы `--msi`  &  `--msi-port`.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Добавлена команда `georestore`.
+* Из команды `create` исключено ограничение на размер хранилища.
+
+### <a name="resource"></a>Ресурс
+
+* Добавлена поддержка параметра `--metadata` в команде `policy definition create`.
+* Добавлена поддержка `--metadata`, `--set`, `--add` и `--remove` для команды `policy definition update`.
+
+### <a name="sql"></a>SQL
+
+* Добавлены команды `sql elastic-pool op list` и `sql elastic-pool op cancel`.
+
+### <a name="storage"></a>Хранилище
+
+* Улучшены сообщения об ошибках для строк подключения, имеющих неправильный формат.
+
+### <a name="vm"></a>ВМ
+
+* В команде `vmss create` добавлена возможность настроить для платформы количество доменов сбоя.
+* Команда `vmss create` теперь по умолчанию использует стандартную балансировку нагрузки для зональных и больших масштабируемых наборов, а также масштабируемых наборов, в которых отключена одна группа размещения.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]: Removed `vm assign-identity`, `vm remove-identity and `vm format-secret`
+* Добавлена поддержка SKU общедоступного IP-адреса для команды `vm create`.
+* В команду `vm secret format` добавлены аргументы `--keyvault` и `--resource-group` для тех случаев, когда команда не может разрешить идентификатор хранилища. [#5718](https://github.com/Azure/azure-cli/issues/5718).
+* Улучшены сообщения об ошибках для команды `[vm|vmss create]`, когда расположение группы ресурсов не поддерживает зоны.
+
 
 ## <a name="march-27-2018"></a>27 марта 2018 г.
 
@@ -70,7 +187,7 @@ ms.lasthandoff: 03/28/2018
 
 * Добавлено сообщение для `extension add`, если расширение доступно в режиме предварительной версии.
 * Изменен параметр `extension list-available` для отображения всех данных расширения с использованием `--show-details`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменена команда `extension list-available` для отображения упрощенных данных расширения по умолчанию.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменена команда `extension list-available` для отображения упрощенных данных расширения по умолчанию.
 
 ### <a name="interactive"></a>Interactive
 
@@ -103,14 +220,14 @@ ms.lasthandoff: 03/28/2018
 
 ### <a name="resource"></a>Ресурс
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Changed `provider operation [list|show]` to not require `--api-version`
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]: Changed `provider operation [list|show]` to not require `--api-version`
 
 ### <a name="role"></a>Роль
 
 * Добавлена поддержка конфигурации требуемого уровня доступа и собственных клиентов для `az ad app create`.
 * Изменены команды `rbac`, чтобы возвращать не более 1000 идентификаторов в разрешении объекта.
 * Добавлены команды `ad sp credential [reset|list|delete]` для управления учетными данными.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр properties из выходных данных `az role assignment [list|show]`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удален параметр properties из выходных данных `az role assignment [list|show]`.
 * Добавлена поддержка разрешений `dataActions` и `notDataActions` для `role definition`.
 
 ### <a name="storage"></a>Хранилище
@@ -123,7 +240,7 @@ ms.lasthandoff: 03/28/2018
 * Добавлено предупреждение `vmss create` для предстоящих критически важных изменений для наборов из 100 и более экземпляров.
 * Добавлена поддержка устойчивости зон для `vm [snapshot|image]`.
 * Изменено представление экземпляра диска для улучшения отчета о состоянии шифрования.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] `vm extension delete` Изменена команда, которая больше не возвращает выходные данные.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `vm extension delete` Изменена команда, которая больше не возвращает выходные данные.
 
 ## <a name="march-13-2018"></a>13 марта 2018 г.
 
@@ -142,9 +259,9 @@ ms.lasthandoff: 03/28/2018
 
 ### <a name="advisor"></a>Помощник
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration get` переименована в `advisor configuration list`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration set` переименована в `advisor configuration update`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `advisor recommendation generate`. 
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration get` переименована в `advisor configuration list`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration set` переименована в `advisor configuration update`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалена команда `advisor recommendation generate`. 
 * Добавлен параметр `--refresh` для команды `advisor recommendation list`.
 * Добавлена команда `advisor recommendation show`.
 
@@ -177,7 +294,7 @@ ms.lasthandoff: 03/28/2018
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--tags` из `route-filter rule create`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удален параметр `--tags` из `route-filter rule create`.
 * Удалены некоторые ошибочные значения по умолчанию для следующих команд:
   * `network express-route update`
   * `network nsg rule update`
@@ -282,7 +399,7 @@ ms.lasthandoff: 03/28/2018
 
 ### <a name="acs"></a>ACS
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименовано `aks get-versions` на `aks get-upgrades` для точности.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Переименовано `aks get-versions` на `aks get-upgrades` для точности.
 * Изменено `aks get-versions` для отображения версий Kubernetes, доступных для `aks create`.
 * Изменены значения по умолчанию `aks create`, чтобы разрешить серверу выбирать версию Kubernetes.
 * Обновлены справочные сообщения, связанные с субъектом-службой и создаваемые AKS.
@@ -485,9 +602,9 @@ ms.lasthandoff: 03/28/2018
 
 ### <a name="event-grid"></a>Служба "Сетка событий Azure"
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `eventgrid event-subscription show-endpoint-url`. Вместо нее следует использовать `eventgrid event-subscription show --include-full-endpoint-url`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалена команда `eventgrid event-subscription show-endpoint-url`. Вместо нее следует использовать `eventgrid event-subscription show --include-full-endpoint-url`.
 * Добавлена команда `eventgrid topic update`.
 * Добавлена команда `eventgrid event-subscription update`.
 * Добавлен параметр `--ids` для команд `eventgrid topic`.
@@ -531,8 +648,8 @@ ms.lasthandoff: 03/28/2018
 ### <a name="vm"></a>ВМ
 
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Поддержка разных зон для `vmss`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию `vmss` для одной зоны заменено данными подсистемы балансировки нагрузки уровня "Стандартный".
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для EMSI параметр `externalIdentities` изменен на `userAssignedIdentities`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию `vmss` для одной зоны заменено данными подсистемы балансировки нагрузки уровня "Стандартный".
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Для EMSI параметр `externalIdentities` изменен на `userAssignedIdentities`.
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка переключения дисков ОС.
 * Добавлена поддержка использования образов виртуальных машин из других подписок.
 * В `[vm|vmss] create` добавлены аргументы `--plan-name`, `--plan-product`, `--plan-promotion-code` и `--plan-publisher`.
@@ -835,7 +952,7 @@ ms.lasthandoff: 03/28/2018
 * Добавлена поддержка отображения определений встроенных политик
 * Добавлена поддержка параметра mode для создания определения политик
 * Добавлена поддержка шаблонов и определений пользовательского интерфейса для команды `managedapp definition create`
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`.
 
 ### <a name="network"></a>Сеть
 
@@ -976,7 +1093,7 @@ ms.lasthandoff: 03/28/2018
 
 ### <a name="appservice"></a>Служба приложений
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Исправлены несоответствия в выходных данных `az webapp config appsettings [delete|set]`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Исправлены несоответствия в выходных данных `az webapp config appsettings [delete|set]`.
 * Добавлен новый псевдоним `-i` в команду `az webapp config container set --docker-custom-image-name`.
 * Предоставлена команда `az webapp log show`.
 * Предоставлены новые аргументы команды `az webapp delete`, которые позволяют сохранить план службы приложений, метрики и данные регистрации DNS.
@@ -988,8 +1105,8 @@ ms.lasthandoff: 03/28/2018
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`.
 * Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule [create|update]`.
 * Добавлена поддержка номера SKU в команде `lb create`.
 * Добавлена поддержка номера SKU в команде `public-ip create`.
@@ -1011,7 +1128,7 @@ ms.lasthandoff: 03/28/2018
 * Добавлены аргументы `--bypass` и `--default-action` в командах `storage account [create|update]` для поддержки туннелирования службы.
 * Добавлены команды для добавления правил виртуальной сети и правил на основе IP-адресов в `storage account network-rule`.
 * Разрешено шифрование службы с управляемым пользователем ключом.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--encryption` переименован в `--encryption-services` в команде `az storage account create and az storage account update`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Параметр `--encryption` переименован в `--encryption-services` в команде `az storage account create and az storage account update`.
 * Исправление 4220. Несоответствие синтаксиса `az storage account update encryption`.
 
 ### <a name="vm"></a>ВМ

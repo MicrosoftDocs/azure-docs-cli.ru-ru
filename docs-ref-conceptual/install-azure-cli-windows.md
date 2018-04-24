@@ -1,6 +1,6 @@
 ---
-title: "Установка Azure CLI для Windows"
-description: "Как установить Azure CLI 2.0 в Windows"
+title: Установка Azure CLI для Windows
+description: Как установить Azure CLI 2.0 в Windows
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: df1c2b33589c160525710845cc81d076082a9ecc
-ms.sourcegitcommit: def1a07bfccf26a4178ba6dd836764a1df205929
+ms.openlocfilehash: 30b9621c82af259e3de762127fd20b31eb249234
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-on-windows"></a>Установка Azure CLI 2.0 в Windows
 
@@ -30,7 +30,13 @@ ms.lasthandoff: 03/09/2018
 
 Если программа установки запрашивает разрешения на внесение изменений на вашем компьютере, установите флажок "Да".
 
-Теперь можно запустить Azure CLI с помощью команды `az` из командной строки Windows или PowerShell. PowerShell предоставляет несколько функций заполнения нажатием клавиши TAB, которые недоступны в CMD.
+Теперь можно запустить Azure CLI с помощью команды `az` из командной строки Windows или PowerShell. В PowerShell реализовано несколько функций заполнения нажатием клавиши TAB, которые недоступны в командной строке Windows. Для входа выполните команду `az login`.
+
+```azurecli
+az login
+```
+
+Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="uninstall"></a>Удаление
 

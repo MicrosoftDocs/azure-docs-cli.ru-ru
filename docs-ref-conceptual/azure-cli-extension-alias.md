@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: e457d78b1009fe573554df36db18f525516e0b4a
-ms.sourcegitcommit: 335c11e6c34f7907e61a43507745ba84ed4e7469
+ms.openlocfilehash: d6eae7f5a6ca30af7214e77ae561c3a53a2cee26
+ms.sourcegitcommit: 204fd027d3668959b98b936969ccb41eada0fd29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="the-azure-cli-20-alias-extension"></a>Расширение псевдонимов Azure CLI 2.0
 
@@ -36,14 +36,15 @@ az extension add --name alias
 Проверьте установку расширения с помощью команды [az extension list](/cli/azure/extension#az-extension-list). Если расширение псевдонимов установлено правильно, оно отобразится в выходных данных команды.
 
 ```azurecli
-az extension list --output table
+az extension list --output table --query '[].{Name:name}'
 ```
 
 ```output
-ExtensionType    Name                       Version
----------------  -------------------------  ---------
-whl              alias                      0.2.0
+Name
+------
+alias
 ```
+
 
 ## <a name="keep-the-extension-up-to-date"></a>Обновление расширения
 
@@ -53,27 +54,23 @@ whl              alias                      0.2.0
 az extension update --name alias
 ```
 
-## <a name="alias-commands-file-format"></a>Формат файла псевдонимов команд
 
-Определения псевдонимов команд записываются в файл конфигурации, расположенный здесь: `$AZURE_USER_CONFIG/alias`. По умолчанию для `AZURE_USER_CONFIG` устанавливается значение `$HOME/.azure` в Linux и macOS и `%USERPROFILE%\.azure` в Windows. Файлы конфигурации псевдонимов записываются в формате INI. Общий формат для псевдонимов команд:
+## <a name="manage-aliases-for-the-azure-cli"></a>Управление псевдонимами для Azure CLI
 
+Расширение псевдонимов содержит удобные и уже знакомые команды для управления псевдонимами. Чтобы просмотреть все доступные команды и сведения о соответствующих параметрах, выполните команду alias с параметром `--help`.
+
+```azurecli
+az alias --help
 ```
-[command_name]
-command = invoked_commands
-```
 
-Не включайте `az` как часть команды.
 
 ## <a name="create-simple-alias-commands"></a>Создание простых псевдонимов команд
 
 Псевдонимы используются для сокращения существующих групп команд или имен команд. Например, можно сократить группу команд `group` до `rg` и команду `list` до `ls`.
 
-```
-[rg]
-command = group
-
-[ls]
-command = list
+```azurecli
+az alias create --name rg --command group
+az alias create --name ls --command list
 ```
 
 Эти заново определенные псевдонимы теперь можно использовать в любом месте согласно их определению.
@@ -84,11 +81,12 @@ az rg ls
 az vm ls
 ```
 
+Не добавляйте `az` в команду.
+
 Псевдонимы также могут быть представлены сочетаниями клавиш для завершения команд. В следующем примере перечислены доступные группы ресурсов и их расположения в выходной таблице:
 
-```
-[ls-groups]
-command = group list --query '[].{Name:name, Location:location}' --output table
+```azurecli
+az alias create --name ls-groups --command "group list --query '[].{Name:name, Location:location}' --output table"
 ```
 
 Теперь `ls-groups` можно запускать, как любые другие команды CLI.
@@ -97,20 +95,22 @@ command = group list --query '[].{Name:name, Location:location}' --output table
 az ls-groups
 ```
 
+
 ## <a name="create-an-alias-command-with-arguments"></a>Создание псевдонима команды с аргументами
 
 Вы также можете добавить позиционные аргументы для псевдонима команды, включив их как `{{ arg_name }}` в имя псевдонима. Пробелы внутри скобок являются обязательными.
 
-```
-[alias_name {{ arg1 }} {{ arg2 }} ...]
-command = invoke_including_args
+```azurecli
+az alias create --name "alias_name {{ arg1 }} {{ arg2 }} ..." --command "invoke_including_args"
 ```
 
 В следующем примере псевдонима показано, как использовать позиционные аргументы, чтобы получить общедоступный IP-адрес для виртуальной машины.
 
-```
-[get-vm-ip {{ resourceGroup }} {{ vmName }}]
-command = vm list-ip-addresses --resource-group {{ resourceGroup }} --name {{ vmName }} --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress
+```azurecli
+az alias create \
+    --name "get-vm-ip {{ resourceGroup }} {{ vmName }}" \
+    --command "vm list-ip-addresses --resource-group {{ resourceGroup }} --name {{ vmName }}
+        --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress"
 ```
 
 При выполнении этой команды вы предоставляете значения позиционным аргументам.
@@ -121,10 +121,14 @@ az get-vm-ip MyResourceGroup MyVM
 
 Вы также можете использовать переменные среды в командах, вызываемых с помощью псевдонимов, которые вычисляются во время выполнения команды. В следующем примере добавляется псевдоним `create-rg`, который создает группу ресурсов в `eastus` и добавляет тег `owner`. Для этого тега присваивается значение локальной переменной `USER`.
 
+```azurecli
+az alias create \
+    --name "create-rg {{ groupName }}" \
+    --command "group create --name {{ groupName }} --location eastus --tags owner=\$USER"
 ```
-[create-rg {{ groupName }}]
-command = group create --name {{ groupName }} --location eastus --tags owner=$USER
-```
+
+Чтобы зарегистрировать переменные среды внутри команды псевдонима, знак доллара `$` необходимо экранировать.
+
 
 ## <a name="process-arguments-using-jinja2-templates"></a>Обработка аргументов с помощью шаблонов Jinja2
 
@@ -132,12 +136,43 @@ command = group create --name {{ groupName }} --location eastus --tags owner=$US
 
 С помощью шаблонов Jinja2 вы можете создавать псевдонимы, которые принимают больше разных типов аргументов, чем базовая команда. Например, можно создать псевдоним, который принимает URL-адрес хранилища. Затем этот URL-адрес анализируется для передачи имен учетной записи и контейнера команде хранилища.
 
-```
-[storage-ls {{ url }}]
-command = storage blob list --account-name {{ url.replace('https://', '').split('.')[0] }} --container-name {{ url.replace('https://', '').split('/')[1] }}
+```azurecli
+az alias create \
+    --name 'storage-ls {{ url }}' \
+    --command "storage blob list
+        --account-name {{ url.replace('https://', '').split('.')[0] }}
+        --container-name {{ url.replace('https://', '').split('/')[1] }}"
 ```
 
 См. дополнительные сведения о [модуле шаблонов Jinja2](http://jinja.pocoo.org/docs/2.10/templates/).
+
+
+## <a name="alias-configuration-file"></a>Файл конфигурации псевдонимов
+
+Еще один способ создания и изменения псевдонимов заключается в изменении файла конфигурации псевдонимов. Определения псевдонимов команд записываются в файл конфигурации, расположенный здесь: `$AZURE_USER_CONFIG/alias`. По умолчанию для `AZURE_USER_CONFIG` устанавливается значение `$HOME/.azure` в Linux и macOS и `%USERPROFILE%\.azure` в Windows. Файлы конфигурации псевдонимов записываются в формате INI. Псевдонимы команд имеют такой формат:
+
+```ini
+[alias_name]
+command = invoked_commands
+```
+
+Псевдонимы с позиционными аргументами имеют такой формат:
+
+```ini
+[alias_name {{ arg1 }} {{ arg2 }} ...]
+command = invoked_commands_including_args
+```
+
+
+## <a name="create-an-alias-command-with-arguments-via-the-alias-configuration-file"></a>Создание псевдонима команды с аргументами с помощью файла конфигурации псевдонимов
+
+Ниже приведен файл конфигурации псевдонимов, содержащий пример псевдонима команды с аргументами. Этот псевдоним получает общедоступный IP-адрес для виртуальной машины. Выполняемая команда должна быть записана в одной строке и содержать все аргументы, которые определены в псевдониме.
+
+```ini
+[get-vm-ip {{ resourceGroup }} {{ vmName }}]
+command = vm list-ip-addresses --resource-group {{ resourceGroup }} --name {{ vmName }} --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress
+```
+
 
 ## <a name="uninstall-the-alias-extension"></a>Удаление расширения псевдонимов
 

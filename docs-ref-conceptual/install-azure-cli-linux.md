@@ -1,6 +1,6 @@
 ---
-title: "Установка Azure CLI 2.0 для Linux вручную"
-description: "Как установить Azure CLI 2.0 в Linux вручную"
+title: Установка Azure CLI 2.0 для Linux вручную
+description: Как установить Azure CLI 2.0 в Linux вручную
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 4ab1f70308810e045b9a1d923fd809ad9848f6c6
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.openlocfilehash: a74a4d30709f5d10fc3a3f2b63c9df931ab0516b
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>Установка Azure CLI 2.0 в Linux вручную
 
@@ -39,7 +39,15 @@ ms.lasthandoff: 02/15/2018
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-Либо же вы можете скачать скрипт и запустить его локально. Чтобы изменения вступили в силу, может потребоваться перезапустить оболочку. Когда установка будет завершена, запустите CLI с помощью команды `az`.
+Либо же вы можете скачать скрипт и запустить его локально. Чтобы изменения вступили в силу, может потребоваться перезапустить оболочку. 
+
+Запустите Azure CLI с помощью команды `az`. Для входа выполните команду `az login`.
+
+```azurecli
+az login
+```
+
+Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

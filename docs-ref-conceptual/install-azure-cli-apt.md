@@ -1,6 +1,6 @@
 ---
-title: "Установка Azure CLI 2.0 в Linux с помощью apt"
-description: "Как установить Azure CLI 2.0 с помощью apt"
+title: Установка Azure CLI 2.0 в Linux с помощью apt
+description: Как установить Azure CLI 2.0 с помощью apt
 author: sptramer
 ms.author: sttramer
 manager: routlaw
@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure
 ms.devlang: azurecli
 ms.service: multiple
-ms.openlocfilehash: 188e7dfded21bb5c7036b3a950b3e4cb10bc1d33
-ms.sourcegitcommit: 5c004b455eff196d853bfbe12901c6114a1652d7
+ms.openlocfilehash: a2578c79ba961cb12f3f49e77a9eaa73c4fe97a2
+ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
@@ -33,15 +33,33 @@ ms.lasthandoff: 03/15/2018
           sudo tee /etc/apt/sources.list.d/azure-cli.list
      ```
 
-2. Выполните следующие команды sudo:
+2. Получите ключ подписывания Microsoft.
 
    ```bash
    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
+   ```
+
+  > [!WARNING]
+  > Этот ключ подписывания больше не рекомендуется использовать. Он будет заменен в конце мая 2018 года. Чтобы и дальше получать обновления с помощью `apt`, установите новый ключ.
+  > 
+  > ```bash
+  > curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+  > ``` 
+
+3. Установите интерфейс командной строки.
+
+   ```bash
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
 
-Запустите Azure CLI с помощью команды `az`.
+Запустите Azure CLI с помощью команды `az`. Для входа выполните команду `az login`.
+
+```azurecli
+az login
+```
+
+Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
