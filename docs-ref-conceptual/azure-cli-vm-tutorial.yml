@@ -10,14 +10,17 @@ metadata:
   ms.date: 02/08/2018
   ms.author: sttramer
   author: sptramer
-  manager: rloutlaw
-  ms.devlang: azurecli
+  manager: carmonm
+  ms.devlang: azure-cli
   ms.technology: azure
-  ms.openlocfilehash: a81e9da29acca7c92b0d0f6fa11b084444b5f66d
-  ms.sourcegitcommit: b5a6296c006e3a44f66892729e47d7a967267d3e
+  ms.prod: azure-cli
+  ms.topic: tutorial
+  clicktale: true
+  ms.openlocfilehash: 3cae102aee82a4c7f54dd9507ccace1847bbcce1
+  ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 03/28/2018
+  ms.lasthandoff: 04/28/2018
 items:
 - durationInMinutes: 1
   content: >-

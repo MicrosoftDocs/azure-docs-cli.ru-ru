@@ -2,18 +2,18 @@
 title: Управление несколькими облаками с помощью Azure CLI 2.0
 description: Создание, вход и администрирование нескольких облаков с помощью Azure CLI 2.0.
 author: sptramer
-manager: routlaw
+manager: carmonm
 ms.author: sttramer
 ms.date: 10/20/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.openlocfilehash: 1a01dde9381e40065299a4165d649fc85af7ca2e
-ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 98915fb43f2ad3eb45164f7e47c1a41345f3f9c5
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>Управление несколькими облаками с помощью Azure CLI 2.0
 

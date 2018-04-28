@@ -5,16 +5,15 @@ author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.date: 03/14/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: d6eae7f5a6ca30af7214e77ae561c3a53a2cee26
-ms.sourcegitcommit: 204fd027d3668959b98b936969ccb41eada0fd29
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 40a43f5013a5dd0d7bb65b21140bb4fc82769267
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="the-azure-cli-20-alias-extension"></a>Расширение псевдонимов Azure CLI 2.0
 

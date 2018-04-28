@@ -4,18 +4,17 @@ description: Как настроить Azure CLI 2.0
 keywords: Azure CLI, configuration, settings, Azure
 author: sptramer
 ms.author: sttramer
-manager: routlaw
+manager: carmonm
 ms.date: 12/13/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: 7ef6175815014ac3f822e8c1038b4f5af8bba9dc
-ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: be5938dcee360932342b4867728516e8ddd4a7cf
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="azure-cli-20-configuration"></a>Настройка Azure CLI 2.0
 

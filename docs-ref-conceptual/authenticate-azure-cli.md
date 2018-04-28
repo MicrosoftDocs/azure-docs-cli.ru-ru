@@ -3,18 +3,19 @@ title: Вход с помощью Azure CLI 2.0
 description: Интерактивный вход с помощью Azure CLI 2.0 или вход с использованием локальных учетных данных
 author: sptramer
 ms.author: sttramer
-manager: routlaw
+manager: carmonm
 ms.date: 02/13/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
+ms.technology: azure-cli
 ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: a8bdf99d12e988cc6fdfabb5038c99c9430a9acd
-ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
+ms.service: active-directory
+ms.component: authentication
+ms.openlocfilehash: db676c7d81d1ea5628ebb52f3bcead763c5527f9
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 

@@ -4,18 +4,17 @@ description: Начните работу с Azure CLI 2.0, изучив базо
 keywords: Azure CLI, CLI help, Azure help, query, automation,
 author: sptramer
 ms.author: sttramer
-manager: routlaw
+manager: carmonm
 ms.date: 02/05/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: 9eec3161a726d6cca53d92f80992059bfd056bf7
-ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: afed3b187f9e5437ecd42217a374b82fb12699b8
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 

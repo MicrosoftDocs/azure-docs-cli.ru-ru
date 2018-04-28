@@ -6,16 +6,15 @@ author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.date: 03/15/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: a150edbc174ff77f4320a2cb60e031dc3c6ad1cc
-ms.sourcegitcommit: c9da729f4a42a839f13106f7589deaa0ca19cc4e
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 01d7b3d58bf24d5a30386564fb64630d4db055e3
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
 

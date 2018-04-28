@@ -1,20 +1,19 @@
 ---
-title: "Azure CLI 2.0"
-description: "Общие сведения об Azure CLI 2.0."
+title: Azure CLI 2.0
+description: Общие сведения об Azure CLI 2.0.
 author: rloutlaw
 ms.author: routlaw
 manager: douge
 ms.date: 02/27/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: 98f122a9b7a33bf2270664a9e5077d4cd206a6af
-ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 966f75811487bafaa35edbcb26274bcc9f72c709
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="azure-cli-20"></a>Azure CLI 2.0
 

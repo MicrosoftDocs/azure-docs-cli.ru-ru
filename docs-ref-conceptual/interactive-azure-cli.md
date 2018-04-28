@@ -1,20 +1,19 @@
 ---
-title: "Интерактивный режим Azure CLI 2.0"
-description: "Использование Azure CLI 2.0 в интерактивном режиме."
-author: rloutlaw
-ms.author: routlaw
-manager: douge
+title: Интерактивный режим Azure CLI 2.0
+description: Использование Azure CLI 2.0 в интерактивном режиме.
+author: sptramer
+ms.author: sttramer
+manager: carmonm
 ms.date: 04/06/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: 0d32b7a1e754ba28ec1722fe4bf80e5f36b031e2
-ms.sourcegitcommit: b93a19222e116d5880bbe64c03507c64e190331e
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 6d7f88101ff20058766afdebf5f589e9c8a89d19
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="interactive-azure-cli-20"></a>Интерактивный Azure CLI 2.0
 

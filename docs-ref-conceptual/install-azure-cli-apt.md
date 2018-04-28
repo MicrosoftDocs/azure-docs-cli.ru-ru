@@ -3,18 +3,17 @@ title: Установка Azure CLI 2.0 в Linux с помощью apt
 description: Как установить Azure CLI 2.0 с помощью apt
 author: sptramer
 ms.author: sttramer
-manager: routlaw
+manager: carmonm
 ms.date: 02/06/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: a2578c79ba961cb12f3f49e77a9eaa73c4fe97a2
-ms.sourcegitcommit: 0e9aafa07311526f43661c8bd3a7eba7cbc2caed
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 86d601fdc375ec59c4f7cbf0881bc67a08e24b19
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 

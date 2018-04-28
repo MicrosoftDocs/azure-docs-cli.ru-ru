@@ -1,20 +1,20 @@
 ---
-title: "Manage Azure subscriptions with Azure CLI 2.0 (Управление подписками Azure с помощью Azure CLI 2.0)"
-description: "Manage Azure subscriptions with Azure CLI 2.0 on Linux, Mac, or Windows (Управление подписками Azure с помощью Azure CLI 2.0 на платформах Windows, Mac или Linux)."
+title: Manage Azure subscriptions with Azure CLI 2.0 (Управление подписками Azure с помощью Azure CLI 2.0)
+description: Manage Azure subscriptions with Azure CLI 2.0 on Linux, Mac, or Windows (Управление подписками Azure с помощью Azure CLI 2.0 на платформах Windows, Mac или Linux).
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.date: 10/30/2017
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: b0c0b3f5e4d9bc651ad4781cb0906dc98d8531a3
-ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.service: active-directory
+ms.openlocfilehash: bcdef3423cd59529611e8957e4b8bce0d6bea825
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 

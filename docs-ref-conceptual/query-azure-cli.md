@@ -1,20 +1,19 @@
 ---
-title: "Результаты выполнения команды запроса в Azure CLI 2.0"
-description: "Выполнение запросов JMESPath к результатам команд CLI Azure 2.0."
+title: Результаты выполнения команды запроса в Azure CLI 2.0
+description: Выполнение запросов JMESPath к результатам команд CLI Azure 2.0.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.date: 02/22/2018
-ms.topic: article
+ms.topic: conceptual
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: 96092c0cced4e0f88aa8898525bc3dd348550407
-ms.sourcegitcommit: 29d7366a0902488f4f4d39c2cb0e89368d5186ea
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: eb9311686bf950a450db4bc450da363bbe409f49
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="use-jmespath-queries-with-azure-cli-20"></a>Использование запросов JMESPath в Azure CLI 2.0
 
