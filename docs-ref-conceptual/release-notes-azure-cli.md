@@ -7,14 +7,13 @@ manager: carmonm
 ms.date: 04/10/2018
 ms.topic: article
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: 1e6bd4cd8bab853fb417ed9c4dd71d56e5de7cdc
-ms.sourcegitcommit: 204fd027d3668959b98b936969ccb41eada0fd29
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: fd5d82e34089a9a884c25c9a5620526f9d30577a
+ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
 
@@ -41,7 +40,7 @@ ms.lasthandoff: 04/16/2018
 
  - Подключение на уровне задания.
  - Переменные среды со значениями секретов.
- - Параметры счетчиков производительности.
+ - Параметры счетчиков производительности
  - Предоставление информации о сегменте пути конкретного задания.
  - Поддержка вложенных папок в API списка файлов.
  - Предоставление информации об использовании и ограничениях.
@@ -82,7 +81,7 @@ ms.lasthandoff: 04/16/2018
 * Добавлены параметры подключения тома репозитория git: `--gitrepo-url`, `--gitrepo-dir`, `--gitrepo-revision` и `--gitrepo-mount-path`.
 * Исправлена ошибка [#5926](https://github.com/Azure/azure-cli/issues/5926): команда `az container exec` возвращает ошибку, когда указан параметр --container-name.
 
-### <a name="extension"></a>Расширение
+### <a name="extension"></a>Добавочный номер
 
 * Сообщение о проверке распространения перенесено на уровень отладки.
 
@@ -129,7 +128,7 @@ ms.lasthandoff: 04/16/2018
 
 * В команде `vmss create` добавлена возможность настроить для платформы количество доменов сбоя.
 * Команда `vmss create` теперь по умолчанию использует стандартную балансировку нагрузки для зональных и больших масштабируемых наборов, а также масштабируемых наборов, в которых отключена одна группа размещения.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]: Removed `vm assign-identity`, `vm remove-identity and `vm format-secret`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Removed `vm assign-identity`, `vm remove-identity and `vm format-secret`
 * Добавлена поддержка SKU общедоступного IP-адреса для команды `vm create`.
 * В команду `vm secret format` добавлены аргументы `--keyvault` и `--resource-group` для тех случаев, когда команда не может разрешить идентификатор хранилища. [#5718](https://github.com/Azure/azure-cli/issues/5718).
 * Улучшены сообщения об ошибках для команды `[vm|vmss create]`, когда расположение группы ресурсов не поддерживает зоны.
@@ -220,7 +219,7 @@ ms.lasthandoff: 04/16/2018
 
 ### <a name="resource"></a>Ресурс
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]: Changed `provider operation [list|show]` to not require `--api-version`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Changed `provider operation [list|show]` to not require `--api-version`
 
 ### <a name="role"></a>Роль
 
