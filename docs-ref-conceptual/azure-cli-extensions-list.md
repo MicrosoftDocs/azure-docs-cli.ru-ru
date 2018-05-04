@@ -4,17 +4,16 @@ description: Полный список официально поддержива
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 04/26/2018
+ms.date: 04/27/2018
 ms.topic: article
 ms.prod: azure
-ms.technology: azure
-ms.devlang: azurecli
-ms.service: multiple
-ms.openlocfilehash: 04dbb4984c1fb2e43fe0aada76f851f3fd7b05b5
-ms.sourcegitcommit: d461e73abb09c3c85064c532b53a2efb25833b01
+ms.technology: azure-cli
+ms.devlang: azure-cli
+ms.openlocfilehash: 9fe42098ae68d930efafa23f81f2d7a15bc64f7a
+ms.sourcegitcommit: d213cb2e8e3690b7a1c3290dcd57b68049735c21
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Доступные расширения для Azure CLI 2.0
 
@@ -33,11 +32,12 @@ az extension list-available --output table
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.2.1 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.4.3 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
-| [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.5 | Расширение Azure CLI, которое копирует образы из одного региона в другой. |  |
-| [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.1 | Команды предварительной версии Azure Key Vault. | Yes |
+| [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.0 | Поддержка функций службы 	"Сетка событий Azure" версии 2018-05-01-preview | Yes |
+| [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.6 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
+| [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.2 | Команды предварительной версии Azure Key Vault. | Yes |
 | [managementgroups](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Azure CLI для групп управления. |  |
 | [managementpartner](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | Поддержка партнера управления (предварительная версия). |  |
 | [rdbms](https://github.com/Azure/azure-cli-extensions) | 0.0.5 | Расширение Azure CLI, которое обеспечивает поддержку Azure MySQL и Azure PostgreSQL. |  |
 | [signalr](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Поддержка управления с помощью SignalR (предварительная версия). | Yes |
 | [subscription](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Поддержка управления подписками (предварительная версия). |  |
-| [webapp](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Расширение Azure CLI для управления ресурсами службы приложений. | Yes |
+| [webapp](https://github.com/Azure/azure-cli-extensions) | 0.2.2 | Расширение Azure CLI для управления ресурсами службы приложений. | Yes |
