@@ -66,6 +66,8 @@
   items:
     - name: Создание виртуальных машин
       href: azure-cli-vm-tutorial.yml
+    - name: Обучение. Создание виртуальных машин
+      href: 'https://docs.microsoft.com/learn/azure-cli-2-0/index'
 - name: Примеры сценариев
   items:
     - name: Виртуальные машины Linux
@@ -74,7 +76,7 @@
       href: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: Веб-приложения
       href: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: Functions
+    - name: Функции Azure
       href: /azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: База данных SQL
       href: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
@@ -84,5 +86,5 @@
       href: /azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
     - name: База данных Cosmos
       href: /azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: пакетная служба;
+    - name: Пакетная служба Azure
       href: /azure/batch/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
