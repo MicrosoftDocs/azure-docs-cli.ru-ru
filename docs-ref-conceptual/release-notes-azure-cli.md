@@ -201,18 +201,10 @@ ms.lasthandoff: 05/07/2018
 ### <a name="consumption"></a>Потребление
 
 * Добавлены команды `marketplace`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команда `reservations summaries` переименована в `reservation summary`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команда `reservations details` переименована в `reservation detail`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] В командах `reservation` удалены короткие параметры `--reservation-order-id` и `--reservation-id`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] В командах `reservation summary` удалены короткие параметры `--grain`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] В командах `pricesheet` удалены короткие параметры `--include-meter-details`.
-
-### <a name="container"></a>Контейнер
-
-* Добавлены параметры подключения тома репозитория git: `--gitrepo-url`, `--gitrepo-dir`, `--gitrepo-revision` и `--gitrepo-mount-path`.
-* Исправлена ошибка [#5926](https://github.com/Azure/azure-cli/issues/5926): команда `az container exec` возвращает ошибку, когда указан параметр --container-name.
-
-### <a name="extension"></a>Добавочный номер
 
 * Сообщение о проверке распространения перенесено на уровень отладки.
 
@@ -389,15 +381,9 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="advisor"></a>Помощник
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команда `advisor configuration get` переименована в `advisor configuration list`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команда `advisor configuration set` переименована в `advisor configuration update`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удалена команда `advisor recommendation generate`. 
 * Добавлен параметр `--refresh` для команды `advisor recommendation list`.
-* Добавлена команда `advisor recommendation show`.
-
-### <a name="appservice"></a>Служба приложений
-
-* Команда `[webapp|functionapp] assign-identity` отмечена как нерекомендуемая.
 * Добавлены команды управляемого удостоверения `webapp identity [assign|show]` и `functionapp identity [assign|show]`.
 
 ### <a name="eventhubs"></a>Концентраторы событий
@@ -609,11 +595,6 @@ ms.lasthandoff: 05/07/2018
 * Добавлена команда `sql db rename`.
 * Добавлена поддержка аргумента `--ids` для команд SQL.
 
-### <a name="storage"></a>Служба хранилища
-
-* Добавлены команды `storage blob service-properties delete-policy` и `storage blob undelete` для включения обратимого удаления.
-
-### <a name="vm"></a>ВМ
 
 * Исправлена ошибка, когда шифрование виртуальной машины инициализировалось не полностью.
 * Добавлены выходные данные идентификатора субъекта для включения MSI.
@@ -1202,11 +1183,6 @@ ms.lasthandoff: 05/07/2018
 
 * Объявлены неподдерживаемыми все команды; вместо них используется Service Fabric CLI (sfctl).
 
-### <a name="storage"></a>Служба хранилища
-
-* Исправлена проблема, когда учетные записи хранения нельзя было создавать в регионах, которые не поддерживают функцию NetworkACLs.
-* Определение типа и кодировки содержимого во время передачи больших двоичных объектов и файла, если оба свойства не указаны.
-
 ## <a name="august-28-2017"></a>28 августа 2017 г.
 
 Версия 2.0.15
@@ -1235,13 +1211,8 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`.
 * Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule [create|update]`.
-* Добавлена поддержка номера SKU в команде `lb create`.
-* Добавлена поддержка номера SKU в команде `public-ip create`.
-
-### <a name="profile"></a>Профиль
 
 * Предоставлены параметры `--msi` и `--msi-port` для входа с использованием удостоверения виртуальной машины.
 
