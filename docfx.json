@@ -135,6 +135,7 @@
     "externalReference": [],
     "globalMetadata": {
       "feedback_system": "GitHub",
+      "bilingual_type": "hover over",
       "feedback_github_repo": "Azure/azure-cli",
       "breadcrumb_path": "/cli/azure/breadcrumb/toc.json",
       "extendBreadcrumb": true,
