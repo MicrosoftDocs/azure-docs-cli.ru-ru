@@ -5,16 +5,16 @@ keywords: Azure CLI, расширения
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 03/15/2018
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 01d7b3d58bf24d5a30386564fb64630d4db055e3
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: fde52c29a3ec82a1c6a03438a5d84dd4684e296a
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 04/28/2018
 
 Чтобы узнать, какие расширения доступны, вы можете использовать команду [az extension list-available](/cli/azure/extension#az-extension-list-available). Это команда отображает список доступных официальных расширений, которые предоставляются и обслуживаются корпорацией Майкрософт.
 
-```azurecli
+```azurecli-interactive
 az extension list-available --output table
 ```
 
@@ -36,13 +36,13 @@ az extension list-available --output table
 
 Когда вы найдете расширение для установки, используйте команду [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-add), чтобы получить его. Если расширение включено в список в `az extension list-available`, его можно установить по имени.
 
-```azurecli
+```azurecli-interactive
 az extension add --name <extension-name>
 ```
 
 Если требуется расширение из внешнего ресурса или у вас есть прямая ссылка на него, можно указать URL-адрес источника или локальный путь. Это _должен_ быть скомпилированный wheel-файл Python.
 
-```azurecli
+```azurecli-interactive
 az extension add --source <URL-or-path>
 ```
 
@@ -52,7 +52,7 @@ az extension add --source <URL-or-path>
 
 Если расширение устанавливалось по имени, его можно обновить с помощью команды [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-update).
 
-```azurecli
+```azurecli-interactive
 az extension update --name <extension-name>
 ```
 
@@ -64,7 +64,7 @@ az extension update --name <extension-name>
 
 Если расширение больше не нужно, можно удалить его с помощью команды [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-remove).
 
-```azurecli
+```azurecli-interactive
 az extension remove --name <extension-name>
 ```
 

@@ -11,11 +11,11 @@ ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: db676c7d81d1ea5628ebb52f3bcead763c5527f9
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 11f81e5d710763c818a2ed3cdf347dc657a6f664
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 
@@ -63,7 +63,7 @@ az login -u <username> -p <password>
 
 При работе с несколькими клиентами вы можете войти в определенный клиент с помощью аргумента `--tenant`. Значением этого аргумента может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента. Войти можно либо в интерактивном режиме, либо указав свои учетные данные с помощью аргументов `--user` и `--password`. 
 
-```
+```azurecli
 az login --tenant <tenant>
 ```
 
@@ -80,7 +80,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 Значение клиента — это клиент Azure Active Directory, связанный с субъектом-службой. Это может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента.
 Узнать идентификатор объекта клиента для текущего сеанса входа можно с помощью следующей команды:
 
-```azurecli
+```azurecli-interactive
 az account show --query 'tenantId' -o tsv
 ```
 

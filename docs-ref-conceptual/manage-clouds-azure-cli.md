@@ -4,16 +4,16 @@ description: Создание, вход и администрирование н
 author: sptramer
 manager: carmonm
 ms.author: sttramer
-ms.date: 10/20/2017
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 98915fb43f2ad3eb45164f7e47c1a41345f3f9c5
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 7ccee3a336f4c596f29783a70ba0cd4398e20b95
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>Управление несколькими облаками с помощью Azure CLI 2.0
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/28/2018
 
 Получить сведения об активном облаке и полном списке доступных облаков можно так:
 
-```azurecli
+```azurecli-interactive
 az cloud list --output table
 ```
 
@@ -40,7 +40,7 @@ True        AzureCloud         latest
 
 Активное сейчас облако обозначено значением `True` в столбце `IsActive`. В одно и то же время использоваться может только одно облако. Получить дополнительные сведения об облаке, включая описание конечных точек, используемых им для служб Azure, можно с помощью команды `cloud show`:
 
-```azurecli
+```azurecli-interactive
 az cloud show --name AzureChinaCloud --output json
 ```
 
@@ -75,7 +75,7 @@ az cloud show --name AzureChinaCloud --output json
 
 Чтобы переключиться с активного сейчас облака, выполните команду [az cloud set](/cli/azure/cloud#az-cloud-set). Эта команда принимает один обязательный аргумент — имя облака.
 
-```azurecli
+```azurecli-interactive
 az cloud set --name AzureChinaCloud
 ```
 
@@ -100,6 +100,6 @@ az cloud set --name AzureChinaCloud
 
 Если зарегистрированное облако вам больше не нужно, вы можете отменить его регистрацию с помощью команды [az cloud unregister](/cli/azure/cloud#az-cloud-unregister):
 
-```azurecli
+```azurecli-interactive
 az cloud unregister --name MyCloud
 ```

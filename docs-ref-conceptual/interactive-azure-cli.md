@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 6d7f88101ff20058766afdebf5f589e9c8a89d19
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 3538569631718943e2575cd9c607eb9f79b47271
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="interactive-azure-cli-20"></a>Интерактивный Azure CLI 2.0
 
@@ -89,7 +89,7 @@ az>> vm create --name myVM --resource-group myRG --image UbuntuLTS --no-wait
 az>> ? [*].provisioningState
 ```
 
-```
+```output
 [
   "Creating"
 ]

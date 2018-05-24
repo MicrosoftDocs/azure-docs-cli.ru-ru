@@ -4,16 +4,16 @@ description: Как использовать расширение псевдон
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 03/14/2018
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 40a43f5013a5dd0d7bb65b21140bb4fc82769267
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 39996693d6b796c2d9a45cd909121829f00291a8
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="the-azure-cli-20-alias-extension"></a>Расширение псевдонимов Azure CLI 2.0
 
@@ -28,13 +28,13 @@ ms.lasthandoff: 04/28/2018
 
 Установите расширение с помощью команды [az extension add](/cli/azure/extension#az-extension-add).
 
-```azurecli
+```azurecli-interactive
 az extension add --name alias
 ```
 
 Проверьте установку расширения с помощью команды [az extension list](/cli/azure/extension#az-extension-list). Если расширение псевдонимов установлено правильно, оно отобразится в выходных данных команды.
 
-```azurecli
+```azurecli-interactive
 az extension list --output table --query '[].{Name:name}'
 ```
 
@@ -44,37 +44,34 @@ Name
 alias
 ```
 
-
 ## <a name="keep-the-extension-up-to-date"></a>Обновление расширения
 
 Так как расширение псевдонимов сейчас активно разрабатывается, новые версии выходят регулярно. Новые версии не устанавливаются автоматически при каждом обновлении CLI. Установите обновление расширения с помощью команды [az extension update](/cli/azure/extension#az-extension-update).
 
-```azurecli
+```azurecli-interactive
 az extension update --name alias
 ```
-
 
 ## <a name="manage-aliases-for-the-azure-cli"></a>Управление псевдонимами для Azure CLI
 
 Расширение псевдонимов содержит удобные и уже знакомые команды для управления псевдонимами. Чтобы просмотреть все доступные команды и сведения о соответствующих параметрах, выполните команду alias с параметром `--help`.
 
-```azurecli
+```azurecli-interactive
 az alias --help
 ```
-
 
 ## <a name="create-simple-alias-commands"></a>Создание простых псевдонимов команд
 
 Псевдонимы используются для сокращения существующих групп команд или имен команд. Например, можно сократить группу команд `group` до `rg` и команду `list` до `ls`.
 
-```azurecli
+```azurecli-interactive
 az alias create --name rg --command group
 az alias create --name ls --command list
 ```
 
 Эти заново определенные псевдонимы теперь можно использовать в любом месте согласно их определению.
 
-```azurecli
+```azurecli-interactive
 az rg list
 az rg ls
 az vm ls
@@ -84,28 +81,27 @@ az vm ls
 
 Псевдонимы также могут быть представлены сочетаниями клавиш для завершения команд. В следующем примере перечислены доступные группы ресурсов и их расположения в выходной таблице:
 
-```azurecli
+```azurecli-interactive
 az alias create --name ls-groups --command "group list --query '[].{Name:name, Location:location}' --output table"
 ```
 
 Теперь `ls-groups` можно запускать, как любые другие команды CLI.
 
-```azurecli
+```azurecli-interactive
 az ls-groups
 ```
-
 
 ## <a name="create-an-alias-command-with-arguments"></a>Создание псевдонима команды с аргументами
 
 Вы также можете добавить позиционные аргументы для псевдонима команды, включив их как `{{ arg_name }}` в имя псевдонима. Пробелы внутри скобок являются обязательными.
 
-```azurecli
+```azurecli-interactive
 az alias create --name "alias_name {{ arg1 }} {{ arg2 }} ..." --command "invoke_including_args"
 ```
 
 В следующем примере псевдонима показано, как использовать позиционные аргументы, чтобы получить общедоступный IP-адрес для виртуальной машины.
 
-```azurecli
+```azurecli-interactive
 az alias create \
     --name "get-vm-ip {{ resourceGroup }} {{ vmName }}" \
     --command "vm list-ip-addresses --resource-group {{ resourceGroup }} --name {{ vmName }}
@@ -114,13 +110,13 @@ az alias create \
 
 При выполнении этой команды вы предоставляете значения позиционным аргументам.
 
-```azurecli
+```azurecli-interactive
 az get-vm-ip MyResourceGroup MyVM
 ```
 
 Вы также можете использовать переменные среды в командах, вызываемых с помощью псевдонимов, которые вычисляются во время выполнения команды. В следующем примере добавляется псевдоним `create-rg`, который создает группу ресурсов в `eastus` и добавляет тег `owner`. Для этого тега присваивается значение локальной переменной `USER`.
 
-```azurecli
+```azurecli-interactive
 az alias create \
     --name "create-rg {{ groupName }}" \
     --command "group create --name {{ groupName }} --location eastus --tags owner=\$USER"
@@ -128,14 +124,13 @@ az alias create \
 
 Чтобы зарегистрировать переменные среды внутри команды псевдонима, знак доллара `$` необходимо экранировать.
 
-
 ## <a name="process-arguments-using-jinja2-templates"></a>Обработка аргументов с помощью шаблонов Jinja2
 
 Замена аргументов в расширении псевдонимов выполняется с помощью [Jinja2](http://jinja.pocoo.org/docs/2.10/). Это позволяет использовать все возможности модуля шаблонов Jinja2. Шаблоны позволяют выполнять такие действия, как извлечение данных и подстановка в строках.
 
 С помощью шаблонов Jinja2 вы можете создавать псевдонимы, которые принимают больше разных типов аргументов, чем базовая команда. Например, можно создать псевдоним, который принимает URL-адрес хранилища. Затем этот URL-адрес анализируется для передачи имен учетной записи и контейнера команде хранилища.
 
-```azurecli
+```azurecli-interactive
 az alias create \
     --name 'storage-ls {{ url }}' \
     --command "storage blob list
@@ -144,7 +139,6 @@ az alias create \
 ```
 
 См. дополнительные сведения о [модуле шаблонов Jinja2](http://jinja.pocoo.org/docs/2.10/templates/).
-
 
 ## <a name="alias-configuration-file"></a>Файл конфигурации псевдонимов
 
@@ -162,7 +156,6 @@ command = invoked_commands
 command = invoked_commands_including_args
 ```
 
-
 ## <a name="create-an-alias-command-with-arguments-via-the-alias-configuration-file"></a>Создание псевдонима команды с аргументами с помощью файла конфигурации псевдонимов
 
 Ниже приведен файл конфигурации псевдонимов, содержащий пример псевдонима команды с аргументами. Этот псевдоним получает общедоступный IP-адрес для виртуальной машины. Выполняемая команда должна быть записана в одной строке и содержать все аргументы, которые определены в псевдониме.
@@ -172,12 +165,11 @@ command = invoked_commands_including_args
 command = vm list-ip-addresses --resource-group {{ resourceGroup }} --name {{ vmName }} --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress
 ```
 
-
 ## <a name="uninstall-the-alias-extension"></a>Удаление расширения псевдонимов
 
 Удалите расширение с помощью команды [az extension remove](/cli/azure/extension#az-extension-remove).
 
-```azurecli
+```azurecli-interactive
 az extension remove --name alias
 ```
 
