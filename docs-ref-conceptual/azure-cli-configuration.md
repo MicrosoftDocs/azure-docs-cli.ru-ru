@@ -5,22 +5,23 @@ keywords: Azure CLI, configuration, settings, Azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 12/13/2017
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: dac383fa0dbd785f9448514e3d0a3242e4853038
-ms.sourcegitcommit: 42f1ba77b2f562d89dadd302655d1f02ee4b6130
+ms.openlocfilehash: b0d26beac83a7ce3bba44d5e64d129a211c82836
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
+ms.locfileid: "34305882"
 ---
 # <a name="azure-cli-20-configuration"></a>Настройка Azure CLI 2.0
 
 Azure CLI 2.0 позволяет применять пользовательскую конфигурацию, чтобы переопределить внутренние параметры, такие как ведение журнала и сбор данных, а также предоставляет параметры по умолчанию для некоторых обязательных параметров. Для управления некоторыми из этих значений в CLI доступна удобная команда `az configure`. Другие значения можно задать в файле конфигурации или с помощью переменных среды.
 
-Значения конфигурации, используемые CLI, будут вычисляются в следующем порядке: элементы, расположенные выше в списке, имеют больший приоритет.
+Значения конфигурации, используемые CLI, вычисляются в указанном ниже порядке. Элементы, расположенные выше в списке, имеют больший приоритет.
 
 1. Параметры командной строки
 2. Переменные среды
@@ -45,7 +46,7 @@ Azure CLI 2.0 позволяет применять пользовательск
 
 Вот пример того, как можно задать группу ресурсов и расположение по умолчанию для всех команд:
 
-```azurecli
+```azurecli-interactive
 az configure --defaults location=westus2 group=MyResourceGroup
 ```
 
@@ -61,7 +62,7 @@ az configure --defaults location=westus2 group=MyResourceGroup
 
 Ниже приведен пример файла конфигурации CLI, который отключает все запросы на подтверждение и настраивает для ведения журнала каталог `/var/log/azure`.
 
-```
+```ini
 [core]
 disable_confirm_prompt=Yes
 

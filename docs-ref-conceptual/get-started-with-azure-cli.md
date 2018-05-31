@@ -5,16 +5,17 @@ keywords: Azure CLI, CLI help, Azure help, query, automation,
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/05/2018
+ms.date: 05/16/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: afed3b187f9e5437ecd42217a374b82fb12699b8
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 0c7746e70125dcc1678ed19f93322efea8a2b01b
+ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306103"
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
@@ -54,13 +55,13 @@ az login
 
 Чтобы найти команды, используйте команду [az find](/cli/azure/reference-index#az-find). Например, чтобы найти команды, содержащие `secret`, используйте следующую команду:
 
-```azurecli
+```azurecli-interactive
 az find -q secret
 ```
 
 Если вы знаете, с какой группой команд вы хотите работать, используйте аргумент `--help`. Она выводит не только подробные сведения о команде, но (при использовании с группой) отображает все доступные подкоманды. Например, при работе с группами безопасности сети (NSG) можно найти доступные подгруппы и команды, связанные с NSG.
 
-```azurecli
+```azurecli-interactive
 az network nsg --help
 ```
 
@@ -79,11 +80,15 @@ az network nsg --help
 
 ## <a name="interactive-mode"></a>Интерактивный режим
 
-CLI можно использовать в интерактивном режиме для автоматического отображения справочных сведений и упрощения выбора подкоманд. Перейти в интерактивный режим можно с помощью команды [az interactive](/cli/azure/reference-index#az-interactive). См. дополнительные сведения об [интерактивной режиме Azure CLI 2.0](interactive-azure-cli.md).
+CLI можно использовать в интерактивном режиме для автоматического отображения справочных сведений и упрощения выбора подкоманд. Перейти в интерактивный режим можно с помощью команды [az interactive](/cli/azure/reference-index#az-interactive).
+
+```azurecli-interactive
+az interactive
+```
+
+См. дополнительные сведения об [интерактивном режиме Azure CLI 2.0](interactive-azure-cli.md).
 
 Кроме того, доступен [подключаемый модуль Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli), который предусматривает интерактивное взаимодействие для получения документации с помощью автозаполнения и указателя.
-
-
 
 ## <a name="learn-cli-basics-with-quickstarts-and-tutorials"></a>Дополнительные сведения о CLI, представляемые в кратких и подробных руководствах
 
@@ -106,6 +111,6 @@ CLI можно использовать в интерактивном режим
 
 Мы рады вашим отзывам о CLI, которые помогают нам улучшать наш продукт и устранять ошибки. Вы можете [опубликовать описание проблемы на Github](https://github.com/azure/azure-cli/issues) или использовать встроенные функции CLI, чтобы оставить отзыв с помощью команды [az feedback](/cli/azure/reference-index#az-feedback).
 
-```azurecli
+```azurecli-interactive
 az feedback
 ```
