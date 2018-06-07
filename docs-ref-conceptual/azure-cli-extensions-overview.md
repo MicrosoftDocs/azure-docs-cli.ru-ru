@@ -10,11 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: fde52c29a3ec82a1c6a03438a5d84dd4684e296a
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: 1b983faef4c1678763b3483192e94a6c96e24f32
+ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34479487"
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
 
@@ -34,7 +35,7 @@ az extension list-available --output table
 
 ## <a name="install-extensions"></a>Установка расширений
 
-Когда вы найдете расширение для установки, используйте команду [az extension add](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-add), чтобы получить его. Если расширение включено в список в `az extension list-available`, его можно установить по имени.
+Когда вы найдете расширение для установки, используйте команду [az extension add](https://docs.microsoft.com/cli/azure/extension#az-extension-add), чтобы получить его. Если расширение включено в список в `az extension list-available`, его можно установить по имени.
 
 ```azurecli-interactive
 az extension add --name <extension-name>
@@ -50,7 +51,7 @@ az extension add --source <URL-or-path>
 
 ## <a name="update-extensions"></a>Обновление расширений
 
-Если расширение устанавливалось по имени, его можно обновить с помощью команды [az extension update](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-update).
+Если расширение устанавливалось по имени, его можно обновить с помощью команды [az extension update](https://docs.microsoft.com/cli/azure/extension#az-extension-update).
 
 ```azurecli-interactive
 az extension update --name <extension-name>
@@ -62,7 +63,7 @@ az extension update --name <extension-name>
 
 ## <a name="uninstall-extensions"></a>Удаление расширений
 
-Если расширение больше не нужно, можно удалить его с помощью команды [az extension remove](https://docs.microsoft.com/en-us/cli/azure/extension#az-extension-remove).
+Если расширение больше не нужно, можно удалить его с помощью команды [az extension remove](https://docs.microsoft.com/cli/azure/extension#az-extension-remove).
 
 ```azurecli-interactive
 az extension remove --name <extension-name>
