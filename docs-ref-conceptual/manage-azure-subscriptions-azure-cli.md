@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.date: 10/30/2017
 ms.topic: conceptual
-ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: active-directory
-ms.openlocfilehash: ee7e0ca03b1ed9c1bfc040fd5714bb9b3549e3cd
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: 5a27eed40e0666f6a5e57a23ac369d92c3b01dab
+ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703032"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 

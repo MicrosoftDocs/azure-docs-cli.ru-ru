@@ -6,16 +6,16 @@ ms.author: sttramer
 manager: carmonm
 ms.date: 02/13/2018
 ms.topic: conceptual
-ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: 11f81e5d710763c818a2ed3cdf347dc657a6f664
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: 4d5bee6514477c494ec53d2bd7bba778301ba490
+ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703151"
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 

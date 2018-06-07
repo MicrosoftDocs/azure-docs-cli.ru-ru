@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.date: 05/16/2018
 ms.topic: conceptual
-ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: role-based-access-control
-ms.openlocfilehash: 86fa8b448089bd9f6ede46c92b7e95abb7c88dad
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: d250cb2d35a128c789fccd3aca17c47074121a25
+ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703117"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>Создание субъекта-службы Azure с помощью Azure CLI 2.0
 

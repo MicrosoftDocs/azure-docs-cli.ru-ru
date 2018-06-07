@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f62d041d17433b845a89dfa009a74b3d8cf6b3be
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: b11ab99626227cb53a604d429fa32c560e4255d9
+ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703134"
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>Установка Azure CLI 2.0 в Linux вручную
 
@@ -89,7 +90,7 @@ hash -r
   ```
 2. Измените файл `$HOME/.bash_profile`, чтобы удалить следующую строку:
 
-  ```
+  ```text
   <install location>/lib/azure-cli/az.completion
   ```
 
