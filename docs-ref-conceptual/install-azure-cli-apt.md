@@ -4,16 +4,17 @@ description: Как установить Azure CLI 2.0 с помощью apt
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/06/2018
+ms.date: 05/24/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 7eb04b408f403264f3951bf663d43686601c4ab8
-ms.sourcegitcommit: 1d18f667af28b59f5524a3499a4b7dc12af5163d
+ms.openlocfilehash: 7b5835581bf1e14e2d9fdc7c9584c704d1a5d82f
+ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34703185"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
@@ -24,26 +25,19 @@ ms.lasthandoff: 05/09/2018
 
 ## <a name="install"></a>Install
 
-1. Измените список источников.
+1. <a name="install-step-1"/> Измените список источников.
 
-     ```bash
-     AZ_REPO=$(lsb_release -cs)
-     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-          sudo tee /etc/apt/sources.list.d/azure-cli.list
-     ```
+    ```bash
+    AZ_REPO=$(lsb_release -cs)
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
+    ```
 
-2. Получите ключ подписывания Microsoft.
+2. <a name="signingKey"></a>Получите ключ подписывания Microsoft.
 
    ```bash
-   sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
+   curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
    ```
-
-  > [!WARNING]
-  > Этот ключ подписывания больше не рекомендуется использовать. Он будет заменен в конце мая 2018 года. Чтобы и дальше получать обновления с помощью `apt`, установите новый ключ.
-  > 
-  > ```bash
-  > curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-  > ``` 
 
 3. Установите интерфейс командной строки.
 
@@ -51,6 +45,9 @@ ms.lasthandoff: 05/09/2018
    sudo apt-get install apt-transport-https
    sudo apt-get update && sudo apt-get install azure-cli
    ```
+
+   > [!WARNING]
+   > Ключ подписывания обновлен и заменен в мае 2018 г. Если возникли ошибки с ключом подписывания, убедитесь, что вы [получили ключ подписывания последней версии](#signingKey).
 
 Запустите Azure CLI с помощью команды `az`. Для входа выполните команду `az login`.
 
@@ -77,6 +74,10 @@ az login
 ```bash
 sudo apt-get install lsb-release
 ```
+
+### <a name="lsbrelease-does-not-return-the-base-distribution-version"></a>lsb_release не возвращает версию основного дистрибутива
+
+Некоторые производные от Ubuntu или Debian дистрибутивы, например Linux Mint, могут возвращать неправильную версию при использовании команды `lsb_release`. Это значение используется при установке для определения устанавливаемого пакета. Если известно, на основе какой версии создан дистрибутив, можно установить значение параметра `AZ_REPO` вручную на [первом шаге установки](#install-step-1). В противном случае найдите информацию о том, как определить имя основного дистрибутива, и задайте для `AZ_REPO` правильное значение.
 
 ### <a name="apt-key-fails-with-no-dirmngr"></a>Команда apt-key завершается сбоем с сообщением "No dirmngr" (Нет диспетчера каталогов)
 
@@ -112,6 +113,9 @@ sudo apt-key adv --keyserver-options http-proxy=http://<USER>:<PASSWORD>@<PROXY-
    sudo apt-get update && sudo apt-get upgrade
    ```
 
+> [!WARNING]
+> Ключ подписывания обновлен и заменен в мае 2018 г. Если возникли ошибки с ключом подписывания, убедитесь, что вы [получили ключ подписывания последней версии](#signingKey).
+   
 > [!NOTE]
 > Эта команда позволяет обновить все установленные в системе пакеты, зависимости которых не были изменены.
 > Чтобы обновить только CLI, используйте `apt-get install`.

@@ -9,17 +9,18 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 2a2f60baed0b30c6437497006565a0fceb6bdbaa
-ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
+ms.openlocfilehash: 9eee413ad667262a9e30093723a0717805c960d9
+ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34799232"
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
 Azure CLI 2.0 — это интерфейс командной строки, который предоставляет широкие возможности для управления ресурсами Azure. Интерфейс обеспечивает простое создание скриптов, гибкие функции подачи запросов, выполнение длительных операций без блокировки и многие другие возможности. Поработайте с CLI прямо сейчас и откройте для себя его преимущества!
 
-Текущая версия CLI — __2.0.32__. Сведения о последнем выпуске см. в [заметках о выпуске](release-notes-azure-cli.md).
+Текущая версия CLI — __2.0.34__. Сведения о последнем выпуске см. в [заметках о выпуске](release-notes-azure-cli.md).
 
 * [Установка в Windows](install-azure-cli-windows.md)
 * [Установка в macOS](install-azure-cli-macos.md)
