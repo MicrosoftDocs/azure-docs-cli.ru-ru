@@ -4,18 +4,153 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/10/2018
+ms.date: 06/01/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 254c7b306440d921cef6b611268839150fdf3196
-ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
+ms.openlocfilehash: 57f13c7d17e2d248132e2e9c49bb0b4994f041f5
+ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34799266"
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="june-5-2018"></a>5 июня 2018 г.
+
+Версия 2.0.34
+
+### <a name="core"></a>Core
+
+* Добавлена поддержка перекрестных ссылок на ресурсы клиента.
+* Улучшена надежность при передаче данных телеметрии.
+
+### <a name="acr"></a>ACR
+
+* Добавлена поддержка VSTS в качестве расположения удаленного источника.
+* Добавлена команда `acr import`.
+
+### <a name="aks"></a>AKS
+
+* Изменена команда `aks get-credentials` для создания файла конфигурации kube с более надежными разрешениями файловой системы.
+
+### <a name="batch"></a>Пакетная служба Azure
+
+* Исправлена ошибка, связанная с форматированием таблиц при выполнении команды pool list. [[Ошибка #4378](https://github.com/Azure/azure-cli/issues/4378)]
+
+### <a name="iot"></a>Интернет вещей
+
+* Добавлена возможность создания Центров Интернета вещей категории "Базовый".
+
+### <a name="network"></a>Сеть
+
+* Улучшена команда `network vnet peering`.
+
+### <a name="policy-insights"></a>Policy Insights
+
+* Первый выпуск
+
+### <a name="arm"></a>ARM
+
+* Добавлены команды `account management-group`.
+
+### <a name="sql"></a>SQL
+
+* Добавлены новые команды для управляемого экземпляра:
+  * `sql mi create`
+  * `sql mi show`
+  * `sql mi list`
+  * `sql mi update`
+  * `sql mi delete`
+* Добавлены новые команды для управляемой базы данных:
+  * `sql midb create`
+  * `sql midb show`
+  * `sql midb list`
+  * `sql midb restore`
+  * `sql midb delete`
+
+### <a name="storage"></a>Служба хранилища
+
+* Добавлены типы MIME для JSON и JavaScript, выводимые из расширений файлов.
+
+### <a name="vm"></a>ВМ
+
+* Изменена команда `vm list-skus` для использования фиксированных столбцов, а также добавлено предупреждение об удалении `Tier` и `Size`.
+* Добавлен параметр `--accelerated-networking` для команды `vm create`.
+* Добавлен параметр `--tags` для команды `identity create`.
+
+## <a name="may-22-2018"></a>22 мая 2018 г.
+
+Версия 2.0.33
+
+### <a name="core"></a>Core
+
+* Добавлена возможность включения символа `@` в имена файлов.
+
+### <a name="acs"></a>ACS
+
+* Добавлены новые команды для Dev Spaces: `aks use-dev-spaces` и `aks remove-dev-spaces`.
+* Исправлена опечатка в справочном сообщении.
+
+### <a name="appservice"></a>AppService
+
+* Улучшены команды общего обновления.
+* Добавлена поддержка асинхронного выполнения для `webapp deployment source config-zip`.
+
+### <a name="container"></a>Контейнер
+
+* Добавлена возможность экспорта группы контейнеров в формате YAML.
+* Добавлена возможность использования файла YAML для создания или обновления группы контейнеров.
+
+### <a name="extension"></a>Добавочный номер
+
+* Улучшена операция удаления расширений.
+
+### <a name="interactive"></a>Interactive
+
+* Изменены параметры ведения журнала для отключения средства синтаксического анализа для завершенных операций.
+* Улучшена обработка поврежденных кэшей справки.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* Исправлены команды хранилища ключей для работы с удостоверениями в Cloud Shell или виртуальных машинах.
+
+### <a name="network"></a>Сеть
+
+* Исправлена проблема, при которой `network watcher show-topology` не будет выполняться, если виртуальной сети или подсети присвоить имя. [#6326](https://github.com/Azure/azure-cli/issues/6326)
+* Исправлена проблема, при которой некоторые команды `network watcher` выдают ошибку, что Наблюдатель за сетями не включен в определенных регионах. [#6264](https://github.com/Azure/azure-cli/issues/6264)
+
+### <a name="sql"></a>SQL
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены объекты ответа, возвращаемые в результатах команд `db` и `dw`:
+    * Свойство `serviceLevelObjective` переименовано на `currentServiceObjectiveName`.
+    * Удалены свойства `currentServiceObjectiveId` и `requestedServiceObjectiveId`. 
+    * Тип свойства `maxSizeBytes` изменен со строкового на целое число.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Теперь следующие свойства `db` и `dw` доступны только для чтения:
+    * `requestedServiceObjectiveName`.  Для обновления используйте параметр `--service-objective` или задайте свойство `sku.name`.
+    * `edition`. Для обновления используйте параметр `--edition` или задайте свойство `sku.tier`.
+    * `elasticPoolName`. Для обновления используйте параметр `--elastic-pool` или задайте свойство `elasticPoolId`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Теперь следующие свойства `elastic-pool` доступны только для чтения:
+    * `edition`. Для обновления используйте параметр `--edition`.
+    * `dtu`. Для обновления используйте параметр `--capacity`.
+    *  `databaseDtuMin`. Для обновления используйте параметр `--db-min-capacity`.
+    *  `databaseDtuMax`. Для обновления используйте параметр `--db-max-capacity`.
+* Добавлены параметры `--family` и `--capacity` для команд `db`, `dw` и `elastic-pool`.
+* Добавлены модули форматирования таблиц для команд `db`, `dw` и `elastic-pool`.
+
+### <a name="storage"></a>Служба хранилища
+
+* Добавлено средство заполнения для аргумента `--account-name`.
+* Устранена проблема, связанная с командой `storage entity query`.
+
+### <a name="vm"></a>ВМ
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--write-accelerator` из команды `vm create`. Такие же возможности предоставляет команда `vm update` или `vm disk attach`.
+* Устранена проблема с сопоставлением образов расширения в команде `[vm|vmss] extension`.
+* Добавлен параметр `--boot-diagnostics-storage` для команды `vm create` для записи журнала загрузки.
+* Добавлен параметр `--license-type` для команды `[vm|vmss] update`.
 
 ## <a name="may-7-2018"></a>7 мая 2018 г.
 
@@ -97,7 +232,7 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удален параметр `--ids` для: 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--ids` для: 
   * `express-route auth list`
   * `express-route peering list`
   * `nic ip-config list`
@@ -109,7 +244,7 @@ ms.lasthandoff: 05/07/2018
 ### <a name="profile"></a>Профиль
 
 * Исправлено определение источника `disk create`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удалено `--msi-port` и `--identity-port`, так как они больше не используются.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--msi-port` и `--identity-port`, так как они больше не используются.
 * Исправлена опечатка в кратком описании `account get-access-token`.
 
 ### <a name="redis"></a>Redis
@@ -121,7 +256,7 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="role"></a>Роль
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удалено `ad sp reset-credentials` по причине устаревания.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `ad sp reset-credentials` по причине устаревания.
 
 ### <a name="storage"></a>Служба хранилища
 
@@ -135,9 +270,9 @@ ms.lasthandoff: 05/07/2018
 
 * Исправлена недопустимая логика обнаружения в URI неуправляемого BLOB-объекта.
 * Добавлена поддержка шифрования диска без предоставления пользователем субъектов-служб.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ]. Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI
 * Добавлена поддержка политики вытеснения для `vmss`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удалено `--ids` из:
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--ids` из:
   * `vm extension list`
   * `vm secret list`
   * `vm unmanaged-disk list`
@@ -162,7 +297,7 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="appservice"></a>Служба приложений
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ]: Removed `assign-identity`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Removed `assign-identity`
 * Исправлено неперехватываемое исключение для несуществующих планов веб-приложений.
 
 ### <a name="batchai"></a>Batch AI
@@ -191,8 +326,8 @@ ms.lasthandoff: 05/07/2018
 * Добавлен параметр `--use-auto-storage` для создания кластера. Этот параметр упрощает управление учетными записями хранения, а также подключение общего файлового ресурса Azure и контейнеров BLOB-объектов Azure к кластеру.
 * Добавлен параметр `--generate-ssh-keys` для команд `cluster create` и `file-server create`.
 * Добавлена возможность запустить задачу настройки узла через командную строку.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команды `job stream-file` и `job list-files` перемещены в группу `job file`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] В команде `file-server create` параметр `--admin-user-name` переименован в `--user-name` для согласованности с командой `cluster create`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `job stream-file` и `job list-files` перемещены в группу `job file`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В команде `file-server create` параметр `--admin-user-name` переименован в `--user-name` для согласованности с командой `cluster create`.
 
 ### <a name="billing"></a>Выставление счетов
 
@@ -201,10 +336,18 @@ ms.lasthandoff: 05/07/2018
 ### <a name="consumption"></a>Потребление
 
 * Добавлены команды `marketplace`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команда `reservations details` переименована в `reservation detail`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] В командах `reservation` удалены короткие параметры `--reservation-order-id` и `--reservation-id`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] В командах `reservation summary` удалены короткие параметры `--grain`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] В командах `pricesheet` удалены короткие параметры `--include-meter-details`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `reservations summaries` переименована в `reservation summary`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `reservations details` переименована в `reservation detail`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В командах `reservation` удалены короткие параметры `--reservation-order-id` и `--reservation-id`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В командах `reservation summary` удалены короткие параметры `--grain`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В командах `pricesheet` удалены короткие параметры `--include-meter-details`.
+
+### <a name="container"></a>Контейнер
+
+* Добавлены параметры подключения тома репозитория git: `--gitrepo-url`, `--gitrepo-dir`, `--gitrepo-revision` и `--gitrepo-mount-path`.
+* Исправлена ошибка [#5926](https://github.com/Azure/azure-cli/issues/5926): команда `az container exec` возвращает ошибку, когда указан параметр --container-name.
+
+### <a name="extension"></a>Добавочный номер
 
 * Сообщение о проверке распространения перенесено на уровень отладки.
 
@@ -227,7 +370,7 @@ ms.lasthandoff: 05/07/2018
 ### <a name="profile"></a>Профиль
 
 * Добавлена поддержка классических учетных записей Azure для команды `account list`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удалены аргументы `--msi`  &  `--msi-port`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалены аргументы `--msi`  &  `--msi-port`.
 
 ### <a name="rdbms"></a>Реляционная СУБД
 
@@ -309,7 +452,7 @@ ms.lasthandoff: 05/07/2018
 
 * Добавлено сообщение для `extension add`, если расширение доступно в режиме предварительной версии.
 * Изменен параметр `extension list-available` для отображения всех данных расширения с использованием `--show-details`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Изменена команда `extension list-available` для отображения упрощенных данных расширения по умолчанию.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменена команда `extension list-available` для отображения упрощенных данных расширения по умолчанию.
 
 ### <a name="interactive"></a>Interactive
 
@@ -349,7 +492,7 @@ ms.lasthandoff: 05/07/2018
 * Добавлена поддержка конфигурации требуемого уровня доступа и собственных клиентов для `az ad app create`.
 * Изменены команды `rbac`, чтобы возвращать не более 1000 идентификаторов в разрешении объекта.
 * Добавлены команды `ad sp credential [reset|list|delete]` для управления учетными данными.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удален параметр properties из выходных данных `az role assignment [list|show]`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр properties из выходных данных `az role assignment [list|show]`.
 * Добавлена поддержка разрешений `dataActions` и `notDataActions` для `role definition`.
 
 ### <a name="storage"></a>Служба хранилища
@@ -362,7 +505,7 @@ ms.lasthandoff: 05/07/2018
 * Добавлено предупреждение `vmss create` для предстоящих критически важных изменений для наборов из 100 и более экземпляров.
 * Добавлена поддержка устойчивости зон для `vm [snapshot|image]`.
 * Изменено представление экземпляра диска для улучшения отчета о состоянии шифрования.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] `vm extension delete` Изменена команда, которая больше не возвращает выходные данные.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] `vm extension delete` Изменена команда, которая больше не возвращает выходные данные.
 
 ## <a name="march-13-2018"></a>13 марта 2018 г.
 
@@ -381,9 +524,15 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="advisor"></a>Помощник
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команда `advisor configuration set` переименована в `advisor configuration update`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удалена команда `advisor recommendation generate`. 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration get` переименована в `advisor configuration list`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration set` переименована в `advisor configuration update`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `advisor recommendation generate`. 
 * Добавлен параметр `--refresh` для команды `advisor recommendation list`.
+* Добавлена команда `advisor recommendation show`.
+
+### <a name="appservice"></a>Служба приложений
+
+* Команда `[webapp|functionapp] assign-identity` отмечена как нерекомендуемая.
 * Добавлены команды управляемого удостоверения `webapp identity [assign|show]` и `functionapp identity [assign|show]`.
 
 ### <a name="eventhubs"></a>Концентраторы событий
@@ -410,7 +559,7 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удален параметр `--tags` из `route-filter rule create`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--tags` из `route-filter rule create`.
 * Удалены некоторые ошибочные значения по умолчанию для следующих команд:
   * `network express-route update`
   * `network nsg rule update`
@@ -515,7 +664,7 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="acs"></a>ACS
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Переименовано `aks get-versions` на `aks get-upgrades` для точности.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименовано `aks get-versions` на `aks get-upgrades` для точности.
 * Изменено `aks get-versions` для отображения версий Kubernetes, доступных для `aks create`.
 * Изменены значения по умолчанию `aks create`, чтобы разрешить серверу выбирать версию Kubernetes.
 * Обновлены справочные сообщения, связанные с субъектом-службой и создаваемые AKS.
@@ -595,6 +744,11 @@ ms.lasthandoff: 05/07/2018
 * Добавлена команда `sql db rename`.
 * Добавлена поддержка аргумента `--ids` для команд SQL.
 
+### <a name="storage"></a>Служба хранилища
+
+* Добавлены команды `storage blob service-properties delete-policy` и `storage blob undelete` для включения обратимого удаления.
+
+### <a name="vm"></a>ВМ
 
 * Исправлена ошибка, когда шифрование виртуальной машины инициализировалось не полностью.
 * Добавлены выходные данные идентификатора субъекта для включения MSI.
@@ -713,9 +867,9 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="event-grid"></a>Сетка событий Azure
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Удалена команда `eventgrid event-subscription show-endpoint-url`. Вместо нее следует использовать `eventgrid event-subscription show --include-full-endpoint-url`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `eventgrid event-subscription show-endpoint-url`. Вместо нее следует использовать `eventgrid event-subscription show --include-full-endpoint-url`.
 * Добавлена команда `eventgrid topic update`.
 * Добавлена команда `eventgrid event-subscription update`.
 * Добавлен параметр `--ids` для команд `eventgrid topic`.
@@ -759,8 +913,8 @@ ms.lasthandoff: 05/07/2018
 ### <a name="vm"></a>ВМ
 
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Поддержка разных зон для `vmss`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Значение по умолчанию `vmss` для одной зоны заменено данными подсистемы балансировки нагрузки уровня "Стандартный".
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Для EMSI параметр `externalIdentities` изменен на `userAssignedIdentities`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию `vmss` для одной зоны заменено данными подсистемы балансировки нагрузки уровня "Стандартный".
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для EMSI параметр `externalIdentities` изменен на `userAssignedIdentities`.
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка переключения дисков ОС.
 * Добавлена поддержка использования образов виртуальных машин из других подписок.
 * В `[vm|vmss] create` добавлены аргументы `--plan-name`, `--plan-product`, `--plan-promotion-code` и `--plan-publisher`.
@@ -1063,7 +1217,7 @@ ms.lasthandoff: 05/07/2018
 * Добавлена поддержка отображения определений встроенных политик
 * Добавлена поддержка параметра mode для создания определения политик
 * Добавлена поддержка шаблонов и определений пользовательского интерфейса для команды `managedapp definition create`
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`.
 
 ### <a name="network"></a>Сеть
 
@@ -1183,6 +1337,11 @@ ms.lasthandoff: 05/07/2018
 
 * Объявлены неподдерживаемыми все команды; вместо них используется Service Fabric CLI (sfctl).
 
+### <a name="storage"></a>Служба хранилища
+
+* Исправлена проблема, когда учетные записи хранения нельзя было создавать в регионах, которые не поддерживают функцию NetworkACLs.
+* Определение типа и кодировки содержимого во время передачи больших двоичных объектов и файла, если оба свойства не указаны.
+
 ## <a name="august-28-2017"></a>28 августа 2017 г.
 
 Версия 2.0.15
@@ -1199,7 +1358,7 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="appservice"></a>Служба приложений
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Исправлены несоответствия в выходных данных `az webapp config appsettings [delete|set]`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Исправлены несоответствия в выходных данных `az webapp config appsettings [delete|set]`.
 * Добавлен новый псевдоним `-i` в команду `az webapp config container set --docker-custom-image-name`.
 * Предоставлена команда `az webapp log show`.
 * Предоставлены новые аргументы команды `az webapp delete`, которые позволяют сохранить план службы приложений, метрики и данные регистрации DNS.
@@ -1211,8 +1370,13 @@ ms.lasthandoff: 05/07/2018
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`.
 * Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule [create|update]`.
+* Добавлена поддержка номера SKU в команде `lb create`.
+* Добавлена поддержка номера SKU в команде `public-ip create`.
+
+### <a name="profile"></a>Профиль
 
 * Предоставлены параметры `--msi` и `--msi-port` для входа с использованием удостоверения виртуальной машины.
 
@@ -1229,7 +1393,7 @@ ms.lasthandoff: 05/07/2018
 * Добавлены аргументы `--bypass` и `--default-action` в командах `storage account [create|update]` для поддержки туннелирования службы.
 * Добавлены команды для добавления правил виртуальной сети и правил на основе IP-адресов в `storage account network-rule`.
 * Разрешено шифрование службы с управляемым пользователем ключом.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Параметр `--encryption` переименован в `--encryption-services` в команде `az storage account create and az storage account update`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--encryption` переименован в `--encryption-services` в команде `az storage account create and az storage account update`.
 * Исправление 4220. Несоответствие синтаксиса `az storage account update encryption`.
 
 ### <a name="vm"></a>ВМ
@@ -1323,7 +1487,7 @@ ms.lasthandoff: 05/07/2018
 * Добавлены команды для контейнеров.
 * Добавлены модули выставления счетов и потребления ресурсов.
 
-```
+```text
 azure-cli (2.0.12)
 
 acr (2.0.9)
@@ -1601,7 +1765,7 @@ vm (2.0.11)
 * Добавлена команда az -v для az --version ([№ 2926](https://github.com/Azure/azure-cli/issues/2926)).
 * Повышена производительность загрузки пакетов и выполнения команд ([№ 2819](https://github.com/Azure/azure-cli/issues/2819)).
 
-```
+```text
 azure-cli (2.0.6)
 
 acr (2.0.4)
@@ -1798,7 +1962,7 @@ vm (2.0.6)
 
 В этом выпуске мы добавили компоненты ACR, Batch, KeyVault и SQL.
 
-```
+```text
 azure-cli (2.0.2)
 
 acr (2.0.0)
@@ -1888,7 +2052,7 @@ vm (2.0.2)
 
 Проверить версию CLI можно с помощью команды `az --version`. В выходных данных указана версия самого интерфейса командной строки (2.0.0 в этом выпуске), версии отдельных командных модулей и используемые вами версии Python и GCC.
 
-```
+```text
 azure-cli (2.0.0)
 
 acs (2.0.0)
