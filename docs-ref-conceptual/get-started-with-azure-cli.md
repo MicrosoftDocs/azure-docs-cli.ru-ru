@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 0c7746e70125dcc1678ed19f93322efea8a2b01b
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: dbb6233e8fed15b440282b8396d3b3bd056e80f7
+ms.sourcegitcommit: 5c80e96e96f9608c92a94fa4a9c4afb25099f3fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306103"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35512943"
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
@@ -44,7 +44,7 @@ az login
 | [Виртуальные машины](/azure/virtual-machines) | [az vm](/cli/azure/vm) |
 | [Учетные записи хранения](/azure/storage/common/storage-introduction) | [az storage account](/cli/azure/storage/account) |
 | [хранилище ключей;](/azure/key-vault/key-vault-whatis) | [az keyvault](/cli/azure/keyvault) |
-| [Веб-приложения](/azure/ap-service) | [az webapp](/cli/azure/webapp) |
+| [Веб-приложения](/azure/app-service) | [az webapp](/cli/azure/webapp) |
 | [Базы данных SQL](/azure/sql-database) | [az sql server](/cli/azure/sql/server) |
 | [Cosmos DB](/azure/cosmos-db) | [az cosmosdb](/cli/azure/cosmosdb) |
 

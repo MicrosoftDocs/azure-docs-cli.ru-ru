@@ -9,11 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: dde90e78f3ec53d323ca78c816ceefb8cf65608b
-ms.sourcegitcommit: 15d6dfaee2075d0abceb2aa2423f0b6ef7b2ac9b
+ms.openlocfilehash: a862cca17adb1bfa0201af250819158081c29813
+ms.sourcegitcommit: 5c80e96e96f9608c92a94fa4a9c4afb25099f3fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35512977"
 ---
 # <a name="install-azure-cli-20-with-zypper"></a>Установка Azure CLI 2.0 с помощью zypper
 
@@ -26,7 +27,6 @@ ms.lasthandoff: 05/07/2018
 1. Установите `curl`:
 
    ```bash
-   sudo zypper refresh
    sudo zypper install -y curl
    ```
 
@@ -39,13 +39,12 @@ ms.lasthandoff: 05/07/2018
 3. Создайте сведения о локальном репозитории `azure-cli`:
 
    ```bash
-   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/azure-cli.repo'
+   sudo zypper addrepo --name 'Azure CLI' --check https://packages.microsoft.com/yumrepos/azure-cli azure-cli
    ```
 
 4. Обновите индекс пакета `zypper` и выполните установку:
 
    ```bash
-   sudo zypper refresh
    sudo zypper install --from azure-cli -y azure-cli
    ```
 
@@ -79,7 +78,7 @@ sudo zypper update azure-cli
 2. Если вы не планируете переустанавливать CLI, удалите сведения о репозитории.
 
   ```bash
-  sudo rm /etc/zypp/repos.d/azure-cli.repo
+  sudo zypper removerepo azure-cli
   ```
 
 3. Если вы удалили сведения о репозитории, также удалите ключ подписи Microsoft GPG.
