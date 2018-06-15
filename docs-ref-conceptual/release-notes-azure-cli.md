@@ -9,14 +9,38 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 57f13c7d17e2d248132e2e9c49bb0b4994f041f5
-ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
+ms.openlocfilehash: 72e667d74ff8d55f26ecbf3b3c8845c9c03b56be
+ms.sourcegitcommit: 5c80e96e96f9608c92a94fa4a9c4afb25099f3fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34799266"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35512909"
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="june-13-2018"></a>13 июня 2018 г.
+
+Версия 2.0.36
+
+### <a name="aks"></a>AKS
+
+* В `aks create` добавлены дополнительные сетевые параметры.
+* В `aks create` добавлены аргументы для наблюдения и маршрутизации HTTP-трафика. 
+* Добавлен аргумент `--no-ssh-key` для команды `aks create`
+* Добавлен аргумент `--enable-rbac` для команды `aks create`
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] В `aks create` добавлена поддержка аутентификации Azure Active Directory.
+
+### <a name="appservice"></a>AppService
+
+* Устранена проблема с несовместимыми версиями urllib.
+
+## <a name="june-5-2018"></a>5 июня 2018 г.
+
+Версия 2.0.35
+
+### <a name="interactive"></a>Interactive
+
+* Добавлены ограничения в зависимости интерактивного режима.
 
 ## <a name="june-5-2018"></a>5 июня 2018 г.
 
@@ -270,7 +294,7 @@ ms.locfileid: "34799266"
 
 * Исправлена недопустимая логика обнаружения в URI неуправляемого BLOB-объекта.
 * Добавлена поддержка шифрования диска без предоставления пользователем субъектов-служб.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
 * Добавлена поддержка политики вытеснения для `vmss`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--ids` из:
   * `vm extension list`
