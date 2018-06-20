@@ -14,6 +14,7 @@ ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2018
+ms.locfileid: "32044015"
 ---
 # <a name="install-the-azure-cli-10"></a><span data-ttu-id="da54d-103">Установка Azure CLI 1.0</span><span class="sxs-lookup"><span data-stu-id="da54d-103">Install the Azure CLI 1.0</span></span>
 
