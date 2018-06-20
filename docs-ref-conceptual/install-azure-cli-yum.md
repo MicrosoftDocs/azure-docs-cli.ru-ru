@@ -14,6 +14,7 @@ ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/28/2018
+ms.locfileid: "32043709"
 ---
 # <a name="install-azure-cli-20-with-yum"></a>Установка Azure CLI 2.0 с помощью yum
 
