@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 06/05/2018
+ms.date: 06/19/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 080dd3d67fe7aa1860cce91c217cd6f8d81ae398
-ms.sourcegitcommit: 44f2b6feb980be78050632dae224399488a8d5fa
+ms.openlocfilehash: 93ec0ae1da6dd3527ad6c108e2b13e8026f9e456
+ms.sourcegitcommit: 1a38729d6ae93c49137b3d49b6a9ec8a75eff190
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34758225"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36262630"
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Доступные расширения для Azure CLI 2.0
 
@@ -32,11 +32,11 @@ az extension list-available --output table
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.1 | Поддержка псевдонимов команд. | Yes |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.2.2 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.4.5 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
-| [botservice](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Поддержка функций предварительной версии 2017-12-01 службы Azure Bot | Yes |
+| [botservice](https://github.com/Azure/azure-cli-extensions) | 0.0.3 | Поддержка функций предварительной версии 2017-12-01 службы Azure Bot | Yes |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.3 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Поддержка функций службы 	"Сетка событий Azure" версии 2018-05-01-preview | Yes |
-| [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.6 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
+| [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.7 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Yes |
 | [managementgroups](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Azure CLI для групп управления. |  |
 | [managementpartner](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | Поддержка партнера управления (предварительная версия). |  |
