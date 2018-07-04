@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 06/19/2018
+ms.date: 06/25/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 93ec0ae1da6dd3527ad6c108e2b13e8026f9e456
-ms.sourcegitcommit: 1a38729d6ae93c49137b3d49b6a9ec8a75eff190
+ms.openlocfilehash: bd93775373c8e779dff8a3af3c721e31d0e038c0
+ms.sourcegitcommit: f4a4b1a1cd8be99abeaa655ef4797b97518a52a0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36262630"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36943232"
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Доступные расширения для Azure CLI 2.0
 
@@ -33,7 +33,7 @@ az extension list-available --output table
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.2.2 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.4.5 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.0.3 | Поддержка функций предварительной версии 2017-12-01 службы Azure Bot | Yes |
-| [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.3 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |
+| [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.5 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Поддержка функций службы 	"Сетка событий Azure" версии 2018-05-01-preview | Yes |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.7 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
