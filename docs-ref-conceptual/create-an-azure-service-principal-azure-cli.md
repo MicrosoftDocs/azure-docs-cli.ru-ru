@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: role-based-access-control
-ms.openlocfilehash: d250cb2d35a128c789fccd3aca17c47074121a25
-ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
+ms.openlocfilehash: cd9a41b66d18410afa091ede50ca24e7d4b5e9ed
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34703117"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439964"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>Создание субъекта-службы Azure с помощью Azure CLI 2.0
 
@@ -101,7 +101,7 @@ az role assignment list --assignee APP_ID
 > [!NOTE] 
 > Если ваша учетная запись не позволяет назначать роли, вы увидите сообщение об ошибке о том, что ваша учетная запись "не авторизована выполнять действие Microsoft.Authorization/roleAssignments/write для /subscriptions/{guid}". Чтобы получить возможность управлять ролями, обратитесь к администратору Azure Active Directory.
 
-## <a name="log-in-using-the-service-principal"></a>Вход с помощью субъекта-службы
+## <a name="sign-in-using-the-service-principal"></a>Вход с помощью субъекта-службы
 
 Вы можете протестировать разрешения и возможность входа с помощью субъекта-службы, выполнив вход в Azure CLI. Войдите с использованием нового субъекта-службы с помощью значений `appId`, `tenant` и учетных данных. Предоставляемые сведения для аутентификации будут зависеть от того, на основе чего был создан субъект-служба — пароля или сертификата.
 
