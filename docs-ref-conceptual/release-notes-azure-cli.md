@@ -4,19 +4,100 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 06/01/2018
+ms.date: 07/03/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 64db2b58ca883518757d8e189bf7263ed818b283
-ms.sourcegitcommit: 1a38729d6ae93c49137b3d49b6a9ec8a75eff190
+ms.openlocfilehash: 102152b7d99de253ccb2fea09b99be91e3c9135e
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36262664"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439675"
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="july-3-2018"></a>3 июля 2018 г.
+
+Версия 2.0.41
+
+### <a name="aks"></a>AKS
+
+* Теперь для мониторинга используется идентификатор подписки.
+
+## <a name="july-3-2018"></a>3 июля 2018 г.
+
+Версия 2.0.40
+
+### <a name="core"></a>Core
+
+* Добавлен новый поток кода авторизации для интерактивного входа.
+
+### <a name="acr"></a>ACR
+
+* Добавлено состояние сборки опроса.
+* Добавлена поддержка значений перечисления без учета регистра.
+* Добавлены параметры `--top` и `--orderby` для `show-manifests`.
+
+### <a name="acs"></a>ACS
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Управление доступом на основе ролей Kubernetes включено по умолчанию.
+* Добавлен аргумент `--disable-rbac`. Аргумент `--enable-rbac` не рекомендуется использовать, так как теперь это значение по умолчанию.
+* Обновлены параметры команды `aks browse`. Добавлена поддержка параметра `--listen-port`.
+* Обновлен пакет диаграмм Helm по умолчанию для команды `aks install-connector`. Используйте файл virtual-kubelet-for-aks-latest.tgz.
+* Для обновления существующего кластера добавлены команды `aks enable-addons` и `aks disable-addons`.
+
+### <a name="appservice"></a>AppService
+
+* Добавлена поддержка отключения удостоверения с помощью команды `webapp identity remove`.
+* Удален тег `preview` для функции идентификации.
+
+### <a name="backup"></a>Azure Backup
+
+* Обновлено определение модуля.
+
+### <a name="batchai"></a>Batch AI
+
+* Исправлены табличные выходные данные для команд `batchai cluster node list` и `batchai job node list`.
+
+### <a name="cloud"></a>Облако
+
+* В облачную конфигурацию добавлен суффикс сервера `acr login`.
+
+### <a name="container"></a>Контейнер
+
+* Для команды `container create` действие по умолчанию изменено на длительную операцию.
+* Добавлены параметры Log Analytics `--log-analytics-workspace` и `--log-analytics-workspace-key`.
+* Добавлен параметр `--protocol`, с помощью которого можно указать сетевой протокол для использования.
+
+### <a name="extension"></a>Добавочный номер
+
+* Изменена команда `extension list-available`. Теперь с ее помощью отображаются только расширения, совместимые с текущей версией CLI.
+
+### <a name="network"></a>Сеть
+
+* Исправлена проблема с зависимостью типов записей от регистра ([#6602](https://github.com/Azure/azure-cli/issues/6602)).
+
+### <a name="rdbms"></a>Rdbms
+
+* Добавлены команды `[postgres|myql] server vnet-rule`.
+
+### <a name="resource"></a>Ресурс
+
+* Добавлена новая группа операций `deployment`.
+
+### <a name="vm"></a>ВМ
+
+* Добавлена поддержка удаления удостоверения, назначенного системой.
+
+## <a name="june-25-2018"></a>25 июня 2018 г.
+
+Версия 2.0.39
+
+### <a name="cli"></a>Интерфейс командной строки
+
+* В установщике MSI обновлена обрезка файлов, чтобы устранить проблему с установкой расширений.
 
 ## <a name="june-19-2018"></a>19 июня 2018 г.
 
@@ -41,7 +122,7 @@ ms.locfileid: "36262664"
 * Добавлены новые регионы экземпляров контейнеров Azure для `aks install-connector`.
 * В имя выпуска и имя узла Helm добавлено нормализованное расположение для `aks install-connector`. 
 
-### <a name="appservice"></a>Служба приложений
+### <a name="appservice"></a>AppService
 
 * Добавлена поддержка новых версий urllib.
 * Добавлена поддержка `functionapp create`, что позволяет использовать план службы приложений из внешних групп ресурсов.
@@ -389,7 +470,7 @@ ms.locfileid: "36262664"
 
 * Исправлена недопустимая логика обнаружения в URI неуправляемого BLOB-объекта.
 * Добавлена поддержка шифрования диска без предоставления пользователем субъектов-служб.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
 * Добавлена поддержка политики вытеснения для `vmss`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--ids` из:
   * `vm extension list`

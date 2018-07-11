@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: d88dbcec947372aa154bce939edd99f65cd9480f
-ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+ms.openlocfilehash: 0eb3694c8dcb085e1aeb8cde54a21ac16157b26b
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32043726"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439840"
 ---
 # <a name="run-azure-cli-20-in-a-docker-container"></a>Запуск Azure CLI 2.0 в контейнере Docker
 
@@ -28,20 +28,19 @@ Docker можно использовать для запуска изолиро�
    docker run -it microsoft/azure-cli
    ```
 
-CLI устанавливается в образ как команда `az` в папку `/usr/local/bin`. Для входа выполните команду `az login`.
-
-```azurecli
-az login
-```
-
-Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
-
 > [!NOTE]
 > Если вы хотите взять ключи SSH из среды пользователя, можно использовать `-v ${HOME}:/root`, чтобы подключить $HOME как `/root`.
 
 > ```bash
 > docker run -it -v ${HOME}:/root microsoft/azure-cli
 > ```
+
+CLI устанавливается в образ как команда `az` в папку `/usr/local/bin`. Чтобы войти, выполните команду [az login](/cli/azure/reference-index#az-login).
+
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
+
+Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+
 
 ## <a name="update-docker-image"></a>Обновление образа Docker
 

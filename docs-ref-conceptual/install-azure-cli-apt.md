@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: abbffb1c474d752130dfffa8e60937b3d632fa14
-ms.sourcegitcommit: c6c3058254974b3a1d5d2fa2cd231a900c53d321
+ms.openlocfilehash: 3f52f1545dc4bad44280c7e58ad17ec2302fd436
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126588"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439624"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
@@ -49,11 +49,9 @@ ms.locfileid: "37126588"
    > [!WARNING]
    > Ключ подписывания обновлен и заменен в мае 2018 г. Если возникли ошибки с ключом подписывания, убедитесь, что вы [получили ключ подписывания последней версии](#signingKey).
 
-Запустите Azure CLI с помощью команды `az`. Для входа выполните команду `az login`.
+Запустите Azure CLI с помощью команды `az`. Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).
 
-```azurecli
-az login
-```
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
 
 Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 

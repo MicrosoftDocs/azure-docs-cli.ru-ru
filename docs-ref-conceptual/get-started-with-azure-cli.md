@@ -10,28 +10,26 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: dbb6233e8fed15b440282b8396d3b3bd056e80f7
-ms.sourcegitcommit: 5c80e96e96f9608c92a94fa4a9c4afb25099f3fc
+ms.openlocfilehash: c973d31312fbe0f9232bf3f0f3ed5f3b70b6559a
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/13/2018
-ms.locfileid: "35512943"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439947"
 ---
 # <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
 
 Добро пожаловать в Azure CLI 2.0! CLI — это средство, предназначенное для быстрой и эффективной работы со службами Azure с возможностью автоматизации. В этой статье рассматриваются возможности CLI и приводятся ссылки на связанные ресурсы.
 
-## <a name="install-and-log-in"></a>Установка и вход
+## <a name="install-and-sign-in"></a>Установка и вход
 
 Вы можете [установить CLI](install-azure-cli.md) или попробовать поработать с [Azure Cloud Shell](/azure/cloud-shell/overview).
 
 Прежде чем использовать команды CLI при локальной установке, необходимо войти с помощью команды [az login](/cli/azure/reference-index#az-login).
 
-```azurecli
-az login
-```
+[!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Эта команда выводит приглашение на вход с использованием кода аутентификации через веб-сайт. Вы также можете войти в автономном режиме, как описано в руководстве по [входу с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Вы также можете войти в автономном режиме, как описано в руководстве по [входу с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="common-commands"></a>Стандартные команды
 

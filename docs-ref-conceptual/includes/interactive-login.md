@@ -2,23 +2,23 @@
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/16/2018
+ms.date: 07/02/2018
 ms.topic: include
-ms.openlocfilehash: cace08e129e67c91d3fe45cd1712fcf27ab75204
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: d1ea5227b0a93bc66672a659779099bec83c8baf
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34443531"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439998"
 ---
-1. Выполните команду для входа.
+1. Выполните команду `login`.
 
     ```azurecli-interactive
     az login
     ```
 
-   Получите код для использования на следующем шаге.
+    Если интерфейс командной строки может определить браузер по умолчанию и открыть его, эти действия будут выполнены и сразу же откроется страница входа.
 
-2. Откройте браузер и перейдите на страницу [https://aka.ms/devicelogin](https://aka.ms/devicelogin). Введите код аутентификации.
+    В противном случае вам потребуется открыть страницу браузера и выполнить инструкции в командной строке, чтобы ввести код авторизации после перехода по адресу [https://aka.ms/devicelogin](https://aka.ms/devicelogin) в браузере.
 
-3. Выполните вход в браузере с помощью учетных данных.
+2. Выполните вход в браузере с помощью учетных данных.

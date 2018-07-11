@@ -10,12 +10,12 @@ ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: 4d5bee6514477c494ec53d2bd7bba778301ba490
-ms.sourcegitcommit: 38549f60d76d4b6b65d180367e83749769fe6e43
+ms.openlocfilehash: bbd64458b49d3e6c6a533a489d5c8105f364d3d7
+ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34703151"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37439879"
 ---
 # <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 
@@ -26,9 +26,9 @@ ms.locfileid: "34703151"
 
 Когда вы войдете, команды интерфейса командной строки будут выполняться в вашей подписке по умолчанию. Если у вас несколько подписок, вы можете [изменить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md).
 
-## <a name="interactive-log-in"></a>Интерактивный вход
+## <a name="interactive-sign-in"></a>Интерактивный вход
 
-Выполните интерактивный вход из веб-браузера.
+Метод проверки подлинности, используемый в Azure CLI по умолчанию, — интерактивный вход в веб-браузере.
 
 [!INCLUDE [interactive_login](includes/interactive-login.md)]
 
