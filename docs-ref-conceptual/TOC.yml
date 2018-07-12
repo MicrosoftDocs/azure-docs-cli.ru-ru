@@ -22,7 +22,7 @@
       href: get-started-with-azure-cli.md
     - name: Cloud Shell
       href: /azure/cloud-shell/overview
-    - name: Вход в систему
+    - name: Вход
       href: authenticate-azure-cli.md
       items:
         - name: Создание субъекта-службы
@@ -66,8 +66,6 @@
   items:
     - name: Создание виртуальных машин
       href: azure-cli-vm-tutorial.yml
-    - name: Обучение. Создание виртуальных машин
-      href: 'https://docs.microsoft.com/learn/azure-cli-2-0/index'
 - name: Примеры сценариев
   items:
     - name: Виртуальные машины Linux
