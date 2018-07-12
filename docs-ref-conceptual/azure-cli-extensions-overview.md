@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1b983faef4c1678763b3483192e94a6c96e24f32
-ms.sourcegitcommit: 80189ff103c91f8c47ab8ebf586df815fff5dd5d
+ms.openlocfilehash: b503c51ffc55ceda30738e34171c7da92532f328
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34479487"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967730"
 ---
 # <a name="using-extensions-with-the-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
 
@@ -59,7 +59,7 @@ az extension update --name <extension-name>
 
 В противном случае расширение можно обновить из источника, выполнив инструкции по [установке расширений](#install-extensions).
 
-Если имя расширения по какой-либо причине не разрешается с помощью CLI, удалите его и установите повторно. Также есть вероятность, что расширение, которое предоставлялось в режиме предварительной версии, теперь является встроенной командой CLI. Попробуйте обновить CLI, как описано в руководстве по [установке CLI Azure 2.0](install-azure-cli.md), и проверьте, добавлены ли команды расширения. 
+Если имя расширения по какой-либо причине не разрешается с помощью CLI, удалите его и установите повторно. Также есть вероятность, что расширение, которое предоставлялось в режиме предварительной версии, теперь является встроенной командой CLI. Попробуйте обновить CLI, как описано в руководстве по [установке CLI Azure 2.0](install-azure-cli.md), и проверьте, добавлены ли команды расширения.
 
 ## <a name="uninstall-extensions"></a>Удаление расширений
 
@@ -69,7 +69,8 @@ az extension update --name <extension-name>
 az extension remove --name <extension-name>
 ```
 
-Также расширение можно вручную удалить из расположения, в котором оно установлено. Для переменной оболочки устанавливается значение `$AZURE_EXTENSION_DIR`. Если эта переменная не задана, в Linux и macOS по умолчанию устанавливается значение `$HOME/.azure/cliextensions`, а в Windows — `%USERPROFILE%\.azure\cliextensions`.
+Также расширение можно вручную удалить из расположения, в котором оно установлено. Для переменной оболочки устанавливается значение `$AZURE_EXTENSION_DIR`.
+Если эта переменная не задана, в Linux и macOS по умолчанию устанавливается значение `$HOME/.azure/cliextensions`, а в Windows — `%USERPROFILE%\.azure\cliextensions`.
 
 ```bash
 rm -rf $AZURE_EXTENSION_DIR/<extension-name>

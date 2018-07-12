@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 102152b7d99de253ccb2fea09b99be91e3c9135e
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: b44a387a144b9d7daca8d87309d8a5e1a47b078a
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439675"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967883"
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
 
@@ -120,7 +120,7 @@ ms.locfileid: "37439675"
 * Исправлена ошибка в команде `acs browse`.
 * Параметр `--connector-name` стал необязательным для `aks install-connector`, `aks upgrade-connector` и `aks remove-connector`.
 * Добавлены новые регионы экземпляров контейнеров Azure для `aks install-connector`.
-* В имя выпуска и имя узла Helm добавлено нормализованное расположение для `aks install-connector`. 
+* В имя выпуска и имя узла Helm добавлено нормализованное расположение для `aks install-connector`.
 
 ### <a name="appservice"></a>AppService
 
@@ -137,7 +137,7 @@ ms.locfileid: "37439675"
 * Добавлена поддержка экспериментов. Эксперименты позволяют объединять задания в коллекции без ограничений по количеству созданных заданий.
 * Добавлена поддержка настройки `/dev/shm` для заданий, выполняющихся в контейнере Docker.
 * Добавлены команды `batchai cluster node exec` и `batchai job node exec`. Эти команды позволяют выполнять любые команды непосредственно на узлах и предоставляют функциональные возможности для перенаправления портов.
-* Добавлена поддержка параметра `--ids` в командах `batchai`. 
+* Добавлена поддержка параметра `--ids` в командах `batchai`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Все кластеры и файловые серверы необходимо создавать в рабочих областях.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Задания необходимо создавать в рамках экспериментов.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--nfs-resource-group` из команд `cluster create` и `job create`. Для подключения NFS из другой рабочей области или группы ресурсов следует указать идентификатор ARM файлового сервера с помощью параметра `--nfs`.
@@ -201,7 +201,7 @@ ms.locfileid: "37439675"
 ### <a name="aks"></a>AKS
 
 * В `aks create` добавлены дополнительные сетевые параметры.
-* В `aks create` добавлены аргументы для наблюдения и маршрутизации HTTP-трафика. 
+* В `aks create` добавлены аргументы для наблюдения и маршрутизации HTTP-трафика.
 * Добавлен аргумент `--no-ssh-key` для команды `aks create`
 * Добавлен аргумент `--enable-rbac` для команды `aks create`
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] В `aks create` добавлена поддержка аутентификации Azure Active Directory.
@@ -326,7 +326,7 @@ ms.locfileid: "37439675"
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены объекты ответа, возвращаемые в результатах команд `db` и `dw`:
     * Свойство `serviceLevelObjective` переименовано на `currentServiceObjectiveName`.
-    * Удалены свойства `currentServiceObjectiveId` и `requestedServiceObjectiveId`. 
+    * Удалены свойства `currentServiceObjectiveId` и `requestedServiceObjectiveId`.
     * Тип свойства `maxSizeBytes` изменен со строкового на целое число.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Теперь следующие свойства `db` и `dw` доступны только для чтения:
     * `requestedServiceObjectiveName`.  Для обновления используйте параметр `--service-objective` или задайте свойство `sku.name`.
@@ -432,7 +432,7 @@ ms.locfileid: "37439675"
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--ids` для: 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--ids` для:
   * `express-route auth list`
   * `express-route peering list`
   * `nic ip-config list`
@@ -470,14 +470,14 @@ ms.locfileid: "37439675"
 
 * Исправлена недопустимая логика обнаружения в URI неуправляемого BLOB-объекта.
 * Добавлена поддержка шифрования диска без предоставления пользователем субъектов-служб.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
 * Добавлена поддержка политики вытеснения для `vmss`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--ids` из:
   * `vm extension list`
   * `vm secret list`
   * `vm unmanaged-disk list`
   * `vmss nic list`
-* Добавлена поддержка ускорителя записи. 
+* Добавлена поддержка ускорителя записи.
 * Добавлена команда `vmss perform-maintenance`.
 * Исправлено `vm diagnostics set` для надежного определения типа ОС виртуальной машины.
 * Изменено `vm resize` для проверки того, отличается ли запрошенный размер от установленного (с обновлением только при изменении).
@@ -561,7 +561,7 @@ ms.locfileid: "37439675"
 
 * Исправлена ошибка [#5936](https://github.com/Azure/azure-cli/issues/5936): не задаются теги `application-gateway create`.
 * Добавлен аргумент `--auth-certs`, который позволяет подключать сертификаты аутентификации для `application-gateway http-settings [create|update]`. [#4910](https://github.com/Azure/azure-cli/issues/4910).
-* Добавлены команды `ddos-protection` для создания планов защиты от атак DDoS. 
+* Добавлены команды `ddos-protection` для создания планов защиты от атак DDoS.
 * В команду `vnet [create|update]` добавлена поддержка `--ddos-protection-plan` для связи виртуальной сети с планом защиты от атак DDoS.
 * Исправлена ошибка с флагом `--disable-bgp-route-propagation` в команде `network route-table [create|update]`.
 * Удалены фиктивные аргументы `--public-ip-address-type` и `--subnet-type` для команды `network lb [create|update]`.
@@ -726,7 +726,7 @@ ms.locfileid: "37439675"
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration get` переименована в `advisor configuration list`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration set` переименована в `advisor configuration update`.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `advisor recommendation generate`. 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `advisor recommendation generate`.
 * Добавлен параметр `--refresh` для команды `advisor recommendation list`.
 * Добавлена команда `advisor recommendation show`.
 
@@ -998,7 +998,7 @@ ms.locfileid: "37439675"
 * Исправлены следующие ошибки для `dns zone export`:
   * Исправлена проблема, когда длинные записи ТХТ неправильно экспортировались.
   * Исправлена проблема, когда записи ТХТ в кавычках неправильно экспортировались без символов экранирования.
-* Исправлена проблема, когда некоторые записи импортировались дважды с помощью `dns zone import`. 
+* Исправлена проблема, когда некоторые записи импортировались дважды с помощью `dns zone import`.
 * Восстановлены команды `vnet-gateway root-cert` и `vnet-gateway revoked-cert`.
 
 ### <a name="profile"></a>Профиль
@@ -1013,7 +1013,7 @@ ms.locfileid: "37439675"
 
 * Исправлена проблема с переносом учетных записей хранения из версии 1 в версию 2.
 * Добавлены отчеты о ходе выполнения всех команд отправки или скачивания.
-* Исправлена ошибка, которая препятствовала использованию параметра аргумента -n с `storage account check-name`.  
+* Исправлена ошибка, которая препятствовала использованию параметра аргумента -n с `storage account check-name`.
 * Добавлен столбец snapshot в табличные выходные данные для `blob [list|show]`.
 * Исправлены ошибки с разными параметрами, которые должны были анализироваться как целые числа.
 

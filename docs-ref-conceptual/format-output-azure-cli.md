@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 016465080e95af3ab0650146e955dd8cffc569e8
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: b402ce89cbf51adb3d521a604e992dd1fb5a42fa
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34305984"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967611"
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Форматы выходных данных для команд Azure CLI 2.0
 
@@ -119,11 +119,11 @@ az vm list --out tsv
 ```
 
 ```output
-None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010 None    None    westus  DemoVM010           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   cbd56d9b-9340-44bc-a722-25f15b578444
-None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm212 None    None    westus  demovm212           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   4bdac85d-c2f7-410f-9907-ca7921d930b4
-None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm213 None    None    westus  demovm213           None    Succeeded   DEMORG1 None            Microsoft.Compute/virtualMachines   2131c664-221a-4b7f-9653-f6d542fbfa34
-None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo001VM None    None    westus  KBDemo001VM         None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachines   14e74761-c17e-4530-a7be-9e4ff06ea74b
-None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo02None    None    westus  KBDemo020           None    Succeeded   RGDEMO001   None            Microsoft.Compute/virtualMachines    36baa9-9b80-48a8-b4a9-854c7a858ece
+None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010    None    None    westus    DemoVM010            None    Succeeded    DEMORG1    None            Microsoft.Compute/virtualMachines    cbd56d9b-9340-44bc-a722-25f15b578444
+None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm212    None    None    westus    demovm212            None    Succeeded    DEMORG1    None            Microsoft.Compute/virtualMachines    4bdac85d-c2f7-410f-9907-ca7921d930b4
+None    None        /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/demovm213    None    None    westus    demovm213            None    Succeeded    DEMORG1    None            Microsoft.Compute/virtualMachines    2131c664-221a-4b7f-9653-f6d542fbfa34
+None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo001VM    None    None    westus    KBDemo001VM            None    Succeeded    RGDEMO001    None            Microsoft.Compute/virtualMachines    14e74761-c17e-4530-a7be-9e4ff06ea74b
+None    None        /subscriptions/.../resourceGroups/RGDEMO001/providers/Microsoft.Compute/virtualMachines/KBDemo02None    None    westus    KBDemo020            None    Succeeded    RGDEMO001    None            Microsoft.Compute/virtualMachines    36baa9-9b80-48a8-b4a9-854c7a858ece
 ```
 
 В следующем примере показано, как выходные данные `tsv` можно передать в другие команды UNIX для получения более конкретных данных. Команда `grep` выбирает элементы, содержащие текст "RGD", а затем команда `cut` выбирает значения восьмого поля (разделенные знаками табуляции) для отображения имени виртуальной машины в выходных данных.
@@ -141,7 +141,7 @@ KBDemo020
 
 ## <a name="set-the-default-output-format"></a>Настройка формата вывода по умолчанию
 
-Вы можете использовать интерактивную команду `az configure`, чтобы настроить окружение и выбрать параметры по умолчанию для форматов выходных данных. Формат выходных данных по умолчанию — `json`. 
+Вы можете использовать интерактивную команду `az configure`, чтобы настроить окружение и выбрать параметры по умолчанию для форматов выходных данных. Формат выходных данных по умолчанию — `json`.
 
 ```azurecli-interactive
 az configure
