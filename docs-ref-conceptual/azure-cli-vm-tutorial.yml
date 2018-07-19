@@ -7,7 +7,7 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: azurecli
-  ms.date: 02/08/2018
+  ms.date: 07/09/2018
   ms.author: sttramer
   author: sptramer
   manager: carmonm
@@ -16,12 +16,12 @@ metadata:
   ms.prod: azure-cli
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 3cae102aee82a4c7f54dd9507ccace1847bbcce1
-  ms.sourcegitcommit: ae72b6c8916aeb372a92188090529037e63930ba
+  ms.openlocfilehash: 1e3a780306e4570205bc29531bcffa089426aab9
+  ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 04/28/2018
-  ms.locfileid: "32044236"
+  ms.lasthandoff: 07/11/2018
+  ms.locfileid: "38229259"
 items:
 - durationInMinutes: 1
   content: >-
@@ -33,8 +33,8 @@ items:
 
     Используйте клавиши __CTRL+SHIFT+V__ (__CMD+SHIFT+V__ в macOS), чтобы вставить текст руководства в Azure Cloud Shell.
 - durationInMinutes: 1
-  title: Вход в систему
-  content: "Если вы используете локальную установку CLI, вам нужно войти, прежде чем выполнять какие-либо действия.\n\n```azurecli\naz login\n```\n\nВыполните вход, следуя инструкциям в окне терминала. "
+  title: Вход
+  content: "Если вы используете локальную установку CLI, вам нужно войти в систему, прежде чем выполнять какие-либо действия.\n\n```azurecli\naz login\n```\n\nВыполните аутентификацию, следуя инструкциям в окне терминала. "
 - durationInMinutes: 1
   title: Создание группы ресурсов
   content: >-
@@ -140,7 +140,7 @@ items:
 
     * Дополнительные сведения о [запросах выходных данных](query-azure-cli.md).
 
-    * Дополнительные сведения о [входе и авторизации](authenticate-azure-cli.md).
+    * Ознакомьтесь с дополнительными сведениями об [авторизации в Azure](authenticate-azure-cli.md).
 
 
     ### <a name="other-useful-documentation"></a>Другая полезная документация

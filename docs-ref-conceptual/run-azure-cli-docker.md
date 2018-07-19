@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 0eb3694c8dcb085e1aeb8cde54a21ac16157b26b
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: 65d8140bd12a260c127efa2adb064c2f9294810b
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439840"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967781"
 ---
 # <a name="run-azure-cli-20-in-a-docker-container"></a>Запуск Azure CLI 2.0 в контейнере Docker
 
@@ -30,7 +30,7 @@ Docker можно использовать для запуска изолиро�
 
 > [!NOTE]
 > Если вы хотите взять ключи SSH из среды пользователя, можно использовать `-v ${HOME}:/root`, чтобы подключить $HOME как `/root`.
-
+>
 > ```bash
 > docker run -it -v ${HOME}:/root microsoft/azure-cli
 > ```
@@ -39,8 +39,7 @@ CLI устанавливается в образ как команда `az` в �
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
-
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="update-docker-image"></a>Обновление образа Docker
 

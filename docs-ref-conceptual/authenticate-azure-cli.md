@@ -1,34 +1,34 @@
 ---
-title: Вход с помощью Azure CLI 2.0
+title: Вход с помощью Azure CLI 2.0
 description: Интерактивный вход с помощью Azure CLI 2.0 или вход с использованием локальных учетных данных
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/13/2018
+ms.date: 07/09/2018
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: bbd64458b49d3e6c6a533a489d5c8105f364d3d7
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: a0e05b3306cc273486b1b5fc887ceedbf78cb779
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439879"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967764"
 ---
-# <a name="log-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
+# <a name="sign-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
 
-Используя Azure CLI, можно входить и выполнять проверку подлинности несколькими способами. Проще всего войти в интерактивном режиме из браузера, Azure Cloud Shell или команды `az login`.
+Используя Azure CLI, можно выполнять аутентификацию несколькими способами. Проще всего войти в интерактивном режиме с помощью браузера, Azure Cloud Shell или команды `az login`.
 Рекомендуется использовать субъекты-службы, которые представляют учетные записи с ограниченными разрешениями. Предоставляя только нужные разрешения, необходимые для субъекта-службы, вы можете обеспечить безопасность скриптов службы автоматизации.
 
-Учетные данные являются конфиденциальными и не хранятся локально. Маркер проверки подлинности создается и сохраняется в Azure. После входа в систему маркер для входа остается действительным в течение 14 дней без использования. На этом этапе необходимо пройти повторную аутентификацию.
+Учетные данные являются конфиденциальными и не хранятся локально. Маркер проверки подлинности создается и сохраняется в Azure. После входа в систему маркер аутентификации остается действительным в течение 14 дней без использования. На этом этапе необходимо пройти повторную аутентификацию.
 
 Когда вы войдете, команды интерфейса командной строки будут выполняться в вашей подписке по умолчанию. Если у вас несколько подписок, вы можете [изменить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md).
 
 ## <a name="interactive-sign-in"></a>Интерактивный вход
 
-Метод проверки подлинности, используемый в Azure CLI по умолчанию, — интерактивный вход в веб-браузере.
+Метод проверки подлинности, используемый в Azure CLI по умолчанию, — вход с помощью веб-браузера и маркера доступа.
 
 [!INCLUDE [interactive_login](includes/interactive-login.md)]
 
@@ -45,13 +45,13 @@ az login -u <username> -p <password>
 
 > [!IMPORTANT]
 > Если вы не хотите, чтобы ваш пароль отображался в консоли, и используете `az login` в интерактивном режиме, используйте команду `read -s` в `bash`.
-> 
+>
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS
 > ```
 >
 > В PowerShell же для этого нужно использовать командлет `Read-Host -AsSecureString` и безопасное преобразование строк.
-> 
+>
 > ```powershell
 > $securePass =  Read-Host "Azure password: " -AsSecureString;
 > $AzPass = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass));
@@ -59,15 +59,15 @@ az login -u <username> -p <password>
 > $AzPass = ""
 > ```
 
-## <a name="log-in-with-a-specific-tenant"></a>Вход в определенный клиент
+## <a name="sign-in-with-a-specific-tenant"></a>Вход в определенный клиент
 
-При работе с несколькими клиентами вы можете войти в определенный клиент с помощью аргумента `--tenant`. Значением этого аргумента может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента. Войти можно либо в интерактивном режиме, либо указав свои учетные данные с помощью аргументов `--user` и `--password`. 
+При работе с несколькими клиентами вы можете войти в определенный клиент с помощью аргумента `--tenant`. Значением этого аргумента может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента. Войти можно либо в интерактивном режиме, либо указав свои учетные данные с помощью аргументов `--user` и `--password`.
 
 ```azurecli
 az login --tenant <tenant>
 ```
 
-## <a name="log-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
+## <a name="sign-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
 Субъекты-службы — это учетные записи, не связаны с определенным пользователем. Они предоставляют разрешения, назначаемые с помощью предопределенных ролей. Аутентификация с помощью субъекта-службы лучше всего подходит для создания безопасных скриптов и программ, позволяя применять как ограничения разрешений, так и хранимые локально сведения о статических учетных данных. Дополнительные сведения о субъектах-службах см. в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI ](create-an-azure-service-principal-azure-cli.md).
 
@@ -78,7 +78,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 ```
 
 Значение клиента — это клиент Azure Active Directory, связанный с субъектом-службой. Это может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента.
-Узнать идентификатор объекта клиента для текущего сеанса входа можно с помощью следующей команды:
+Узнать идентификатор объекта клиента для учетной записи, которая сейчас активна, можно с помощью следующей команды:
 
 ```azurecli-interactive
 az account show --query 'tenantId' -o tsv
@@ -86,13 +86,13 @@ az account show --query 'tenantId' -o tsv
 
 > [!IMPORTANT]
 > Если вы не хотите, чтобы ваш пароль отображался в консоли, и используете `az login` в интерактивном режиме, используйте команду `read -s` в `bash`.
-> 
+>
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login --service-principal -u <app-url> -p $AZ_PASS --tenant <tenant>
 > ```
 >
 > В PowerShell же для этого нужно использовать командлет `Read-Host -AsSecureString` и безопасное преобразование строк.
-> 
+>
 > ```powershell
 > $securePass =  Read-Host "Azure password: " -AsSecureString;
 > $AzPass = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePass));

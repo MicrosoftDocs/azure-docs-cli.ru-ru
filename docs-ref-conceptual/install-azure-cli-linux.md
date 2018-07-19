@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: dade772f178ed9fd321ff45727aea991acd6d311
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: 7e73ae8bbbba80bf48c6f01fc1c37a3c32c6eb31
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439641"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967560"
 ---
 # <a name="install-azure-cli-20-on-linux-manually"></a>Установка Azure CLI 2.0 в Linux вручную
 
@@ -39,17 +39,18 @@ ms.locfileid: "37439641"
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-Либо же вы можете скачать скрипт и запустить его локально. Чтобы изменения вступили в силу, может потребоваться перезапустить оболочку. 
+Либо же вы можете скачать скрипт и запустить его локально. Чтобы изменения вступили в силу, может потребоваться перезапустить оболочку.
 
 Запустите Azure CLI с помощью команды `az`. Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 Ниже указаны некоторые распространенные проблемы, возникающие при установке вручную. Если ваш случай не описан в этом разделе, сообщите о проблеме на [сайте GitHub](https://github.com/Azure/azure-cli/issues).
+
 ### <a name="curl-object-moved-error"></a>Ошибка "Объект перемещен" при выполнении команды curl
 
 Если при выполнении команды `curl` появляется сообщение об ошибке относительно параметра `-L` или сообщение об ошибке "Объект перемещен", попробуйте использовать полный URL-адрес вместо URL-адреса перенаправления `aka.ms`:
@@ -86,6 +87,7 @@ hash -r
   rm -r <install location>/lib/azure-cli
   rm <install location>/bin/az
   ```
+
 2. Измените файл `$HOME/.bash_profile`, чтобы удалить следующую строку:
 
   ```text

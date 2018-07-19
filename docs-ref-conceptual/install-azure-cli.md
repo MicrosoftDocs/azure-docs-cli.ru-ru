@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f5923592b465d01e12737211a6eaa5aa2a6ee68a
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: 427ed13d8b853034b263d50cc6b1f0e86eb8b4f9
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439981"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967713"
 ---
 # <a name="install-azure-cli-20"></a>Установка Azure CLI 2.0
 
@@ -26,11 +26,10 @@ Azure CLI 2.0 — это интерфейс командной строки, к�
 * [Установка в macOS](install-azure-cli-macos.md)
 * Установка в Linux или подсистеме Windows для Linux (WSL):
   * [Установка с помощью apt в Debian и Ubuntu](install-azure-cli-apt.md)
-  * [Установка с помощью yum в RHEL, Fedora или CentOS](install-azure-cli-yum.md)
-  * [Установка с помощью zypper в openSUSE или SLE](install-azure-cli-zypper.md)
+  * [Установка с помощью yum в RHEL, Fedora или CentOS](install-azure-cli-yum.md).
+  * [Установка с помощью zypper в openSUSE или SLE](install-azure-cli-zypper.md).
   * [установка из скрипта](install-azure-cli-linux.md).
 * [Выполнение в контейнере Docker](run-azure-cli-docker.md).
 
 > [!NOTE]
 > Если вы используете классическую модель развертывания Azure, [установите Azure CLI 1.0](install-cli-version-1.0.md).
-

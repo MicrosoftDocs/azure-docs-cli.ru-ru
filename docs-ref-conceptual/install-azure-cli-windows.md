@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: d662333f828c65fa709fa622de7de3a18bea58d8
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: e614f0d108cef0702525e033d166e0498a94729f
+ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439842"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38228981"
 ---
 # <a name="install-azure-cli-20-on-windows"></a>Установка Azure CLI 2.0 в Windows
 
@@ -34,7 +34,7 @@ ms.locfileid: "37439842"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="uninstall"></a>Удаление
 

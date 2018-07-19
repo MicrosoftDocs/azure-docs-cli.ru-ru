@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 3f52f1545dc4bad44280c7e58ad17ec2302fd436
-ms.sourcegitcommit: 308f9eb433a05b814999ac404f63d181169fffeb
+ms.openlocfilehash: a0908c5b5bda7ec903b702eecb61eabbbedaf533
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439624"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967849"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
@@ -25,7 +25,7 @@ ms.locfileid: "37439624"
 
 ## <a name="install"></a>Install
 
-1. <a name="install-step-1"/> Измените список источников.
+1. <div id="install-step-1"/>Измените список источников.
 
     ```bash
     AZ_REPO=$(lsb_release -cs)
@@ -33,7 +33,7 @@ ms.locfileid: "37439624"
         sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
-2. <a name="signingKey"></a>Получите ключ подписывания Microsoft.
+2. <div id="signingKey"/>Получите ключ подписывания Microsoft.
 
    ```bash
    curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -53,7 +53,7 @@ ms.locfileid: "37439624"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах входа см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
@@ -113,7 +113,7 @@ sudo apt-key adv --keyserver-options http-proxy=http://<USER>:<PASSWORD>@<PROXY-
 
 > [!WARNING]
 > Ключ подписывания обновлен и заменен в мае 2018 г. Если возникли ошибки с ключом подписывания, убедитесь, что вы [получили ключ подписывания последней версии](#signingKey).
-   
+>
 > [!NOTE]
 > Эта команда позволяет обновить все установленные в системе пакеты, зависимости которых не были изменены.
 > Чтобы обновить только CLI, используйте `apt-get install`.

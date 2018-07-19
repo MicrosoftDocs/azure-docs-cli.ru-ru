@@ -1,6 +1,6 @@
 ---
 title: Управление несколькими облаками с помощью Azure CLI 2.0
-description: Создание, вход и администрирование нескольких облаков с помощью Azure CLI 2.0.
+description: Создание и администрирование нескольких облаков и вход в них с помощью Azure CLI 2.0.
 author: sptramer
 manager: carmonm
 ms.author: sttramer
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 7ccee3a336f4c596f29783a70ba0cd4398e20b95
-ms.sourcegitcommit: 8b4629a42ceecf30c1efbc6fdddf512f4dddfab0
+ms.openlocfilehash: 836bf920adaae7bff8482c697bf105f0d457c658
+ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306188"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38228943"
 ---
 # <a name="managing-multiple-clouds-with-azure-cli-20"></a>Управление несколькими облаками с помощью Azure CLI 2.0
 
@@ -82,7 +82,7 @@ az cloud set --name AzureChinaCloud
 
 > [!IMPORTANT]
 > Если срок действия аутентификации для активации облака истек, необходимо повторно выполнить аутентификацию, прежде чем выполнять другие задачи CLI. Если вы переключаетесь на новое облако впервые, вам также понадобится настроить активную подписку.
-> Инструкции по аутентификации см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md). Сведения об управлении подписками см. в руководстве по [управлению подписками Azure с помощью Azure CLI 2.0](manage-azure-subscriptions-azure-cli.md).
+> Инструкции по проверке подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md). Сведения об управлении подписками см. в руководстве по [управлению подписками Azure с помощью Azure CLI 2.0](manage-azure-subscriptions-azure-cli.md).
 
 ## <a name="register-a-cloud"></a>Регистрация облака
 

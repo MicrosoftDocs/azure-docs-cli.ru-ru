@@ -10,12 +10,12 @@ ms.produdct: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: active-directory
-ms.openlocfilehash: fdc8ffca38a6a581ae63b0518df72f6e09110d07
-ms.sourcegitcommit: 1a38729d6ae93c49137b3d49b6a9ec8a75eff190
+ms.openlocfilehash: f5fdfba785d849b1fd4f5919870ec9c341bb9c7d
+ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36262715"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38967815"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Управление несколькими подписками Azure
 
