@@ -9,14 +9,83 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: b44a387a144b9d7daca8d87309d8a5e1a47b078a
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 8d4f0879a18d2cf99ea7a284155bec86413406f8
+ms.sourcegitcommit: da34d0eecf19c676826bd32ab254a92bd0976124
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967883"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39138242"
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="july-18-2018"></a>18 июля 2018 г.
+
+Версия 2.0.42
+
+### <a name="core"></a>Core
+
+* Добавлена поддержка входа в окно WSL bash из браузера.
+* Добавлен флаг `--force-string` для всех универсальных команд обновления.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Изменены команды show: сообщения об ошибках записываются в журнал, а команды возвращают код выхода 3, если ресурс отсутствует.
+
+### <a name="acr"></a>ACR
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Параметр --no-push в команде acr build сделан обычным флагом.
+* В группу `acr repository` добавлены команды `show` и `update`.
+* Добавлен флаг `--detail` для `show-manifests` и `show-tags`, позволяющий выводить более подробные сведения.
+* Добавлен параметр `--image`, позволяющий получать сведения о сборке или журналы для определенного образа.
+
+### <a name="acs"></a>ACS
+
+* Поведение `az aks create` изменено так, чтобы выдавалась ошибка, если `--max-pods` меньше 5.
+
+### <a name="appservice"></a>AppService
+
+* Добавлена поддержка номеров SKU для PremiumV2.
+
+### <a name="batch"></a>Пакетная служба Azure
+
+* Исправлена ошибка при использовании учетных данных токена в режиме Cloud Shell.
+* Регистр во входных данных JSON теперь не учитывается.
+
+### <a name="batch-ai"></a>Искусственный интеллект пакетной службы
+
+* Исправлена команда `az batchai job exec`.
+
+### <a name="container"></a>Контейнер
+
+* Удалено требование указывать имя пользователя и пароль для реестров, не связанных с dockerhub.
+* Исправлена ошибка, возникающая при создании групп контейнеров из файла YAML.
+
+### <a name="network"></a>Сеть
+
+* В команду `network nic [create|update|delete]` добавлена поддержка параметра `--no-wait`. 
+* Добавлена команда `network nic wait`.
+* Аргумент `--ids` команды `network vnet [subnet|peering] list` объявлен устаревшим.
+* Добавлен флаг `--include-default`, позволяющий включать в выходные данные команды `network nsg rule list` стандартные правила безопасности.  
+
+### <a name="resource"></a>Ресурс
+
+* В команду `group deployment delete` добавлена поддержка параметра `--no-wait`.
+* В команду `deployment delete` добавлена поддержка параметра `--no-wait`.
+* Добавлена команда `deployment wait`.
+* Исправлена проблема, когда для профиля 2017-03-09-profile по ошибке отображались команды `az deployment` для работы с подписками.
+
+### <a name="sql"></a>SQL
+
+* Исправлена ошибка "The provided resource group name ... did not match the name in the Url" (Указанное имя группы ресурсов ... не соответствовало имени в URL-адресе), которая возникала при указании имени эластичного пула для команд `sql db copy` и `sql db replica create`.
+* Разрешена настройка сервера SQL Server по умолчанию с помощью команды `az configure --defaults sql-server=<name>`.
+* Реализованы модули форматирования таблиц для команд `sql server`, `sql server firewall-rule`, `sql list-usages` и `sql show-usage`.
+
+### <a name="storage"></a>Служба хранилища
+
+* В выходные данные команды `storage blob show` добавлено свойство `pageRanges`, которое будет заполняться для страничных BLOB-объектов.
+
+### <a name="vm"></a>ВМ
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. По умолчанию команда `vmss create` теперь использует `Standard_DS1_v2` как размер экземпляра по умолчанию.
+* Добавлена поддержка параметра `--no-wait` для `vm extension [set|delete]` и `vmss extension [set|delete]`.
+* Добавлена команда `vm extension wait`.
 
 ## <a name="july-3-2018"></a>3 июля 2018 г.
 
@@ -470,7 +539,7 @@ ms.locfileid: "38967883"
 
 * Исправлена недопустимая логика обнаружения в URI неуправляемого BLOB-объекта.
 * Добавлена поддержка шифрования диска без предоставления пользователем субъектов-служб.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
 * Добавлена поддержка политики вытеснения для `vmss`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--ids` из:
   * `vm extension list`
