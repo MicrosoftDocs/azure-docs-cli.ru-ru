@@ -136,7 +136,7 @@
     "globalMetadata": {
       "feedback_system": "GitHub",
       "bilingual_type": "hover over",
-      "feedback_github_repo": "Azure/azure-cli.ru-RU",
+      "feedback_github_repo": "Azure/azure-cli.ru-ru",
       "breadcrumb_path": "/cli/azure/breadcrumb/toc.json",
       "keywords": "azure, cli, command line",
       "brand": "azure",
@@ -147,7 +147,7 @@
       "ms.devlang": "azurecli",
       "ms.date": "05/23/2018",
       "showPowerShellPicker": "true",
-"searchScope" : "Azure CLI"
+      "searchScope" : ["Azure"]
     },
     "fileMetadata": {
       "feedback_github_repo": {
