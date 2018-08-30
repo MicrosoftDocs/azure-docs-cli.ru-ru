@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azure-cli
 ms.service: role-based-access-control
-ms.openlocfilehash: 956a1c10c3e4321651df58f86f6f2c21ede5061f
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 3f20892e846bd07f8e97ccf788d05c4305fe3301
+ms.sourcegitcommit: 83826ca154c9f32c6091c63ce4b3e480694ba8d1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967917"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "43144890"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli-20"></a>Создание субъекта-службы Azure с помощью Azure CLI 2.0
 
@@ -122,5 +122,5 @@ az login --service-principal --username APP_ID --tenant TENANT_ID --password PAT
 Если вы забыли учетные данные субъекта-службы, вы можете сбросить их с помощью команды [az ad sp reset-credentials](https://docs.microsoft.com/en-us/cli/azure/ad/sp#az-ad-sp-reset-credentials). Здесь применяются те же параметры и ограничения, как и при создании нового субъекта-службы.
 
 ```azurecli-interactive
-az ad sp reset-credentials --name APP_ID --password NEW_PASSWORD
+az ad sp credential reset --name APP_ID --password NEW_PASSWORD
 ```
