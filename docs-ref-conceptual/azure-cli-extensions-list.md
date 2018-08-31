@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 08/08/2018
+ms.date: 08/13/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 36657d29f6708bc60f7d9386ffa0671a9639edc9
-ms.sourcegitcommit: 772aad0d9696156d6e87fa00e255dfd0b6394d23
+ms.openlocfilehash: 09735708946e40fd0d515bcd43bbf4798c70673d
+ms.sourcegitcommit: 4cf5784b741dd55c0a4240443d3180d8ec83526c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39718037"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43144935"
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Доступные расширения для Azure CLI 2.0
 
@@ -37,6 +37,7 @@ az extension list-available --output table
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Поддержка функций службы 	"Сетка событий Azure" версии 2018-05-01-preview | Yes |
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.0 | Управление пользовательскими каналами ExpressRoute с использованием перекрестного подключения ExpressRoute. |  |
+| [find](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.1.0 | Интеллектуальный запрос для получения сведений CLI. | Yes |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.7 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Yes |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.2 | Поддержка возможностей запросов Azure Log Analytics. | Yes |
