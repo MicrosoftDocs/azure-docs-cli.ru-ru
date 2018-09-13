@@ -12,16 +12,16 @@ metadata:
   author: sptramer
   manager: carmonm
   ms.devlang: azure-cli
-  ms.technology: azure
-  ms.prod: azure-cli
   ms.topic: tutorial
+  ms.prod: azure
+  ms.technology: azure-cli
   clicktale: true
-  ms.openlocfilehash: 1e3a780306e4570205bc29531bcffa089426aab9
-  ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
+  ms.openlocfilehash: e680ad4fa42c22c1f36741e9353af3c9d6ffdcbe
+  ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/11/2018
-  ms.locfileid: "38229259"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44388649"
 items:
 - durationInMinutes: 1
   content: >-
