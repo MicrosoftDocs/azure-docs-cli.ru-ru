@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 08/31/2018
+ms.date: 09/06/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 11125445d09ec8f0c62b1f508093bdfef9ad9e44
-ms.sourcegitcommit: 252e5e1b5d0ab868044a9c03f2c9fefc22d362b4
+ms.openlocfilehash: 24134d9769f7e89afe82f74490c6b49c81c7883f
+ms.sourcegitcommit: 46d4040eae1923c59caaac22aedab303b3116dad
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43380923"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44048754"
 ---
 # <a name="available-extensions-for-the-azure-cli-20"></a>Доступные расширения для Azure CLI 2.0
 
@@ -31,8 +31,8 @@ az extension list-available --output table
 | [aem](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Управление расширениями для улучшенного мониторинга Azure для SAP. |  |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.1 | Поддержка псевдонимов команд. | Yes |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.4.1 | Дополнительные команды для работы с пакетной службой Azure. |  |
-| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.5.1 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
-| [botservice](https://github.com/Azure/azure-cli-extensions) | 0.0.3 | Поддержка функций предварительной версии 2017-12-01 службы Azure Bot | Yes |
+| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.5.2 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
+| [botservice](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Исправления ошибок в собственном командном модуле botservice cli. | Yes |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Поддержка функций службы 	"Сетка событий Azure" версии 2018-05-01-preview | Yes |

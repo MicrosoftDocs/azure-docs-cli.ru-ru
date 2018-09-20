@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 7a50682d549f6383e68128f2c2aef02dc2877a8e
-ms.sourcegitcommit: 83826ca154c9f32c6091c63ce4b3e480694ba8d1
+ms.openlocfilehash: 277d9d3423af4941fb7f7fb57130fa1b7af7d32e
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "43144906"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388343"
 ---
 # <a name="run-azure-cli-20-in-a-docker-container"></a>Запуск Azure CLI 2.0 в контейнере Docker
 
-Docker можно использовать для запуска изолированного контейнера Linux с предварительно установленным Azure CLI версии 2.0. Docker позволяет быстро начать работу с окружением, в котором вы можете поработать с CLI, чтобы решить, подходит ли это средство для вас, либо использовать наш образ как основу для собственного развертывания.
+Docker можно использовать для запуска изолированного контейнера Linux с предварительно установленным Azure CLI версии 2.0. Docker позволяет быстро начать работу, используя изолированную среду для запуска CLI. Этот образ также можно использовать в качестве основы для ваших собственных развертываний.
 
 ## <a name="run-in-a-docker-container"></a>Запуск в контейнере Docker
 

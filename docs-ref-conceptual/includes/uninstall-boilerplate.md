@@ -2,13 +2,13 @@
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/16/2018
+ms.date: 09/07/2018
 ms.topic: include
-ms.openlocfilehash: 24127042e7c44071616d46c967c84fb648f5e353
-ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
+ms.openlocfilehash: c0543b11c83a84479197f0b40b330dabeea2af8e
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38229310"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388666"
 ---
-Нам будет очень жаль, если вы решите удалить Azure CLI. Перед удалением воспользуйтесь командой `az feedback`, чтобы оставить отзыв с описанием причин вашего решения и предложениями по улучшению CLI. Наша цель — исправить все ошибки Azure CLI и сделать его удобным для пользователей. Если возникнет ошибка, мы будем признательны, если вы [сообщите о ней на GitHub](https://github.com/Azure/azure-cli/issues).
+Нам будет очень жаль, если вы решите удалить Azure CLI. Перед удалением воспользуйтесь командой `az feedback`, чтобы сообщить нам, что можно улучшить или исправить. Наша цель — исправить все ошибки Azure CLI и сделать его удобным для пользователей. Если вы нашли ошибку, мы будем признательны, если вы [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).

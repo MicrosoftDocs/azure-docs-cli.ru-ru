@@ -4,22 +4,22 @@ description: Использование Azure CLI 2.0 в интерактивн�
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/06/2017
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1ee7da8dfdde402d4d536f7ab4bb0599a8f3fa1d
-ms.sourcegitcommit: fb3fed8701aff6c46af856e8fdc3e56ff9a678bc
+ms.openlocfilehash: f07689a323314c076f1eb2a8844875d9543d4b2e
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38229198"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388581"
 ---
 # <a name="interactive-azure-cli-20"></a>Интерактивный Azure CLI 2.0
 
 Azure CLI 2.0 можно использовать в интерактивном режиме, выполнив команду `az interactive`.
-Она позволяет вызвать интерактивную оболочку, в которой команды завершаются автоматически и предоставляется доступ к описанию команд и их параметров, а также к примерам команд.
+В этом режиме открывается интерактивная оболочка с функцией автозавершения, описаниями команд и примерами.
 
 ![Интерактивный режим](./media/interactive-azure-cli/webapp-create.png)
 

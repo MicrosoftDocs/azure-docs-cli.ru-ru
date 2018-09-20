@@ -4,17 +4,17 @@ description: Установка Azure CLI 1.0 на компьютерах Mac 
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 03/20/2017
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 5f185e02217d6a3b54a9c252825c0f3fed3ab09e
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: dd2d8658819c03742ae65c639717837ca940659e
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967679"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388615"
 ---
 # <a name="install-the-azure-cli-10"></a>Установка Azure CLI 1.0
 
@@ -67,7 +67,7 @@ npm install -g <path to downloaded tar file>
 
 ## <a name="option-3-use-a-docker-container"></a>Вариант 3. Использование контейнера Docker
 
-Если вы настроили компьютер в качестве узла [Docker](https://docs.docker.com/engine/understanding-docker/), то можете запустить последнюю версию Azure CLI 1.0 в контейнере Docker. Выполните следующую команду (в системах Linux для выполнения команды npm может потребоваться команда **sudo**):
+Если вы настроили компьютер в качестве узла [Docker](https://docs.docker.com/engine/understanding-docker/), то можете запустить последнюю версию Azure CLI 1.0 в контейнере Docker. Выполните команду (в дистрибутивах Linux может потребоваться использование **sudo**):
 
 ```bash
 docker run -it microsoft/azure-cli:0.10.17
@@ -75,7 +75,7 @@ docker run -it microsoft/azure-cli:0.10.17
 
 ## <a name="run-azure-cli-10-commands"></a>Выполнение команд Azure CLI 1.0
 
-После установки Azure CLI 1.0 команду **azure** можно выполнить в любом пользовательском интерфейсе командной строки (Bash, терминале, командной строке и т. д.). Например, чтобы выполнить команду справки, введите следующее:
+После установки Azure CLI 1.0 выполните команду **azure** в интерфейсе командной строки. Например, выполните команду help:
 
 ```azurecli
 azure help
@@ -88,13 +88,13 @@ azure help
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
-Чтобы просмотреть версию установленного интерфейса Azure CLI 1.0, введите следующую команду.
+Чтобы просмотреть версию установленного пакета Azure CLI 1.0, введите следующую команду:
 
 ```azurecli
 azure --version
 ```
 
-Теперь все готово к работе. Чтобы получить доступ ко всем командам интерфейса командной строки для работы с ресурсами, [подключитесь к подписке Azure из интерфейса командной строки Azure](/cli/azure/authenticate-azure-cli).
+Для доступа ко всем командам CLI [подключитесь к своей подписке Azure из Azure CLI](/cli/azure/authenticate-azure-cli).
 
 > [!NOTE]
 > При первом использовании Azure CLI появится сообщение с вопросом, следует ли разрешить корпорации Майкрософт собирать сведения об использовании. Участие является добровольным. Если вы согласились участвовать в этой программе, сбор сведений можно остановить в любой момент, выполнив команду `azure telemetry --disable`. Чтобы включить участие в любой момент, выполните команду `azure telemetry --enable`.
@@ -130,8 +130,8 @@ echo 'source ~/azure.completion.sh' >> ~/.bash_profile
 * Для того чтобы получить дополнительные сведения об интерфейсе командной строки Azure, скачать исходный код, сообщить о проблемах или принять участие в проекте, зайдите в [репозиторий GitHub для интерфейса командной строки Azure](https://github.com/azure/azure-xplat-cli).
 * Если у вас возникли вопросы об использовании интерфейса командной строки Azure или платформы Azure, посетите [форумы Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurescripting).
 
-[mac-installer]: http://aka.ms/mac-azure-cli
-[windows-installer]: http://aka.ms/webpi-azure-cli
-[linux-installer]: http://aka.ms/linux-azure-cli
+[mac-installer]: https://aka.ms/mac-azure-cli
+[windows-installer]: https://aka.ms/webpi-azure-cli
+[linux-installer]: https://aka.ms/linux-azure-cli
 [cliasm]: /cli/azure/get-started-with-az-cli2
 [cliarm]: ./virtual-machines/azure-cli-arm-commands.md

@@ -4,21 +4,21 @@ description: Как установить Azure CLI 2.0 с помощью apt
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/24/2018
+ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: a0908c5b5bda7ec903b702eecb61eabbbedaf533
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: 88b4570f62858ec1e12898aea51a5dbce6d677b5
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967849"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388428"
 ---
 # <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
 
-Если вы используете дистрибутив, который поставляется с `apt`, например Ubuntu или Debian, можно применить 64-разрядный пакет для Azure CLI. Этот пакет протестирован со следующими версиями:
+Если вы используете дистрибутив, включающий `apt`, например Ubuntu ил Debian, доступен 64-разрядный пакет Azure CLI. Этот пакет протестирован со следующими версиями:
 
 * Ubuntu trusty, xenial, artful и bionic
 * Debian wheezy, jessie и stretch
@@ -57,7 +57,7 @@ ms.locfileid: "38967849"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Ниже описаны некоторые распространенные проблемы при установке с помощью `apt`. Если ваш случай не описан в этом разделе, сообщите о проблеме на [сайте GitHub](https://github.com/Azure/azure-cli/issues).
+Ниже описаны некоторые распространенные проблемы при установке с помощью `apt`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
 
 ### <a name="lsbrelease-fails-with-command-not-found"></a>Выполнение lsb_release завершается ошибкой "Команда не найдена"
 
@@ -67,7 +67,7 @@ ms.locfileid: "38967849"
 -bash: lsb_release: command not found
 ```
 
-Ошибка возникает из-за отсутствия установки lsb_release. Ошибку можно устранить, установив пакет `lsb-release`.
+Эта ошибка возникла, так как команда `lsb_release` не установлена. Ошибку можно устранить, установив пакет `lsb-release`.
 
 ```bash
 sudo apt-get install lsb-release
@@ -101,7 +101,7 @@ sudo apt-get install dirmngr
 sudo apt-key adv --keyserver-options http-proxy=http://<USER>:<PASSWORD>@<PROXY-HOST>:<PROXY-PORT>/ --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
 ```
 
-Если вы не знаете, есть ли у вас прокси-сервер, обратитесь к своему системному администратору. Если для прокси-сервера не требуется имя для входа, не указывайте имя пользователя, пароль и маркер `@`.
+Чтобы определить, используется ли у вас прокси-сервер, обратитесь к своему системному администратору. Если прокси-сервер не требует имени для входа, не указывайте имя пользователя, пароль и маркер `@`.
 
 ## <a name="update"></a>Блокировка изменений
 
