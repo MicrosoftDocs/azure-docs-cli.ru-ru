@@ -4,97 +4,97 @@ description: Как установить Azure CLI 2.0 в Linux вручную
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 01/29/2018
+ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 7e73ae8bbbba80bf48c6f01fc1c37a3c32c6eb31
-ms.sourcegitcommit: 64f2c628e83d687d0e172c01f13d71c8c39a8040
+ms.openlocfilehash: c5c7ea61a35e915760081897e88d8c43b80919e0
+ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38967560"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44388360"
 ---
-# <a name="install-azure-cli-20-on-linux-manually"></a><span data-ttu-id="c2366-103">Установка Azure CLI 2.0 в Linux вручную</span><span class="sxs-lookup"><span data-stu-id="c2366-103">Install Azure CLI 2.0 on Linux manually</span></span>
+# <a name="install-azure-cli-20-on-linux-manually"></a><span data-ttu-id="df901-103">Установка Azure CLI 2.0 в Linux вручную</span><span class="sxs-lookup"><span data-stu-id="df901-103">Install Azure CLI 2.0 on Linux manually</span></span>
 
-<span data-ttu-id="c2366-104">Если в вашем диспетчере пакетов нет доступного пакета для Azure CLI, вы всегда можете установить CLI вручную, запустив скрипт установки.</span><span class="sxs-lookup"><span data-stu-id="c2366-104">If you do not have a package for the Azure CLI available on your distribution, you can always install the CLI manually by running an installation script.</span></span>
+<span data-ttu-id="df901-104">Если для вашего дистрибутива отсутствует пакет Azure CLI, установите CLI вручную, выполнив скрипт.</span><span class="sxs-lookup"><span data-stu-id="df901-104">If there's no package for the Azure CLI for you your distribution, install the CLI manually by running a script.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c2366-105">Настоятельно рекомендуем использовать для CLI диспетчер пакетов.</span><span class="sxs-lookup"><span data-stu-id="c2366-105">It's strongly recommend that you use a package manager for the CLI.</span></span> <span data-ttu-id="c2366-106">Диспетчер пакетов гарантирует, что вы получите последние обновления, и обеспечит стабильность компонентов CLI.</span><span class="sxs-lookup"><span data-stu-id="c2366-106">A package manager makes sure you always get the latest updates, and guarantees the stability of CLI components.</span></span> <span data-ttu-id="c2366-107">Перед установкой вручную проверьте, есть ли пакет для вашего дистрибутива.</span><span class="sxs-lookup"><span data-stu-id="c2366-107">Check and see if there is a package for your distribution before installing manually.</span></span>
+> <span data-ttu-id="df901-105">Настоятельно рекомендуется устанавливать CLI с помощью диспетчера пакетов.</span><span class="sxs-lookup"><span data-stu-id="df901-105">It's strongly recommend to install the CLI with a package manager.</span></span> <span data-ttu-id="df901-106">Диспетчер пакетов гарантирует, что вы получите последние обновления, и обеспечит стабильность компонентов CLI.</span><span class="sxs-lookup"><span data-stu-id="df901-106">A package manager makes sure you always get the latest updates, and guarantees the stability of CLI components.</span></span> <span data-ttu-id="df901-107">Перед установкой вручную проверьте, есть ли пакет для вашего дистрибутива.</span><span class="sxs-lookup"><span data-stu-id="df901-107">Check and see if there is a package for your distribution before installing manually.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="c2366-108">предварительным требованиям</span><span class="sxs-lookup"><span data-stu-id="c2366-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="df901-108">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="df901-108">Prerequisites</span></span>
 
-<span data-ttu-id="c2366-109">Для установки CLI в системе должно быть следующее программное обеспечение:</span><span class="sxs-lookup"><span data-stu-id="c2366-109">In order to install the CLI, you need the following software available on your system:</span></span>
+<span data-ttu-id="df901-109">Для использования CLI требуется следующее ПО:</span><span class="sxs-lookup"><span data-stu-id="df901-109">The CLI requires the following software:</span></span>
 
-* [<span data-ttu-id="c2366-110">Python 2.7 или Python 3.x</span><span class="sxs-lookup"><span data-stu-id="c2366-110">Python 2.7 or Python 3.x</span></span>](https://www.python.org/downloads/)
-* [<span data-ttu-id="c2366-111">libffi</span><span class="sxs-lookup"><span data-stu-id="c2366-111">libffi</span></span>](https://sourceware.org/libffi/)
-* [<span data-ttu-id="c2366-112">OpenSSL 1.0.2</span><span class="sxs-lookup"><span data-stu-id="c2366-112">OpenSSL 1.0.2</span></span>](https://www.openssl.org/source/)
+* [<span data-ttu-id="df901-110">Python 2.7 или Python 3.x</span><span class="sxs-lookup"><span data-stu-id="df901-110">Python 2.7 or Python 3.x</span></span>](https://www.python.org/downloads/)
+* [<span data-ttu-id="df901-111">libffi</span><span class="sxs-lookup"><span data-stu-id="df901-111">libffi</span></span>](https://sourceware.org/libffi/)
+* [<span data-ttu-id="df901-112">OpenSSL 1.0.2</span><span class="sxs-lookup"><span data-stu-id="df901-112">OpenSSL 1.0.2</span></span>](https://www.openssl.org/source/)
 
-## <a name="install-or-update"></a><span data-ttu-id="c2366-113">Установка или обновление</span><span class="sxs-lookup"><span data-stu-id="c2366-113">Install or update</span></span>
+## <a name="install-or-update"></a><span data-ttu-id="df901-113">Установка или обновление</span><span class="sxs-lookup"><span data-stu-id="df901-113">Install or update</span></span>
 
-<span data-ttu-id="c2366-114">При установке или обновлении CLI необходимо выполнить полную установку.</span><span class="sxs-lookup"><span data-stu-id="c2366-114">Whether you are installing or updating the CLI, you need to perform a full installation.</span></span> <span data-ttu-id="c2366-115">При наличии необходимых компонентов установите CLI, выполнив команду `curl`.</span><span class="sxs-lookup"><span data-stu-id="c2366-115">Once you have the prerequisites, you can install the CLI by running `curl`.</span></span>
+<span data-ttu-id="df901-114">Для установки и обновления CLI требуется повторный запуск установочного скрипта.</span><span class="sxs-lookup"><span data-stu-id="df901-114">Both installing and updating the CLI requires re-running the install script.</span></span> <span data-ttu-id="df901-115">Установите CLI, выполнив `curl`.</span><span class="sxs-lookup"><span data-stu-id="df901-115">Install the CLI by running `curl`.</span></span>
 
 ```bash
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-<span data-ttu-id="c2366-116">Либо же вы можете скачать скрипт и запустить его локально.</span><span class="sxs-lookup"><span data-stu-id="c2366-116">You can also download the script and run it locally instead.</span></span> <span data-ttu-id="c2366-117">Чтобы изменения вступили в силу, может потребоваться перезапустить оболочку.</span><span class="sxs-lookup"><span data-stu-id="c2366-117">You may have to restart your shell in order for changes to take effect.</span></span>
+<span data-ttu-id="df901-116">Скрипт также можно скачать и выполнить на локальном компьютере.</span><span class="sxs-lookup"><span data-stu-id="df901-116">The script can also be downloaded and run locally.</span></span> <span data-ttu-id="df901-117">Чтобы изменения вступили в силу, может потребоваться перезапустить оболочку.</span><span class="sxs-lookup"><span data-stu-id="df901-117">You may have to restart your shell in order for changes to take effect.</span></span>
 
-<span data-ttu-id="c2366-118">Запустите Azure CLI с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="c2366-118">You can then run the Azure CLI with the `az` command.</span></span> <span data-ttu-id="c2366-119">Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).</span><span class="sxs-lookup"><span data-stu-id="c2366-119">To sign in, use [az login](/cli/azure/reference-index#az-login) command.</span></span>
+<span data-ttu-id="df901-118">Запустите Azure CLI с помощью команды `az`.</span><span class="sxs-lookup"><span data-stu-id="df901-118">You can then run the Azure CLI with the `az` command.</span></span> <span data-ttu-id="df901-119">Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).</span><span class="sxs-lookup"><span data-stu-id="df901-119">To sign in, use [az login](/cli/azure/reference-index#az-login) command.</span></span>
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-<span data-ttu-id="c2366-120">Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).</span><span class="sxs-lookup"><span data-stu-id="c2366-120">To learn more about different authentication methods, see [Sign in with Azure CLI 2.0](authenticate-azure-cli.md).</span></span>
+<span data-ttu-id="df901-120">Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).</span><span class="sxs-lookup"><span data-stu-id="df901-120">To learn more about different authentication methods, see [Sign in with Azure CLI 2.0](authenticate-azure-cli.md).</span></span>
 
-## <a name="troubleshooting"></a><span data-ttu-id="c2366-121">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="c2366-121">Troubleshooting</span></span>
+## <a name="troubleshooting"></a><span data-ttu-id="df901-121">Устранение неполадок</span><span class="sxs-lookup"><span data-stu-id="df901-121">Troubleshooting</span></span>
 
-<span data-ttu-id="c2366-122">Ниже указаны некоторые распространенные проблемы, возникающие при установке вручную.</span><span class="sxs-lookup"><span data-stu-id="c2366-122">Here are some common problems seen during a manual installation.</span></span> <span data-ttu-id="c2366-123">Если ваш случай не описан в этом разделе, сообщите о проблеме на [сайте GitHub](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="c2366-123">If your issue is not listed here, please [file an issue on github](https://github.com/Azure/azure-cli/issues).</span></span>
+<span data-ttu-id="df901-122">Ниже указаны некоторые распространенные проблемы, возникающие при установке вручную.</span><span class="sxs-lookup"><span data-stu-id="df901-122">Here are some common problems seen during a manual installation.</span></span> <span data-ttu-id="df901-123">Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).</span><span class="sxs-lookup"><span data-stu-id="df901-123">If you experience a problem not covered here, [file an issue on github](https://github.com/Azure/azure-cli/issues).</span></span>
 
-### <a name="curl-object-moved-error"></a><span data-ttu-id="c2366-124">Ошибка "Объект перемещен" при выполнении команды curl</span><span class="sxs-lookup"><span data-stu-id="c2366-124">curl "Object Moved" error</span></span>
+### <a name="curl-object-moved-error"></a><span data-ttu-id="df901-124">Ошибка "Объект перемещен" при выполнении команды curl</span><span class="sxs-lookup"><span data-stu-id="df901-124">curl "Object Moved" error</span></span>
 
-<span data-ttu-id="c2366-125">Если при выполнении команды `curl` появляется сообщение об ошибке относительно параметра `-L` или сообщение об ошибке "Объект перемещен", попробуйте использовать полный URL-адрес вместо URL-адреса перенаправления `aka.ms`:</span><span class="sxs-lookup"><span data-stu-id="c2366-125">If you get an error from `curl` related to the `-L` parameter, or an error message including the text "Object Moved", try using the full URL instead of the `aka.ms` redirect:</span></span>
+<span data-ttu-id="df901-125">Если при выполнении команды `curl` появляется сообщение об ошибке относительно параметра `-L` или сообщение об ошибке "Объект перемещен", попробуйте использовать полный URL-адрес вместо URL-адреса перенаправления `aka.ms`:</span><span class="sxs-lookup"><span data-stu-id="df901-125">If you get an error from `curl` related to the `-L` parameter, or an error message including the text "Object Moved", try using the full URL instead of the `aka.ms` redirect:</span></span>
 
 ```bash
 curl https://azurecliprod.blob.core.windows.net/install | bash
 ```
 
-### <a name="az-command-not-found"></a><span data-ttu-id="c2366-126">Команда `az` не найдена</span><span class="sxs-lookup"><span data-stu-id="c2366-126">`az` command not found</span></span>
+### <a name="az-command-not-found"></a><span data-ttu-id="df901-126">Команда `az` не найдена</span><span class="sxs-lookup"><span data-stu-id="df901-126">`az` command not found</span></span>
 
-<span data-ttu-id="c2366-127">Если не удается выполнить эту команду после установки и используется `bash` или `zsh`, очистите кэш хэша команд в оболочке.</span><span class="sxs-lookup"><span data-stu-id="c2366-127">If you can't run the command after installation and using `bash` or `zsh`, clear your shell's command hash cache.</span></span> <span data-ttu-id="c2366-128">Выполнить</span><span class="sxs-lookup"><span data-stu-id="c2366-128">Run</span></span>
+<span data-ttu-id="df901-127">Если не удается выполнить эту команду после установки и используется `bash` или `zsh`, очистите кэш хэша команд в оболочке.</span><span class="sxs-lookup"><span data-stu-id="df901-127">If you can't run the command after installation and using `bash` or `zsh`, clear your shell's command hash cache.</span></span> <span data-ttu-id="df901-128">Выполнить</span><span class="sxs-lookup"><span data-stu-id="df901-128">Run</span></span>
 
 ```bash
 hash -r
 ```
 
-<span data-ttu-id="c2366-129">и проверьте, будет ли устранена проблема.</span><span class="sxs-lookup"><span data-stu-id="c2366-129">and check if the problem is resolved.</span></span>
+<span data-ttu-id="df901-129">и проверьте, будет ли устранена проблема.</span><span class="sxs-lookup"><span data-stu-id="df901-129">and check if the problem is resolved.</span></span>
 
-<span data-ttu-id="c2366-130">Кроме того, проблема может возникнуть, если вы не перезапустили оболочку после установки.</span><span class="sxs-lookup"><span data-stu-id="c2366-130">The issue can also occur if you did not restart your shell after installation.</span></span> <span data-ttu-id="c2366-131">Убедитесь, что команда `az` добавлена в переменную `$PATH`.</span><span class="sxs-lookup"><span data-stu-id="c2366-131">Make sure that the location of the `az` command is in your `$PATH`.</span></span> <span data-ttu-id="c2366-132">Расположение команды `az`:</span><span class="sxs-lookup"><span data-stu-id="c2366-132">The location of the `az` command is</span></span>
+<span data-ttu-id="df901-130">Кроме того, проблема может возникнуть, если вы не перезапустили оболочку после установки.</span><span class="sxs-lookup"><span data-stu-id="df901-130">The issue can also occur if you didn't restart your shell after installation.</span></span> <span data-ttu-id="df901-131">Убедитесь, что команда `az` добавлена в переменную `$PATH`.</span><span class="sxs-lookup"><span data-stu-id="df901-131">Make sure that the location of the `az` command is in your `$PATH`.</span></span> <span data-ttu-id="df901-132">Расположение команды `az`:</span><span class="sxs-lookup"><span data-stu-id="df901-132">The location of the `az` command is</span></span>
 
 ```bash
 <install path>/bin
 ```
 
-## <a name="uninstall"></a><span data-ttu-id="c2366-133">Удаление</span><span class="sxs-lookup"><span data-stu-id="c2366-133">Uninstall</span></span>
+## <a name="uninstall"></a><span data-ttu-id="df901-133">Удаление</span><span class="sxs-lookup"><span data-stu-id="df901-133">Uninstall</span></span>
 
 [!INCLUDE [uninstall-boilerplate.md](includes/uninstall-boilerplate.md)]
 
-<span data-ttu-id="c2366-134">Удалите CLI, удалив файлы непосредственно из расположения, выбранного при установке.</span><span class="sxs-lookup"><span data-stu-id="c2366-134">Uninstall the CLI by directly deleting the files from the location chosen at the time of installation.</span></span> <span data-ttu-id="c2366-135">Расположение установки по умолчанию — `$HOME`.</span><span class="sxs-lookup"><span data-stu-id="c2366-135">The default install location is `$HOME`.</span></span>
+<span data-ttu-id="df901-134">Удалите CLI, удалив файлы непосредственно из расположения, выбранного при установке.</span><span class="sxs-lookup"><span data-stu-id="df901-134">Uninstall the CLI by directly deleting the files from the location chosen at the time of installation.</span></span> <span data-ttu-id="df901-135">Расположение установки по умолчанию — `$HOME`.</span><span class="sxs-lookup"><span data-stu-id="df901-135">The default install location is `$HOME`.</span></span>
 
-1. <span data-ttu-id="c2366-136">Удалите установленные файлы CLI.</span><span class="sxs-lookup"><span data-stu-id="c2366-136">Remove the installed CLI files.</span></span>
+1. <span data-ttu-id="df901-136">Удалите установленные файлы CLI.</span><span class="sxs-lookup"><span data-stu-id="df901-136">Remove the installed CLI files.</span></span>
 
   ```bash
   rm -r <install location>/lib/azure-cli
   rm <install location>/bin/az
   ```
 
-2. <span data-ttu-id="c2366-137">Измените файл `$HOME/.bash_profile`, чтобы удалить следующую строку:</span><span class="sxs-lookup"><span data-stu-id="c2366-137">Modify your `$HOME/.bash_profile` file to remove the following line:</span></span>
+2. <span data-ttu-id="df901-137">Измените файл `$HOME/.bash_profile`, чтобы удалить следующую строку:</span><span class="sxs-lookup"><span data-stu-id="df901-137">Modify your `$HOME/.bash_profile` file to remove the following line:</span></span>
 
   ```text
   <install location>/lib/azure-cli/az.completion
   ```
 
-3. <span data-ttu-id="c2366-138">При использовании `bash` или `zsh` перезагрузите кэш команд в оболочке.</span><span class="sxs-lookup"><span data-stu-id="c2366-138">If using `bash` or `zsh`, reload your shell's command cache.</span></span>
+3. <span data-ttu-id="df901-138">При использовании `bash` или `zsh` перезагрузите кэш команд в оболочке.</span><span class="sxs-lookup"><span data-stu-id="df901-138">If using `bash` or `zsh`, reload your shell's command cache.</span></span>
 
   ```bash
   hash -r
