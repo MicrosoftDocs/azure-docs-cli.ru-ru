@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 07a5e9d913257d6aeb20a68263a6256ffadbe627
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 1430d817a7e6c10a8f8021cf9d763f62d560ba71
+ms.sourcegitcommit: 8318ce761c279afa4cd45a81a58d83fc38c616bc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388513"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45561564"
 ---
 # <a name="output-formats-for-azure-cli-20-commands"></a>Форматы выходных данных для команд Azure CLI 2.0
 
@@ -24,6 +24,7 @@ Azure CLI 2.0 использует JSON в качестве формата вы�
 ---------|-------------------------------
 `json`   | Строка в формате JSON. Это значение по умолчанию.
 `jsonc`  | Выделенная цветом строка JSON.
+`yaml`   | YAML, альтернативный JSON машиночитаемый формат.
 `table`  | Таблица ASCII с ключами в качестве заголовков столбцов.
 `tsv`    | Значения, разделенные табуляцией, без ключей.
 
@@ -63,6 +64,36 @@ az vm list --output json
           ...
           ...
 ]
+```
+
+## <a name="yaml-output-format"></a>Формат выходных данных YAML
+
+`yaml`Выходные данные отображаются в [YAML](http://yaml.org/), формате сериализации данных обычного текста. YAML легче для восприятия, чем JSON, и сопоставим с ним. Входные данные конфигурации некоторых приложений и команд CLI задаются в формате YAML, а не JSON.
+
+```azurecli-interactive
+az vm list --out yaml
+```
+
+Следующие выходные данные содержат некоторые поля, которые исключены для краткости, и замененные сведения для идентификации.
+
+```yaml
+- availabilitySet: null
+  diagnosticsProfile: null
+  hardwareProfile:
+    vmSize: Standard_DS1_v2
+  id: /subscriptions/.../resourceGroups/DEMORG1/providers/Microsoft.Compute/virtualMachines/DemoVM010
+  identity: null
+  instanceView: null
+  licenseType: null
+  location: westus
+  name: ExampleVM1
+  networkProfile:
+    networkInterfaces:
+    - id: /subscriptions/.../resourceGroups/DemoRG1/providers/Microsoft.Network/networkInterfaces/DemoVM010Nic
+      primary: null
+      resourceGroup: DemoRG1
+  ...
+...
 ```
 
 ## <a name="table-output-format"></a>Формат табличных выходных данных
