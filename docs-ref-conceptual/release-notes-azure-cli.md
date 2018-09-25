@@ -4,19 +4,123 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 08/28/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 5d179a49ad64201270be7848a72535b871081125
-ms.sourcegitcommit: c90bc90c9a2b3adf2836d7cfb84951cd3ab51317
+ms.openlocfilehash: f6dd04e088651527b1ac13e719b7fc3c5522b310
+ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43828751"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46470071"
 ---
 # <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+
+## <a name="september-21-2018"></a>21 сентября 2018 г.
+
+Версия 20.46
+
+### <a name="acr"></a>ACR
+* Добавлены команды задач ACR.
+* Добавлена команда быстрого запуска.
+* Группа команд `build-task` не рекомендуется к использованию.
+* Добавлена группа команд `helm` для поддержки управления чартами Helm в ACR.
+* Добавлена поддержка создания идемпотентных элементов для управляемого реестра.
+* Добавлен флаг отсутствия форматирования для отображения журналов сборки.
+
+### <a name="acs"></a>ACS
+* Изменена команда `install-connector` для указания главного полного доменного имени в AKS.
+* Исправлена ошибка при назначении ролей для идентификатора подсети виртуальной сети, если не указан субъект-служба и пропущен шаг назначения ролей.
+
+### <a name="appservice"></a>AppService
+
+* Добавлена поддержка операций управления веб-заданиями (как непрерывных, так и активируемых).
+* Добавлена поддержка свойства fts-state в az webapp config set. Также добавлена поддержка команд az functionapp config set и az functionapp config show.
+* Добавлена возможность использования собственного хранилища для веб-приложений.
+* Добавлена возможность вывода списка удаленных веб-приложений и их восстановления.
+
+### <a name="batch"></a>Пакетная служба Azure
+* Изменена функция добавления задач с помощью `--json-file` для поддержки синтаксиса AddTaskCollectionParameter.
+* Обновлена документация в принятом формате `--json-file`.
+* Добавлен параметр `--max-tasks-per-node-option` для команды `batch pool create`.
+* Изменен режим работы `batch account` на отображение учетной записи, в которую выполнен вход, если не заданы другие параметры.
+
+### <a name="batch-ai"></a>Искусственный интеллект пакетной службы 
+* Исправлен сбой при автоматическом создании учетной записи хранения при выполнении команды `batchai cluster create`.
+
+### <a name="cognitive-services"></a>Cognitive Services
+* Добавлено средство заполнения для аргументов `--sku`, `--kind` и `--location`.
+* Добавлена команда `cognitiveservices account list-usage`.
+* Добавлена команда `cognitiveservices account list-kinds`.
+* Добавлена команда `cognitiveservices account list`.
+* Команда `cognitiveservices list` отмечена как нерекомендуемая.
+* Изменен параметр `--name`, который теперь является необязательным для `cognitiveservices account list-skus`.
+
+### <a name="container"></a>Контейнер
+* Добавлена возможность перезапуска и остановки выполняющейся группы контейнеров.
+* Добавлен параметр `--network-profile` для передачи в сетевой профиль.
+* Добавлены параметры `--subnet` и `--vnet_name` для создания групп контейнеров в виртуальной сети.
+* Изменены табличные выходные данные для отображения состояния группы контейнеров.
+
+### <a name="datalake"></a>Data Lake
+* Добавлены команды для правил виртуальной сети.
+
+### <a name="interactive-shell"></a>Интерактивная оболочка
+* Исправлена ошибка в Windows, связанная со сбоем при выполнении команд.
+* Исправлена проблема с загрузкой команд в интерактивной оболочке из-за использования нерекомендуемых объектов.
+
+### <a name="iot"></a>Интернет вещей
+* Добавлена поддержка маршрутизации Центров Интернета вещей.
+
+### <a name="key-vault"></a>Key Vault
+* Исправлена ошибка импорта ключа в Key Vault для ключей RSA.
+
+### <a name="network"></a>Сеть
+* Добавлены команды `network public-ip prefix` для поддержки операций с префиксами общедоступных IP-адресов.
+* Добавлены команды `network service-endpoint` для поддержки операций с политиками конечной точки службы.
+* Добавлены команды `network lb outbound-rule` для поддержки создания правил для исходящего трафика в Load Balancer (цен. категория "Стандартный").
+* Добавлен параметр `--public-ip-prefix` для `network lb frontend-ip create/update` для поддержки конфигурации IP внешнего интерфейса с помощью префиксов общедоступных IP-адресов.
+* Добавлен параметр `--enable-tcp-reset` для `network lb rule/inbound-nat-rule/inbound-nat-pool create/update`.
+* Добавлен параметр `--disable-outbound-snat` для `network lb rule create/update`.
+* Добавлена возможность использования `network watcher flow-log show/configure` с классическими группами безопасности сети.
+* Добавлена команда `network watcher run-configuration-diagnostic`.
+* Исправлена команда `network watcher test-connectivity` и добавлены свойства `--method`, `--valid-status-codes` и `--headers`.
+* `network express-route create/update`: добавлен флаг `--allow-global-reach`.
+* `network vnet subnet create/update`: добавлена поддержка `--delegation`.
+* Добавлена команда `network vnet subnet list-available-delegations`.
+* `network traffic-manager profile create/update`: добавлена поддержка `--interval`, `--timeout` и `--max-failures` для конфигурации мониторинга. Не рекомендуются к использованию параметры`--monitor-path`, `--monitor-port` и `--monitor-protocol`, которые следует заменить на `--path`, `--port` и `--protocol`.
+* `network lb frontend-ip create/update`: исправлена логика указания метода распределения частных IP-адресов. Если назначается частный IP-адрес, он назначается статически. Если частный IP-адрес не назначается или строка с данными о частных IP-адресах не заполнена, происходит динамическое распределение.
+* `dns record-set * create/update`: добавлена поддержка `--target-resource`.
+* Добавлены команды `network interface-endpoint` для обращения к объектам конечных точек интерфейса.
+* Добавлено `network profile show/list/delete` для частичного управления сетевыми профилями.
+* Добавлено `network express-route peering connection` для управления пиринговыми подключениями через ExpressRoute.
+
+### <a name="rdbms"></a>Реляционная СУБД
+* Добавлена поддержка MariaDB.
+
+### <a name="reservation"></a>резервирование.
+* База данных CosmosDB добавлена в тип перечисления зарезервированных ресурсов.
+* Добавлено свойство имени в модели Patch.
+
+### <a name="manage-app"></a>Управление приложением
+* Исправлена ошибка в `managedapp create --kind MarketPlace`, приводившая к аварийному завершению создания экземпляра управляемого приложения Marketplace.
+* Изменены команды`feature`, действие которых теперь ограничено поддерживаемыми профилями.
+
+### <a name="role"></a>Роль
+* Добавлена функция перечисления членства пользователя в группах.
+
+### <a name="signalr"></a>SignalR
+* Первый выпуск
+
+### <a name="storage"></a>служба хранилища.
+* Добавлен параметр `--auth-mode login` для использования учетных данных пользователя для авторизации в больших двоичных объектах и очереди.
+* Добавлена команда `storage container immutability-policy/legal-hold` для управления неизменяемым хранилищем.
+
+### <a name="vm"></a>ВМ
+* Исправлена ошибка, при которой команда `vm create --generate-ssh-keys` перезаписывала файл закрытого ключа, если отсутствовал файл открытого ключа (#4725, #6780).
+* Добавлена поддержка общей коллекции изображений с помощью команды `az sig`.
 
 ## <a name="august-28-2018"></a>28 августа 2018 г.
 
@@ -72,7 +176,7 @@ ms.locfileid: "43828751"
 
 * Внесено изменение в `provider operation show` для выхода с кодом 3 при отсутствующем ресурсе.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Внесено изменение в `storage share policy show` для выхода с кодом 3 при отсутствующем ресурсе.
 
@@ -146,7 +250,7 @@ ms.locfileid: "43828751"
 
 * Добавлены команды `sql failover-group`.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `storage account show-usage` для запроса параметра `--location` и отображения по регионам.
 * Внесено изменение в параметр `--resource-group` для команд `storage account`, который теперь необязателен.
@@ -204,7 +308,7 @@ ms.locfileid: "43828751"
   *  `--enable-batched-operations` и `--enable-dead-lettering-on-message-expiration` в `queue`;
   *  `--dead-letter-on-filter-exceptions` в `subscriptions`.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Добавлена поддержка скачивания больших файлов с помощью одного подключения.
 * Преобразованы команды `show`, которые ранее отсутствовали: теперь в случае отсутствия ресурса не возвращается код завершения 3.
@@ -214,7 +318,7 @@ ms.locfileid: "43828751"
 * Добавлена поддержка вывода списка групп доступности по подпискам.
 * Добавлена поддержка параметра `StandardSSD_LRS`.
 * Добавлена поддержка групп безопасности приложений при создании масштабируемого набора виртуальных машин.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Изменены `[vm|vmss] create`, `[vm|vmss] identity assign` и `[vm|vmss] identity remove` для вывода пользовательских удостоверений в формате словаря.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены `[vm|vmss] create`, `[vm|vmss] identity assign` и `[vm|vmss] identity remove` для вывода пользовательских удостоверений в формате словаря.
 
 ## <a name="july-18-2018"></a>18 июля 2018 г.
 
@@ -224,11 +328,11 @@ ms.locfileid: "43828751"
 
 * Добавлена поддержка входа в окно WSL bash из браузера.
 * Добавлен флаг `--force-string` для всех универсальных команд обновления.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Изменены команды show: сообщения об ошибках записываются в журнал, а команды возвращают код выхода 3, если ресурс отсутствует.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены команды show: сообщения об ошибках записываются в журнал, а команды возвращают код выхода 3, если ресурс отсутствует.
 
 ### <a name="acr"></a>ACR
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Параметр --no-push в команде acr build сделан обычным флагом.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр --no-push в команде acr build сделан обычным флагом.
 * В группу `acr repository` добавлены команды `show` и `update`.
 * Добавлен флаг `--detail` для `show-manifests` и `show-tags`, позволяющий выводить более подробные сведения.
 * Добавлен параметр `--image`, позволяющий получать сведения о сборке или журналы для определенного образа.
@@ -281,7 +385,7 @@ ms.locfileid: "43828751"
 
 ### <a name="vm"></a>ВМ
 
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. По умолчанию команда `vmss create` теперь использует `Standard_DS1_v2` как размер экземпляра по умолчанию.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] По умолчанию команда `vmss create` теперь использует `Standard_DS1_v2` как размер экземпляра по умолчанию.
 * Добавлена поддержка параметра `--no-wait` для `vm extension [set|delete]` и `vmss extension [set|delete]`.
 * Добавлена команда `vm extension wait`.
 
@@ -737,7 +841,7 @@ ms.locfileid: "43828751"
 
 * Исправлена недопустимая логика обнаружения в URI неуправляемого BLOB-объекта.
 * Добавлена поддержка шифрования диска без предоставления пользователем субъектов-служб.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]. Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
 * Добавлена поддержка политики вытеснения для `vmss`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--ids` из:
   * `vm extension list`
@@ -853,7 +957,7 @@ ms.locfileid: "43828751"
 
 * Добавлены команды `sql elastic-pool op list` и `sql elastic-pool op cancel`.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Улучшены сообщения об ошибках для строк подключения, имеющих неправильный формат.
 
@@ -962,7 +1066,7 @@ ms.locfileid: "43828751"
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр properties из выходных данных `az role assignment [list|show]`.
 * Добавлена поддержка разрешений `dataActions` и `notDataActions` для `role definition`.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Исправлена проблема с отправкой файла размером от 195 до 200 ГБ.
 * Исправлена ошибка [#4049](https://github.com/Azure/azure-cli/issues/4049): проблемы, когда при отправке добавочного большого двоичного объекта игнорируются параметры условия.
@@ -1067,7 +1171,7 @@ ms.locfileid: "43828751"
 
 ### <a name="core"></a>Core
 
-* Исправлена ошибка с установкой Homebrew [№ 5184](https://github.com/Azure/azure-cli/issues/5184).
+* Исправлена ошибка с установкой Homebrew [#5184](https://github.com/Azure/azure-cli/issues/5184).
 * Добавлена поддержка телеметрии расширения с применением пользовательских ключей.
 * Добавлена функция ведения журнала HTTP в `--debug`.
 
@@ -1081,7 +1185,7 @@ ms.locfileid: "43828751"
 ### <a name="appservice"></a>Служба приложений
 
 * Обновления для новой версии пакета SDK (azure-mgmt-web 0.35.0)
-* Исправлена ошибка с сообщением `Free` о недопустимом SKU [№ 5538](https://github.com/Azure/azure-cli/issues/5538)
+* Исправлена ошибка [#5538](https://github.com/Azure/azure-cli/issues/5538): `Free` указывалось как недопустимый номер SKU.
 
 ### <a name="cognitive-services"></a>Cognitive Services
 
@@ -1098,7 +1202,7 @@ ms.locfileid: "43828751"
 
 ### <a name="network"></a>Сеть
 
-* Исправлена ошибка с отсутствующим клиентом в `network vnet-gateway vpn-client generate` [№ 5559](https://github.com/Azure/azure-cli/issues/5559).
+* Исправлена ошибка [#5559](https://github.com/Azure/azure-cli/issues/5559): отсутствующий клиент в `network vnet-gateway vpn-client generate`.
 
 ### <a name="resource"></a>Ресурс
 
@@ -1854,7 +1958,7 @@ ms.locfileid: "43828751"
 * Исправлена строка для ввода пароля пользователем даже после передачи параметра.
 * Добавлена поддержка пустого значения `registry_cred`.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Появилась возможность задавать уровень большого двоичного объекта.
 * Добавлены аргументы `--bypass` и `--default-action` в командах `storage account [create|update]` для поддержки туннелирования службы.
@@ -2229,8 +2333,8 @@ vm (2.0.11)
 * Добавлен модуль Interactive (az-shell переименован).
 * Добавлена поддержка команд CDN.
 * Удален модуль Container.
-* Добавлена команда az -v для az --version ([№ 2926](https://github.com/Azure/azure-cli/issues/2926)).
-* Повышена производительность загрузки пакетов и выполнения команд ([№ 2819](https://github.com/Azure/azure-cli/issues/2819)).
+* Добавлена команда az -v для az --version ([#2926](https://github.com/Azure/azure-cli/issues/2926)).
+* Повышена производительность загрузки пакетов и выполнения команд ([#2819](https://github.com/Azure/azure-cli/issues/2819)).
 
 ```text
 azure-cli (2.0.6)
@@ -2272,14 +2376,14 @@ vm (2.0.6)
 ### <a name="core"></a>Core
 
 * Ядро: запись исключений, порожденных незарегистрированным поставщиком, и его автоматическая регистрация.
-* Производительность: сохранение кэша маркеров библиотеки ADAL в памяти до завершения работы процесса ([№ 2603](https://github.com/Azure/azure-cli/issues/2603)).
-* Исправление байтов, возвращаемых из шестнадцатеричных отпечатков -o tsv ([№ 3053](https://github.com/Azure/azure-cli/issues/3053)).
-* Улучшенное скачивание сертификатов Key Vault и интеграция субъектов-служб AAD ([№ 3003](https://github.com/Azure/azure-cli/issues/3003)).
-* Добавление расположения Python в az -version ([№ 2986](https://github.com/Azure/azure-cli/issues/2986)).
-* Вход: поддержка входа при отсутствии подписок ([№ 2929](https://github.com/Azure/azure-cli/issues/2929)).
-* Ядро: устранен сбой при двукратном входе с помощью субъекта-службы ([№ 2800](https://github.com/Azure/azure-cli/issues/2800)).
-* Ядро: возможность настроить путь к файлу accessTokens.json с помощью env var ([№ 2605](https://github.com/Azure/azure-cli/issues/2605)).
-* Ядро: возможность применять настроенные параметры по умолчанию к необязательным аргументам ([№ 2703](https://github.com/Azure/azure-cli/issues/2703)).
+* Производительность: сохранение кэша маркеров библиотеки ADAL в памяти до завершения работы процесса ([#2603](https://github.com/Azure/azure-cli/issues/2603)).
+* Исправление байтов, возвращаемых из шестнадцатеричных отпечатков -o tsv ([#3053](https://github.com/Azure/azure-cli/issues/3053)).
+* Улучшенное скачивание сертификатов Key Vault и интеграция субъектов-служб AAD ([#3003](https://github.com/Azure/azure-cli/issues/3003)).
+* Добавлено расположение Python в az -version ([#2986](https://github.com/Azure/azure-cli/issues/2986)).
+* Вход: поддержка входа при отсутствии подписок ([#2929](https://github.com/Azure/azure-cli/issues/2929)).
+* Ядро: устранен сбой при двукратном входе с помощью субъекта-службы ([#2800](https://github.com/Azure/azure-cli/issues/2800)).
+* Ядро: возможность настроить путь к файлу accessTokens.json с помощью env var ([#2605](https://github.com/Azure/azure-cli/issues/2605)).
+* Ядро: возможность применять настроенные параметры по умолчанию к необязательным аргументам ([#2703](https://github.com/Azure/azure-cli/issues/2703)).
 * Ядро: повышение производительности.
 * Ядро: настаиваемые сертификаты ЦС — поддержка настройки переменной среды REQUESTS_CA_BUNDLE.
 * Ядро: облачная конфигурация — использование конечной точки Resource Manager, если не задана конечная точка управления.
@@ -2289,7 +2393,7 @@ vm (2.0.6)
 * Исправление: теперь значение счетчика баз данных master и агентов — целое число, а не строка.
 * Предоставлены команды az acs create --no-wait и az acs wait для асинхронного создания.
 * Предоставлена команда az acs create --validate для пробного создания.
-* Удален профиль Windows перед вызовом метода PUT для команды scale ([№ 2755](https://github.com/Azure/azure-cli/issues/2755)).
+* Удален профиль Windows перед вызовом метода PUT для команды scale ([#2755](https://github.com/Azure/azure-cli/issues/2755)).
 
 ### <a name="appservice"></a>AppService
 
@@ -2298,10 +2402,10 @@ vm (2.0.6)
 * Создана команда az webapp, заменяющая команду az appservice web (для обеспечения обратной совместимости команда az appservice web будет оставлена еще в двух выпусках).
 * Предоставлены аргументы для настройки развертывания и стеков времени выполнения при создании веб-приложения.
 * Предоставлена команда webapp list-runtimes.
-* Поддержка настройки строк подключения ([№ 2647](https://github.com/Azure/azure-cli/issues/2647)).
+* Включена поддержка настройки строк подключения ([#2647](https://github.com/Azure/azure-cli/issues/2647)).
 * Поддержка переключения слотов с предварительным просмотром.
-* Устранены ошибки из команд службы приложений ([№ 2948](https://github.com/Azure/azure-cli/issues/2948)).
-* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([№ 2750](https://github.com/Azure/azure-cli/issues/2750)).
+* Устранены ошибки из команд службы приложений ([#2948](https://github.com/Azure/azure-cli/issues/2948)).
+* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([#2750](https://github.com/Azure/azure-cli/issues/2750)).
 
 ### <a name="cosmosdb"></a>Cosmos DB
 
@@ -2324,8 +2428,8 @@ vm (2.0.6)
 ### <a name="data-lake-store"></a>Data Lake Store
 
 * Обновлена версия пакета SDK базовой файловой системы, что обеспечивает лучшую поддержку сценариев регулирования на стороне сервера.
-* Повышена производительность загрузки пакетов и выполнения команд ([№ 2819](https://github.com/Azure/azure-cli/issues/2819)).
-* Отсутствовала справка для команды access show. Теперь она добавлена. ([№ 2743](https://github.com/Azure/azure-cli/issues/2743))
+* Повышена производительность загрузки пакетов и выполнения команд ([#2819](https://github.com/Azure/azure-cli/issues/2819)).
+* Отсутствовала справка для команды access show. Теперь она добавлена. ([#2743](https://github.com/Azure/azure-cli/issues/2743))
 
 ### <a name="find"></a>Поиск
 
@@ -2337,7 +2441,7 @@ vm (2.0.6)
 * BC: из команды `keyvault certificate create` удалены параметры --expires и --not-before, так как они не поддерживаются службой.
 * В команду `keyvault certificate create` добавлен параметр --validity для выборочного переопределения значение в параметре --policy.
 * Исправлена ошибка в команде `keyvault certificate get-default-policy`, в которой были доступны параметры expires и not_before, а параметр validity_in_months — нет.
-* Добавлено исправление для модуля keyvault для импорта PEM- и PFX-файлов ([№ 2754](https://github.com/Azure/azure-cli/issues/2754)).
+* Добавлено исправление для модуля keyvault для импорта PEM- и PFX-файлов ([#2754](https://github.com/Azure/azure-cli/issues/2754)).
 
 ### <a name="lab"></a>Лаборатория
 
@@ -2349,8 +2453,8 @@ vm (2.0.6)
 
 ### <a name="monitor"></a>Мониторинг
 
-* Исправление ошибки: моделирование `--actions` в `az alert-rules create` для использования строки в формате JSON ([№ 3009](https://github.com/Azure/azure-cli/issues/3009)).
-* Исправление ошибки: при создании параметров диагностики не принимались журналы и метрики из команды show ([№ 2913](https://github.com/Azure/azure-cli/issues/2913)).
+* Исправление ошибки: моделирование `--actions` в `az alert-rules create` для использования строки в формате JSON ([#3009](https://github.com/Azure/azure-cli/issues/3009)).
+* Исправление ошибки: при создании параметров диагностики не принимались журналы и метрики из команды show ([#2913](https://github.com/Azure/azure-cli/issues/2913)).
 
 ### <a name="network"></a>Сеть
 
@@ -2373,8 +2477,8 @@ vm (2.0.6)
 
 ### <a name="profile"></a>Профиль
 
-* Поддержка входа при отсутствии подписок ([№ 2560](https://github.com/Azure/azure-cli/issues/2560)).
-* Поддержка сокращенных имен параметров в команде az account set --subscription ([№ 2980](https://github.com/Azure/azure-cli/issues/2980)).
+* Включена поддержка входа при отсутствии подписок ([#2560](https://github.com/Azure/azure-cli/issues/2560)).
+* Включена поддержка сокращенных имен параметров в команде az account set --subscription ([#2980](https://github.com/Azure/azure-cli/issues/2980)).
 
 ### <a name="redis"></a>Redis
 
@@ -2383,26 +2487,26 @@ vm (2.0.6)
 
 ### <a name="resource"></a>Ресурс
 
-* Добавлены команды определения managedapp и managedapp ([№ 2985](https://github.com/Azure/azure-cli/issues/2985)).
-* Поддержка команд provider operation ([№ 2908](https://github.com/Azure/azure-cli/issues/2908)).
-* Поддержка создания универсального ресурса ([№ 2606](https://github.com/Azure/azure-cli/issues/2606)).
-* Исправлен анализ ресурсов и поиск версии API. ([№ 2781](https://github.com/Azure/azure-cli/issues/2781))
-* Добавлены документы для команды az lock update. ([№ 2702](https://github.com/Azure/azure-cli/issues/2702))
-* Исправлена ошибка, возникавшая при попытке вывести список ресурсов группы, которая не существует. ([№ 2769](https://github.com/Azure/azure-cli/issues/2769))
-* [Вычисления.] Устранены проблемы с масштабируемым набором виртуальных машин и обновлением группы доступности виртуальных машин. ([№ 2773](https://github.com/Azure/azure-cli/issues/2773))
-* Исправлена блокировка создания и удаления, возникающая, если параметр parent-resource-path не указан ([№ 2742](https://github.com/Azure/azure-cli/issues/2742)).
+* Добавлены команды определения managedapp и managedapp ([#2985](https://github.com/Azure/azure-cli/issues/2985)).
+* Включена поддержка команд provider operation ([#2908](https://github.com/Azure/azure-cli/issues/2908)).
+* Включена поддержка создания универсального ресурса ([#2606](https://github.com/Azure/azure-cli/issues/2606)).
+* Исправлен анализ ресурсов и поиск версии API. ([#2781](https://github.com/Azure/azure-cli/issues/2781))
+* Добавлены документы для команды az lock update. ([#2702](https://github.com/Azure/azure-cli/issues/2702))
+* Исправлена ошибка, возникавшая при попытке вывести список ресурсов группы, которая не существует. ([#2769](https://github.com/Azure/azure-cli/issues/2769))
+* [Вычисления.] Устранены проблемы с масштабируемым набором виртуальных машин и обновлением группы доступности виртуальных машин. ([#2773](https://github.com/Azure/azure-cli/issues/2773))
+* Исправлена блокировка создания и удаления, возникающая, если параметр parent-resource-path не указан ([#2742](https://github.com/Azure/azure-cli/issues/2742)).
 
 ### <a name="role"></a>Роль
 
-* create-for-rbac: гарантируется, что дата завершения работы поставщика служб не может превышать срок действия сертификата ([№ 2989](https://github.com/Azure/azure-cli/issues/2989)).
-* RBAC: добавлена полная поддержка команды ad group ([№ 2016](https://github.com/Azure/azure-cli/issues/2016)).
-* Роль: устранены проблемы при обновлении определения роли ([№ 2745](https://github.com/Azure/azure-cli/issues/2745)).
+* create-for-rbac: гарантируется, что дата завершения работы поставщика служб не может превышать срок действия сертификата ([#2989](https://github.com/Azure/azure-cli/issues/2989)).
+* RBAC: добавлена полная поддержка команды ad group ([#2016](https://github.com/Azure/azure-cli/issues/2016)).
+* Роль: устранены проблемы при обновлении определения роли ([#2745](https://github.com/Azure/azure-cli/issues/2745)).
 * create-for-rbac: обеспечен выбор введенного пользователем пароля.
 
 ### <a name="sql"></a>SQL
 
 * Добавлены команды az sql server list-usages и az sql db list-usages.
-* SQL: возможность прямого подключения к поставщику ресурса ([№ 2832](https://github.com/Azure/azure-cli/issues/2832)).
+* SQL: добавлена возможность прямого подключения к поставщику ресурса ([#2832](https://github.com/Azure/azure-cli/issues/2832)).
 
 ### <a name="storage"></a>служба хранилища.
 
@@ -2420,7 +2524,7 @@ vm (2.0.6)
   2. az vm/vmss disk
   3. В команде az vm/vmss create используйте параметр --use-unmanaged-disk, чтобы избежать использования Управляемых дисков. Другие команды должны работать.
 * vm/vmss: улучшен текст предупреждения при создании пары ключей SSH.
-* vm/vmss: поддержка создания из образа Marketplace, для которого требуются сведения о плане ([№ 1209](https://github.com/Azure/azure-cli/issues/1209)).
+* vm/vmss: добавлена поддержка создания из образа Marketplace, для которого требуются сведения о плане ([#1209](https://github.com/Azure/azure-cli/issues/1209)).
 
 
 ## <a name="april-3-2017"></a>3 апреля 2017 г.
