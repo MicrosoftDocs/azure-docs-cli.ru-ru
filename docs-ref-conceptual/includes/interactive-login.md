@@ -4,12 +4,12 @@ ms.author: sttramer
 manager: carmonm
 ms.date: 09/07/2018
 ms.topic: include
-ms.openlocfilehash: 1eed73c1279889c713032ec29fcbb3a1ff99799a
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: d34ad05504c49e09e538e4721a28399287969fdb
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388700"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178139"
 ---
 1. Выполните команду `login`.
 
