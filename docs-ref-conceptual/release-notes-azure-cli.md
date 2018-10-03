@@ -1,6 +1,6 @@
 ---
-title: Заметки о выпуске Azure CLI 2.0
-description: Узнайте о последних обновлениях в Azure CLI 2.0
+title: Заметки о выпуске Azure CLI
+description: Узнайте о последних обновлениях в Azure CLI
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f6dd04e088651527b1ac13e719b7fc3c5522b310
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: f0ee84c3f70cf168818de447289d6c7ab5a40c9e
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46470071"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178088"
 ---
-# <a name="azure-cli-20-release-notes"></a>Заметки о выпуске Azure CLI 2.0
+# <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 ## <a name="september-21-2018"></a>21 сентября 2018 г.
 
@@ -114,7 +114,7 @@ ms.locfileid: "46470071"
 ### <a name="signalr"></a>SignalR
 * Первый выпуск
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 * Добавлен параметр `--auth-mode login` для использования учетных данных пользователя для авторизации в больших двоичных объектах и очереди.
 * Добавлена команда `storage container immutability-policy/legal-hold` для управления неизменяемым хранилищем.
 
@@ -308,7 +308,7 @@ ms.locfileid: "46470071"
   *  `--enable-batched-operations` и `--enable-dead-lettering-on-message-expiration` в `queue`;
   *  `--dead-letter-on-filter-exceptions` в `subscriptions`.
 
-### <a name="storage"></a>Хранилище
+### <a name="storage"></a>служба хранилища.
 
 * Добавлена поддержка скачивания больших файлов с помощью одного подключения.
 * Преобразованы команды `show`, которые ранее отсутствовали: теперь в случае отсутствия ресурса не возвращается код завершения 3.
@@ -379,7 +379,7 @@ ms.locfileid: "46470071"
 * Разрешена настройка сервера SQL Server по умолчанию с помощью команды `az configure --defaults sql-server=<name>`.
 * Реализованы модули форматирования таблиц для команд `sql server`, `sql server firewall-rule`, `sql list-usages` и `sql show-usage`.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * В выходные данные команды `storage blob show` добавлено свойство `pageRanges`, которое будет заполняться для страничных BLOB-объектов.
 
@@ -547,7 +547,7 @@ ms.locfileid: "46470071"
 
 * Исправлена вносившая путаницу ошибка, которая возникала при выполнении команды `az sql db list-editions` для расположения, недоступного для указанной подписки.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Выходные данные таблицы для `storage blob download` изменены на более удобочитаемые.
 
@@ -642,7 +642,7 @@ ms.locfileid: "46470071"
   * `sql midb restore`
   * `sql midb delete`
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Добавлены типы MIME для JSON и JavaScript, выводимые из расширений файлов.
 
@@ -1153,7 +1153,7 @@ ms.locfileid: "46470071"
 
 * Первый выпуск
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Исправлена ошибка [#4971](https://github.com/Azure/azure-cli/issues/4971): теперь `storage blob copy` поддерживает другие облака Azure.
 * Исправлена ошибка [#5286](https://github.com/Azure/azure-cli/issues/5286): при пакетном выполнении команд `storage blob [delete-batch|download-batch|upload-batch]` больше не отображается сообщение об ошибке в предусловии.
@@ -1216,7 +1216,7 @@ ms.locfileid: "46470071"
 
 * Добавлена поддержка избыточности зон для создания и обновления баз данных и эластичных пулов.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Включено определение пути назначения и префикса для `storage blob [upload-batch|download-batch]`.
 
@@ -1507,7 +1507,7 @@ ms.locfileid: "46470071"
 * Добавлен аргумент `--disable-bgp-route-propagation` для команды `route-table [create|update]`
 * Добавлен аргумент `--ip-tags` для команды `public-ip [create|update]`
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Добавлена поддержка хранилища версии 2.
 
@@ -1800,7 +1800,7 @@ ms.locfileid: "46470071"
 * Добавлены аргументы `--ddos-protection` и `--vm-protection` для команды `vnet [create|update]`
 * Добавлены команды `network [vnet-gateway|vpn-client|show-url]`.
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Исправлена проблема, когда команды `storage account network-rule` могут не работать после обновления пакета SDK
 
@@ -1908,7 +1908,7 @@ ms.locfileid: "46470071"
 
 * Объявлены неподдерживаемыми все команды; вместо них используется Service Fabric CLI (sfctl).
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Исправлена проблема, когда учетные записи хранения нельзя было создавать в регионах, которые не поддерживают функцию NetworkACLs.
 * Определение типа и кодировки содержимого во время передачи больших двоичных объектов и файла, если оба свойства не указаны.
@@ -2334,7 +2334,7 @@ vm (2.0.11)
 * Добавлена поддержка команд CDN.
 * Удален модуль Container.
 * Добавлена команда az -v для az --version ([#2926](https://github.com/Azure/azure-cli/issues/2926)).
-* Повышена производительность загрузки пакетов и выполнения команд ([#2819](https://github.com/Azure/azure-cli/issues/2819)).
+* Повышена производительность загрузки пакетов и выполнения команд ([№ 2819](https://github.com/Azure/azure-cli/issues/2819)).
 
 ```text
 azure-cli (2.0.6)
@@ -2376,14 +2376,14 @@ vm (2.0.6)
 ### <a name="core"></a>Core
 
 * Ядро: запись исключений, порожденных незарегистрированным поставщиком, и его автоматическая регистрация.
-* Производительность: сохранение кэша маркеров библиотеки ADAL в памяти до завершения работы процесса ([#2603](https://github.com/Azure/azure-cli/issues/2603)).
+* Производительность: сохранение кэша маркеров библиотеки ADAL в памяти до завершения работы процесса ([№ 2603](https://github.com/Azure/azure-cli/issues/2603)).
 * Исправление байтов, возвращаемых из шестнадцатеричных отпечатков -o tsv ([#3053](https://github.com/Azure/azure-cli/issues/3053)).
 * Улучшенное скачивание сертификатов Key Vault и интеграция субъектов-служб AAD ([#3003](https://github.com/Azure/azure-cli/issues/3003)).
 * Добавлено расположение Python в az -version ([#2986](https://github.com/Azure/azure-cli/issues/2986)).
 * Вход: поддержка входа при отсутствии подписок ([#2929](https://github.com/Azure/azure-cli/issues/2929)).
 * Ядро: устранен сбой при двукратном входе с помощью субъекта-службы ([#2800](https://github.com/Azure/azure-cli/issues/2800)).
 * Ядро: возможность настроить путь к файлу accessTokens.json с помощью env var ([#2605](https://github.com/Azure/azure-cli/issues/2605)).
-* Ядро: возможность применять настроенные параметры по умолчанию к необязательным аргументам ([#2703](https://github.com/Azure/azure-cli/issues/2703)).
+* Ядро: возможность применять настроенные параметры по умолчанию к необязательным аргументам ([№ 2703](https://github.com/Azure/azure-cli/issues/2703)).
 * Ядро: повышение производительности.
 * Ядро: настаиваемые сертификаты ЦС — поддержка настройки переменной среды REQUESTS_CA_BUNDLE.
 * Ядро: облачная конфигурация — использование конечной точки Resource Manager, если не задана конечная точка управления.
@@ -2393,7 +2393,7 @@ vm (2.0.6)
 * Исправление: теперь значение счетчика баз данных master и агентов — целое число, а не строка.
 * Предоставлены команды az acs create --no-wait и az acs wait для асинхронного создания.
 * Предоставлена команда az acs create --validate для пробного создания.
-* Удален профиль Windows перед вызовом метода PUT для команды scale ([#2755](https://github.com/Azure/azure-cli/issues/2755)).
+* Удален профиль Windows перед вызовом метода PUT для команды scale ([№ 2755](https://github.com/Azure/azure-cli/issues/2755)).
 
 ### <a name="appservice"></a>AppService
 
@@ -2402,10 +2402,10 @@ vm (2.0.6)
 * Создана команда az webapp, заменяющая команду az appservice web (для обеспечения обратной совместимости команда az appservice web будет оставлена еще в двух выпусках).
 * Предоставлены аргументы для настройки развертывания и стеков времени выполнения при создании веб-приложения.
 * Предоставлена команда webapp list-runtimes.
-* Включена поддержка настройки строк подключения ([#2647](https://github.com/Azure/azure-cli/issues/2647)).
+* Поддержка настройки строк подключения ([№ 2647](https://github.com/Azure/azure-cli/issues/2647)).
 * Поддержка переключения слотов с предварительным просмотром.
-* Устранены ошибки из команд службы приложений ([#2948](https://github.com/Azure/azure-cli/issues/2948)).
-* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([#2750](https://github.com/Azure/azure-cli/issues/2750)).
+* Устранены ошибки из команд службы приложений ([№ 2948](https://github.com/Azure/azure-cli/issues/2948)).
+* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([№ 2750](https://github.com/Azure/azure-cli/issues/2750)).
 
 ### <a name="cosmosdb"></a>Cosmos DB
 
@@ -2429,7 +2429,7 @@ vm (2.0.6)
 
 * Обновлена версия пакета SDK базовой файловой системы, что обеспечивает лучшую поддержку сценариев регулирования на стороне сервера.
 * Повышена производительность загрузки пакетов и выполнения команд ([#2819](https://github.com/Azure/azure-cli/issues/2819)).
-* Отсутствовала справка для команды access show. Теперь она добавлена. ([#2743](https://github.com/Azure/azure-cli/issues/2743))
+* Отсутствовала справка для команды access show. Теперь она добавлена. ([№ 2743](https://github.com/Azure/azure-cli/issues/2743))
 
 ### <a name="find"></a>Поиск
 
@@ -2453,8 +2453,8 @@ vm (2.0.6)
 
 ### <a name="monitor"></a>Мониторинг
 
-* Исправление ошибки: моделирование `--actions` в `az alert-rules create` для использования строки в формате JSON ([#3009](https://github.com/Azure/azure-cli/issues/3009)).
-* Исправление ошибки: при создании параметров диагностики не принимались журналы и метрики из команды show ([#2913](https://github.com/Azure/azure-cli/issues/2913)).
+* Исправление ошибки: моделирование `--actions` в `az alert-rules create` для использования строки в формате JSON ([№ 3009](https://github.com/Azure/azure-cli/issues/3009)).
+* Исправление ошибки: при создании параметров диагностики не принимались журналы и метрики из команды show ([№ 2913](https://github.com/Azure/azure-cli/issues/2913)).
 
 ### <a name="network"></a>Сеть
 
@@ -2477,8 +2477,8 @@ vm (2.0.6)
 
 ### <a name="profile"></a>Профиль
 
-* Включена поддержка входа при отсутствии подписок ([#2560](https://github.com/Azure/azure-cli/issues/2560)).
-* Включена поддержка сокращенных имен параметров в команде az account set --subscription ([#2980](https://github.com/Azure/azure-cli/issues/2980)).
+* Поддержка входа при отсутствии подписок ([№ 2560](https://github.com/Azure/azure-cli/issues/2560)).
+* Поддержка сокращенных имен параметров в команде az account set --subscription ([№ 2980](https://github.com/Azure/azure-cli/issues/2980)).
 
 ### <a name="redis"></a>Redis
 
@@ -2487,20 +2487,20 @@ vm (2.0.6)
 
 ### <a name="resource"></a>Ресурс
 
-* Добавлены команды определения managedapp и managedapp ([#2985](https://github.com/Azure/azure-cli/issues/2985)).
+* Добавлены команды определения managedapp и managedapp ([№ 2985](https://github.com/Azure/azure-cli/issues/2985)).
 * Включена поддержка команд provider operation ([#2908](https://github.com/Azure/azure-cli/issues/2908)).
-* Включена поддержка создания универсального ресурса ([#2606](https://github.com/Azure/azure-cli/issues/2606)).
-* Исправлен анализ ресурсов и поиск версии API. ([#2781](https://github.com/Azure/azure-cli/issues/2781))
-* Добавлены документы для команды az lock update. ([#2702](https://github.com/Azure/azure-cli/issues/2702))
-* Исправлена ошибка, возникавшая при попытке вывести список ресурсов группы, которая не существует. ([#2769](https://github.com/Azure/azure-cli/issues/2769))
-* [Вычисления.] Устранены проблемы с масштабируемым набором виртуальных машин и обновлением группы доступности виртуальных машин. ([#2773](https://github.com/Azure/azure-cli/issues/2773))
-* Исправлена блокировка создания и удаления, возникающая, если параметр parent-resource-path не указан ([#2742](https://github.com/Azure/azure-cli/issues/2742)).
+* Поддержка создания универсального ресурса ([№ 2606](https://github.com/Azure/azure-cli/issues/2606)).
+* Исправлен анализ ресурсов и поиск версии API. ([№ 2781](https://github.com/Azure/azure-cli/issues/2781))
+* Добавлены документы для команды az lock update. ([№ 2702](https://github.com/Azure/azure-cli/issues/2702))
+* Исправлена ошибка, возникавшая при попытке вывести список ресурсов группы, которая не существует. ([№ 2769](https://github.com/Azure/azure-cli/issues/2769))
+* [Вычисления.] Устранены проблемы с масштабируемым набором виртуальных машин и обновлением группы доступности виртуальных машин. ([№ 2773](https://github.com/Azure/azure-cli/issues/2773))
+* Исправлена блокировка создания и удаления, возникающая, если параметр parent-resource-path не указан ([№ 2742](https://github.com/Azure/azure-cli/issues/2742)).
 
 ### <a name="role"></a>Роль
 
-* create-for-rbac: гарантируется, что дата завершения работы поставщика служб не может превышать срок действия сертификата ([#2989](https://github.com/Azure/azure-cli/issues/2989)).
+* create-for-rbac: гарантируется, что дата завершения работы поставщика служб не может превышать срок действия сертификата ([№ 2989](https://github.com/Azure/azure-cli/issues/2989)).
 * RBAC: добавлена полная поддержка команды ad group ([#2016](https://github.com/Azure/azure-cli/issues/2016)).
-* Роль: устранены проблемы при обновлении определения роли ([#2745](https://github.com/Azure/azure-cli/issues/2745)).
+* Роль: устранены проблемы при обновлении определения роли ([№ 2745](https://github.com/Azure/azure-cli/issues/2745)).
 * create-for-rbac: обеспечен выбор введенного пользователем пароля.
 
 ### <a name="sql"></a>SQL
@@ -2508,7 +2508,7 @@ vm (2.0.6)
 * Добавлены команды az sql server list-usages и az sql db list-usages.
 * SQL: добавлена возможность прямого подключения к поставщику ресурса ([#2832](https://github.com/Azure/azure-cli/issues/2832)).
 
-### <a name="storage"></a>служба хранилища.
+### <a name="storage"></a>Хранилище
 
 * Добавлено расположение по умолчанию группы ресурсов для `storage account create`.
 * Добавлена поддержка добавочного копирования больших двоичных объектов.
@@ -2524,7 +2524,7 @@ vm (2.0.6)
   2. az vm/vmss disk
   3. В команде az vm/vmss create используйте параметр --use-unmanaged-disk, чтобы избежать использования Управляемых дисков. Другие команды должны работать.
 * vm/vmss: улучшен текст предупреждения при создании пары ключей SSH.
-* vm/vmss: добавлена поддержка создания из образа Marketplace, для которого требуются сведения о плане ([#1209](https://github.com/Azure/azure-cli/issues/1209)).
+* vm/vmss: поддержка создания из образа Marketplace, для которого требуются сведения о плане ([№ 1209](https://github.com/Azure/azure-cli/issues/1209)).
 
 
 ## <a name="april-3-2017"></a>3 апреля 2017 г.
@@ -2615,7 +2615,7 @@ vm (2.0.2)
 - служба контейнеров (ACS);
 - вычисления (в том числе Resource Manager, виртуальная машина, масштабируемые наборы виртуальных машин, управляемые диски);
 - Сеть
-- служба хранилища.
+- Хранилище
 
 Эти командные модули могут использоваться в рабочих средах. Они поддерживаются стандартными соглашениями Майкрософт об уровне обслуживания. Вы можете отправлять запросы непосредственно в службу технической поддержки Майкрософт или добавлять описание проблем в наш [список на сайте GitHub](https://github.com/azure/azure-cli/issues/). Вы можете задавать вопросы на [сайте StackOverflow, используя тег azure-cli](http://stackoverflow.com/questions/tagged/azure-cli), или обращаться к группе разработчиков по адресу электронной почты [azfeedback@microsoft.com](mailto:azfeedback@microsoft.com). Можно отправлять отзывы из командной строки с помощью команды `az feedback`.
 

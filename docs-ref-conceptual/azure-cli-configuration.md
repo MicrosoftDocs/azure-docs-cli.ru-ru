@@ -1,25 +1,25 @@
 ---
 title: Варианты настройки Azure CLI
-description: Как настроить Azure CLI 2.0
+description: Как настроить Azure CLI
 keywords: Azure CLI, configuration, settings, Azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/16/2018
+ms.date: 06/11/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 75ea347b0d4d018142a26bf985ee3639f2b79924
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: f4f1e89e5541d741ef4e02f309a49eece033af5d
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388598"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177986"
 ---
-# <a name="azure-cli-20-configuration"></a>Настройка Azure CLI 2.0
+# <a name="azure-cli-configuration"></a>Настройка Azure CLI
 
-Azure CLI 2.0 позволяет пользователям настраивать различные параметры, например для ведения журналов и сбора данных, а также значения аргументов по умолчанию.
+С помощью Azure CLI пользователи могут настраивать различные параметры, например для ведения журналов и сбора данных, а также значения аргументов по умолчанию.
 Интерфейс командной строки содержит удобную команду для управления некоторыми значениями по умолчанию — `az configure`. Другие значения можно указать в файле конфигурации или с помощью переменных среды.
 
 Значения конфигурации, используемые CLI, вычисляются в указанном ниже порядке. Элементы, расположенные выше в списке, имеют больший приоритет.
@@ -88,7 +88,7 @@ log_dir=/var/log/azure
 |---------|-----------|------|------------|
 | __core__ | output | строка | Формат вывода по умолчанию. Может иметь значение `json`, `jsonc`, `tsv` или `table`. |
 | | disable\_confirm\_prompt | Логическое | Включает и отключает запросы на подтверждение. |
-| | collect\_telemetry | Логическое | Разрешает корпорации Майкрософт собирать анонимные данные об использовании CLI. Сведения о конфиденциальности см. в описании [условий использования Azure CLI 2.0](https://aka.ms/AzureCliLegal). |
+| | collect\_telemetry | Логическое | Разрешает корпорации Майкрософт собирать анонимные данные об использовании CLI. Сведения о конфиденциальности см. в описании [условий использования Azure CLI](http://aka.ms/AzureCliLegal). |
 | __logging__ | enable\_log\_file | Логическое | Включение и отключение ведения журнала. |
 | | log\_dir | строка | Каталог для записи журналов. По умолчанию это значение равно `${AZURE_CONFIG_DIR}/logs`. |
 | __storage__ | connection\_string | строка | Строка подключения по умолчанию для команд `az storage`. |
