@@ -1,6 +1,6 @@
 ---
-title: Установка Azure CLI 2.0 в Linux с использованием yum
-description: Как установить Azure CLI 2.0 с помощью yum
+title: Установка Azure CLI в Linux с помощью yum
+description: Как установить Azure CLI с помощью yum
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 25eb473aa56d3ddd34f8e1808b84ebb5f6324f2b
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: 787b773a8717ff36a0d0ea689b7770ed80aa9439
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46470020"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177646"
 ---
-# <a name="install-azure-cli-20-with-yum"></a>Установка Azure CLI 2.0 с помощью yum
+# <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 
 Для дистрибутивов Linux, использующих `yum`, например RHEL, Fedora или CentOS, доступен пакет Azure CLI. Этот пакет протестирован с RHEL 7, Fedora 19 и более поздних версий, а также CentOS 7.
 
@@ -46,7 +46,7 @@ ms.locfileid: "46470020"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
 
 ## <a name="update"></a>Блокировка изменений
 

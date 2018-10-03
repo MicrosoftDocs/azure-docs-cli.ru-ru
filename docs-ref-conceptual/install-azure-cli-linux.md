@@ -1,6 +1,6 @@
 ---
-title: Установка Azure CLI 2.0 для Linux вручную
-description: Как установить Azure CLI 2.0 в Linux вручную
+title: Установка Azure CLI для Linux вручную
+description: Как установить Azure CLI в Linux вручную
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: be0b21cf0dab0f884b7f2984f2c35314ac157c61
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: 221e8904fdb938b15b28cb369085dcacb08e4091
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469952"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177952"
 ---
-# <a name="install-azure-cli-20-on-linux-manually"></a>Установка Azure CLI 2.0 в Linux вручную
+# <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 
 Если для вашего дистрибутива отсутствует пакет Azure CLI, установите CLI вручную, выполнив скрипт.
 
@@ -45,7 +45,7 @@ curl -L https://aka.ms/InstallAzureCli | bash
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

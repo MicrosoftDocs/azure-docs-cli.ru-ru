@@ -1,6 +1,6 @@
 ---
-title: Установка Azure CLI 2.0 в Linux с помощью zypper
-description: Как установить Azure CLI 2.0 с помощью zypper
+title: Установка Azure CLI в Linux с помощью zypper
+description: Как установить Azure CLI с помощью zypper
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: d5197e1d62b89bc293970a85bcf976a38898862e
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: 201cce81046d5039a313b918ac48b2849352995c
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469918"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177680"
 ---
-# <a name="install-azure-cli-20-with-zypper"></a>Установка Azure CLI 2.0 с помощью zypper
+# <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
 Для дистрибутивов Linux, использующих `zypper`, например openSUSE или SLES, доступен пакет Azure CLI. Этот пакет протестирован с openSUSE 42.2 и пакетом обновления 2 для SLES 12.
 
@@ -52,7 +52,7 @@ ms.locfileid: "46469918"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
 
 ## <a name="update"></a>Блокировка изменений
 
@@ -85,7 +85,6 @@ sudo zypper update azure-cli
   MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
   sudo rpm -e --allmatches gpg-pubkey-$MSFT_KEY
   ```
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете пользоваться Azure CLI. Просмотрите общие сведения о его возможностях и список распространенных команд.

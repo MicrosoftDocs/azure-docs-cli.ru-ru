@@ -1,6 +1,6 @@
 ---
-title: Результаты выполнения команды запроса в Azure CLI 2.0
-description: Выполнение запросов JMESPath к результатам команд CLI Azure 2.0.
+title: Запросы результатов команд в Azure CLI
+description: Сведения о том, как выполнять запросы JMESPath к результатам команд Azure CLI.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 55880b87e1bffc37bbdeaeb84206deb5b9b7b227
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 4522242952e5d257449c9c593885c62de2f56d0f
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388379"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178037"
 ---
-# <a name="use-jmespath-queries-with-azure-cli-20"></a>Использование запросов JMESPath в Azure CLI 2.0
+# <a name="use-jmespath-queries-with-azure-cli"></a>Использование запросов JMESPath в Azure CLI 
 
-Интерфейс Azure CLI 2.0 использует аргумент `--query` для выполнения [запроса JMESPath](http://jmespath.org) к результатам выполнения команд. JMESPath — это язык запросов для JSON, который позволяет выбирать и представлять данные из выходных данных CLI. Запросы выполняются с выходными данными в формате JSON до форматирования для отображения.
+Интерфейс Azure CLI использует аргумент `--query` для выполнения [запроса JMESPath](http://jmespath.org) к результатам выполнения команд. JMESPath — это язык запросов для JSON, который позволяет выбирать и представлять данные из выходных данных CLI. Запросы выполняются с выходными данными в формате JSON до форматирования для отображения.
 
 Аргумент `--query` поддерживается всеми командами в Azure CLI. Примеры в этой статье включают распространенные варианты использования возможностей JMESPath.
 
@@ -56,7 +56,7 @@ az vm show -g QueryDemo -n TestVM --query 'storageProfile.{image:imageReference.
 }
 ```
 
-При отображении выводимой информации в формате `table` отображение словаря позволяет задавать собственные заголовки столбцов. См. дополнительные сведения о [форматах выходных данных для команд Azure CLI 2.0](/cli/azure/format-output-azure-cli).
+При отображении выводимой информации в формате `table` отображение словаря позволяет задавать собственные заголовки столбцов. См. дополнительные сведения о [форматах выходных данных для команд Azure CLI](/cli/azure/format-output-azure-cli).
 
 > [!NOTE]
 > Некоторые ключи отфильтровываются и не печатаются в табличном представлении. Эти ключи — `id`, `type` и `etag`. Если необходимо просмотреть эти сведения, можно изменить имя ключа, избегая фильтрации.

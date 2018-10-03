@@ -1,6 +1,6 @@
 ---
 title: Установка Azure CLI для macOS
-description: Как установить Azure CLI 2.0 в macOS
+description: Как установить Azure CLI в macOS
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1dab4d6aece78999e9d97ac5c8e3598c55a8a55d
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: 9eb816ef68d24d1dbbaaeb5fd4877580edbe87ad
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469935"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177663"
 ---
-# <a name="install-azure-cli-20-on-macos"></a>Установка Azure CLI 2.0 в macOS
+# <a name="install-azure-cli-on-macos"></a>Установка Azure CLI в macOS
 
 На платформе macOS Azure CLI можно установить с помощью [диспетчера пакетов Homebrew](https://brew.sh). Homebrew позволяет без труда поддерживать установку CLI в актуальном состоянии. Пакет CLI протестирован с macOS 10.9 и более поздних версий.
 
@@ -35,7 +35,7 @@ brew update && brew install azure-cli
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

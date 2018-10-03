@@ -1,6 +1,6 @@
 ---
-title: Использование субъекта-службы Azure с помощью Azure CLI 2.0
-description: Использование субъекта-службы Azure с помощью Azure CLI 2.0
+title: Использование субъектов-служб Azure с помощью Azure CLI
+description: Сведения о том, как использовать субъект-службу Azure с помощью Azure CLI.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -8,15 +8,14 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.service: role-based-access-control
-ms.openlocfilehash: 5f98fd8d3897b11a9b37eefa6295b8b25b2b1c95
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 5ba7d8b0bf313a8d8ea1b20fb861c2ac0086b2be
+ms.sourcegitcommit: f7554c00b5d5dca0ec716cbf996eb6654183ec37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388445"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47237618"
 ---
-# <a name="create-an-azure-service-principal-with-azure-cli-20"></a>Создание субъекта-службы Azure с помощью Azure CLI 2.0
+# <a name="create-an-azure-service-principal-with-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
 Если вы хотите создать отдельную процедуру входа с ограничениями доступа, это можно сделать с помощью субъекта-службы. Субъекты-службы — это отдельные удостоверения, которые можно связывать с учетной записью. Субъекты-службы используются при работе с приложениями и задачами, которые должны выполняться автоматически. В этой статье описывается, как создать субъект-службу.
 
@@ -75,7 +74,7 @@ ms.locfileid: "44388445"
 
 ## <a name="manage-service-principal-roles"></a>Управление ролями субъекта-службы
 
-В Azure CLI 2.0 доступны следующие команды для управления назначением ролей:
+В Azure CLI доступны следующие команды для управления назначением ролей:
 
 * [az role assignment list](/cli/azure/role/assignment#az-role-assignment-list);
 * [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create);

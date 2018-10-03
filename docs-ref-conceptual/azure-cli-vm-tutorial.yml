@@ -1,7 +1,7 @@
 ### YamlMime:Tutorial
-title: Создание виртуальных машин с помощью Azure CLI 2.0
+title: Создание виртуальных машин с помощью Azure CLI
 metadata:
-  title: Создание виртуальных машин с помощью Azure CLI 2.0
+  title: Создание виртуальных машин с помощью Azure CLI
   description: Начните создавать виртуальные машины с помощью Azure CLI 2.0.
   audience: Developer
   level: Beginner
@@ -16,16 +16,16 @@ metadata:
   ms.prod: azure
   ms.technology: azure-cli
   clicktale: true
-  ms.openlocfilehash: e680ad4fa42c22c1f36741e9353af3c9d6ffdcbe
-  ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+  ms.openlocfilehash: 5f857681a647caa8b1c50be1bebb807cf0ef94ff
+  ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44388649"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47178020"
 items:
 - durationInMinutes: 1
   content: >-
-    В этом руководстве описано, как настроить виртуальную машину с помощью Azure CLI 2.0. Вы также узнаете, как создавать запросы выходных данных, повторно использовать ресурсы Azure и очищать ресурсы.
+    В этом руководстве описано, как настроить виртуальную машину с помощью Azure CLI. Вы также узнаете, как создавать запросы выходных данных, повторно использовать ресурсы Azure и очищать ресурсы.
 
 
     Для работы с этим руководством вам понадобится интерактивная служба Azure Cloud Shell или вы можете [установить CLI](install-azure-cli.md) локально.
@@ -157,9 +157,9 @@ items:
 
     * `az feedback` — это встроенная команда CLI, которая позволяет отправить отзыв команде в свободной форме.
 
-    * Можно оставить запрос функции или сообщение об ошибке в CLI в [хранилище Azure CLI 2.0](https://github.com/Azure/azure-cli).
+    * Создать запрос на добавление возможности или сообщить об ошибке в CLI можно в [репозитории Azure CLI](https://github.com/Azure/azure-cli).
 
-    * Кроме того, задать вопрос или получить разъяснение можно в [репозитории документации Azure CLI 2.0](https://github.com/Azure/azure-docs-cli-python).
+    * Кроме того, вы можете задать вопрос или получить разъяснение в [репозитории документации Azure CLI](https://github.com/Azure/azure-docs-cli-python).
 
 
     Мы надеемся, что вам понравится работать с Azure CLI!

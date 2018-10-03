@@ -1,6 +1,6 @@
 ---
-title: Начало работы с Azure CLI 2.0
-description: Начните работу с Azure CLI 2.0, изучив базовые команды.
+title: Начало работы с Azure CLI
+description: Начните работу с Azure CLI, изучив базовые команды.
 keywords: Azure CLI, CLI help, Azure help, query, automation,
 author: sptramer
 ms.author: sttramer
@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 00cfca8d55f0b404cae32ba9b4ce464dfa8afa08
-ms.sourcegitcommit: 8318ce761c279afa4cd45a81a58d83fc38c616bc
+ms.openlocfilehash: d23548a9cdfe307c2597d992dc014125f80704d0
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45561581"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178003"
 ---
-# <a name="get-started-with-azure-cli-20"></a>Начало работы с Azure CLI 2.0
+# <a name="get-started-with-azure-cli"></a>Начало работы с Azure CLI
 
-Добро пожаловать в Azure CLI 2.0! CLI — это средство, предназначенное для быстрой и эффективной работы со службами Azure с возможностью автоматизации. В этой статье рассматриваются возможности CLI и приводятся ссылки на связанные ресурсы.
+Добро пожаловать в Azure CLI! CLI — это средство, предназначенное для быстрой и эффективной работы со службами Azure с возможностью автоматизации. В этой статье рассматриваются возможности CLI и приводятся ссылки на связанные ресурсы.
 
 ## <a name="install-or-run-in-azure-cloud-shell"></a>Установка или запуск в Azure Cloud Shell
 
@@ -33,7 +33,7 @@ ms.locfileid: "45561581"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Вы также можете войти в автономном режиме, как описано в руководстве по [входу с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Вы также можете войти в автономном режиме, как описано в руководстве по [входу с помощью Azure CLI](authenticate-azure-cli.md).
 
 ## <a name="common-commands"></a>Стандартные команды
 
@@ -72,8 +72,8 @@ az network nsg --help
 Для каждой команды есть ряд аргументов.
 
 * `--help` выводит справочные сведения CLI о командах и их аргументах, а также перечисляет доступные подгруппы и команды.
-* `--output` изменяет формат выходных данных. Доступные выходные форматы: `json`, `jsonc` (выделенные цветом данные JSON), `tsv` (значения с разделением знаками табуляции) и `table` (понятные таблицы ASCII). По умолчанию CLI выводит формат `json`. См. дополнительные сведения о [форматах выходных данных для Azure CLI 2.0](format-output-azure-cli.md).
-* `--query` использует [язык запросов JMESPath](http://jmespath.org/) для фильтрации результатов, возвращенных от служб Azure. См. дополнительные сведения о [создании запросов о результатах команд в Azure CLI 2.0](query-azure-cli.md) и [работе с JMESPath](http://jmespath.org/tutorial.html).
+* `--output` изменяет формат выходных данных. Доступные выходные форматы: `json`, `jsonc` (выделенные цветом данные JSON), `tsv` (значения с разделением знаками табуляции) и `table` (понятные таблицы ASCII). По умолчанию CLI выводит формат `json`. См. дополнительные сведения о [форматах выходных данных для Azure CLI](format-output-azure-cli.md).
+* `--query` использует [язык запросов JMESPath](http://jmespath.org/) для фильтрации результатов, возвращенных от служб Azure. См. дополнительные сведения о [создании запросов к результатам выполнения команд в Azure CLI](query-azure-cli.md) и [работе с JMESPath](http://jmespath.org/tutorial.html).
 * `--verbose` выводит сведения о ресурсах, созданных в Azure во время выполнения операции, а также другую полезную информацию.
 * `--debug` выводит дополнительные сведения об операциях CLI, выполняемых для отладки. Если вы обнаружили ошибку, включите выходные данные, полученные с помощью флага `--debug`, в отправляемый отчет об ошибке.
 
@@ -85,16 +85,16 @@ CLI можно использовать в интерактивном режим
 az interactive
 ```
 
-См. дополнительные сведения об [интерактивном режиме Azure CLI 2.0](interactive-azure-cli.md).
+См. дополнительные сведения об [интерактивном режиме Azure CLI](interactive-azure-cli.md).
 
 Также доступно [расширение для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli), которое предлагает интерактивный интерфейс с функциями автозавершения и отображения документации при наведении курсора.
 
 ## <a name="learn-cli-basics-with-quickstarts-and-tutorials"></a>Дополнительные сведения о CLI, представляемые в кратких и подробных руководствах
 
-Чтобы приступить к работе с Azure CLI 2.0, ознакомьтесь с подробным руководством по настройке виртуальных машин и использовании функций CLI для запроса ресурсов Azure.
+Чтобы приступить к работе с Azure CLI, ознакомьтесь с подробным руководством по настройке виртуальных машин и использовании функций CLI для выполнения запросов к ресурсам Azure.
 
 > [!div class="nextstepaction"]
-> [Создание виртуальных машин с помощью Azure CLI 2.0](azure-cli-vm-tutorial.yml)
+> [Руководство по созданию виртуальных машин с помощью Azure CLI](azure-cli-vm-tutorial.yml)
 
 Также доступны краткие руководства по работе с другими популярными службами.
 

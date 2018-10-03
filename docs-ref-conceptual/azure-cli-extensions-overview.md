@@ -1,6 +1,6 @@
 ---
-title: Расширения Azure CLI 2.0
-description: Использование расширений с Azure CLI 2.0
+title: Расширения Azure CLI
+description: Использование расширений с Azure CLI
 keywords: Azure CLI, расширения
 author: sptramer
 ms.author: sttramer
@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 8df4c82253e958fdad37ef1551c051f3d17fb191
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 0ba204063c00bf706f6af5a14dc59ba317385f95
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388547"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178122"
 ---
-# <a name="use-extensions-with-azure-cli-20"></a>Использование расширений с Azure CLI 2.0
+# <a name="use-extensions-with-azure-cli"></a>Использование расширений с Azure CLI 
 
-В Azure CLI 2.0 можно загружать расширения. Расширения — это пакеты Python wheel, которые не поставляются вместе с CLI, но выполняются в виде команд CLI.
+В Azure CLI можно загружать расширения. Расширения — это пакеты Python wheel, которые не поставляются вместе с CLI, но выполняются в виде команд CLI.
 Расширения позволяют получить доступ к экспериментальным командам и предварительным выпускам команд. Кроме того, расширения позволяют создавать собственные интерфейсы командной строки. В этой статье описано, как управлять расширениями, и описаны распространенные сценарии их использования.
 
 ## <a name="find-extensions"></a>Поиск расширений
@@ -59,7 +59,7 @@ az extension update --name <extension-name>
 В противном случае расширение можно обновить из источника, выполнив инструкции по [установке расширений](#install-extensions).
 
 Если имя расширения по какой-либо причине не может быть разрешено CLI, удалите это расширение и установите повторно. Расширение также может стать элементом основного пакета CLI.
-Попробуйте обновить CLI, как описано в руководстве по [установке CLI Azure 2.0](install-azure-cli.md), и проверьте, добавлены ли команды расширения.
+Попробуйте обновить CLI, как описано в руководстве по [установке Azure CLI](install-azure-cli.md), и проверьте, добавлены ли команды расширения.
 
 ## <a name="uninstall-extensions"></a>Удаление расширений
 

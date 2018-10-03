@@ -1,6 +1,6 @@
 ---
-title: Установка Azure CLI 2.0 в Linux с помощью apt
-description: Как установить Azure CLI 2.0 с помощью apt
+title: Установка Azure CLI в Linux с помощью apt
+description: Как установить Azure CLI с помощью диспетчера пакетов apt
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 13cc995e099cee47534a46097b2e1afd8e96e8b4
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: b388d3ecaf2d978aed11f925b9a479d8e95fb101
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469986"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178105"
 ---
-# <a name="install-azure-cli-20-with-apt"></a>Установка Azure CLI 2.0 с помощью apt
+# <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
 Если вы используете дистрибутив, включающий `apt`, например Ubuntu ил Debian, доступен 64-разрядный пакет Azure CLI. Этот пакет протестирован со следующими версиями:
 
@@ -53,7 +53,7 @@ ms.locfileid: "46469986"
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

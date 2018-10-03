@@ -1,24 +1,24 @@
 ---
-title: Доступные расширения для Azure CLI 2.0
-description: Полный список официально поддерживаемых расширений для Azure CLI 2.0.
+title: Доступные расширения для Azure CLI
+description: Полный список официально поддерживаемых расширений для Azure CLI
 author: derekbekoe
 ms.author: debekoe
 manager: routlaw
-ms.date: 09/06/2018
+ms.date: 09/24/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 24134d9769f7e89afe82f74490c6b49c81c7883f
-ms.sourcegitcommit: 46d4040eae1923c59caaac22aedab303b3116dad
+ms.openlocfilehash: 97f682b95df3f080b5661ee361e75ef3e759d388
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44048754"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177799"
 ---
-# <a name="available-extensions-for-the-azure-cli-20"></a>Доступные расширения для Azure CLI 2.0
+# <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
-В этой статье приведен полный список доступных расширений для Azure 2.0 CLI, которые предлагаются и поддерживаются корпорацией Майкрософт.
+В этой статье приведен полный список доступных расширений для Azure CLI, которые предлагает и поддерживает корпорация Майкрософт.
 
 Список расширений также можно получить непосредственно из CLI. Для этого выполните команду [az extension list-available](/cli/azure/extension?view=azure-cli-latest#az-extension-list-available):
 
@@ -34,10 +34,11 @@ az extension list-available --output table
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.5.2 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Исправления ошибок в собственном командном модуле botservice cli. | Yes |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |
+| [dms-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/dms-preview) | 0.4.0 | Поддержка новых сценариев Database Migration Service. | Yes |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Поддержка функций службы 	"Сетка событий Azure" версии 2018-05-01-preview | Yes |
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.0 | Управление пользовательскими каналами ExpressRoute с использованием перекрестного подключения ExpressRoute. |  |
-| [find](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.1.0 | Интеллектуальный запрос для получения сведений CLI. | Yes |
+| [find](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.2.0 | Интеллектуальный запрос для получения сведений CLI. | Yes |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.8 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Yes |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.2 | Поддержка возможностей запросов Azure Log Analytics. | Yes |
@@ -45,6 +46,8 @@ az extension list-available --output table
 | [managementpartner](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | Поддержка партнера управления (предварительная версия). |  |
 | [mesh](https://github.com/Azure/azure-cli-extensions) | 0.9.1 | Поддержка Сетки Microsoft Azure Service Fabric (общедоступная предварительная версия) | Yes |
 | [rdbms-vnet](https://github.com/Azure/azure-cli-extensions) | 10.0.0 | Поддержка правил виртуальной сети в ресурсах Azure MySQL и Azure PostgreSQL. |  |
+| [resource-graph](https://github.com/Azure/azure-cli-extensions/tree/master/src/resource-graph) | 0.1.8 | Поддержка запросов к ресурсам Azure с помощью Resource Graph. | Yes |
+| [sap-hana](https://github.com/Azure/azure-hanaonazure-cli-extension) | 0.1.6 | Дополнительные команды для работы с экземплярами SAP HanaOnAzure. |  |
 | [signalr](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Поддержка управления с помощью SignalR (предварительная версия). | Yes |
 | [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.1.4 | Предварительная версия ожидаемых функций хранилища. | Yes |
 | [subscription](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Поддержка управления подписками (предварительная версия). |  |

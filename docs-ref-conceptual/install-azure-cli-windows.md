@@ -1,6 +1,6 @@
 ---
 title: Установка Azure CLI для Windows
-description: Как установить Azure CLI 2.0 в Windows
+description: Как установить Azure CLI в Windows
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 6e57837313faf0edd95d822132ae282ed416aae7
-ms.sourcegitcommit: d93b0a2bcfb0d164ef90d6d4618f0552609a8ea6
+ms.openlocfilehash: c65cff52211b4c77e32c2992cd71392c8b0e44d6
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46469969"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177969"
 ---
-# <a name="install-azure-cli-20-on-windows"></a>Установка Azure CLI 2.0 в Windows
+# <a name="install-azure-cli-on-windows"></a>Установка Azure CLI в Windows
 
 Azure CLI для Windows устанавливается с помощью MSI. Это предоставляет доступ к CLI из командной строки Windows (CMD) или PowerShell.
 При установке подсистемы Windows для Linux (WSL) пакеты доступны для дистрибутива Linux. Список поддерживаемых диспетчеров пакетов и сведения об установке в WSL вручную см. на [главной странице установки](install-azure-cli.md).
@@ -34,7 +34,7 @@ Azure CLI для Windows устанавливается с помощью MSI. �
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
-Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md).
+Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
 
 ## <a name="uninstall"></a>Удаление
 

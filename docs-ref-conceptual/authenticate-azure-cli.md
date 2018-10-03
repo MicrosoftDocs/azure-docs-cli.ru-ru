@@ -1,6 +1,6 @@
 ---
-title: Вход с помощью Azure CLI 2.0
-description: Интерактивный вход с помощью Azure CLI 2.0 или вход с использованием локальных учетных данных
+title: Вход с помощью Azure CLI
+description: Интерактивный вход с помощью Azure CLI или вход с использованием локальных учетных данных
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -8,16 +8,15 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.service: active-directory
 ms.component: authentication
-ms.openlocfilehash: f6f3e8bc015420795dda48da093bc92bbf246529
-ms.sourcegitcommit: 8e6e3129f8f4824a8acfa12edb5dae52466d4be8
+ms.openlocfilehash: 6176fbbbe58e72ae45fc9769514478ffe4a8fea5
+ms.sourcegitcommit: f7554c00b5d5dca0ec716cbf996eb6654183ec37
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45626930"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47237635"
 ---
-# <a name="sign-in-with-azure-cli-20"></a>Вход с помощью Azure CLI 2.0
+# <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI 
 
 Azure CLI поддерживает несколько типов аутентификации. Проще всего приступить к работе можно с помощью оболочки [Azure Cloud Shell](/azure/cloud-shell/overview), которая автоматически выполняет вход в вашу учетную запись. На локальном компьютере вы можете выполнить вход в интерактивном режиме с помощью браузера, выполнив команду `az login`. При написании скриптов рекомендуется использовать субъекты-службы. Предоставляя именно те разрешения, которые нужны субъекту-службе, можно обеспечить безопасность скрипта автоматизации.
 
@@ -58,14 +57,6 @@ az login -u <username> -p <password>
 > $AzPass = ""
 > ```
 
-## <a name="sign-in-with-a-specific-tenant"></a>Вход в определенный клиент
-
-С помощью аргумента `--tenant` можно выбрать клиент, от имени которого выполняется вход. Значением этого аргумента может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента. Аргумент `--tenant` поддерживает оба метода входа — интерактивный и с помощью командной строки.
-
-```azurecli
-az login --tenant <tenant>
-```
-
 ## <a name="sign-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
 Субъекты-службы — это учетные записи, не связаны с определенным пользователем. Они предоставляют разрешения, назначаемые с помощью предопределенных ролей. Аутентификация с помощью субъекта-службы лучше всего подходит для создания безопасных скриптов и программ, позволяя применять как ограничения разрешений, так и хранимые локально сведения о статических учетных данных. Дополнительные сведения о субъектах-службах см. в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI ](create-an-azure-service-principal-azure-cli.md).
@@ -95,3 +86,21 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 > az login --service-principal -u <app-url> -p $AzPass --tenant <tenant>;
 > $AzPass = ""
 > ```
+
+## <a name="sign-in-with-a-different-tenant"></a>Вход с помощью другого клиента
+
+С помощью аргумента `--tenant` можно выбрать клиент, от имени которого выполняется вход. Значением этого аргумента может быть домен `.onmicrosoft.com` или идентификатор объекта Azure для клиента. Аргумент `--tenant` поддерживает оба метода входа — интерактивный и с помощью командной строки.
+
+```azurecli
+az login --tenant <tenant>
+```
+
+## <a name="sign-in-with-a-managed-identity"></a>Вход с помощью управляемого удостоверения
+
+В ресурсы Azure, которые настроены для использования управляемых удостоверений, можно выполнить вход с помощью такого удостоверения. Чтобы выполнить вход с помощью удостоверения ресурса, используйте флаг `--identity`.
+
+```azurecli
+az login --identity
+```
+
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в статьях о [настройке управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm) и [использовании управляемых удостоверений для входа в ресурсы Azure](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in).

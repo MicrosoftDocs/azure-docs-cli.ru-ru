@@ -1,6 +1,6 @@
 ---
-title: Выбор облаков с помощью Azure CLI 2.0
-description: Создание и администрирование нескольких облаков и вход в них с помощью Azure CLI 2.0.
+title: Выбор облаков с помощью Azure CLI
+description: Создание и администрирование нескольких облаков и вход в них с помощью Azure CLI.
 author: sptramer
 manager: carmonm
 ms.author: sttramer
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 26b9f414ddaba3cc3f834b4749dee9807d84aa79
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 92910e68a52fad3b3577db1bd01e918b69a895d7
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388413"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177714"
 ---
-# <a name="select-clouds-with-azure-cli-20"></a>Выбор облаков с помощью Azure CLI 2.0
+# <a name="select-clouds-with-the-azure-cli"></a>Выбор облаков с помощью Azure CLI 
 
 При работе в разных регионах или использовании [Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/) вам может понадобиться несколько облаков. Корпорация Майкрософт предоставляет доступные для использования облака в соответствии с местным законодательством в пределах каждого региона. В этой статье показано, как получить сведения об облаках, изменить текущее облако, а также зарегистрировать новые облака или отменить их регистрацию.
 
@@ -82,11 +82,11 @@ az cloud set --name AzureChinaCloud
 
 > [!IMPORTANT]
 > Если срок действия аутентификации для активации облака истек, необходимо повторно выполнить аутентификацию, прежде чем выполнять другие задачи CLI. Если вы переключаетесь на новое облако впервые, вам также понадобится настроить активную подписку.
-> Инструкции по проверке подлинности см. в статье [Вход с помощью Azure CLI 2.0](authenticate-azure-cli.md). Сведения об управлении подписками см. в руководстве по [управлению подписками Azure с помощью Azure CLI 2.0](manage-azure-subscriptions-azure-cli.md).
+> Инструкции по проверке подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md). Сведения об управлении подписками см. в руководстве по [управлению подписками Azure с помощью Azure CLI](manage-azure-subscriptions-azure-cli.md).
 
 ## <a name="register-a-new-cloud"></a>Регистрация нового облака
 
-Зарегистрируйте новое облако, если у вас есть свои конечные точки для Azure Stack. Облако создается с помощью команды [az cloud register](/cli/azure/cloud#az-cloud-register). Для этой команды требуется имя и набор конечных точек службы. Дополнительные сведения о регистрации облака для использования Azure Stack см. в статье [Использование профилей версий API и Azure CLI 2.0 в Azure Stack](/azure/azure-stack/user/azure-stack-version-profiles-azurecli2#connect-to-azure-stack).
+Зарегистрируйте новое облако, если у вас есть свои конечные точки для Azure Stack. Облако создается с помощью команды [az cloud register](/cli/azure/cloud#az-cloud-register). Для этой команды требуется имя и набор конечных точек службы. Сведения о регистрации облака для использования Azure Stack см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](/azure/azure-stack/user/azure-stack-version-profiles-azurecli2#connect-to-azure-stack).
 
 Вам не нужно регистрировать собственное облако в регионах "Китай", "US Government" или "Германия". Эти облака управляются корпорацией Майкрософт и доступны по умолчанию.  Дополнительные сведения обо всех доступных конечных точках см. в [документации по `az cloud register`](/cli/azure/cloud#az-cloud-register).
 

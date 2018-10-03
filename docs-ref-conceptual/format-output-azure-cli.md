@@ -1,6 +1,6 @@
 ---
-title: Форматы выходных данных для Azure CLI 2.0
-description: Форматирование результатов выполнения команд Azure CLI 2.0 в таблицы, списки или файлы JSON.
+title: Форматы выходных данных для Azure CLI
+description: Сведения о том, как форматировать результаты выполнения команды Azure CLI в виде таблиц, списков или объектов JSON.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1430d817a7e6c10a8f8021cf9d763f62d560ba71
-ms.sourcegitcommit: 8318ce761c279afa4cd45a81a58d83fc38c616bc
+ms.openlocfilehash: 5b5d962e244037d9c904fc5c75314661130d1910
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45561564"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47178071"
 ---
-# <a name="output-formats-for-azure-cli-20-commands"></a>Форматы выходных данных для команд Azure CLI 2.0
+# <a name="output-formats-for-azure-cli-commands"></a>Форматы выходных данных для команд Azure CLI
 
-Azure CLI 2.0 использует JSON в качестве формата выходных данных по умолчанию, но поддерживает и другие форматы.  Параметр `--output` (`--out` или `-o`) позволяет форматировать данные, выводимые CLI. Ниже описаны значения аргументов и их типы:
+Azure CLI использует JSON в качестве формата выходных данных по умолчанию, но поддерживает и другие форматы.  Параметр `--output` (`--out` или `-o`) позволяет форматировать данные, выводимые CLI. Ниже описаны значения аргументов и их типы:
 
 --output | ОПИСАНИЕ
 ---------|-------------------------------
@@ -137,7 +137,7 @@ RGDEMO001   KBDemo020
 > az vm list --query "[].{objectID:id}" -o table
 > ```
 
-Дополнительные сведения об использовании запросов для фильтрации данных см. в руководстве по [использованию запросов JMESPath с Azure CLI 2.0](/cli/azure/query-azure-cli).
+Дополнительные сведения об использовании запросов для фильтрации данных см. в [руководстве по использованию запросов JMESPath в Azure CLI](/cli/azure/query-azure-cli).
 
 ## <a name="tsv-output-format"></a>Формат выходных данных TSV
 
@@ -196,4 +196,4 @@ What default output format would you like?
 Please enter a choice [1]:
 ```
 
-Дополнительные сведения о настройке окружения см. в описании [конфигурации Azure CLI 2.0](/cli/azure/azure-cli-configuration).
+Дополнительные сведения о настройке среды см. в [руководстве по конфигурации Azure CLI](/cli/azure/azure-cli-configuration).

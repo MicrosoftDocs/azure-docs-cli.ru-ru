@@ -1,6 +1,6 @@
 ---
-title: Расширение псевдонимов Azure CLI 2.0
-description: Как использовать расширение псевдонимов Azure CLI 2.0
+title: Расширение псевдонимов Azure CLI
+description: Как использовать расширение псевдонимов Azure CLI
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: a2cd277640ab0a55d2e1da5ecb491e72eee1e0df
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 47afede5cb1954ddd33f03fd4a6a6dc6c5ed7aee
+ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388632"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47177935"
 ---
-# <a name="the-azure-cli-20-alias-extension"></a>Расширение псевдонимов Azure CLI 2.0
+# <a name="the-azure-cli-alias-extension"></a>Расширение псевдонимов Azure CLI
 
 Расширение псевдонимов позволяет пользователям определять команды для Azure CLI с помощью существующих команд. Псевдонимы упрощают рабочий процесс за счет использования ярлыков. Так как поддержка псевдонимов осуществляется на базе модуля шаблонов Jinja2, вы можете использовать расширенные функции обработки аргументов.
 
@@ -25,7 +25,7 @@ ms.locfileid: "44388632"
 
 ## <a name="install-the-alias-extension"></a>Установка расширения псевдонимов
 
-Минимальная требуемая версия Azure CLI для использования расширения псевдонимов — **2.0.28**. Чтобы проверить используемую версию CLI, выполните `az --version`. При необходимости обновите [установку CLI Azure 2.0](./install-azure-cli.md).
+Минимальная требуемая версия Azure CLI для использования расширения псевдонимов — **2.0.28**. Чтобы проверить используемую версию CLI, выполните `az --version`. Если необходимо обновить установленный пакет CLI, следуйте инструкциям в статье [Установка Azure CLI](./install-azure-cli.md).
 
 Установите расширение с помощью команды [az extension add](/cli/azure/extension#az-extension-add).
 
