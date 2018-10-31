@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 10/11/2018
+ms.date: 10/21/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 76512c665728ada85edebc867edfcd772be6237c
-ms.sourcegitcommit: f0e00f09db87617328a081d43cd53bb8b16db0fb
+ms.openlocfilehash: 0cf781f97e44b8752f5d03b9dbe4239489878856
+ms.sourcegitcommit: 6d9169ed547df151f99e5a3ac86578634486419a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49113328"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49652521"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -38,11 +38,12 @@ az extension list-available --output table
 | [dms-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/dms-preview) | 0.5.0 | Поддержка новых сценариев Database Migration Service. | Yes |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
 | [eventgrid](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Поддержка функций службы 	"Сетка событий Azure" версии 2018-05-01-preview | Yes |
-| [express-route](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route) | 0.1.0 | Управление ExpressRoute с помощью предварительных версий функций. | Yes |
+| [express-route](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route) | 0.1.2 | Управление ExpressRoute с помощью предварительных версий функций. | Yes |
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.0 | Управление пользовательскими каналами ExpressRoute с использованием перекрестного подключения ExpressRoute. |  |
 | [find](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.2.0 | Интеллектуальный запрос для получения сведений CLI. | Yes |
 | [front-door](https://github.com/Azure/azure-cli-extensions/tree/master/src/front-door) | 0.1.1 | Управление сетевыми службами Front Door. | Yes |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.8 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
+| [интерактивный](https://github.com/Azure/azure-cli) | 0.4.0 | Интерактивная оболочка командной строки Microsoft Azure | Yes |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Yes |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.3 | Поддержка возможностей запросов Azure Log Analytics. | Yes |
 | [managementgroups](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Azure CLI для групп управления. |  |
