@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 047a953a0ab8ccaf145d56e4d774d2bf9852ed6f
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.openlocfilehash: 8ab8435f2d8337f63a73aef39472646dc8ebcd74
+ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47177731"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51222299"
 ---
 # <a name="azure-cli"></a>Инфраструктура CLI Azure
 
@@ -26,6 +26,10 @@ Azure CLI — это кроссплатформенный интерфейс к�
 ```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 ```
+
+> [!NOTE]
+>
+> В скриптах и на сайте документации Майкрософт примеры Azure CLI написаны для оболочки `bash`. Однострочные примеры можно запускать на любой платформе. Более длинные или сложные примеры, включающие символы продолжения строки (`\`) или присвоение значения переменной, должны быть изменены для использования в других оболочках, включая PowerShell.
 
 ## <a name="run-or-install"></a>Запуск или установка
 
