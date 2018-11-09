@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 5b5d962e244037d9c904fc5c75314661130d1910
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.openlocfilehash: 1a3e7a632cc9931a4fe16c780d2706e52a1aa5c2
+ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47178071"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51222350"
 ---
 # <a name="output-formats-for-azure-cli-commands"></a>Форматы выходных данных для команд Azure CLI
 
@@ -116,7 +116,7 @@ KBDemo020    RGDEMO001        westus
 
 Вы можете использовать параметр `--query` для настройки свойств и столбцов, которые будут отображаться в списке. Следующий пример показывает, как выбрать только имя виртуальной машины и имя группы ресурсов в команде `list`.
 
-```azurecli
+```azurecli-interactive
 az vm list --query "[].{resource:resourceGroup, name:name}" -o table
 ```
 
@@ -133,7 +133,7 @@ RGDEMO001   KBDemo020
 > [!NOTE]
 > Некоторые ключи по умолчанию не отображаются в табличном представлении. Доступны следующие параметры: `id`, `type` и `etag`. Если вам нужно отобразить их в выходных данных, вы можете использовать функцию повторного добавления ключа JMESPath, чтобы изменить имя ключа и избежать фильтрации.
 >
-> ```azurecli
+> ```azurecli-interactive
 > az vm list --query "[].{objectID:id}" -o table
 > ```
 

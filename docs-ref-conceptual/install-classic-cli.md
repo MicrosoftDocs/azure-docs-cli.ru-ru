@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 68aa728b9b9324a53856008f05d8ce30eb61c76d
-ms.sourcegitcommit: 6d9169ed547df151f99e5a3ac86578634486419a
+ms.openlocfilehash: 78043f9c070626545030971dea2a8fd155ac76c2
+ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49652487"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51222469"
 ---
 # <a name="install-the-azure-classic-cli"></a>Установка классического интерфейса командной строки Azure (Azure Classic CLI)
 
@@ -74,7 +74,7 @@ docker run -it microsoft/azure-cli:0.10.17
 
 Установив классический интерфейс командной строки Azure, выполните команду `azure` в любом интерфейсе командной строки (Bash, терминале, командной строке и т. п.). Например, чтобы выполнить команду справки, введите следующее:
 
-```azurecli
+```azurecli-interactive
 azure help
 ```
 
@@ -87,7 +87,7 @@ sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 Чтобы просмотреть версии классического интерфейса командной строки Azure, выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 azure --version
 ```
 

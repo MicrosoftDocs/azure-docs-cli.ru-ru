@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 4522242952e5d257449c9c593885c62de2f56d0f
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.openlocfilehash: 1736d1677fb6c7fc83a092493e8706c2d5edfccd
+ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47178037"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51222537"
 ---
 # <a name="use-jmespath-queries-with-azure-cli"></a>Использование запросов JMESPath в Azure CLI 
 
@@ -61,7 +61,7 @@ az vm show -g QueryDemo -n TestVM --query 'storageProfile.{image:imageReference.
 > [!NOTE]
 > Некоторые ключи отфильтровываются и не печатаются в табличном представлении. Эти ключи — `id`, `type` и `etag`. Если необходимо просмотреть эти сведения, можно изменить имя ключа, избегая фильтрации.
 >
-> ```azurecli
+> ```azurecli-interactive
 > az vm show -g QueryDemo -n TestVM --query "{objectID:id}" -o table
 > ```
 
