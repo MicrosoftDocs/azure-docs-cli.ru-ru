@@ -4,19 +4,110 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 10/23/2018
+ms.date: 11/06/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 65e34ab6014c47ae92a6d4bae8cdc30d4a1413dc
-ms.sourcegitcommit: aec89531c938781b4724f43b5bb4b878e106a26a
+ms.openlocfilehash: 51b8b8cad6d25f916006b8e68b8f300587f5d45b
+ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49952491"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51222571"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="november-6-2018"></a>6 ноября 2018 г.
+
+Версия 2.0.50
+
+### <a name="core"></a>Core
+* Добавлена поддержка аутентификации субъекта-службы с помощью имени и издателя сертификата.
+
+### <a name="acr"></a>ACR
+* Добавлена поддержка событий git для фиксаций и запросов на вытягивание для исходного триггера задачи.
+* Внесено изменение для использования файла Dockerfile по умолчанию, если он не указан в команде build.
+
+### <a name="acs"></a>ACS
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `enable_cloud_console_aks_browse`, чтобы активировать az aks browse по умолчанию.
+
+### <a name="advisor"></a>Помощник
+* Выпуск общедоступной версии
+
+### <a name="ams"></a>AMS
+* Добавлены новые группы команд:
+  *  `ams account-filter`
+  *  `ams asset-filter`
+  *  `ams content-key-policy`
+  *  `ams live-event`
+  *  `ams live-output`
+  *  `ams streaming-endpoint`
+  *  `ams mru`
+* Добавлены новые команды:
+  * `ams account check-name`
+  * `ams job update`
+  * `ams asset get-encryption-key`
+  * `ams asset get-streaming-locators`
+  * `ams streaming-locator get-content-keys`
+* Добавлена поддержка параметров шифрования в `ams streaming-policy create`.
+* Добавлена поддержка операции `ams transform output remove` путем передачи выходного индекса для удаления.
+* Добавлены аргументы `--correlation-data` и `--label` в группу команд `ams job`.
+* Добавлены аргументы `--storage-account` и `--container` в группу команд `ams asset`.
+* Добавлены значения по умолчанию для времени истечения срока действия (23 часа от текущего момента) и разрешений (чтение) в команду `ams asset get-sas-url`. 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams streaming locator` заменена на `ams streaming-locator`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Обновлен аргумент `--content-keys` в `ams streaming locator`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Аргумент `--content-policy-name` команды `ams streaming locator` переименован в `--content-key-policy-name`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams streaming policy` заменена на `ams streaming-policy`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Аргумент `--preset-names` в группе команд `ams transform` заменен на `--preset`. Теперь можно одновременно задавать только один вывод/набор параметров (для добавления дополнительных нужно запустить команду `ams transform output add`). Также можно задать пользовательский параметр StandardEncoderPreset, указав путь к пользовательскому файлу JSON.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Аргумент `--output-asset-names ` команды `ams job start` переименован в `--output-assets`. Теперь он принимает список ресурсов, разделенных пробелами, в формате assetName=label. Ресурс без метки можно передать следующим образом: assetName=.
+
+### <a name="appservice"></a>AppService
+* Исправлена ошибка в `az webapp config backup update`, которая не давала установить расписание резервного копирования при наличии существующего расписания.
+
+### <a name="configure"></a>Настройка
+* Добавлен YAML в список поддерживаемых форматов выходных данных.
+
+### <a name="container"></a>Контейнер
+* Внесено изменение для показа идентификатора при экспорте группы контейнеров в файл YAML.
+
+### <a name="eventhub"></a>концентратор событий.
+* Добавлен флаг `--enable-kafka` для поддержки Kafka в `eventhub namespace [create|update]`.
+
+### <a name="interactive"></a>Interactive
+* Interactive теперь устанавливает расширение `interactive`, которое обеспечивает более быстрые обновления и поддержку.
+
+### <a name="monitor"></a>Мониторинг
+* Добавлена поддержка имен метрик, которые включают символы прямой косой черты (/) и точки (.), в параметр `--condition` команды `monitor metrics alert [create|update]`.
+
+### <a name="network"></a>Сеть
+* Имена команд `network interface-endpoint` не рекомендуются к использованию. Вместо них следует использовать `network private-endpoint`.
+* Исправлена ошибка, при которой аргумент `--peer-circuit` в `express-route peering connection create` не принимал идентификатор.
+* Исправлена ошибка, приводившая к неправильной работе аргумента `--ip-tags` в команде `public-ip create`. 
+
+### <a name="profile"></a>Профиль
+* Добавлен аргумент `--use-cert-sn-issuer` в команду `az login` для входа субъекта-службы с автоматической ротацией сертификатов.
+
+### <a name="rdbms"></a>Реляционная СУБД
+* Добавлены команды для работы с репликами MySQL.
+
+### <a name="resource"></a>Ресурс
+* Добавлена поддержка групп управления и подписок в команды `policy definition|set-definition`.
+
+### <a name="role"></a>Роль
+* Добавлена поддержка управления разрешениями API, входа пользователя, а также управления паролями и сертификатами приложений.
+* Изменена команда `ad sp create-for-rbac`, чтобы устранить путаницу между параметром displayName и именем субъекта-службы.
+* Добавлена поддержка назначения разрешения для приложений AAD.
+
+### <a name="storage"></a>Хранилище
+* Добавлена поддержка подключения к службам хранения с использованием только подписанных URL-адресов и конечных точек (без имени или ключа учетной записи), как описано в `Configure Azure Storage connection strings <https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string>`.
+
+### <a name="vm"></a>ВМ
+* Добавлен аргумент `storage-sku` в команду `image create`, позволяющий указать тип учетной записи хранения по умолчанию для образа.
+* Исправлена ошибка в команде `vm resize`, из-за которой использование параметра `--no-wait` приводило к аварийному завершению команды.
+* Изменен формат выходных данных команды `vm encryption show` в виде таблицы для отображения состояния.
+* Изменена команда `vm secret format`, которая теперь требует выходных данных в формате JSON/JSONC. Команда выводит предупреждение и по умолчанию использует для выходных данных формат JSON, если выбран нежелательный формат выходных данных.
+* Улучшена проверка аргументов команды `vm create --image`.
 
 ## <a name="october-23-2018"></a>23 октября 2018 г.
 
