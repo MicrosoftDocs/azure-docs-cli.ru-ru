@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 92910e68a52fad3b3577db1bd01e918b69a895d7
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.openlocfilehash: 6435387798d7ea9ec8d57920ace0c3dc80f104cb
+ms.sourcegitcommit: f92d5b3ccd409be126f1e7c06b9f1adc98dad78b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47177714"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52159343"
 ---
 # <a name="select-clouds-with-the-azure-cli"></a>Выбор облаков с помощью Azure CLI 
 
@@ -45,7 +45,7 @@ True        AzureCloud         latest
 az cloud show --name AzureChinaCloud --output json
 ```
 
-```output
+```json
 {
   "endpoints": {
     "activeDirectory": "https://login.chinacloudapi.cn",
