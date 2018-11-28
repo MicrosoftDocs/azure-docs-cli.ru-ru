@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 11/08/2018
+ms.date: 11/19/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: ad57a08cab342aeb85982fb232b901f9ea3fc7ab
-ms.sourcegitcommit: ab8cffd1cc9f057316be87c9cb202fe215a34890
+ms.openlocfilehash: 39271b393e8fbc08bb33fd1843b78745437d0385
+ms.sourcegitcommit: f92d5b3ccd409be126f1e7c06b9f1adc98dad78b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51296792"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "52159360"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -58,4 +58,4 @@ az extension list-available --output table
 | [subscription](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Поддержка управления подписками (предварительная версия). |  |
 | [virtual-network-tap](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-network-tap) | 0.1.0 | Управление точками доступа к виртуальным сетям (VTAP). | Yes |
 | [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.1.0 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Yes |
-| [webapp](https://github.com/Azure/azure-cli-extensions) | 0.2.15 | Дополнительные команды для Службы приложений Azure. | Yes |
+| [webapp](https://github.com/Azure/azure-cli-extensions) | 0.2.16 | Дополнительные команды для Службы приложений Azure. | Yes |
