@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 38d32f62cbaff7d5f1bdf7fd52bf00d47e9e14b1
-ms.sourcegitcommit: 6d9169ed547df151f99e5a3ac86578634486419a
+ms.openlocfilehash: 718d2bf442ac0664863b71ba30fceed62fb4e9cf
+ms.sourcegitcommit: a8aac038e6ede0b1b352ca6163a04b61ff4eed5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49652504"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450298"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 
@@ -74,6 +74,8 @@ hash -r
 ```bash
 <install path>/bin
 ```
+
+[!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
 ## <a name="uninstall"></a>Удаление
 

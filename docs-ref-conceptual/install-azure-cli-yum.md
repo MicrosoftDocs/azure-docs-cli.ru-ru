@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 3747f276a30740602271477e154322cad45f190e
-ms.sourcegitcommit: 6d9169ed547df151f99e5a3ac86578634486419a
+ms.openlocfilehash: 7e2c7c5477c8d5a617875eeaed8e3d267d9bcf8c
+ms.sourcegitcommit: a8aac038e6ede0b1b352ca6163a04b61ff4eed5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49652470"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450315"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 
@@ -47,6 +47,12 @@ ms.locfileid: "49652470"
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
 Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Ниже описаны некоторые распространенные проблемы при установке с помощью `yum`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
+
+[!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
 ## <a name="update"></a>Блокировка изменений
 

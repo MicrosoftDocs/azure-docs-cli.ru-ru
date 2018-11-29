@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: a73576a9caeb7d016f49bb1d90f1903cbd515c63
-ms.sourcegitcommit: 6d9169ed547df151f99e5a3ac86578634486419a
+ms.openlocfilehash: bb60b807df29833a74b1dab4def6f5ced58c8ffe
+ms.sourcegitcommit: a8aac038e6ede0b1b352ca6163a04b61ff4eed5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49652453"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450281"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
@@ -53,6 +53,13 @@ ms.locfileid: "49652453"
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
 Дополнительные сведения о различных методах проверки подлинности см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Ниже описаны некоторые распространенные проблемы при установке с помощью `zypper`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
+
+[!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
+
 
 ## <a name="update"></a>Блокировка изменений
 
