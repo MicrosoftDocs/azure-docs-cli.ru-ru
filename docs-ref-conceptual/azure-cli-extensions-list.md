@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 11/19/2018
+ms.date: 11/27/2018
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 39271b393e8fbc08bb33fd1843b78745437d0385
-ms.sourcegitcommit: f92d5b3ccd409be126f1e7c06b9f1adc98dad78b
+ms.openlocfilehash: 98d9919253cb8af12cb3fc83ac8c0c8eb8c5aaf3
+ms.sourcegitcommit: a8aac038e6ede0b1b352ca6163a04b61ff4eed5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52159360"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450332"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -32,7 +32,7 @@ az extension list-available --output table
 | [aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) | 0.1.0 | Предварительное знакомство с будущими возможностями AKS. | Yes |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.2 | Поддержка псевдонимов команд. | Yes |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.5.1 | Дополнительные команды для работы с пакетной службой Azure. |  |
-| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.6.0 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
+| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.6.1 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.1.1 | Управление ресурсами Брандмауэра Azure. | Yes |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.4.1 | Исправления ошибок в собственном командном модуле botservice cli. | Yes |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |

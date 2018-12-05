@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: fa900424d30f7b7cc1e3da4f0a0ea2cf86383cbd
-ms.sourcegitcommit: 22b73d56602c1c4e647ed2c5af3d596a2f6a7ed5
+ms.openlocfilehash: 29baa488bfe6e71dbd3b95220a6562a216d038ae
+ms.sourcegitcommit: a8aac038e6ede0b1b352ca6163a04b61ff4eed5b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52267302"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52450247"
 ---
 # <a name="install-the-azure-cli"></a>Установка Azure CLI
 
@@ -25,7 +25,7 @@ Azure CLI — это программа командной строки, кот�
 
 * [Установка в Windows](install-azure-cli-windows.md)
 * [Установка в macOS](install-azure-cli-macos.md)
-* Установка в Linux или подсистеме Windows для Linux (WSL):
+* Установка в Linux или [подсистеме Windows для Linux (WSL)](/windows/wsl/about)
   * [Установка с помощью apt в Debian и Ubuntu](install-azure-cli-apt.md)
   * [Установка с помощью yum в RHEL, Fedora или CentOS](install-azure-cli-yum.md).
   * [Установка с помощью zypper в openSUSE или SLE](install-azure-cli-zypper.md).
