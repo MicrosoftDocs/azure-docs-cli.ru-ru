@@ -5,11 +5,11 @@ manager: carmonm
 ms.date: 09/07/2018
 ms.topic: include
 ms.openlocfilehash: d34ad05504c49e09e538e4721a28399287969fdb
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.sourcegitcommit: 5025f123482964dbf72dc5b4950dbc62be67ea8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47178139"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52954305"
 ---
 1. Выполните команду `login`.
 
