@@ -9,14 +9,37 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 36b57d52a5851275fd317240e5c2c95171a99e7e
-ms.sourcegitcommit: 22b73d56602c1c4e647ed2c5af3d596a2f6a7ed5
+ms.openlocfilehash: 7a2ab41dd6696d658d05ab76e44abf97626761aa
+ms.sourcegitcommit: 14aa16beeec59e51890a6cba4906bdc8e19b94d0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52267336"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52892689"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+## <a name="december-4-2018"></a>4 декабря 2018 г.
+
+Версия 2.0.52
+### <a name="core"></a>Core
+* Добавлена поддержка подготовки ресурсов нескольких клиентов для мультитенантного субъекта-службы.
+* Исправлена ошибка, когда идентификаторы, передаваемые по конвейеру из команды в формате выходных данных TSV, неправильно анализировались.
+
+### <a name="appservice"></a>Служба приложений
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена команда `webapp up`, которая помогает создавать и развертывать содержимое для приложения.
+* Исправлена ошибка в контейнерном приложении Windows из-за изменения в серверной части.
+
+### <a name="network"></a>Сеть
+* Добавлен аргумент `--exclusion` в `application-gateway waf-config set` для поддержки исключений WAF.
+
+### <a name="role"></a>Роль
+* Добавлена поддержка пользовательских идентификаторов для учетных данных и паролей. 
+
+### <a name="vm"></a>ВМ
+* [УСТАРЕЛО] Параметр `vm extension [show|wait] --expand` устарел.
+* Добавлен параметр`--force` в `vm restart` для повторного развертывания виртуальных машин, которые не отвечают.
+* Изменено `[vm|vmss] create --authentication-type` для принятия all и создания виртуальной машины с использованием проверки подлинности на основе пароля и SSH.
+* Добавлен параметр `image create --os-disk-caching` для настройки кэширования дисков операционной системы для образа.
+
 ## <a name="november-20-2018"></a>20 ноября 2018 г.
 
 Версия 2.0.51
