@@ -8,13 +8,13 @@ ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: cbfeec67468b8529580c7773883ebfaaa0d0185f
-ms.sourcegitcommit: f92d5b3ccd409be126f1e7c06b9f1adc98dad78b
+ms.devlang: azurecli
+ms.openlocfilehash: 7a6b89953d60fe98910f8141a606ac1fcba318ae
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52159309"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593444"
 ---
 # <a name="azure-cli-interactive-mode"></a>Интерактивный режим Azure CLI
 

@@ -8,13 +8,13 @@ ms.date: 09/09/2018
 ms.topic: conceptual
 ms.produdct: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: 7bffd91fc31452fc745bc572262f10645e4179eb
-ms.sourcegitcommit: f7554c00b5d5dca0ec716cbf996eb6654183ec37
+ms.devlang: azurecli
+ms.openlocfilehash: 27f094b68812cb68a6a33a6977d4fd58e4178731
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47237601"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593665"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Использование нескольких подписок Azure
 

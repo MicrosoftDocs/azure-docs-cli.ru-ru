@@ -8,13 +8,13 @@ ms.date: 09/09/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: c65cff52211b4c77e32c2992cd71392c8b0e44d6
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.devlang: azurecli
+ms.openlocfilehash: ff4ed838351167410c75c046dc8f615faa0930f5
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47177969"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593223"
 ---
 # <a name="install-azure-cli-on-windows"></a>Установка Azure CLI в Windows
 

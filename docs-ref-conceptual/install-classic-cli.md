@@ -8,13 +8,13 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: 78043f9c070626545030971dea2a8fd155ac76c2
-ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
+ms.devlang: azurecli
+ms.openlocfilehash: 65bf8cdc4ee5d74a778d29cd96e51bad5dc6b22e
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51222469"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593376"
 ---
 # <a name="install-the-azure-classic-cli"></a>Установка классического интерфейса командной строки Azure (Azure Classic CLI)
 
@@ -32,7 +32,7 @@ ms.locfileid: "51222469"
 
 Установив классический интерфейс командной строки Azure, установите подключение с помощью команды `azure login` и выполните команды `azure` из интерфейса командной строки (Bash, терминал, командная строка и т. п.) для работы с ресурсами Azure.
 
-## <a name="option-1-install-an-npm-package"></a>Вариант 1. Установка пакета npm
+## <a name="option-1-install-an-npm-package"></a>Вариант 1. Установка пакета npm
 
 Чтобы установить классический интерфейс командной строки из пакета npm, установите в системе [последнюю версию Node.js и npm](https://nodejs.org/en/download/package-manager/). Затем выполните `npm install`, чтобы установить пакет azure-cli:
 
@@ -55,14 +55,14 @@ sudo npm install -g azure-cli
 npm install -g <path to downloaded tar file>
 ```
 
-## <a name="option-2-use-an-installer"></a>Вариант 2. Использование установщика
+## <a name="option-2-use-an-installer"></a>Вариант 2. Использование установщика
 
 Если вы используете компьютер с Mac или Windows, на [странице выпусков репозитория GitHub](https://github.com/Azure/azure-xplat-cli/releases) доступны установщики DMG и MSI.
 
 > [!TIP]
 > Чтобы установить классический интерфейс командной строки в Windows, можете также скачать [установщик веб-платформы](https://go.microsoft.com/?linkid=9828653). Этот установщик позволяет дополнительно установить пакет Azure SDK и инструменты командной строки.
 
-## <a name="option-3-use-a-docker-container"></a>Вариант 3. Использование контейнера Docker
+## <a name="option-3-use-a-docker-container"></a>Вариант 3. Использование контейнера Docker
 
 Если вы настроили компьютер в качестве узла [Docker](https://docs.docker.com/engine/understanding-docker/), то можно запустить классический интерфейс командной строки Azure в контейнере Docker. Выполните следующую команду (возможно, для дистрибутивов Linux потребуется использовать `sudo`):
 

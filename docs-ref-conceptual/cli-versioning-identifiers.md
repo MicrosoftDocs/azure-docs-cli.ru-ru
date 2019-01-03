@@ -7,13 +7,13 @@ manager: carmonm
 ms.date: 07/12/2018
 ms.topic: conceptual
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: 4370616459ad4e466128ff26123c10f55bfdd7d8
-ms.sourcegitcommit: 728a050f13d3682122be4a8993596cc4185a45ce
+ms.devlang: azurecli
+ms.openlocfilehash: a39f6b0fbccf937aec2b227ed4e3f4ff8d92137f
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51680906"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593104"
 ---
 # <a name="differences-between-azure-cli-products"></a>Различия между продуктами Azure CLI
 

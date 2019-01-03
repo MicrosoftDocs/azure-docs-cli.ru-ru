@@ -9,13 +9,13 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: d23548a9cdfe307c2597d992dc014125f80704d0
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.devlang: azurecli
+ms.openlocfilehash: a56ce4acf070c17d8deaec9674593ba930cca70f
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47178003"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593614"
 ---
 # <a name="get-started-with-azure-cli"></a>Начало работы с Azure CLI
 

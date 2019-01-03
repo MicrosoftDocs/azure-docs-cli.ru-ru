@@ -8,13 +8,13 @@ ms.date: 11/05/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: a79e5445654a9f339321db18b54e558aa598e19b
-ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
+ms.devlang: azurecli
+ms.openlocfilehash: 40415bc7bec056dc1564c58c8df3f7263bee348c
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51222265"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593172"
 ---
 # <a name="install-azure-cli-on-macos"></a>Установка Azure CLI в macOS
 

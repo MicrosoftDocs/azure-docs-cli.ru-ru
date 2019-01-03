@@ -8,13 +8,13 @@ ms.date: 01/29/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: 40e6865ce07b6ccb8e84a2666f0bcd6df3b5cfcf
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.devlang: azurecli
+ms.openlocfilehash: 2a4515f5301daca68f6e1a161fb2327f6caa0cf5
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47177765"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593835"
 ---
 # <a name="run-azure-cli-in-a-docker-container"></a>Запуск Azure CLI в контейнере Docker
 
