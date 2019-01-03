@@ -9,13 +9,13 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: 0ba204063c00bf706f6af5a14dc59ba317385f95
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.devlang: azurecli
+ms.openlocfilehash: 4f203f94e9b26e1219bfe69ec0ddd73228d30b64
+ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47178122"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53593274"
 ---
 # <a name="use-extensions-with-azure-cli"></a>Использование расширений с Azure CLI 
 
@@ -94,8 +94,8 @@ rm -rf $AZURE_EXTENSION_DIR/<extension-name>
 
 ### <a name="can-extensions-depend-upon-each-other"></a>Могут ли расширения зависеть друг от друга?
 
-Нет. Так как CLI не гарантирует порядок загрузки, зависимости могут быть не удовлетворены. Удаление одного расширения не влияет на другие.
+ Нет. Так как CLI не гарантирует порядок загрузки, зависимости могут быть не удовлетворены. Удаление одного расширения не влияет на другие.
 
 ### <a name="are-extensions-updated-along-with-the-cli"></a>Обновляются ли расширения вместе с CLI?
 
-Нет. Расширения следует обновлять отдельно, как описано в разделе [Обновление расширений](#update-extensions).
+ Нет. Расширения следует обновлять отдельно, как описано в разделе [Обновление расширений](#update-extensions).
