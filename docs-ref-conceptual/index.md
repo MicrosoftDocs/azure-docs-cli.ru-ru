@@ -1,6 +1,6 @@
 ---
 title: Общие сведения об Azure CLI
-description: Общие сведения об Azure CLI.
+description: Общие сведения об интерфейсе командной строки Azure (CLI).
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -8,20 +8,21 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: 8ab8435f2d8337f63a73aef39472646dc8ebcd74
-ms.sourcegitcommit: 0d6b08048b5b35bf0bb3d7b91ff567adbaab2a8b
+ms.devlang: azurecli
+ms.openlocfilehash: 285567b00d8c303af3e78a01dc80946a08e4e8f8
+ms.sourcegitcommit: 614811ea63ceb0e71bd99323846dc1b754e15255
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51222299"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53805913"
 ---
-# <a name="azure-cli"></a>Инфраструктура CLI Azure
+# <a name="azure-command-line-interface-cli"></a>Интерфейс командной строки Azure (CLI)
 
-Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
+Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
 Его можно использовать в браузере с [Azure Cloud Shell](/azure/cloud-shell/overview) или [установить](install-azure-cli.md) в macOS, Linux или Windows и запускать из командной строки.
 
-Начать работу с Azure CLI очень просто. Этот инструмент лучше всего подходит для создания скриптов автоматизации, которые работают с Azure Resource Manager. С помощью Azure CLI можно легко создавать виртуальные машины в Azure простым вводом следующей команды:
+Начать работу с Azure CLI очень просто. Этот инструмент лучше всего подходит для создания скриптов автоматизации, которые работают с Azure Resource Manager.
+С помощью Azure CLI можно легко создавать виртуальные машины в Azure простым вводом следующей команды:
 
 ```azurecli-interactive
 az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
@@ -29,7 +30,7 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 
 > [!NOTE]
 >
-> В скриптах и на сайте документации Майкрософт примеры Azure CLI написаны для оболочки `bash`. Однострочные примеры можно запускать на любой платформе. Более длинные или сложные примеры, включающие символы продолжения строки (`\`) или присвоение значения переменной, должны быть изменены для использования в других оболочках, включая PowerShell.
+> В скриптах и на сайте документации Майкрософт примеры Azure CLI написаны для оболочки `bash`. Однострочные примеры можно запускать на любой платформе. Более длинные примеры, включающие символы продолжения строки (`\`) или присвоение значения переменной, нужно изменить для использования в других оболочках, включая PowerShell.
 
 ## <a name="run-or-install"></a>Запуск или установка
 
