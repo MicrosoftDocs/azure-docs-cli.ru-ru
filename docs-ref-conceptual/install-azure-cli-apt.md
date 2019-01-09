@@ -8,13 +8,13 @@ ms.date: 11/27/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: c33c3e75991979a72a7b82183dd88b87715907ae
-ms.sourcegitcommit: a8aac038e6ede0b1b352ca6163a04b61ff4eed5b
+ms.devlang: azurecli
+ms.openlocfilehash: 1973c933cbffa494cbe9c0749346450251feefcb
+ms.sourcegitcommit: 9bd90875a324908ec7195fc4c4f63ebf124760f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52450264"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53982592"
 ---
 # <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
@@ -23,18 +23,23 @@ ms.locfileid: "52450264"
 * Ubuntu trusty, xenial, artful и bionic
 * Debian wheezy, jessie и stretch
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 
-1. <div id="install-step-1"/>Измените список источников.
+1. Установите пакеты необходимых компонентов.
 
     ```bash
-    sudo apt-get install apt-transport-https lsb-release software-properties-common -y
+    sudo apt-get install apt-transport-https lsb-release software-properties-common dirmngr -y
+    ```
+
+2. <div id="set-release"/>Измените список источников.
+
+    ```bash
     AZ_REPO=$(lsb_release -cs)
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
         sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
-2. <div id="signingKey"/>Получите ключ подписывания Microsoft.
+3. <div id="signingKey"/>Получите ключ подписывания Microsoft.
 
    ```bash
    sudo apt-key --keyring /etc/apt/trusted.gpg.d/Microsoft.gpg adv \
@@ -42,7 +47,7 @@ ms.locfileid: "52450264"
         --recv-keys BC528686B50D79E339D3721CEB3E94ADBE1229CF
    ```
 
-3. Установите интерфейс командной строки.
+4. Установите интерфейс командной строки.
 
    ```bash
    sudo apt-get update
@@ -64,7 +69,7 @@ ms.locfileid: "52450264"
 
 ### <a name="lsbrelease-does-not-return-the-correct-base-distribution-version"></a>Команда lsb_release не возвращает правильную версию базового дистрибутива
 
-Некоторые производные от Ubuntu или Debian дистрибутивы, например Linux Mint, могут возвращать неправильную версию при использовании команды `lsb_release`. Это значение используется при установке для определения устанавливаемого пакета. Если известно, на основе какой версии создан дистрибутив, можно установить значение параметра `AZ_REPO` вручную на [первом шаге установки](#install-step-1). В противном случае найдите информацию о том, как определить имя основного дистрибутива, и задайте для `AZ_REPO` правильное значение.
+Некоторые производные от Ubuntu или Debian дистрибутивы, например Linux Mint, могут возвращать неправильную версию при использовании команды `lsb_release`. Это значение используется при установке для определения устанавливаемого пакета. Если известно, на основе какой версии создан дистрибутив, можно установить значение параметра `AZ_REPO` вручную на [втором шаге установки](#set-release). В противном случае найдите информацию о том, как определить имя основного дистрибутива, и задайте для `AZ_REPO` правильное значение.
 
 ### <a name="no-package-for-your-distribution"></a>Для вашего дистрибутива отсутствует пакет
 
@@ -87,6 +92,8 @@ gpg: keyserver receive failed: No dirmngr
 ```bash
 sudo apt-get install dirmngr
 ```
+
+Если вы используете подсистему Windows для Linux (WSL), эта ошибка возникает также в версиях Windows, предшествующих версии Windows 10 1809. Чтобы устранить проблему, обновите версию Windows.
 
 ### <a name="apt-key-hangs"></a>Зависает apt-key
 

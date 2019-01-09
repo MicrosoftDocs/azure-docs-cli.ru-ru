@@ -7,13 +7,13 @@ manager: carmonm
 ms.date: 09/07/2018
 ms.topic: conceptual
 ms.technology: azure-cli
-ms.devlang: azure-cli
-ms.openlocfilehash: 40ff3b54cdd1f4908b59479e317092ee62b05bb0
-ms.sourcegitcommit: f92d5b3ccd409be126f1e7c06b9f1adc98dad78b
+ms.devlang: azurecli
+ms.openlocfilehash: 6cce8fb47dd2b57180487441055333343fff8330
+ms.sourcegitcommit: 614811ea63ceb0e71bd99323846dc1b754e15255
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52159377"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53805879"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
@@ -23,10 +23,15 @@ ms.locfileid: "52159377"
 
 Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac). Имя субъекта-службы не привязано к существующему приложению или имени пользователя. Можно создать субъект-службу, указав нужный способ аутентификации.
 
-* `--password` используется для аутентификации на основе пароля. Создайте надежный пароль, учитывая [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Если вы не укажете пароль, он будет создан автоматически.
+* `--password` используется для аутентификации на основе пароля. Если аргумент, указывающий тип аутентификации, не указан, по умолчанию используется аргумент --password и пароль создается автоматически. Если вы хотите использовать аутентификацию на основе пароля, мы рекомендуем использовать приведенную ниже команду (пароль будет создан автоматически).  
 
   ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName --password PASSWORD
+  az ad sp create-for-rbac --name ServicePrincipalName 
+  ```
+  Если вы хотите выбрать пароль самостоятельно (не рекомендуется из соображений безопасности), используйте команду, приведенную ниже. Создайте надежный пароль, учитывая [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). При самостоятельном выборе пароля существует вероятность выбора ненадежного пароля или использования пароля, который уже используется. В будущих версиях Azure CLI такая возможность будет исключена. 
+
+  ```azurecli-interactive
+  az ad sp create-for-rbac --name ServicePrincipalName --password <Choose a strong password>
   ```
 
 * `--cert` используется для аутентификации на основе существующего сертификата в формате PEM или DER. Также можно использовать `@{file}` для загрузки файла.
@@ -80,7 +85,7 @@ ms.locfileid: "52159377"
 * [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create);
 * [az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete).
 
-По умолчанию субъекту-службе назначена роль **участника**. Эта роль имеет полные разрешения на чтение из учетной записи Azure и записи в нее, поэтому она не подходит для приложений. Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.  См. дополнительные сведения о [встроенных возможностях управления доступом на основе ролей](/azure/active-directory/role-based-access-built-in-roles).
+По умолчанию субъекту-службе назначена роль **участника**. Эта роль имеет полные разрешения на чтение из учетной записи Azure и записи в нее, поэтому она не подходит для приложений. Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.  Дополнительные сведения об управлении доступом на основе ролей см. в статье [Встроенные роли для ресурсов Azure](/azure/active-directory/role-based-access-built-in-roles).
 
 В этом примере мы добавим роль **читателя** и удалим роль **участника**.
 
@@ -121,5 +126,5 @@ az login --service-principal --username APP_ID --tenant TENANT_ID --password PAT
 Если вы забыли учетные данные субъекта-службы, их можно сбросить с помощью команды [az ad sp reset-credentials](/cli/azure/ad/sp/credential#az-ad-sp-credential-reset). Здесь применяются те же параметры и ограничения, как и при создании нового субъекта-службы.
 
 ```azurecli-interactive
-az ad sp credential reset --name APP_ID --password NEW_PASSWORD
+az ad sp credential reset --name APP_ID 
 ```
