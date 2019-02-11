@@ -1,15 +1,11 @@
 {
   "build_entry_point": "docs",
-  "need_generate_pdf": false,
-  "need_preview_pull_request": true,
-  "need_generate_intellisense": false,
   "docsets_to_publish": [
     {
       "docset_name": "azure-cli-docs",
       "build_source_folder": ".",
       "build_output_subfolder": "cli/azure",
       "locale": "ru-RU",
-      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -21,8 +17,9 @@
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
+      "version": 0,
       "customized_template_paths": [
-         "_dependentPackages/uref/content"
+        "_dependentPackages/uref/content"
       ],
       "customized_tasks": {
         "docset_prebuild": [
@@ -32,15 +29,17 @@
     }
   ],
   "notification_subscribers": [],
+  "sync_notification_subscribers": [],
   "branches_to_filter": [
     "live"
   ],
+  "git_repository_url_open_to_public_contributors": "https://github.com/azure/azure-docs-cli-python.ru-RU",
+  "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
-  "git_repository_branch_open_to_public_contributors": "live",
-  "git_repository_url_open_to_public_contributors": "https://github.com/azure/azure-docs-cli-python.ru-RU",
+  "need_preview_pull_request": true,
   "contribution_branch_mappings": {
-		       "live-sxs": "live"
+    "live-sxs": "live"
   },
   "dependent_repositories": [
     {
@@ -48,9 +47,36 @@
       "url": "https://github.com/Microsoft/templates.docs.msft.ru-RU",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_repo.en-us",
+      "url": "https://github.com/MicrosoftDocs/azure-docs-cli",
+      "branch": "live",
+      "branch_mapping": {
+        "live": "live",
+        "master": "master"
+      }
     }
   ],
-  "need_generate_pdf_url_template": false,
+  "branch_target_mapping": {
+    "live": [
+      "Publish",
+      "Pdf"
+    ]
+  },
+  "need_generate_pdf_url_template": true,
+  "targets": {
+    "pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
+  "need_generate_intellisense": false,
   "dependent_packages": [
     {
       "id": "opbuild.templates.uref",
@@ -86,5 +112,6 @@
       "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-2018-03-01-hybrid",
       "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2018-03-01-hybrid"
     }
-  ]
+  ],
+  "need_generate_pdf": false
 }
