@@ -1,7 +1,5 @@
 {
   "build_entry_point": "docs",
-  "need_generate_pdf": false,
-  "need_generate_intellisense": false,
   "docsets_to_publish": [
     {
       "docset_name": "azure-cli-docs",
@@ -13,13 +11,25 @@
         "Conceptual": "Content",
         "ManagedReference": "Content",
         "RestApi": "Content",
-        "AzurePyCli": "Content"
+        "AzurePyCli": "Content",
+        "UniversalReference": "Content",
+        "Tutorial": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "version": 0,
+      "customized_template_paths": [
+        "_dependentPackages/uref/content"
+      ],
+      "customized_tasks": {
+        "docset_prebuild": [
+          "_dependentPackages/CommonPlugins/tools/JoinTOC.ps1"
+        ]
+      }
     }
   ],
   "notification_subscribers": [],
+  "sync_notification_subscribers": [],
   "branches_to_filter": [],
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
@@ -32,8 +42,14 @@
       "branch_mapping": {}
     },
     {
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
       "path_to_root": "_repo.en-us",
-      "url": "https://github.com/Azure/azure-docs-cli-python",
+      "url": "https://github.com/MicrosoftDocs/azure-docs-cli",
       "branch": "live",
       "branch_mapping": {
         "live": "live",
@@ -41,7 +57,19 @@
       }
     }
   ],
-  "need_generate_pdf_url_template": false,
+  "branch_target_mapping": {
+    "live": [
+      "Publish",
+      "Pdf"
+    ]
+  },
+  "need_generate_pdf_url_template": true,
+  "targets": {
+    "pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
+  "need_generate_intellisense": false,
   "dependent_packages": [
     {
       "path_to_root": "azurecli",
@@ -49,5 +77,26 @@
       "version": "latest-prerelease",
       "nuget_feed": "https://www.myget.org/F/op/api/v2"
     }
-  ]
+  ],
+  "JoinTOCPlugin": [
+    {
+      "TopLevelTOC": "latest/docs-ref-autogen/toc.yml",
+      "ConceptualTOC": "docs-ref-conceptual/toc.yml",
+      "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-latest",
+      "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-latest"
+    },
+    {
+      "TopLevelTOC": "2017-03-09-profile/docs-ref-autogen/toc.yml",
+      "ConceptualTOC": "docs-ref-conceptual/toc.yml",
+      "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-2017-03-09-profile",
+      "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2017-03-09-profile"
+    },
+    {
+      "TopLevelTOC": "2018-03-01-hybrid/docs-ref-autogen/toc.yml",
+      "ConceptualTOC": "docs-ref-conceptual/toc.yml",
+      "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-2018-03-01-hybrid",
+      "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2018-03-01-hybrid"
+    }
+  ],
+  "need_generate_pdf": false
 }
