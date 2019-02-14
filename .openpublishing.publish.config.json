@@ -38,7 +38,7 @@
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
   "git_repository_branch_open_to_public_contributors": "live",
-  "git_repository_url_open_to_public_contributors": "https://github.com/azure/azure-docs-cli-python.ru-RU",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/azure-docs-cli.ru-RU",
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
