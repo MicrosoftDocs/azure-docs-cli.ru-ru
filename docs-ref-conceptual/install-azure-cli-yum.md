@@ -9,18 +9,20 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: faa1855efe9651ee104880740338c30e7dd84810
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.openlocfilehash: e0b2406ee8b235fc96fb9f2990ad1646d8cb8494
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593240"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56421881"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 
 Для дистрибутивов Linux, использующих `yum`, например RHEL, Fedora или CentOS, доступен пакет Azure CLI. Этот пакет протестирован с RHEL 7, Fedora 19 и более поздних версий, а также CentOS 7.
 
-[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
+[!INCLUDE [current-version](includes/current-version.md)]
+
+[!INCLUDE [rpm-warning](includes/rpm-warning.md)]
 
 ## <a name="install"></a>Install
 

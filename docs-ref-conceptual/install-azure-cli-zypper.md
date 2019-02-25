@@ -9,18 +9,20 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 4cdbeaffb00e87b590080c1d341ec9e7ee198410
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.openlocfilehash: 647b4b9518a174ad95a1eda8b17f38027182b25a
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593529"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56421921"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
 Для дистрибутивов Linux, использующих `zypper`, например openSUSE или SLES, доступен пакет Azure CLI. Этот пакет протестирован с openSUSE 42.2 и пакетом обновления 2 для SLES 12.
 
-[!INCLUDE [linux-install-requirements.md](includes/linux-install-requirements.md)]
+[!INCLUDE [current-version](includes/current-version.md)]
+
+[!INCLUDE [rpm-warning](includes/rpm-warning.md)]
 
 ## <a name="install"></a>Install
 
@@ -60,7 +62,6 @@ ms.locfileid: "53593529"
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
-
 ## <a name="update"></a>Блокировка изменений
 
 Можно обновить пакет, воспользовавшись командой `zypper update`.
@@ -92,7 +93,8 @@ sudo zypper update azure-cli
    MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`
    sudo rpm -e --allmatches gpg-pubkey-$MSFT_KEY
    ```
-   ## <a name="next-steps"></a>Дальнейшие действия
+
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы можете пользоваться Azure CLI. Просмотрите общие сведения о его возможностях и список распространенных команд.
 

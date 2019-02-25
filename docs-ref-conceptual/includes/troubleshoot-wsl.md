@@ -5,11 +5,11 @@ manager: carmonm
 ms.date: 11/26/2018
 ms.topic: include
 ms.openlocfilehash: ee0b2b0c8c557aa54255f28429bb3a174c0e21a9
-ms.sourcegitcommit: 5025f123482964dbf72dc5b4950dbc62be67ea8f
+ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52954358"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56158858"
 ---
 ### <a name="cli-fails-to-install-or-run-on-windows-subsystem-for-linux"></a>Не удается установить или запустить CLI в подсистеме Windows для Linux
 

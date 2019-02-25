@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 65bf8cdc4ee5d74a778d29cd96e51bad5dc6b22e
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593376"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56158930"
 ---
 # <a name="install-the-azure-classic-cli"></a>Установка классического интерфейса командной строки Azure (Azure Classic CLI)
 

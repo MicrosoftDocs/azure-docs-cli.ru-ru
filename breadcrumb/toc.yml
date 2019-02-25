@@ -6,9 +6,9 @@ items:
   - name: Инфраструктура CLI Azure
     tocHref: /cli/azure/
     topicHref: /cli/azure
-ms.openlocfilehash: a3b777c54b827acdb0562250a0b0b51eb7557bcc
-ms.sourcegitcommit: c4462456dfb17993f098d47c37bc19f4d78b8179
+ms.openlocfilehash: f836797d3bbec4a12a9c20ae85552cec4bfa5b7d
+ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47177850"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56159054"

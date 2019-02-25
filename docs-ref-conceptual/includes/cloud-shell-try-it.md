@@ -6,12 +6,12 @@ ms.date: 09/07/2018
 ms.topic: include
 ms.prod: azure
 ms.technology: azure-cli
-ms.openlocfilehash: c00b14ada4ee7b8cced1e660e69efafb30d11db7
-ms.sourcegitcommit: 0e688704889fc88b91588bb6678a933c2d54f020
+ms.openlocfilehash: 0124dab021a9914dbd778b349de0e9ea4e846747
+ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44388496"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56158777"
 ---
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 

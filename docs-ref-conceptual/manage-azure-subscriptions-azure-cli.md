@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.date: 09/09/2018
 ms.topic: conceptual
-ms.produdct: azure
+ms.product: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 27f094b68812cb68a6a33a6977d4fd58e4178731
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.openlocfilehash: 4c196b8376b0044e315cfee2b3958f2f4b476df7
+ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593665"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56158673"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Использование нескольких подписок Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "53593665"
 Дополнительные сведения о различиях между клиентами, пользователями и подписками см. в [словаре терминов, связанных с облачной платформой Azure](/azure/azure-glossary-cloud-terminology).  Чтобы узнать, как добавить новую подписку в клиент Azure Active Directory, см. статью [Как добавить подписку Azure в Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).
 Сведения о том, как выполнить вход от имени определенного клиента см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
 
-## <a name="change-the-active-subscription"></a>Изменение активной подписки 
+## <a name="change-the-active-subscription"></a>Изменение активной подписки
 
 Для доступа к ресурсам определенной подписки измените активную подписку или используйте аргумент `--subscription`. Изменение подписки для всех команд выполняется с помощью команды [az account set](/cli/azure/account#az-account-set).
 

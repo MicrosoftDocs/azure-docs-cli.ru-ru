@@ -9,17 +9,19 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ff4ed838351167410c75c046dc8f615faa0930f5
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.openlocfilehash: ffd9c279302377de6eca1b64c45749196bd99096
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593223"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56421887"
 ---
 # <a name="install-azure-cli-on-windows"></a>Установка Azure CLI в Windows
 
 Azure CLI для Windows устанавливается с помощью MSI. Это предоставляет доступ к CLI из командной строки Windows (CMD) или PowerShell.
 При установке подсистемы Windows для Linux (WSL) пакеты доступны для дистрибутива Linux. Список поддерживаемых диспетчеров пакетов и сведения об установке в WSL вручную см. на [главной странице установки](install-azure-cli.md).
+
+[!INCLUDE [current-version](includes/current-version.md)]
 
 ## <a name="install-or-update"></a>Установка или обновление
 
