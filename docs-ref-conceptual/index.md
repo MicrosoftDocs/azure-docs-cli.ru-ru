@@ -9,13 +9,8 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 285567b00d8c303af3e78a01dc80946a08e4e8f8
-ms.sourcegitcommit: 614811ea63ceb0e71bd99323846dc1b754e15255
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53805913"
 ---
+
 # <a name="azure-command-line-interface-cli"></a>Интерфейс командной строки Azure (CLI)
 
 Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
@@ -34,7 +29,7 @@ az vm create -n MyLinuxVM -g MyResourceGroup --image UbuntuLTS
 
 ## <a name="run-or-install"></a>Запуск или установка
 
-CLI можно установить локально, запустить в контейнере Docker или браузере с помощью Azure Cloud Shell.
+CLI можно установить локально, запустить в контейнере Docker или браузере с помощью Azure Cloud Shell. Чтобы получить текущую версию CLI, выполните `az --version`.
 
 * Сведения о запуске Azure Cloud Shell в браузере см. в статье [Краткое руководство по Bash в Azure Cloud Shell](/azure/cloud-shell/quickstart) или [Краткое руководство по использованию PowerShell в Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell).
 * Сведения об установке CLI см. в статье [Установка Azure CLI 2.0](install-azure-cli.md).
