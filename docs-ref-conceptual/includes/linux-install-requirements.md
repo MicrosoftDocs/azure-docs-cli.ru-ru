@@ -2,17 +2,17 @@
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 09/07/2018
+ms.date: 02/19/2019
 ms.topic: include
-ms.openlocfilehash: bfe55644e6915115b1ff130b45f7de6537409975
-ms.sourcegitcommit: 5025f123482964dbf72dc5b4950dbc62be67ea8f
+ms.openlocfilehash: 94dc741d178c791a9ba9393ecf3e7b3164d3bf0a
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52954322"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "56422096"
 ---
 > [!NOTE]
 > Для установки CLI понадобится следующее ПО:
 >
-> * [Python 2.7x или Python 3.x](https://www.python.org/downloads/)
+> * [Python версии 3.6.x или 3.7.x](https://www.python.org/downloads/)
 > * [OpenSSL 1.0.2](https://www.openssl.org/source/)

@@ -16,12 +16,12 @@ metadata:
   ms.prod: azure
   ms.technology: azurecli
   clicktale: true
-  ms.openlocfilehash: d936f451bf29bae5513da16fb86bfd1b31b9727d
-  ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+  ms.openlocfilehash: e2c3c1a181105a86ccb8882b647f1984e32c8246
+  ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/18/2018
-  ms.locfileid: "53593155"
+  ms.lasthandoff: 02/12/2019
+  ms.locfileid: "56158593"
 items:
 - durationInMinutes: 1
   content: >-
@@ -55,14 +55,15 @@ items:
 - durationInMinutes: 4
   title: Настройка переменных среды из выходных данных CLI
   content: >-
-    Теперь, когда у вас есть идентификатор адаптера сетевого интерфейса, выполните `az network nic show` для получения связанных данных.
+    Теперь, когда у вас есть идентификатор адаптера сетевого интерфейса, выполните `az network nic show` для получения связанных данных. Здесь не нужно указывать группу ресурсов, так как имя группы ресурсов содержится в идентификаторе ресурса Azure.
 
 
     ```azurecli-interactive
 
-    az network nic show --ids $NIC_ID -g TutorialResources
+    az network nic show --ids $NIC_ID
 
     ```
+
 
 
     Эта команда выводит все данные сетевого интерфейса виртуальной машины. Эти данные включают параметры DNS, сведения об IP-конфигурации, параметры безопасности и MAC-адрес. Теперь вам нужно получить общедоступный IP-адрес и идентификаторы объектов подсети.
@@ -71,7 +72,6 @@ items:
     ```azurecli-interactive
 
     az network nic show --ids $NIC_ID \
-      -g TutorialResources \
       --query '{IP:ipConfigurations[].publicIpAddress.id, Subnet:ipConfigurations[].subnet.id}' \
       -o json
     ```
@@ -100,7 +100,7 @@ items:
     ```bash
 
     read -d '' IP_ID SUBNET_ID <<< $(az network nic show \
-      --ids $NIC_ID -g TutorialResources \
+      --ids $NIC_ID \
       --query '[ipConfigurations[].publicIpAddress.id, ipConfigurations[].subnet.id]' \
       -o tsv)
     ```
@@ -112,7 +112,6 @@ items:
     ```bash
 
     VM1_IP_ADDR=$(az network public-ip show --ids $IP_ID \
-      -g TutorialResources \
       --query ipAddress \
       -o tsv)
     ```
@@ -230,7 +229,7 @@ items:
 
     * Создать запрос на добавление возможности или сообщить об ошибке в CLI можно в [репозитории Azure CLI](https://github.com/Azure/azure-cli).
 
-    * Кроме того, вы можете задать вопрос или получить разъяснение в [репозитории документации Azure CLI](https://github.com/Azure/azure-docs-cli-python).
+    * Кроме того, вы можете задать вопрос или получить разъяснение в [репозитории документации Azure CLI](https://github.com/MicrosoftDocs/azure-docs-cli/issues).
 
 
     Мы надеемся, что вам понравится работать с Azure CLI!

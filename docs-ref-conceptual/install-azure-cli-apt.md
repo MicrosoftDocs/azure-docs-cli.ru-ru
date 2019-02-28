@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 1973c933cbffa494cbe9c0749346450251feefcb
-ms.sourcegitcommit: 9bd90875a324908ec7195fc4c4f63ebf124760f9
+ms.openlocfilehash: 45e1e7468e5817d0138c9b87da83c5a5228e4965
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982592"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56421938"
 ---
 # <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
@@ -23,7 +23,13 @@ ms.locfileid: "53982592"
 * Ubuntu trusty, xenial, artful и bionic
 * Debian wheezy, jessie и stretch
 
-## <a name="install"></a>Установка
+[!INCLUDE [current-version](includes/current-version.md)]
+
+> [!NOTE]
+>
+> Пакет `.deb` для Azure CLI устанавливает собственный интерпретатор Python и не использует системный Python, поэтому явного требования к локальной версии Python нет.
+
+## <a name="install"></a>Install
 
 1. Установите пакеты необходимых компонентов.
 

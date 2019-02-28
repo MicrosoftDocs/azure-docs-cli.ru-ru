@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 01/06/2019
+ms.date: 02/21/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 276bd619408760416910c099dee2aa8377011d0d
-ms.sourcegitcommit: 2c18e8fc2da012bf8ceb2aa77e0671f2413c43c9
+ms.openlocfilehash: 2c5b948e3d90391fdf8f6867a99f6ef7d3863a12
+ms.sourcegitcommit: 1bdf2f501eaa77b853566750ea6d1a8f8e0d6d4c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54071885"
+ms.lasthandoff: 02/22/2019
+ms.locfileid: "56663254"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -29,13 +29,14 @@ az extension list-available --output table
 | ИМЯ | Version (версия) | Сводка | Предварительный просмотр |
 |------|---------|---------|---------|
 | [aem](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Управление расширениями для улучшенного мониторинга Azure для SAP. |  |
-| [aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) | 0.1.0 | Предварительное знакомство с будущими возможностями AKS. | Yes |
+| [aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) | 0.2.2 | Предварительное знакомство с будущими возможностями AKS. | Yes |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.2 | Поддержка псевдонимов команд. | Yes |
-| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 2.5.1 | Дополнительные команды для работы с пакетной службой Azure. |  |
+| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 3.0.1 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.6.1 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
-| [azure-devops](https://github.com/Microsoft/vsts-cli/tree/azuredevopscli-dev) | 0.1.0 | Инструменты для управления Azure DevOps. | Yes |
+| [azure-devops](https://github.com/Microsoft/azure-devops-cli-extension) | 0.2.0 | Инструменты для управления Azure DevOps. | Yes |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.1.1 | Управление ресурсами Брандмауэра Azure. | Yes |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.4.3 | Исправления ошибок в собственном командном модуле botservice cli. | Yes |
+| [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.5 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Yes |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |
 | [dms-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/dms-preview) | 0.6.0 | Поддержка новых сценариев Database Migration Service. | Yes |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
@@ -51,12 +52,13 @@ az extension list-available --output table
 | [managementgroups](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Azure CLI для групп управления. |  |
 | [managementpartner](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | Поддержка партнера управления (предварительная версия). |  |
 | [mesh](https://github.com/Azure/azure-cli-extensions) | 0.10.2 | Поддержка Сетки Microsoft Azure Service Fabric (общедоступная предварительная версия) | Yes |
+| [privatedns](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Команды для управления Частными зонами DNS. | Yes |
 | [rdbms-vnet](https://github.com/Azure/azure-cli-extensions) | 10.0.0 | Поддержка правил виртуальной сети в ресурсах Azure MySQL и Azure PostgreSQL. |  |
 | [resource-graph](https://github.com/Azure/azure-cli-extensions/tree/master/src/resource-graph) | 0.1.8 | Поддержка запросов к ресурсам Azure с помощью Resource Graph. | Yes |
-| [sap-hana](https://github.com/Azure/azure-hanaonazure-cli-extension) | 0.1.6 | Дополнительные команды для работы с экземплярами SAP HanaOnAzure. |  |
+| [sap-hana](https://github.com/Azure/azure-hanaonazure-cli-extension) | 0.3.3 | Дополнительные команды для работы с экземплярами SAP HanaOnAzure. |  |
 | [signalr](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Поддержка управления с помощью SignalR (предварительная версия). | Yes |
 | [sqlvm-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/sqlvm-preview) | 0.1.0 | Инструменты для управления виртуальными машинами SQL, группами и прослушивателями групп доступности. | Yes |
-| [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.2.1 | Предварительная версия ожидаемых функций хранилища. | Yes |
+| [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.2.2 | Предварительная версия ожидаемых функций хранилища. | Yes |
 | [subscription](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Поддержка управления подписками (предварительная версия). |  |
 | [virtual-network-tap](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-network-tap) | 0.1.0 | Управление точками доступа к виртуальным сетям (VTAP). | Yes |
 | [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.1.0 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Yes |

@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: b57ddd04d41b09eb145349179e3be48d3fdd5907
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.openlocfilehash: 229b109b307453c87abf260a66084c94ced33d81
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593682"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56422006"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 
 Если для вашего дистрибутива отсутствует пакет Azure CLI, установите CLI вручную, выполнив скрипт.
+
+[!INCLUDE [current-version](includes/current-version.md)]
 
 > [!NOTE]
 > Настоятельно рекомендуется устанавливать CLI с помощью диспетчера пакетов. Диспетчер пакетов гарантирует, что вы получите последние обновления, и обеспечит стабильность компонентов CLI. Перед установкой вручную проверьте, есть ли пакет для вашего дистрибутива.
@@ -27,9 +29,13 @@ ms.locfileid: "53593682"
 
 Для использования CLI требуется следующее ПО:
 
-* [Python 2.7 или Python 3.x](https://www.python.org/downloads/)
+* [Python версии 3.6.x или 3.7.x](https://www.python.org/downloads/). 
 * [libffi](https://sourceware.org/libffi/)
 * [OpenSSL 1.0.2](https://www.openssl.org/source/)
+
+> [!IMPORTANT]
+>
+> Интерфейс CLI также совместим с Python 2.7.x, поддержка которого прекращается 1 января 2020 г. Поэтому мы рекомендуем установить для CLI Python 3.
 
 ## <a name="install-or-update"></a>Установка или обновление
 
@@ -61,7 +67,7 @@ curl https://azurecliprod.blob.core.windows.net/install | bash
 
 ### <a name="az-command-not-found"></a>Команда `az` не найдена
 
-Если не удается выполнить эту команду после установки и используется `bash` или `zsh`, очистите кэш хэша команд в оболочке. Выполнить
+Если не удается выполнить эту команду после установки и используется `bash` или `zsh`, очистите кэш хэша команд в оболочке. Run (Запустить)
 
 ```bash
 hash -r

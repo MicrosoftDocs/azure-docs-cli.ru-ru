@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: e62523ba310f071020f0d66042e39e6f1867c56b
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.openlocfilehash: 14f51e068c4d2b332b0de93406822e148d734701
+ms.sourcegitcommit: 032f35d553754fbac78b218259a8d6a697ac220e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593852"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "56458694"
 ---
-# <a name="select-clouds-with-the-azure-cli"></a>Выбор облаков с помощью Azure CLI 
+# <a name="select-clouds-with-the-azure-cli"></a>Выбор облаков с помощью Azure CLI
 
 При работе в разных регионах или использовании [Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/) вам может понадобиться несколько облаков. Корпорация Майкрософт предоставляет доступные для использования облака в соответствии с местным законодательством в пределах каждого региона. В этой статье показано, как получить сведения об облаках, изменить текущее облако, а также зарегистрировать новые облака или отменить их регистрацию.
 
@@ -88,7 +88,7 @@ az cloud set --name AzureChinaCloud
 
 Зарегистрируйте новое облако, если у вас есть свои конечные точки для Azure Stack. Облако создается с помощью команды [az cloud register](/cli/azure/cloud#az-cloud-register). Для этой команды требуется имя и набор конечных точек службы. Сведения о регистрации облака для использования Azure Stack см. в статье [Использование профилей версий API и Azure CLI в Azure Stack](/azure/azure-stack/user/azure-stack-version-profiles-azurecli2#connect-to-azure-stack).
 
-Вам не нужно регистрировать собственное облако в регионах "Китай", "US Government" или "Германия". Эти облака управляются корпорацией Майкрософт и доступны по умолчанию.  Дополнительные сведения обо всех доступных конечных точках см. в [документации по `az cloud register`](/cli/azure/cloud#az-cloud-register).
+Вам не нужно регистрировать сведения в регионах "Китай", "US Government" или "Германия". Эти облака управляются корпорацией Майкрософт и доступны по умолчанию.  Дополнительные сведения обо всех доступных конечных точках см. в [документации по `az cloud register`](/cli/azure/cloud#az-cloud-register).
 
 Регистрация в облаке не подразумевает автоматическое переключение на него. Для выбора нового облака используйте команду `az cloud set`.
 

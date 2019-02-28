@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: a56ce4acf070c17d8deaec9674593ba930cca70f
-ms.sourcegitcommit: f40bd067ece4e6ec13e259782ed8db3e33b61a75
+ms.openlocfilehash: b018f41824946dca36d0b806de0dd32a335a15b5
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53593614"
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56422023"
 ---
 # <a name="get-started-with-azure-cli"></a>Начало работы с Azure CLI
 
@@ -26,6 +26,8 @@ ms.locfileid: "53593614"
 Самый простой способ приступить к работе с Azure CLI —запустить CLI в среде Azure Cloud Shell через браузер. Дополнительные сведения о Cloud Shell см. в [кратком руководстве по Bash в Azure Cloud Shell](/azure/cloud-shell/quickstart).
 
 Сведения об установке CLI см. в разделе [Установка Azure CLI 2.0](install-azure-cli.md).
+
+Установив CLI впервые, проверьте правильность установки и версии, выполнив команду `az --version`.
 
 ## <a name="sign-in"></a>Вход
 
@@ -72,7 +74,7 @@ az network nsg --help
 Для каждой команды есть ряд аргументов.
 
 * `--help` выводит справочные сведения CLI о командах и их аргументах, а также перечисляет доступные подгруппы и команды.
-* `--output` изменяет формат выходных данных. Доступные выходные форматы: `json`, `jsonc` (выделенные цветом данные JSON), `tsv` (значения с разделением знаками табуляции) и `table` (понятные таблицы ASCII). По умолчанию CLI выводит формат `json`. См. дополнительные сведения о [форматах выходных данных для Azure CLI](format-output-azure-cli.md).
+* `--output` изменяет формат выходных данных. Доступные выходные форматы: `json`, `jsonc` (выделенные цветом данные JSON), `tsv` (значения с разделением знаками табуляции), `table` (понятные таблицы ASCII) и `yaml`. По умолчанию CLI выводит формат `json`. См. дополнительные сведения о [форматах выходных данных для Azure CLI](format-output-azure-cli.md).
 * `--query` использует [язык запросов JMESPath](http://jmespath.org/) для фильтрации результатов, возвращенных от служб Azure. См. дополнительные сведения о [создании запросов к результатам выполнения команд в Azure CLI](query-azure-cli.md) и [работе с JMESPath](http://jmespath.org/tutorial.html).
 * `--verbose` выводит сведения о ресурсах, созданных в Azure во время выполнения операции, а также другую полезную информацию.
 * `--debug` выводит дополнительные сведения об операциях CLI, выполняемых для отладки. Если вы обнаружили ошибку, включите выходные данные, полученные с помощью флага `--debug`, в отправляемый отчет об ошибке.
@@ -108,7 +110,7 @@ az interactive
 
 ## <a name="give-feedback"></a>Обратная связь
 
-Мы рады вашим отзывам о CLI, которые помогают нам улучшать наш продукт и устранять ошибки. Вы можете [опубликовать описание проблемы на Github](https://github.com/azure/azure-cli/issues) или использовать встроенные функции CLI, чтобы оставить отзыв с помощью команды [az feedback](/cli/azure/reference-index#az-feedback).
+Мы рады вашим отзывам о CLI, которые помогают нам улучшать наш продукт и устранять ошибки. Вы можете [опубликовать описание проблемы на GitHub](https://github.com/azure/azure-cli/issues) или использовать встроенные функции CLI, чтобы оставить отзыв с помощью команды [az feedback](/cli/azure/reference-index#az-feedback).
 
 ```azurecli-interactive
 az feedback
