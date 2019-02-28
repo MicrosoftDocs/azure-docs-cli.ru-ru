@@ -4,19 +4,240 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 12/18/2018
+ms.date: 02/15/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 10663ad8e85a15b8fedb5ac12c5d17256d07e523
-ms.sourcegitcommit: 614811ea63ceb0e71bd99323846dc1b754e15255
+ms.openlocfilehash: 1c6b2cc57b80256faff0a174bec5f13bd84f5a1b
+ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53805964"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56158732"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+## <a name="february-12-2019"></a>12 февраля 2019 г.
+
+Версия 2.0.58
+
+### <a name="core"></a>Core
+
+* `az --version` теперь отображает уведомление при наличии пакетов, которые можно обновить.
+* Исправлена регрессия, при которой `--ids` нельзя было больше использовать с выходными данными JSON.
+
+### <a name="acr"></a>ACR
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена группа команд `acr build-task`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Из `acr repository delete` удалены параметры `--tag` и `--manifest`.
+
+### <a name="acs"></a>ACS
+* `aks [enable-addons|disable-addons]` теперь поддерживает имена без учета регистра.
+* Добавлена поддержка операции обновления Azure Active Directory с помощью `aks update-credentials --reset-aad`.
+* Добавлено пояснение, что значение `--output` для `aks get-credentials` игнорируется.
+
+### <a name="ams"></a>AMS
+* Добавлены команды `ams streaming-endpoint [start | stop | create | update] wait`.
+* Добавлены команды `ams live-event [create | start | stop | reset] wait`.
+
+### <a name="appservice"></a>Служба приложений
+* Добавлена возможность создавать и настраивать функции с помощью контейнеров ACR.
+* Добавлена поддержка обновления конфигураций веб-приложений с помощью JSON.
+* Улучшена справка для `appservice-plan-update`.
+* Добавлена поддержка App Insights при создании приложений-функций.
+* Устранены проблемы с SSH для веб-приложений.
+
+### <a name="botservice"></a>Служба Bot
+* Улучшен пользовательский интерфейс для `bot publish`.
+* Добавлены предупреждения для времени ожидания при выполнении `npm install` во время операции `az bot publish`.
+* Удален недопустимый символ `.` из значения `--name` в `az bot create`.
+* Имена ресурсов больше не выбираются в случайном порядке при создании службы хранилища Azure, плана службы приложений, функций, веб-приложений и Application Insights.
+* [УСТАРЕЛО.] Аргумент `--proj-name` не поддерживается. Вместо него теперь используется `--proj-file-path`.
+* Теперь `az bot publish` удаляет полученные файлы развертывания IIS Node.js, если они уже не существуют.
+* В `az bot publish` добавлен аргумент `--keep-node-modules`, чтобы не удалять папку `node_modules` в Службе приложений.
+* Добавлена пара "ключ — значение" `"publishCommand"` в выходные данные `az bot create` при создании бота веб-приложения или функции Azure.
+  * Значение `"publishCommand"` — это команда `az bot publish` с предварительно заданными обязательными параметрами для публикации созданного бота.
+* Обновлено значение `"WEBSITE_NODE_DEFAULT_VERSION"` в шаблоне ARM для ботов SDK версии 4: теперь вместо 8.9.4 указана версия 10.14.1.
+
+### <a name="key-vault"></a>Key Vault
+* Исправлена проблема с `keyvault secret backup`, из-за которой некоторые пользователи получали сообщение об ошибке `unexpected_keyword` при использовании `--id`.
+
+### <a name="monitor"></a>Мониторинг
+* Параметр `monitor metrics alert [create|update]` теперь допускает значение измерения `*`.
+
+### <a name="network"></a>Сеть
+* Изменено значение `dns zone export` для поддержки экспорта записей CNAME как FQDN.
+* В `nic ip-config address-pool [add|remove]` добавлен параметр `--gateway-name` для поддержки серверных пулов адресов шлюза приложений.
+* В `network watcher flow-log configure` добавлены аргументы `--traffic-analytics` и `--workspace` для поддержки аналитики трафика через рабочую область Log Analytics.
+* В `lb inbound-nat-pool [create|update]` добавлены аргументы `--idle-timeout` и `--floating-ip`.
+
+### <a name="policy-insights"></a>Policy Insights
+* Добавлены команды `policy remediation` для поддержки функций исправления политики ресурсов.
+
+### <a name="rdbms"></a>Реляционная СУБД
+* Улучшено справочное сообщение и параметры команды.
+
+### <a name="redis"></a>Redis
+* Добавлены команды для управления правилами брандмауэра (create, update, delete, show, list).
+* Добавлены команды для управления подключением к серверу (create, delete, show, list).
+* Добавлены команды для управления расписанием установки исправлений (create, update, delete, show).
+* Добавлена поддержка Зон доступности и минимальной версии TLS для операции `redis create.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалены команды `redis update-settings` и `redis list-all`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр для `redis create`: 'tenant settings' не принимается в формате key[=value].
+* [УСТРАРЕЛО.] Добавлено предупреждающее сообщение о том, что команда `redis import-method` больше не поддерживается.
+
+### <a name="role"></a>Роль
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `az identity` перемещена в этот раздел из группы команд `vm`.
+
+### <a name="sql-vm"></a>ВМ SQL
+* [УСТАРЕЛО.] Аргумент `--boostrap-acc-pwd` больше не поддерживается из-за опечатки.
+
+### <a name="vm"></a>ВМ
+* С параметром `vm list-skus` теперь можно использовать `--all` вместо `--all true`.
+* Добавлена команда `vmss run-command [invoke | list | show]`.
+* Исправлена ошибка, из-за которой ранее запущенная команда `vmss encryption enable` прекращала работу.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `az identity` перемещена в группу команд `role`.
+
+## <a name="january-31-2019"></a>31 января 2019 г.
+
+Версия 2.0.57
+
+### <a name="core"></a>Core
+
+* Исправлена [проблема 8399](https://github.com/Azure/azure-cli/issues/8399).
+
+## <a name="january-28-2019"></a>28 января 2019 г.
+
+Версия 2.0.56
+
+### <a name="acr"></a>ACR
+* Добавлена поддержка правил виртуальной сети и IP-адресов.
+
+### <a name="acs"></a>ACS
+* Добавлена предварительная версия виртуальных узлов.
+* Добавлены команды управляемой платформы OpenShift.
+* Добавлена поддержка операции обновления субъекта-службы с помощью `aks update-credentials -reset-service-principal`.
+
+### <a name="ams"></a>AMS
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams asset get-streaming-locators` переименована в `ams asset list-streaming-locators`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams streaming-locator get-content-keys` переименована в `ams streaming-locator list-content-keys`.
+
+### <a name="appservice"></a>Служба приложений
+* Добавлена поддержка аналитики приложений для `functionapp create`.
+* Добавлена поддержка создания плана службы приложений (включая эластичный план "Премиум") для приложений-функций.
+* Исправлены проблемы с настройкой приложений для эластичных планов "Премиум".
+
+### <a name="container"></a>Контейнер
+* Добавлена команда `container start`.
+* Теперь можно использовать десятичные значения для ЦП при создании контейнеров.
+
+### <a name="eventgrid"></a>Сетка событий
+* Добавлен параметр `--deadletter-endpoint` для команды `event-subscription [create|update]`.
+* Добавлены новые значения storagequeue и hybridconnection для 'event-subscription [create|update] --endpoint-type`.
+* В `event-subscription create` добавлены параметры `--max-delivery-attempts` и `--event-ttl`, чтобы указывать политику повтора для событий.
+* В `event-subscription [create|update]` добавлено предупреждающее сообщение, которое отображается, когда в качестве целевого объекта для подписки на события используется веб-перехватчик.
+* Добавлен параметр source-resource-id для всех команд, связанных с подпиской на событие, при этом все остальные параметры исходного ресурса помечены как нерекомендуемые.
+
+### <a name="hdinsight"></a>HDInsight
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Из `hdinsight [application] create` удалены параметры `--virtual-network` и `--subnet-name`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] `hdinsight create --storage-account` теперь принимает имя или идентификатор учетной записи хранения вместо конечных точек BLOB-объектов.
+* Добавлены параметры `--vnet-name` и `--subnet-name` для `hdinsight create`.
+* Для `hdinsight create` добавлена поддержка Корпоративного пакета безопасности и шифрования дисков. 
+* Добавлена команда `hdinsight rotate-disk-encryption-key`.
+* Добавлена команда `hdinsight update`.
+
+### <a name="iot"></a>Интернет вещей
+* Добавлен формат кодирования для команды routing-endpoint.
+
+### <a name="kusto"></a>Kusto
+* Предварительный выпуск.
+
+### <a name="monitor"></a>Мониторинг
+* Теперь при сравнении идентификаторов не учитывается регистр.
+
+### <a name="profile"></a>Профиль
+* Теперь при операции `login` можно использовать учетную запись уровня клиента для управляемого удостоверения службы.
+
+### <a name="network"></a>Сеть
+* Исправлена проблема с `express-route update`, из-за которой игнорировался аргумент `--bandwidth`.
+* Исправлена проблема с `ddos-protection update`, из-за которой определение набора вызывало трассировку стека.
+
+### <a name="resource"></a>Ресурс
+* Добавлена поддержка файла параметров URI для `group deployment create`.
+* Добавлена поддержка управляемого удостоверения для `policy assignment [create|list|show]`.
+
+### <a name="sql-virtual-machine"></a>Виртуальная машина SQL
+* Предварительный выпуск.
+
+### <a name="storage"></a>Хранилище
+* Теперь исправление обновляет только свойства, измененные в том же объекте.
+* Исправлена проблема 8021. Двоичные данные кодируются в кодировке Base64 при возврате.
+
+### <a name="vm"></a>ВМ
+* `vm encryption enable` теперь проверяет хранилище ключей для шифрования диска и наличие хранилища ключей для шифрования ключа.
+* Добавлен флаг `--force` в `vm encryption enable`.
+
+## <a name="january-15-2019"></a>15 января 2019 г.
+
+Версия 2.0.55
+
+### <a name="acr"></a>ACR
+* Теперь можно принудительно отправлять несуществующую диаграмму Helm.
+* Разрешены операции среды выполнения без запросов ARM.
+* [УСТАРЕЛО.] Параметр `--resource-group` больше не поддерживается в следующих командах:
+  * `acr login`
+  * `acr repository`
+  * `acr helm`
+
+### <a name="acs"></a>ACS
+* Добавлена поддержка новых регионов ACI.
+
+### <a name="appservice"></a>Служба приложений
+* Устранена проблема с отправкой сертификатов для приложений, размещенных в среде службы приложений (ASE) с разными группами ресурсов ASE и приложения.
+* Теперь `webapp up` по умолчанию использует SKU P1V1 для Linux.
+* Теперь `[webapp|functionapp] deployment source config-zip` отображает правильное сообщение об ошибке при неудачном развертывании. 
+* Добавлена команда `webapp ssh`.
+
+### <a name="botservice"></a>Служба Bot
+* Добавлены обновления состояния развертывания для `bot create`.
+
+### <a name="configure"></a>Настройка
+* Добавлен настраиваемый формат выходных данных `none`.
+
+### <a name="cosmosdb"></a>Cosmos DB
+* Добавлена поддержка создания базы данных с общей пропускной способностью.
+
+### <a name="hdinsight"></a>HDInsight
+* Добавлены команды для управления приложениями.
+* Добавлены команды для управления действиями скриптов.
+* Добавлены команды для управления Operations Management Suite (OMS).
+* Добавлена поддержка регионального использования списка для `hdinsight list-usage`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Из `hdinsight create` удален тип кластера по умолчанию.
+
+### <a name="network"></a>Сеть
+* Добавлены аргументы `--custom-headers` и `--status-code-ranges` для команды `traffic-manager profile [create|update]`
+* Добавлены новые типы маршрутизации: "Подсеть" и "Многозначный".
+* Добавлены аргументы `--custom-headers` и `--subnets` для команды `traffic-manager endpoint [create|update]`  
+* Исправлена проблема с возникновением ошибки при указании значения `--vnets ""` для `ddos-protection update`.
+
+### <a name="role"></a>Роль
+* [УСТАРЕЛО.] Аргумент `--password` для `create-for-rbac` больше не поддерживается. Используйте вместо него надежные пароли, сгенерированные CLI.
+
+### <a name="security"></a>Безопасность
+* Первый выпуск
+
+### <a name="storage"></a>Хранилище
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Количество результатов по умолчанию для `storage [blob|file|container|share] list` теперь 5000. Для возврата всех результатов как ранее используйте `--num-results *`.
+* Добавлен параметр `--marker` для команды `storage [blob|file|container|share] list`.
+* Добавлена отметка журнала для следующей страницы в STDERR для `storage [blob|file|container|share] list`. 
+* Добавлена команда `storage blob service-properties update` с поддержкой статических веб-сайтов.
+
+### <a name="vm"></a>ВМ
+* `vm [disk|unmanaged-disk]` и `vmss disk` изменены для лучшего согласования параметров.
+* Добавлена поддержка перекрестных ссылок на образы клиента для `[vm|vmss] create`.
+* Исправлена ошибка конфигурации по умолчанию в `vm diagnostics get-default-config --windows-os`.
+* В `vmss extension set` добавлен аргумент `--provision-after-extensions` для определения расширений, которые необходимо подготовить перед настройкой.
+* В `sig image-version update` добавлен аргумент `--replica-count` для определения числа репликаций по умолчанию.
+* Исправлена ошибка `image create --source`, из-за которой диск ОС ошибочно принимался за виртуальную машину с тем же именем даже при указании полного идентификатора ресурса.
 
 ## <a name="december-20-2018"></a>20 декабря 2018 г.
 
