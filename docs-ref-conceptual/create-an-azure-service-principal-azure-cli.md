@@ -1,130 +1,173 @@
 ---
 title: Использование субъектов-служб Azure с помощью Azure CLI
-description: Сведения о том, как использовать субъект-службу Azure с помощью Azure CLI.
+description: Сведения о том, как создать субъекты-службы и использовать их с помощью Azure CLI.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 09/07/2018
+ms.date: 02/15/2019
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 6cce8fb47dd2b57180487441055333343fff8330
-ms.sourcegitcommit: 614811ea63ceb0e71bd99323846dc1b754e15255
+ms.openlocfilehash: 7ead12b35cefd7cba9e06f7905c9267c569d98dd
+ms.sourcegitcommit: 014d89aa21f90561eb69792ad01947e481ea640a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53805879"
+ms.lasthandoff: 02/23/2019
+ms.locfileid: "56741723"
 ---
-# <a name="create-an-azure-service-principal-with-azure-cli"></a><span data-ttu-id="da3d1-103">Создание субъекта-службы Azure с помощью Azure CLI</span><span class="sxs-lookup"><span data-stu-id="da3d1-103">Create an Azure service principal with Azure CLI</span></span>
+# <a name="create-an-azure-service-principal-with-azure-cli"></a><span data-ttu-id="bd62b-103">Создание субъекта-службы Azure с помощью Azure CLI</span><span class="sxs-lookup"><span data-stu-id="bd62b-103">Create an Azure service principal with Azure CLI</span></span>
 
-<span data-ttu-id="da3d1-104">Если вы хотите создать отдельную процедуру входа с ограничениями доступа, это можно сделать с помощью субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="da3d1-104">If you want to create a separate sign-in with access restrictions, you can do so through a service principal.</span></span> <span data-ttu-id="da3d1-105">Субъекты-службы — это отдельные удостоверения, которые можно связывать с учетной записью.</span><span class="sxs-lookup"><span data-stu-id="da3d1-105">Service principals are separate identities that can be associated with an account.</span></span> <span data-ttu-id="da3d1-106">Субъекты-службы используются при работе с приложениями и задачами, которые должны выполняться автоматически.</span><span class="sxs-lookup"><span data-stu-id="da3d1-106">Service principals are useful for working with applications and tasks that must be automated.</span></span> <span data-ttu-id="da3d1-107">В этой статье описывается, как создать субъект-службу.</span><span class="sxs-lookup"><span data-stu-id="da3d1-107">This article runs you through the steps for creating a service principal.</span></span>
+<span data-ttu-id="bd62b-104">Разрешения для автоматизированных средств, которые используют службы Azure, всегда должны быть ограничены.</span><span class="sxs-lookup"><span data-stu-id="bd62b-104">Automated tools that use Azure services should always have restricted permissions.</span></span> <span data-ttu-id="bd62b-105">В качестве замены входу в приложения с использованием учетной записи пользователя с полными правами Azure предлагает субъекты-службы.</span><span class="sxs-lookup"><span data-stu-id="bd62b-105">Instead of having applications sign in as a fully privileged user, Azure offers service principals.</span></span>
 
-## <a name="create-the-service-principal"></a><span data-ttu-id="da3d1-108">Создание субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="da3d1-108">Create the service principal</span></span>
+<span data-ttu-id="bd62b-106">Субъект-служба Azure — это удостоверение, созданное для использования с приложениями, размещенными службами и автоматизированными средствами с целью получения доступа к ресурсам Azure.</span><span class="sxs-lookup"><span data-stu-id="bd62b-106">An Azure service principal is an identity created for use with applications, hosted services, and automated tools to access Azure resources.</span></span> <span data-ttu-id="bd62b-107">Такой доступ ограничен ролями, которые назначены субъекту-службе, что позволяет управлять разрешениями доступа к ресурсам, в том числе на разных уровнях.</span><span class="sxs-lookup"><span data-stu-id="bd62b-107">This access is restricted by the roles assigned to the service principal, giving you control over which resources can be accessed and at which level.</span></span> <span data-ttu-id="bd62b-108">По соображениям безопасности мы рекомендуем всегда использовать субъекты-службы с автоматизированными средствами, чтобы не допускать их входа с помощью удостоверения пользователя.</span><span class="sxs-lookup"><span data-stu-id="bd62b-108">For security reasons, it's always recommended to use service principals with automated tools rather than allowing them to log in with a user identity.</span></span>
 
-<span data-ttu-id="da3d1-109">Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).</span><span class="sxs-lookup"><span data-stu-id="da3d1-109">Use the [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) command to create a service principal.</span></span> <span data-ttu-id="da3d1-110">Имя субъекта-службы не привязано к существующему приложению или имени пользователя.</span><span class="sxs-lookup"><span data-stu-id="da3d1-110">The Service Principal's name isn't tied to any existing application or user name.</span></span> <span data-ttu-id="da3d1-111">Можно создать субъект-службу, указав нужный способ аутентификации.</span><span class="sxs-lookup"><span data-stu-id="da3d1-111">You can create a service principal with your choice of authentication type.</span></span>
+<span data-ttu-id="bd62b-109">В этой статье описано, как создать субъект-службу, получить сведения о нем и сбросить учетные данные с помощью Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="bd62b-109">This article shows you the steps for creating, getting information about, and resetting a service principal with the Azure CLI.</span></span>
 
-* <span data-ttu-id="da3d1-112">`--password` используется для аутентификации на основе пароля.</span><span class="sxs-lookup"><span data-stu-id="da3d1-112">`--password` is used for password-based authentication.</span></span> <span data-ttu-id="da3d1-113">Если аргумент, указывающий тип аутентификации, не указан, по умолчанию используется аргумент --password и пароль создается автоматически.</span><span class="sxs-lookup"><span data-stu-id="da3d1-113">If an argument indicating the authentication type isn't included, --password is used by default, and one is created for you.</span></span> <span data-ttu-id="da3d1-114">Если вы хотите использовать аутентификацию на основе пароля, мы рекомендуем использовать приведенную ниже команду (пароль будет создан автоматически).</span><span class="sxs-lookup"><span data-stu-id="da3d1-114">If you want to use password-based authentication, we recommend using this command, so the password is created for you.</span></span>  
+## <a name="create-a-service-principal"></a><span data-ttu-id="bd62b-110">Создание субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="bd62b-110">Create a service principal</span></span>
+
+<span data-ttu-id="bd62b-111">Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac).</span><span class="sxs-lookup"><span data-stu-id="bd62b-111">Create a service principal with the [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) command.</span></span> <span data-ttu-id="bd62b-112">При создании субъекта-службы вы задаете используемый им тип аутентификации для входа.</span><span class="sxs-lookup"><span data-stu-id="bd62b-112">When creating a service principal, you choose the type of sign-in authentication it uses.</span></span> 
+
+> [!NOTE]
+>
+> <span data-ttu-id="bd62b-113">Если у вашей учетной записи нет прав на создание субъекта-службы, команда `az ad sp create-for-rbac` возвратит сообщение об ошибке, уведомляющее о том, что привилегий недостаточно для выполнения операции.</span><span class="sxs-lookup"><span data-stu-id="bd62b-113">If your account doesn't have permission to create a service principal, `az ad sp create-for-rbac` will return an error message containing "Insufficient privileges to complete the operation."</span></span> <span data-ttu-id="bd62b-114">Чтобы получить возможность создавать субъекты-службы, обратитесь к администратору Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="bd62b-114">Contact your Azure Active Directory admin to create a service principal.</span></span>
+
+<span data-ttu-id="bd62b-115">Субъектам-службам доступно два вида аутентификации: на основе пароля и на основе сертификата.</span><span class="sxs-lookup"><span data-stu-id="bd62b-115">There are two types of authentication available for service principals: Password-based authentication, and certificate-based authentication.</span></span>
+
+### <a name="password-based-authentication"></a><span data-ttu-id="bd62b-116">Аутентификация на основе пароля</span><span class="sxs-lookup"><span data-stu-id="bd62b-116">Password-based authentication</span></span>
+
+<span data-ttu-id="bd62b-117">Если параметры аутентификации не указаны, используется аутентификация на основе пароля, который генерируется случайным образом.</span><span class="sxs-lookup"><span data-stu-id="bd62b-117">Without any authentication parameters, password-based authentication is used with a random password created for you.</span></span> <span data-ttu-id="bd62b-118">Это рекомендованный метод, если вам нужна аутентификация на основе пароля.</span><span class="sxs-lookup"><span data-stu-id="bd62b-118">If you want password-based authentication, this method is recommended.</span></span>
 
   ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName 
+  az ad sp create-for-rbac --name ServicePrincipalName
   ```
-  <span data-ttu-id="da3d1-115">Если вы хотите выбрать пароль самостоятельно (не рекомендуется из соображений безопасности), используйте команду, приведенную ниже.</span><span class="sxs-lookup"><span data-stu-id="da3d1-115">If you want to choose the password, instead of it being created for you (which is not recommended, for security reasons), you can use this command.</span></span> <span data-ttu-id="da3d1-116">Создайте надежный пароль, учитывая [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy).</span><span class="sxs-lookup"><span data-stu-id="da3d1-116">Make sure that you create a strong password by following the [Azure Active Directory password rules and restrictions](/azure/active-directory/active-directory-passwords-policy).</span></span> <span data-ttu-id="da3d1-117">При самостоятельном выборе пароля существует вероятность выбора ненадежного пароля или использования пароля, который уже используется.</span><span class="sxs-lookup"><span data-stu-id="da3d1-117">The option to choose password leaves the chance of a weak password being chosen or password being re-used.</span></span> <span data-ttu-id="da3d1-118">В будущих версиях Azure CLI такая возможность будет исключена.</span><span class="sxs-lookup"><span data-stu-id="da3d1-118">This option is planned to be deprecated in a future version of Azure CLI.</span></span> 
+
+<span data-ttu-id="bd62b-119">Аргумент `--password` позволяет пользователю задать собственный пароль.</span><span class="sxs-lookup"><span data-stu-id="bd62b-119">For a user-supplied password, use the `--password` argument.</span></span> <span data-ttu-id="bd62b-120">При создании пароля обязательно учитывайте [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy).</span><span class="sxs-lookup"><span data-stu-id="bd62b-120">When creating a password, make sure you follow the [Azure Active Directory password rules and restrictions](/azure/active-directory/active-directory-passwords-policy).</span></span> <span data-ttu-id="bd62b-121">Не используйте ненадежные пароли или пароли, которые уже используются вами для доступа к другим ресурсам.</span><span class="sxs-lookup"><span data-stu-id="bd62b-121">Don't use a weak password or reuse a password.</span></span>
 
   ```azurecli-interactive
   az ad sp create-for-rbac --name ServicePrincipalName --password <Choose a strong password>
   ```
 
-* <span data-ttu-id="da3d1-119">`--cert` используется для аутентификации на основе существующего сертификата в формате PEM или DER. Также можно использовать `@{file}` для загрузки файла.</span><span class="sxs-lookup"><span data-stu-id="da3d1-119">`--cert` is used for certificate-based authentication for an existing certificate, either as a PEM or DER public string, or `@{file}` to load a file.</span></span>
+  > [!IMPORTANT]
+  >
+  > <span data-ttu-id="bd62b-122">По соображениям безопасности аргумент `--password` для создания субъекта-службы будет помечен как нерекомендуемый в будущем выпуске.</span><span class="sxs-lookup"><span data-stu-id="bd62b-122">For security reasons, the `--password` argument for service principal creation will be deprecated in a future release.</span></span> <span data-ttu-id="bd62b-123">Если вам нужна аутентификация на основе пароля, мы рекомендуем не использовать аргумент `--password`, а сгенерировать надежный пароль с помощью CLI.</span><span class="sxs-lookup"><span data-stu-id="bd62b-123">If you want to use password-based authentication, avoid `--password` and let the CLI generate a secure password for you.</span></span>
 
-  ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName --cert {CertStringOrFile}
-  ```
+<span data-ttu-id="bd62b-124">Выходные данные для субъекта-службы с аутентификацией на основе пароля включают ключ `password`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-124">The output for a service principal with password authentication includes the `password` key.</span></span> <span data-ttu-id="bd62b-125">__Обязательно__ скопируйте это значение, так как его нельзя получить повторно.</span><span class="sxs-lookup"><span data-stu-id="bd62b-125">__Make sure__ you copy this value - it can't be retrieved.</span></span> <span data-ttu-id="bd62b-126">Если вы забыли пароль, [сбросьте учетные данные для субъекта-службы](#reset-credentials).</span><span class="sxs-lookup"><span data-stu-id="bd62b-126">If you forget the password, [reset the service principal credentials](#reset-credentials).</span></span>
 
-  <span data-ttu-id="da3d1-120">Вы можете добавить аргумент `--keyvault`, чтобы указать, что сертификат хранится в Azure Key Vault.</span><span class="sxs-lookup"><span data-stu-id="da3d1-120">The `--keyvault` argument can be added to indicate the cert is stored in Azure Key Vault.</span></span> <span data-ttu-id="da3d1-121">В этом случае значение `--cert` ссылается на имя сертификата в Key Vault.</span><span class="sxs-lookup"><span data-stu-id="da3d1-121">In this case, the `--cert` value refers to the name of the certificate in Key Vault.</span></span>
+<span data-ttu-id="bd62b-127">Ключи `appId` и `tenant` отображаются в выходных данных команды `az ad sp create-for-rbac` и используются при аутентификации субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="bd62b-127">The `appId` and `tenant` keys appear in the output of `az ad sp create-for-rbac` and are used in service principal authentication.</span></span>
+<span data-ttu-id="bd62b-128">Запишите их значения, но при необходимости вы можете получить их в любой момент с помощью команды [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list).</span><span class="sxs-lookup"><span data-stu-id="bd62b-128">Record their values, but they can be retrieved at any point with [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list).</span></span>
 
-  ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName --cert CertName --keyvault VaultName
-  ```
+### <a name="certificate-based-authentication"></a><span data-ttu-id="bd62b-129">Аутентификация на основе сертификата</span><span class="sxs-lookup"><span data-stu-id="bd62b-129">Certificate-based authentication</span></span>
 
-* <span data-ttu-id="da3d1-122">`--create-cert` создает _самозаверяющий_ сертификат для аутентификации.</span><span class="sxs-lookup"><span data-stu-id="da3d1-122">`--create-cert` creates a _self-signed_ certificate for authentication.</span></span> <span data-ttu-id="da3d1-123">Если аргумент `--cert` не указан, создается произвольное имя сертификата.</span><span class="sxs-lookup"><span data-stu-id="da3d1-123">If the `--cert` argument isn't provided, a random certificate name is generated.</span></span>
+<span data-ttu-id="bd62b-130">Аргумент `--cert` позволяет воспользоваться аутентификацией на основе сертификата.</span><span class="sxs-lookup"><span data-stu-id="bd62b-130">For certificate-based authentication, use the `--cert` argument.</span></span> <span data-ttu-id="bd62b-131">При этом он требует указать существующий сертификат.</span><span class="sxs-lookup"><span data-stu-id="bd62b-131">This argument requires that you hold an existing certificate.</span></span> <span data-ttu-id="bd62b-132">Убедитесь, что все средства, которые используют этот субъект-службу, имеют доступ к закрытому ключу сертификата.</span><span class="sxs-lookup"><span data-stu-id="bd62b-132">Make sure any tool that uses this service principal has access to the certificate's private key.</span></span> <span data-ttu-id="bd62b-133">Сертификаты должны иметь формат ASCII, например PEM, CER или DER.</span><span class="sxs-lookup"><span data-stu-id="bd62b-133">Certificates should be in an ASCII format such as PEM, CER, or DER.</span></span> <span data-ttu-id="bd62b-134">Передайте сертификат в виде строки или воспользуйтесь форматом `@path`, чтобы загрузить сертификат из файла.</span><span class="sxs-lookup"><span data-stu-id="bd62b-134">Pass the certificate as a string, or use the `@path` format to load the certificate from a file.</span></span>
 
-  ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName --create-cert
-  ```
-
-  <span data-ttu-id="da3d1-124">Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault.</span><span class="sxs-lookup"><span data-stu-id="da3d1-124">The `--keyvault` argument can be added to store the certificate in Azure Key Vault.</span></span> <span data-ttu-id="da3d1-125">При использовании `--keyvault` аргумент `--cert` также необходим.</span><span class="sxs-lookup"><span data-stu-id="da3d1-125">When using `--keyvault`, the `--cert` argument is also required.</span></span>
-
-  ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName --create-cert --cert CertName --keyvault VaultName
-  ```
-
-<span data-ttu-id="da3d1-126">Если аргумент, указывающий способ аутентификации, не будет включен, по умолчанию используется `--password`.</span><span class="sxs-lookup"><span data-stu-id="da3d1-126">If an argument indicating the authentication type isn't included, `--password` is used by default.</span></span>
-
-<span data-ttu-id="da3d1-127">Выходные данные JSON команды `create-for-rbac` имеют следующий формат:</span><span class="sxs-lookup"><span data-stu-id="da3d1-127">The JSON output of the `create-for-rbac` command is in the following format:</span></span>
-
-```json
-{
-  "appId": "APP_ID",
-  "displayName": "ServicePrincipalName",
-  "name": "http://ServicePrincipalName",
-  "password": ...,
-  "tenant": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
-}
+```azurecli-interactive
+az ad sp create-for-rbac --name ServicePrincipalName --cert "-----BEGIN CERTIFICATE-----
+...
+-----END CERTIFICATE-----"
 ```
 
-<span data-ttu-id="da3d1-128">Значения `appId`, `tenant` и `password` используются для аутентификации.</span><span class="sxs-lookup"><span data-stu-id="da3d1-128">The `appId`, `tenant`, and `password` values are used for authentication.</span></span> <span data-ttu-id="da3d1-129">`displayName` используется при поиске существующего субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="da3d1-129">The `displayName` is used when searching for an existing service principal.</span></span>
+```azurecli-interactive
+az ad sp create-for-rbac --name ServicePrincipalName --cert @/path/to/cert.pem
+```
 
-> [!NOTE]
-> <span data-ttu-id="da3d1-130">Если у учетной записи нет достаточных прав на создание субъекта-службы, вы увидите сообщение об ошибке, уведомляющее о "недостаточности привилегий для выполнения операции".</span><span class="sxs-lookup"><span data-stu-id="da3d1-130">If your account does not have sufficient permissions to create a service principal, you see an error message containing "Insufficient privileges to complete the operation."</span></span> <span data-ttu-id="da3d1-131">Чтобы получить возможность создавать субъекты-службы, обратитесь к администратору Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="da3d1-131">Contact your Azure Active Directory admin to create a service principal.</span></span>
+<span data-ttu-id="bd62b-135">Чтобы использовать сертификат из Azure Key Vault, укажите аргумент `--keyvault`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-135">The `--keyvault` argument can be added to use a certificate in Azure Key Vault.</span></span> <span data-ttu-id="bd62b-136">В таком случае значение `--cert` будет именем сертификата.</span><span class="sxs-lookup"><span data-stu-id="bd62b-136">In this case, the `--cert` value is the name of the certificate.</span></span>
 
-## <a name="manage-service-principal-roles"></a><span data-ttu-id="da3d1-132">Управление ролями субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="da3d1-132">Manage service principal roles</span></span>
+```azurecli-interactive
+az ad sp create-for-rbac --name ServicePrincipalName --cert CertName --keyvault VaultName
+```
 
-<span data-ttu-id="da3d1-133">В Azure CLI доступны следующие команды для управления назначением ролей:</span><span class="sxs-lookup"><span data-stu-id="da3d1-133">The Azure CLI provides the following commands to manage role assignments.</span></span>
+<span data-ttu-id="bd62b-137">Чтобы создать для аутентификации _самозаверяющий_ сертификат, укажите аргумент `--create-cert`:</span><span class="sxs-lookup"><span data-stu-id="bd62b-137">To create a _self-signed_ certificate for authentication, use the `--create-cert` argument:</span></span>
 
-* <span data-ttu-id="da3d1-134">[az role assignment list](/cli/azure/role/assignment#az-role-assignment-list);</span><span class="sxs-lookup"><span data-stu-id="da3d1-134">[az role assignment list](/cli/azure/role/assignment#az-role-assignment-list)</span></span>
-* <span data-ttu-id="da3d1-135">[az role assignment create](/cli/azure/role/assignment#az-role-assignment-create);</span><span class="sxs-lookup"><span data-stu-id="da3d1-135">[az role assignment create](/cli/azure/role/assignment#az-role-assignment-create)</span></span>
-* <span data-ttu-id="da3d1-136">[az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete).</span><span class="sxs-lookup"><span data-stu-id="da3d1-136">[az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete)</span></span>
+```azurecli-interactive
+az ad sp create-for-rbac --name ServicePrincipalName --create-cert
+```
 
-<span data-ttu-id="da3d1-137">По умолчанию субъекту-службе назначена роль **участника**.</span><span class="sxs-lookup"><span data-stu-id="da3d1-137">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="da3d1-138">Эта роль имеет полные разрешения на чтение из учетной записи Azure и записи в нее, поэтому она не подходит для приложений.</span><span class="sxs-lookup"><span data-stu-id="da3d1-138">This role has full permissions to read and write to an Azure account, and is not appropriate for applications.</span></span> <span data-ttu-id="da3d1-139">Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.</span><span class="sxs-lookup"><span data-stu-id="da3d1-139">The **Reader** role is more restrictive, providing read-only access.</span></span>  <span data-ttu-id="da3d1-140">Дополнительные сведения об управлении доступом на основе ролей см. в статье [Встроенные роли для ресурсов Azure](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="da3d1-140">For more information on Role-Based Access Control (RBAC) and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
+<span data-ttu-id="bd62b-138">Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault.</span><span class="sxs-lookup"><span data-stu-id="bd62b-138">The `--keyvault` argument can be added to store the certificate in Azure Key Vault.</span></span> <span data-ttu-id="bd62b-139">Если используется аргумент `--keyvault`, аргумент `--cert` __обязателен__.</span><span class="sxs-lookup"><span data-stu-id="bd62b-139">When using `--keyvault`, the `--cert` argument is __required__.</span></span>
 
-<span data-ttu-id="da3d1-141">В этом примере мы добавим роль **читателя** и удалим роль **участника**.</span><span class="sxs-lookup"><span data-stu-id="da3d1-141">This example adds the **Reader** role and deletes the **Contributor** one.</span></span>
+```azurecli-interactive
+az ad sp create-for-rbac --name ServicePrincipalName --create-cert --cert CertName --keyvault VaultName
+```
+
+<span data-ttu-id="bd62b-140">Выходные данные включают ключ `fileWithCertAndPrivateKey` (если только сертификат не хранится в Key Vault).</span><span class="sxs-lookup"><span data-stu-id="bd62b-140">Unless you store the certificate in Key Vault, the output includes the `fileWithCertAndPrivateKey` key.</span></span> <span data-ttu-id="bd62b-141">Значение этого ключа позволяет определить, где хранится сгенерированный сертификат.</span><span class="sxs-lookup"><span data-stu-id="bd62b-141">This key's value tells you where the generated certificate is stored.</span></span>
+<span data-ttu-id="bd62b-142">__Обязательно__ скопируйте сертификат в безопасное расположение. В противном случае вы не сможете войти с помощью этого субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="bd62b-142">__Make sure__ that you copy the certificate to a secure location, or you can't sign in with this service principal.</span></span>
+
+<span data-ttu-id="bd62b-143">Для сертификатов, которые хранятся в Key Vault, получите закрытый ключ сертификата с помощью команды [az keyvault secret show](/cli/azure/keyvault/secret#az-keyvault-secret-show).</span><span class="sxs-lookup"><span data-stu-id="bd62b-143">For certificates stored in Key Vault, retrieve the certificate's private key with [az keyvault secret show](/cli/azure/keyvault/secret#az-keyvault-secret-show).</span></span> <span data-ttu-id="bd62b-144">В Key Vault имя секрета сертификата совпадает с именем самого сертификата.</span><span class="sxs-lookup"><span data-stu-id="bd62b-144">In Key Vault, the name of the certificate's secret is the same as the certificate name.</span></span> <span data-ttu-id="bd62b-145">В случае утраты доступа к закрытому ключу сертификата [сбросьте учетные данные субъекта-службы](#reset-credentials).</span><span class="sxs-lookup"><span data-stu-id="bd62b-145">If you lose access to a certificate's private key, [reset the service principal credentials](#reset-credentials).</span></span>
+
+<span data-ttu-id="bd62b-146">Ключи `appId` и `tenant` отображаются в выходных данных команды `az ad sp create-for-rbac` и используются при аутентификации субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="bd62b-146">The `appId` and `tenant` keys appear in the output of `az ad sp create-for-rbac` and are used in service principal authentication.</span></span>
+<span data-ttu-id="bd62b-147">Запишите их значения, но при необходимости вы можете получить их в любой момент с помощью команды [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list).</span><span class="sxs-lookup"><span data-stu-id="bd62b-147">Record their values, but they can be retrieved at any point with [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list).</span></span>
+
+## <a name="get-an-existing-service-principal"></a><span data-ttu-id="bd62b-148">Получение существующего субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="bd62b-148">Get an existing service principal</span></span>
+
+<span data-ttu-id="bd62b-149">Список субъектов-служб в клиенте можно получить с помощью команды [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list).</span><span class="sxs-lookup"><span data-stu-id="bd62b-149">A list of the service principals in a tenant can be retrieved with [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list).</span></span> <span data-ttu-id="bd62b-150">По умолчанию эта команда возвращает первые 100 субъектов-служб для вашего клиента.</span><span class="sxs-lookup"><span data-stu-id="bd62b-150">By default this command returns the first 100 service principals for your tenant.</span></span> <span data-ttu-id="bd62b-151">Чтобы получить все субъекты-службы клиента, укажите аргумент `--all`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-151">To get all of a tenant's service principals, use the `--all` argument.</span></span> <span data-ttu-id="bd62b-152">На получение такого списка может потребоваться длительное время, поэтому мы рекомендуем отфильтровать список с помощью одного из следующих аргументов:</span><span class="sxs-lookup"><span data-stu-id="bd62b-152">Getting this list can take a long time, so it's recommended that you filter the list with one of the following arguments:</span></span>
+
+* <span data-ttu-id="bd62b-153">`--display-name` — запрашивает субъекты-службы с _префиксом_, который совпадает с указанным именем.</span><span class="sxs-lookup"><span data-stu-id="bd62b-153">`--display-name` requests service principals that have a _prefix_ that match the provided name.</span></span> <span data-ttu-id="bd62b-154">Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `--name`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-154">The display name of a service principal is the value set with the `--name` parameter during creation.</span></span> <span data-ttu-id="bd62b-155">Если вы не указали параметр `--name` при создании субъекта-службы, используется префикс имени `azure-cli-`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-155">If you didn't set `--name` during service principal creation, the name prefix is `azure-cli-`.</span></span>
+* <span data-ttu-id="bd62b-156">`--spn` — отфильтровывает точные совпадения имен субъектов-служб.</span><span class="sxs-lookup"><span data-stu-id="bd62b-156">`--spn` filters on exact service principal name matching.</span></span> <span data-ttu-id="bd62b-157">Имя субъекта-службы всегда начинается с `https://`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-157">The service principal name always starts with `https://`.</span></span>
+  <span data-ttu-id="bd62b-158">Если значение, которое вы использовали для аргумента `--name`, не было универсальным кодом ресурса (URI), им будет значение `https://` с последующим отображаемым именем.</span><span class="sxs-lookup"><span data-stu-id="bd62b-158">if the value you used for `--name` wasn't a URI, this value is `https://` followed by the display name.</span></span>
+* <span data-ttu-id="bd62b-159">`--show-mine` — запрашивает только те субъекты-службы, которые были созданы пользователем, вошедшим в систему.</span><span class="sxs-lookup"><span data-stu-id="bd62b-159">`--show-mine` requests only service principals created by the signed-in user.</span></span>
+* <span data-ttu-id="bd62b-160">`--filter` — выполняет фильтрацию _на стороне сервера_ с использованием фильтра OData.</span><span class="sxs-lookup"><span data-stu-id="bd62b-160">`--filter` takes an OData filter, and performs _server-side_ filtering.</span></span> <span data-ttu-id="bd62b-161">Мы рекомендуем использовать этот метод, а не фильтрацию на стороне клиента с указанием аргумента CLI `--query`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-161">This method is recommended over filtering client-side with the CLI's `--query` argument.</span></span> <span data-ttu-id="bd62b-162">Дополнительные сведения о фильтрах OData см. в статье [Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"](/rest/api/searchservice/odata-expression-syntax-for-azure-search).</span><span class="sxs-lookup"><span data-stu-id="bd62b-162">To learn about OData filters, see [OData expression syntax for filters](/rest/api/searchservice/odata-expression-syntax-for-azure-search).</span></span>
+
+<span data-ttu-id="bd62b-163">Для объектов субъектов-служб возвращаются подробные сведения.</span><span class="sxs-lookup"><span data-stu-id="bd62b-163">The information returned for service principal objects is verbose.</span></span> <span data-ttu-id="bd62b-164">Чтобы получить только те сведения, которые нужны для входа, используйте строку запроса `[].{"id":"appId", "tenant":"appOwnerTenantId"}`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-164">To get only the information necessary for sign-in, use the query string `[].{"id":"appId", "tenant":"appOwnerTenantId"}`.</span></span> <span data-ttu-id="bd62b-165">Например, чтобы получить сведения для входа ото всех субъектов-служб, созданных пользователем, вошедшим в систему, выполните команду:</span><span class="sxs-lookup"><span data-stu-id="bd62b-165">For example, to get the sign-in information for all service principals created by the currently logged in user:</span></span>
+
+```azurecli-interactive
+az ad sp list --show-mine --query '[].{"id":"appId", "tenant":"appOwnerTenantId"}'
+```
+
+> [!IMPORTANT]
+>
+> <span data-ttu-id="bd62b-166">Команды `az ad sp list` или [az ad sp show](/cli/azure/ad/sp#az-ad-sp-show) позволяют получить данные о пользователе или клиенте, но не о секретах аутентификации _или_ способе аутентификации.</span><span class="sxs-lookup"><span data-stu-id="bd62b-166">`az ad sp list` or [az ad sp show](/cli/azure/ad/sp#az-ad-sp-show) get the user and tenant, but not any authentication secrets _or_ the authentication method.</span></span>
+> <span data-ttu-id="bd62b-167">Секреты для сертификатов в Key Vault можно извлечь с помощью команды [az keyvault secret show](/cli/azure/keyvault/secret#az-keyvault-secret-show), но по умолчанию другие секреты не сохраняются.</span><span class="sxs-lookup"><span data-stu-id="bd62b-167">Secrets for certificates in Key Vault can be retrieved with [az keyvault secret show](/cli/azure/keyvault/secret#az-keyvault-secret-show), but no other secrets are stored by default.</span></span>
+> <span data-ttu-id="bd62b-168">Если вы забыли способ аутентификации или секрет, [сбросьте учетные данные субъекта-службы](#reset-credentials).</span><span class="sxs-lookup"><span data-stu-id="bd62b-168">If you forget an authentication method or secret, [reset the service principal credentials](#reset-credentials).</span></span>
+
+## <a name="manage-service-principal-roles"></a><span data-ttu-id="bd62b-169">Управление ролями субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="bd62b-169">Manage service principal roles</span></span>
+
+<span data-ttu-id="bd62b-170">В Azure CLI доступны следующие команды для управления назначением ролей:</span><span class="sxs-lookup"><span data-stu-id="bd62b-170">The Azure CLI has the following commands to manage role assignments:</span></span>
+
+* <span data-ttu-id="bd62b-171">[az role assignment list](/cli/azure/role/assignment#az-role-assignment-list);</span><span class="sxs-lookup"><span data-stu-id="bd62b-171">[az role assignment list](/cli/azure/role/assignment#az-role-assignment-list)</span></span>
+* <span data-ttu-id="bd62b-172">[az role assignment create](/cli/azure/role/assignment#az-role-assignment-create);</span><span class="sxs-lookup"><span data-stu-id="bd62b-172">[az role assignment create](/cli/azure/role/assignment#az-role-assignment-create)</span></span>
+* <span data-ttu-id="bd62b-173">[az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete).</span><span class="sxs-lookup"><span data-stu-id="bd62b-173">[az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete)</span></span>
+
+<span data-ttu-id="bd62b-174">По умолчанию субъекту-службе назначена роль **участника**.</span><span class="sxs-lookup"><span data-stu-id="bd62b-174">The default role for a service principal is **Contributor**.</span></span> <span data-ttu-id="bd62b-175">Эта роль имеет все разрешения на чтение из учетной записи Azure и запись в нее.</span><span class="sxs-lookup"><span data-stu-id="bd62b-175">This role has full permissions to read and write to an Azure account.</span></span> <span data-ttu-id="bd62b-176">Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.</span><span class="sxs-lookup"><span data-stu-id="bd62b-176">The **Reader** role is more restrictive, with read-only access.</span></span>  <span data-ttu-id="bd62b-177">Дополнительные сведения об управлении доступом на основе ролей см. в статье [Встроенные роли для управления доступом на основе ролей в Azure](/azure/active-directory/role-based-access-built-in-roles).</span><span class="sxs-lookup"><span data-stu-id="bd62b-177">For more information on Role-Based Access Control (RBAC) and roles, see [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles).</span></span>
+
+<span data-ttu-id="bd62b-178">В этом примере мы добавим роль **читателя** и удалим роль **участника**.</span><span class="sxs-lookup"><span data-stu-id="bd62b-178">This example adds the **Reader** role and removes the **Contributor** one:</span></span>
 
 ```azurecli-interactive
 az role assignment create --assignee APP_ID --role Reader
 az role assignment delete --assignee APP_ID --role Contributor
 ```
 
-<span data-ttu-id="da3d1-142">Добавление роли _не_ изменяет назначенные ранее разрешения.</span><span class="sxs-lookup"><span data-stu-id="da3d1-142">Adding a role does _not_ change any previously assigned permissions.</span></span> <span data-ttu-id="da3d1-143">Ограничивая разрешения субъекта-службы, роль __участника__ всегда следует удалять.</span><span class="sxs-lookup"><span data-stu-id="da3d1-143">When restricting a service principal's permissions, the __Contributor__ role should always be removed.</span></span>
+> [!NOTE]
+> <span data-ttu-id="bd62b-179">Если ваша учетная запись не позволяет назначать роли, вы увидите сообщение об ошибке о том, что ваша учетная запись не авторизована для выполнения действия Microsoft.Authorization/roleAssignments/write. Чтобы получить возможность управлять ролями, обратитесь к администратору Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="bd62b-179">If your account doesn't have permission to assign a role, you see an error message that your account "does not have authorization to perform action 'Microsoft.Authorization/roleAssignments/write'." Contact your Azure Active Directory admin to manage roles.</span></span>
 
-<span data-ttu-id="da3d1-144">Проверить изменения можно, отобразив назначенные роли.</span><span class="sxs-lookup"><span data-stu-id="da3d1-144">The changes can be verified by listing the assigned roles.</span></span>
+<span data-ttu-id="bd62b-180">Добавление роли _не_ ограничивает назначенные ранее разрешения.</span><span class="sxs-lookup"><span data-stu-id="bd62b-180">Adding a role _doesn't_ restrict previously assigned permissions.</span></span> <span data-ttu-id="bd62b-181">При ограничении разрешений субъекта-службы обязательно удалите роль __участника__.</span><span class="sxs-lookup"><span data-stu-id="bd62b-181">When restricting a service principal's permissions, the __Contributor__ role should be removed.</span></span>
+
+<span data-ttu-id="bd62b-182">Чтобы проверить изменения, выведите назначенные роли:</span><span class="sxs-lookup"><span data-stu-id="bd62b-182">The changes can be verified by listing the assigned roles:</span></span>
 
 ```azurecli-interactive
 az role assignment list --assignee APP_ID
 ```
 
-> [!NOTE]
-> <span data-ttu-id="da3d1-145">Если ваша учетная запись не позволяет назначать роли, вы увидите сообщение об ошибке о том, что ваша учетная запись "не авторизована выполнять действие Microsoft.Authorization/roleAssignments/write для /subscriptions/{guid}". Чтобы получить возможность управлять ролями, обратитесь к администратору Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="da3d1-145">If your account doesn't have the permissions to assign a role, you see an error message that your account "does not have authorization to perform action 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/{guid}'." Contact your Azure Active Directory admin to manage roles.</span></span>
+## <a name="sign-in-using-a-service-principal"></a><span data-ttu-id="bd62b-183">Вход с помощью субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="bd62b-183">Sign in using a service principal</span></span>
 
-## <a name="sign-in-using-the-service-principal"></a><span data-ttu-id="da3d1-146">Вход с помощью субъекта-службы</span><span class="sxs-lookup"><span data-stu-id="da3d1-146">Sign in using the service principal</span></span>
+<span data-ttu-id="bd62b-184">Войдите, чтобы протестировать разрешения и учетные данные нового субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="bd62b-184">Test the new service principal's credentials and permissions by signing in.</span></span> <span data-ttu-id="bd62b-185">Для входа с использованием субъекта-службы вам потребуются `appId`, `tenant` и учетные данные.</span><span class="sxs-lookup"><span data-stu-id="bd62b-185">To sign in with a service prinicpal, you need the `appId`, `tenant`, and credentials.</span></span>
 
-<span data-ttu-id="da3d1-147">Вы можете протестировать разрешения и учетные данные для входа с помощью субъекта-службы, выполнив вход в Azure CLI.</span><span class="sxs-lookup"><span data-stu-id="da3d1-147">You can test the new service principal's credentials and permissions by signing in under it within the Azure CLI.</span></span> <span data-ttu-id="da3d1-148">Войдите с использованием нового субъекта-службы, указав значения `appId`, `tenant` и учетные данные.</span><span class="sxs-lookup"><span data-stu-id="da3d1-148">Sign in as the new service principal using the `appId`, `tenant`, and credentials values.</span></span> <span data-ttu-id="da3d1-149">Используйте тип аутентификации, с которым создан субъект-служба.</span><span class="sxs-lookup"><span data-stu-id="da3d1-149">Use the authentication type that the service principal was created with.</span></span>
-
-<span data-ttu-id="da3d1-150">Чтобы войти с использованием пароля, предоставьте его как параметр аргумента.</span><span class="sxs-lookup"><span data-stu-id="da3d1-150">To sign in with a password, provide it as an argument parameter.</span></span>
+<span data-ttu-id="bd62b-186">Чтобы войти с использованием субъекта-службы с помощью пароля:</span><span class="sxs-lookup"><span data-stu-id="bd62b-186">To sign in with a service principal using a password:</span></span>
 
 ```azurecli-interactive
 az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
 ```
 
-<span data-ttu-id="da3d1-151">Чтобы войти с использованием сертификата, он должен быть доступен локально как PEM- или DER-файл.</span><span class="sxs-lookup"><span data-stu-id="da3d1-151">To sign in with a certificate, it must be available locally as a PEM or DER file.</span></span>
+<span data-ttu-id="bd62b-187">Чтобы войти с использованием сертификата, он должен быть доступен локально как PEM- или DER-файл в формате ASCII:</span><span class="sxs-lookup"><span data-stu-id="bd62b-187">To sign in with a certificate, it must be available locally as a PEM or DER file, in ASCII format:</span></span>
 
 ```azurecli-interactive
-az login --service-principal --username APP_ID --tenant TENANT_ID --password PATH_TO_CERT
+az login --service-principal --username APP_ID --tenant TENANT_ID --password /path/to/cert
 ```
 
-## <a name="reset-credentials"></a><span data-ttu-id="da3d1-152">Сброс учетных данных</span><span class="sxs-lookup"><span data-stu-id="da3d1-152">Reset credentials</span></span>
+<span data-ttu-id="bd62b-188">Дополнительные сведения о входе с использованием субъекта-службы см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).</span><span class="sxs-lookup"><span data-stu-id="bd62b-188">To learn more about signing in with a service principal, see [Sign in with the Azure CLI](authenticate-azure-cli.md).</span></span>
 
-<span data-ttu-id="da3d1-153">Если вы забыли учетные данные субъекта-службы, их можно сбросить с помощью команды [az ad sp reset-credentials](/cli/azure/ad/sp/credential#az-ad-sp-credential-reset).</span><span class="sxs-lookup"><span data-stu-id="da3d1-153">In the event that you forget the credentials for a service principal, they can be reset with the [az ad sp credential reset](/cli/azure/ad/sp/credential#az-ad-sp-credential-reset) command.</span></span> <span data-ttu-id="da3d1-154">Здесь применяются те же параметры и ограничения, как и при создании нового субъекта-службы.</span><span class="sxs-lookup"><span data-stu-id="da3d1-154">The same restrictions and options for creating a new service principal also apply here.</span></span>
+## <a name="reset-credentials"></a><span data-ttu-id="bd62b-189">Сброс учетных данных</span><span class="sxs-lookup"><span data-stu-id="bd62b-189">Reset credentials</span></span>
+
+<span data-ttu-id="bd62b-190">Если вы забыли учетные данные для субъекта-службы, воспользуйтесь командой [az ad sp credential reset](/cli/azure/ad/sp/credential#az-ad-sp-credential-reset).</span><span class="sxs-lookup"><span data-stu-id="bd62b-190">If you forget the credentials for a service principal, use [az ad sp credential reset](/cli/azure/ad/sp/credential#az-ad-sp-credential-reset).</span></span> <span data-ttu-id="bd62b-191">Команда сброса принимает те же аргументы, что и команда `az ad sp create-for-rbac`.</span><span class="sxs-lookup"><span data-stu-id="bd62b-191">The reset command takes the same arguments as `az ad sp create-for-rbac`.</span></span>
 
 ```azurecli-interactive
-az ad sp credential reset --name APP_ID 
+az ad sp credential reset --name APP_ID
 ```
