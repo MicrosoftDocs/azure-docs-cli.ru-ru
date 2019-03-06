@@ -9,14 +9,77 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 1c6b2cc57b80256faff0a174bec5f13bd84f5a1b
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
+ms.openlocfilehash: 9f35084eeecab491e5be63eb856b0bb64a6157d0
+ms.sourcegitcommit: 9fb008f2802ca6a58f33e01263bf55a80d01f031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56158732"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "56891217"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+## <a name="february-26-2019"></a>26 февраля 2019 г.
+
+Версия 2.0.59
+
+### <a name="core"></a>Core
+
+* Исправлена проблема, из-за которой в некоторых экземплярах с использованием `--subscription NAME` выдавалось исключение.
+
+### <a name="acr"></a>ACR
+
+* Добавлен параметр `--target` для команд `acr build`, `acr task create` и `acr task update`.
+* Улучшена обработка ошибок для команд среды выполнения без входа в Azure.
+
+### <a name="acs"></a>ACS
+
+* Добавлен параметр `--listen-address` для команды `aks port-forward`.
+
+### <a name="appservice"></a>AppService
+
+* Добавлена команда `functionapp devops-build`.
+
+### <a name="batch"></a>Пакетная служба Azure
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `batch pool upgrade os`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено свойство `Pacakges` из ответов `Application`.
+* Добавлена команда `batch application package list` для вывода списка пакетов приложения.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено `--application-id` на `--application-name` во всех командах `batch application`. 
+* Добавлен аргумент `--json-file` к командам для запрашивания необработанного ответа API.
+* Обновлена проверка для автоматического включения `https://` во все конечные точки, если они отсутствуют.
+
+### <a name="cosmosdb"></a>Cosmos DB
+
+* Добавлена подгруппа `network-rule` с командами `add`, `remove` и `list` для управления правилами виртуальной сети учетной записи Cosmos DB.
+
+### <a name="kusto"></a>Kusto
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для типов `hot_cache_period` и `soft_delete_period` для базы данных изменен формат длительности ISO8601.
+
+### <a name="network"></a>Сеть
+
+* Добавлен аргумент `--express-route-gateway-bypass` для команды `vpn-connection [create|update]`
+* Добавлены группы команд из расширения `express-route`.
+* Добавлены группы команд `express-route gateway` и `express-route port`.
+* Добавлен аргумент `--legacy-mode` в команду `express-route peering [create|update]`. 
+* Добавлены аргументы `--allow-classic-operations` и `--express-route-port` для `express-route [create|update]`.
+* Добавлен аргумент `--gateway-default-site` для команды `vnet-gateway [create|update]`
+* Добавлены команды `ipsec-policy` для `vnet-gateway`.
+
+### <a name="resource"></a>Ресурс
+
+* Исправлена проблема с `deployment create`, из-за которой в поле типа учитывался регистр.
+* Добавлена поддержка файла параметров на основе URI для `policy assignment create`.
+* Добавлена поддержка определений и параметров на основе URI для `policy set-definition update`.
+* Исправлена обработка параметров и правил для `policy definition update`.
+* Исправлена проблема с `resource show/update/delete/tag/invoke-action`, из-за которой идентификаторы разных подписок не обрабатывали правильно идентификатор подписки.
+
+### <a name="role"></a>Роль
+
+* Добавлена поддержка ролей приложений для `ad app [create|update]`.
+
+### <a name="vm"></a>ВМ
+
+* Исправлена проблема с отсутствием возможности включения `vm create where `--accelerated-networking` по умолчанию для Ubuntu 18.0.
+
 ## <a name="february-12-2019"></a>12 февраля 2019 г.
 
 Версия 2.0.58
@@ -2992,7 +3055,7 @@ vm (2.0.6)
 * Поддержка настройки строк подключения ([№ 2647](https://github.com/Azure/azure-cli/issues/2647)).
 * Поддержка переключения слотов с предварительным просмотром.
 * Устранены ошибки из команд службы приложений ([№ 2948](https://github.com/Azure/azure-cli/issues/2948)).
-* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([№ 2750](https://github.com/Azure/azure-cli/issues/2750)).
+* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([#2750](https://github.com/Azure/azure-cli/issues/2750)).
 
 ### <a name="cosmosdb"></a>Cosmos DB
 
