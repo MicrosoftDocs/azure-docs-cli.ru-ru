@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 03/08/2019
+ms.date: 03/20/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 40522581225f5bbade2bc52a8f2f7b6ba239a5b4
-ms.sourcegitcommit: 67d60b0c40dcff63ded696184529827f14940cc1
+ms.openlocfilehash: 5f787111d349e32ef838ab89d3f964ab484a2ac4
+ms.sourcegitcommit: 5864f72b9a6fbf82a4d98bf805b3a16a7da18556
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57754816"
+ms.lasthandoff: 03/22/2019
+ms.locfileid: "58343117"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -34,12 +34,12 @@ az extension list-available --output table
 | [anf-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/anf-preview) | 0.1.0 | Предварительное знакомство с новыми возможностями Azure NetApp Files (ANF). | Yes |
 | [appconfig](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Предварительное знакомство с новыми возможностями службы конфигурации приложений. | Yes |
 | [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.0 | Поддержка запросов метрик, событий и журналов Azure Application Insights. | Yes |
-| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 3.0.2 | Дополнительные команды для работы с пакетной службой Azure. |  |
-| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.6.1 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
+| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 3.0.3 | Дополнительные команды для работы с пакетной службой Azure. |  |
+| [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.7.0 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
 | [azure-devops](https://github.com/Microsoft/azure-devops-cli-extension) | 0.3.0 | Инструменты для управления Azure DevOps. | Yes |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.1.1 | Управление ресурсами Брандмауэра Azure. | Yes |
 | [botservice](https://github.com/Azure/azure-cli-extensions) | 0.4.3 | Исправления ошибок в собственном командном модуле botservice cli. | Yes |
-| [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.7 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Yes |
+| [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.9 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Yes |
 | [dev-spaces-preview](https://github.com/Azure/azure-cli-extensions) | 0.1.6 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. | Yes |
 | [dms-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/dms-preview) | 0.6.0 | Поддержка новых сценариев Database Migration Service. | Yes |
 | [dns](https://github.com/Azure/azure-cli-extensions) | 0.0.2 | Расширение Azure CLI для зон DNS. |  |
@@ -47,14 +47,15 @@ az extension list-available --output table
 | [express-route](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route) | 0.1.3 | Управление ExpressRoute с помощью предварительных версий функций. | Yes |
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.0 | Управление пользовательскими каналами ExpressRoute с использованием перекрестного подключения ExpressRoute. |  |
 | [find](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.3.0 | Интеллектуальный запрос для получения сведений CLI. | Yes |
-| [front-door](https://github.com/Azure/azure-cli-extensions/tree/master/src/front-door) | 0.1.1 | Управление сетевыми службами Front Door. | Yes |
+| [front-door](https://github.com/Azure/azure-cli-extensions/tree/master/src/front-door) | 0.1.2 | Управление сетевыми службами Front Door. | Yes |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.9 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
 | [интерактивный](https://github.com/Azure/azure-cli) | 0.4.1 | Интерактивная оболочка командной строки Microsoft Azure | Yes |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Yes |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.3 | Поддержка возможностей запросов Azure Log Analytics. | Yes |
 | [managementgroups](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Azure CLI для групп управления. |  |
 | [managementpartner](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | Поддержка партнера управления (предварительная версия). |  |
-| [mesh](https://github.com/Azure/azure-cli-extensions) | 0.10.2 | Поддержка Сетки Microsoft Azure Service Fabric (общедоступная предварительная версия) | Yes |
+| [mesh](https://github.com/Azure/azure-cli-extensions) | 0.10.4 | Поддержка Сетки Microsoft Azure Service Fabric (общедоступная предварительная версия) | Yes |
+| [mixed-reality](https://github.com/Azure/azure-cli-extensions) | 0.0.1 | Расширение Azure CLI смешанной реальности. |  |
 | [privatedns](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Команды для управления Частными зонами DNS. | Yes |
 | [rdbms-vnet](https://github.com/Azure/azure-cli-extensions) | 10.0.0 | Поддержка правил виртуальной сети в ресурсах Azure MySQL и Azure PostgreSQL. |  |
 | [resource-graph](https://github.com/Azure/azure-cli-extensions/tree/master/src/resource-graph) | 0.1.8 | Поддержка запросов к ресурсам Azure с помощью Resource Graph. | Yes |

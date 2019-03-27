@@ -9,14 +9,77 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 9f35084eeecab491e5be63eb856b0bb64a6157d0
-ms.sourcegitcommit: 9fb008f2802ca6a58f33e01263bf55a80d01f031
+ms.openlocfilehash: 4337f2203841d6247e4b487d245138424c63e448
+ms.sourcegitcommit: 71c0ccd475524cf4d6db45bba8139fef3262d764
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56891217"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58175139"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+## <a name="march-12-2019"></a>12 марта 2019 г.
+
+Версия 2.0.60
+
+### <a name="core"></a>Core
+
+* Исправлена недопустимая ошибка в `cloud set` о том, что подписка не найдена.
+
+### <a name="acr"></a>ACR
+
+* Исправлена ошибка с избыточными источниками при импорте изображений.
+
+### <a name="acs"></a>ACS
+
+* Аргумент `--listen-address` для `aks browse` игнорируется, если `kubectl` не поддерживает его.
+
+### <a name="appservice"></a>AppService
+
+* Добавлено `[webapp|functionapp] deployment list-publishing-credentials` для получения URL-адреса публикации Kudu и связанных учетных данных.
+* Удалена ошибочная инструкция печати для `webapp auth update`.
+* Исправлено `functionapp` для настройки правильного образа для среды выполнения в планах службы приложений Linux.
+* Удален тег предварительной версии для `webapp up` и добавлены усовершенствования в команду.
+
+### <a name="botservice"></a>Служба Bot
+
+* Добавлено `SCM_DO_BUILD_DURING_DEPLOYMENT` для параметров приложения шаблона ARM для ботов веб-приложений версии 4.
+* Добавлено `Microsoft-BotFramework-AppId` и `Microsoft-BotFramework-AppPassword` для параметров приложения шаблона ARM для ботов веб-приложений версии 4.
+* Удалены одинарные кавычки из выходных данных команды `bot publish` в конце `bot create`.
+* Изменено `bot publish` для включения поддержки асинхронных операций.
+
+### <a name="container"></a>Контейнер
+
+* Добавлен аргумент `--no-wait` для команды `container [start|restart]`
+
+### <a name="eventhub"></a>концентратор событий.
+
+* Добавлен флаг `--skip-empty-archives` для `eventhub create|update` для включения поддержки пустых архивов при записи.
+
+### <a name="find"></a>Поиск
+
+* Основные обновления функций
+
+### <a name="hdinsight"></a>HDInsight
+
+* Добавлен параметр `--storage-account-managed-identity` для `hdinsight create` для включения поддержки MSI ADLS 2-го поколения.
+
+### <a name="network"></a>Сеть
+
+* Исправлена проблема с `vpn-connection update`, когда обновление VPN-подключения между шлюзами в разных подписках завершается ошибкой.
+
+### <a name="rdbms"></a>Rdbms
+
+* Незначительные исправления для получения расположения по умолчанию из группы ресурсов, когда оно не предоставляется при создании серверов, и добавления проверки числа дней хранения.
+
+### <a name="role"></a>Роль
+
+* Исправлено `role definition update` для использования идентификатора для правильного разрешения определения.
+* Изменено `ad app credential reset` для исключения предположения о том, что субъект-служба приложения всегда существует.
+
+### <a name="service-fabric"></a>Service Fabric
+
+* Исправлена проблема с `sf cluster list` и невозможностью итерации.
+
 ## <a name="february-26-2019"></a>26 февраля 2019 г.
 
 Версия 2.0.59
@@ -3055,7 +3118,7 @@ vm (2.0.6)
 * Поддержка настройки строк подключения ([№ 2647](https://github.com/Azure/azure-cli/issues/2647)).
 * Поддержка переключения слотов с предварительным просмотром.
 * Устранены ошибки из команд службы приложений ([№ 2948](https://github.com/Azure/azure-cli/issues/2948)).
-* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([#2750](https://github.com/Azure/azure-cli/issues/2750)).
+* Использование группы ресурсов в плане служб приложений для операций с сертификатами ([№ 2750](https://github.com/Azure/azure-cli/issues/2750)).
 
 ### <a name="cosmosdb"></a>Cosmos DB
 
