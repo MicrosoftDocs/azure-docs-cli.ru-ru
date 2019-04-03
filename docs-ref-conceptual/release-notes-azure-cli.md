@@ -4,19 +4,88 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 02/15/2019
+ms.date: 03/26/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 4337f2203841d6247e4b487d245138424c63e448
-ms.sourcegitcommit: 71c0ccd475524cf4d6db45bba8139fef3262d764
+ms.openlocfilehash: d8307ca9797a9a780d7e08d6d21cb66446c7e289
+ms.sourcegitcommit: 6d9e8ee6dd07cfd07239a2948304d7f50ef781cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58175139"
+ms.lasthandoff: 03/27/2019
+ms.locfileid: "58508908"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+## <a name="march-26-2019"></a>26 марта 2019 г.
+
+### <a name="core"></a>Core
+* Устранены проблемы с несовместимостью расширений для разработки.
+* Функция обработки ошибок теперь указывает клиентам на страницу проблем.
+
+### <a name="cloud"></a>Облако
+* Исправлена ошибка с сообщением о не найденной подписке в `cloud set`.
+
+### <a name="acr"></a>ACR
+* Исправлена ошибка с избыточными источниками при импорте изображений.
+* Добавлено `--auth-mode` в команды `acr build`, `acr run`, `acr task create` и `acr task update`.
+* Добавлена команда acr task credential для управления учетными данными для задачи.
+* Добавлено --no-wait в команду `acr build`.
+
+### <a name="appservice"></a>AppService
+* Исправлена ошибка с `webapp up`, из-за которой нельзя было правильно выполнить запуск из пустого каталога или скрипта неизвестного кода.
+* Исправлена ошибка, из-за которой не работали слоты для `[webapp|functionapp] config ssl bind`.
+
+### <a name="bot-service"></a>Служба Bot
+* Добавлено `bot prepare-deploy` для подготовки к развертыванию ботов с помощью `webapp`.
+* Изменено `bot create --kind registration` для отображения пароля, если пароль не указан.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено `--endpoint` в `bot create --kind registration` на пустую строку (по умолчанию) вместо запрашиваемой.
+* Добавлено `SCM_DO_BUILD_DURING_DEPLOYMENT` для параметров приложения шаблона ARM для ботов веб-приложений версии 4.
+
+### <a name="cdn"></a>CDN
+* Добавлена поддержка параметра `--no-wait` в команде `cdn endpoint [create|update|start|stop|delete|load|purge]`.  
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено поведение кэширования строки запроса `cdn endpoint create` по умолчанию. IgnoreQueryString больше не используется по умолчанию. Это значение задает служба.
+
+### <a name="cosmosdb"></a>Сosmos DB
+* Добавлена поддержка `--enable-multiple-write-locations` для обновления учетной записи.
+* Добавлена подгруппа `network-rule` с командами `add`, `remove` и `list` для управления правилами виртуальной сети учетной записи Cosmos DB.
+
+### <a name="interactive"></a>Interactive
+* Исправлена несовместимость с интерактивным расширением, установленным с помощью azdev.
+
+### <a name="monitor"></a>Мониторинг
+* Внесено изменение, разрешающее использовать значение измерения `*` для `monitor metrics alert [create|update]`.
+
+### <a name="network"></a>Сеть
+* Добавлена группа команд `rewrite-rule` для `application-gateway`.
+
+### <a name="profile"></a>Профиль
+* Включена поддержка учетной записи уровня клиентов для управляемого удостоверения службы для `login`.
+
+### <a name="postgres"></a>Postgres 
+* Добавлены команды postgresql `replica` и команда `restart server`.
+* Внесены изменения для получения расположения по умолчанию из группы ресурсов, когда оно не предоставляется при создании серверов, и добавления проверки числа дней хранения.
+
+### <a name="resource"></a>Ресурс
+* Улучшены табличные выходные данные для `deployment [create|list|show]`.
+* Исправлена проблема с `deployment [create|validate]`, из-за которой secureObject типа не распознавался.
+
+### <a name="graph"></a>График
+* Добавлена поддержка параметра `--end-date` в команде `ad [app|sp] credential reset`.
+* Добавлена поддержка разрешений для `ad app permission add`.
+* Исправлена проблема с `ad app permission list`, из-за которой отсутствовали разрешения.
+* Изменено `ad sp delete` для пропуска удаления назначения роли, если текущая учетная запись не содержит подписок.
+* Изменено `ad app create` для использования `--identifier-uris` пустого списка (по умолчанию), если список не указан.
+
+### <a name="storage"></a>storage
+* Добавлено `--snapshot` для `storage file download-batch` для скачивания из моментального снимка общего ресурса.
+* Изменен индикатор выполнения `storage blob [download-batch|upload-batch]`, чтобы обобщить сведения и указать текущий большой двоичный объект.
+* Исправлена проблема с `storage account update` при обновлении параметров шифрования.
+* Исправлена проблема со сбоем `storage blob show` при использовании OAuth (`--auth-mode=login`).
+
+### <a name="vm"></a>ВМ
+* Добавлена команда `image update`.
+
 ## <a name="march-12-2019"></a>12 марта 2019 г.
 
 Версия 2.0.60
