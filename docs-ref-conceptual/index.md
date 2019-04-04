@@ -9,8 +9,13 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
+ms.openlocfilehash: 3b9589c769a90e82c35aa64c583dffdac4e4f063
+ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 02/19/2019
+ms.locfileid: "56421989"
 ---
-
 # <a name="azure-command-line-interface-cli"></a><span data-ttu-id="77e1a-103">Интерфейс командной строки Azure (CLI)</span><span class="sxs-lookup"><span data-stu-id="77e1a-103">Azure Command-Line Interface (CLI)</span></span>
 
 <span data-ttu-id="77e1a-104">Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.</span><span class="sxs-lookup"><span data-stu-id="77e1a-104">The Azure command-line interface (CLI) is Microsoft's cross-platform command-line experience for managing Azure resources.</span></span>
