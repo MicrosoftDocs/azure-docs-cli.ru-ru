@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.component: authentication
-ms.openlocfilehash: c1c2efa58b11c38ac0ed73d43c71ba1b2a44de2e
-ms.sourcegitcommit: 014d89aa21f90561eb69792ad01947e481ea640a
+ms.openlocfilehash: 234c53f27ba365550e6502b8410aced57eb9ff4e
+ms.sourcegitcommit: cf47338210116437d7dc0f6037d2dabd5c5e6a4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56741740"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59428985"
 ---
 # <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI 
 
@@ -85,7 +85,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 >
 > ```powershell
 > $AzCred = Get-Credential -UserName <app-url>
-> az login -u $AzCred.UserName -p $AzCred.GetNetworkCredential().Password --tenant <tenant>
+> az login --service-principal -u $AzCred.UserName -p $AzCred.GetNetworkCredential().Password --tenant <tenant>
 > ```
 
 ## <a name="sign-in-with-a-different-tenant"></a>Вход с помощью другого клиента
