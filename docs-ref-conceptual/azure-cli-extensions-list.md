@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/03/2019
+ms.date: 04/11/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 859a318ac7705812550a259ea160105256cdeab8
-ms.sourcegitcommit: cf9a1d3d89095238078c9303aaa3bfeaa0cdfdf1
+ms.openlocfilehash: 225c0acbdb8ab4665d8e169d012496d44b1c1a07
+ms.sourcegitcommit: b8dd3e56e86ef7c76714b3677f7c80d3f8aed3f5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58913341"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59508375"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -47,9 +47,9 @@ az extension list-available --output table
 | [express-route](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route) | 0.1.3 | Управление ExpressRoute с помощью предварительных версий функций. | Yes |
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.1 | Управление пользовательскими каналами ExpressRoute с использованием перекрестного подключения ExpressRoute. |  |
 | [поиск](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.3.0 | Интеллектуальный запрос для получения сведений CLI. | Yes |
-| [front-door](https://github.com/Azure/azure-cli-extensions/tree/master/src/front-door) | 0.1.4 | Управление сетевыми службами Front Door. | Yes |
+| [front-door](https://github.com/Azure/azure-cli-extensions/tree/master/src/front-door) | 0.1.5 | Управление сетевыми службами Front Door. | Yes |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.0.9 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
-| [интерактивный](https://github.com/Azure/azure-cli) | 0.4.1 | Интерактивная оболочка командной строки Microsoft Azure | Yes |
+| [интерактивный](https://github.com/Azure/azure-cli) | 0.4.2 | Интерактивная оболочка командной строки Microsoft Azure | Yes |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Yes |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.3 | Поддержка возможностей запросов Azure Log Analytics. | Yes |
 | [managementgroups](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Azure CLI для групп управления. |  |

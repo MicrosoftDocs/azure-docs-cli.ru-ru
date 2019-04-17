@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 2a4515f5301daca68f6e1a161fb2327f6caa0cf5
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
+ms.openlocfilehash: 346014c1890cd7aa5b4225df15078e55db908a33
+ms.sourcegitcommit: 754c550b417f26e27f2e31cd0a04826aa8ff4f64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56158561"
+ms.lasthandoff: 04/08/2019
+ms.locfileid: "59289089"
 ---
 # <a name="run-azure-cli-in-a-docker-container"></a>Запуск Azure CLI в контейнере Docker
 
@@ -22,17 +22,20 @@ Docker можно использовать для запуска изолиро�
 
 ## <a name="run-in-a-docker-container"></a>Запуск в контейнере Docker
 
+> [!NOTE]
+> Интерфейс командной строки Azure перенесен в [Реестр контейнеров](https://azure.microsoft.com/services/container-registry). Существующие теги в Docker Hub по-прежнему поддерживаются, но новые выпуски будут доступны только в виде mcr.microsoft.com/azure-cli.
+
 Установите CLI с помощью команды `docker run`.
 
    ```bash
-   docker run -it microsoft/azure-cli
+   docker run -it mcr.microsoft.com/azure-cli
    ```
 
 > [!NOTE]
 > Если вы хотите извлечь ключи SSH из пользовательской среды, можно использовать `-v ${HOME}/.ssh:/root/.ssh`, чтобы подключить ключи SSH в этой среде.
 >
 > ```bash
-> docker run -it -v ${HOME}/.ssh:/root/.ssh microsoft/azure-cli
+> docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli
 > ```
 
 CLI устанавливается в образ как команда `az` в папку `/usr/local/bin`. Чтобы войти, выполните команду [az login](/cli/azure/reference-index#az-login).
@@ -48,7 +51,7 @@ CLI устанавливается в образ как команда `az` в �
 Обновите локальный образ с помощью команды `docker pull`.
 
 ```bash
-docker pull microsoft/azure-cli
+docker pull mcr.microsoft.com/azure-cli
 ```
 
 ## <a name="uninstall-docker-image"></a>Удаление образа Docker
@@ -58,7 +61,7 @@ docker pull microsoft/azure-cli
 После остановки любого контейнера под управлением образа CLI удалите образ.
 
 ```bash
-docker rmi microsoft/azure-cli
+docker rmi mcr.microsoft.com/azure-cli
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

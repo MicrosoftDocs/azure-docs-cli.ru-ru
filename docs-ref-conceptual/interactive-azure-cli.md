@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 7a6b89953d60fe98910f8141a606ac1fcba318ae
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
+ms.openlocfilehash: a325b799c7384037ae336093aa5274c7cbf53cbc
+ms.sourcegitcommit: cf47338210116437d7dc0f6037d2dabd5c5e6a4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56158465"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59429019"
 ---
 # <a name="azure-cli-interactive-mode"></a>Интерактивный режим Azure CLI
 
@@ -82,18 +82,20 @@ az>>
 
 ## <a name="query"></a>Запрос
 
-Можно выполнить запрос JMESPath к результатам последней выполненной команды.
-Например, после создания виртуальной машины можно убедиться, что она полностью подготовлена.
+Чтобы выполнить запрос JMESPath к результатам последней выполненной команды, укажите `??` перед запросом JMESPath.
+Например после создания группы можно получить идентификатор новой группы.
+
+```azurecli
+az>> group create -n myRG -l westEurope
+az>> "?? id"
+```
+
+С помощью этого синтаксиса также можно использовать результат предыдущей команды в качестве аргумента для следующей команды.* Например, после перечисления всех групп можно перечислить все ресурсы типа `virtualMachine` в первой группе, расположение (location) которых — westeurope. 
 
 ```azurecli
 az>> vm create --name myVM --resource-group myRG --image UbuntuLTS --no-wait -o json
-az>> ? [*].provisioningState
-```
-
-```json
-[
-  "Creating"
-]
+az>> group list -o json
+az>> resource list -g "?? [?location=='westeurope'].name | [0]" --query "[?type=='Microsoft.Compute/virtualMachines'].name
 ```
 
 Чтобы узнать больше о выполнении запросов к результатам команд в Azure CLI, ознакомьтесь с [этой статьей](query-azure-cli.md).

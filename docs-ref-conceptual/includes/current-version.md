@@ -2,13 +2,13 @@
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 03/26/2019
+ms.date: 04/09/2019
 ms.topic: include
-ms.openlocfilehash: d9e1846d7a616bb6ae32c360fd73c80850bb22d9
-ms.sourcegitcommit: 6d9e8ee6dd07cfd07239a2948304d7f50ef781cc
+ms.openlocfilehash: af5f370aafbfb8f1657e233406577b711406112f
+ms.sourcegitcommit: cf47338210116437d7dc0f6037d2dabd5c5e6a4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58542433"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59430735"
 ---
-Текущая версия CLI — __2.0.61__. Сведения о последнем выпуске см. в [заметках о выпуске](../release-notes-azure-cli.md). Чтобы узнать текущую версию и проверить, нужны ли обновления, выполните команду `az --version`.
+Текущая версия CLI — __2.0.62__. Сведения о последнем выпуске см. в [заметках о выпуске](../release-notes-azure-cli.md). Чтобы узнать, какая версия установлена и нужно ли ее обновить, выполните команду `az --version`.
