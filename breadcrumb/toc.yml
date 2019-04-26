@@ -1,14 +1,7 @@
-items:
 - name: Таблицы Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
-  - name: Инфраструктура CLI Azure
-    tocHref: /cli/azure/
-    topicHref: /cli/azure
-ms.openlocfilehash: f836797d3bbec4a12a9c20ae85552cec4bfa5b7d
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56159054"
+    - name: Инфраструктура CLI Azure
+      tocHref: /cli/azure/
+      topicHref: /cli/azure

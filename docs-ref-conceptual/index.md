@@ -10,11 +10,11 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 3b9589c769a90e82c35aa64c583dffdac4e4f063
-ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
+ms.sourcegitcommit: 4906c38953bdaa344b66749685dedbf2da386dab
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56421989"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "64319499"
 ---
 # <a name="azure-command-line-interface-cli"></a>Интерфейс командной строки Azure (CLI)
 
