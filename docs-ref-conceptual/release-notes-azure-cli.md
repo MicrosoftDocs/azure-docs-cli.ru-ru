@@ -4,19 +4,90 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 04/09/2019
+ms.date: 05/06/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: df665565130322504c4794462098980b1064a6c7
-ms.sourcegitcommit: c6dff58438d256647d4aa29a53eef4bf93a0cd24
+ms.openlocfilehash: ce11abccc23ee1f150916ef2f91dc895d4664d31
+ms.sourcegitcommit: 65bf8561a6e047e4eab52186e066a2e8c21f1d40
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59480003"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65240520"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="may-6-2019"></a>6 мая 2019 г.
+
+Версия 2.0.64
+
+### <a name="appservice"></a>Служба приложений
+* Команда `functionapp devops-build` отмечена как нерекомендуемая.
+  * Команда переименована в `functionapp devops-pipeline`.
+* Исправлен процесс получения правильного имени пользователя для Cloud Shell, приводивший к ошибке выполнения `webapp up`.
+* Обновлена документация по `appservice plan --sku` в соответствии с поддерживаемыми планами службы приложений.
+* Добавлены необязательные аргументы для группы ресурсов и план для `webapp up`.
+* Добавлена поддержка `webapp ssh` в соответствии с переменной среды `AZURE_CLI_DISABLE_CONNECTION_VERIFICATION`.
+* Добавлена поддержка `appserviceplan create` для ценовой категории "Бесплатный" в Linux.
+* Внесено изменение в `webapp up` для перевода в спящий режим на 30 с после установки параметра приложения `SCM_DO_BUILD_DURING_DEPLOYMENT=true` для обработки холодного запуска Kudu.
+* Добавлена поддержка среды выполнения `powershell` для `functionapp create` в Windows.
+* Добавлена команда `create-remote-connection`.
+
+### <a name="role"></a>Роль
+* [УСТАРЕЛО] Внесено изменение в `create-for-rbac` для скрытия аргумента --password (поддержка прекращается в мае 2019 г.).
+
+## <a name="april-23-2019"></a>23 апреля 2019 г.
+
+Версия 2.0.63
+
+### <a name="acs"></a>ACS
+* Внесено изменение в `aks get-credentials` для запроса на перезапись повторяющихся значений.
+* Удалено описание `(PREVIEW)` из команд Dev Spaces aks use-dev-spaces и aks remove-dev-spaces.
+
+### <a name="ams"></a>AMS
+* Исправлена ошибка с обновлением фильтров ресурсов и учетных записей.
+
+### <a name="appservice"></a>AppService
+* Добавлена поддержка ASE и времени ожидания для `webapp ssh`.
+* Добавлена возможность настройки непрерывной интеграции и развертывания в конвейере Azure DevOps из репозитория Github для приложений-функций.
+* Добавлен аргумент `--github-pat` для `functionapp devops-build create` для получения личного маркера доступа Github.
+* Добавлен аргумент `--github-repository` для `functionapp devops-build create` для подключения репозитория Github, который содержит исходный код приложения-функции.
+* Исправлена проблема со сбоем `az webapp up --logs` и обновлением .Net Core до версии 2.1 по умолчанию.
+* Удалены ненужные параметры приложения-функции при создании приложения-функции с помощью плана потребления.
+* Внесены изменения в `webapp up`, чтобы строка ASP по умолчанию добавляла номера в конец для создания плана службы приложений на основе параметров SKU.
+* Добавлен параметр `-b` для `webapp up` для запуска приложения в браузере.
+* Внесены изменения в `webapp deployment source config zip` для обработки переменной среды `AZURE_CLI_DISABLE_CONNECTION_VERIFICATION`.
+
+### <a name="deployment-manager"></a>Диспетчер развертывания
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Создание и администрирование артефактов, которые поддерживают развертывания
+
+### <a name="lab"></a>Лаборатория
+* Исправлена ошибка, которая приводила к неожиданному завершению работы.
+
+### <a name="network"></a>Сеть
+* Добавлено автоматическое делегирование сервера имен для `dns zone create` в родительском объекте во время создания дочерней зоны.
+
+### <a name="resource"></a>Ресурс
+* [УСТАРЕЛО] Не рекомендуются к использованию аргументы `--link-id`, `--target-id` и `--filter-string` для `resource link`.
+  * Используйте вместо них аргументы `--link`, `--target` и `--filter`.
+* Исправлена проблема, из-за которой команды `resource link [create|update]` не работали.
+* Исправлена проблема, из-за которой удаление с помощью идентификатора ресурса приводило к сбою или ошибке.
+
+### <a name="sql"></a>SQL
+* Добавлена поддержка пользовательского часового пояса в управляемых экземплярах.
+* Внесено изменение, чтобы разрешить использовать имя эластичного пула с `sql db update`.
+* В команду `sql server [create|update]` добавлена поддержка параметра `--no-wait`.
+* Добавлена команда `sql server wait`.
+
+### <a name="storage"></a>Хранилище
+* Устранена проблема с двойной кодировкой маркеров SAS в `storage blob generate-sas`.
+
+### <a name="vm"></a>ВМ
+* Добавлен флаг `--skip-shutdown` для `vm|vmss stop` для выключения виртуальных машин без завершения работы.
+* Добавлен аргумент `--storage-account-type` для `sig image-version create` настройки типа учетной записи профиля публикации.
+* Добавлен аргумент `--target-regions` для `sig image-version create` для указания типов учетных записей хранения, связанных с регионами.
+
 ## <a name="april-9-2019"></a>9 апреля 2019 г.
 
 ### <a name="core"></a>Core
@@ -27,21 +98,21 @@ ms.locfileid: "59480003"
 
 ### <a name="ams"></a>AMS
 * [УСТАРЕЛО]: Deprecated the `--bitrate` parameter of `account-filter` and `asset-filter`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ]: Renamed the `--bitrate` parameter to `--first-quality`
-* Добавлена поддержка новых параметров шифрования в `ams streaming-policy create`
-* Добавлен новый параметр `--filters` для командлета `ams streaming-locator create`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Renamed the `--bitrate` parameter to `--first-quality`
+* Добавлена поддержка новых параметров шифрования в `ams streaming-policy create`.
+* Добавлен новый параметр `--filters` для `ams streaming-locator create`.
 
 ### <a name="appservice"></a>AppService
-* Добавлена поддержка параметра `--logs` в `webapp up`
+* В команду `webapp up` добавлена поддержка параметра `--logs`.
 * Исправлены ошибки в команде `functionapp devops-build create` при создании файла `azure-pipelines.yml`.
 * Улучшена обработка и индикаторы ошибок с `unctionapp devops-build create`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удален флаг `--local-git` для команды `devops-build`. Обнаружение и обработка локального репозитория Git являются обязательными для создания конвейеров DevOps в Azure.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален флаг `--local-git` для команды `devops-build`. Обнаружение и обработка локального репозитория Git являются обязательными для создания конвейеров DevOps в Azure.
 * Добавлена поддержка создания плана функций Linux.
-* Добавлена возможность переключать план для приложения-функции с помощью `functionapp update --plan`
+* Добавлена возможность менять план для приложения-функции с помощью `functionapp update --plan`.
 * Добавлена поддержка параметров масштабирования плана "Премиум" для Функций Azure.
 
 ### <a name="cdn"></a>CDN
-* Добавлена поддержка `Microsoft_Standard` и `Standard_ChinaCdn`
+* Добавлена поддержка `Microsoft_Standard` и `Standard_ChinaCdn`.
 
 ### <a name="feedback"></a>Отзыв
 * Внесены изменения в `feedback` для отображения метаданных недавно выполненных команд.
@@ -49,13 +120,13 @@ ms.locfileid: "59480003"
 * Внесены изменения в `feedback`. Теперь текст проблемы выводится при запуске с параметром --verbose.
 
 ### <a name="monitor"></a>Мониторинг
-* Исправлена проблема, из-за которой у count было недопустимое значение в `metrics alert [create|update]` 
+* Исправлена проблема, из-за которой у параметра count было недопустимое значение в `metrics alert [create|update]`. 
 
 ### <a name="network"></a>Сеть
-* Исправлен формат таблицы, которая не отображалась с помощью `vnet-gateway list-bgp-peer-status`
-* Команды `list-request-headers` и `list-response-headers` добавлены в `application-gateway rewrite-rule`
-* Команда `list-server-variables` добавлена в `application-gateway rewrite-rule condition`
-* Исправлена проблема, из-за которой обновление состояния соединения на порту ExpressRoute вызывало неизвестное исключение атрибута `express-route port update`
+* Исправлен формат таблицы, которая не отображалась с помощью `vnet-gateway list-bgp-peer-status`.
+* Добавлены команды `list-request-headers` и `list-response-headers` для `application-gateway rewrite-rule`.
+* Добавлена команда `list-server-variables` для `application-gateway rewrite-rule condition`.
+* Исправлена проблема, из-за которой обновление состояния соединения на порту ExpressRoute вызывало неизвестное исключение атрибута `express-route port update`.
 
 ### <a name="privatedns"></a>Частная зона DNS
 * Добавлена команда `network private-dns` для частных зон DNS.
@@ -65,13 +136,13 @@ ms.locfileid: "59480003"
 
 ### <a name="role"></a>Роль
 * Внесены исправления в `create-for-rbac`. Теперь `--years` обрабатывается правильно.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Внесены изменения в `role assignment delete`. Теперь появляется запрос при удалении всех назначений в рамках подписки без дополнительных условий.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесены изменения в `role assignment delete`. Теперь появляется запрос при удалении всех назначений в рамках подписки без дополнительных условий.
 
 ### <a name="sql"></a>SQL
 * Команда `sql mi [create|update]` обновлена с помощью свойств proxyOverride и publicDataEndpointEnabled.
 
 ### <a name="storage"></a>Хранилище
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удален результат `storage blob delete`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален результат выполнения `storage blob delete`.
 * В команду `storage blob generate-sas` добавлен параметр `--full-uri` для создания полного URI большого двоичного объекта с помощью SAS.
 * В команду `storage file copy start` добавлен параметр `--file-snapshot` для копирования файла из моментального снимка.
 * Внесены изменения в `storage blob copy cancel`. Теперь вместо исключения для NoPendingCopyOperation отображается только сообщение об ошибке.
@@ -84,7 +155,7 @@ ms.locfileid: "59480003"
 * Функция обработки ошибок теперь указывает клиентам на страницу проблем.
 
 ### <a name="cloud"></a>Облако
-* Исправлена ошибка с сообщением о том, что подписка не найдена, в `cloud set`
+* Исправлена ошибка с сообщением о не найденной подписке в `cloud set`.
 
 ### <a name="acr"></a>ACR
 * Исправлена ошибка с избыточными источниками при импорте изображений.
@@ -94,17 +165,17 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>AppService
 * Исправлена ошибка с `webapp up`, из-за которой нельзя было правильно выполнить запуск из пустого каталога или скрипта неизвестного кода.
-* Исправлена ошибка, из-за которой не работали слоты для `[webapp|functionapp] config ssl bind`
+* Исправлена ошибка, из-за которой не работали слоты для `[webapp|functionapp] config ssl bind`.
 
 ### <a name="bot-service"></a>Служба Bot
-* Добавлена команда `bot prepare-deploy` для подготовки к развертыванию ботов с помощью `webapp`
+* Добавлено `bot prepare-deploy` для подготовки к развертыванию ботов с помощью `webapp`.
 * Изменено `bot create --kind registration` для отображения пароля, если пароль не указан.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменено `--endpoint` в `bot create --kind registration` на пустую строку (по умолчанию) вместо запрашиваемой.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено `--endpoint` в `bot create --kind registration` на пустую строку (по умолчанию) вместо запрашиваемой.
 * Добавлено `SCM_DO_BUILD_DURING_DEPLOYMENT` для параметров приложения шаблона ARM для ботов веб-приложений версии 4.
 
 ### <a name="cdn"></a>CDN
-* Добавлена поддержка `--no-wait` для `cdn endpoint [create|update|start|stop|delete|load|purge]`  
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменено поведение кэширования строки запроса `cdn endpoint create` по умолчанию. IgnoreQueryString больше не используется по умолчанию. Это значение задает служба.
+* Добавлена поддержка параметра `--no-wait` в команде `cdn endpoint [create|update|start|stop|delete|load|purge]`.  
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено поведение кэширования строки запроса `cdn endpoint create` по умолчанию. IgnoreQueryString больше не используется по умолчанию. Это значение задает служба.
 
 ### <a name="cosmosdb"></a>Сosmos DB
 * Добавлена поддержка `--enable-multiple-write-locations` для обновления учетной записи.
@@ -114,25 +185,25 @@ ms.locfileid: "59480003"
 * Исправлена несовместимость с интерактивным расширением, установленным с помощью azdev.
 
 ### <a name="monitor"></a>Мониторинг
-* Внесено изменение, разрешающее использовать значение измерения `*` для `monitor metrics alert [create|update]`
+* Внесено изменение, разрешающее использовать значение измерения `*` для `monitor metrics alert [create|update]`.
 
 ### <a name="network"></a>Сеть
-* Добавлена группа команд `rewrite-rule` для `application-gateway`
+* Добавлена группа команд `rewrite-rule` для `application-gateway`.
 
 ### <a name="profile"></a>Профиль
-* Включена поддержка учетной записи уровня клиентов для управляемого удостоверения службы для `login`
+* Включена поддержка учетной записи уровня клиентов для управляемого удостоверения службы для `login`.
 
 ### <a name="postgres"></a>Postgres 
 * Добавлены команды postgresql `replica` и команда `restart server`.
 * Внесены изменения для получения расположения по умолчанию из группы ресурсов, когда оно не предоставляется при создании серверов, и добавления проверки числа дней хранения.
 
 ### <a name="resource"></a>Ресурс
-* Улучшены табличные выходные данные для `deployment [create|list|show]`
+* Улучшены табличные выходные данные для `deployment [create|list|show]`.
 * Исправлена проблема с `deployment [create|validate]`, из-за которой secureObject типа не распознавался.
 
 ### <a name="graph"></a>График
-* Добавлена поддержка `--end-date` для `ad [app|sp] credential reset`
-* Добавлена поддержка разрешений для `ad app permission add`
+* Добавлена поддержка параметра `--end-date` в команде `ad [app|sp] credential reset`.
+* Добавлена поддержка разрешений для `ad app permission add`.
 * Исправлена проблема с `ad app permission list`, из-за которой отсутствовали разрешения.
 * Изменено `ad sp delete` для пропуска удаления назначения роли, если текущая учетная запись не содержит подписок.
 * Изменено `ad app create` для использования `--identifier-uris` пустого списка (по умолчанию), если список не указан.
@@ -165,7 +236,7 @@ ms.locfileid: "59480003"
 ### <a name="appservice"></a>AppService
 
 * Добавлено `[webapp|functionapp] deployment list-publishing-credentials` для получения URL-адреса публикации Kudu и связанных учетных данных.
-* Удалена ошибочная инструкция вывода для `webapp auth update`
+* Удалена ошибочная инструкция печати для `webapp auth update`.
 * Исправлено `functionapp` для настройки правильного образа для среды выполнения в планах службы приложений Linux.
 * Удален тег предварительной версии для `webapp up` и добавлены усовершенствования в команду.
 
@@ -173,7 +244,7 @@ ms.locfileid: "59480003"
 
 * Добавлено `SCM_DO_BUILD_DURING_DEPLOYMENT` для параметров приложения шаблона ARM для ботов веб-приложений версии 4.
 * Добавлено `Microsoft-BotFramework-AppId` и `Microsoft-BotFramework-AppPassword` для параметров приложения шаблона ARM для ботов веб-приложений версии 4.
-* Удалены одинарные кавычки из выходных данных команды `bot publish` в конце `bot create`
+* Удалены одинарные кавычки из выходных данных команды `bot publish` в конце `bot create`.
 * Изменено `bot publish` для включения поддержки асинхронных операций.
 
 ### <a name="container"></a>Контейнер
@@ -224,17 +295,17 @@ ms.locfileid: "59480003"
 
 ### <a name="acs"></a>ACS
 
-* Добавлен параметр `--listen-address` для команды `aks port-forward`
+* Добавлен параметр `--listen-address` для команды `aks port-forward`.
 
 ### <a name="appservice"></a>AppService
 
 * Добавлена команда `functionapp devops-build`.
 
 ### <a name="batch"></a>Пакетная служба Azure
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалена команда `batch pool upgrade os`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалено свойство `Pacakges` из ответов `Application`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `batch pool upgrade os`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено свойство `Pacakges` из ответов `Application`.
 * Добавлена команда `batch application package list` для вывода списка пакетов приложения.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменено `--application-id` на `--application-name` во всех командах `batch application`. 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено `--application-id` на `--application-name` во всех командах `batch application`. 
 * Добавлен аргумент `--json-file` к командам для запрашивания необработанного ответа API.
 * Обновлена проверка для автоматического включения `https://` во все конечные точки, если они отсутствуют.
 
@@ -244,29 +315,29 @@ ms.locfileid: "59480003"
 
 ### <a name="kusto"></a>Kusto
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Для типов `hot_cache_period` и `soft_delete_period` для базы данных изменен формат длительности ISO8601.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для типов `hot_cache_period` и `soft_delete_period` для базы данных изменен формат длительности ISO8601.
 
 ### <a name="network"></a>Сеть
 
 * Добавлен аргумент `--express-route-gateway-bypass` для команды `vpn-connection [create|update]`
 * Добавлены группы команд из расширения `express-route`.
 * Добавлены группы команд `express-route gateway` и `express-route port`.
-* Добавлен аргумент `--legacy-mode` для команды `express-route peering [create|update]` 
-* Добавлены аргументы `--allow-classic-operations` и `--express-route-port` для команды `express-route [create|update]`
+* Добавлен аргумент `--legacy-mode` в команду `express-route peering [create|update]`. 
+* Добавлены аргументы `--allow-classic-operations` и `--express-route-port` для `express-route [create|update]`.
 * Добавлен аргумент `--gateway-default-site` для команды `vnet-gateway [create|update]`
-* Добавлены команды `ipsec-policy` для `vnet-gateway`
+* Добавлены команды `ipsec-policy` для `vnet-gateway`.
 
 ### <a name="resource"></a>Ресурс
 
 * Исправлена проблема с `deployment create`, из-за которой в поле типа учитывался регистр.
-* Добавлена поддержка файла параметров на основе URI для `policy assignment create`
-* Добавлена поддержка определений и параметров на основе URI для `policy set-definition update`
-* Исправлена обработка параметров и правил для `policy definition update`
+* Добавлена поддержка файла параметров на основе URI для `policy assignment create`.
+* Добавлена поддержка определений и параметров на основе URI для `policy set-definition update`.
+* Исправлена обработка параметров и правил для `policy definition update`.
 * Исправлена проблема с `resource show/update/delete/tag/invoke-action`, из-за которой идентификаторы разных подписок не обрабатывали правильно идентификатор подписки.
 
 ### <a name="role"></a>Роль
 
-* Добавлена поддержка ролей приложений для `ad app [create|update]`
+* Добавлена поддержка ролей приложений для `ad app [create|update]`.
 
 ### <a name="vm"></a>ВМ
 
@@ -282,13 +353,13 @@ ms.locfileid: "59480003"
 * Исправлена регрессия, при которой `--ids` нельзя было больше использовать с выходными данными JSON.
 
 ### <a name="acr"></a>ACR
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалена группа команд `acr build-task`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удалены параметры `--tag` и `--manifest` из `acr repository delete`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена группа команд `acr build-task`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Из `acr repository delete` удалены параметры `--tag` и `--manifest`.
 
 ### <a name="acs"></a>ACS
-* Теперь имена без учета регистра поддерживаются в `aks [enable-addons|disable-addons]`
-* Добавлена поддержка операции обновления Azure Active Directory с помощью `aks update-credentials --reset-aad`
-* Добавлено пояснение, что значение `--output` игнорируется для `aks get-credentials`
+* `aks [enable-addons|disable-addons]` теперь поддерживает имена без учета регистра.
+* Добавлена поддержка операции обновления Azure Active Directory с помощью `aks update-credentials --reset-aad`.
+* Добавлено пояснение, что значение `--output` для `aks get-credentials` игнорируется.
 
 ### <a name="ams"></a>AMS
 * Добавлены команды `ams streaming-endpoint [start | stop | create | update] wait`.
@@ -297,16 +368,16 @@ ms.locfileid: "59480003"
 ### <a name="appservice"></a>Служба приложений
 * Добавлена возможность создавать и настраивать функции с помощью контейнеров ACR.
 * Добавлена поддержка обновления конфигураций веб-приложений с помощью JSON.
-* Улучшена справка для `appservice-plan-update`
+* Улучшена справка для `appservice-plan-update`.
 * Добавлена поддержка App Insights при создании приложений-функций.
 * Устранены проблемы с SSH для веб-приложений.
 
 ### <a name="botservice"></a>Служба Bot
-* Улучшен пользовательский интерфейс для `bot publish`
-* Добавлены предупреждения для времени ожидания при выполнении `npm install` во время операции `az bot publish`
-* Удален недопустимый символ `.` из значения `--name` в `az bot create`
+* Улучшен пользовательский интерфейс для `bot publish`.
+* Добавлены предупреждения для времени ожидания при выполнении `npm install` во время операции `az bot publish`.
+* Удален недопустимый символ `.` из значения `--name` в `az bot create`.
 * Имена ресурсов больше не выбираются в случайном порядке при создании службы хранилища Azure, плана службы приложений, функций, веб-приложений и Application Insights.
-* [УСТАРЕЛО] Аргумент `--proj-name` не поддерживается. Вместо него теперь используется `--proj-file-path`
+* [УСТАРЕЛО] Аргумент `--proj-name` не рекомендуется к использованию. Вместо него теперь используется `--proj-file-path`.
 * Теперь `az bot publish` удаляет полученные файлы развертывания IIS Node.js, если они уже не существуют.
 * В `az bot publish` добавлен аргумент `--keep-node-modules`, чтобы не удалять папку `node_modules` в Службе приложений.
 * Добавлена пара "ключ — значение" `"publishCommand"` в выходные данные `az bot create` при создании бота веб-приложения или функции Azure.
@@ -314,16 +385,16 @@ ms.locfileid: "59480003"
 * Обновлено значение `"WEBSITE_NODE_DEFAULT_VERSION"` в шаблоне ARM для ботов SDK версии 4: теперь вместо 8.9.4 указана версия 10.14.1.
 
 ### <a name="key-vault"></a>Key Vault
-* Исправлена проблема с `keyvault secret backup`, из-за которой некоторые пользователи получали сообщение об ошибке `unexpected_keyword` при использовании `--id`
+* Исправлена проблема с `keyvault secret backup`, из-за которой некоторые пользователи получали сообщение об ошибке `unexpected_keyword` при использовании `--id`.
 
 ### <a name="monitor"></a>Мониторинг
-* Параметр `monitor metrics alert [create|update]` теперь допускает значение измерения `*`
+* Параметр `monitor metrics alert [create|update]` теперь допускает значение измерения `*`.
 
 ### <a name="network"></a>Сеть
 * Изменено значение `dns zone export` для поддержки экспорта записей CNAME как FQDN.
 * В `nic ip-config address-pool [add|remove]` добавлен параметр `--gateway-name` для поддержки серверных пулов адресов шлюза приложений.
 * В `network watcher flow-log configure` добавлены аргументы `--traffic-analytics` и `--workspace` для поддержки аналитики трафика через рабочую область Log Analytics.
-* Добавлены аргументы `--idle-timeout` и `--floating-ip` в `lb inbound-nat-pool [create|update]`
+* В `lb inbound-nat-pool [create|update]` добавлены аргументы `--idle-timeout` и `--floating-ip`.
 
 ### <a name="policy-insights"></a>Policy Insights
 * Добавлены команды `policy remediation` для поддержки функций исправления политики ресурсов.
@@ -336,21 +407,21 @@ ms.locfileid: "59480003"
 * Добавлены команды для управления подключением к серверу (create, delete, show, list).
 * Добавлены команды для управления расписанием установки исправлений (create, update, delete, show).
 * Добавлена поддержка Зон доступности и минимальной версии TLS для операции `redis create.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалены команды `redis update-settings` и `redis list-all`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Параметр для `redis create`: 'tenant settings' не принимается в формате key[=value].
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалены команды `redis update-settings` и `redis list-all`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр для `redis create`: 'tenant settings' не принимается в формате key[=value].
 * [УСТАРЕЛО] Добавлено предупреждающее сообщение о том, что команда `redis import-method` больше не поддерживается.
 
 ### <a name="role"></a>Роль
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команда `az identity` перемещена в этот раздел из группы команд `vm`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `az identity` перемещена в этот раздел из группы команд `vm`.
 
 ### <a name="sql-vm"></a>ВМ SQL
 * [УСТАРЕЛО] Аргумент `--boostrap-acc-pwd` больше не поддерживается из-за опечатки.
 
 ### <a name="vm"></a>ВМ
-* С параметром `vm list-skus` теперь можно использовать `--all` вместо `--all true`
-* Добавлено `vmss run-command [invoke | list | show]`
+* С параметром `vm list-skus` теперь можно использовать `--all` вместо `--all true`.
+* Добавлена команда `vmss run-command [invoke | list | show]`.
 * Исправлена ошибка, из-за которой ранее запущенная команда `vmss encryption enable` прекращала работу.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команда `az identity` перемещена в группу команд `role`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `az identity` перемещена в группу команд `role`.
 
 ## <a name="january-31-2019"></a>31 января 2019 г.
 
@@ -370,14 +441,14 @@ ms.locfileid: "59480003"
 ### <a name="acs"></a>ACS
 * Добавлена предварительная версия виртуальных узлов.
 * Добавлены команды управляемой платформы OpenShift.
-* Добавлена поддержка операции обновления субъекта-службы с помощью `aks update-credentials -reset-service-principal`
+* Добавлена поддержка операции обновления субъекта-службы с помощью `aks update-credentials -reset-service-principal`.
 
 ### <a name="ams"></a>AMS
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `ams asset get-streaming-locators` переименована в `ams asset list-streaming-locators`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `ams streaming-locator get-content-keys` переименована в `ams streaming-locator list-content-keys`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams asset get-streaming-locators` переименована в `ams asset list-streaming-locators`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams streaming-locator get-content-keys` переименована в `ams streaming-locator list-content-keys`.
 
 ### <a name="appservice"></a>Служба приложений
-* Добавлена поддержка аналитики приложений для `functionapp create`
+* Добавлена поддержка аналитики приложений для `functionapp create`.
 * Добавлена поддержка создания плана службы приложений (включая эластичный план "Премиум") для приложений-функций.
 * Исправлены проблемы с настройкой приложений для эластичных планов "Премиум".
 
@@ -386,17 +457,17 @@ ms.locfileid: "59480003"
 * Теперь можно использовать десятичные значения для ЦП при создании контейнеров.
 
 ### <a name="eventgrid"></a>Сетка событий
-* Добавлен параметр `--deadletter-endpoint` для команды `event-subscription [create|update]`
+* Добавлен параметр `--deadletter-endpoint` для команды `event-subscription [create|update]`.
 * Добавлены новые значения storagequeue и hybridconnection для 'event-subscription [create|update] --endpoint-type`.
 * В `event-subscription create` добавлены параметры `--max-delivery-attempts` и `--event-ttl`, чтобы указывать политику повтора для событий.
 * В `event-subscription [create|update]` добавлено предупреждающее сообщение, которое отображается, когда в качестве целевого объекта для подписки на события используется веб-перехватчик.
 * Добавлен параметр source-resource-id для всех команд, связанных с подпиской на событие, при этом все остальные параметры исходного ресурса помечены как нерекомендуемые.
 
 ### <a name="hdinsight"></a>HDInsight
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Параметры `--virtual-network` и `--subnet-name` удалены из `hdinsight [application] create`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `hdinsight create --storage-account` теперь принимает имя или идентификатор учетной записи хранения вместо конечных точек BLOB-объектов.
-* Добавлены параметры `--vnet-name` и `--subnet-name` для `hdinsight create`
-* Добавлена поддержка Корпоративного пакета безопасности и шифрования дисков для `hdinsight create` 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Из `hdinsight [application] create` удалены параметры `--virtual-network` и `--subnet-name`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] `hdinsight create --storage-account` теперь принимает имя или идентификатор учетной записи хранения вместо конечных точек BLOB-объектов.
+* Добавлены параметры `--vnet-name` и `--subnet-name` для `hdinsight create`.
+* Для `hdinsight create` добавлена поддержка Корпоративного пакета безопасности и шифрования дисков. 
 * Добавлена команда `hdinsight rotate-disk-encryption-key`.
 * Добавлена команда `hdinsight update`.
 
@@ -410,15 +481,15 @@ ms.locfileid: "59480003"
 * Теперь при сравнении идентификаторов не учитывается регистр.
 
 ### <a name="profile"></a>Профиль
-* Теперь можно использовать учетную запись уровня клиента для управляемого удостоверения службы при операции `login`
+* Теперь при операции `login` можно использовать учетную запись уровня клиента для управляемого удостоверения службы.
 
 ### <a name="network"></a>Сеть
 * Исправлена проблема с `express-route update`, из-за которой игнорировался аргумент `--bandwidth`.
 * Исправлена проблема с `ddos-protection update`, из-за которой определение набора вызывало трассировку стека.
 
 ### <a name="resource"></a>Ресурс
-* Добавлена поддержка файла параметров URI для `group deployment create`
-* Добавлена поддержка управляемого удостоверения для `policy assignment [create|list|show]`
+* Добавлена поддержка файла параметров URI для `group deployment create`.
+* Добавлена поддержка управляемого удостоверения для `policy assignment [create|list|show]`.
 
 ### <a name="sql-virtual-machine"></a>Виртуальная машина SQL
 * Предварительный выпуск.
@@ -429,7 +500,7 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 * `vm encryption enable` теперь проверяет хранилище ключей для шифрования диска и наличие хранилища ключей для шифрования ключа.
-* Добавлен флаг `--force` в `vm encryption enable`
+* Добавлен флаг `--force` в `vm encryption enable`.
 
 ## <a name="january-15-2019"></a>15 января 2019 г.
 
@@ -453,7 +524,7 @@ ms.locfileid: "59480003"
 * Добавлена команда `webapp ssh`.
 
 ### <a name="botservice"></a>Служба Bot
-* Добавлены обновления состояния развертывания для `bot create`
+* Добавлены обновления состояния развертывания для `bot create`.
 
 ### <a name="configure"></a>Настройка
 * Добавлен настраиваемый формат выходных данных `none`.
@@ -465,8 +536,8 @@ ms.locfileid: "59480003"
 * Добавлены команды для управления приложениями.
 * Добавлены команды для управления действиями скриптов.
 * Добавлены команды для управления Operations Management Suite (OMS).
-* Добавлена поддержка регионального использования списка для `hdinsight list-usage`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Тип кластера по умолчанию удален из `hdinsight create`
+* Добавлена поддержка регионального использования списка для `hdinsight list-usage`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Из `hdinsight create` удален тип кластера по умолчанию.
 
 ### <a name="network"></a>Сеть
 * Добавлены аргументы `--custom-headers` и `--status-code-ranges` для команды `traffic-manager profile [create|update]`
@@ -481,15 +552,15 @@ ms.locfileid: "59480003"
 * Первый выпуск
 
 ### <a name="storage"></a>Хранилище
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Количество результатов по умолчанию для `storage [blob|file|container|share] list` теперь 5000. Для возврата всех результатов как ранее используйте `--num-results *`.
-* Добавлен параметр `--marker` для команды `storage [blob|file|container|share] list`
-* Добавлена отметка журнала для следующей страницы в STDERR для `storage [blob|file|container|share] list` 
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Количество результатов по умолчанию для `storage [blob|file|container|share] list` теперь 5000. Для возврата всех результатов как ранее используйте `--num-results *`.
+* Добавлен параметр `--marker` для команды `storage [blob|file|container|share] list`.
+* Добавлена отметка журнала для следующей страницы в STDERR для `storage [blob|file|container|share] list`. 
 * Добавлена команда `storage blob service-properties update` с поддержкой статических веб-сайтов.
 
 ### <a name="vm"></a>ВМ
 * `vm [disk|unmanaged-disk]` и `vmss disk` изменены для лучшего согласования параметров.
-* Добавлена поддержка перекрестных ссылок на образы клиента для `[vm|vmss] create`
-* Исправлена ошибка конфигурации по умолчанию в `vm diagnostics get-default-config --windows-os`
+* Добавлена поддержка перекрестных ссылок на образы клиента для `[vm|vmss] create`.
+* Исправлена ошибка конфигурации по умолчанию в `vm diagnostics get-default-config --windows-os`.
 * В `vmss extension set` добавлен аргумент `--provision-after-extensions` для определения расширений, которые необходимо подготовить перед настройкой.
 * В `sig image-version update` добавлен аргумент `--replica-count` для определения числа репликаций по умолчанию.
 * Исправлена ошибка `image create --source`, из-за которой диск ОС ошибочно принимался за виртуальную машину с тем же именем даже при указании полного идентификатора ресурса.
@@ -506,13 +577,13 @@ ms.locfileid: "59480003"
 * Исправлен вызов API в команде обновления.
 
 ### <a name="role"></a>Роль
-* [Критическое изменение] По умолчанию `ad [app|sp] list` теперь возвращает только первые 100 объектов.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] По умолчанию `ad [app|sp] list` теперь возвращает только первые 100 объектов.
 
 ### <a name="sql"></a>SQL
 * Добавлена поддержка пользовательских параметров сортировки в управляемых экземплярах.
 
 ### <a name="vm"></a>ВМ
-* Добавлен параметр `---os-type` для команды `disk create`
+* Добавлен параметр `---os-type` для команды `disk create`.
 
 ## <a name="december-18-2018"></a>18 декабря 2018 г.
 
@@ -524,7 +595,7 @@ ms.locfileid: "59480003"
 
 ### <a name="acs"></a>ACS
 * Добавлена предварительная версия виртуальных узлов.
-* Из аргументов AAD удалено "(PREVIEW)" для `aks create`
+* Из аргументов команды `aks create` удалено "(PREVIEW)".
 * [УСТАРЕЛО] Команды `az acs` больше не поддерживаются. Служба ACS будет выведена из эксплуатации 31 января 2020 г.
 * Добавлена поддержка политики сети для создания новых кластеров AKS.
 * Аргумент `--nodepool-name` команды `aks scale` больше не является обязательным, если есть только один пул узлов.
@@ -533,7 +604,7 @@ ms.locfileid: "59480003"
 * Исправлена проблема, когда команда `webapp config container` не учитывала параметр `--slot`.
 
 ### <a name="botservice"></a>Служба Bot
-* Добавлена поддержка анализа файла `.bot` при вызове `bot show`
+* Добавлена поддержка анализа файла `.bot` при вызове `bot show`.
 * Исправлена ошибка подготовки AppInsights.
 * Исправлена ошибка с пробелами при работе с путями к файлам.
 * Уменьшено количество сетевых вызовов Kudu.
@@ -546,18 +617,18 @@ ms.locfileid: "59480003"
 * Добавлена возможность преобразования учетной записи из типа "несколько источников" в тип "один источник".
 
 ### <a name="maps"></a>Карты
-* Добавлена поддержка номера SKU S1 для `maps account [create|update]`
+* В `maps account [create|update]` добавлена поддержка SKU S1.
 
 ### <a name="network"></a>Сеть
-* Добавлена поддержка аргументов `--format` и `--log-version` для `watcher flow-log configure`
+* В команду `watcher flow-log configure` добавлена поддержка аргументов `--format` и `--log-version`.
 * Исправлена проблема с командой `dns zone update`, когда использование "" для очистки виртуальных сетей разрешения имен и регистрации не работало.
 
 ### <a name="resource"></a>Ресурс
-* Исправлена обработка параметра области для групп управления в `policy assignment [create|list|delete|show|update]` 
-* Добавлена новая команда `resource wait`
+* Исправлена обработка параметра области для групп управления в `policy assignment [create|list|delete|show|update]`. 
+* Добавлена новая команда `resource wait`.
 
 ### <a name="storage"></a>Хранилище
-*  Добавлена возможность обновления версии схемы журнала для служб хранилища в `storage logging update`
+*  В `storage logging update` добавлена возможность обновления версии схемы журнала для служб хранилища.
 
 ### <a name="vm"></a>ВМ
 * Исправлено аварийное завершение команды `vm identity remove`, когда указанной виртуальной машине не назначены удостоверения управляемой службы.
@@ -611,15 +682,15 @@ ms.locfileid: "59480003"
 ### <a name="network"></a>Сеть
 * Добавлены подкоманды `root-cert` в `application-gateway` для обработки доверенных корневых сертификатов.
 * В команду `application-gateway [create|update]` добавлены параметры `--min-capacity` и `--custom-error-pages`.
-* Добавлен параметр `--zones` для поддержки зоны доступности в `application-gateway create` 
-* Добавлены аргументы `--file-upload-limit`, `--max-request-body-size` и `--request-body-check` для команды `application-gateway waf-config set`
+* В команду `application-gateway create` добавлен параметр `--zones` для поддержки зоны доступности. 
+* В команды `--request-body-check` и `application-gateway waf-config set` добавлены аргументы `--file-upload-limit` и `--max-request-body-size`.
 
 ### <a name="rdbms"></a>Rdbms
 * Добавлены команды для виртуальной сети MariaDB.
 
 ### <a name="rbac"></a>RBAC:
-* Исправлена проблема при попытке обновления неизменяемых учетных данных в `ad app update`
-* Добавлены предупреждения о критических изменениях, ожидаемых в ближайшем будущем, в выходные данные `ad [app|sp] list` 
+* Исправлена проблема при попытке обновления неизменяемых учетных данных в `ad app update`.
+* В выходные данные `ad [app|sp] list` добавлены предупреждения о критических изменениях, ожидаемых в ближайшем будущем. 
 
 ### <a name="storage"></a>Хранилище
 * Улучшена обработка нетипичных случаев в командах копирования хранилища.
@@ -629,12 +700,12 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 * В `[vm|vmss] create --storage-sku` добавлена возможность указать номер SKU учетной записи хранения отдельно для управляемых дисков с ОС и данными.
-* Изменены параметры для имени версии в `sig image-version`. Теперь используются параметры `--image-version -e`
-* Аргумент `--image-version-name` в команде `sig image-version` больше не поддерживается. Он заменен на `--image-version`
-* Добавлена поддержка для использования локального диска с ОС в `[vm|vmss] create --ephemeral-os-disk`
-* Добавлена поддержка `--no-wait` для `snapshot create/update`
+* Изменены параметры для имени версии в `sig image-version`. Теперь используются параметры `--image-version -e`.
+* Аргумент `--image-version-name` в команде `sig image-version` отмечен как нерекомендуемый. Он заменен на `--image-version`.
+* В `[vm|vmss] create --ephemeral-os-disk` добавлена поддержка для использования локального диска с ОС.
+* Добавлена поддержка параметра `--no-wait` в команде `snapshot create/update`.
 * Добавлена команда `snapshot wait`.
-* Добавлена поддержка для использования имени экземпляра в `[vm|vmss] extension set --extension-instance-name`
+* Добавлена поддержка для использования имени экземпляра в `[vm|vmss] extension set --extension-instance-name`.
 
 ## <a name="november-6-2018"></a>6 ноября 2018 г.
 
@@ -648,7 +719,7 @@ ms.locfileid: "59480003"
 * Внесено изменение для использования файла Dockerfile по умолчанию, если он не указан в команде build.
 
 ### <a name="acs"></a>ACS
-* [Критическое изменение] Удалено `enable_cloud_console_aks_browse`, чтобы активировать az aks browse по умолчанию.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `enable_cloud_console_aks_browse`, чтобы активировать az aks browse по умолчанию.
 
 ### <a name="advisor"></a>Помощник
 * Выпуск общедоступной версии
@@ -668,17 +739,17 @@ ms.locfileid: "59480003"
   * `ams asset get-encryption-key`
   * `ams asset get-streaming-locators`
   * `ams streaming-locator get-content-keys`
-* Добавлена поддержка параметров шифрования в `ams streaming-policy create`
+* Добавлена поддержка параметров шифрования в `ams streaming-policy create`.
 * Добавлена поддержка операции `ams transform output remove` путем передачи выходного индекса для удаления.
 * Добавлены аргументы `--correlation-data` и `--label` в группу команд `ams job`.
 * Добавлены аргументы `--storage-account` и `--container` в группу команд `ams asset`.
 * Добавлены значения по умолчанию для времени истечения срока действия (23 часа от текущего момента) и разрешений (чтение) в команду `ams asset get-sas-url`. 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `ams streaming locator` заменена на `ams streaming-locator`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Обновлен аргумент `--content-keys` в `ams streaming locator`
-* [Критическое изменение] Аргумент `--content-policy-name` команды `ams streaming locator` переименован в `--content-key-policy-name`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `ams streaming policy` заменена на `ams streaming-policy`
-* [Критическое изменение] Аргумент `--preset-names` в группе команд `ams transform` заменен на `--preset`. Теперь можно одновременно задавать только один вывод/набор параметров (для добавления дополнительных нужно запустить команду `ams transform output add`). Также можно задать пользовательский параметр StandardEncoderPreset, указав путь к пользовательскому файлу JSON.
-* [Критическое изменение] Аргумент `--output-asset-names ` команды `ams job start` переименован в `--output-assets`. Теперь он принимает список ресурсов, разделенных пробелами, в формате assetName=label. Ресурс без метки можно передать следующим образом: assetName=.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams streaming locator` заменена на `ams streaming-locator`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Обновлен аргумент `--content-keys` в `ams streaming locator`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Аргумент `--content-policy-name` команды `ams streaming locator` переименован в `--content-key-policy-name`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `ams streaming policy` заменена на `ams streaming-policy`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Аргумент `--preset-names` в группе команд `ams transform` заменен на `--preset`. Теперь можно одновременно задавать только один вывод/набор параметров (для добавления дополнительных нужно запустить команду `ams transform output add`). Также можно задать пользовательский параметр StandardEncoderPreset, указав путь к пользовательскому файлу JSON.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Аргумент `--output-asset-names ` команды `ams job start` переименован в `--output-assets`. Теперь он принимает список ресурсов, разделенных пробелами, в формате assetName=label. Ресурс без метки можно передать следующим образом: assetName=.
 
 ### <a name="appservice"></a>AppService
 * Исправлена ошибка в `az webapp config backup update`, которая не давала установить расписание резервного копирования при наличии существующего расписания.
@@ -690,18 +761,18 @@ ms.locfileid: "59480003"
 * Внесено изменение для показа идентификатора при экспорте группы контейнеров в файл YAML.
 
 ### <a name="eventhub"></a>концентратор событий.
-* Добавлен флаг `--enable-kafka` для поддержки Kafka в `eventhub namespace [create|update]`
+* Добавлен флаг `--enable-kafka` для поддержки Kafka в `eventhub namespace [create|update]`.
 
 ### <a name="interactive"></a>Interactive
 * Interactive теперь устанавливает расширение `interactive`, которое обеспечивает более быстрые обновления и поддержку.
 
 ### <a name="monitor"></a>Мониторинг
-* Добавлена поддержка имен метрик, которые включают символы косой черты (/) и точки (.), в параметр `--condition` команды `monitor metrics alert [create|update]`
+* Добавлена поддержка имен метрик, которые включают символы прямой косой черты (/) и точки (.), в параметр `--condition` команды `monitor metrics alert [create|update]`.
 
 ### <a name="network"></a>Сеть
-* Имена команд `network interface-endpoint` больше не поддерживаются. Вместо них следует использовать `network private-endpoint`
+* Имена команд `network interface-endpoint` не рекомендуются к использованию. Вместо них следует использовать `network private-endpoint`.
 * Исправлена ошибка, при которой аргумент `--peer-circuit` в `express-route peering connection create` не принимал идентификатор.
-* Исправлена ошибка, приводившая к неправильной работе аргумента `--ip-tags` в команде `public-ip create` 
+* Исправлена ошибка, приводившая к неправильной работе аргумента `--ip-tags` в команде `public-ip create`. 
 
 ### <a name="profile"></a>Профиль
 * Добавлен аргумент `--use-cert-sn-issuer` в команду `az login` для входа субъекта-службы с автоматической ротацией сертификатов.
@@ -725,21 +796,21 @@ ms.locfileid: "59480003"
 * Исправлена ошибка в команде `vm resize`, из-за которой использование параметра `--no-wait` приводило к аварийному завершению команды.
 * Изменен формат выходных данных команды `vm encryption show` в виде таблицы для отображения состояния.
 * Изменена команда `vm secret format`, которая теперь требует выходных данных в формате JSON/JSONC. Команда выводит предупреждение и по умолчанию использует для выходных данных формат JSON, если выбран нежелательный формат выходных данных.
-* Улучшена проверка аргументов команды `vm create --image`
+* Улучшена проверка аргументов команды `vm create --image`.
 
 ## <a name="october-23-2018"></a>23 октября 2018 г.
 
 Версия 2.0.49
 
 ### <a name="core"></a>Core
-* Исправлена проблема с аргументом `--ids`, из-за которой аргумент `--subscription` имел приоритет над подпиской, указанной с использованием `--ids`
-* Добавлены явные предупреждения о том, что параметры будут игнорироваться при использовании `--ids`
+* Исправлена проблема с аргументом `--ids`, из-за которой аргумент `--subscription` имел приоритет над подпиской, указанной с использованием `--ids`.
+* Добавлены явные предупреждения о том, что параметры будут игнорироваться при использовании `--ids`.
 
 ### <a name="acr"></a>ACR
 * Исправлена ошибка, связанная с шифрованием сборки ACR в Python2.
 
 ### <a name="cdn"></a>CDN
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменено стандартное поведение при кешировании строки запроса `cdn endpoint create`. Теперь IgnoreQueryString не является значением по умолчанию. Это значение задает служба.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено стандартное поведение при кешировании строки запроса `cdn endpoint create`. Теперь IgnoreQueryString не является значением по умолчанию. Это значение задает служба.
 
 ### <a name="container"></a>Контейнер
 * Добавлен тип `Private` в качестве допустимого типа для передачи в --ip-address.
@@ -751,26 +822,26 @@ ms.locfileid: "59480003"
 * Исправлены ошибки, связанные с табличными выходными данными для команд `list` и `show`.
 
 ### <a name="cosmosdb"></a>Cosmos DB
-* Добавлена поддержка `--enable-multiple-write-locations` в `cosmosdb create`
+* В команду `cosmosdb create` добавлена поддержка параметра `--enable-multiple-write-locations`.
 
 ### <a name="interactive"></a>Interactive
 * Внесены изменения, которые обеспечивают отображение параметра глобальных подписок в списке параметров.
 
 ### <a name="iot-central"></a>IoT Central
 * Добавлены параметры для шаблона и отображаемого имени, используемые при создании приложения IoT Central.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалена поддержка номера SKU F1. Вместо него используйте S1.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена поддержка номера SKU F1. Вместо него используйте S1.
 
 ### <a name="monitor"></a>Мониторинг
 * Изменения в `monitor activity-log list`:
   * Добавлена поддержка для вывода списка всех событий на уровне подписки.
   * Добавлен параметр `--offset`, чтобы упростить создание запросов времени.
   * Улучшена проверка для `--start-time` и `--end-time`, что позволяет применять широкий диапазон форматов ISO 8601 и более понятные форматы даты и времени.
-  * Добавлен параметр `--namespace` в качестве псевдонима для нерекомендуемого параметра `--resource-provider`
+  * Добавлен параметр `--namespace` в качестве псевдонима для нерекомендуемого параметра `--resource-provider`.
   * Параметр `--filters` отмечен как нерекомендуемый, так как служба не поддерживает значения, отличные от значений со строгой типизацией.
 * Изменения в `monitor metrics list`:
   * Добавлен параметр `--offset`, чтобы упростить создание запросов времени.
   * Улучшена проверка для `--start-time` и `--end-time`, что позволяет применять широкий диапазон форматов ISO 8601 и более понятные форматы даты и времени.
-* Улучшена проверка аргументов `--event-hub` и `--event-hub-rule` для `monitor diagnostic-settings create`
+* Улучшена проверка аргументов `--event-hub` и `--event-hub-rule` для `monitor diagnostic-settings create`.
 
 ### <a name="network"></a>Сеть
 * Для `nic create` добавлены аргументы `--app-gateway-address-pools` и `--gateway-name`, которые позволяют добавить внутренний пул адресов Шлюза приложений для сетевого адаптера.
@@ -787,9 +858,9 @@ ms.locfileid: "59480003"
 * Добавлен параметр `--bypass-immutability-policy`, который позволяет удалить контейнер, блокируемый политикой неизменяемости.
 
 ### <a name="vm"></a>ВМ
-* Для режима кэширования диска принудительно применяется значение `None` для виртуальных машин серии Lv или Lv2 в `[vm|vmss] create`
-* Обновлен список поддерживаемых размеров для поддерживаемого сетевого ускорителя в `vm create`
-* Добавлены строго типизированные аргументы, которые позволяют настроить скорость операций ввода-вывода и передачи данных в секунду для дисков SSD ценовой категории "Ультра" для `disk create`
+* Для режима кэширования диска принудительно применяется значение `None` при использовании команды `[vm|vmss] create` для виртуальных машин серии Lv или Lv2.
+* Для `vm create` обновлен список поддерживаемых размеров для поддерживаемого сетевого ускорителя.
+* Для `disk create` добавлены строго типизированные аргументы, которые позволяют настроить скорость операций ввода-вывода и передачи данных в секунду для дисков SSD ценовой категории "Ультра".
 
 ## <a name="october-16-2018"></a>16 октября 2018 г.
 
@@ -811,7 +882,7 @@ ms.locfileid: "59480003"
 ### <a name="acs"></a>ACS
 * Добавлен параметр `aks [create|scale] --nodepool-name` для настройки имени пула узлов. Длина имени ограничена 12 символами. Имя по умолчанию — nodepool1. 
 * Исправлен возврат к scp при сбое Paramiko.
-* Изменена команда `aks create`, которая больше не требует `--aad-tenant-id`
+* Изменена команда `aks create`, которая больше не требует `--aad-tenant-id`.
 * Улучшена функция слияния учетных данных Kubernetes при наличии дублированных записей.
 
 ### <a name="container"></a>Контейнер
@@ -820,7 +891,7 @@ ms.locfileid: "59480003"
 
 ### <a name="event-hub"></a>Концентратор событий
 * Исправлена команда `eventhub update`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Изменены команды `list` для обработки ошибок NotFound (404) от ресурсов. Теперь ошибки обрабатываются обычным образом вместо отображения пустого списка.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены команды `list` для обработки ошибок NotFound (404) от ресурсов. Теперь ошибки обрабатываются обычным образом вместо отображения пустого списка.
 
 ### <a name="extensions"></a>расширения.
 * Исправлена проблема при попытке добавить расширение, которое уже установлено.
@@ -836,27 +907,27 @@ ms.locfileid: "59480003"
 
 ### <a name="network"></a>Сеть
 * Исправлена команда `network dns zone create`. Теперь команда выполняется успешно, даже если пользователь настроил расположение по умолчанию. См. № 6052.
-* Больше не поддерживается `--remote-vnet-id` для `network vnet peering create`
+* `--remote-vnet-id` не рекомендуется к использованию для `network vnet peering create`.
 * Добавлена параметр `--remote-vnet` в команду `network vnet peering create`, который принимает имя или идентификатор.
-* Добавлена поддержка нескольких префиксов подсетей в команде `network vnet create` с параметром `--subnet-prefixes`
-* Добавлена поддержка нескольких префиксов подсетей в команде `network vnet subnet [create|update]` с параметром `--address-prefixes`
+* Добавлена поддержка нескольких префиксов подсетей в команде `network vnet create` с параметром `--subnet-prefixes`.
+* Добавлена поддержка нескольких префиксов подсетей в команде `network vnet subnet [create|update]` с параметром `--address-prefixes`.
 * Исправлена ошибка в команде `network application-gateway create`, из-за которой было невозможно создать шлюзы с номером SKU `WAF_v2` или `Standard_v2`.
-* Добавлен вспомогательный аргумент `--service-endpoint-policy` для команды `network vnet subnet update`
+* Добавлен вспомогательный аргумент `--service-endpoint-policy` в команду `network vnet subnet update`.
 
 ### <a name="role"></a>Роль
-* Добавлена поддержка для списка владельцев приложения Azure AD в команду `ad app owner`
-* Добавлена поддержка для списка владельцев субъекта-службы Azure AD в команду `ad sp owner`
+* Добавлена поддержка для списка владельцев приложения Azure AD в команду `ad app owner`.
+* Добавлена поддержка для списка владельцев субъекта-службы Azure AD в команду `ad sp owner`.
 * Изменены команды для создания и обновления определений ролей, которые теперь принимают несколько конфигураций разрешений.
 * Изменена команда `ad sp create-for-rbac`, чтобы универсальный код ресурса (URI) для домашней страницы всегда начинался с https.
 
 ### <a name="service-bus"></a>Служебная шина Azure
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Изменены команды `list` для обработки ошибок NotFound (404) от ресурсов. Теперь ошибки обрабатываются обычным образом вместо отображения пустого списка.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены команды `list` для обработки ошибок NotFound (404) от ресурсов. Теперь ошибки обрабатываются обычным образом вместо отображения пустого списка.
 
 ### <a name="vm"></a>ВМ
-* Исправлено пустое поле `accessSas` в `disk grant-access`
+* Исправлено пустое поле `accessSas` в `disk grant-access`.
 * Изменена команда `vmss create`, которая теперь резервирует достаточно большой диапазон внешних портов для обработки избыточной подготовки.
-* Исправлены команды обновления для `sig`
-* Добавлена поддержка `--no-wait` для управления версиями образов в `sig`
+* Исправлены команды обновления для `sig`.
+* Добавлена поддержка `--no-wait` для управления версиями образов в `sig`.
 * Изменена команда `vm list-ip-addresses` для отображения зоны доступности общедоступного IP-адреса.
 * Изменена команда `[vm|vmss] disk attach`, которая теперь по умолчанию устанавливает для логического номера диска первое доступно значение.
 
@@ -886,7 +957,7 @@ ms.locfileid: "59480003"
 ### <a name="batch"></a>Пакетная служба Azure
 * Изменена функция добавления задач с помощью `--json-file` для поддержки синтаксиса AddTaskCollectionParameter.
 * Обновлена документация в принятом формате `--json-file`.
-* Добавлен параметр `--max-tasks-per-node-option` для команды `batch pool create`
+* Добавлен параметр `--max-tasks-per-node-option` для команды `batch pool create`.
 * Изменен режим работы `batch account` на отображение учетной записи, в которую выполнен вход, если не заданы другие параметры.
 
 ### <a name="batch-ai"></a>Искусственный интеллект пакетной службы 
@@ -894,11 +965,11 @@ ms.locfileid: "59480003"
 
 ### <a name="cognitive-services"></a>Cognitive Services
 * Добавлено средство заполнения для аргументов `--sku`, `--kind` и `--location`.
-* Добавлена команда `cognitiveservices account list-usage`
-* Добавлена команда `cognitiveservices account list-kinds`
-* Добавлена команда `cognitiveservices account list`
-* Не рекомендуется `cognitiveservices list`
-* Изменен параметр `--name`, который теперь является необязательным для `cognitiveservices account list-skus`
+* Добавлена команда `cognitiveservices account list-usage`.
+* Добавлена команда `cognitiveservices account list-kinds`.
+* Добавлена команда `cognitiveservices account list`.
+* Команда `cognitiveservices list` отмечена как нерекомендуемая.
+* Изменен параметр `--name`, который теперь является необязательным для `cognitiveservices account list-skus`.
 
 ### <a name="container"></a>Контейнер
 * Добавлена возможность перезапуска и остановки выполняющейся группы контейнеров.
@@ -924,17 +995,17 @@ ms.locfileid: "59480003"
 * Добавлены команды `network service-endpoint` для поддержки операций с политиками конечной точки службы.
 * Добавлены команды `network lb outbound-rule` для поддержки создания правил для исходящего трафика в Load Balancer (цен. категория "Стандартный").
 * Добавлен параметр `--public-ip-prefix` для `network lb frontend-ip create/update` для поддержки конфигурации IP внешнего интерфейса с помощью префиксов общедоступных IP-адресов.
-* Добавлен параметр `--enable-tcp-reset` для `network lb rule/inbound-nat-rule/inbound-nat-pool create/update`
-* Добавлен параметр `--disable-outbound-snat` для `network lb rule create/update`
+* Добавлен параметр `--enable-tcp-reset` для `network lb rule/inbound-nat-rule/inbound-nat-pool create/update`.
+* Добавлен параметр `--disable-outbound-snat` для `network lb rule create/update`.
 * Добавлена возможность использования `network watcher flow-log show/configure` с классическими группами безопасности сети.
 * Добавлена команда `network watcher run-configuration-diagnostic`.
 * Исправлена команда `network watcher test-connectivity` и добавлены свойства `--method`, `--valid-status-codes` и `--headers`.
 * `network express-route create/update`: добавлен флаг `--allow-global-reach`.
-* `network vnet subnet create/update`: Добавлена поддержка `--delegation`
+* `network vnet subnet create/update`: добавлена поддержка `--delegation`.
 * Добавлена команда `network vnet subnet list-available-delegations`.
 * `network traffic-manager profile create/update`: добавлена поддержка `--interval`, `--timeout` и `--max-failures` для конфигурации мониторинга. Не рекомендуются к использованию параметры `--monitor-path`, `--monitor-port` и `--monitor-protocol`, которые следует заменить на `--path`, `--port` и `--protocol`.
 * `network lb frontend-ip create/update`: исправлена логика указания метода распределения частных IP-адресов. Если назначается частный IP-адрес, он назначается статически. Если частный IP-адрес не назначается или строка с данными о частных IP-адресах не заполнена, происходит динамическое распределение.
-* `dns record-set * create/update`: Добавлена поддержка `--target-resource`
+* `dns record-set * create/update`: добавлена поддержка `--target-resource`.
 * Добавлены команды `network interface-endpoint` для обращения к объектам конечных точек интерфейса.
 * Добавлено `network profile show/list/delete` для частичного управления сетевыми профилями.
 * Добавлено `network express-route peering connection` для управления пиринговыми подключениями через ExpressRoute.
@@ -962,7 +1033,7 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 * Исправлена ошибка, при которой команда `vm create --generate-ssh-keys` перезаписывала файл закрытого ключа, если отсутствовал файл открытого ключа (#4725, #6780).
-* Добавлена поддержка общей коллекции изображений с помощью команды `az sig`
+* Добавлена поддержка общей коллекции изображений с помощью команды `az sig`.
 
 ## <a name="august-28-2018"></a>28 августа 2018 г.
 
@@ -1025,7 +1096,7 @@ ms.locfileid: "59480003"
 ### <a name="vm"></a>ВМ
 
 * Внесено изменение в `vm/vmss identity show` для выхода с кодом 3 при отсутствующем ресурсе. 
-* Больше не поддерживается `--storage-caching` для `vm create`
+* `--storage-caching` не рекомендуется к использованию для `vm create`.
 
 ## <a name="auguest-14-2018"></a>14 августа 2018 г.
 
@@ -1068,7 +1139,7 @@ ms.locfileid: "59480003"
 
 ### <a name="iot"></a>Интернет вещей
 
-* [Критическое изменение] Удалены устаревшие команды, которые были перемещены в расширение Интернета вещей.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалены устаревшие команды, которые были перемещены в расширение Интернета вещей.
 * Обновлены элементы для игнорирования домена `azure-devices.net`.
 
 ### <a name="iot-central"></a>IoT Central
@@ -1094,7 +1165,7 @@ ms.locfileid: "59480003"
 
 ### <a name="storage"></a>Хранилище
 
-* [Критическое изменение] Внесено изменение в `storage account show-usage` для запроса параметра `--location` и отображения по регионам.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `storage account show-usage` для запроса параметра `--location` и отображения по регионам.
 * Внесено изменение в параметр `--resource-group` для команд `storage account`, который теперь необязателен.
 * Удалены предупреждения о нарушении необходимого условия для отдельных сбоев в командах пакетной службы для одного сообщения.
 * Внесено изменение в команды `[blob|file] delete-batch`, которые больше не выводят выходной массив значений NULL.
@@ -1147,8 +1218,8 @@ ms.locfileid: "59480003"
 
 * Добавлена группа команд migration для переноса пространства имен из служебной шины ценовой категории "Стандартный" в служебную шину ценовой категории "Премиум".
 * Добавлены новые необязательные свойства для очереди и подписки служебной шины:
-  *  `--enable-batched-operations` и `--enable-dead-lettering-on-message-expiration` в `queue`
-  *  `--dead-letter-on-filter-exceptions` больше `subscriptions`
+  *  `--enable-batched-operations` и `--enable-dead-lettering-on-message-expiration` в `queue`;
+  *  `--dead-letter-on-filter-exceptions` в `subscriptions`.
 
 ### <a name="storage"></a>Хранилище
 
@@ -1158,9 +1229,9 @@ ms.locfileid: "59480003"
 ### <a name="vm"></a>ВМ
 
 * Добавлена поддержка вывода списка групп доступности по подпискам.
-* Добавлена поддержка `StandardSSD_LRS`
+* Добавлена поддержка параметра `StandardSSD_LRS`.
 * Добавлена поддержка групп безопасности приложений при создании масштабируемого набора виртуальных машин.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Изменены `[vm|vmss] create`, `[vm|vmss] identity assign` и `[vm|vmss] identity remove` для вывода пользовательских удостоверений в формате словаря.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены `[vm|vmss] create`, `[vm|vmss] identity assign` и `[vm|vmss] identity remove` для вывода пользовательских удостоверений в формате словаря.
 
 ## <a name="july-18-2018"></a>18 июля 2018 г.
 
@@ -1170,11 +1241,11 @@ ms.locfileid: "59480003"
 
 * Добавлена поддержка входа в окно WSL bash из браузера.
 * Добавлен флаг `--force-string` для всех универсальных команд обновления.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Изменены команды show: сообщения об ошибках записываются в журнал, а команды возвращают код выхода 3, если ресурс отсутствует.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены команды show: сообщения об ошибках записываются в журнал, а команды возвращают код выхода 3, если ресурс отсутствует.
 
 ### <a name="acr"></a>ACR
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Параметр --no-push в команде acr build сделан обычным флагом.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр --no-push в команде acr build сделан обычным флагом.
 * В группу `acr repository` добавлены команды `show` и `update`.
 * Добавлен флаг `--detail` для `show-manifests` и `show-tags`, позволяющий выводить более подробные сведения.
 * Добавлен параметр `--image`, позволяющий получать сведения о сборке или журналы для определенного образа.
@@ -1203,22 +1274,22 @@ ms.locfileid: "59480003"
 
 ### <a name="network"></a>Сеть
 
-* Добавлена поддержка `--no-wait` в `network nic [create|update|delete]` 
-* Добавлено `network nic wait`
-* Больше не поддерживается аргумент `--ids` для `network vnet [subnet|peering] list`
-* Добавлен флаг `--include-default`, позволяющий включать стандартные правила безопасности в выходные данные команды `network nsg rule list`  
+* В команду `network nic [create|update|delete]` добавлена поддержка параметра `--no-wait`. 
+* Добавлена команда `network nic wait`.
+* Аргумент `--ids` команды `network vnet [subnet|peering] list` объявлен устаревшим.
+* Добавлен флаг `--include-default`, позволяющий включать в выходные данные команды `network nsg rule list` стандартные правила безопасности.  
 
 ### <a name="resource"></a>Ресурс
 
-* Добавлена поддержка `--no-wait` в `group deployment delete`
-* Добавлена поддержка `--no-wait` в `deployment delete`
+* В команду `group deployment delete` добавлена поддержка параметра `--no-wait`.
+* В команду `deployment delete` добавлена поддержка параметра `--no-wait`.
 * Добавлена команда `deployment wait`.
 * Исправлена проблема, когда для профиля 2017-03-09-profile по ошибке отображались команды `az deployment` для работы с подписками.
 
 ### <a name="sql"></a>SQL
 
 * Исправлена ошибка "The provided resource group name ... did not match the name in the Url" (Указанное имя группы ресурсов ... не соответствовало имени в URL-адресе), которая возникала при указании имени эластичного пула для команд `sql db copy` и `sql db replica create`.
-* Разрешена настройка сервера SQL Server по умолчанию с помощью команды `az configure --defaults sql-server=<name>`
+* Разрешена настройка сервера SQL Server по умолчанию с помощью команды `az configure --defaults sql-server=<name>`.
 * Реализованы модули форматирования таблиц для команд `sql server`, `sql server firewall-rule`, `sql list-usages` и `sql show-usage`.
 
 ### <a name="storage"></a>Хранилище
@@ -1227,9 +1298,9 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] По умолчанию команда `vmss create` теперь использует `Standard_DS1_v2` как размер экземпляра по умолчанию.
-* Добавлена поддержка параметра `--no-wait` для `vm extension [set|delete]` и `vmss extension [set|delete]`
-* Добавлено `vm extension wait`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] По умолчанию команда `vmss create` теперь использует `Standard_DS1_v2` как размер экземпляра по умолчанию.
+* Добавлена поддержка параметра `--no-wait` для `vm extension [set|delete]` и `vmss extension [set|delete]`.
+* Добавлена команда `vm extension wait`.
 
 ## <a name="july-3-2018"></a>3 июля 2018 г.
 
@@ -1251,11 +1322,11 @@ ms.locfileid: "59480003"
 
 * Добавлено состояние сборки опроса.
 * Добавлена поддержка значений перечисления без учета регистра.
-* Добавлены параметры `--top` и `--orderby` для `show-manifests`
+* Добавлены параметры `--top` и `--orderby` для `show-manifests`.
 
 ### <a name="acs"></a>ACS
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Управление доступом на основе ролей Kubernetes включено по умолчанию.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Управление доступом на основе ролей Kubernetes включено по умолчанию.
 * Добавлен аргумент `--disable-rbac`. Аргумент `--enable-rbac` не рекомендуется использовать, так как теперь это значение по умолчанию.
 * Обновлены параметры команды `aks browse`. Добавлена поддержка параметра `--listen-port`.
 * Обновлен пакет диаграмм Helm по умолчанию для команды `aks install-connector`. Используйте файл virtual-kubelet-for-aks-latest.tgz.
@@ -1263,7 +1334,7 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>AppService
 
-* Добавлена поддержка отключения удостоверения с помощью команды `webapp identity remove`
+* Добавлена поддержка отключения удостоверения с помощью команды `webapp identity remove`.
 * Удален тег `preview` для функции идентификации.
 
 ### <a name="backup"></a>Azure Backup
@@ -1281,7 +1352,7 @@ ms.locfileid: "59480003"
 ### <a name="container"></a>Контейнер
 
 * Для команды `container create` действие по умолчанию изменено на длительную операцию.
-* Добавлены параметры Log Analytics `--log-analytics-workspace` и `--log-analytics-workspace-key`
+* Добавлены параметры Log Analytics `--log-analytics-workspace` и `--log-analytics-workspace-key`.
 * Добавлен параметр `--protocol`, с помощью которого можно указать сетевой протокол для использования.
 
 ### <a name="extension"></a>Добавочный номер
@@ -1298,7 +1369,7 @@ ms.locfileid: "59480003"
 
 ### <a name="resource"></a>Ресурс
 
-* Добавлена новая группа операций `deployment`
+* Добавлена новая группа операций `deployment`.
 
 ### <a name="vm"></a>ВМ
 
@@ -1328,12 +1399,12 @@ ms.locfileid: "59480003"
 ### <a name="acs"></a>ACS
 
 * Обновлены параметры команды `aks use-dev-spaces`. Добавлена поддержка параметра `--update`.
-* Изменена команда `aks get-credentials --admin`, чтобы не заменять контекст пользователя в `$HOME/.kube/config`
+* Изменена команда `aks get-credentials --admin`, чтобы не заменять контекст пользователя в `$HOME/.kube/config`.
 * В управляемых кластерах предоставляется доступное только для чтения свойство `nodeResourceGroup`.
 * Исправлена ошибка в команде `acs browse`.
-* Параметр `--connector-name` стал необязательным для `aks install-connector`, `aks upgrade-connector` и `aks remove-connector`
-* Добавлены новые регионы для службы "Экземпляры контейнеров Azure" для `aks install-connector`
-* В имя выпуска и имя узла Helm добавлено нормализованное расположение для `aks install-connector`
+* Параметр `--connector-name` стал необязательным для `aks install-connector`, `aks upgrade-connector` и `aks remove-connector`.
+* Добавлены новые регионы экземпляров контейнеров Azure для `aks install-connector`.
+* В имя выпуска и имя узла Helm добавлено нормализованное расположение для `aks install-connector`.
 
 ### <a name="appservice"></a>AppService
 
@@ -1351,13 +1422,13 @@ ms.locfileid: "59480003"
 * Добавлена поддержка настройки `/dev/shm` для заданий, выполняющихся в контейнере Docker.
 * Добавлены команды `batchai cluster node exec` и `batchai job node exec`. Эти команды позволяют выполнять любые команды непосредственно на узлах и предоставляют функциональные возможности для перенаправления портов.
 * Добавлена поддержка параметра `--ids` в командах `batchai`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Все кластеры и файловые серверы необходимо создавать в рабочих областях.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Задания необходимо создавать в рамках экспериментов.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удален параметр `--nfs-resource-group` из команд `cluster create` и `job create`. Для подключения NFS из другой рабочей области или группы ресурсов следует указать идентификатор ARM файлового сервера с помощью параметра `--nfs`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удален параметр `--cluster-resource-group` из команды `job create`. Для отправки задания в кластере, относящемся к другой рабочей области или группе ресурсов, следует указать идентификатор ARM кластера с помощью параметра `--cluster`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удален атрибут `location` для заданий, кластера и файловых серверов. Расположение теперь указывается как атрибут рабочей области.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удален параметр `--location` из команд `job create`, `cluster create` и `file-server create`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменены имена коротких параметров, чтобы обеспечить согласованность интерфейса:
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Все кластеры и файловые серверы необходимо создавать в рабочих областях.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Задания необходимо создавать в рамках экспериментов.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--nfs-resource-group` из команд `cluster create` и `job create`. Для подключения NFS из другой рабочей области или группы ресурсов следует указать идентификатор ARM файлового сервера с помощью параметра `--nfs`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--cluster-resource-group` из команды `job create`. Для отправки задания в кластере, относящемся к другой рабочей области или группе ресурсов, следует указать идентификатор ARM кластера с помощью параметра `--cluster`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален атрибут `location` для заданий, кластера и файловых серверов. Расположение теперь указывается как атрибут рабочей области.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--location` из команд `job create`, `cluster create` и `file-server create`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены имена коротких параметров, чтобы обеспечить согласованность интерфейса:
   - [`--config`, `-c`] переименовано в [`--config-file`, `-f`];
   - [`--cluster`, `-r`] переименовано в [`--cluster`, `-c`];
   - [`--cluster`, `-n`] переименовано в [`--cluster`, `-c`];
@@ -1365,21 +1436,21 @@ ms.locfileid: "59480003"
 
 ### <a name="maps"></a>Карты
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Внесены изменения в `maps account create`. Теперь необходимо принимать условия использования — либо с помощью интерактивной командной строки, либо с помощью флага `--accept-tos`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесены изменения в `maps account create`. Теперь необходимо принимать условия использования — либо с помощью интерактивной командной строки, либо с помощью флага `--accept-tos`.
 
 ### <a name="network"></a>Сеть
 
 * Добавлена поддержка `https` для `network lb probe create`. [#6571](https://github.com/Azure/azure-cli/issues/6571).
-* Исправлена проблема, из-за которой в параметре `--endpoint-status` учитывался регистр. [№ 6502](https://github.com/Azure/azure-cli/issues/6502)
+* Исправлена проблема, из-за которой в параметре `--endpoint-status` учитывался регистр. [#6502](https://github.com/Azure/azure-cli/issues/6502)
 
 ### <a name="reservations"></a>Резервирование
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Добавлен обязательный параметр `ReservedResourceType` для команды `reservations catalog show`
-* Добавлен параметр `Location` для команды `reservations catalog show`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удален параметр `kind` из команды `ReservationProperties`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Параметр `capabilities` переименован в `sku_properties` в команде `Catalog`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удалены свойства `size` и `tier` из команды `Catalog`
-* Добавлен параметр `InstanceFlexibility` для команды `reservations reservation update`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Добавлен обязательный параметр `ReservedResourceType` для команды `reservations catalog show`.
+* Добавлен параметр `Location` для команды `reservations catalog show`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `kind` из команды `ReservationProperties`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `capabilities` в команде `Catalog` переименован в `sku_properties`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалены свойства `size` и `tier` из команды `Catalog`.
+* Добавлен параметр `InstanceFlexibility` для команды `reservations reservation update`.
 
 ### <a name="role"></a>Роль
 
@@ -1395,8 +1466,8 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 
-* Улучшено уточнение размера виртуальной машины для поддержки ускоренной сети в `vm create`
-* Для `vmss create` добавлено предупреждение о том, что стандартный размер виртуальной машины будет изменен с `Standard_D1_v2` на `Standard_DS1_v2`
+* Улучшено уточнение размера виртуальной машины для поддержки ускоренной сети в `vm create`.
+* Для `vmss create` добавлено предупреждение о том, что стандартный размер виртуальной машины будет изменен с `Standard_D1_v2` на `Standard_DS1_v2`.
 * Добавлен параметр `--force-update` для команды `[vm|vmss] extension set`, что позволяет обновлять расширение, даже если конфигурация не изменялась.
 
 ## <a name="june-13-2018"></a>13 июня 2018 г.
@@ -1413,11 +1484,11 @@ ms.locfileid: "59480003"
 
 ### <a name="aks"></a>AKS
 
-* Добавлены дополнительные сетевые параметры в `aks create`
+* В `aks create` добавлены дополнительные сетевые параметры.
 * В `aks create` добавлены аргументы для наблюдения и маршрутизации HTTP-трафика.
 * Добавлен аргумент `--no-ssh-key` для команды `aks create`
 * Добавлен аргумент `--enable-rbac` для команды `aks create`
-* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка аутентификации Azure Active Directory в `aks create`
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] В `aks create` добавлена поддержка аутентификации Azure Active Directory.
 
 ### <a name="appservice"></a>AppService
 
@@ -1459,7 +1530,7 @@ ms.locfileid: "59480003"
 
 ### <a name="network"></a>Сеть
 
-* Улучшена команда `network vnet peering`
+* Улучшена команда `network vnet peering`.
 
 ### <a name="policy-insights"></a>Policy Insights
 
@@ -1491,8 +1562,8 @@ ms.locfileid: "59480003"
 ### <a name="vm"></a>ВМ
 
 * Изменена команда `vm list-skus` для использования фиксированных столбцов, а также добавлено предупреждение об удалении `Tier` и `Size`.
-* Добавлен параметр `--accelerated-networking` для команды `vm create`
-* Добавлен параметр `--tags` для команды `identity create`
+* Добавлен параметр `--accelerated-networking` для команды `vm create`.
+* Добавлен параметр `--tags` для команды `identity create`.
 
 ## <a name="may-22-2018"></a>22 мая 2018 г.
 
@@ -1504,13 +1575,13 @@ ms.locfileid: "59480003"
 
 ### <a name="acs"></a>ACS
 
-* Добавлены новые команды для Dev Spaces: `aks use-dev-spaces` и `aks remove-dev-spaces`
+* Добавлены новые команды для Dev Spaces: `aks use-dev-spaces` и `aks remove-dev-spaces`.
 * Исправлена опечатка в справочном сообщении.
 
 ### <a name="appservice"></a>AppService
 
 * Улучшены команды общего обновления.
-* Добавлена поддержка асинхронного выполнения для `webapp deployment source config-zip`
+* Добавлена поддержка асинхронного выполнения для `webapp deployment source config-zip`.
 
 ### <a name="container"></a>Контейнер
 
@@ -1537,15 +1608,15 @@ ms.locfileid: "59480003"
 
 ### <a name="sql"></a>SQL
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Изменены объекты ответа, возвращаемые в результатах команд `db` и `dw`:
-    * Свойство `serviceLevelObjective` переименовано в `currentServiceObjectiveName`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены объекты ответа, возвращаемые в результатах команд `db` и `dw`:
+    * Свойство `serviceLevelObjective` переименовано на `currentServiceObjectiveName`.
     * Удалены свойства `currentServiceObjectiveId` и `requestedServiceObjectiveId`.
     * Тип свойства `maxSizeBytes` изменен со строкового на целое число.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Теперь следующие свойства `db` и `dw` доступны только для чтения:
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Теперь следующие свойства `db` и `dw` доступны только для чтения:
     * `requestedServiceObjectiveName`.  Для обновления используйте параметр `--service-objective` или задайте свойство `sku.name`.
     * `edition`. Для обновления используйте параметр `--edition` или задайте свойство `sku.tier`.
     * `elasticPoolName`. Для обновления используйте параметр `--elastic-pool` или задайте свойство `elasticPoolId`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Теперь следующие свойства `elastic-pool` доступны только для чтения:
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Теперь следующие свойства `elastic-pool` доступны только для чтения:
     * `edition`. Для обновления используйте параметр `--edition`.
     * `dtu`. Для обновления используйте параметр `--capacity`.
     *  `databaseDtuMin`. Для обновления используйте параметр `--db-min-capacity`.
@@ -1556,14 +1627,14 @@ ms.locfileid: "59480003"
 ### <a name="storage"></a>Хранилище
 
 * Добавлено средство заполнения для аргумента `--account-name`.
-* Устранена проблема с `storage entity query`
+* Устранена проблема, связанная с командой `storage entity query`.
 
 ### <a name="vm"></a>ВМ
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удален параметр `--write-accelerator` из команды `vm create`. Такие же возможности предоставляет команда `vm update` или `vm disk attach`
-* Устранена проблема с сопоставлением образов расширения в команде `[vm|vmss] extension`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--write-accelerator` из команды `vm create`. Такие же возможности предоставляет команда `vm update` или `vm disk attach`.
+* Устранена проблема с сопоставлением образов расширения в команде `[vm|vmss] extension`.
 * Добавлен параметр `--boot-diagnostics-storage` для команды `vm create` для записи журнала загрузки.
-* Добавлен параметр `--license-type` для команды `[vm|vmss] update`
+* Добавлен параметр `--license-type` для команды `[vm|vmss] update`.
 
 ## <a name="may-7-2018"></a>7 мая 2018 г.
 
@@ -1573,10 +1644,10 @@ ms.locfileid: "59480003"
 
 * Исправлено необработанное исключение при получении секретов из основной учетной записи службы с сертификатом.
 * Добавлена ограниченная поддержка для позиционных аргументов.
-* Исправлена проблема, когда `--query` нельзя использовать с `--ids`. [№ 5591](https://github.com/Azure/azure-cli/issues/5591)
+* Исправлена проблема, когда `--query` нельзя использовать с `--ids`. [#5591](https://github.com/Azure/azure-cli/issues/5591)
 * Улучшены сценарии конвейерной передачи от команд при использовании `--ids`. Добавлена поддержка `-o tsv` с указанием запроса или `-o json` без указания запроса.
 * Добавлена команда предложения в случае ошибки, если пользователи вводят команды с опечаткой.
-* Исправлена ошибка, когда пользователи вводят `az ''`
+* Исправлена ошибка, когда пользователи вводят `az ''`.
 * Добавлена поддержка настраиваемого ресурса для командных модулей и расширений.
 
 ### <a name="acr"></a>ACR
@@ -1600,7 +1671,7 @@ ms.locfileid: "59480003"
 ### <a name="appservice"></a>Служба приложений
 
 * Исправлена ошибка в `webapp delete`, когда `--slot` предоставляется.
-* Удален параметр `--runtime-version` из `webapp auth update`
+* Удалено `--runtime-version` из `webapp auth update`.
 * Добавлена поддержка min\_tls\_version и https2.0.
 * Добавлена поддержка нескольких контейнеров.
 
@@ -1662,14 +1733,14 @@ ms.locfileid: "59480003"
 
 ### <a name="redis"></a>Redis
 
-* Вместо `redis patch-schedule patch-schedule show` теперь используется `redis patch-schedule show`
-* `redis list-all` теперь не используется. Эта функция включена в `redis list`
-* Вместо `redis import-method` теперь используется `redis import`
+* Вместо `redis patch-schedule patch-schedule show` теперь используется `redis patch-schedule show`.
+* `redis list-all` теперь не используется. Эта функция включена в `redis list`.
+* Вместо `redis import-method` теперь используется `redis import`.
 * Добавлена поддержка `--ids` для разных команд.
 
 ### <a name="role"></a>Роль
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удалено по причине устаревания: `ad sp reset-credentials`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `ad sp reset-credentials` по причине устаревания.
 
 ### <a name="storage"></a>Хранилище
 
@@ -1683,15 +1754,15 @@ ms.locfileid: "59480003"
 
 * Исправлена недопустимая логика обнаружения в URI неуправляемого BLOB-объекта.
 * Добавлена поддержка шифрования диска без предоставления пользователем субъектов-служб.
-* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕИЕ] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
-* Добавлена поддержка политики вытеснения для `vmss`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Не используйте ManagedIdentityExtension виртуальной машины для включения поддержки MSI.
+* Добавлена поддержка политики вытеснения для `vmss`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалено `--ids` из:
   * `vm extension list`
   * `vm secret list`
   * `vm unmanaged-disk list`
   * `vmss nic list`
 * Добавлена поддержка ускорителя записи.
-* Добавлено `vmss perform-maintenance`
+* Добавлена команда `vmss perform-maintenance`.
 * Исправлено `vm diagnostics set` для надежного определения типа ОС виртуальной машины.
 * Изменено `vm resize` для проверки того, отличается ли запрошенный размер от установленного (с обновлением только при изменении).
 
@@ -1710,7 +1781,7 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>Служба приложений
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ]: Removed `assign-identity`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Removed `assign-identity`
 * Исправлено неперехватываемое исключение для несуществующих планов веб-приложений.
 
 ### <a name="batchai"></a>Batch AI
@@ -1737,10 +1808,10 @@ ms.locfileid: "59480003"
 * Команда задания потоковой передачи файлов теперь автоматически завершается при завершении задания (успешное выполнение, сбой, прерывание или удаление).
 * Улучшены выходные данные `table` для операций `show`.
 * Добавлен параметр `--use-auto-storage` для создания кластера. Этот параметр упрощает управление учетными записями хранения, а также подключение общего файлового ресурса Azure и контейнеров BLOB-объектов Azure к кластеру.
-* Добавлен параметр `--generate-ssh-keys` для команд `cluster create` и `file-server create`
+* Добавлен параметр `--generate-ssh-keys` для команд `cluster create` и `file-server create`.
 * Добавлена возможность запустить задачу настройки узла через командную строку.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Команды `job stream-file` и `job list-files` перемещены в группу `job file`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В команде `file-server create` параметр `--admin-user-name` переименован в `--user-name` для согласованности с командой `cluster create`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `job stream-file` и `job list-files` перемещены в группу `job file`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В команде `file-server create` параметр `--admin-user-name` переименован в `--user-name` для согласованности с командой `cluster create`.
 
 ### <a name="billing"></a>Выставление счетов
 
@@ -1749,15 +1820,15 @@ ms.locfileid: "59480003"
 ### <a name="consumption"></a>Потребление
 
 * Добавлены команды `marketplace`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `reservations summaries` переименована в `reservation summary`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `reservations details` переименована в `reservation detail`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В командах `reservation` удалены короткие параметры `--reservation-order-id` и `--reservation-id`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В командах `reservation summary` удалены короткие параметры `--grain`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] В командах `pricesheet` удалены короткие параметры `--include-meter-details`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `reservations summaries` переименована в `reservation summary`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `reservations details` переименована в `reservation detail`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В командах `reservation` удалены короткие параметры `--reservation-order-id` и `--reservation-id`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В командах `reservation summary` удалены короткие параметры `--grain`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В командах `pricesheet` удалены короткие параметры `--include-meter-details`.
 
 ### <a name="container"></a>Контейнер
 
-* Добавлены параметры подключения тома репозитория Git: `--gitrepo-url`, `--gitrepo-dir`, `--gitrepo-revision` и `--gitrepo-mount-path`
+* Добавлены параметры подключения тома репозитория git: `--gitrepo-url`, `--gitrepo-dir`, `--gitrepo-revision` и `--gitrepo-mount-path`.
 * Исправлена ошибка [#5926](https://github.com/Azure/azure-cli/issues/5926): команда `az container exec` возвращает ошибку, когда указан параметр --container-name.
 
 ### <a name="extension"></a>Добавочный номер
@@ -1773,17 +1844,17 @@ ms.locfileid: "59480003"
 ### <a name="network"></a>Сеть
 
 * Исправлена ошибка [#5936](https://github.com/Azure/azure-cli/issues/5936): не задаются теги `application-gateway create`.
-* Добавлен аргумент `--auth-certs`, который позволяет подключать сертификаты аутентификации для `application-gateway http-settings [create|update]`. [№ 4910](https://github.com/Azure/azure-cli/issues/4910)
+* Добавлен аргумент `--auth-certs`, который позволяет подключать сертификаты аутентификации для `application-gateway http-settings [create|update]`. [#4910](https://github.com/Azure/azure-cli/issues/4910).
 * Добавлены команды `ddos-protection` для создания планов защиты от атак DDoS.
 * В команду `vnet [create|update]` добавлена поддержка `--ddos-protection-plan` для связи виртуальной сети с планом защиты от атак DDoS.
-* Исправлена ошибка с флагом `--disable-bgp-route-propagation` в команде `network route-table [create|update]`
-* Удалены фиктивные аргументы `--public-ip-address-type` и `--subnet-type` для команды `network lb [create|update]`
-* Добавлена поддержка записей типа TXT с escape-последовательностями RFC 1035 в `network dns zone [import|export]` и `network dns record-set txt add-record`
+* Исправлена ошибка с флагом `--disable-bgp-route-propagation` в команде `network route-table [create|update]`.
+* Удалены фиктивные аргументы `--public-ip-address-type` и `--subnet-type` для команды `network lb [create|update]`.
+* В `network dns zone [import|export]` и `network dns record-set txt add-record` добавлена поддержка записей типа TXT с escape-последовательностями RFC 1035.
 
 ### <a name="profile"></a>Профиль
 
-* Добавлена поддержка классических учетных записей Azure для команды `account list`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Удалены аргументы `--msi`  &  `--msi-port`.
+* Добавлена поддержка классических учетных записей Azure для команды `account list`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалены аргументы `--msi`  &  `--msi-port`.
 
 ### <a name="rdbms"></a>Реляционная СУБД
 
@@ -1792,12 +1863,12 @@ ms.locfileid: "59480003"
 
 ### <a name="resource"></a>Ресурс
 
-* Добавлена поддержка `--metadata` для `policy definition create`
-* Добавлена поддержка `--metadata`, `--set`, `--add` и `--remove` для команды `policy definition update`
+* Добавлена поддержка параметра `--metadata` в команде `policy definition create`.
+* Добавлена поддержка `--metadata`, `--set`, `--add` и `--remove` для команды `policy definition update`.
 
 ### <a name="sql"></a>SQL
 
-* Добавлены команды `sql elastic-pool op list` и `sql elastic-pool op cancel`
+* Добавлены команды `sql elastic-pool op list` и `sql elastic-pool op cancel`.
 
 ### <a name="storage"></a>Хранилище
 
@@ -1805,11 +1876,11 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 
-* Добавлена возможность настроить для платформы количество доменов сбоя в команде `vmss create`
+* В команде `vmss create` добавлена возможность настроить для платформы количество доменов сбоя.
 * Команда `vmss create` теперь по умолчанию использует стандартную балансировку нагрузки для зональных и больших масштабируемых наборов, а также масштабируемых наборов, в которых отключена одна группа размещения.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ]: Removed `vm assign-identity`, `vm remove-identity and `vm format-secret`
-* Добавлена поддержка номера SKU общедоступного IP-адреса для команды `vm create`
-* В команду `vm secret format` добавлены аргументы `--keyvault` и `--resource-group` для тех случаев, когда команда не может разрешить идентификатор хранилища. [№ 5718](https://github.com/Azure/azure-cli/issues/5718)
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Removed `vm assign-identity`, `vm remove-identity and `vm format-secret`
+* Добавлена поддержка SKU общедоступного IP-адреса для команды `vm create`.
+* В команду `vm secret format` добавлены аргументы `--keyvault` и `--resource-group` для тех случаев, когда команда не может разрешить идентификатор хранилища. [#5718](https://github.com/Azure/azure-cli/issues/5718).
 * Улучшены сообщения об ошибках для команды `[vm|vmss create]`, когда расположение группы ресурсов не поддерживает зоны.
 
 
@@ -1827,8 +1898,8 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>Служба приложений
 
-* Добавлена поддержка только протокола HTTPS для `webapp update`
-* Добавлена поддержка слотов для `az webapp identity [assign|show]` и `az functionapp identity [assign|show]`
+* Добавлена поддержка только протокола HTTPS для `webapp update`.
+* Добавлена поддержка слотов для `az webapp identity [assign|show]` и `az functionapp identity [assign|show]`.
 
 ### <a name="backup"></a>Azure Backup
 
@@ -1864,7 +1935,7 @@ ms.locfileid: "59480003"
 ### <a name="extension"></a>Добавочный номер
 
 * Добавлено сообщение для `extension add`, если расширение доступно в режиме предварительной версии.
-* Изменен параметр `extension list-available` для отображения всех данных расширения с использованием `--show-details`
+* Изменен параметр `extension list-available` для отображения всех данных расширения с использованием `--show-details`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменена команда `extension list-available` для отображения упрощенных данных расширения по умолчанию.
 
 ### <a name="interactive"></a>Interactive
@@ -1890,7 +1961,7 @@ ms.locfileid: "59480003"
 
 ### <a name="profile"></a>Профиль
 
-* Добавлено предупреждение для `--identity-port` и `--msi-port` в `login`
+* Добавлено предупреждение для `--identity-port` и `--msi-port` в `login`.
 
 ### <a name="rdbms"></a>Реляционная СУБД
 
@@ -1898,15 +1969,15 @@ ms.locfileid: "59480003"
 
 ### <a name="resource"></a>Ресурс
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ]: Changed `provider operation [list|show]` to not require `--api-version`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Changed `provider operation [list|show]` to not require `--api-version`
 
 ### <a name="role"></a>Роль
 
-* Добавлена поддержка конфигурации требуемого уровня доступа и собственных клиентов для `az ad app create`
+* Добавлена поддержка конфигурации требуемого уровня доступа и собственных клиентов для `az ad app create`.
 * Изменены команды `rbac`, чтобы возвращать не более 1000 идентификаторов в разрешении объекта.
-* Добавлены команды для управления учетными данными: `ad sp credential [reset|list|delete]`
+* Добавлены команды `ad sp credential [reset|list|delete]` для управления учетными данными.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр properties из выходных данных `az role assignment [list|show]`.
-* Добавлена поддержка разрешений `dataActions` и `notDataActions` для `role definition`
+* Добавлена поддержка разрешений `dataActions` и `notDataActions` для `role definition`.
 
 ### <a name="storage"></a>Хранилище
 
@@ -1916,7 +1987,7 @@ ms.locfileid: "59480003"
 ### <a name="vm"></a>ВМ
 
 * Добавлено предупреждение `vmss create` для предстоящих критически важных изменений для наборов из 100 и более экземпляров.
-* Добавлена поддержка устойчивости зон для `vm [snapshot|image]`
+* Добавлена поддержка устойчивости зон для `vm [snapshot|image]`.
 * Изменено представление экземпляра диска для улучшения отчета о состоянии шифрования.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] `vm extension delete` Изменена команда, которая больше не возвращает выходные данные.
 
@@ -1926,7 +1997,7 @@ ms.locfileid: "59480003"
 
 ### <a name="acr"></a>ACR
 
-* Добавлена поддержка параметра `--image` для команды `repository delete`
+* Добавлена поддержка параметра `--image` для `repository delete`.
 * Параметры `--manifest` и `--tag` команды `repository delete` отмечены как нерекомендуемые.
 * Добавлена команда `repository untag` для удаления тега без удаления данных.
 
@@ -1937,16 +2008,16 @@ ms.locfileid: "59480003"
 
 ### <a name="advisor"></a>Помощник
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `advisor configuration get` переименована в `advisor configuration list`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `advisor configuration set` переименована в `advisor configuration update`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удалена команда `advisor recommendation generate`
-* Добавлен параметр `--refresh` для команды `advisor recommendation list`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration get` переименована в `advisor configuration list`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `advisor configuration set` переименована в `advisor configuration update`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `advisor recommendation generate`.
+* Добавлен параметр `--refresh` для команды `advisor recommendation list`.
 * Добавлена команда `advisor recommendation show`.
 
 ### <a name="appservice"></a>Служба приложений
 
-* Не рекомендуется `[webapp|functionapp] assign-identity`
-* Добавлены команды управляемого удостоверения `webapp identity [assign|show]` и `functionapp identity [assign|show]`
+* Команда `[webapp|functionapp] assign-identity` отмечена как нерекомендуемая.
+* Добавлены команды управляемого удостоверения `webapp identity [assign|show]` и `functionapp identity [assign|show]`.
 
 ### <a name="eventhubs"></a>Концентраторы событий
 
@@ -1972,7 +2043,7 @@ ms.locfileid: "59480003"
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Удален параметр `--tags` из  `route-filter rule create`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--tags` из `route-filter rule create`.
 * Удалены некоторые ошибочные значения по умолчанию для следующих команд:
   * `network express-route update`
   * `network nsg rule update`
@@ -1980,12 +2051,12 @@ ms.locfileid: "59480003"
   * `traffic-manager profile update`
   * `network vnet-gateway update`
 * Добавлены команды `network watcher connection-monitor`.
-* Добавлены параметры `--vnet` и `--subnet` для `network watcher show-topology`
+* Добавлены параметры `--vnet` и `--subnet` для `network watcher show-topology`.
 
 ### <a name="profile"></a>Профиль
 
-* Больше не поддерживается параметр `--msi` для `az login`
-* Добавлен параметр `--identity` для `az login`. Он заменяет `--msi`
+* Параметр `--msi` для `az login` отмечен как нерекомендуемый.
+* Добавлен параметр `--identity` для `az login`. Он заменяет `--msi`.
 
 ### <a name="rdbms"></a>Реляционная СУБД
 
@@ -2003,7 +2074,7 @@ ms.locfileid: "59480003"
 ### <a name="vm"></a>ВМ
 
 * В `[vm|vmss] create` добавлена поддержка присоединения неуправляемых дисков данных и настройки кэширования.
-* Больше не поддерживаются `[vm|vmss] assign-identity` и `[vm|vmss] remove-identity`
+* `[vm|vmss] assign-identity` и `[vm|vmss] remove-identity` отмечены как нерекомендуемые.
 * Вместо нерекомендуемых команд добавлены команды `vm identity [assign|remove|show]` и `vmss identity [assign|remove|show]`.
 * Для приоритета `vmss create` по умолчанию установлено значение None.
 
@@ -2015,14 +2086,14 @@ ms.locfileid: "59480003"
 
 * Исправлена ошибка [#5184](https://github.com/Azure/azure-cli/issues/5184). Проблема с установкой Homebrew.
 * Добавлена поддержка телеметрии расширения с применением пользовательских ключей.
-* Добавлена функция ведения журнала HTTP в `--debug`
+* Добавлена функция ведения журнала HTTP в `--debug`.
 
 ### <a name="acs"></a>ACS
 
 * Изменено для использования диаграмм Helm `virtual-kubelet-for-aks` для `aks install-connector` по умолчанию.
 * Исправлена ошибка с недостаточными разрешениями субъектов-служб на создание групп контейнеров ACI.
-* Добавлены параметры `--aci-container-group`, `--location` и `--image-tag` для `aks install-connector`
-* Удалено уведомление об устаревании из `aks get-versions`
+* Добавлены параметры `--aci-container-group`, `--location` и `--image-tag` для `aks install-connector`.
+* Удалено уведомление об устаревании из `aks get-versions`.
 
 ### <a name="appservice"></a>Служба приложений
 
@@ -2044,7 +2115,7 @@ ms.locfileid: "59480003"
 
 ### <a name="network"></a>Сеть
 
-* Исправлена ошибка [#5559](https://github.com/Azure/azure-cli/issues/5559). Отсутствующий клиент в `network vnet-gateway vpn-client generate`
+* Исправлена ошибка [#5559](https://github.com/Azure/azure-cli/issues/5559). Отсутствующий клиент в `network vnet-gateway vpn-client generate`.
 
 ### <a name="resource"></a>Ресурс
 
@@ -2060,7 +2131,7 @@ ms.locfileid: "59480003"
 
 ### <a name="storage"></a>Хранилище
 
-* Включено определение пути назначения и префикса для `storage blob [upload-batch|download-batch]`
+* Включено определение пути назначения и префикса для `storage blob [upload-batch|download-batch]`.
 
 ### <a name="vm"></a>ВМ
 
@@ -2078,18 +2149,18 @@ ms.locfileid: "59480003"
 ### <a name="acs"></a>ACS
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименовано `aks get-versions` на `aks get-upgrades` для точности.
-* Изменено `aks get-versions` для отображения версий Kubernetes, доступных для `aks create`
+* Изменено `aks get-versions` для отображения версий Kubernetes, доступных для `aks create`.
 * Изменены значения по умолчанию `aks create`, чтобы разрешить серверу выбирать версию Kubernetes.
 * Обновлены справочные сообщения, связанные с субъектом-службой и создаваемые AKS.
 * Изменены стандартные размеры узла для `aks create` с уровня Standard\_D1\_v2 на уровень Standard\_DS1\_v2.
-* Улучшена надежность при поиске панели мониторинга для группы pod для `az aks browse`
+* Улучшена надежность при поиске панели мониторинга для группы pod для `az aks browse`.
 * Исправлена команда `aks get-credentials` для обработки ошибок Юникода при загрузке файлов конфигурации Kubernetes.
-* Добавлено сообщение в `az aks install-cli`, чтобы помочь получить `kubectl` в `$PATH`
+* Добавлено сообщение в `az aks install-cli`, чтобы помочь получить `kubectl` в `$PATH`.
 
 ### <a name="appservice"></a>Служба приложений
 
 * Исправлена проблема со сбоем `webapp [backup|restore]` из-за пустой ссылки.
-* Добавлена поддержка стандартных планов службы приложений с помощью `az configure --defaults appserviceplan=my-asp`
+* Добавлена поддержка стандартных планов службы приложений с помощью `az configure --defaults appserviceplan=my-asp`.
 
 ### <a name="cdn"></a>CDN
 
@@ -2122,7 +2193,7 @@ ms.locfileid: "59480003"
 
 * Исправлена проблема, когда `iot dps access policy [create|update]` в случае успешного выполнения возвращает сообщение об ошибке "Не найдено".
 * Исправлена проблема, когда `iot dps linked-hub [create|update]` в случае успешного выполнения возвращает сообщение об ошибке "Не найдено".
-* Добавлена поддержка параметра `--no-wait` для `iot dps access policy [create|update]` и `iot dps linked-hub [create|update]`
+* Добавлена поддержка параметра `--no-wait` для `iot dps access policy [create|update]` и `iot dps linked-hub [create|update]`.
 * Изменена команда `iot hub create` для указания числа секций.
 
 ### <a name="monitor"></a>Мониторинг
@@ -2145,7 +2216,7 @@ ms.locfileid: "59480003"
 
 ### <a name="resource"></a>Ресурс
 
-* Снова добавлена команда `feature show`
+* Снова добавлена команда `feature show`.
 
 ### <a name="role"></a>Роль
 
@@ -2154,7 +2225,7 @@ ms.locfileid: "59480003"
 ### <a name="sql"></a>SQL
 
 * Добавлены команды `sql server dns-alias`.
-* Добавлено `sql db rename`
+* Добавлена команда `sql db rename`.
 * Добавлена поддержка аргумента `--ids` для команд SQL.
 
 ### <a name="storage"></a>Хранилище
@@ -2165,7 +2236,7 @@ ms.locfileid: "59480003"
 
 * Исправлена ошибка, когда шифрование виртуальной машины инициализировалось не полностью.
 * Добавлены выходные данные идентификатора субъекта для включения MSI.
-* исправление `vm boot-diagnostics get-boot-log`
+* Фиксированное значение `vm boot-diagnostics get-boot-log`
 
 
 ## <a name="january-31-2018"></a>31 января 2018 г.
@@ -2186,12 +2257,12 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>Служба приложений
 
-* исправление `webapp log [tail|download]`
+* Фиксированное значение `webapp log [tail|download]`
 * Удалена проверка `kind` в веб-приложениях и функциях.
 
 ### <a name="cdn"></a>CDN
 
-* Устранена проблема с отсутствием клиента для команды `cdn custom-domain create`
+* Устранена проблема с отсутствием клиента для команды `cdn custom-domain create`.
 
 ### <a name="cosmosdb"></a>Cosmos DB
 
@@ -2203,15 +2274,15 @@ ms.locfileid: "59480003"
 
 ### <a name="network"></a>Сеть
 
-* Добавлена защита `--cert-password` для `application-gateway create`
+* Добавлена защита `--cert-password` для `application-gateway create`.
 * Исправлена проблема с `application-gateway update`, когда команда `--sku` ошибочно применяла значение по умолчанию.
-* Добавлена защита `--shared-key` и `--authorization-key` для `vpn-connection create`
-* Устранена проблема с отсутствием клиента для команды `asg create`
-* Добавлен параметр `--file-name / -f` для экспортируемых имен в `dns zone export`
+* Добавлена защита `--shared-key` и `--authorization-key` для `vpn-connection create`.
+* Устранена проблема с отсутствием клиента для команды `asg create`.
+* Добавлен параметр `--file-name / -f` для экспортируемых имен в `dns zone export`.
 * Исправлены следующие ошибки для `dns zone export`:
   * Исправлена проблема, когда длинные записи ТХТ неправильно экспортировались.
   * Исправлена проблема, когда записи ТХТ в кавычках неправильно экспортировались без символов экранирования.
-* Исправлена проблема, когда некоторые записи импортировались дважды с помощью `dns zone import`
+* Исправлена проблема, когда некоторые записи импортировались дважды с помощью `dns zone import`.
 * Восстановлены команды `vnet-gateway root-cert` и `vnet-gateway revoked-cert`.
 
 ### <a name="profile"></a>Профиль
@@ -2226,8 +2297,8 @@ ms.locfileid: "59480003"
 
 * Исправлена проблема с переносом учетных записей хранения из версии 1 в версию 2.
 * Добавлены отчеты о ходе выполнения всех команд отправки или скачивания.
-* Исправлена ошибка, которая препятствовала использованию параметра аргумента -n с `storage account check-name`
-* Добавлен столбец snapshot в табличные выходные данные для `blob [list|show]`
+* Исправлена ошибка, которая препятствовала использованию параметра аргумента -n с `storage account check-name`.
+* Добавлен столбец snapshot в табличные выходные данные для `blob [list|show]`.
 * Исправлены ошибки с разными параметрами, которые должны были анализироваться как целые числа.
 
 ### <a name="vm"></a>ВМ
@@ -2235,7 +2306,7 @@ ms.locfileid: "59480003"
 * Добавлена команда `vm image accept-terms` для разрешения создания виртуальных машин из образов с дополнительными расходами.
 * Исправлена команда `[vm|vmss create]` для выполнения команд с прокси-сервера с помощью неподписанных сертификатов.
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка режима низкого приоритета для VMSS.
-* Добавлена защита `--admin-password` для `[vm|vmss] create`
+* Добавлена защита `--admin-password` для `[vm|vmss] create`.
 
 
 ## <a name="january-17-2018"></a>17 января 2018 г.
@@ -2255,13 +2326,13 @@ ms.locfileid: "59480003"
 ### <a name="appservice"></a>Служба приложений
 
 * Исправлена ошибка с `config ssl upload`, при которой значение `hosting_environment_profile` было NULL.
-* Добавлена поддержка для пользовательских URL-адресов в `browse`
-* Исправлена поддержка слотов для `log tail`
+* В `browse` добавлена поддержка для пользовательских URL-адресов.
+* Исправлена поддержка слотов для `log tail`.
 
 ### <a name="backup"></a>Azure Backup
 
 * Параметр `--container-name` для `backup item list` теперь не является обязательным.
-* Добавлены варианты учетной записи хранения в `backup restore restore-disks`
+* В `backup restore restore-disks` добавлены варианты учетной записи хранения.
 * Для проверки расположения в `backup protection enable-for-vm` добавлена чувствительность к регистру.
 * Устранена проблема, при которой команды завершались сбоем с указанием недопустимого имени контейнера.
 * В `backup item list` теперь по умолчанию включен параметр Health Status.
@@ -2276,15 +2347,15 @@ ms.locfileid: "59480003"
 
 ### <a name="consumption"></a>Потребление
 
-* Добавлены новые команды для резервирования: `consumption reservations summaries` и `consumption reservations details`
+* Добавлены новые команды для резервирования: `consumption reservations summaries` и `consumption reservations details`.
 
 ### <a name="event-grid"></a>Сетка событий Azure
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid topic event-subscription` перемещены в `eventgrid event-subscription`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команды `az eventgrid resource event-subscription` перемещены в `eventgrid event-subscription`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалена команда `eventgrid event-subscription show-endpoint-url`. Вместо нее следует использовать `eventgrid event-subscription show --include-full-endpoint-url`.
-* Добавлена команда `eventgrid topic update`
-* Добавлена команда `eventgrid event-subscription update`
+* Добавлена команда `eventgrid topic update`.
+* Добавлена команда `eventgrid event-subscription update`.
 * Добавлен параметр `--ids` для команд `eventgrid topic`.
 * Добавлена поддержка заполнения нажатием клавиши TAB для имен разделов.
 
@@ -2302,13 +2373,13 @@ ms.locfileid: "59480003"
 
 ### <a name="monitor"></a>Мониторинг
 
-* Добавлена поддержка параметра нескольких диагностических операций. Теперь параметр `--name` является обязательным для `az monitor diagnostic-settings create`
+* Добавлена поддержка параметра нескольких диагностических операций. Теперь параметр `--name` является обязательным для `az monitor diagnostic-settings create`.
 * Добавлена команда `monitor diagnostic-settings categories` для получения категории параметров диагностики.
 
 ### <a name="network"></a>Сеть
 
-* Устранена проблема при попытке входа в активный режим и режим ожидания или выхода из них, связанная с `vnet-gateway update`
-* Добавлена поддержка HTTP2 в `application-gateway [create|update]`
+* Устранена проблема с `vnet-gateway update` при попытке входа в активный режим и режим ожидания или выхода из них.
+* Для `application-gateway [create|update]` добавлена поддержка HTTP2.
 
 ### <a name="profile"></a>Профиль
 
@@ -2325,14 +2396,14 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 
-* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Поддержка разных зон для `vmss`
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Поддержка разных зон для `vmss`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию `vmss` для одной зоны заменено данными подсистемы балансировки нагрузки уровня "Стандартный".
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для EMSI параметр `externalIdentities` изменен на `userAssignedIdentities`.
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка переключения дисков ОС.
 * Добавлена поддержка использования образов виртуальных машин из других подписок.
-* Добавлены аргументы `--plan-name`, `--plan-product`, `--plan-promotion-code` и `--plan-publisher` для команды `[vm|vmss] create`
-* Устранены проблемы с `[vm|vmss] create`
-* Устранена проблема чрезмерного использования ресурсов из-за `vm image list --all`
+* В `[vm|vmss] create` добавлены аргументы `--plan-name`, `--plan-product`, `--plan-promotion-code` и `--plan-publisher`.
+* Устранены проблемы с `[vm|vmss] create`.
+* Устранена проблема чрезмерного использования ресурсов из-за `vm image list --all`.
 
 ## <a name="december-19-2017"></a>19 декабря 2017 г.
 
@@ -2371,7 +2442,7 @@ ms.locfileid: "59480003"
 ### <a name="acs"></a>ACS
 
 * Добавлены команды `aks install-connector` и `aks remove-connector`.
-* Улучшены сообщения об ошибках для команды `acs create`
+* Улучшены сообщения об ошибках для команды `acs create`.
 * Добавлена возможность использования команды `aks get-credentials -f` без полного пути.
 
 ### <a name="advisor"></a>Помощник
@@ -2380,9 +2451,9 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>Служба приложений
 
-* Добавлена возможность создания имени сертификата с помощью команды `webapp config ssl upload`
+* Добавлена возможность создания имени сертификата с помощью команды `webapp config ssl upload`.
 * Исправлены команды `webapp [list|show]` и `functionapp [list|show]` для отображения правильных приложений.
-* Добавлено значение по умолчанию для `WEBSITE_NODE_DEFAULT_VERSION`
+* Добавлено стандартное значение для переменной `WEBSITE_NODE_DEFAULT_VERSION`.
 
 ### <a name="consumption"></a>Потребление
 
@@ -2402,9 +2473,9 @@ ms.locfileid: "59480003"
 
 ### <a name="role"></a>Роль
 
-* Добавлено отображение стандартных назначений "классических" администраторов для команды `role assignment list`
+* Добавлено отображение стандартных назначений "классических" администраторов для команды `role assignment list`.
 * Добавлена поддержка команды `ad sp reset-credentials` для добавления учетных данных вместо перезаписи.
-* Улучшены сообщения об ошибках для команды `ad sp create-for-rbac`
+* Улучшены сообщения об ошибках для команды `ad sp create-for-rbac`.
 
 ### <a name="sql"></a>SQL
 
@@ -2413,7 +2484,7 @@ ms.locfileid: "59480003"
 
 ### <a name="vm"></a>ВМ
 
-* Добавлены сведения о зонах для команды `az vm list-skus`
+* Добавлены сведения о зонах для команды `az vm list-skus`.
 
 
 ## <a name="november-14-2017"></a>14 ноября 2017 г.
@@ -2428,19 +2499,19 @@ ms.locfileid: "59480003"
 ### <a name="acs"></a>ACS
 
 * В AKS агент теперь называется узлом.
-* Больше не поддерживается параметр `--orchestrator-release` для `acs create`
-* Изменен размер виртуальной машины по умолчанию для AKS на `Standard_D1_v2`
+* Параметр `--orchestrator-release` для командлета `acs create` не рекомендуется использовать.
+* Изменен размер виртуальной машины для AKS по умолчанию на `Standard_D1_v2`.
 * Исправлена команда `az aks browse` для Windows.
 * Исправлена команда `az aks get-credentials` для Windows.
 
 ### <a name="appservice"></a>Служба приложений
 
 * Добавлен источник развертывания `config-zip` для веб-приложений и приложений-функций.
-* Добавлен параметр `--docker-container-logging` для команды `az webapp log config`
-* Удален параметр `storage` из параметра `--web-server-logging` для команды `az webapp log config`
-* Улучшены сообщения об ошибках для команды `deployment user set`
+* Добавлен параметр `--docker-container-logging` для команды `az webapp log config`.
+* Удален параметр `storage` из параметра `--web-server-logging` для команды `az webapp log config`.
+* Улучшены сообщения об ошибках для команды `deployment user set`.
 * Добавлена поддержка создания приложений-функций Linux
-* исправление `list-locations`
+* Фиксированное значение `list-locations`
 
 ### <a name="batch"></a>Пакетная служба Azure
 
@@ -2450,7 +2521,7 @@ ms.locfileid: "59480003"
 
 * Добавлен короткий параметр `-s` для параметра `--vm-size` при указании размера виртуальной машины в команде `file-server create`.
 * Добавлены аргументы ключа и имени учетной записи хранения в параметры команды `cluster create`.
-* Исправлена документация по командам `job list-files` и `job stream-file`
+* Исправлена документация по командам `job list-files` и `job stream-file`.
 * Добавлен короткий параметр `-r` для параметра `--cluster-name` при указании имени кластера в команде `job create`.
 
 ### <a name="cloud"></a>Облако
@@ -2488,9 +2559,9 @@ ms.locfileid: "59480003"
 ### <a name="network"></a>Сеть
 
 * Добавлена поддержка DNS-записей типа CAA.
-* Исправлена проблема, из-за которой конечные точки нельзя было обновить с помощью команды `traffic-manager profile update`
+* Исправлена проблема, когда конечные точки могли не обновляться с помощью команды `traffic-manager profile update`.
 * Исправлена проблема, когда команда `vnet update --dns-servers` не работала в зависимости от способа создания виртуальной сети.
-* Исправлена проблема, когда относительные DNS-имена неправильно импортировались с помощью команды `dns zone import`
+* Исправлена проблема, когда относительные DNS-имена неправильно импортировались с помощью команды `dns zone import`.
 
 ### <a name="reservations"></a>Резервирование
 
@@ -2502,24 +2573,24 @@ ms.locfileid: "59480003"
 
 ### <a name="sql"></a>SQL
 
-* Добавлен параметр `--ignore-missing-vnet-service-endpoint` для команды `sql server vnet-rule [create|update]`
+* Добавлен параметр `--ignore-missing-vnet-service-endpoint` для команды `sql server vnet-rule [create|update]`.
 
 ### <a name="storage"></a>Хранилище
 
 * Изменена команда `storage account create` для использования номера SKU `Standard_RAGRS` по умолчанию.
 * Исправлены ошибки при обработке имени файла или большого двоичного объекта, содержащего символы, отличные от ASCII.
-* Исправлена ошибка, препятствующая использованию параметра `--source-uri` с командой `storage [blob|file] copy start-batch`
-* Добавлены команды для создания стандартных масок и удаления нескольких объектов с помощью команды `storage [blob|file] delete-batch`
-* Исправлена проблема с включением метрик с помощью команды `storage metrics update`
-* Исправлена проблема с файлами размером более 200 ГБ при использовании команды `storage blob upload-batch`
-* Исправлена проблема, когда параметры `--bypass` и `--default-action` игнорировались командой `storage account [create|update]`
+* Исправлена ошибка, препятствующая использованию параметра `--source-uri` с командой `storage [blob|file] copy start-batch`.
+* Добавлены команды для удаления нескольких объектов с помощью команды `storage [blob|file] delete-batch`.
+* Исправлена проблема с включением метрик с помощью команды `storage metrics update`.
+* Исправлена проблема с файлами более 200 ГБ при использовании команды `storage blob upload-batch`.
+* Исправлена проблема, когда параметры `--bypass` и `--default-action` игнорировались командой `storage account [create|update]`.
 
 ### <a name="vm"></a>ВМ
 
 * Исправлена ошибка с командой `vmss create`, препятствующая использованию уровня `Basic`.
 * Добавлены аргументы `--plan` для команды `[vm|vmss] create` для пользовательских образов с информацией о выставлении счетов.
 * Добавлены команды `vm secret `[add|remove|list]`.
-* Команда `vm format-secret` переименована в `vm secret format`
+* Команда `vm format-secret` переименована в `vm secret format`.
 * Добавлен аргумент `--encrypt format` для команды `vm encryption enable`
 
 ## <a name="october-24-2017"></a>24 октября 2017 г.
@@ -2539,7 +2610,7 @@ ms.locfileid: "59480003"
 ### <a name="acs"></a>ACS
 
 * [ПРЕДВАРИЕТЛЬНАЯ ВЕРСИЯ] Добавление команд `az aks`
-* Исправление для Kubernetes: `get-credentials`
+* Исправление Kubernetes `get-credentials`
 
 ### <a name="appservice"></a>Служба приложений
 
@@ -2555,7 +2626,7 @@ ms.locfileid: "59480003"
 
 ### <a name="resource"></a>Ресурс
 
-* Исправление несовместимости с самой последней версией зависимости msrest в `group export`
+* Исправление несовместимости с самой последней версии зависимости msrest в `group export`
 * Исправление `policy assignment create` для работы с определениями встроенных политик и наборов политик
 
 ### <a name="vm"></a>ВМ
@@ -2573,7 +2644,7 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>Служба приложений
 
-* Добавлена возможность общего обновления с помощью новой команды `webapp update`
+* Добавлена возможность общего обновления с помощью новой команды `webapp update`.
 
 ### <a name="batch"></a>Пакетная служба Azure
 
@@ -2588,7 +2659,7 @@ ms.locfileid: "59480003"
 
 ### <a name="keyvault"></a>Хранилище ключей
 
-* Исправлена проблема с аутентификацией Key Vault при использовании ADFS в Azure Stack. [№ 4448](https://github.com/Azure/azure-cli/issues/4448)
+* Исправлена проблема с аутентификацией Key Vault при использовании ADFS в Azure Stack. [(#4448)](https://github.com/Azure/azure-cli/issues/4448)
 
 ### <a name="network"></a>Сеть
 
@@ -2597,7 +2668,7 @@ ms.locfileid: "59480003"
 
 ### <a name="resource"></a>Ресурс
 
-* Добавлена поддержка параметров `--resource-group/-g` для изменения имени группы ресурсов на `group`
+* Добавлена поддержка параметров `--resource-group/-g` для изменения имени группы ресурсов на `group`.
 * Добавлены команды для `account lock` для работы с блокировками на уровне подписки.
 * Добавлены команды для `group lock` для работы с блокировками на уровне группы.
 * Добавлены команды для `resource lock` для работы с блокировками на уровне ресурса.
@@ -2615,10 +2686,10 @@ ms.locfileid: "59480003"
 ### <a name="vm"></a>Виртуальные машины
 
 * Исправлена ошибка в команде `vm show`, когда использование `-d` вызывало сбой отсутствующих частных IP-адресов.
-* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка последовательного обновления для команды `vmss create`
-* Добавлена поддержка обновления параметров шифрования с помощью команды `vm encryption enable`
-* Добавлен параметр `--os-disk-size-gb` для команды `vm create`
-* Добавлен параметр `--license-type` для Windows для команды `vmss create`
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена поддержка последовательного обновления для команды `vmss create`.
+* Добавлена поддержка обновления параметров шифрования с помощью команды `vm encryption enable`.
+* Добавлен параметр `--os-disk-size-gb` для команды `vm create`.
+* Добавлен параметр `--license-type` для команды `vmss create` (для Windows).
 
 
 ## <a name="september-22-2017"></a>22 сентября 2017 г.
@@ -2630,7 +2701,7 @@ ms.locfileid: "59480003"
 * Добавлена поддержка отображения определений встроенных политик
 * Добавлена поддержка параметра mode для создания определения политик
 * Добавлена поддержка шаблонов и определений пользовательского интерфейса для команды `managedapp definition create`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`.
 
 ### <a name="network"></a>Сеть
 
@@ -2701,7 +2772,7 @@ ms.locfileid: "59480003"
 
 ### <a name="cdn"></a>CDN
 
-* Исправлена ошибка CustomDomain is not interable (CustomDomain не пригоден к итерации) для `cdn custom-domain create`
+* Исправлена ошибка "CustomDomain не пригоден к итерации" для `cdn custom-domain create`.
 
 ### <a name="extension"></a>Добавочный номер
 
@@ -2709,20 +2780,20 @@ ms.locfileid: "59480003"
 
 ### <a name="keyvault"></a>Хранилище ключей
 
-* Исправлена проблема с зависимостью разрешений от регистра для `keyvault set-policy`
+* Исправлена проблема с зависимостью разрешений от регистра для `keyvault set-policy`.
 
 ### <a name="network"></a>Сеть
 
-* Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`
-* Аргумент `--private-access-services` переименован в `--service-endpoints` для команды `vnet subnet create/update`
-* Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule create/update`
-* Добавлена поддержка номера SKU в команде `lb create`
-* Добавлена поддержка номера SKU в команде `public-ip create`
+* Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
+* Аргумент `--private-access-services` переименован в `--service-endpoints` для команды `vnet subnet create/update`.
+* Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule create/update`.
+* Добавлена поддержка номера SKU в команде `lb create`.
+* Добавлена поддержка номера SKU в команде `public-ip create`.
 
 ### <a name="resource"></a>Ресурс
 
-* Разрешена передача в определениях параметров политики ресурсов в командах `policy definition create` и `policy definition update`
-* Разрешена передача значений параметров для команды `policy assignment create`
+* Разрешена передача в определениях параметров политики ресурсов в командах `policy definition create` и `policy definition update`.
+* Разрешена передача значений параметров для команды `policy assignment create`.
 * Разрешена передача JSON или файла для всех параметров.
 * Версия API изменена на более позднюю.
 
@@ -2744,7 +2815,7 @@ ms.locfileid: "59480003"
 
 ### <a name="keyvault"></a>Хранилище ключей
 
-* Исправлена ошибка при попытке автоматически разрешить шифрование секрета с помощью `secret download`
+* Исправлена ошибка при попытке автоматически разрешить шифрование секрета с помощью `secret download`.
 
 ### <a name="sf"></a>Sf
 
@@ -2761,7 +2832,7 @@ ms.locfileid: "59480003"
 
 ### <a name="cli"></a>Интерфейс командной строки
 
-* Добавлено юридическое примечание в `--version`
+* Для `--version` добавлено юридическое примечание.
 
 ### <a name="acs"></a>ACS
 
@@ -2771,9 +2842,9 @@ ms.locfileid: "59480003"
 
 ### <a name="appservice"></a>Служба приложений
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Исправлены несоответствия в выходных данных `az webapp config appsettings [delete|set]`
-* Добавлен новый псевдоним `-i` в команду `az webapp config container set --docker-custom-image-name`
-* Предоставлено `az webapp log show`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Исправлены несоответствия в выходных данных `az webapp config appsettings [delete|set]`.
+* Добавлен новый псевдоним `-i` в команду `az webapp config container set --docker-custom-image-name`.
+* Предоставлена команда `az webapp log show`.
 * Предоставлены новые аргументы команды `az webapp delete`, которые позволяют сохранить план службы приложений, метрики и данные регистрации DNS.
 * Исправлено. Правильно определять параметры слота.
 
@@ -2783,11 +2854,11 @@ ms.locfileid: "59480003"
 
 ### <a name="network"></a>Сеть
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`
-* Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule [create|update]`
-* Добавлена поддержка номера SKU в команде `lb create`
-* Добавлена поддержка номера SKU в команде `public-ip create`
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`.
+* Добавлена поддержка нескольких диапазонов IP-адресов и портов в командах `nsg rule [create|update]`.
+* Добавлена поддержка номера SKU в команде `lb create`.
+* Добавлена поддержка номера SKU в команде `public-ip create`.
 
 ### <a name="profile"></a>Профиль
 
@@ -2798,25 +2869,25 @@ ms.locfileid: "59480003"
 * Предварительный выпуск.
 * Упрощены правила реестра для паролей и имен пользователя для команды.
 * Исправлена строка для ввода пароля пользователем даже после передачи параметра.
-* Добавлена поддержка пустого значения `registry_cred`
+* Добавлена поддержка пустого значения `registry_cred`.
 
 ### <a name="storage"></a>Хранилище
 
 * Появилась возможность задавать уровень большого двоичного объекта.
 * Добавлены аргументы `--bypass` и `--default-action` в командах `storage account [create|update]` для поддержки туннелирования службы.
-* Добавлены команды для добавления правил виртуальной сети и правил на основе IP-адресов в `storage account network-rule`
+* Добавлены команды для добавления правил виртуальной сети и правил на основе IP-адресов в `storage account network-rule`.
 * Разрешено шифрование службы с управляемым пользователем ключом.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--encryption` переименован в `--encryption-services` в команде `az storage account create and az storage account update`.
 * Исправление 4220. Несоответствие синтаксиса `az storage account update encryption`.
 
 ### <a name="vm"></a>ВМ
 
-* Исправлена проблема, из-за которой для команды `vmss get-instance-view` отображались лишние и неправильные сведения при использовании параметра `--instance-id *`
+* Исправлена проблема, из-за которой для команды `vmss get-instance-view` отображались лишние и неправильные сведения при использовании параметра `--instance-id *`.
 * Добавлена поддержка параметра `--lb-sku` в команде `vmss create`.
-* Из черного списка имен администраторов удалены имена людей для команд `[vm|vmss] create`
+* Из черного списка имен администраторов для команд `[vm|vmss] create` удалены имена людей.
 * Исправлена проблема, из-за которой команда `[vm|vmss] create` выдавала ошибку, если из образа не удавалось извлечь сведения о плане.
 * Исправлена проблема, которая приводила к сбою при создании масштабируемого набора виртуальных машин с внутренней подсистемой балансировки нагрузки.
-* Исправлена проблема, из-за которой аргумент `--no-wait` не работал с командой `vm availability-set create`
+* Исправлена проблема, из-за которой аргумент `--no-wait` не работал с командой `vm availability-set create`.
 
 
 ## <a name="august-15-2017"></a>15 августа 2017 г.
@@ -2874,7 +2945,7 @@ ms.locfileid: "59480003"
 * `lb`: исправлена проблема, из-за которой некоторые имена дочерних ресурсов не разрешались правильно, если не были указаны.
 * `application-gateway {subresource} delete`: исправлена проблема, из-за которой не учитывался параметр `--no-wait`.
 * `application-gateway http-settings update`: исправлена проблема, из-за которой не удавалось отключить параметр `--connection-draining-timeout`.
-* Исправлена проблема с непредвиденным аргументом ключевого слова `sa_data_size_kilobyes` при использовании с командой `az network vpn-connection ipsec-policy add`
+* Исправлена проблема с непредвиденным аргументом ключевого слова `sa_data_size_kilobyes` при использовании с командой `az network vpn-connection ipsec-policy add`.
 
 ### <a name="profile"></a>Профиль
 
@@ -2976,19 +3047,19 @@ vm (2.0.11)
 
 * Исправлена ошибка, из-за которой команда вывода списка в веб-приложениях Linux не возвращала данные.
 * Поддержка извлечения учетных данных из ACR.
-* Удалены все команды группы `appservice web`
+* Удаление всех команд группы `appservice web`.
 * Создание масок паролей для реестров Docker из выходных данных команды (3656).
 * Обеспечено использование браузера по умолчанию в macOS без ошибок (3623).
 * Улучшена справка по командам `webapp log tail` и `webapp log download` (3624).
 * Предоставлена команда `traffic-routing` для настройки статической маршрутизации (3566).
 * Добавлены исправления, связанные с надежностью, при настройке системы управления версиями (3245).
-* Удален неподдерживаемый аргумент `--node-version` из функции `webapp config update` для веб-приложений Windows. Вместо него используется `webapp config appsettings set --settings WEBSITE_NODE_DEFAULT_VERSION=...`
+* Удален неподдерживаемый аргумент `--node-version` из функции `webapp config update` для веб-приложений Windows. Вместо него используется `webapp config appsettings set --settings WEBSITE_NODE_DEFAULT_VERSION=...`.
 
 ### <a name="batch"></a>Пакетная служба Azure
 
 * Пакеты SDK для пакетной службы обновлены до версии 3.0.0 с поддержкой низкоприоритетных виртуальных машин в пулах.
-* Параметр команды `pool create` переименован с `--target-dedicated` в `--target-dedicated-nodes`
-* Для команды `pool create` добавлены параметры `--target-low-priority-nodes` и `--application-licenses`
+* Параметр команды `pool create` переименован с `--target-dedicated` в `--target-dedicated-nodes`.
+* Для команды `pool create` добавлены параметры `--target-low-priority-nodes` и `--application-licenses`.
 
 ### <a name="cdn"></a>CDN
 
@@ -3000,7 +3071,7 @@ vm (2.0.11)
 * Конечная точка коллекции не является обязательной.
 * Поддерживается регистрация облака только с конечной точкой диспетчера ARM.
 * Предоставлен параметр в команде `cloud set` для выбора профиля при выборе текущего облака.
-* Предоставлено `endpoint_vm_image_alias_doc`
+* Предоставлен параметр `endpoint_vm_image_alias_doc`.
 
 ### <a name="cosmosdb"></a>Cosmos DB
 
@@ -3010,12 +3081,12 @@ vm (2.0.11)
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
 
 * Добавлены команды для управления политикой вычислений в разделе `dla account compute-policy`.
-* Добавлено `dla job pipeline show`
-* Добавлено `dla job recurrence list`
+* Добавлена команда `dla job pipeline show`.
+* Добавлена команда `dla job recurrence list`.
 
 ### <a name="data-lake-store"></a>Data Lake Store
 
-* Добавлена поддержка смены ключей пользовательского хранилища ключей в `dls account update`
+* Добавлена поддержка смены ключей пользовательского хранилища ключей в `dls account update`.
 * Обновлена версия пакета SDK для базовой файловой системы Data Lake Store из-за проблем с производительностью.
 * Добавлена команда `dls enable-key-vault`. Эта команда пытается активировать пользовательское хранилище ключей, предназначенное для шифрования данных в учетной записи Data Lake Store.
 
@@ -3039,62 +3110,62 @@ vm (2.0.11)
 ### <a name="key-vault"></a>Хранилище ключей
 
 * Добавлены команды для функций восстановления хранилища ключей:
-  * `keyvault` — подкоманды `purge`, `recover` и `keyvault list-deleted`
-  * `keyvault secret` — подкоманды `backup`, `restore`, `purge`, `recover` и `list-deleted`
-  * `keyvault certificate` — подкоманды `purge`, `recover` и `list-deleted`
-  * `keyvault key` — подкоманды `purge`, `recover` и `list-deleted`
+  * `keyvault`, подкоманды `purge`, `recover` и `keyvault list-deleted`.
+  * `keyvault secret`, подкоманды `backup`, `restore`, `purge`, `recover` и `list-deleted`;
+  * `keyvault certificate`, подкоманды `purge`, `recover` и `list-deleted`;
+  * `keyvault key`, подкоманды `purge`, `recover` и `list-deleted`.
 * Добавлена интеграция хранилища ключей с субъектом-службой (3133).
 * Обновлена плоскость данных хранилища ключей до версии 0.3.2 (3307).
 
 ### <a name="lab"></a>Лаборатория
 
-* Добавлена поддержка запросов ко всем виртуальным машинам в лаборатории с помощью `az lab vm claim`
-* Добавлен форматировщик табличных выходных данных команд `az lab vm list` и `az lab vm show`
+* Добавлена поддержка запросов ко всем виртуальным машинам в лаборатории с помощью `az lab vm claim`.
+* Добавлен модуль форматирования табличных выходных данных команд `az lab vm list` и `az lab vm show`.
 
 ### <a name="monitor"></a>Мониторинг
 
 * Исправлены ошибки с файлом шаблона с помощью команды `monitor autoscale-settings get-parameters-template` (3349).
-* Команда `monitor alert-rule-incidents list` переименована в `monitor alert list-incidents`
-* Команда `monitor alert-rule-incidents show` переименована в `monitor alert show-incident`
-* Команда `monitor metric-defintions list` переименована в `monitor metrics list-definitions`
-* Команда `monitor alert-rules` переименована в `monitor alert`
+* Команда `monitor alert-rule-incidents list` переименована в `monitor alert list-incidents`.
+* Команда `monitor alert-rule-incidents show` переименована в `monitor alert show-incident`.
+* Команда `monitor metric-defintions list` переименована в `monitor metrics list-definitions`.
+* Команда `monitor alert-rules` переименована в `monitor alert`.
 * В команду `monitor alert create` внесены следующие изменения:
-  * `condition` и `action` — эти подкоманды больше не принимают данные JSON;
+  * подкоманды `condition` и `action` больше не принимают данные JSON;
   * добавлены различные параметры, которые упрощают процесс создания правила;
-  * `location` больше не требуется
+  * параметр `location` больше не требуется;
   * добавлена поддержка имени и идентификатора для целевого объекта;
-  * Удалить `--alert-rule-resource-name`
+  * удален параметр `--alert-rule-resource-name`;
   * параметр `is-enabled` переименован в `enabled`, он больше не требуется;
-  * `description` — значения по умолчанию теперь основаны на указанном условии;
+  * значения по умолчанию для `description` теперь основаны на указанном условии;
   *  добавлены примеры, в которых подробно представлен новый формат.
 * Поддержка имен или идентификаторов для команд `monitor metric`.
-* Добавлены вспомогательные аргументы и примеры использования для `monitor alert rule update`
+* Добавлены вспомогательные аргументы и примеры использования команды `monitor alert rule update`.
 
 ### <a name="network"></a>Сеть
 
 * Добавлена команда `list-private-access-services`.
-* Добавлен аргумент `--private-access-services` для команды `vnet subnet create` и `vnet subnet update`
+* Добавлен аргумент `--private-access-services` в команды `vnet subnet create` и `vnet subnet update`.
 * Исправлена проблема, из-за которой команда `application-gateway redirect-config create` завершалась ошибкой.
 * Исправлена проблема, из-за которой команда `application-gateway redirect-config update` не работала с параметром `--no-wait`.
-* Исправлена ошибка при использовании аргумента `--servers` с командами `application-gateway address-pool create` и `application-gateway address-pool update`
+* Исправлена ошибка при использовании аргумента `--servers` с командами `application-gateway address-pool create` и `application-gateway address-pool update`.
 * Добавлены команды `application-gateway redirect-config`.
-* В `application-gateway ssl-policy` добавлены команды `list-options`, `predefined list` и `predefined show`
-* Для команды `application-gateway ssl-policy set` добавлены аргументы `--name`, `--cipher-suites` и `--min-protocol-version`
+* В команду `application-gateway ssl-policy` добавлены подкоманды `list-options`, `predefined list` и `predefined show`.
+* В команду `application-gateway ssl-policy set` добавлены аргументы `--name`, `--cipher-suites` и `--min-protocol-version`.
 * В команды `application-gateway http-settings create` и `application-gateway http-settings update` добавлены аргументы `--host-name-from-backend-pool`, `--affinity-cookie-name`, `--enable-probe` и `--path`.
-* В команды `application-gateway url-path-map create` и `application-gateway url-path-map update` добавлены аргументы `--default-redirect-config` и `--redirect-config`
-* Добавлен аргумент `--redirect-config` для команды `application-gateway url-path-map rule create`
-* Добавлена поддержка `--no-wait` для `application-gateway url-path-map rule delete`
-* В команды `application-gateway probe create` и `application-gateway probe update` добавлены аргументы `--host-name-from-http-settings`, `--min-servers`, `--match-body` и `--match-status-codes`
-* Добавлен аргумент `--redirect-config` в команды `application-gateway rule create` и `application-gateway rule update`
-* Добавлена поддержка `--accelerated-networking` в командах `nic create` и `nic update`
-* Удален аргумент `--internal-dns-name-suffix` из команды `nic create`
+* В команды `application-gateway url-path-map create` и `application-gateway url-path-map update` добавлены аргументы `--default-redirect-config` и `--redirect-config`.
+* Добавлен аргумент `--redirect-config` в команду `application-gateway url-path-map rule create`.
+* Добавлена поддержка параметра `--no-wait` в команде `application-gateway url-path-map rule delete`.
+* В команды `application-gateway probe create` и `application-gateway probe update` добавлены аргументы `--host-name-from-http-settings`, `--min-servers`, `--match-body` и `--match-status-codes`.
+* Добавлен аргумент `--redirect-config` в команды `application-gateway rule create` и `application-gateway rule update`.
+* Добавлена поддержка аргумента `--accelerated-networking` в командах `nic create` и `nic update`.
+* Удален аргумент `--internal-dns-name-suffix` из команды `nic create`.
 * Добавлена поддержка аргумента `--dns-servers` в командах `nic update` и `nic create`. Добавлена поддержка аргумента --dns-servers.
-* Исправлена ошибка, из-за которой команда `local-gateway create` игнорировала параметр `--local-address-prefixes`
-* Добавлена поддержка `--dns-servers` в `vnet update`
-* Исправлена ошибка при создании пиринга без фильтрации маршрутов с помощью команды `express-route peering create`
-* Исправлена ошибка, из-за которой аргументы `--provider` и `--bandwidth` не работали с командой `express-route update`
+* Исправлена ошибка, из-за которой команда `local-gateway create` игнорировала параметр `--local-address-prefixes`.
+* Добавлена поддержка параметра `--dns-servers` в команде `vnet update`.
+* Исправлена ошибка при создании пиринга без фильтрации маршрутов с помощью команды `express-route peering create`.
+* Исправлена ошибка, из-за которой аргументы `--provider` и `--bandwidth` не работали с командой `express-route update`.
 * Исправлена ошибка с логикой установки значений по умолчанию в команде `network watcher show-topology`.
-* Улучшено форматирование выходных данных команды `network list-usages`
+* Улучшено форматирование выходных данных команды `network list-usages`.
 * В команде `application-gateway http-listener create` используется интерфейсный IP-адрес по умолчанию, если он существует.
 * В команде `application-gateway rule create` используются пул адресов, параметры HTTP и прослушиватель HTTP по умолчанию, если они существуют.
 * В команде `lb rule create` используются интерфейсный IP-адрес и серверный пул по умолчанию, если они существуют.
@@ -3117,21 +3188,21 @@ vm (2.0.11)
 
 ### <a name="resource"></a>Ресурс
 
-* Улучшены запросы на ввод отсутствующих параметров для команды `group deployment create`
+* Улучшены запросы на ввод отсутствующих параметров для команды `group deployment create`.
 * Улучшен анализ синтаксиса `--parameters KEY=VALUE`.
 * Исправлены проблемы, из-за которых файлы параметров `group deployment create` не распознавались с использованием синтаксиса `@<file>`.
 * Поддержка аргумента `--ids` в командах `resource` и `managedapp`.
 * Исправлены некоторые сообщения об ошибках и анализе (3584).
-* Исправлены ошибки анализа параметра `--resource-type` в команде `lock`. Теперь принимаются `<resource-namespace>` и `<resource-type>`
+* Исправлены ошибки анализа параметра `--resource-type` в команде `lock`. Теперь принимаются `<resource-namespace>` и `<resource-type>`.
 * Добавлена проверка параметров для шаблонов для ссылок на шаблоны (3629).
 * Добавлена поддержка указания параметров развертывания с использованием синтаксиса `KEY=VALUE`.
 
 ### <a name="role"></a>Роль
 
-* Поддержка вывода данных в формате файла проверки подлинности с помощью пакета SDK для команды `create-for-rbac`
+* Поддержка вывода данных команды `create-for-rbac` в формате файла проверки подлинности с помощью пакета SDK.
 * Добавлена очистка назначений ролей и связанного приложения AAD при удалении субъекта-службы (3610).
 * В описания аргументов `--start-date` и `--end-date` команды `app create` добавлен формат времени.
-* Отображаются предупреждения о прекращении поддержки при использовании параметра `--expanded-view`
+* При использовании параметра `--expanded-view` отображаются предупреждения о прекращении поддержки.
 * Добавлена интеграция хранилища ключей для команд `create-for-rbac` и `reset-credentials`.
 
 ### <a name="service-fabric"></a>Service Fabric
@@ -3143,7 +3214,7 @@ vm (2.0.11)
 
 * Удален недействительный параметр `--identity` команды `sql server create`.
 * Удалены значения паролей из выходных данных команд `sql server create` и `sql server update`.
-* Добавлены команды `sql db list-editions` и `sql elastic-pool list-editions`
+* Добавлены команды `sql db list-editions` и `sql elastic-pool list-editions`.
 
 ### <a name="storage"></a>Хранилище
 
@@ -3159,7 +3230,7 @@ vm (2.0.11)
 * Поддержка настройки NSG.
 * Исправлена ошибка, из-за которой не удавалось правильно настроить DNS-сервер.
 * Поддержка удостоверений управляемой службы.
-* Исправлена проблема, из-за которой для команды `cmss create` с существующей подсистемой балансировки нагрузки требовался параметр `--backend-pool-name`
+* Исправлена проблема, из-за которой для команды `cmss create` с существующей подсистемой балансировки нагрузки требовался параметр `--backend-pool-name`.
 * Теперь нумерация LUN дисков данных, создаваемых с помощью команды `vm image create`, начинается с 0.
 
 
@@ -3259,7 +3330,7 @@ vm (2.0.6)
 ### <a name="data-lake-analytics"></a>Data Lake Analytics
 
 * Исправлена ошибка, из-за которой фильтрация списков заданий по результату и состоянию вызывала сбой.
-* Добавлена поддержка нового типа элемента каталога — пакета. Для доступа к нему используется `az dla catalog package`
+* Добавлена поддержка нового типа элемента каталога — пакета. Для доступа к нему используется `az dla catalog package`.
 * Появилась возможность вывести список следующих элементов каталога из базы данных (указание схемы не требуется):
 
   * Таблица
@@ -3301,7 +3372,7 @@ vm (2.0.6)
 ### <a name="network"></a>Сеть
 
 * Добавлена команда `network watcher test-connectivity`.
-* Добавлена поддержка параметра `--filters` в команде `network watcher packet-capture create`
+* Добавлена поддержка параметра `--filters` в команде `network watcher packet-capture create`.
 * Добавлена поддержка фильтрации подключений шлюза приложений.
 * Добавлена поддержка конфигурации набора правил WAF шлюза приложений.
 * Добавлена поддержка правил и фильтров маршрутов ExpressRoute.
@@ -3311,7 +3382,7 @@ vm (2.0.6)
 * Исправлена ошибка `vpn-connection create`, возникавшая при использовании параметра `--no-wait` или `--validate`.
 * Добавлена поддержка шлюзов виртуальной сети "активный-активный".
 * Удалены значения NULL из выходных данных команды `network vpn-connection list/show`.
-* BC: исправлена ошибка в выходных данных `vpn-connection create`
+* BC: исправлена ошибка в выходных данных `vpn-connection create`.
 * Исправлена ошибка, приводившая к неправильному анализу аргумента --key-length команды vpn-connection create.
 * Исправлена ошибка в `dns zone import`, из-за которой записи не импортировались правильно.
 * Исправлена ошибка, из-за которой команда `traffic-manager endpoint update` не работала.
@@ -3352,7 +3423,7 @@ vm (2.0.6)
 
 ### <a name="storage"></a>Хранилище
 
-* Добавлено расположение по умолчанию группы ресурсов для `storage account create`
+* Добавлено расположение по умолчанию группы ресурсов для `storage account create`.
 * Добавлена поддержка добавочного копирования больших двоичных объектов.
 * Добавлена поддержка передачи больших блочных BLOB-объектов.
 * Размер блока изменяется и составляет 100 МБ, если передается файл, чей размер превышает 200 ГБ.
