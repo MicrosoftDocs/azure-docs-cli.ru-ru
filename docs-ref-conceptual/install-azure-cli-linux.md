@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 229b109b307453c87abf260a66084c94ced33d81
-ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
+ms.openlocfilehash: 13edb9954678aca627529714aeee02062c720219
+ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56422006"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66516304"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 
@@ -80,6 +80,17 @@ hash -r
 ```bash
 <install path>/bin
 ```
+
+### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
+
+[!INCLUDE[configure-proxy](includes/configure-proxy.md)]
+
+Чтобы вы могли получить скрипты установки, ваш прокси-сервер должен разрешать HTTPS-подключения по следующим адресам:
+
+* `https://aka.ms/`
+* `https://azurecliprod.blob.core.windows.net/`
+* `https://pypi.python.org`
+* Конечные точки, используемые диспетчером пакетов дистрибутива (при его наличии) для основных пакетов
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: eed121ce7ce8f8c1eba5079eb438190d3e4d13db
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
+ms.openlocfilehash: 5e187025e97b1d882bc575fd51970a8250f6210e
+ms.sourcegitcommit: bf69c95abf3ed3d589b202c7ff04d8782e2a81ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56158831"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65993036"
 ---
 # <a name="query-azure-cli-command-output"></a>Запросы к выходным данным команд Azure CLI
 
@@ -102,6 +102,41 @@ az vm show -g QueryDemo -n TestVM --query '[name, osProfile.adminUsername, osPro
 ```
 
 Эти значения включены в полученный массив в том порядке, в котором они были указаны в запросе. Поскольку результат имеет формат массива, значения не имеют соответствующих ключей.
+
+## <a name="get-a-single-value"></a>Получение одного значения
+
+Часто нужно, чтобы команда CLI должна вернуть только _одно_ значение, например идентификатор ресурса Azure, имя ресурса, имя пользователя или пароль. При этом значение должно быть сохранено в локальной переменной. Чтобы получить одно свойство, сначала убедитесь, что вам удалось извлечь только одно свойство из запроса. В последнем примере показано, как получить только имя пользователя администратора:
+
+```azurecli-interactive
+az vm show -g QueryDemo -n TestVM --query 'osProfile.adminUsername' -o json
+```
+
+```JSON
+"azureuser"
+```
+
+Оно выглядит как допустимое отдельное значение, но обратите внимание, что символы `"` возвращаются как часть выходных данных. Это означает, что объект представляет собой строку JSON. Важно отметить, что при назначении этого значения переменной среды непосредственно в качестве выходных данных команды, кавычки могут __не__ интерпретироваться оболочкой:
+
+```bash
+USER=$(az vm show -g QueryDemo -n TestVM --query 'osProfile.adminUsername' -o json)
+echo $USER
+```
+
+```output
+"azureuser"
+```
+
+Это явно не то, что нужно. В этом случае вам нужно использовать формат выходных данных с возвращаемыми значениями с информацией о типах без кавычек. Наилучший вариант, который предоставляет CLI для этой цели, — `tsv` или значение с разделением знаками табуляции. В частности, при извлечении отдельного значения (не словаря, и не списка) выходные данные `tsv` гарантированно не будут включать кавычки.
+
+```azurecli-interactive
+az vm show -g QueryDemo -n TestVM --query 'osProfile.adminUsername' -o tsv
+```
+
+```output
+azureuser
+```
+
+См. подробнее о [формате выходных данных `tsv`](format-output-azure-cli.md#tsv-output-format).
 
 ## <a name="rename-properties-in-a-query"></a>Переименование свойств в запросе
 

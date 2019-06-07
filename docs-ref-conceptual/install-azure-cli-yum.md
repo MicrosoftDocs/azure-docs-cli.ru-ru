@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: e0b2406ee8b235fc96fb9f2990ad1646d8cb8494
-ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
+ms.openlocfilehash: bc3ae41ea04ae8d7f62242b2bfe415c8a3bfea33
+ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56421881"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66516299"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 
@@ -53,6 +53,24 @@ ms.locfileid: "56421881"
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 Ниже описаны некоторые распространенные проблемы при установке с помощью `yum`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
+
+### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
+
+[!INCLUDE[configure-proxy](includes/configure-proxy.md)]
+
+Вы также можете явным образом настроить `yum`, чтобы использовать этот прокси-сервер все время. Убедитесь, что следующие строки отображаются в разделе `[main]` в `/etc/yum.conf`:
+
+```yum.conf
+[main]
+# ...
+proxy=http://[proxy]:[port] # If your proxy requires https, change http->https
+proxy_username=[username] # Only required for basic auth
+proxy_password=[password] # Only required for basic auth
+```
+
+Чтобы вы могли получить ключ подписывания (Майкрософт) и получить пакет из нашего репозитория, ваш прокси-сервер должен разрешать HTTPS-подключения по следующему адресу:
+
+* `https://packages.microsoft.com`
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 

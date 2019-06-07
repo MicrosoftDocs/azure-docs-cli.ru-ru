@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 61be6c31e7251c8b374bf09072a9ecba9b914342
-ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
+ms.openlocfilehash: 2f8ec8e82a61f11ee58fe8e509d6e5febc7d226f
+ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56422057"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66516226"
 ---
 # <a name="install-azure-cli-on-macos"></a>Установка Azure CLI в macOS
 
@@ -59,6 +59,20 @@ brew link --overwrite python3
 ### <a name="cli-version-1x-is-installed"></a>Установлена версия CLI 1.x
 
 Если установлена старая версия, это может произойти из-за устаревания кэша homebrew. Следуйте инструкциям по [обновлению](#Update).
+
+### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
+
+Вы не сможете получать ресурсы из Homebrew, если неправильно настроите использование прокси-сервера. Выполните [инструкции по настройке прокси-сервера Homebrew](https://docs.brew.sh/Manpage#using-homebrew-behind-a-proxy).
+
+> [!IMPORTANT]
+> Если вы работаете за прокси-сервером, `HTTP_PROXY` и `HTTPS_PROXY` нужно задать для подключения к службам Azure с помощью CLI.
+> Если вы не используете обычную аутентификацию, рекомендуется экспортировать эти переменные в файл `.bashrc`.
+> Всегда следуйте корпоративным политикам безопасности и учитывайте требования системного администратора.
+
+Чтобы вы могли получать соответствующие ресурсы из Homebrew, ваш прокси-сервер должен разрешать HTTPS-подключения по следующим адресам:
+
+* `https://formulae.brew.sh`
+* `https://homebrew.bintray.com`
 
 ## <a name="update"></a>Блокировка изменений
 

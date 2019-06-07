@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: af82eea3fd549cbca85699a3030a19bc82574b73
-ms.sourcegitcommit: c65c69bd08fd6b7632ba60dc7c8e9f2b57a9d0b7
+ms.openlocfilehash: f22ada48502602cb4d9b502cb887412a6ddcf5cf
+ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476262"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66516344"
 ---
 # <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
@@ -97,7 +97,29 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 Иногда между выпуском дистрибутива и выпуском пакета Azure CLI для этого дистрибутива может пройти некоторое время. Azure CLI использует минимально возможный набор зависимостей и разработан таким образом, чтобы свести к минимуму вероятность нарушения работы при обновлении зависимостей. Если для вашего базового дистрибутива отсутствует пакет, попробуйте установить пакет для более ранней версии дистрибутива.
 
-Для этого вручную установите значение `AZ_REPO` при [добавлении репозитория](#set-release). Для дистрибутивов Ubuntu используйте репозиторий `disco`, а для дистрибутивов Debian используйте репозиторий `stretch`. Более ранние версии дистрибутивов, чем Ubuntu Trusty и Debian Wheezy, не поддерживаются.
+Для этого вручную установите значение `AZ_REPO` при [добавлении репозитория](#set-release). Для дистрибутивов Ubuntu используйте репозиторий `bionic`, а для дистрибутивов Debian используйте репозиторий `stretch`. Более ранние версии дистрибутивов, чем Ubuntu Trusty и Debian Wheezy, не поддерживаются.
+
+### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
+
+[!INCLUDE[configure-proxy](includes/configure-proxy.md)]
+
+Вы также можете явным образом настроить `apt`, чтобы использовать этот прокси-сервер все время. Убедитесь, что следующие строки отображаются в файле конфигурации `apt` в `/etc/apt/apt.conf.d/`. Мы рекомендуем использовать существующий файл глобальной конфигурации или существующий файл конфигурации прокси-сервера (`40proxies` или `99local`), но вам следует учитывать требования системного администратора.
+
+```apt.conf
+Acquire {
+    http::proxy "http://[username]:[password]@[proxy]:[port]";
+    https::proxy "https://[username]:[password]@[proxy]:[port]";
+}
+```
+
+Если прокси-сервер не использует обычную аутентификацию, __удалите__ часть `[username]:[password]@` URI прокси-сервера. См. подробнее о конфигурации прокси-сервера в официальной документации по Ubuntu:
+
+* [apt.conf manpage](http://manpages.ubuntu.com/manpages/bionic/en/man5/apt.conf.5.html)
+* [Вики-сайт, посвященный Ubuntu (справочник по команде apt-get)](https://help.ubuntu.com/community/AptGet/Howto#Setting_up_apt-get_to_use_a_http-proxy)
+
+Чтобы вы могли получить ключ подписывания (Майкрософт) и получить пакет из нашего репозитория, ваш прокси-сервер должен разрешать HTTPS-подключения по следующему адресу:
+
+* `https://packages.microsoft.com`
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 

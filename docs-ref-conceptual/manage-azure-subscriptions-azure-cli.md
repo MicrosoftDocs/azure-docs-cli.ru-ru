@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.product: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 4c196b8376b0044e315cfee2b3958f2f4b476df7
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
+ms.openlocfilehash: 37ef0c1d7cca90c99aa6f832c6dc6dc29a1806a3
+ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56158673"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66516204"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Использование нескольких подписок Azure
 
 Большинство пользователей Azure обычно используют только одну подписку. Но если вы работаете в нескольких организациях или если доступ к определенным ресурсам в вашей организации разделен по группам, у вас может быть несколько подписок Azure. CLI поддерживает выбор подписки как глобально, так и для отдельных команд.
+
+См. подробнее о [подписках, выставлении счетов и управлении затратами](/azure/billing/).
 
 ## <a name="tenants-users-and-subscriptions"></a>Клиенты, пользователи и подписки
 

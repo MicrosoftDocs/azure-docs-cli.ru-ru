@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 647b4b9518a174ad95a1eda8b17f38027182b25a
-ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
+ms.openlocfilehash: f8a3bec4fffb731c6521fa7b8a2a90798ef191e6
+ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56421921"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66516242"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
-Для дистрибутивов Linux, использующих `zypper`, например openSUSE или SLES, доступен пакет Azure CLI. Этот пакет протестирован с openSUSE 42.2 и пакетом обновления 2 для SLES 12.
+Для дистрибутивов Linux, использующих `zypper`, например openSUSE или SLES, доступен пакет Azure CLI. Этот пакет протестирован с openSUSE версии 42.2 и выше и SLES версии 12 с пакетом обновления 2 и выше.
 
 [!INCLUDE [current-version](includes/current-version.md)]
 
@@ -59,6 +59,19 @@ ms.locfileid: "56421921"
 ## <a name="troubleshooting"></a>Устранение неполадок
 
 Ниже описаны некоторые распространенные проблемы при установке с помощью `zypper`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
+
+### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
+
+[!INCLUDE[configure-proxy](includes/configure-proxy.md)]
+
+Вы также можете явным образом настроить `zypper` (через `yast2`), чтобы использовать этот прокси-сервер все время. Чтобы сделать это, выполните команду `yast2 proxy` как суперпользователь и заполните форму. Если в системе установлен диспетчер окон, можно также использовать панель `Network Services > Proxy` в `YaST Control Center`.
+
+Дополнительные сведения о расширенной конфигурации см. в [документации по конфигурации прокси-сервера OpenSUSE](https://www.suse.com/documentation/slms1/book_slms/data/sec_wy_config_updates_proxy.html).
+
+Чтобы вы могли получить ключ подписывания (Майкрософт) и получить пакет из нашего репозитория, ваш прокси-сервер должен разрешать HTTPS-подключения по следующим адресам:
+
+* `https://packages.microsoft.com`
+* `https://download.opensuse.org`
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 

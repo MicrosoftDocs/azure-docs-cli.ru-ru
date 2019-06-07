@@ -4,26 +4,86 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/06/2019
+ms.date: 05/21/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ce11abccc23ee1f150916ef2f91dc895d4664d31
-ms.sourcegitcommit: 65bf8561a6e047e4eab52186e066a2e8c21f1d40
+ms.openlocfilehash: 5b4bcde8c4a66ccc378abc00468cbdb423f07fa4
+ms.sourcegitcommit: 3fe3502ec5af89939155285bb5e741b08af604cd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65240520"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66197799"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="may-21-2019"></a>21 мая 2019 г.
+
+Версия 2.0.65
+
+### <a name="core"></a>Core
+* Улучшена функция обратной связи при ошибках аутентификации.
+* Исправлена проблема, из-за которой интерфейс командной строки загружал расширения, которые не были совместимы с его базовой версией.
+* Исправлена проблема с запуском и неисправностью `clouds.config`.
+
+### <a name="acr"></a>ACR
+* Добавлена поддержка управляемых удостоверений в Задачи.
+
+### <a name="acs"></a>ACS
+* Исправлена команда `openshift create`, используемая с пользовательским клиентом AAD.
+
+### <a name="appservice"></a>AppService
+* [УСТАРЕЛО] Команда `functionapp devops-build` устарела и будет удалена в следующем выпуске.
+* Внесено изменение в `functionapp devops-pipeline` для получения журнала сборки из Azure DevOps в режиме подробного протоколирования.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален неподдерживаемый флаг `--use_local_settings` из команды `functionapp devops-pipeline`.
+* Внесено изменение в `webapp up` для возврата выходных данных JSON, если `--logs` не используется.
+* Добавлена поддержка записи ресурсов по умолчанию в локальную конфигурацию для `webapp up`.
+* Добавлена поддержка `webapp up` для повторного развертывания приложения без использования аргумента `--location`.
+* Устранена проблема, из-за которой нельзя было создать для Linux номер SKU с планом службы приложений "Бесплатный".
+
+### <a name="botservice"></a>Служба Bot
+* Внесено изменение для включения поддержки всех регистров в параметрах `--lang` для команд.
+* Обновлено описание модуля команды.
+
+### <a name="consumption"></a>Потребление
+* Добавлен отсутствующий обязательный параметр при выполнении `consumption usage list --billing-period-name`.
+
+### <a name="iot"></a>Интернет вещей
+* Добавлена поддержка перечисления всех ключей.
+
+### <a name="network"></a>Network
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.]: Removed `network interface-endpoints` command group - use `network private-endpoints` 
+* Добавлен аргумент `--nat-gateway` для `network vnet subnet [create|update]` для подключения к шлюзу NAT.
+* Исправлена проблема с `dns zone import`, из-за которой имена записей не сопоставлялись с типом записей.
+
+### <a name="rdbms"></a>Реляционная СУБД
+* Добавлена поддержка Postgres и MySQL для георепликации.
+
+### <a name="rbac"></a>RBAC
+* Добавлена поддержка области группы управления для `role assignment`.
+
+### <a name="storage"></a>Хранилище
+* `storage blob sync`: добавьте команду синхронизации для хранилища BLOB-объектов.
+
+### <a name="compute"></a>Службы вычислений
+* Добавлен параметр `--computer-name` для `vm create` для установки имени виртуальной машины.
+* Переименован параметр `--ssh-key-value` в `--ssh-key-values` для `[vm|vmss] create` для приема нескольких значений пути или открытого ключа SSH.
+  * __Примечание__. Это **не** критическое изменение, благодаря которому `--ssh-key-value` будет правильно анализироваться, так как соответствует только `--ssh-key-values`.
+* Внесено изменение в аргумент `ppg create` для `--type` — теперь он необязательный.
 
 ## <a name="may-6-2019"></a>6 мая 2019 г.
 
 Версия 2.0.64
 
+### <a name="acs"></a>ACS
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален флаг `--fqdn` из команд `openshift`.
+* Внесено изменение для использования общедоступной версии API для Azure Red Hat Openshift.
+* Добавлен флаг `customer-admin-group-id` в `openshift create`.
+* [Общедоступная версия.] `(PREVIEW)` больше не используется для `aks create` в параметре `--network-policy`.
+
 ### <a name="appservice"></a>Служба приложений
-* Команда `functionapp devops-build` отмечена как нерекомендуемая.
+* [УСТАРЕЛО] Команда `functionapp devops-build` отмечена как нерекомендуемая.
   * Команда переименована в `functionapp devops-pipeline`.
 * Исправлен процесс получения правильного имени пользователя для Cloud Shell, приводивший к ошибке выполнения `webapp up`.
 * Обновлена документация по `appservice plan --sku` в соответствии с поддерживаемыми планами службы приложений.
@@ -34,8 +94,61 @@ ms.locfileid: "65240520"
 * Добавлена поддержка среды выполнения `powershell` для `functionapp create` в Windows.
 * Добавлена команда `create-remote-connection`.
 
+### <a name="batch"></a>Пакетная служба Azure
+* Исправлена ошибка в проверяющем элементе управления для параметров `--application-package-references`.
+
+### <a name="botservice"></a>Служба Bot
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `bot create -v v4 -k webapp` для создания пустого бота веб-приложения по умолчанию (т. е. бот не развертывается в Службе приложений).
+* Добавлен флаг `--echo` в `bot create` для использования старого поведения с `-v v4`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменено значение по умолчанию `--version` на `v4`.
+  * __ПРИМЕЧАНИЕ.__ `bot prepare-publish` по-прежнему использует старое значение по умолчанию.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `--lang` — значение `Csharp` больше не является значением по умолчанию. Если команда требует `--lang`, который не указан, команда завершит работу с ошибкой.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в аргументы `--appid` и `--password` для `bot create` — теперь они являются обязательными и их можно создать с помощью `ad app create`.
+* Добавлена проверка `--appid` и `--password`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `bot create -v v4`, чтобы не создавать или не использовать учетную запись хранения или Application Insights.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `bot create -v v3`, чтобы требовать регион, где доступна служба Application Insights.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `bot update`, чтобы влиять только на определенные свойства бота.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в флаг `--lang` для принятия `Javascript` вместо `Node`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] `Node` больше не используется как допустимое значение `--lang`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесено изменение в `bot create -v v4 -k webapp` — значение `SCM_DO_BUILD_DURING_DEPLOYMENT` больше не равно true. Все развертывания через Kudu будут работать в соответствии с поведением по умолчанию.
+* Внесено изменение в `bot download` для ботов без файлов `.bot`, чтобы создавать файл конфигурации для определенного языка со значениями из параметров приложения для бота.
+* В команду `bot prepare-deploy` добавлена поддержка параметра `Typescript`.
+* Добавлено предупреждающее сообщение в `bot prepare-deploy` для ботов `Javascript` и `Typescript`, когда `--code-dir` не содержит `package.json`.
+* Внесено изменение в `bot prepare-deploy` для возврата `true` при успешном выполнении.
+* Включено ведение подробного журнала для `bot prepare-deploy`.
+* Добавлены более доступные регионы Application Insights для `az bot create -v v3`.
+
+### <a name="configure"></a>Настройка
+* Добавлена поддержка конфигурации по умолчанию для аргумента на основе папки.
+
+### <a name="eventhubs"></a>Концентраторы событий
+* Добавлены команды `namespace network-rule`.
+* Добавлен аргумент `--default-action` для правил сети для `namespace [create|update]`.
+
+### <a name="network"></a>Network
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменен аргумент `--cache` на `--defer` для `vnet [create|update]`. 
+
+### <a name="policy-insights"></a>Анализ политик
+* Добавлена поддержка `--expand PolicyEvaluationDetails` для результатов оценки политики запросов для ресурса.
+
 ### <a name="role"></a>Роль
 * [УСТАРЕЛО] Внесено изменение в `create-for-rbac` для скрытия аргумента --password (поддержка прекращается в мае 2019 г.).
+
+### <a name="service-bus"></a>Служебная шина Azure
+* Добавлены команды `namespace network-rule`.
+* Добавлен аргумент `--default-action` для правил сети для `namespace [create|update]`.
+* Внесено исправление в `topic [create|update]` — теперь `--max-size` поддерживает значения 10, 20, 40 и 80 ГБ для номера SKU ценовой категории "Премиум".
+
+### <a name="sql"></a>SQL
+* Добавлены команды `sql virtual-cluster [list|show|delete]`.
+
+### <a name="vm"></a>ВМ
+* Добавлены параметры `--protect-from-scale-in` и `--protect-from-scale-set-actions` для `vmss update`, чтобы включать обновления политики защиты для экземпляров виртуальных машин из Масштабируемого набора виртуальных машин.
+* Добавлены параметры `--instance-id` для `vmss update` для включения общего обновления экземпляров виртуальных машин из Масштабируемого набора виртуальных машин.
+* Добавлен параметр `--instance-id` для команды `vmss wait`.
+* Добавлена новая группа команд `ppg` для управления группами размещения близкого расположения.
+* Добавлен параметр `--ppg` для `[vm|vmss] create` и `vm availability-set create` для управления PPG.
+* Добавлен параметр `--hyper-v-generation` для команды `image create`.
 
 ## <a name="april-23-2019"></a>23 апреля 2019 г.
 
@@ -65,7 +178,7 @@ ms.locfileid: "65240520"
 ### <a name="lab"></a>Лаборатория
 * Исправлена ошибка, которая приводила к неожиданному завершению работы.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Добавлено автоматическое делегирование сервера имен для `dns zone create` в родительском объекте во время создания дочерней зоны.
 
 ### <a name="resource"></a>Ресурс
@@ -122,7 +235,7 @@ ms.locfileid: "65240520"
 ### <a name="monitor"></a>Мониторинг
 * Исправлена проблема, из-за которой у параметра count было недопустимое значение в `metrics alert [create|update]`. 
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Исправлен формат таблицы, которая не отображалась с помощью `vnet-gateway list-bgp-peer-status`.
 * Добавлены команды `list-request-headers` и `list-response-headers` для `application-gateway rewrite-rule`.
 * Добавлена команда `list-server-variables` для `application-gateway rewrite-rule condition`.
@@ -187,7 +300,7 @@ ms.locfileid: "65240520"
 ### <a name="monitor"></a>Мониторинг
 * Внесено изменение, разрешающее использовать значение измерения `*` для `monitor metrics alert [create|update]`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Добавлена группа команд `rewrite-rule` для `application-gateway`.
 
 ### <a name="profile"></a>Профиль
@@ -263,7 +376,7 @@ ms.locfileid: "65240520"
 
 * Добавлен параметр `--storage-account-managed-identity` для `hdinsight create` для включения поддержки MSI ADLS 2-го поколения.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Исправлена проблема с `vpn-connection update`, когда обновление VPN-подключения между шлюзами в разных подписках завершается ошибкой.
 
@@ -317,7 +430,7 @@ ms.locfileid: "65240520"
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для типов `hot_cache_period` и `soft_delete_period` для базы данных изменен формат длительности ISO8601.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлен аргумент `--express-route-gateway-bypass` для команды `vpn-connection [create|update]`
 * Добавлены группы команд из расширения `express-route`.
@@ -390,13 +503,13 @@ ms.locfileid: "65240520"
 ### <a name="monitor"></a>Мониторинг
 * Параметр `monitor metrics alert [create|update]` теперь допускает значение измерения `*`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Изменено значение `dns zone export` для поддержки экспорта записей CNAME как FQDN.
 * В `nic ip-config address-pool [add|remove]` добавлен параметр `--gateway-name` для поддержки серверных пулов адресов шлюза приложений.
 * В `network watcher flow-log configure` добавлены аргументы `--traffic-analytics` и `--workspace` для поддержки аналитики трафика через рабочую область Log Analytics.
 * В `lb inbound-nat-pool [create|update]` добавлены аргументы `--idle-timeout` и `--floating-ip`.
 
-### <a name="policy-insights"></a>Policy Insights
+### <a name="policy-insights"></a>Анализ политик
 * Добавлены команды `policy remediation` для поддержки функций исправления политики ресурсов.
 
 ### <a name="rdbms"></a>Реляционная СУБД
@@ -414,7 +527,7 @@ ms.locfileid: "65240520"
 ### <a name="role"></a>Роль
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `az identity` перемещена в этот раздел из группы команд `vm`.
 
-### <a name="sql-vm"></a>ВМ SQL
+### <a name="sql-vm"></a>Виртуальная машина SQL
 * [УСТАРЕЛО] Аргумент `--boostrap-acc-pwd` больше не поддерживается из-за опечатки.
 
 ### <a name="vm"></a>ВМ
@@ -483,7 +596,7 @@ ms.locfileid: "65240520"
 ### <a name="profile"></a>Профиль
 * Теперь при операции `login` можно использовать учетную запись уровня клиента для управляемого удостоверения службы.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Исправлена проблема с `express-route update`, из-за которой игнорировался аргумент `--bandwidth`.
 * Исправлена проблема с `ddos-protection update`, из-за которой определение набора вызывало трассировку стека.
 
@@ -539,7 +652,7 @@ ms.locfileid: "65240520"
 * Добавлена поддержка регионального использования списка для `hdinsight list-usage`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Из `hdinsight create` удален тип кластера по умолчанию.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Добавлены аргументы `--custom-headers` и `--status-code-ranges` для команды `traffic-manager profile [create|update]`
 * Добавлены новые типы маршрутизации: "Подсеть" и "Многозначный".
 * Добавлены аргументы `--custom-headers` и `--subnets` для команды `traffic-manager endpoint [create|update]`  
@@ -616,10 +729,10 @@ ms.locfileid: "65240520"
 ### <a name="cosmosdb"></a>Cosmos DB
 * Добавлена возможность преобразования учетной записи из типа "несколько источников" в тип "один источник".
 
-### <a name="maps"></a>Карты
+### <a name="maps"></a>Maps
 * В `maps account [create|update]` добавлена поддержка SKU S1.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * В команду `watcher flow-log configure` добавлена поддержка аргументов `--format` и `--log-version`.
 * Исправлена проблема с командой `dns zone update`, когда использование "" для очистки виртуальных сетей разрешения имен и регистрации не работало.
 
@@ -644,7 +757,7 @@ ms.locfileid: "65240520"
 * [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена команда `webapp up`, которая помогает создавать и развертывать содержимое для приложения.
 * Исправлена ошибка в контейнерном приложении Windows из-за изменения в серверной части.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Добавлен аргумент `--exclusion` в `application-gateway waf-config set` для поддержки исключений WAF.
 
 ### <a name="role"></a>Роль
@@ -679,7 +792,7 @@ ms.locfileid: "65240520"
 ### <a name="keyvault"></a>Хранилище ключей
 * Исправлена проблема, при которой ошибки могли игнорироваться.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Добавлены подкоманды `root-cert` в `application-gateway` для обработки доверенных корневых сертификатов.
 * В команду `application-gateway [create|update]` добавлены параметры `--min-capacity` и `--custom-error-pages`.
 * В команду `application-gateway create` добавлен параметр `--zones` для поддержки зоны доступности. 
@@ -769,7 +882,7 @@ ms.locfileid: "65240520"
 ### <a name="monitor"></a>Мониторинг
 * Добавлена поддержка имен метрик, которые включают символы прямой косой черты (/) и точки (.), в параметр `--condition` команды `monitor metrics alert [create|update]`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Имена команд `network interface-endpoint` не рекомендуются к использованию. Вместо них следует использовать `network private-endpoint`.
 * Исправлена ошибка, при которой аргумент `--peer-circuit` в `express-route peering connection create` не принимал идентификатор.
 * Исправлена ошибка, приводившая к неправильной работе аргумента `--ip-tags` в команде `public-ip create`. 
@@ -843,7 +956,7 @@ ms.locfileid: "65240520"
   * Улучшена проверка для `--start-time` и `--end-time`, что позволяет применять широкий диапазон форматов ISO 8601 и более понятные форматы даты и времени.
 * Улучшена проверка аргументов `--event-hub` и `--event-hub-rule` для `monitor diagnostic-settings create`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Для `nic create` добавлены аргументы `--app-gateway-address-pools` и `--gateway-name`, которые позволяют добавить внутренний пул адресов Шлюза приложений для сетевого адаптера.
 * Для `nic ip-config create/update` добавлены аргументы `--app-gateway-address-pools` и `--gateway-name`, которые позволяют добавить внутренний пул адресов Шлюза приложений для сетевого адаптера.
 
@@ -905,7 +1018,7 @@ ms.locfileid: "65240520"
 ### <a name="keyvault"></a>Хранилище ключей
 * Изменены команды для работы с хранилищем ключей.Теперь они ограничены последним профилем API.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Исправлена команда `network dns zone create`. Теперь команда выполняется успешно, даже если пользователь настроил расположение по умолчанию. См. № 6052.
 * `--remote-vnet-id` не рекомендуется к использованию для `network vnet peering create`.
 * Добавлена параметр `--remote-vnet` в команду `network vnet peering create`, который принимает имя или идентификатор.
@@ -960,7 +1073,7 @@ ms.locfileid: "65240520"
 * Добавлен параметр `--max-tasks-per-node-option` для команды `batch pool create`.
 * Изменен режим работы `batch account` на отображение учетной записи, в которую выполнен вход, если не заданы другие параметры.
 
-### <a name="batch-ai"></a>Искусственный интеллект пакетной службы 
+### <a name="batch-ai"></a>Azure Batch AI 
 * Исправлен сбой при автоматическом создании учетной записи хранения при выполнении команды `batchai cluster create`.
 
 ### <a name="cognitive-services"></a>Cognitive Services
@@ -990,7 +1103,7 @@ ms.locfileid: "65240520"
 ### <a name="key-vault"></a>Key Vault
 * Исправлена ошибка импорта ключа в Key Vault для ключей RSA.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 * Добавлены команды `network public-ip prefix` для поддержки операций с префиксами общедоступных IP-адресов.
 * Добавлены команды `network service-endpoint` для поддержки операций с политиками конечной точки службы.
 * Добавлены команды `network lb outbound-rule` для поддержки создания правил для исходящего трафика в Load Balancer (цен. категория "Стандартный").
@@ -1064,7 +1177,7 @@ ms.locfileid: "65240520"
 
 * Внесено изменение в `backup vault backup-properties show` для выхода с кодом 3 при отсутствующем ресурсе.
 
-### <a name="bot-service"></a>Служба Bot Service
+### <a name="bot-service"></a>Служба Azure Bot
 
 * Начальный выпуск CLI для службы Azure Bot
 
@@ -1081,7 +1194,7 @@ ms.locfileid: "65240520"
 * Добавлены команды `monitor metrics alert` для создания оповещений метрик почти в реальном времени.
 * Команды `monitor alert` не рекомендуются к использованию.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Внесено изменение в `network application-gateway ssl-policy predefined show` для выхода с кодом 3 при отсутствующем ресурсе.
 
@@ -1196,7 +1309,7 @@ ms.locfileid: "65240520"
 
 * Удалено требование указания `--log-analytics-workspace-key` для имени или идентификатора при выборе подписки.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * В профиль 2017-03-09-profile для Azure Stack добавлена поддержка DNS. 
 
@@ -1210,7 +1323,7 @@ ms.locfileid: "65240520"
 * Добавлена поддержка профиля 2017-03-09-profile для Azure Stack.
 * Исправлена проблема, из-за которой универсальные параметры обновления `app update` работали неправильно.
 
-### <a name="search"></a>поиска
+### <a name="search"></a>Поиск
 
 * Добавлены команды для службы "Поиск Azure".
 
@@ -1263,7 +1376,7 @@ ms.locfileid: "65240520"
 * Исправлена ошибка при использовании учетных данных токена в режиме Cloud Shell.
 * Регистр во входных данных JSON теперь не учитывается.
 
-### <a name="batch-ai"></a>Искусственный интеллект пакетной службы
+### <a name="batch-ai"></a>Azure Batch AI
 
 * Исправлена команда `az batchai job exec`.
 
@@ -1272,7 +1385,7 @@ ms.locfileid: "65240520"
 * Удалено требование указывать имя пользователя и пароль для реестров, не связанных с dockerhub.
 * Исправлена ошибка, возникающая при создании групп контейнеров из файла YAML.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * В команду `network nic [create|update|delete]` добавлена поддержка параметра `--no-wait`. 
 * Добавлена команда `network nic wait`.
@@ -1359,7 +1472,7 @@ ms.locfileid: "65240520"
 
 * Изменена команда `extension list-available`. Теперь с ее помощью отображаются только расширения, совместимые с текущей версией CLI.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Исправлена проблема с зависимостью типов записей от регистра ([#6602](https://github.com/Azure/azure-cli/issues/6602)).
 
@@ -1415,7 +1528,7 @@ ms.locfileid: "65240520"
 
 * Удалена зависимость `azure-batch-extensions`.
 
-### <a name="batch-ai"></a>Искусственный интеллект пакетной службы
+### <a name="batch-ai"></a>Azure Batch AI
 
 * Добавлена поддержка рабочих областей. Рабочие области позволяют объединять кластеры, файловые серверы и эксперименты в группы без ограничений по количеству созданных ресурсов.
 * Добавлена поддержка экспериментов. Эксперименты позволяют объединять задания в коллекции без ограничений по количеству созданных заданий.
@@ -1434,11 +1547,11 @@ ms.locfileid: "65240520"
   - [`--cluster`, `-n`] переименовано в [`--cluster`, `-c`];
   - [`--job`, `-n`] переименовано в [`--job`, `-j`].
 
-### <a name="maps"></a>Карты
+### <a name="maps"></a>Maps
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Внесены изменения в `maps account create`. Теперь необходимо принимать условия использования — либо с помощью интерактивной командной строки, либо с помощью флага `--accept-tos`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлена поддержка `https` для `network lb probe create`. [#6571](https://github.com/Azure/azure-cli/issues/6571).
 * Исправлена проблема, из-за которой в параметре `--endpoint-status` учитывался регистр. [#6502](https://github.com/Azure/azure-cli/issues/6502)
@@ -1528,11 +1641,11 @@ ms.locfileid: "65240520"
 
 * Добавлена возможность создания Центров Интернета вещей категории "Базовый".
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Улучшена команда `network vnet peering`.
 
-### <a name="policy-insights"></a>Policy Insights
+### <a name="policy-insights"></a>Анализ политик
 
 * Первый выпуск
 
@@ -1601,7 +1714,7 @@ ms.locfileid: "65240520"
 
 * Исправлены команды хранилища ключей для работы с удостоверениями в Cloud Shell или виртуальных машинах.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Исправлена проблема, при которой `network watcher show-topology` не будет выполняться, если виртуальной сети или подсети присвоить имя. [#6326](https://github.com/Azure/azure-cli/issues/6326)
 * Исправлена проблема, при которой некоторые команды `network watcher` выдают ошибку, что Наблюдатель за сетями не включен в определенных регионах. [#6264](https://github.com/Azure/azure-cli/issues/6264)
@@ -1675,7 +1788,7 @@ ms.locfileid: "65240520"
 * Добавлена поддержка min\_tls\_version и https2.0.
 * Добавлена поддержка нескольких контейнеров.
 
-### <a name="batch-ai"></a>Искусственный интеллект пакетной службы
+### <a name="batch-ai"></a>Azure Batch AI
 
 * Изменено `batchai create cluster` с учетом приоритета виртуальной машины при настройке в файле конфигурации кластера.
 
@@ -1691,7 +1804,7 @@ ms.locfileid: "65240520"
 
 * Удалено требование `--registry-server` для `container create`, когда сервер реестра включен в имя образа.
 
-### <a name="cosmos-db"></a>База данных Cosmos
+### <a name="cosmos-db"></a>Cosmos DB
 
 * Добавлена поддержка VNET для Azure CLI в Cosmos DB
 
@@ -1714,7 +1827,7 @@ ms.locfileid: "65240520"
 
 * Исправлены регрессии из преобразования Knack.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--ids` для:
   * `express-route auth list`
@@ -1841,7 +1954,7 @@ ms.locfileid: "65240520"
 * Добавлены перехватчики событий, которые используются до и после создания поддерева команд.
 * Добавлены сведения о выполнении для параметров `--ids`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Исправлена ошибка [#5936](https://github.com/Azure/azure-cli/issues/5936): не задаются теги `application-gateway create`.
 * Добавлен аргумент `--auth-certs`, который позволяет подключать сертификаты аутентификации для `application-gateway http-settings [create|update]`. [#4910](https://github.com/Azure/azure-cli/issues/4910).
@@ -1955,7 +2068,7 @@ ms.locfileid: "65240520"
 * Исправлена ошибка [#4529](https://github.com/Azure/azure-cli/issues/5785). Команда `metrics list` принимает разделенный пробелами список метрик для извлечения.
 * Добавлена поддержка `--namespace` для `metrics list-definitions` [#5785](https://github.com/Azure/azure-cli/issues/5785).
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлена поддержка Частных зон DNS.
 
@@ -2041,7 +2154,7 @@ ms.locfileid: "65240520"
 * Добавлены команды `monitor autoscale profile`.
 * Добавлены команды `monitor autoscale rule`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--tags` из `route-filter rule create`.
 * Удалены некоторые ошибочные значения по умолчанию для следующих команд:
@@ -2113,7 +2226,7 @@ ms.locfileid: "65240520"
 
 * Добавлены аргументы `--secrets` и `--secrets-mount-path` в командах `container create` для использования секретов в ACI.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Исправлена ошибка [#5559](https://github.com/Azure/azure-cli/issues/5559). Отсутствующий клиент в `network vnet-gateway vpn-client generate`.
 
@@ -2200,7 +2313,7 @@ ms.locfileid: "65240520"
 
 * Исправлена команда `az monitor log-profiles create`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Исправлен параметр `--tags` для следующих команд:
   * `network public-ip create`
@@ -2272,7 +2385,7 @@ ms.locfileid: "65240520"
 
 * Исправлена проблема, когда заполнение параметров команд больше не выполнялось.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлена защита `--cert-password` для `application-gateway create`.
 * Исправлена проблема с `application-gateway update`, когда команда `--sku` ошибочно применяла значение по умолчанию.
@@ -2376,7 +2489,7 @@ ms.locfileid: "65240520"
 * Добавлена поддержка параметра нескольких диагностических операций. Теперь параметр `--name` является обязательным для `az monitor diagnostic-settings create`.
 * Добавлена команда `monitor diagnostic-settings categories` для получения категории параметров диагностики.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Устранена проблема с `vnet-gateway update` при попытке входа в активный режим и режим ожидания или выхода из них.
 * Для `application-gateway [create|update]` добавлена поддержка HTTP2.
@@ -2415,7 +2528,7 @@ ms.locfileid: "65240520"
 
 * Исправлен неправильный порядок параметров для журналов контейнеров.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлен аргумент `--disable-bgp-route-propagation` для команды `route-table [create|update]`
 * Добавлен аргумент `--ip-tags` для команды `public-ip [create|update]`
@@ -2556,7 +2669,7 @@ ms.locfileid: "65240520"
 
 * Добавлены команды `activity-log alert`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлена поддержка DNS-записей типа CAA.
 * Исправлена проблема, когда конечные точки могли не обновляться с помощью команды `traffic-manager profile update`.
@@ -2661,7 +2774,7 @@ ms.locfileid: "65240520"
 
 * Исправлена проблема с аутентификацией Key Vault при использовании ADFS в Azure Stack. [(#4448)](https://github.com/Azure/azure-cli/issues/4448)
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Аргумент `--server` для `application-gateway address-pool create` изменен на необязательный (разрешено использование пустых пулов адресов).
 * Обновлен элемент `traffic-manager` для поддержки последних функций.
@@ -2703,7 +2816,7 @@ ms.locfileid: "65240520"
 * Добавлена поддержка шаблонов и определений пользовательского интерфейса для команды `managedapp definition create`
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменен тип ресурса `managedapp` с `appliances` на `applications` и с `applianceDefinitions` на `applicationDefinitions`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлена поддержка зоны доступности для подкоманд `network lb` и `network public-ip`
 * Добавлена поддержка IPv6 (пиринг Майкрософт) для `express-route`
@@ -2782,7 +2895,7 @@ ms.locfileid: "65240520"
 
 * Исправлена проблема с зависимостью разрешений от регистра для `keyvault set-policy`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
 * Аргумент `--private-access-services` переименован в `--service-endpoints` для команды `vnet subnet create/update`.
@@ -2852,7 +2965,7 @@ ms.locfileid: "65240520"
 
 * Исправлена ошибка #3934. При создании политики существующие политики больше не удаляются.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `vnet list-private-access-services` переименована в `vnet list-endpoint-services`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--private-access-services` переименован в `--service-endpoints` в командах `vnet subnet [create|update]`.
@@ -2940,7 +3053,7 @@ ms.locfileid: "65240520"
 
 * Первый выпуск
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * `lb`: исправлена проблема, из-за которой некоторые имена дочерних ресурсов не разрешались правильно, если не были указаны.
 * `application-gateway {subresource} delete`: исправлена проблема, из-за которой не учитывался параметр `--no-wait`.
@@ -3141,7 +3254,7 @@ vm (2.0.11)
 * Поддержка имен или идентификаторов для команд `monitor metric`.
 * Добавлены вспомогательные аргументы и примеры использования команды `monitor alert rule update`.
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлена команда `list-private-access-services`.
 * Добавлен аргумент `--private-access-services` в команды `vnet subnet create` и `vnet subnet update`.
@@ -3369,7 +3482,7 @@ vm (2.0.6)
 * Исправление ошибки. моделирование параметра `--actions` команды `az alert-rules create` для использования строки в формате JSON ([#3009](https://github.com/Azure/azure-cli/issues/3009)).
 * Исправление ошибки: при создании параметров диагностики не принимались журналы и метрики из команды show ([#2913](https://github.com/Azure/azure-cli/issues/2913)).
 
-### <a name="network"></a>Сеть
+### <a name="network"></a>Network
 
 * Добавлена команда `network watcher test-connectivity`.
 * Добавлена поддержка параметра `--filters` в команде `network watcher packet-capture create`.
