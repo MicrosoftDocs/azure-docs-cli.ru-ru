@@ -4,19 +4,52 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 05/21/2019
+ms.date: 06/05/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 5b4bcde8c4a66ccc378abc00468cbdb423f07fa4
-ms.sourcegitcommit: 3fe3502ec5af89939155285bb5e741b08af604cd
+ms.openlocfilehash: b79d76480c3e6619427d6a7e3960f53b691889cc
+ms.sourcegitcommit: 6aca5a788b9731e6cbeeb497c83a9197ebb7d36e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66197799"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66750231"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="june-4-2019"></a>4 июня 2019 г.
+
+Версия 2.0.66
+
+### <a name="core"></a>Core
+* Исправлена ошибка, из-за которой выполнение команды завершалось со сбоем, если параметр `--output yaml` использовался с параметром `--query`
+
+### <a name="acr"></a>ACR
+* Добавлена группа команд acr pack для создания заданий быстрой сборки с помощью пакетов сборок.
+
+### <a name="acs"></a>ACS
+* Разрешено включение и отключение надстройки панели мониторинга Kubernetes для AKS.
+* Если подписку нельзя использовать с Azure Red Hat OpenShift, будет отображаться соответствующее сообщение.
+
+### <a name="batch"></a>Пакетная служба Azure
+* Улучшена обработка ошибок, если не выполнен вход в учетную запись \[[№ 9165](https://github.com/Azure/azure-cli/issues/9165)\]\[[№ 8978](https://github.com/Azure/azure-cli/issues/8978)\].
+
+### <a name="iot"></a>Интернет вещей
+* Добавлена поддержка для перехода на другой ресурс вручную.
+
+### <a name="network"></a>Network
+* Добавлены команды `network application-gateway waf-policy` для поддержки настраиваемых правил WAF.
+* Добавлены аргументы `--waf-policy` и `--max-capacity` для команды `network application-gateway [create|update]` 
+
+### <a name="resource"></a>Ресурс
+* Улучшен вывод сообщения команды `deployment create` при отсутствии TTY.
+
+### <a name="role"></a>Роль
+* Обновлен текст справки.
+
+### <a name="compute"></a>Службы вычислений
+* Добавлена поддержка команды `vm create` для создания виртуальных машин из управляемого образа с номерами LUN дисков данных, которые не начинаются с 0 или для которых пропущены номера.
 
 ## <a name="may-21-2019"></a>21 мая 2019 г.
 
