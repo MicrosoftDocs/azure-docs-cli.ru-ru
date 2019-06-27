@@ -210,7 +210,8 @@
       "showPowerShellPicker": "true",
       "searchScope": [
         "Azure"
-      ]
+      ],
+      "disable_contribution_on_translation_quality": ["MT"]
     },
     "fileMetadata": {
       "feedback_github_repo": {
