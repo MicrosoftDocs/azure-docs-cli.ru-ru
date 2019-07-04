@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 5e187025e97b1d882bc575fd51970a8250f6210e
-ms.sourcegitcommit: bf69c95abf3ed3d589b202c7ff04d8782e2a81ac
+ms.openlocfilehash: e878c467f71423cc8c9caa1f8cfe270d0019c48b
+ms.sourcegitcommit: 399f0a2997675fbb280243e4234cf63c3bbca819
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65993036"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67194851"
 ---
 # <a name="query-azure-cli-command-output"></a>Запросы к выходным данным команд Azure CLI
 
@@ -126,7 +126,7 @@ echo $USER
 "azureuser"
 ```
 
-Это явно не то, что нужно. В этом случае вам нужно использовать формат выходных данных с возвращаемыми значениями с информацией о типах без кавычек. Наилучший вариант, который предоставляет CLI для этой цели, — `tsv` или значение с разделением знаками табуляции. В частности, при извлечении отдельного значения (не словаря, и не списка) выходные данные `tsv` гарантированно не будут включать кавычки.
+Это явно не то, что нужно. В этом случае вам нужно использовать формат выходных данных с возвращаемыми значениями с информацией о типах без кавычек. Наилучший вариант, который предоставляет CLI для этой цели, — `tsv` или значение с разделением знаками табуляции. В частности, при извлечении отдельного значения (не словаря или списка) выходные данные `tsv` гарантированно не будут включать кавычки.
 
 ```azurecli-interactive
 az vm show -g QueryDemo -n TestVM --query 'osProfile.adminUsername' -o tsv
