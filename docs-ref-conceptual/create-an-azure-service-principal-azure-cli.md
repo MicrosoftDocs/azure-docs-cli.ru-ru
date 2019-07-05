@@ -8,12 +8,12 @@ ms.date: 02/15/2019
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 7ead12b35cefd7cba9e06f7905c9267c569d98dd
-ms.sourcegitcommit: 014d89aa21f90561eb69792ad01947e481ea640a
+ms.openlocfilehash: 6d88400b8d7070cf2f9dba2f3e124edfe2e3163d
+ms.sourcegitcommit: e06d34682710e77840b0c51f4718184101bd8a03
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56741723"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67527326"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
@@ -35,21 +35,14 @@ ms.locfileid: "56741723"
 
 ### <a name="password-based-authentication"></a>Аутентификация на основе пароля
 
-Если параметры аутентификации не указаны, используется аутентификация на основе пароля, который генерируется случайным образом. Это рекомендованный метод, если вам нужна аутентификация на основе пароля.
+Если параметры аутентификации не указаны, используется аутентификация на основе пароля, который генерируется случайным образом.
 
   ```azurecli-interactive
   az ad sp create-for-rbac --name ServicePrincipalName
   ```
 
-Аргумент `--password` позволяет пользователю задать собственный пароль. При создании пароля обязательно учитывайте [правила и ограничения для паролей в Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Не используйте ненадежные пароли или пароли, которые уже используются вами для доступа к другим ресурсам.
-
-  ```azurecli-interactive
-  az ad sp create-for-rbac --name ServicePrincipalName --password <Choose a strong password>
-  ```
-
-  > [!IMPORTANT]
-  >
-  > По соображениям безопасности аргумент `--password` для создания субъекта-службы будет помечен как нерекомендуемый в будущем выпуске. Если вам нужна аутентификация на основе пароля, мы рекомендуем не использовать аргумент `--password`, а сгенерировать надежный пароль с помощью CLI.
+> [!IMPORTANT]
+> Начиная с версии Azure CLI 2.0.68, параметр `--password` для создания субъекта-службы с пользовательским паролем __больше не поддерживается__, что должно предотвратить случайное использование ненадежных паролей.
 
 Выходные данные для субъекта-службы с аутентификацией на основе пароля включают ключ `password`. __Обязательно__ скопируйте это значение, так как его нельзя получить повторно. Если вы забыли пароль, [сбросьте учетные данные для субъекта-службы](#reset-credentials).
 
