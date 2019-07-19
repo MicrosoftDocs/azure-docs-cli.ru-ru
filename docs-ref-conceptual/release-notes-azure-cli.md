@@ -4,19 +4,63 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/02/2019
+ms.date: 07/16/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 26757193628cff65603a04e440f9e2aa7bf5a248
-ms.sourcegitcommit: e06d34682710e77840b0c51f4718184101bd8a03
+ms.openlocfilehash: 8cb0e2f43a3f40fdf15a00ebc7bdb931bf8f41f0
+ms.sourcegitcommit: 49e1dea60942fce02d9c3ce249ac633a83f303e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67527300"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68246919"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="july-16-2019"></a>16 июля 2019 г.
+
+Версия 2.0.69
+
+### <a name="appservice"></a>Служба приложений
+
+* Изменены команды `webapp identity`. Теперь они возвращают правильное сообщение об ошибке, если параметр ResourceGroupName или имя приложения недопустимы.
+* Исправлена команда `webapp list`. Теперь она возвращает правильное значение для параметра numberOfSites, если не указан параметр ResourceGroup.
+* Исправлены побочные эффекты для команд `appservice plan create` и `webapp create`.
+
+### <a name="core"></a>Core
+
+* Исправлена ошибка, при которой отображался параметр `--subscription`, хотя он был неприменим.
+
+### <a name="batch"></a>Пакетная служба Azure
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `batch pool node-agent-skus list` заменена на `batch pool supported-images list`.
+* Добавлена поддержка правил безопасности, которые блокируют сетевой доступ к пулу на основе исходного порта трафика при использовании параметра `--json-file` команды `batch pool create network`.
+* Добавлена поддержка выполнения задачи в рабочей папке контейнера или рабочей папке задачи пакета при использовании параметра `--json-file` команды `batch task create`.
+* Исправлена ошибка в параметре `--application-package-references` команды `batch pool create`, которая позволяла работать только со значениями по умолчанию.
+
+### <a name="eventhubs"></a>Концентраторы событий
+
+* Добавлена проверка параметра `--rights` команд `authorizationrule`.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Добавлен необязательный параметр для указания номера SKU реплики в команде создания реплики.
+* Исправлена ошибка теста CI при создании реплики MySQL.
+
+### <a name="relay"></a>Ретрансляция
+
+* Исправлена проблема с гибридным подключением при выключенной авторизации клиента ([8775](https://github.com/azure/azure-cli/issues/8775)).
+* Добавлен параметр `--requires-transport-security` для команды `relay wcfrelay create`.
+
+### <a name="servicebus"></a>Служебная шина
+
+* Добавлена проверка параметра `--rights` команд `authorizationrule`.
+
+### <a name="storage"></a>Хранилище
+
+* Добавлена возможность обновления учетной записи хранения для AADDS в службе "Файлы".
+* Устранена проблема, описанная здесь: `storage blob service-properties update --set`.
 
 ## <a name="july-2-2019"></a>2 июля 2019 г.
 
@@ -3719,7 +3763,7 @@ vm (2.0.6)
 
 ### <a name="role"></a>Роль
 
-* create-for-rbac: гарантируется, что дата завершения работы поставщика служб не может превышать срок действия сертификата ([#2989](https://github.com/Azure/azure-cli/issues/2989)).
+* create-for-rbac: гарантируется, что дата завершения работы поставщика служб не может превышать срок действия сертификата ([№ 2989](https://github.com/Azure/azure-cli/issues/2989)).
 * RBAC: добавлена полная поддержка команды ad group ([#2016](https://github.com/Azure/azure-cli/issues/2016)).
 * Роль: устранены проблемы при обновлении определения роли ([№ 2745](https://github.com/Azure/azure-cli/issues/2745)).
 * create-for-rbac: обеспечен выбор введенного пользователем пароля.
