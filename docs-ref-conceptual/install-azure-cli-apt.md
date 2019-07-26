@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: f22ada48502602cb4d9b502cb887412a6ddcf5cf
-ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
+ms.openlocfilehash: af20c31f6b387768e93158f1116b3f486f4aedfc
+ms.sourcegitcommit: 52f0a62892c68b5728090f1bfceef7a612104529
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516344"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68415166"
 ---
 # <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
@@ -29,7 +29,7 @@ ms.locfileid: "66516344"
 >
 > Пакет для Azure CLI устанавливает собственный интерпретатор Python и не использует системный Python.
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 
 Мы предлагаем два способа установки Azure CLI с дистрибутивами, которые поддерживают `apt`: комплексный скрипт, который автоматически выполняет команды установки, и инструкции, которые вы сами можете выполнять поэтапно.
 
@@ -47,13 +47,13 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 ### <a name="manual-install-instructions"></a>Инструкции по установке вручную
 
-Если вы не хотите запускать скрипт как суперпользователь, воспользуйтесь приведенными ниже инструкциями, чтобы установить Azure CLI вручную.
+Если вы не хотите запускать скрипт как суперпользователь или если выполнение комплексного скрипта завершается сбоем, воспользуйтесь приведенными ниже инструкциями, чтобы установить Azure CLI.
 
 1. Получите пакеты, необходимые для установки:
 
     ```bash
     sudo apt-get update
-    sudo apt-get install curl apt-transport-https lsb-release gnupg
+    sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
     ```
 
 2. Скачайте и установите ключ подписывания (Майкрософт):
@@ -123,7 +123,7 @@ Acquire {
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
-## <a name="update"></a>Блокировка изменений
+## <a name="update"></a>Обновление
 
 Используйте `apt-get upgrade`, чтобы обновить пакет CLI.
 
