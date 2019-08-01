@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/19/2019
+ms.date: 07/29/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 18d36a1690be97d2c2a3b823d1ad4d38c4df93d3
-ms.sourcegitcommit: 52f0a62892c68b5728090f1bfceef7a612104529
+ms.openlocfilehash: cc65cffdb77abcfca764aa474dd1089a4c80c0f1
+ms.sourcegitcommit: d29d86d33916d5551b4aeb984b06d7a85c4f6b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68415127"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658960"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -33,9 +33,9 @@ az extension list-available --output table
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.2 | Поддержка псевдонимов команд. | Yes |
 | [appconfig](https://github.com/Azure/azure-cli-extensions) | 0.5.0 | Предварительное знакомство с новыми возможностями службы конфигурации приложений. | Yes |
 | [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.1 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Yes |
-| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 3.0.4 | Дополнительные команды для работы с пакетной службой Azure. |  |
+| [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 4.0.0 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.7.1 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
-| [azure-cli-ml](https://docs.microsoft.com/en-us/azure/machine-learning/service/) | 1.0.48 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
+| [azure-cli-ml](https://docs.microsoft.com/en-us/azure/machine-learning/service/) | 1.0.53.1 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
 | [azure-devops](https://github.com/Microsoft/azure-devops-cli-extension) | 0.11.0 | Инструменты для управления Azure DevOps. |  |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.1.3 | Управление ресурсами Брандмауэра Azure. | Yes |
 | [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.13 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Yes |
@@ -65,4 +65,4 @@ az extension list-available --output table
 | [virtual-network-tap](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-network-tap) | 0.1.0 | Управление точками доступа к виртуальным сетям (VTAP). | Yes |
 | [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.1.0 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Yes |
 | [vm-repair](https://github.com/Azure/azure-cli-extensions/tree/master/src/vm-repair) | 0.1.2 | Команды автоматического восстановления для исправления виртуальных машин. |  |
-| [webapp](https://github.com/Azure/azure-cli-extensions/tree/master/src/webapp) | 0.2.20 | Дополнительные команды для Службы приложений Azure. | Yes |
+| [webapp](https://github.com/Azure/azure-cli-extensions/tree/master/src/webapp) | 0.2.23 | Дополнительные команды для Службы приложений Azure. | Yes |

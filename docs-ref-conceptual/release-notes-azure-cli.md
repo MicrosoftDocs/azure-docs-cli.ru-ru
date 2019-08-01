@@ -4,19 +4,64 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/16/2019
+ms.date: 07/30/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 8cb0e2f43a3f40fdf15a00ebc7bdb931bf8f41f0
-ms.sourcegitcommit: 49e1dea60942fce02d9c3ce249ac633a83f303e7
+ms.openlocfilehash: 673014c3fd86e20148fe5ffa9fa5160e490da0cb
+ms.sourcegitcommit: d29d86d33916d5551b4aeb984b06d7a85c4f6b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68246919"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658924"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="july-30-2019"></a>30 июля 2019 г.
+
+Версия 2.0.70
+
+### <a name="acr"></a>ACR
+
+* Исправлена проблема № 9952 (регрессия в команде `acr pack build`).
+* Удалено имя образа построителя по умолчанию в `acr pack build`.
+
+### <a name="appservice"></a>Служба приложений
+
+* Команда `webapp config ssl` изменена для отображения сообщения, если ресурс не найден.
+* Исправлена проблема, когда команда `functionapp create` не принимала тип учетной записи хранения `Standard_RAGRS`.
+* Исправлена проблема, когда команда `webapp up` завершала работу со сбоем в случае выполнения со старой версией Python.
+
+### <a name="network"></a>Сеть
+
+* Удален недопустимый параметр `--ids` из `network nic ip-config add` (исправление проблемы № 9861).
+* Исправлена проблема № 9604. Добавлен параметр `--root-certs` в `network application-gateway http-settings [create|update]` для поддержки связанных с пользователем доверенных корневых сертификатов.
+* Исправлен аргумент `--subscription` для `network dns record-set ns create` (проблема № 9965).
+
+### <a name="rbac"></a>RBAC
+
+* Добавлена команда `user update`.
+* [УСТАРЕЛО] `--upn-or-object-id` не рекомендуется использовать в связанных с пользователями командах.
+    * Вместо этого применяйте аргумент `--id`.
+* Добавлен аргумент `--id` в связанные с пользователями команды.
+
+### <a name="sql"></a>SQL
+
+* Добавлены команды управления для ключей и предохранителя TDE управляемого экземпляра.
+
+### <a name="storage"></a>Хранилище
+
+* Добавлена команда `storage remove`.
+* Исправлена проблема с `storage blob update`.
+
+### <a name="vm"></a>ВМ
+
+* Изменена команда `list-skus` для использования новой версии API для вывода сведений о зонах.
+* Изменено значение по умолчанию параметра `--single-placement-group` на `false` для команды `vmss create`.
+* Добавлена возможность выбирать номера SKU хранилища ZRS для `[snapshot|disk] create`.
+* Добавлена новая группа команд `vm host` для поддержки выделенных узлов.
+* Добавлены параметры `--host` и `--host-group` в команде `vm create` для указания выделенного узла виртуальной машины.
 
 ## <a name="july-16-2019"></a>16 июля 2019 г.
 
