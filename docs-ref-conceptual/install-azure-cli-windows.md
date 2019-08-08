@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 40810b25bf776025c82b48ba7aa424369483ceeb
-ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
+ms.openlocfilehash: 6c972ba69344f9e8bcd14a96a90e9dadb6cd8132
+ms.sourcegitcommit: 61965f5d95d0dae3752ad6a0e5a93db27a623c28
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516273"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68830976"
 ---
 # <a name="install-azure-cli-on-windows"></a>Установка Azure CLI в Windows
 
@@ -31,6 +31,13 @@ Azure CLI для Windows устанавливается с помощью MSI. �
 > [Скачать установщик MSI](https://aka.ms/installazurecliwindows)
 
 Если программа установки запрашивает разрешения на внесение изменений на вашем компьютере, установите флажок "Да".
+
+Azure CLI также можно установить с помощью PowerShell. Запустите PowerShell с правами администратора и выполните следующую команду:
+
+   ```PowerShell
+   Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
+   ```
+Будет скачана и установлена последняя версия Azure CLI для Windows. Если у вас уже установлена определенная версия, она будет обновлена до последней. По завершении установки необходимо снова открыть PowerShell, чтобы использовать Azure CLI.
 
 Теперь можно запустить Azure CLI с помощью команды `az` из командной строки Windows или PowerShell. В PowerShell реализовано несколько функций заполнения нажатием клавиши TAB, которые недоступны в командной строке Windows. Чтобы войти, выполните команду [az login](/cli/azure/reference-index#az-login).
 
