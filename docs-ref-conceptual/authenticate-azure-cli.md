@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.component: authentication
-ms.openlocfilehash: 234c53f27ba365550e6502b8410aced57eb9ff4e
-ms.sourcegitcommit: 334a1da92a73e42e715e33470057f4194f10b2ea
+ms.openlocfilehash: 3c25f648fe01f788521394af09350f9468aa8b46
+ms.sourcegitcommit: 4daaac4e3629e0467bf15c561f0f437158482e06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59724580"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68917663"
 ---
 # <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI 
 
 Azure CLI поддерживает несколько типов аутентификации. Проще всего приступить к работе можно с помощью оболочки [Azure Cloud Shell](/azure/cloud-shell/overview), которая автоматически выполняет вход в вашу учетную запись.
 На локальном компьютере можно выполнить интерактивную процедуру входа в браузере с помощью команды [az login](/cli/azure/reference-index#az-login). При написании скриптов рекомендуется использовать субъекты-службы. Предоставляя именно те разрешения, которые нужны субъекту-службе, можно обеспечить безопасность скрипта автоматизации.
 
-CLI не хранит ваши сведения о входе. [Маркер обновления аутентификации](https://docs.microsoft.com/en-us/azure/active-directory/develop/v1-id-and-access-tokens#refresh-tokens) создается и сохраняется в Azure. Начиная с августа 2018 г., маркер становится недействительным в случае бездействия пользователя в течение 90 дней. Этот срок может быть изменен корпорацией Майкрософт или администратором клиента. Если маркер становится недействительным, в CLI появится сообщение о необходимости повторно войти в учетную запись.
+CLI не хранит ваши сведения о входе. [Маркер обновления аутентификации](https://docs.microsoft.com/azure/active-directory/develop/v1-id-and-access-tokens#refresh-tokens) создается и сохраняется в Azure. Начиная с августа 2018 г., маркер становится недействительным в случае бездействия пользователя в течение 90 дней. Этот срок может быть изменен корпорацией Майкрософт или администратором клиента. Если маркер становится недействительным, в CLI появится сообщение о необходимости повторно войти в учетную запись.
 
 После входа команды CLI будут выполняться в вашей подписке по умолчанию. Если у вас есть несколько подписок, можно [изменить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md).
 
@@ -104,4 +104,4 @@ az login --tenant <tenant>
 az login --identity
 ```
 
-Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в статьях о [настройке управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm) и [использовании управляемых удостоверений для входа в ресурсы Azure](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in).
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в статьях о [настройке управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm) и [использовании управляемых удостоверений для входа в ресурсы Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in).
