@@ -4,19 +4,98 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 07/30/2019
+ms.date: 08/13/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 673014c3fd86e20148fe5ffa9fa5160e490da0cb
-ms.sourcegitcommit: d29d86d33916d5551b4aeb984b06d7a85c4f6b06
+ms.openlocfilehash: d315046287a552e89112fa415e1219f9a97d4944
+ms.sourcegitcommit: b00555c528697c0a6419cf23380e48c8705026db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658924"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68974261"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="august-13-2019"></a>13 августа 2019 г.
+
+Версия 2.0.71
+
+### <a name="appservice"></a>AppService
+
+* Исправлена проблема, из-за которой выполнение команд `webapp webjob continuous` для слотов завершалось сбоем.
+
+### <a name="botservice"></a>Служба Bot
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Прекращена поддержка создания ботов на основе пакета SDK версии 3.
+
+### <a name="cognitiveservices"></a>Cognitive Services:
+
+* Добавлены команды `cognitiveservices account network-rule`.
+
+### <a name="cosmos-db"></a>Cosmos DB
+
+* Удалено предупреждение при обновлении нескольких расположений для записи.
+* Добавлены команды CRUD для ресурсов CosmosDB SQL, MongoDB, Cassandra, Gremlin и ресурсов таблиц, а также пропускной способности ресурсов.
+
+### <a name="hdinsight"></a>HDInsight
+
+Этот выпуск содержит большое число критических изменений.
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименованы параметры для `hdinsight create`:
+  * Команда `--storage-default-container` переименована в `--storage-container`.
+  * Команда `--storage-default-filesystem` переименована в `--storage-filesystem`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменен аргумент `--name` для `application create`, чтобы представлять имя приложения вместо имени кластера.
+* Добавлен аргумент `--cluster-name` для `application create`, чтобы заменить старый аргумент `--name`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименованы параметры для `application create`:
+  * Команда `--application-type` переименована в `--type`.
+  * Команда `--marketplace-identifier` переименована в `--marketplace-id`.
+  * Команда `--https-endpoint-access-mode` переименована в `--access-mode`.
+  * Переименован аргумент `--https-endpoint-destination-port` на `--destination-port`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удалены параметры для `application create`:
+  * `--https-endpoint-location`
+  * `--https-endpoint-public-port`
+  * `--ssh-endpoint-destination-port`
+  * `--ssh-endpoint-location`
+  * `--ssh-endpoint-public-port`
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Переименован аргумент `--target-instance-count` на `--workernode-count` для `hdinsight resize`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Изменены все команды в группе `hdinsight script-action`, чтобы использовать параметр `--name` в качестве имени действия скрипта.
+* Добавлен аргумент `--cluster-name` для всех команд `hdinsight script-action`, чтобы заменить старый аргумент `--name`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименован аргумент `--script-execution-id` на `--execution-id`для всех команд `hdinsight script-action`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда `hdinsight script-action show` переименована в `hdinsight script-action show-execution-details`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Изменены параметры для `hdinsight script-action execute --roles`, чтобы они разделялись пробелами, а не запятыми.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр `--persisted` для `hdinsight script-action list`.
+* Изменен параметр `hdinsight create --cluster-configurations`, чтобы принимать путь к локальному файлу JSON или строке JSON.
+* Добавлена команда `hdinsight script-action list-execution-history`.
+* Изменен параметр `hdinsight monitor enable --workspace`, чтобы принимать идентификатор или имя рабочей области Log Analytics.
+* Добавлен аргумент `hdinsight monitor enable --primary-key`, который требуется, если в качестве параметра указан идентификатор рабочей области.
+* Добавлены дополнительные примеры и обновленные описания для справочных сообщений.
+
+### <a name="interactive"></a>Interactive
+
+* Исправлена ошибка загрузки.
+
+### <a name="kubernetes"></a>Kubernetes
+
+* Теперь используется `https`, если порт контейнера панели мониторинга использует `https`.
+
+### <a name="network"></a>Сеть
+
+* Добавлен аргумент `--yes` для `network dns record-set cname delete`.
+
+### <a name="profile"></a>Профиль
+
+* Добавлен аргумент `--resource-type` для `account get-access-token`, чтобы получать маркеры доступа к ресурсам.
+
+### <a name="servicefabric"></a>Service Fabric
+
+* Добавлены все поддерживаемые версии ОС для команды sf cluster create.
+* Исправлена ошибка проверки основного сертификата.
+
+### <a name="storage"></a>Хранилище
+
+* Добавлена команда `storage copy`.
 
 ## <a name="july-30-2019"></a>30 июля 2019 г.
 
