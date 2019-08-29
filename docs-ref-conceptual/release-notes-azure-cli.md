@@ -4,19 +4,71 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 08/13/2019
+ms.date: 08/27/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: d315046287a552e89112fa415e1219f9a97d4944
-ms.sourcegitcommit: b00555c528697c0a6419cf23380e48c8705026db
+ms.openlocfilehash: 156ff2e6d011104ebbb1608ff33bad8ebb6396ed
+ms.sourcegitcommit: df2be5609a6cbeecb9f8ef0928a9fabfb207e7f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68974261"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70047269"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="august-27-2019"></a>27 августа 2019 г.
+
+Версия 2.0.72
+
+### <a name="acr"></a>ACR
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Прекращена поддержка SKU `classic`.
+
+### <a name="api-management"></a>Управление API
+
+* [ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ] Добавлена группа команд `apim`.
+
+### <a name="appservice"></a>AppService
+
+* Исправлена проблема с командой `webapp webjob continuous start` при указании слота.
+* Изменена команда `webapp up` для обнаружения и удаления папки `env` из файла, используемого для развертывания.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* Исправлена ошибка в команде `keyvault secret set`, которая игнорировала аргумент `--expires`.
+
+### <a name="network"></a>Сеть
+
+* Добавлена поддержка IPv6-адресов для аргументов `--private-ip-address-version`.
+* Добавлены новые команды `network private-endpoint [create|update|list-types]` для управления закрытыми конечными точками.
+* Добавлена группа команд для `network private-link-service`.
+* Добавлены аргументы `--private-endpoint-network-policies` и `--private-link-service-network-policies` для команды `network vnet subnet update`
+
+### <a name="rbac"></a>RBAC
+
+* Исправлена проблема с `ad app update --homepage`, когда домашнюю страницу нельзя было обновить.
+
+### <a name="servicefabric"></a>Service Fabric
+
+* Добавлена поддержка имен Key Vault в смешанном регистре.
+* Исправлена проблема с использованием сертификатов в Key Vault.
+* Исправлена проблема с использованием файлов сертификатов PFX.
+* Исправлена проблема с `sf cluster certificate add`, когда группа ресурсов Key Vault не была указана.
+* Исправлена проблема с неработающей командой `sf cluster set`.
+
+### <a name="signalr"></a>SignalR
+
+* Добавлены новые команды:
+  * `signalr cors`: Управление CORS SignalR
+  * `signalr restart`: Перезапуск службы SignalR
+  * `signalr update`: Обновление службы SignalR
+* Добавлен аргумент `--service-mode` для команды `signalr create`
+
+### <a name="storage"></a>Хранилище
+
+* Добавлена команда `storage account revoke-delegation-keys`.
 
 ## <a name="august-13-2019"></a>13 августа 2019 г.
 
