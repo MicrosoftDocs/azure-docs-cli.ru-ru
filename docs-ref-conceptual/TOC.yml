@@ -1,8 +1,8 @@
 - name: Инфраструктура CLI Azure
-  href: index.md
-- name: Install
+  href: index.yml
+- name: Установка
   items:
-    - name: Install
+    - name: Установка
       href: install-azure-cli.md
     - name: macOS
       href: install-azure-cli-macos.md
@@ -63,7 +63,7 @@
 - name: Параметры конфигурации
   href: azure-cli-Configuration.md
   displayName: 'configure, defaults, environment, variables'
-- name: Руководства
+- name: Учебники
   items:
     - name: Создание виртуальных машин
       href: azure-cli-vm-tutorial.yml

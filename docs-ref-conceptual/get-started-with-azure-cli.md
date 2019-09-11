@@ -10,16 +10,20 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 003576ba22cdc4fc64977b653d0fb6859cd38446
-ms.sourcegitcommit: 334a1da92a73e42e715e33470057f4194f10b2ea
+ms.openlocfilehash: c667f6fa00d8a03b6a451728ffcc1da3e446a741
+ms.sourcegitcommit: f9bfb4b063151434b3a9bff936a73b251666e775
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59429036"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878244"
 ---
 # <a name="get-started-with-azure-cli"></a>Начало работы с Azure CLI
 
 Добро пожаловать в Azure CLI! CLI — это средство, предназначенное для быстрой и эффективной работы со службами Azure с возможностью автоматизации. В этой статье рассматриваются возможности CLI и приводятся ссылки на связанные ресурсы.
+
+> [!NOTE]
+>
+> В скриптах и на сайте документации Майкрософт примеры Azure CLI написаны для оболочки `bash`. Однострочные примеры можно запускать на любой платформе. Более длинные примеры, включающие символы продолжения строки (`\`) или присвоение значения переменной, нужно изменить для использования в других оболочках, включая PowerShell.
 
 ## <a name="install-or-run-in-azure-cloud-shell"></a>Установка или запуск в Azure Cloud Shell
 
@@ -45,7 +49,7 @@ ms.locfileid: "59429036"
 
 | Тип ресурса | Группа команд Azure CLI |
 |---------------|-------------------------|
-| [Группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [az group](/cli/azure/group) |
+| [группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [az group](/cli/azure/group) |
 | [Виртуальные машины](/azure/virtual-machines) | [az vm](/cli/azure/vm) |
 | [Учетные записи хранения](/azure/storage/common/storage-introduction) | [az storage account](/cli/azure/storage/account) |
 | [хранилище ключей;](/azure/key-vault/key-vault-whatis) | [az keyvault](/cli/azure/keyvault) |
