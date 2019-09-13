@@ -4,19 +4,66 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 08/27/2019
+ms.date: 09/05/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 156ff2e6d011104ebbb1608ff33bad8ebb6396ed
-ms.sourcegitcommit: df2be5609a6cbeecb9f8ef0928a9fabfb207e7f9
+ms.openlocfilehash: 03594fc6e7e24fd1b7d2f9c846161a40e8ea7678
+ms.sourcegitcommit: f9bfb4b063151434b3a9bff936a73b251666e775
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70047269"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878223"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="september-5-2019"></a>5 сентября 2019 г.
+
+### <a name="acr"></a>ACR
+
+* Добавлена группа команд `acr config retention` для настройки политики хранения.
+
+### <a name="aks"></a>AKS
+
+* Добавлена возможность интеграции ACR с помощью следующих команд:
+  * В `aks [create|update]` добавлен параметр `--attach-acr` для подключения ACR к кластеру AKS.
+  * В `aks update` добавлен параметр `--detach-acr` для отключения ACR от кластера AKS.
+
+### <a name="arm"></a>ARM
+
+* Добавлена возможность использования API версии 2019-05-10.
+
+### <a name="batch"></a>Пакетная служба Azure
+
+* Добавлены новые параметры конфигурации JSON в `--json-file` для `batch pool create`:
+  * Добавлен параметр `MountConfigurations` для подключений файловой системы (дополнительные сведения см. в разделе https://docs.microsoft.com/en-us/rest/api/batchservice/pool/add#request-body ).
+  * Добавлено необязательное свойство `publicIPs` в `NetworkConfiguration` для общедоступных IP-адресов в пулах (дополнительные сведения см. в разделе https://docs.microsoft.com/en-us/rest/api/batchservice/pool/add#request-body ).
+* В `--image` добавлена поддержка коллекций общих образов.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию для `--start-task-wait-for-success` в `batch pool create` изменено на `true`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию для `Scope` в `AutoUserSpecification` задано как Pool (ранее `Task` на узлах Windows и `Pool` на узлах Linux).
+  * Этот аргумент можно задать только в конфигурации JSON с помощью `--json-file`.
+
+### <a name="hdinsight"></a>HDInsight
+
+* Выпуск общедоступной версии
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Параметр `--workernode-count/-c` в `az hdinsight resize` теперь является обязательным.
+
+### <a name="key-vault"></a>Key Vault
+
+* Исправлена проблема, когда подсети не удавалось удалить из сетевых правил.
+* Исправлена проблема, когда дублированные подсети и IP-адреса могли быть добавлены к сетевым правилам.
+
+### <a name="network"></a>Сеть
+
+* Добавлен параметр `--interval` в `network watcher flow-log` для выбора значения интервала анализа трафика.
+* Добавлена команда `network application-gateway identity` для управления удостоверением шлюза.
+* Добавлена возможность указать идентификатор Key Vault в команде `network application-gateway ssl-cert`.
+* Добавлена команда `network express-route peering peer-connection [show|list]`.
+
+### <a name="policy"></a>Политика
+
+* Добавлена возможность использования API версии 2019-01-01.
 
 ## <a name="august-27-2019"></a>27 августа 2019 г.
 
