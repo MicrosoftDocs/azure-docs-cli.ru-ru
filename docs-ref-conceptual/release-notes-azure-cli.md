@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 03594fc6e7e24fd1b7d2f9c846161a40e8ea7678
-ms.sourcegitcommit: f9bfb4b063151434b3a9bff936a73b251666e775
+ms.openlocfilehash: 727f9960ce60861bbe20a649606b807efb8d9cbc
+ms.sourcegitcommit: f30b67f48b956bdc281f1a5fae96e10120ee3bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70878223"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70937101"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
-## <a name="september-5-2019"></a>5 сентября 2019 г.
+## <a name="september-10-2019"></a>10 сентября 2019 г.
 
 ### <a name="acr"></a>ACR
 
