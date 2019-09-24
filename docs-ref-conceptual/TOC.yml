@@ -10,16 +10,16 @@
     - name: Windows
       href: install-azure-cli-windows.md
       displayName: 'install, powershell, cmd, command prompt'
-    - name: 'Linux, с помощью apt'
+    - name: "Linux\_— apt"
       href: install-azure-cli-apt.md
       displayName: 'ubuntu, debian, mint, linux, install, wsl'
-    - name: 'Linux, с помощью yum'
+    - name: "Linux\_— yum"
       href: install-azure-cli-yum.md
       displayName: 'rhel, redhat, red hat, fedora, linux, install, wsl'
-    - name: 'Linux, с помощью zypper'
+    - name: "Linux\_— zypper"
       href: install-azure-cli-zypper.md
       displayName: 'opensuse, suse, sles, leap, tumbleweed, linux, install, wsl'
-    - name: Linux
+    - name: "Linux\_— скрипт установки"
       href: install-azure-cli-linux.md
       displayName: 'install, script, unix, bsd, linux, lfs, wsl, slackware'
     - name: Выполнение в Docker
