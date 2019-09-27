@@ -4,17 +4,17 @@ description: Сведения о том, как выполнять запрос�
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 11/12/2018
+ms.date: 09/23/2019
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: e878c467f71423cc8c9caa1f8cfe270d0019c48b
-ms.sourcegitcommit: 399f0a2997675fbb280243e4234cf63c3bbca819
+ms.openlocfilehash: 39f7c885a0971db9359926a6b2f80d0a763dc4fe
+ms.sourcegitcommit: 5b9b4446c08b94256ced7f63c145b493ba8b50df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67194851"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71217437"
 ---
 # <a name="query-azure-cli-command-output"></a>Запросы к выходным данным команд Azure CLI
 
@@ -87,22 +87,6 @@ az vm show -g QueryDemo -n TestVM --query osProfile.linuxConfiguration.ssh.publi
 ]
 ```
 
-Чтобы получить несколько свойств, заключите список выражений, разделенных запятыми, в квадратные скобки — `[ ]` (__список из нескольких элементов__). Чтобы получить имя виртуальной машины, имя администратора и ключ SSH с помощью одной команды, введите ее в следующем виде:
-
-```azurecli-interactive
-az vm show -g QueryDemo -n TestVM --query '[name, osProfile.adminUsername, osProfile.linuxConfiguration.ssh.publicKeys[0].keyData]' -o json
-```
-
-```json
-[
-  "TestVM",
-  "azureuser",
-  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMobZNJTqgjWn/IB5xlilvE4Y+BMYpqkDnGRUcA0g9BYPgrGSQquCES37v2e3JmpfDPHFsaR+CPKlVr2GoVJMMHeRcMJhj50ZWq0hAnkJBhlZVWy8S7dwdGAqPyPmWM2iJDCVMVrLITAJCno47O4Ees7RCH6ku7kU86b1NOanvrNwqTHr14wtnLhgZ0gQ5GV1oLWvMEVg1YFMIgPRkTsSQKWCG5lLqQ45aU/4NMJoUxGyJTL9i8YxMavaB1Z2npfTQDQo9+womZ7SXzHaIWC858gWNl9e5UFyHDnTEDc14hKkf1CqnGJVcCJkmSfmrrHk/CkmF0ZT3whTHO1DhJTtV stramer@contoso"
-]
-```
-
-Эти значения включены в полученный массив в том порядке, в котором они были указаны в запросе. Поскольку результат имеет формат массива, значения не имеют соответствующих ключей.
-
 ## <a name="get-a-single-value"></a>Получение одного значения
 
 Часто нужно, чтобы команда CLI должна вернуть только _одно_ значение, например идентификатор ресурса Azure, имя ресурса, имя пользователя или пароль. При этом значение должно быть сохранено в локальной переменной. Чтобы получить одно свойство, сначала убедитесь, что вам удалось извлечь только одно свойство из запроса. В последнем примере показано, как получить только имя пользователя администратора:
@@ -137,6 +121,24 @@ azureuser
 ```
 
 См. подробнее о [формате выходных данных `tsv`](format-output-azure-cli.md#tsv-output-format).
+
+## <a name="get-multiple-values"></a>Получение нескольких значений
+
+Чтобы получить несколько свойств, заключите список выражений, разделенных запятыми, в квадратные скобки — `[ ]` (__список из нескольких элементов__). Чтобы получить имя виртуальной машины, имя администратора и ключ SSH с помощью одной команды, введите ее в следующем виде:
+
+```azurecli-interactive
+az vm show -g QueryDemo -n TestVM --query '[name, osProfile.adminUsername, osProfile.linuxConfiguration.ssh.publicKeys[0].keyData]' -o json
+```
+
+```json
+[
+  "TestVM",
+  "azureuser",
+  "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMobZNJTqgjWn/IB5xlilvE4Y+BMYpqkDnGRUcA0g9BYPgrGSQquCES37v2e3JmpfDPHFsaR+CPKlVr2GoVJMMHeRcMJhj50ZWq0hAnkJBhlZVWy8S7dwdGAqPyPmWM2iJDCVMVrLITAJCno47O4Ees7RCH6ku7kU86b1NOanvrNwqTHr14wtnLhgZ0gQ5GV1oLWvMEVg1YFMIgPRkTsSQKWCG5lLqQ45aU/4NMJoUxGyJTL9i8YxMavaB1Z2npfTQDQo9+womZ7SXzHaIWC858gWNl9e5UFyHDnTEDc14hKkf1CqnGJVcCJkmSfmrrHk/CkmF0ZT3whTHO1DhJTtV stramer@contoso"
+]
+```
+
+Эти значения включены в полученный массив в том порядке, в котором они были указаны в запросе. Поскольку результат имеет формат массива, значения не имеют соответствующих ключей.
 
 ## <a name="rename-properties-in-a-query"></a>Переименование свойств в запросе
 

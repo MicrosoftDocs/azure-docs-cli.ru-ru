@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: af20c31f6b387768e93158f1116b3f486f4aedfc
-ms.sourcegitcommit: 52f0a62892c68b5728090f1bfceef7a612104529
+ms.openlocfilehash: 923629d53983f7dbbd34bf7e79f28380a05937c2
+ms.sourcegitcommit: 5a29ce9c0a3d7b831f22b1a13b1ae2e239e5549f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68415166"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71144080"
 ---
 # <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
@@ -59,8 +59,8 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 2. Скачайте и установите ключ подписывания (Майкрософт):
 
     ```bash
-    curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
-        gpg --dearmor | \
+    curl -sL https://packages.microsoft.com/keys/microsoft.asc | 
+        gpg --dearmor | 
         sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
     ```
 
@@ -68,7 +68,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
     ```bash
     AZ_REPO=$(lsb_release -cs)
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | 
         sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
@@ -89,7 +89,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 Ниже описаны некоторые распространенные проблемы при установке с помощью `apt`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
 
-### <a name="lsbrelease-does-not-return-the-correct-base-distribution-version"></a>Команда lsb_release не возвращает правильную версию базового дистрибутива
+### <a name="lsb_release-does-not-return-the-correct-base-distribution-version"></a>Команда lsb_release не возвращает правильную версию базового дистрибутива
 
 Некоторые производные от Ubuntu или Debian дистрибутивы, например Linux Mint, могут возвращать неправильную версию при использовании команды `lsb_release`. Это значение используется при установке для определения устанавливаемого пакета. Если вы знаете кодовое имя версии Ubuntu или Debian, на основе которой создан ваш дистрибутив, можно установить значение параметра `AZ_REPO` вручную при [добавлении репозитория](#set-release). В противном случае найдите информацию о том, как определить кодовое имя основного дистрибутива, и задайте для `AZ_REPO` правильное значение.
 
@@ -155,7 +155,7 @@ Acquire {
    sudo rm /etc/apt/sources.list.d/azure-cli.list
    ```
 
-3. Удалите ключ подписывания:
+3. Если вы не используете другие пакеты от корпорации Майкрософт, удалите ключ подписывания.
 
     ```bash
     sudo rm /etc/apt/trusted.gpg.d/microsoft.asc.gpg

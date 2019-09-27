@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 2f8ec8e82a61f11ee58fe8e509d6e5febc7d226f
-ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
+ms.openlocfilehash: 2f572d3b59f01b22a70b7bde8a128c155dbd1a49
+ms.sourcegitcommit: 5a29ce9c0a3d7b831f22b1a13b1ae2e239e5549f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516226"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71144067"
 ---
 # <a name="install-azure-cli-on-macos"></a>Установка Azure CLI в macOS
 
@@ -22,7 +22,7 @@ ms.locfileid: "66516226"
 
 [!INCLUDE [current-version](includes/current-version.md)]
 
-## <a name="install"></a>Install
+## <a name="install-with-homebrew"></a>Установка с помощью Homebrew
 
 Homebrew — это самый простой способ управления установкой CLI. Это удобное средство установки, обновления и удаления,
 Если у вас в системе нет диспетчера пакетов homebrew, [установите его](https://docs.brew.sh/Installation.html), прежде чем продолжить.
@@ -35,7 +35,8 @@ brew update && brew install azure-cli
 
 > [!IMPORTANT]
 >
-> Работа Azure CLI в Homebrew зависит от пакета `python3`, потому он будет установлен в системе даже при наличии Python 2. Интерфейс Azure CLI гарантированно совместим с последней версией `python3`, опубликованной в Homebrew.
+> Azure CLI имеет зависимость с пакетом Homebrew `python3` и выполняет его установку.
+> Интерфейс Azure CLI гарантированно совместим с последней версией `python3`, опубликованной в Homebrew.
 
 Запустите Azure CLI с помощью команды `az`. Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).
 
@@ -74,7 +75,7 @@ brew link --overwrite python3
 * `https://formulae.brew.sh`
 * `https://homebrew.bintray.com`
 
-## <a name="update"></a>Блокировка изменений
+## <a name="update"></a>Обновление
 
 CLI регулярно обновляется для исправления ошибок, а также реализации улучшений, новых возможностей и функции предварительного просмотра. Новый выпуск выходит примерно раз в две недели. Обновите сведения о локальном репозитории, а затем — сам пакет `azure-cli`.
 

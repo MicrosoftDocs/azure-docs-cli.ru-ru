@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: bc3ae41ea04ae8d7f62242b2bfe415c8a3bfea33
-ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
+ms.openlocfilehash: 270be4c41bdb3c913e41ef1b2bb0c7c0b393aa20
+ms.sourcegitcommit: 5a29ce9c0a3d7b831f22b1a13b1ae2e239e5549f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516299"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71144024"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 
@@ -24,7 +24,7 @@ ms.locfileid: "66516299"
 
 [!INCLUDE [rpm-warning](includes/rpm-warning.md)]
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 
 1. Импортируйте ключ репозитория Майкрософт.
 
@@ -35,7 +35,12 @@ ms.locfileid: "66516299"
 2. Создайте сведения о локальном репозитории `azure-cli`.
 
    ```bash
-   sudo sh -c 'echo -e "[azure-cli]\nname=Azure CLI\nbaseurl=https://packages.microsoft.com/yumrepos/azure-cli\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+   sudo sh -c 'echo -e "[azure-cli]
+   name=Azure CLI
+   baseurl=https://packages.microsoft.com/yumrepos/azure-cli
+   enabled=1
+   gpgcheck=1
+   gpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
    ```
 
 3. Выполните установку с помощью команды `yum install`.
@@ -44,7 +49,7 @@ ms.locfileid: "66516299"
    sudo yum install azure-cli
    ```
 
-Запустите Azure CLI с помощью команды `az`. Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).
+Обновите Azure CLI с помощью команды `az`. Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 
@@ -74,7 +79,7 @@ proxy_password=[password] # Only required for basic auth
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
-## <a name="update"></a>Блокировка изменений
+## <a name="update"></a>Обновление
 
 Обновите Azure CLI, воспользовавшись командой `yum update`.
 
@@ -98,7 +103,7 @@ sudo yum update azure-cli
    sudo rm /etc/yum.repos.d/azure-cli.repo
    ```
 
-3. Если вы удалили сведения о репозитории, также удалите ключ подписи Microsoft GPG.
+3. Если вы не используете другие пакеты Майкрософт, удалите ключ подписывания.
 
    ```bash
    MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`

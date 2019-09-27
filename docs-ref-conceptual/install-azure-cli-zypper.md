@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: f8a3bec4fffb731c6521fa7b8a2a90798ef191e6
-ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
+ms.openlocfilehash: 84946fc0562e396ef296cbe8dede5e6a65cd6614
+ms.sourcegitcommit: 5a29ce9c0a3d7b831f22b1a13b1ae2e239e5549f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516242"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143957"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
@@ -24,7 +24,7 @@ ms.locfileid: "66516242"
 
 [!INCLUDE [rpm-warning](includes/rpm-warning.md)]
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 
 1. Установите `curl`:
 
@@ -75,7 +75,7 @@ ms.locfileid: "66516242"
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
-## <a name="update"></a>Блокировка изменений
+## <a name="update"></a>Обновление
 
 Можно обновить пакет, воспользовавшись командой `zypper update`.
 
@@ -100,7 +100,7 @@ sudo zypper update azure-cli
    sudo zypper removerepo azure-cli
    ```
 
-3. Если вы удалили сведения о репозитории, также удалите ключ подписи Microsoft GPG.
+3. Если вы не используете другие пакеты Майкрософт, удалите ключ подписывания (Майкрософт).
 
    ```bash
    MSFT_KEY=`rpm -qa gpg-pubkey /* --qf "%{version}-%{release} %{summary}\n" | grep Microsoft | awk '{print $1}'`

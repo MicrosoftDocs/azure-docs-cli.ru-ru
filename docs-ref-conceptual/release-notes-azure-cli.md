@@ -9,14 +9,68 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 727f9960ce60861bbe20a649606b807efb8d9cbc
-ms.sourcegitcommit: f30b67f48b956bdc281f1a5fae96e10120ee3bba
+ms.openlocfilehash: 1f829ba3d9ecdb158e96512bde5bcf1565cc205c
+ms.sourcegitcommit: 5b9b4446c08b94256ced7f63c145b493ba8b50df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70937101"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71217413"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="september-24-2019"></a>24 сентября 2019 г.
+
+Версия 2.0.74
+
+### <a name="acr"></a>ACR
+
+* В `acr config retention update` добавлен обязательный параметр `--type`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Переименованный параметр `--name -n` изменен на `--registry -r ` для группы команд `acr config`.
+
+### <a name="aks"></a>AKS
+
+* В команду `aks create` добавлен параметр `--load-balancer-sku`, позволяющий создать кластер AKS с SLB.
+* В команды `aks [create|update]` добавлены параметры `--load-balancer-managed-outbound-ip-count`, `--load-balancer-outbound-ips` и `--load-balancer-outbound-ip-prefixes`, позволяющие обновлять профиль подсистемы балансировки нагрузки у кластера AKS с SLB.
+* В команду `aks create` добавлен параметр `--vm-set-type`, позволяющий указывать типы виртуальных машин в кластере AKS.
+
+### <a name="arm"></a>ARM
+
+* В команду `group deployment create` добавлен параметр `--handle-extended-json-format`, для поддержки многострочности и комментариев в шаблоне JSON.
+
+### <a name="compute"></a>Службы вычислений
+
+* В команды `vmss [create|update]` добавлен параметр `--terminate-notification-time`, поддерживающий завершение настройки запланированных событий.
+* В команду `vmss update` добавлен параметр `--enable-terminate-notification`, поддерживающий завершение настройки запланированных событий.
+* В команды `[vm|vmss] create` добавлены параметры `--priority,`, `--eviction-policy,` и `--max-billing`.
+* Изменена команда `disk create`, которая теперь позволяет указать точный размер отправки на диск.
+* В `snapshot create` добавлена поддержка добавочных моментальных снимков для управляемых дисков.
+
+### <a name="cosmos-db"></a>Cosmos DB
+
+* В команду `cosmosdb keys list` добавлен параметр `--type <key-type>` для отображения ключей, ключей только для чтения или строк подключения.
+* Добавлена команда `cosmosdb keys regenerate`.
+* [УСТАРЕЛО] Команды `cosmosdb list-connection-strings`, `cosmosdb regenerate-key` и `cosmosdb list-read-only-keys` больше не поддерживаются.
+
+### <a name="eventgrid"></a>Сетка событий
+
+* Исправлен текст справки по конечной точке — дана ссылка на правильный параметр.
+
+### <a name="key-vault"></a>Key Vault
+
+* Исправлена проблема, из-за которой вход с помощью клиента (`login -t`) мог приводить к сбою `keyvault create`.
+
+### <a name="monitor"></a>Мониторинг
+
+* Исправлена проблема с тем, что символ `:` являлся недопустимым в аргументе `--condition` для `monitor metrics alert create`.
+
+### <a name="policy"></a>Политика
+
+* Добавлена поддержка API Политики версии 2019-06-01.
+* В команду `policy assignment create` добавлен параметр `--enforcement-mode`.
+
+### <a name="storage"></a>Хранилище
+
+* В команду `az storage copy` добавлен параметр `--blob-type`.
 
 ## <a name="september-10-2019"></a>10 сентября 2019 г.
 
@@ -71,7 +125,7 @@ ms.locfileid: "70937101"
 
 ### <a name="acr"></a>ACR
 
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Прекращена поддержка SKU `classic`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Прекращена поддержка SKU `classic`.
 
 ### <a name="api-management"></a>Управление API
 
