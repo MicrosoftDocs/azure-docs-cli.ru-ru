@@ -8,12 +8,12 @@ ms.date: 02/15/2019
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 6d88400b8d7070cf2f9dba2f3e124edfe2e3163d
-ms.sourcegitcommit: e06d34682710e77840b0c51f4718184101bd8a03
+ms.openlocfilehash: 45374a29c45d8e9fa2d39aebf2d9bab556ef3b50
+ms.sourcegitcommit: b42ce26476b135bb2047c8d9d787580c858f8b6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67527326"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72163836"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
@@ -99,10 +99,10 @@ __Обязательно__ скопируйте сертификат в безо
 * `--show-mine` — запрашивает только те субъекты-службы, которые были созданы пользователем, вошедшим в систему.
 * `--filter` — выполняет фильтрацию _на стороне сервера_ с использованием фильтра OData. Мы рекомендуем использовать этот метод, а не фильтрацию на стороне клиента с указанием аргумента CLI `--query`. Дополнительные сведения о фильтрах OData см. в статье [Синтаксис выражений OData для предложений фильтрации и упорядочивания в службе "Поиск Azure"](/rest/api/searchservice/odata-expression-syntax-for-azure-search).
 
-Для объектов субъектов-служб возвращаются подробные сведения. Чтобы получить только те сведения, которые нужны для входа, используйте строку запроса `[].{"id":"appId", "tenant":"appOwnerTenantId"}`. Например, чтобы получить сведения для входа ото всех субъектов-служб, созданных пользователем, вошедшим в систему, выполните команду:
+Для объектов субъектов-служб возвращаются подробные сведения. Чтобы получить только те сведения, которые нужны для входа, используйте строку запроса `[].{id:appId, tenant:appOwnerTenantId}`. Например, чтобы получить сведения для входа ото всех субъектов-служб, созданных пользователем, вошедшим в систему, выполните команду:
 
 ```azurecli-interactive
-az ad sp list --show-mine --query '[].{"id":"appId", "tenant":"appOwnerTenantId"}'
+az ad sp list --show-mine --query "[].{id:appId, tenant:appOwnerTenantId}"
 ```
 
 > [!IMPORTANT]
