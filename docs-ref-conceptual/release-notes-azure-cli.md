@@ -4,19 +4,78 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 09/05/2019
+ms.date: 10/15/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 1f829ba3d9ecdb158e96512bde5bcf1565cc205c
-ms.sourcegitcommit: 5b9b4446c08b94256ced7f63c145b493ba8b50df
+ms.openlocfilehash: 32137c5e6ef403461114b0e09970f93c9248c100
+ms.sourcegitcommit: 69f52b032167a01509fdf15431e3e4e89a7e20ef
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71217413"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72324019"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="october-15-2019"></a>15 октября 2019 г.
+
+Версия 2.0.75
+
+### <a name="aks"></a>AKS
+
+* Для параметра `--load-balancer-sku` изменено значение по умолчанию на `standard`, если поддерживается версией AKS.
+* Для параметра `--vm-set-type` изменено значение по умолчанию на `virtualmachinescalesets`, если поддерживается версией AKS.
+
+### <a name="ams"></a>AMS
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Имя `job start` изменено на `job create`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] В параметре `--ask` команды `content-key-policy create` вместо кодировки UTF8 теперь используется шестнадцатеричная строка из 32 символов.
+
+### <a name="appservice"></a>AppService
+
+* Добавлены команды `webapp config access-restriction show|set|add|remove`.
+* Улучшена обработка ошибок в `webapp up`.
+* Для `appservice plan update` добавлена поддержка номера SKU `Isolated`.
+
+### <a name="arm"></a>ARM
+
+* В `deployment create` добавлен параметр `--handle-extended-json-format` для поддержки многострочности и комментариев в шаблоне JSON.
+
+### <a name="compute"></a>Службы вычислений
+
+* Добавлен параметр `--enable-agent` для команды `vm create`.
+* Внесены изменения в `vm create`, позволяющие автоматически использовать номер SKU "Стандартный" для общедоступных IP-адресов при использовании зон.
+* Внесены изменения в `vm create`, позволяющие автоматически создавать допустимое имя для виртуальной машины, если оно не задано.
+* В `vmss create` добавлен параметр `--computer-name-prefix` для поддержки пользовательского префикса имени для виртуальных машин в VMSS.
+* В `vm create` добавлен параметр `--workspace` для автоматического включения рабочей области Log Analytics.
+* API коллекций обновлен до версии 2019-07-01.
+
+### <a name="core"></a>Core
+
+* Добавлена проверка синтаксиса для параметра `--set` в универсальной команде обновления.
+
+### <a name="iot"></a>Интернет вещей
+
+* Исправлена проблема, при которой `iot hub show` неправильно выдавал ошибку "Ресурс не найден".
+
+### <a name="monitor"></a>Мониторинг
+
+* В `monitor log-analytics workspace` добавлена поддержка CRUD.
+
+### <a name="network"></a>Сеть
+
+* В `network private-dns link vnet [create|update]` добавлена поддержка виртуального канала для клиентов.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Для `network vnet subnet list` теперь требуются параметры `--resource-group` и `--vnet-name`.
+
+### <a name="sql"></a>SQL
+
+* В `sql mi ad-admin` добавлены команды, которые поддерживают назначение администратора AAD в управляемых экземплярах.
+
+### <a name="storage"></a>Хранилище
+
+* В `storage copy` добавлен параметр `--preserve-s2s-access-tier`, позволяющий сохранить уровень доступа во время копирования между службами.
+* В `storage account [create|update]` добавлен параметр `--enable-large-file-share` для поддержки общих папок большого размера в учетной записи хранения.
 
 ## <a name="september-24-2019"></a>24 сентября 2019 г.
 
