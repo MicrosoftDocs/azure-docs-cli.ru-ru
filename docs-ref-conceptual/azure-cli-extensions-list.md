@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 10/17/2019
+ms.date: 10/22/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 354b9f4e114ca6d95ff50d0ee8d3f3c06b852435
-ms.sourcegitcommit: e99b39e2f14a38c9bcae1b2b5921c6d8b464ef31
+ms.openlocfilehash: e32ef6b1623c4fb64c31111e4b237fd8997f5d5f
+ms.sourcegitcommit: 269eb3589059c145c3fef0b723a72b5a25feb71c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72549677"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72783677"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -67,4 +67,5 @@ az extension list-available --output table
 | [virtual-network-tap](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-network-tap) | 0.1.0 | Управление точками доступа к виртуальным сетям (VTAP). | Yes |
 | [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.1.0 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Yes |
 | [vm-repair](https://github.com/Azure/azure-cli-extensions/tree/master/src/vm-repair) | 0.2.2 | Команды автоматического восстановления для исправления виртуальных машин. |  |
+| [vmware-cs](https://github.com/Azure/az-vmware-cli) | 0.1.0 | Управление решением Azure VMware. | Yes |
 | [webapp](https://github.com/Azure/azure-cli-extensions/tree/master/src/webapp) | 0.2.24 | Дополнительные команды для Службы приложений Azure. | Yes |
