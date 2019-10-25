@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 10/12/2019
+ms.date: 10/17/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 6b21ec098fb39611f62161a4b562242ad90d1e7c
-ms.sourcegitcommit: 69f52b032167a01509fdf15431e3e4e89a7e20ef
+ms.openlocfilehash: 354b9f4e114ca6d95ff50d0ee8d3f3c06b852435
+ms.sourcegitcommit: e99b39e2f14a38c9bcae1b2b5921c6d8b464ef31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72324060"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72549677"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -35,7 +35,7 @@ az extension list-available --output table
 | [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.1 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Yes |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 5.0.0 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.8.3 | Предоставление уровня команд плоскости данных для Центра Интернета вещей Azure, IoT Edge и службы подготовки устройств к добавлению в Центр Интернета вещей. |  |
-| [azure-cli-ml](https://docs.microsoft.com/azure/machine-learning/service/) | 1.0.65 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
+| [azure-cli-ml](https://docs.microsoft.com/azure/machine-learning/service/) | 1.0.69 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
 | [azure-devops](https://github.com/Microsoft/azure-devops-cli-extension) | 0.13.0 | Инструменты для управления Azure DevOps. |  |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.1.3 | Управление ресурсами Брандмауэра Azure. | Yes |
 | [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.13 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Yes |
@@ -48,7 +48,8 @@ az extension list-available --output table
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.1 | Управление пользовательскими каналами ExpressRoute с использованием перекрестного подключения ExpressRoute. |  |
 | [find](https://github.com/Azure/azure-cli-extensions/tree/master/src/find) | 0.3.0 | Интеллектуальный запрос для получения сведений CLI. | Yes |
 | [front-door](https://github.com/Azure/azure-cli-extensions/tree/master/src/front-door) | 1.0.1 | Управление сетевыми службами Front Door. |  |
-| [healthcareapis](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Расширение программы командной строки Microsoft Azure HealthCareApis | Yes |
+| [hack](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение программ командной строки Microsoft Azure для взлома | Yes |
+| [healthcareapis](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | Расширение программы командной строки Microsoft Azure HealthCareApis |  |
 | [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.2.1 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
 | [интерактивный](https://github.com/Azure/azure-cli) | 0.4.3 | Интерактивная оболочка командной строки Microsoft Azure | Yes |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Yes |

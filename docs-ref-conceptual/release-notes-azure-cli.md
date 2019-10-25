@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 32137c5e6ef403461114b0e09970f93c9248c100
-ms.sourcegitcommit: 69f52b032167a01509fdf15431e3e4e89a7e20ef
+ms.openlocfilehash: 0eb1ccccdeff8c3d9b97167ee74f3380d983a552
+ms.sourcegitcommit: e99b39e2f14a38c9bcae1b2b5921c6d8b464ef31
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72324019"
+ms.lasthandoff: 10/17/2019
+ms.locfileid: "72549699"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
@@ -721,7 +721,7 @@ ms.locfileid: "72324019"
 * Добавлены параметры `--protect-from-scale-in` и `--protect-from-scale-set-actions` для `vmss update`, чтобы включать обновления политики защиты для экземпляров виртуальных машин из Масштабируемого набора виртуальных машин.
 * Добавлены параметры `--instance-id` для `vmss update` для включения общего обновления экземпляров виртуальных машин из Масштабируемого набора виртуальных машин.
 * Добавлен параметр `--instance-id` для команды `vmss wait`.
-* Добавлена новая группа команд `ppg` для управления группами размещения близкого расположения.
+* Добавлена новая группа команд `ppg` для управления группами размещения близкого взаимодействия.
 * Добавлен параметр `--ppg` для `[vm|vmss] create` и `vm availability-set create` для управления PPG.
 * Добавлен параметр `--hyper-v-generation` для команды `image create`.
 
