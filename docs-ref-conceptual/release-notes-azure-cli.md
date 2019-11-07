@@ -4,19 +4,129 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 10/15/2019
+ms.date: 11/04/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 0eb1ccccdeff8c3d9b97167ee74f3380d983a552
-ms.sourcegitcommit: e99b39e2f14a38c9bcae1b2b5921c6d8b464ef31
+ms.openlocfilehash: 3061d4b5519cfafbde92df68ecdee4d88d0bddff
+ms.sourcegitcommit: b854f9b6acfdb814ba1d6ba87aac03e2d547d998
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72549699"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73536789"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="november-4-2019"></a>4 ноября 2019 г.
+
+Версия 2.0.76
+
+### <a name="acr"></a>ACR
+
+* В команду `az acr pack build` добавлен параметр предварительной версии `--pack-image-tag`.
+* Поддерживается включение аудита при создании реестра.
+* Поддерживается функция RBAC, распространяющаяся на репозиторий.
+
+### <a name="aks"></a>AKS
+
+* В команду `az aks create` добавлены `--enable-cluster-autoscaler`, `--min-count` и `--max-count`, что позволяет автоматически масштабировать кластер для пула узлов.
+* Добавлены указанные выше флаги, а также `--update-cluster-autoscaler` и `--disable-cluster-autoscaler` в команду `az aks update`, что позволяет обновлять средство автоматического масштабирования кластера.
+
+### <a name="appconfig"></a>AppConfig
+
+* Добавлена группа команд функции appconfig для управления флагами функций, хранимыми в Конфигурации приложений.
+* Исправлена незначительная ошибка команды экспорта в файл appconfig kv. Прерывание чтения содержимого конечного файла во время экспорта.
+
+### <a name="appservice"></a>AppService
+
+* `az appservice plan create`: Добавлена поддержка определения persitescaling при создании плана appservice.
+* Исправлена проблема, из-за которой операция webapp config ssl bind удаляла существующие теги из ресурса.
+* Добавлен флаг `--build-remote` для `az functionapp deployment source config-zip` для включения поддержки действия удаленной сборки во время развертывания приложения-функции.
+* Изменена версия узла по умолчанию для приложений-функций на ~10 для Windows
+* В `az functionapp create` добавлено свойство `--runtime-version`.
+
+### <a name="arm"></a>ARM
+
+* `az deployment/group deployment validate`: В `--handle-extended-json-format` добавлен параметр для включения поддержки многострочности и комментариев в шаблоне JSON при развертывании.
+* Версия azure-mgmt-resource обновлена до 2019-07-01.
+
+### <a name="backup"></a>Azure Backup
+
+* Добавлена поддержка резервного копирования AzureFiles.
+
+### <a name="compute"></a>Службы вычислений
+
+* `az vm create`: Добавлено предупреждение при одновременном определении ускоренной сети и существующей сетевой карты.
+* `az vm create`: Добавлен параметр `--vmss` для определения существующего масштабируемого набора виртуальных машин, которому должна быть назначена виртуальная машина.
+* `az vm/vmss create`: Добавлена локальная копия файла псевдонима изображения, к которой можно получить доступ в ограниченной сетевой среде.
+* `az vmss create`: Добавлен параметр `--orchestration-mode` для определения того, как виртуальные машины управляются масштабируемым набором.
+* `az vm/vmss update`: Добавлен параметр `--ultra-ssd-enabled`, чтобы разрешить обновление параметра Ultra SSD.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az vm extension set` Исправлена ошибка, из-за которой пользователям не удавалось определять расширение на виртуальной машине с использованием `--ids`.
+* Добавлены новые команды `az vm image terms accept/cancel/show` для управления условиями использования образов Azure Marketplace.
+* Расширение VMAccessForLinux обновлено до версии 1.5.
+
+### <a name="cosmosdb"></a>Cosmos DB
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az sql container create` `--partition-key-path` изменен на обязательный параметр.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az gremlin graph create` `--partition-key-path` изменен на обязательный параметр.
+* `az sql container create`: Добавлены команды `--unique-key-policy` и `--conflict-resolution-policy`.
+* `az sql container create/update`: Обновлена схема `--idx` по умолчанию.
+* `gremlin graph create`: Добавлена команда `--conflict-resolution-policy`.
+* `gremlin graph create/update`: Обновлена схема `--idx` по умолчанию.
+* Исправлена опечатка в справочном сообщении.
+* База данных: добавлены сведения об устаревании.
+* Коллекция: добавлены сведения об устаревании.
+
+### <a name="iot"></a>Интернет вещей
+
+* Добавлен новый тип источника маршрутизации: DigitalTwinChangeEvents.
+* Добавлены отсутствующие компоненты в `az iot hub create`.
+
+### <a name="key-vault"></a>Key Vault
+
+* Исправлена непредвиденная ошибка с отсутствием файла сертификата.
+* Исправлена ошибка с неработающей командой `az keyvault recover/purge`.
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* Пакет azure-mgmt-netapp обновлен до версии 0.6.0 для включения поддержки API версии 2019-07-01. Эта новая версия API включает:
+
+    - При создании тома с использованием `--protocol-types` допускается NFSv4.1 вместо NFSv4.
+    - Свойство политики экспорта томов теперь называется nfsv41, а не nfsv4.
+    - Параметр `--creation-token` для тома переименован в `--file-path`.
+    - Дата создания моментального снимка теперь имеет значение Created.
+
+### <a name="network"></a>Сеть
+
+* `az network private-dns link vnet create/update`: Добавлена поддержка связывания виртуальных сетей между клиентами.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az network vnet subnet list`: Параметры `--resource-group` и `--vnet-name` теперь являются обязательными.
+* `az network public-ip prefix create`: Добавлена поддержка определения версии IP-адреса (IPv4, IPv6) при создании.
+* Версия azure-mgmt-network обновлена до 7.0.0 и версия api-version до 2019-09-01.
+* `az network vrouter`: Добавлена поддержка нового виртуального маршрутизатора службы и пиринга виртуальных маршрутизаторов.
+* `az network express-route gateway connection`: Добавлена поддержка `--internet-security`.
+
+### <a name="profile"></a>Профиль
+
+* Исправлена ошибка с неработающей командой `az account get-access-token --resource-type ms-graph`.
+* Удалено предупреждение из `az login`.
+
+### <a name="rbac"></a>RBAC
+
+* Исправление `az ad app update --id {} --display-name {}` не работает.
+
+### <a name="servicefabric"></a>Service Fabric
+
+* `az sf cluster create`: Исправлена проблема путем изменения VMSS для вычислений с использованием файла template.json для Service Fabric Linux и Windows со стандартных дисков на управляемые.
+
+### <a name="sql"></a>SQL
+
+* Добавлены параметры `--compute-model`, `--auto-pause-delay` и `--min-capacity` для включения поддержки операций CRUD для нового предложения Базы данных SQL: Модель бессерверных вычислений.
+
+### <a name="storage"></a>Хранилище
+
+* `az storage account create/update`: Добавлен параметр --enable-files-adds и группа аргументов свойств Azure Active Directory для включения поддержки аутентификации доменных служб Azure Active Directory для Файлов Azure.
+* Расширена команда `az storage account keys list/renew` для включения поддержки перечисления или повторного создания ключей Kerberos для учетной записи хранения.
 
 ## <a name="october-15-2019"></a>15 октября 2019 г.
 
