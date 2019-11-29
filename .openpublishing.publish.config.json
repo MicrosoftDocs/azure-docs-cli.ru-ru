@@ -5,7 +5,7 @@
       "docset_name": "azure-cli-docs",
       "build_source_folder": ".",
       "build_output_subfolder": "cli/azure",
-      "locale": "ru-RU",
+      "locale": "ru-ru",
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -33,7 +33,7 @@
   "branches_to_filter": [
     "live"
   ],
-  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/azure-docs-cli.ru-RU",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/azure-docs-cli.ru-ru",
   "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
@@ -44,7 +44,7 @@
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.ru-RU",
+      "url": "https://github.com/Microsoft/templates.docs.msft.ru-ru",
       "branch": "master",
       "branch_mapping": {}
     },
@@ -65,7 +65,7 @@
     }
   ],
   "branch_target_mapping": {
-    "live": [
+    "live-sxs": [
       "Publish",
       "Pdf"
     ]
