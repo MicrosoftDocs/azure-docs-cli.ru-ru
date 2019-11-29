@@ -4,19 +4,130 @@ description: Узнайте о последних обновлениях в Azur
 author: sptramer
 ms.author: sttramer
 manager: carmonm
-ms.date: 11/04/2019
+ms.date: 11/26/2019
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 3061d4b5519cfafbde92df68ecdee4d88d0bddff
-ms.sourcegitcommit: b854f9b6acfdb814ba1d6ba87aac03e2d547d998
+ms.openlocfilehash: 75a3a3ee800edc20bd1c8ed7ab1ff542f5935c6c
+ms.sourcegitcommit: 443e14098d6643cdb2e178847d1c79b1b95146ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73536789"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74543465"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="november-26-2019"></a>26 ноября 2019 г.
+
+Версия 2.0.77
+
+### <a name="acr"></a>ACR
+
+* Устарел флаг `--branch` параметра, используемый при обновлении или создании задачи ACR.
+
+### <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
+
+* Добавлен флаг `--workspace-resource-id` для создания кластера Azure Red Hat Openshift с мониторингом.
+* Добавлен флаг `monitor_profile` для создания кластера Azure Red Hat OpenShift с мониторингом.
+
+### <a name="aks"></a>AKS
+
+* Включена поддержка операции смены сертификата кластера с использованием команды az aks rotate-certs.
+
+### <a name="appconfig"></a>AppConfig
+
+* Включена поддержка использования символа ":" для разделителя `as az appconfig kv import`.
+* Исправлена проблема с перечислением значений ключей с несколькими метками, включая метку NULL. 
+* Обновлен пакет SDK для плоскости управления, azure-mgmt-appconfiguration, до версии 0.3.0. 
+
+### <a name="appservice"></a>AppService
+
+* Исправлена ошибка № 11100. Использование AttributeError для az webapp up при создании плана службы.
+* az webapp up. При принудительном создании или развертывании сайта для поддерживаемых языков значения по умолчанию не используются.
+* Включена поддержка Среды службы приложений: az appservice ase show | list | list-addresses | list-plans | create | update | delete.
+
+### <a name="backup"></a>Azure Backup
+
+* Исправлена проблема в команде az backup policy list-associated-items. Добавлен необязательный параметр BackupManagementType.
+
+### <a name="compute"></a>Службы вычислений
+
+* Обновлена версия API вычислений, дисков, моментальных снимков до 2019-07-01.
+* vmss create. Улучшение для --orchestration-mode.
+* sig image-definition create. Добавлен параметр --os-state для указания того, являются ли виртуальные машины, созданные в этом образе, универсальными или специализированными.
+* sig image-definition create. Добавлен параметр --hyper-v-generation для указания создания гипервизора.
+* sig image-version create. Включена поддержка параметров --os-snapshot и --data-snapshots.
+* image create. Включена поддержка параметра --data-disk-caching для указания параметра кэширования для дисков данных.
+* Обновлена версия пакета SDK для вычислений Python до 10.0.0.
+* vm/vmss create. Добавлен фрагмент Spot в свойство перечисления Priority.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименование параметра --max-billing в --max-price для виртуальных машин и Масштабируемых наборов виртуальных машин в соответствии с командлетами Swagger и PowerShell.
+* vm monitor log show. Включена поддержка запроса журналов в связанной рабочей области Log Analytics.
+
+### <a name="iot"></a>Интернет вещей
+
+* Исправление № 2531. Добавлены вспомогательные аргументы для обновления концентратора.
+* Исправление № 8323. Добавлены недостающие параметры для создания пользовательской конечной точки хранилища.
+* Исправлена ошибка регрессии. Отменены изменения, переопределяющие конечную точку хранилища по умолчанию.
+
+### <a name="key-vault"></a>Key Vault
+
+* Исправление № 11121. При использовании `az keyvault certificate list` для передачи `--include-pending` теперь не требуется значение `true` или `false`.
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* Обновлена версия azure-mgmt-netapp до 0.7.0, которая включает некоторые дополнительные свойства тома, связанные с предстоящими операциями репликации.
+
+### <a name="network"></a>Сеть
+
+* application-gateway waf-config. Не рекомендуется использовать.
+* application-gateway waf-policy. Добавлены управляемые правила подгрупп для контроля управляемых наборов правил и правил исключения.
+* application-gateway waf-policy. Добавлен параметр политики подгруппы для управления глобальной конфигурацией политики WAF.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] application-gateway waf-policy. Переименовано правило подгруппы в пользовательское правило.
+* application-gateway http-listener. Добавлен параметр --firewall-policy при создании.
+* application-gateway url-path-map rule. Добавлен параметр --firewall-policy при создании.
+
+### <a name="packaging"></a>Упаковка
+
+* Удалена команда az wrapper в Python.
+* Включена поддержка Python 3.8.
+* Изменена версия на Python 3 для пакета RPM.
+
+### <a name="profile"></a>Профиль
+
+* Исправлена ошибка при выполнении `az login -u {} -p {}` с учетной записью Майкрософт.
+* Исправлена ошибка с `SSLError` при выполнении `az login` за прокси-сервером с самозаверяющим корневым сертификатом.
+* Исправлена ошибка № 10578. `az login` зависает при одновременном запуске нескольких экземпляров в Windows или WSL.
+* Исправлена ошибка № 11059. Сбой выполнения `az login --allow-no-subscriptions`, если в клиенте есть подписки.
+* Исправлена ошибка № 11238. После переименования подписки вход с помощью MSI приведет к тому, что одна и та же подписка появится дважды.
+
+### <a name="rbac"></a>RBAC
+
+* Исправлена ошибка № 10996. Исправлена ошибка с `--force-change-password-next-login` в `az ad user update`, если `--password` не указывается.
+
+### <a name="redis"></a>Redis
+
+* Исправлена ошибка № 2902. Предотвращена настройка конфигураций памяти при обновлении кэша с номером SKU "Базовый".
+
+### <a name="reservations"></a>Резервирование
+
+* Обновлена версия пакета SDK до 0.6.0
+* Добавлены сведения о плане выставления счетов после вызова Get-Catalogs.
+* Добавлена новая команда `az reservations reservation-order calculate` для вычисления стоимости резервирования.
+* Добавлена новая команда `az reservations reservation-order purchase` для приобретения нового резервирования.
+
+### <a name="rest"></a>Rest
+* Изменена версия `az rest` на общедоступную.
+
+### <a name="sql"></a>SQL
+
+* Обновлена версия azure-mgmt-sql до 0.15.0.
+
+### <a name="storage"></a>Хранилище
+
+* storage account create. Добавлен параметр --enable-hierarchical-namespace для включения поддержки семантики файловой системы в службе больших двоичных объектов.
+* Удалено несвязанное исключение из сообщения об ошибке.
+* Исправлены проблемы, из-за которых появлялось неверное сообщение об отсутствии нужных разрешений на выполнение требуемой операции при блокировке правилами сети (AuthenticationFailed).
 
 ## <a name="november-4-2019"></a>4 ноября 2019 г.
 
@@ -25,8 +136,8 @@ ms.locfileid: "73536789"
 ### <a name="acr"></a>ACR
 
 * В команду `az acr pack build` добавлен параметр предварительной версии `--pack-image-tag`.
-* Поддерживается включение аудита при создании реестра.
-* Поддерживается функция RBAC, распространяющаяся на репозиторий.
+* Добавлена поддержка включения аудита при создании реестра.
+* Включена поддержка функции RBAC, распространяющаяся на репозиторий.
 
 ### <a name="aks"></a>AKS
 
@@ -101,10 +212,10 @@ ms.locfileid: "73536789"
 
 * `az network private-dns link vnet create/update`: Добавлена поддержка связывания виртуальных сетей между клиентами.
 * [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az network vnet subnet list`: Параметры `--resource-group` и `--vnet-name` теперь являются обязательными.
-* `az network public-ip prefix create`: Добавлена поддержка определения версии IP-адреса (IPv4, IPv6) при создании.
+* `az network public-ip prefix create`: Включена поддержка определения версии IP-адреса (IPv4, IPv6) при создании.
 * Версия azure-mgmt-network обновлена до 7.0.0 и версия api-version до 2019-09-01.
-* `az network vrouter`: Добавлена поддержка нового виртуального маршрутизатора службы и пиринга виртуальных маршрутизаторов.
-* `az network express-route gateway connection`: Добавлена поддержка `--internet-security`.
+* `az network vrouter`: Включена поддержка нового виртуального маршрутизатора службы и пиринга виртуальных маршрутизаторов.
+* `az network express-route gateway connection`: Добавлена поддержка параметра `--internet-security`.
 
 ### <a name="profile"></a>Профиль
 
@@ -260,8 +371,8 @@ ms.locfileid: "73536789"
 ### <a name="batch"></a>Пакетная служба Azure
 
 * Добавлены новые параметры конфигурации JSON в `--json-file` для `batch pool create`:
-  * Добавлен параметр `MountConfigurations` для подключений файловой системы (дополнительные сведения см. в разделе https://docs.microsoft.com/en-us/rest/api/batchservice/pool/add#request-body ).
-  * Добавлено необязательное свойство `publicIPs` в `NetworkConfiguration` для общедоступных IP-адресов в пулах (дополнительные сведения см. в разделе https://docs.microsoft.com/en-us/rest/api/batchservice/pool/add#request-body ).
+  * Добавлен параметр `MountConfigurations` для подключений файловой системы (дополнительные сведения см. в разделе https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body ).
+  * Добавлено необязательное свойство `publicIPs` в `NetworkConfiguration` для общедоступных IP-адресов в пулах (дополнительные сведения см. в разделе https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body ).
 * В `--image` добавлена поддержка коллекций общих образов.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию для `--start-task-wait-for-success` в `batch pool create` изменено на `true`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию для `Scope` в `AutoUserSpecification` задано как Pool (ранее `Task` на узлах Windows и `Pool` на узлах Linux).

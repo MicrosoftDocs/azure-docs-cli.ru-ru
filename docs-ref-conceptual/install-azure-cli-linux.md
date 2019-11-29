@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 13edb9954678aca627529714aeee02062c720219
-ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
+ms.openlocfilehash: caca30ec186f302e47f2978b9bfe616d4b2a5c02
+ms.sourcegitcommit: 443e14098d6643cdb2e178847d1c79b1b95146ce
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66516304"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74543640"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 
@@ -35,7 +35,7 @@ ms.locfileid: "66516304"
 
 > [!IMPORTANT]
 >
-> Интерфейс CLI также совместим с Python 2.7.x, поддержка которого прекращается 1 января 2020 г. Поэтому мы рекомендуем установить для CLI Python 3.
+> Интерфейс CLI также совместим с Python 2.7.x, поддержка которого прекращается 1 января 2020 г. В следующей версии Azure CLI поддержка Python 2.7 будет прекращена. Поэтому мы рекомендуем установить для CLI Python 3. 
 
 ## <a name="install-or-update"></a>Установка или обновление
 
