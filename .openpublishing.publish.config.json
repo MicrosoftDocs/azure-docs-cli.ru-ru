@@ -8,7 +8,7 @@
       "docset_name": "azure-cli-docs",
       "build_source_folder": ".",
       "build_output_subfolder": "cli/azure",
-      "locale": "ru-RU",
+      "locale": "ru-ru",
       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
@@ -38,16 +38,42 @@
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
   "git_repository_branch_open_to_public_contributors": "live",
-  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/azure-docs-cli.ru-RU",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/azure-docs-cli.ru-ru",
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.ru-RU",
+      "url": "https://github.com/Microsoft/templates.docs.msft.ru-ru",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_themes.pdf",
+      "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
+      "branch": "master",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "_repo.en-us",
+      "url": "https://github.com/MicrosoftDocs/azure-docs-cli",
+      "branch": "live",
+      "branch_mapping": {
+        "live": "live",
+        "master": "master"
+      }
     }
   ],
-  "need_generate_pdf_url_template": false,
+  "branch_target_mapping": {
+    "live-sxs": [
+      "Publish",
+      "Pdf"
+    ]
+  },
+  "need_generate_pdf_url_template": true,
+  "targets": {
+    "pdf": {
+      "template_folder": "_themes.pdf"
+    }
+  },
   "dependent_packages": [
     {
       "id": "opbuild.templates.uref",
