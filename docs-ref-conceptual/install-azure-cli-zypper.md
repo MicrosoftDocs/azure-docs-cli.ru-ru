@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 84946fc0562e396ef296cbe8dede5e6a65cd6614
-ms.sourcegitcommit: 5a29ce9c0a3d7b831f22b1a13b1ae2e239e5549f
+ms.openlocfilehash: 7e5897fe545527aa2708432e0ad0cf626584c785
+ms.sourcegitcommit: 0088160bdb1ea520724d3e1efe71a4a66f29753d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143957"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75216890"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
-Для дистрибутивов Linux, использующих `zypper`, например openSUSE или SLES, доступен пакет Azure CLI. Этот пакет протестирован с openSUSE версии 42.2 и выше и SLES версии 12 с пакетом обновления 2 и выше.
+Для дистрибутивов Linux, использующих `zypper`, например openSUSE или SLES, доступен пакет Azure CLI. Этот пакет протестирован с openSUSE Leap 15.1 и SLES 15.
 
 [!INCLUDE [current-version](includes/current-version.md)]
 
@@ -60,6 +60,26 @@ ms.locfileid: "71143957"
 
 Ниже описаны некоторые распространенные проблемы при установке с помощью `zypper`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
 
+### <a name="install-on-sles-12-or-other-other-systems-without-python-36"></a>Установка в SLES 12 или других системах без Python 3.6
+
+В SLES 12 пакет python3 по умолчанию теперь имеет версию 3.4 и не поддерживается в Azure CLI. Сначала можно создать более позднюю версию python3 из источника. Затем можно скачать пакет Azure CLI и установить его без зависимости.
+```bash
+$ sudo zypper install -y gcc gcc-c++ make ncurses patch wget tar zlib-devel zlib
+# Download Python source code
+$ PYTHON_VERSION="3.6.9"
+$ PYTHON_SRC_DIR=$(mktemp -d)
+$ wget -qO- https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz | tar -xz -C "$PYTHON_SRC_DIR"
+# Build Python
+$ $PYTHON_SRC_DIR/*/configure --with-ssl
+$ make
+$ sudo make install
+#Download azure-cli package 
+$ AZ_VERSION=$(zypper --no-refresh info azure-cli |grep Version | awk -F': ' '{print $2}' | awk '{$1=$1;print}')
+$ wget https://packages.microsoft.com/yumrepos/azure-cli/azure-cli-$AZ_VERSION.x86_64.rpm
+#Install without dependency
+$ sudo rpm -ivh --nodeps azure-cli-$AZ_VERSION.x86_64.rpm
+```
+
 ### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
@@ -75,7 +95,7 @@ ms.locfileid: "71143957"
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
-## <a name="update"></a>Обновление
+## <a name="update"></a>Update
 
 Можно обновить пакет, воспользовавшись командой `zypper update`.
 
@@ -107,7 +127,7 @@ sudo zypper update azure-cli
    sudo rpm -e --allmatches gpg-pubkey-$MSFT_KEY
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Теперь вы можете пользоваться Azure CLI. Просмотрите общие сведения о его возможностях и список распространенных команд.
 

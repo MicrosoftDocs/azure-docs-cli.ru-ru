@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 14f51e068c4d2b332b0de93406822e148d734701
-ms.sourcegitcommit: 032f35d553754fbac78b218259a8d6a697ac220e
+ms.openlocfilehash: f102414b9539c9f8ad7d088c2ddf802583c22721
+ms.sourcegitcommit: 503cf343422ab8d2a587d2ccb795953b8ad66376
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56458694"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559615"
 ---
 # <a name="select-clouds-with-the-azure-cli"></a>Выбор облаков с помощью Azure CLI
 
@@ -74,7 +74,7 @@ az cloud show --name AzureChinaCloud --output json
 
 ## <a name="switch-the-active-cloud"></a>Изменение активного облака
 
-Чтобы переключиться с активного сейчас облака, выполните команду [az cloud set](/cli/azure/cloud#az-cloud-set). Эта команда принимает один обязательный аргумент — имя облака.
+Чтобы задать облако по умолчанию с помощью файла конфигурации, ознакомьтесь с разделом [Переменные среды и значения конфигурации CLI](/cli/azure/azure-cli-configuration?view=azure-cli-latest#cli-configuration-values-and-environment-variables).  Чтобы переключиться с активного сейчас облака, выполните команду [az cloud set](/cli/azure/cloud#az-cloud-set). Эта команда принимает один обязательный аргумент — имя облака.
 
 ```azurecli-interactive
 az cloud set --name AzureChinaCloud
