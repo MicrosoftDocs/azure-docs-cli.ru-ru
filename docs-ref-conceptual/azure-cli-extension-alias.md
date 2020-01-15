@@ -1,20 +1,20 @@
 ---
 title: Расширение псевдонимов Azure CLI
 description: Как использовать расширение псевдонимов Azure CLI
-author: sptramer
-ms.author: sttramer
-manager: carmonm
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
 ms.date: 09/07/2018
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 3cd812a0e0e61d50883ca9efd762d6fc05617b76
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
+ms.openlocfilehash: cc6192c3e78f7bc895ed8f4c2f640aa1bf0e883c
+ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56158568"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913666"
 ---
 # <a name="the-azure-cli-alias-extension"></a>Расширение псевдонимов Azure CLI
 

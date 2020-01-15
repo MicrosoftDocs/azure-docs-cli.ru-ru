@@ -1,19 +1,19 @@
 ---
 title: Использование субъектов-служб Azure с помощью Azure CLI
 description: Сведения о том, как создать субъекты-службы и использовать их с помощью Azure CLI.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
 ms.date: 02/15/2019
 ms.topic: conceptual
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 45374a29c45d8e9fa2d39aebf2d9bab556ef3b50
-ms.sourcegitcommit: b42ce26476b135bb2047c8d9d787580c858f8b6b
+ms.openlocfilehash: 0969b89895ffba0ff473a9d788360609524813df
+ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163836"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913584"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
@@ -75,7 +75,7 @@ az ad sp create-for-rbac --name ServicePrincipalName --cert CertName --keyvault 
 az ad sp create-for-rbac --name ServicePrincipalName --create-cert
 ```
 
-Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault. Если используется аргумент `--keyvault`, аргумент `--cert` __обязателен__.
+Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault. Если используется аргумент `--keyvault`, аргумент `--cert`__обязателен__.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name ServicePrincipalName --create-cert --cert CertName --keyvault VaultName

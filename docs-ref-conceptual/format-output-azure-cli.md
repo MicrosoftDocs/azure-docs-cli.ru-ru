@@ -1,26 +1,26 @@
 ---
 title: Форматы выходных данных для Azure CLI
 description: Сведения о том, как форматировать результаты выполнения команды Azure CLI в виде таблиц, списков или объектов JSON.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
 ms.date: 09/23/2019
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 125055eec956e56c95af9a1c24ee4254e77556e6
-ms.sourcegitcommit: 5b9b4446c08b94256ced7f63c145b493ba8b50df
+ms.openlocfilehash: 7bc31ba89234dbdb7b939f3a09886f31184ac65f
+ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71217451"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913552"
 ---
 # <a name="output-formats-for-azure-cli-commands"></a>Форматы выходных данных для команд Azure CLI
 
 Azure CLI использует JSON в качестве формата выходных данных по умолчанию, но поддерживает и другие форматы.  Параметр `--output` (`--out` или `-o`) позволяет форматировать данные, выводимые CLI. Ниже описаны значения аргументов и их типы:
 
---output | ОПИСАНИЕ
+--output | Description
 ---------|-------------------------------
 `json`   | Строка в формате JSON. Это значение по умолчанию.
 `jsonc`  | Выделенная цветом строка JSON.
