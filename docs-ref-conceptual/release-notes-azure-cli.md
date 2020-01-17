@@ -4,19 +4,33 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 01/07/2020
+ms.date: 01/13/2020
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 9fc54add3bfb2a75d1912c47f0a2571d9d065ec0
-ms.sourcegitcommit: 5646008e7a521dd9a8a627418f57bd92ee180352
+ms.openlocfilehash: 3ecb6fb41ee0ae60af58a02c934f2c295133f998
+ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694280"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913718"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="january-13-2020"></a>13 января 2020 г.
+
+Версия 2.0.80
+
+### <a name="compute"></a>Службы вычислений
+
+* Обновление диска: добавлены параметры --disk-encryption-set и --encryption-type.
+* Создание и обновление моментального снимка: добавлены параметры --disk-encryption-set и --encryption-type.
+
+### <a name="storage"></a>Память
+
+* Обновление azure-mgmt-storage до версии 7.1.0
+* `az storage account create`: добавлены параметры `--encryption-key-type-for-table` и `--encryption-key-type-for-queue` для включения поддержки службы шифрования таблиц и очередей.
 
 ## <a name="january-07-2020"></a>7 января 2020 г.
 
@@ -53,6 +67,11 @@ ms.locfileid: "75694280"
 * Исправлен сбой `vm create` в профиле Azure Stack.
 * Добавлена поддержка определений списков и метрик запросов для виртуальной машины (vm monitor metrics tail/list-definitions).
 * Добавлено новое действия повторного применения команды az vm
+
+### <a name="hdinsight"></a>HDInsight
+
+* Включена поддержка создания кластера Kafka с помощью прокси-сервера Kafka RESTful.
+* Обновление azure-mgmt-hdinsight до версии 1.3.0
 
 ### <a name="misc"></a>Прочее
 
