@@ -1,73 +1,58 @@
-- name: Инфраструктура CLI Azure
+- name: Azure CLI
   href: index.yml
-- name: Установка
+- name: Обзор
+  items:
+    - name: Что такое Azure CLI?
+      href: what-is-azure-cli.md
+      displayName: 'overview, intro, introduction'
+    - name: Начало работы
+      href: get-started-with-azure-cli.md
+      displayName: 'intro, introduction, sign in, signin, log in, login, find, interactive, feedback'
+    - name: Заметки о выпуске
+      href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Версии CLI
+      href: cli-versioning-identifiers.md
+      displayName: 'version, classic, 2.0, 1.0, xplat'
+- name: Установка и запуск
   items:
     - name: Установка
       href: install-azure-cli.md
-    - name: macOS
-      href: install-azure-cli-macos.md
-      displayName: 'install, macos, brew, homebrew, osx, os x, mac'
-    - name: Windows
-      href: install-azure-cli-windows.md
-      displayName: 'install, powershell, cmd, command prompt'
-    - name: "Linux\_— apt"
-      href: install-azure-cli-apt.md
-      displayName: 'ubuntu, debian, mint, linux, install, wsl'
-    - name: "Linux\_— yum"
-      href: install-azure-cli-yum.md
-      displayName: 'rhel, redhat, red hat, fedora, linux, install, wsl'
-    - name: "Linux\_— zypper"
-      href: install-azure-cli-zypper.md
-      displayName: 'opensuse, suse, sles, leap, tumbleweed, linux, install, wsl'
-    - name: "Linux\_— скрипт установки"
-      href: install-azure-cli-linux.md
-      displayName: 'install, script, unix, bsd, linux, lfs, wsl, slackware'
-    - name: Выполнение в Docker
+      items:
+        - name: Установка в Windows
+          href: install-azure-cli-windows.md
+          displayName: 'install, powershell, cmd, command prompt'
+        - name: Установка в macOS
+          href: install-azure-cli-macos.md
+          displayName: 'install, macos, brew, homebrew, osx, os x, mac'
+        - name: Установка в Linux с помощью apt
+          href: install-azure-cli-apt.md
+          displayName: 'ubuntu, debian, mint, linux, install, wsl'
+        - name: Установка в Linux с помощью yum
+          href: install-azure-cli-yum.md
+          displayName: 'rhel, redhat, red hat, fedora, linux, install, wsl'
+        - name: Установка в Linux с помощью zypper
+          href: install-azure-cli-zypper.md
+          displayName: 'opensuse, suse, sles, leap, tumbleweed, linux, install, wsl'
+        - name: Сценарий установки для Linux
+          href: install-azure-cli-linux.md
+          displayName: 'install, script, unix, bsd, linux, lfs, wsl, slackware'
+    - name: Запуск в Docker
       href: run-azure-cli-docker.md
       displayName: 'linux, unix, container, image'
-- name: Начало работы
-  href: get-started-with-azure-cli.md
-  displayName: 'intro, introduction, sign in, signin, log in, login, find, interactive, feedback'
-- name: Cloud Shell
-  href: /azure/cloud-shell/overview
-- name: Вход
-  items:
-    - name: Методы проверки подлинности
+    - name: Запуск в Azure Cloud Shell
+      href: /azure/cloud-shell/quickstart
+      displayName: 'bash, Powershell'
+    - name: Вход
       href: authenticate-azure-cli.md
       displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
+- name: Учебники
+  items:
     - name: Создание субъекта-службы
       href: create-an-azure-service-principal-azure-cli.md
       displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
-- name: Интерактивный режим
-  href: interactive-azure-cli.md
-- name: Шаблоны развертывания
-  items:
-    - name: Использование шаблонов развертывания
-      href: /azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: Экспорт шаблонов развертывания
-      href: /azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: Развертывание с помощью частного шаблона
-      href: /azure/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-- name: Управление подписками
-  href: manage-azure-subscriptions-azure-cli.md
-  displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
-- name: Использование нескольких облаков
-  href: manage-clouds-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-  displayName: 'region, china, germany, government, governance, stack'
-- name: Форматы выходных данных
-  href: format-output-azure-cli.md
-  displayName: 'table, yaml, json, jsonc, tsv, ascii, configure, default'
-- name: Запрос
-  href: query-azure-cli.md
-  displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object, json, jsonc, jmespath'
-- name: Параметры конфигурации
-  href: azure-cli-Configuration.md
-  displayName: 'configure, defaults, environment, variables'
-- name: Учебники
-  items:
     - name: Создание виртуальных машин
       href: azure-cli-vm-tutorial.yml
-- name: Примеры сценариев
+- name: Примеры
   items:
     - name: Виртуальные машины Linux
       href: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
@@ -77,7 +62,7 @@
       displayName: virtual machines
     - name: Веб-приложения
       href: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-    - name: Функции Azure
+    - name: Функции
       href: /azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
       displayName: 'serverless, lambda'
     - name: База данных SQL
@@ -91,16 +76,38 @@
       displayName: 'database, nosql, mongodb, couchdb'
     - name: Пакетная служба Azure
       href: /azure/batch/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-- name: расширения.
+- name: Практические руководства
   items:
-    - name: Обзор
-      href: azure-cli-extensions-overview.md
-    - name: Доступные расширения
-      href: azure-cli-extensions-list.md
-    - name: Расширение псевдонимов
-      href: azure-cli-extension-alias.md
-- name: Заметки о выпуске
-  href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
-- name: Версии CLI
-  href: cli-versioning-identifiers.md
-  displayName: 'version, classic, 2.0, 1.0, xplat'
+    - name: Результаты запроса
+      href: query-azure-cli.md
+      displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object, json, jsonc, jmespath  '
+    - name: Форматирование выходных данных
+      href: format-output-azure-cli.md
+      displayName: 'table, yaml, json, jsonc, tsv, ascii, configure, default'
+    - name: Настройка параметров
+      href: azure-cli-Configuration.md
+      displayName: 'configure, defaults, environment, variables'
+    - name: Управление подписками
+      href: manage-azure-subscriptions-azure-cli.md
+      displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
+    - name: Работа в интерактивном режиме
+      href: interactive-azure-cli.md
+    - name: Использование нескольких облаков
+      href: manage-clouds-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+      displayName: 'region, china, germany, government, governance, stack'
+    - name: Развертывание с помощью шаблонов
+      items:
+        - name: Использование шаблонов развертывания
+          href: /azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+        - name: Экспорт шаблонов развертывания
+          href: /azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Работа с расширениями
+      items:
+        - name: Обзор
+          href: azure-cli-extensions-overview.md
+        - name: Доступные расширения
+          href: azure-cli-extensions-list.md
+        - name: Расширение псевдонимов
+          href: azure-cli-extension-alias.md
+        - name: Развертывание с помощью частного шаблона
+          href: /azure/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
