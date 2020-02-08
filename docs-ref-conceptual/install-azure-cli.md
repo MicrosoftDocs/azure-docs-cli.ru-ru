@@ -2,24 +2,26 @@
 title: Установка Azure CLI
 description: Справочная информация по установке Azure CLI
 keywords: Azure CLI,Install Azure CLI
-author: sptramer
-ms.author: sttramer
-manager: carmonm
-ms.date: 02/12/2019
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
+ms.date: 01/30/2020
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: cacaa77845708f318b3743024d7f87e658368069
-ms.sourcegitcommit: 1987a39809f9865034b27130e56f30b2bd1eb72c
+ms.openlocfilehash: a4cdc3d745b673d88fa9b9554775b781af3b4048
+ms.sourcegitcommit: d0b2763cc856eef44a6ecb78f6b8c64291625750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56421904"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013201"
 ---
 # <a name="install-the-azure-cli"></a>Установка Azure CLI
 
-Azure CLI — это программа командной строки, которая предоставляет широкие возможности по управлению ресурсами Azure. CLI упрощает написание скриптов, выполнение запросов к данным, поддержку длительных операций и реализацию других задач. Поработайте с CLI прямо сейчас и откройте для себя его преимущества!
+Azure CLI доступен для установки в средах Windows, maxOS и Linux.  Он также может работать в контейнере Docker и Azure Cloud Shell.
+
+## <a name="install"></a>Установка
 
 [!INCLUDE [current-version](includes/current-version.md)]
 
@@ -31,6 +33,11 @@ Azure CLI — это программа командной строки, кот�
   * [Установка с помощью zypper в openSUSE или SLE](install-azure-cli-zypper.md).
   * [установка из скрипта](install-azure-cli-linux.md).
 * [Выполнение в контейнере Docker](run-azure-cli-docker.md).
+* [Запуск в Azure Cloud Shell](/azure/cloud-shell/quickstart)
 
 > [!NOTE]
 > Если вы используете классическую модель развертывания Azure, [установите классический интерфейс командной строки Azure](install-classic-cli.md).
+
+## <a name="next-steps"></a>Next Steps
+
+Ключевые характеристики описаны в разделе [Что такое Azure CLI?](what-is-azure-cli.md)

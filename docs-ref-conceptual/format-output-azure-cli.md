@@ -9,24 +9,25 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 7bc31ba89234dbdb7b939f3a09886f31184ac65f
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: adb488081076715eb080d1972bba18d285402e95
+ms.sourcegitcommit: a233bb75e27a5c8772c173f195e74d12381b7a64
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913552"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76890462"
 ---
 # <a name="output-formats-for-azure-cli-commands"></a>Форматы выходных данных для команд Azure CLI
 
 Azure CLI использует JSON в качестве формата выходных данных по умолчанию, но поддерживает и другие форматы.  Параметр `--output` (`--out` или `-o`) позволяет форматировать данные, выводимые CLI. Ниже описаны значения аргументов и их типы:
 
---output | Description
+--output | Описание
 ---------|-------------------------------
 `json`   | Строка в формате JSON. Это значение по умолчанию.
 `jsonc`  | Выделенная цветом строка JSON.
 `yaml`   | YAML, альтернативный JSON машиночитаемый формат.
 `table`  | Таблица ASCII с ключами в качестве заголовков столбцов.
 `tsv`    | Значения, разделенные табуляцией, без ключей.
+`none`   | Нет выходных данных, кроме сообщений об ошибках и предупреждений.
 
 ## <a name="json-output-format"></a>Формат выходных данных JSON.
 
@@ -177,7 +178,7 @@ az vm list --out tsv --query '[].[id, location, resourceGroup, name]'
 
 На следующем примере показано, как выходные данные команды `tsv` можно передать по каналу в другие команды оболочки bash. Фильтрация выходных данных и принудительное упорядочивание выполняются с помощью запроса. Команда `grep` выбирает элементы, содержащие текст RGD, а затем команда `cut` выбирает четвертое поле, чтобы отобразить имя виртуальной машины в выходных данных.
 
-```bash
+```azurecli-interactive
 az vm list --out tsv --query '[].[id, location, resourceGroup, name]' | grep RGD | cut -f4
 ```
 

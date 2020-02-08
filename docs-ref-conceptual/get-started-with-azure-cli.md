@@ -5,21 +5,21 @@ keywords: Azure CLI, CLI help, Azure help, query, automation,
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 09/07/2018
+ms.date: 01/30/2020
 ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: af9b8ea52ded9d3bb27262ae0625ebdd1aedf189
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: 741d092121bbd448595301000acb9a5f51d87ace
+ms.sourcegitcommit: d0b2763cc856eef44a6ecb78f6b8c64291625750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913558"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013256"
 ---
 # <a name="get-started-with-azure-cli"></a>Начало работы с Azure CLI
 
-Добро пожаловать в Azure CLI! CLI — это средство, предназначенное для быстрой и эффективной работы со службами Azure с возможностью автоматизации. В этой статье рассматриваются возможности CLI и приводятся ссылки на связанные ресурсы.
+Добро пожаловать в Azure CLI!  В этой статье описывается интерфейс командной строки и приводятся ссылки на материалы, которые помогут вам приступить к работе.
 
 > [!NOTE]
 >
@@ -49,7 +49,7 @@ ms.locfileid: "75913558"
 
 | Тип ресурса | Группа команд Azure CLI |
 |---------------|-------------------------|
-| [группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [az group](/cli/azure/group) |
+| [Группа ресурсов](/azure/azure-resource-manager/resource-group-overview) | [az group](/cli/azure/group) |
 | [Виртуальные машины](/azure/virtual-machines) | [az vm](/cli/azure/vm) |
 | [Учетные записи хранения](/azure/storage/common/storage-introduction) | [az storage account](/cli/azure/storage/account) |
 | [хранилище ключей;](/azure/key-vault/key-vault-whatis) | [az keyvault](/cli/azure/keyvault) |

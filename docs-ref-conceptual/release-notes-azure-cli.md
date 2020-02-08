@@ -4,19 +4,137 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 01/13/2020
+ms.date: 02/04/2020
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 3ecb6fb41ee0ae60af58a02c934f2c295133f998
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: eafd18344ac4c1c0124ff53864a45510070b6fe7
+ms.sourcegitcommit: d0b2763cc856eef44a6ecb78f6b8c64291625750
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913718"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013290"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="february-04-2020"></a>4 февраля 2020 г.
+
+Версия 2.0.81
+
+### <a name="acs"></a>ACS
+
+* Добавлена возможность задания выделенных исходящих портов и времени ожидания подсистемы балансировки нагрузки уровня "Стандартный".
+* Выполнено обновление до API версии 2019-11-01.
+
+### <a name="acr"></a>ACR
+
+* [Критическое изменение] `az acr delete` будет выводить запрос.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Команда az acr task delete будет выводить запрос.
+* Добавлена новая группа команд az acr taskrun show/list/delete для управления выполнением задач.
+
+### <a name="aks"></a>AKS
+
+* Каждый кластер получает отдельный субъект-службу для улучшения изоляции.
+
+### <a name="appconfig"></a>AppConfig
+
+* Поддержка импорта ссылок на хранилище ключей из службы приложений и их экспорта в нее.
+* Поддержка импорта и экспорта всех меток между файлами appconfig.
+* Проверка имен ключей и функций перед настройкой и импортом.
+* Предоставление изменений номера SKU в хранилище конфигураций.
+* Новая группа команд для управляемого удостоверения.
+
+### <a name="appservice"></a>AppService
+
+* Azure Stack: команды поверхности в профиле 2019-03-01-hybrid
+* functionapp: добавлена возможность создавать приложения-функции Java в Linux.
+
+### <a name="arm"></a>ARM
+
+* Исправление ошибки 10246: аварийное завершение `az resource tag` в случае, если переданный параметр `--ids` являлся идентификатором группы ресурсов.
+* Исправление ошибки 11658: команда `az group export` не поддерживала параметры `--query` и `--output`.
+* Исправление ошибки 10279: код выхода `az group deployment validate` был равен 0, если проверка не пройдена.
+* Исправление ошибки 9916: улучшено сообщение об ошибке из-за конфликта между тегом и другими условиями фильтра для команды `az resource list`.
+* Добавлен новый параметр `--managed-by` для добавления данных managedBy для команды `az group create`.
+
+### <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
+
+* Добавлена подгруппа `monitor` для управления мониторингом Log Analytics в кластере Azure Red Hat OpensShift.
+
+### <a name="botservice"></a>Служба Bot
+
+* Исправление ошибки 11697: команда `az bot create` не являлась идемпотентной.
+* Проверки исправления имен изменены для выполнения только в режиме реального времени.
+
+### <a name="cdn"></a>CDN
+
+* Добавлена поддержка функции rulesEngine.
+* Добавлена новая группа команд cdn endpoint rule для управления правилами.
+* Пакет azure-mgmt-cdn обновлен до версии 4.0.0 для использования API версии 2019-04-15.
+
+### <a name="deployment-manager"></a>Диспетчер развертывания
+
+* Добавлена операция вывода списка всех ресурсов.
+* Улучшен ресурс шага для нового типа шага.
+* Пакет azure-mgmt-deploymentmanager обновлен для использования версии 0.2.0.
+
+### <a name="iot"></a>Интернет вещей
+
+* Команды IoT hub Job объявлены нерекомендуемыми.
+
+### <a name="iot-central"></a>IoT Central
+
+* Добавлена поддержка создания и обновления приложений с новыми SKU: ST0, ST1, ST2.
+
+### <a name="key-vault"></a>Key Vault
+
+* Добавлена новая команда `az keyvault key download` для скачивания ключей.
+
+### <a name="misc"></a>Разное
+
+* Исправление ошибки 6371: поддержка завершения имен файлов и переменных среды в Bash.
+
+### <a name="network"></a>Сеть
+
+* Исправление ошибки 2092: для команды az network dns record-set add/remove добавлено предупреждение, отображаемое, если набор записей не найден. В будущем для подтверждения этого автоматического создания будет добавлен дополнительный аргумент.
+
+### <a name="policy"></a>Политика
+
+* Добавлена новая команда `az policy metadata` для получения ресурсов метаданных расширенной политики.
+* `az policy remediation create`: С помощью параметра `--resource-discovery-mode` можно указать, следует ли повторно оценить соответствие перед исправлением.
+
+### <a name="profile"></a>Профиль
+
+* `az account get-access-token`: Добавлен параметр `--tenant` для получения маркера для арендатора напрямую, без необходимости указывать подписку.
+
+### <a name="rbac"></a>RBAC
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Исправление ошибки 11883: `az role assignment create`: пустая область приведет к ошибке.
+
+### <a name="security"></a>безопасность
+
+* Добавлены новые команды `az atp show` и `az atp update` для просмотра и настройки дополнительных параметров защиты от угроз для учетных записей хранения.
+
+### <a name="sql"></a>SQL
+
+* `sql dw create`: параметры `--zone-redundant` и `--read-replica-count` объявлены нерекомендуемыми. Эти параметры не применяются к хранилищу данных.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az sql db create`: Значения WideWorldImportersStd и WideWorldImportersFull больше не являются задокументированным допустимыми значениями для команды az sql db create --sample-name. Эти примеры базы данных всегда будут приводить к сбою создания.
+* Добавлены новые команды `sql db classification show/list/update/delete` и `sql db classification recommendation list/enable/disable` для управления классификациями конфиденциальности баз данных SQL.
+* `az sql db audit-policy`: устранены пустые действия аудита и группы.
+
+### <a name="storage"></a>Память
+
+* Добавлена новая группа команд `az storage share-rm` для использования поставщика ресурсов Microsoft.Storage в операциях управления файловыми ресурсами Azure.
+* Исправление ошибки 11415: ошибка разрешения для `az storage blob update`.
+* Добавлены интеграция AzCopy 10.3.3 и поддержка Win32.
+* `az storage copy`: добавлены параметры `--include-path`, `--include-pattern`, `--exclude-path` и `--exclude-pattern`.
+* `az storage remove`: параметры `--inlcude` и `--exclude` заменены параметрами `--include-path`, `--include-pattern`, `--exclude-path` и `--exclude-pattern`.
+* `az storage sync`: добавлены параметры `--include-pattern`, `--exclude-path` и `--exclude-pattern`.
+
+### <a name="servicefabric"></a>Service Fabric
+
+* Добавлены новые команды для управления приложениями и службами.
 
 ## <a name="january-13-2020"></a>13 января 2020 г.
 
