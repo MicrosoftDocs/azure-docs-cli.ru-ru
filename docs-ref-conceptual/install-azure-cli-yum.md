@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: f65240524942c2534f61b9cc51101812c8d09351
-ms.sourcegitcommit: 0088160bdb1ea520724d3e1efe71a4a66f29753d
+ms.openlocfilehash: 53d480c24e624d87ff0cc67ac143c2172344edf4
+ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75216928"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453738"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 
@@ -67,8 +67,6 @@ $ sudo yum install yum-utils
 $ sudo yumdownloader azure-cli
 $ sudo rpm -ivh --nodeps azure-cli-*.rpm
 ```
-
-Самый предпочтительный вариант — по-прежнему использовать Python 2 и следовать [инструкциям по установке вручную](install-azure-cli-linux.md), так как поддержка Python 2 будет прекращена 1 января 2020 г. В следующей версии Azure CLI поддержка Python 2.7 будет прекращена.
 
 ### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
 
