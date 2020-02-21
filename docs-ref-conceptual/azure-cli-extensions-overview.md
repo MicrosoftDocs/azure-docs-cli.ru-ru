@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: a8591d6dff297027d0f78ec3865e00a17ba61c52
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: 41a1ab194c2915c3d6e5c3447eaab96054ef13a5
+ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913639"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453707"
 ---
 # <a name="use-extensions-with-azure-cli"></a>Использование расширений с Azure CLI 
 
@@ -99,3 +99,6 @@ rm -rf $AZURE_EXTENSION_DIR/<extension-name>
 ### <a name="are-extensions-updated-along-with-the-cli"></a>Обновляются ли расширения вместе с CLI?
 
 Нет. Расширения следует обновлять отдельно, как описано в разделе [Обновление расширений](#update-extensions).
+
+### <a name="how-to-develop-our-own-extension"></a>Разработка собственного расширения
+См. сведения в официальном репозитории. [Azure/azure-cli-extensions](https://github.com/Azure/azure-cli/tree/master/doc/extensions)

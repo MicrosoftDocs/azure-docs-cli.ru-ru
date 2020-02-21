@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 790c63a60a5d23863b48227dcc99462bbf950d80
-ms.sourcegitcommit: b42ce26476b135bb2047c8d9d787580c858f8b6b
+ms.openlocfilehash: 9a5026634691f49d960f383c90e139754c862cb4
+ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72163846"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453758"
 ---
 # <a name="install-azure-cli-on-macos"></a>Установка Azure CLI в macOS
 
@@ -48,6 +48,10 @@ brew update && brew install azure-cli
 
 Если у вас возникли проблемы при установке CLI с помощью Homebrew, воспользуйтесь представленным ниже описанием распространенных ошибок. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
 
+### <a name="completion-is-not-working"></a>Сжатие не выполняется.
+
+Формула Homebrew в Azure CLI устанавливает файл завершения с именем `az` в каталоге завершения, управляемом Homebrew (расположение по умолчанию — `/usr/local/etc/bash_completion.d/`). Чтобы включить завершение, следуйте инструкциям по [использованию Homebrew](https://docs.brew.sh/Shell-Completion).
+
 ### <a name="unable-to-find-python-or-installed-packages"></a>Не удается найти Python или установленные пакеты
 
 Во время установки с помощью homebrew может наблюдаться несовпадение дополнительного номера версии или другая проблема. CLI не использует виртуальное окружение Python и попытается обнаружить установленную версию Python. Возможное решение — установить зависимость `python3` и повторно создать на нее ссылку из Homebrew.
@@ -75,7 +79,7 @@ brew link --overwrite python3
 * `https://formulae.brew.sh`
 * `https://homebrew.bintray.com`
 
-## <a name="update"></a>Обновление
+## <a name="update"></a>Update
 
 CLI регулярно обновляется для исправления ошибок, а также реализации улучшений, новых возможностей и функции предварительного просмотра. Новый выпуск выходит примерно раз в две недели. Обновите сведения о локальном репозитории, а затем — сам пакет `azure-cli`.
 
@@ -99,7 +103,7 @@ brew uninstall azure-cli
 
 Инструкции по ручной установке Azure CLI в Linux см. в [соответствующей статье](install-azure-cli-linux.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Теперь вы можете пользоваться Azure CLI. Просмотрите общие сведения о его возможностях и список распространенных команд.
 

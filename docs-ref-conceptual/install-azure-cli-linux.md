@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: caca30ec186f302e47f2978b9bfe616d4b2a5c02
-ms.sourcegitcommit: 443e14098d6643cdb2e178847d1c79b1b95146ce
+ms.openlocfilehash: 03b7d6d5ac157b3f22daa1b9be61fd1daecb9992
+ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74543640"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453686"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 
@@ -29,13 +29,13 @@ ms.locfileid: "74543640"
 
 Для использования CLI требуется следующее ПО:
 
-* [Python версии 3.6.x или 3.7.x](https://www.python.org/downloads/). 
+* [Python 3.6.x, 3.7.x или 3.8.x](https://www.python.org/downloads/). 
 * [libffi](https://sourceware.org/libffi/)
 * [OpenSSL 1.0.2](https://www.openssl.org/source/)
 
 > [!IMPORTANT]
 >
-> Интерфейс CLI также совместим с Python 2.7.x, поддержка которого прекращается 1 января 2020 г. В следующей версии Azure CLI поддержка Python 2.7 будет прекращена. Поэтому мы рекомендуем установить для CLI Python 3. 
+> Начиная с версии `2.1.0`, в CLI прекращена поддержка Python 2.7. Новые версии больше не будут гарантированно работать при использовании Python 2.7.
 
 ## <a name="install-or-update"></a>Установка или обновление
 
@@ -119,7 +119,7 @@ hash -r
    hash -r
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Теперь вы можете пользоваться Azure CLI. Просмотрите общие сведения о его возможностях и список распространенных команд.
 

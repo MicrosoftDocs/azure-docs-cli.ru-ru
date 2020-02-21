@@ -4,19 +4,108 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 02/04/2020
+ms.date: 02/18/2020
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: eafd18344ac4c1c0124ff53864a45510070b6fe7
-ms.sourcegitcommit: d0b2763cc856eef44a6ecb78f6b8c64291625750
+ms.openlocfilehash: 6c07b93752df2dab6ca0b210675a48b5c7b85c1c
+ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013290"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453483"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="february-18-2020"></a>18 февраля 2020 г.
+
+Версия 2.1.0
+
+### <a name="acr"></a>ACR
+
+* Добавлен новый аргумент `--expose-token` для `az acr login`.
+* Исправлены неправильные выходные данные `az acr task identity show -n Name -r Registry -o table`.
+* az acr login: отображение CLIError при наличии ошибок, возвращаемых командой docker.
+
+### <a name="acs"></a>ACS
+
+* aks create/update: добавление проверки `--vnet-subnet-id`.
+
+### <a name="aladdin"></a>Aladdin
+
+* Выполнение синтаксического анализа созданных примеров в _help.py для команд.
+
+### <a name="ams"></a>AMS
+
+* az ams теперь предоставляется в общедоступной версии
+
+### <a name="appconfig"></a>AppConfig
+
+* Исправлено справочное сообщение, чтобы исключить неподдерживаемый фильтр ключей или меток.
+* Удален тег preview для большинства команд, кроме управляемого удостоверения и флагов функций.
+* Добавлен управляемый ключ клиента при обновлении магазинов.
+
+### <a name="appservice"></a>AppService
+
+* az webapp list-runtimes: исправлена ошибка для list-runtimes.
+* Добавлена команда az webapp|functionapp config ssl create.
+* Включена поддержка приложений-функций версии 3 и Node 12.
+
+### <a name="arm"></a>ARM
+
+* az policy assignment create: исправлено сообщение об ошибке, если параметр `--policy` является недопустимым.
+* az group deployment create: Устранена ошибка stat: path too long for Windows при использовании большого файла parameters.json.
+
+### <a name="backup"></a>Резервное копирование
+
+* Исправлен поток восстановления на уровне элемента в OLR.
+* Включена поддержка восстановления в виде файлов для баз данных SQL и SAP.
+
+### <a name="compute"></a>Службы вычислений
+
+* vm/vmss/availability-set update: add --ppg: разрешено обновление ProximityPlacementGroup.
+* vmss create: add --data-disk-iops and --data-disk-mbps
+* az vm host: удален тег preview для `vm host` и `vm host group`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Исправление 10728. `az vm create`: автоматическое создание подсети, если указанные виртуальная сеть и подсеть не существуют.
+* Повышена надежность списка образов виртуальных машин.
+
+### <a name="eventhub"></a>Eventhub
+
+* Включена поддержка Azure Stack для профиля 2019-03-01-hybrid.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* az keyvault key create: добавлено новое значение `import` для параметра `--ops`.
+* az keyvault key list-versions: включена поддержка параметров `--id` для определения ключей.
+* Включена поддержка подключений к частным конечным точкам.
+
+### <a name="network"></a>Сеть
+
+* Выполнена активация azure-mgmt-network 9.0.0.
+* az network private-link-service update/create: включена поддержка --enable-proxy-protocol.
+* Добавлена функция монитора подключения версии 2.
+
+### <a name="packaging"></a>Упаковка
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Прекращена поддержка Python 2.7.
+
+### <a name="profile"></a>Профиль
+
+* Предварительный просмотр: В учетные записи подписок добавлены новые атрибуты `homeTenantId` и `managedByTenants`. Чтобы изменения вступили в силу, повторно выполните команду `az login`.
+* az login: отображение предупреждения, если подписка связана с несколькими клиентами, но по умолчанию используется с первым из них (чтобы выбрать определенный клиент при доступе к этой подписке, включите `--tenant` в `az login`).
+
+### <a name="role"></a>Роль
+
+* az role assignment create: исправлена ошибка с кодом HTTP 400, возникающая при присвоении роли субъекту-службе по отображаемому имени.
+
+### <a name="sql"></a>SQL
+
+* Обновлен командлет `az sql mi update` Управляемого экземпляра SQL (добавлены два новых параметра: tier и family).
+
+### <a name="storage"></a>Память
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az storage account create`: Тип учетной записи хранения по умолчанию изменен на StorageV2.
 
 ## <a name="february-04-2020"></a>4 февраля 2020 г.
 
@@ -112,7 +201,7 @@ ms.locfileid: "77013290"
 
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Исправление ошибки 11883: `az role assignment create`: пустая область приведет к ошибке.
 
-### <a name="security"></a>безопасность
+### <a name="security"></a>Безопасность
 
 * Добавлены новые команды `az atp show` и `az atp update` для просмотра и настройки дополнительных параметров защиты от угроз для учетных записей хранения.
 
@@ -1774,7 +1863,7 @@ ms.locfileid: "77013290"
 ### <a name="role"></a>Роль
 * [УСТАРЕЛО] Аргумент `--password` для `create-for-rbac` больше не поддерживается. Используйте вместо него надежные пароли, сгенерированные CLI.
 
-### <a name="security"></a>безопасность
+### <a name="security"></a>Безопасность
 * Начальный выпуск
 
 ### <a name="storage"></a>Память
