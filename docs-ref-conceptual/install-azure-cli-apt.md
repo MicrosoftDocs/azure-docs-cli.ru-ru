@@ -1,20 +1,19 @@
 ---
 title: Установка Azure CLI в Linux с помощью apt
 description: Как установить Azure CLI с помощью диспетчера пакетов apt
-author: sptramer
-ms.author: sttramer
-manager: carmonm
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
 ms.date: 10/14/2019
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 782d88bc2487c24bd0574b6a106f109368191f6b
-ms.sourcegitcommit: 69f52b032167a01509fdf15431e3e4e89a7e20ef
+ms.openlocfilehash: c84d5093f670b397a3035dc0f08edc22fa990ff4
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72324031"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77780134"
 ---
 # <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
@@ -49,7 +48,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 Если вы не хотите запускать скрипт как суперпользователь или если выполнение комплексного скрипта завершается сбоем, воспользуйтесь приведенными ниже инструкциями, чтобы установить Azure CLI.
 
-1. Получите пакеты, необходимые для установки:
+1. Получение пакетов, необходимых для процесса установки:
 
     ```bash
     sudo apt-get update
@@ -123,7 +122,7 @@ Acquire {
 
 [!INCLUDE[troubleshoot-wsl.md](includes/troubleshoot-wsl.md)]
 
-## <a name="update"></a>Обновление
+## <a name="update"></a>Update
 
 Используйте `apt-get upgrade`, чтобы обновить пакет CLI.
 
@@ -167,7 +166,7 @@ Acquire {
    sudo apt autoremove
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Теперь вы можете пользоваться Azure CLI. Просмотрите общие сведения о его возможностях и список распространенных команд.
 

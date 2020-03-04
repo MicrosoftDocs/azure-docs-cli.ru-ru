@@ -1,20 +1,19 @@
 ---
 title: Установка классического интерфейса командной строки Azure (Azure Classic CLI)
 description: Установка классического интерфейса командной строки Azure на компьютерах Mac OS, Linux и Windows и начало работы со службами Azure.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
 ms.date: 06/11/2018
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 65bf8cdc4ee5d74a778d29cd96e51bad5dc6b22e
-ms.sourcegitcommit: 7f79860c799e78fd8a591d7a5550464080e07aa9
+ms.openlocfilehash: 0cc1d7811223bf6f473c2c4516d0919306aa74c7
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56158930"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779488"
 ---
 # <a name="install-the-azure-classic-cli"></a>Установка классического интерфейса командной строки Azure (Azure Classic CLI)
 
@@ -32,7 +31,7 @@ ms.locfileid: "56158930"
 
 Установив классический интерфейс командной строки Azure, установите подключение с помощью команды `azure login` и выполните команды `azure` из интерфейса командной строки (Bash, терминал, командная строка и т. п.) для работы с ресурсами Azure.
 
-## <a name="option-1-install-an-npm-package"></a>Вариант 1. Установка пакета npm
+## <a name="option-1-install-an-npm-package"></a>Вариант 1. Установка пакета npm
 
 Чтобы установить классический интерфейс командной строки из пакета npm, установите в системе [последнюю версию Node.js и npm](https://nodejs.org/en/download/package-manager/). Затем выполните `npm install`, чтобы установить пакет azure-cli:
 
@@ -55,14 +54,14 @@ sudo npm install -g azure-cli
 npm install -g <path to downloaded tar file>
 ```
 
-## <a name="option-2-use-an-installer"></a>Вариант 2. Использование установщика
+## <a name="option-2-use-an-installer"></a>Вариант 2. Использование установщика
 
 Если вы используете компьютер с Mac или Windows, на [странице выпусков репозитория GitHub](https://github.com/Azure/azure-xplat-cli/releases) доступны установщики DMG и MSI.
 
 > [!TIP]
 > Чтобы установить классический интерфейс командной строки в Windows, можете также скачать [установщик веб-платформы](https://go.microsoft.com/?linkid=9828653). Этот установщик позволяет дополнительно установить пакет Azure SDK и инструменты командной строки.
 
-## <a name="option-3-use-a-docker-container"></a>Вариант 3. Использование контейнера Docker
+## <a name="option-3-use-a-docker-container"></a>Способ 3. Использование контейнера Docker
 
 Если вы настроили компьютер в качестве узла [Docker](https://docs.docker.com/engine/understanding-docker/), то можно запустить классический интерфейс командной строки Azure в контейнере Docker. Выполните следующую команду (возможно, для дистрибутивов Linux потребуется использовать `sudo`):
 
@@ -119,6 +118,6 @@ azure --completion >> ~/azure.completion.sh
 echo 'source ~/azure.completion.sh' >> ~/.bash_profile
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы получить дополнительные сведения о классическом интерфейсе командной строки Azure, скачать исходный код, сообщить о проблемах или принять участие в проекте, посетите [этот репозиторий GitHub](https://github.com/azure/azure-xplat-cli).

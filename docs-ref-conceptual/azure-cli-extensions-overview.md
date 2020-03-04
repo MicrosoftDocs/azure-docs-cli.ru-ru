@@ -1,21 +1,19 @@
 ---
 title: Расширения Azure CLI
 description: Использование расширений с Azure CLI
-keywords: Azure CLI, расширения
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
 ms.date: 09/07/2018
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 41a1ab194c2915c3d6e5c3447eaab96054ef13a5
-ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
+ms.openlocfilehash: 73488fc464ed052f22f071f6373fb6b8f682b778
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453707"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779998"
 ---
 # <a name="use-extensions-with-azure-cli"></a>Использование расширений с Azure CLI 
 

@@ -6,15 +6,14 @@ ms.author: dbradish
 manager: barbkess
 ms.date: 09/07/2018
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: cc6192c3e78f7bc895ed8f4c2f640aa1bf0e883c
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: 4d324235360e017970a215226572e3effeb9b917
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913666"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77780015"
 ---
 # <a name="the-azure-cli-alias-extension"></a>Расширение псевдонимов Azure CLI
 

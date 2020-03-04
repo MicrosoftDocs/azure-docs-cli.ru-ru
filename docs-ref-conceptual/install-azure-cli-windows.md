@@ -1,20 +1,19 @@
 ---
 title: Установка Azure CLI для Windows
 description: Как установить Azure CLI в Windows
-author: sptramer
-ms.author: sttramer
-manager: carmonm
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
 ms.date: 05/01/2019
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 6c972ba69344f9e8bcd14a96a90e9dadb6cd8132
-ms.sourcegitcommit: 61965f5d95d0dae3752ad6a0e5a93db27a623c28
+ms.openlocfilehash: f88e9d6650354ace9d9e03a33a6bbb2642069bbd
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830976"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779573"
 ---
 # <a name="install-azure-cli-on-windows"></a>Установка Azure CLI в Windows
 
@@ -72,14 +71,14 @@ Azure CLI также можно установить с помощью PowerShe
 
 Удалите Azure CLI из списка "Приложения и возможности" в Windows. Для удаления сделайте следующее:
 
-| платформа | Указания |
+| Платформа | Instructions |
 |---|---|
-| Windows 10 | "Пуск" > "Параметры" > "Приложения" |
-| Windows 8<br/>Windows 7 | "Пуск" > "Панель управления" > "Программы" > "Удаление программы" |
+| Windows 10 | Пуск > Параметры > Приложения |
+| Windows 8<br/>Windows 7 | Пуск > Панель управления > Программы > Удалить программу |
 
 На этом экране введите __Azure CLI__ в строке поиска программы. Программа для удаления называется __Microsoft CLI 2.0 для Azure__. Выберите это приложение, а затем нажмите кнопку `Uninstall`.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Next Steps
 
 Теперь вы можете пользоваться Azure CLI. Просмотрите общие сведения о его возможностях и список распространенных команд.
 
