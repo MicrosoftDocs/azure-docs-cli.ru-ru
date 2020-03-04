@@ -6,15 +6,14 @@ ms.author: dbradish
 manager: barbkess
 ms.date: 09/23/2019
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: adb488081076715eb080d1972bba18d285402e95
-ms.sourcegitcommit: a233bb75e27a5c8772c173f195e74d12381b7a64
+ms.openlocfilehash: 7f28a5cc7acd7e5d41e1ab91424a9f360a25b702
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76890462"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779964"
 ---
 # <a name="output-formats-for-azure-cli-commands"></a>Форматы выходных данных для команд Azure CLI
 

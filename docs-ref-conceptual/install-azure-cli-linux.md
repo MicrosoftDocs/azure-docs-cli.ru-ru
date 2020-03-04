@@ -1,20 +1,19 @@
 ---
 title: Установка Azure CLI для Linux вручную
 description: Как установить Azure CLI в Linux вручную
-author: sptramer
-ms.author: sttramer
-manager: carmonm
+author: dbradish-microsoft
+ms.author: dbradish
+manager: barbkess
 ms.date: 09/09/2018
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 03b7d6d5ac157b3f22daa1b9be61fd1daecb9992
-ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
+ms.openlocfilehash: 9a98da54f397c1fd03a7cc6b581a769afe84ef88
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453686"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779590"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 

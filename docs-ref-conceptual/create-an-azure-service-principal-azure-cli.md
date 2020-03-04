@@ -6,14 +6,14 @@ ms.author: dbradish
 manager: barbkess
 ms.date: 02/15/2019
 ms.topic: conceptual
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 0969b89895ffba0ff473a9d788360609524813df
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: 1bde944f1c443ef1a8d5aa918575fa09e6bb4714
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913584"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779624"
 ---
 # <a name="create-an-azure-service-principal-with-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 

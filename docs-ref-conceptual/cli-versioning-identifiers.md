@@ -6,14 +6,14 @@ ms.author: dbradish
 manager: barbkess
 ms.date: 07/12/2018
 ms.topic: conceptual
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 77b3629d0cc79d2b329007fd93b49022d5f29783
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: 3cd61d2166d03f7b9d58db1ee1cee77d17b5b336
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913601"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779981"
 ---
 # <a name="differences-between-azure-cli-products"></a>Различия между продуктами Azure CLI
 

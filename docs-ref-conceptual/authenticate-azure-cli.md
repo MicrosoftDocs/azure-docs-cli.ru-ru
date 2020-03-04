@@ -6,15 +6,14 @@ ms.author: dbradish
 manager: barbkess
 ms.date: 02/22/2019
 ms.topic: conceptual
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.component: authentication
-ms.openlocfilehash: d9e0c851f9673683d29c7b74b4b1507d7404cf91
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: 2027741c4fac1ffaeaf6099e18b9729df2e84beb
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913704"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77780032"
 ---
 # <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI 
 

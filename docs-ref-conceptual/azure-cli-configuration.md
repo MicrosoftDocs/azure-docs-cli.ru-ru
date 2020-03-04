@@ -1,21 +1,19 @@
 ---
 title: Варианты настройки Azure CLI
 description: Как настроить Azure CLI
-keywords: Azure CLI, configuration, settings, Azure
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
 ms.date: 06/11/2018
 ms.topic: conceptual
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ffdcbda500bc148e661ee4422b76ec51ff4603eb
-ms.sourcegitcommit: 18973ac471bbd12af2c8f8fa32a233b0abe5b020
+ms.openlocfilehash: ff5f9f5a5add52bc05009a42aeb00855eb2703fa
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75913693"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779658"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI
 
@@ -35,7 +33,7 @@ ms.locfileid: "75913693"
 
 Следующая таблица содержит список доступных ключей конфигурации.
 
-| Имя | Description |
+| Имя | Описание |
 |------|-------------|
 | group | Группа ресурсов по умолчанию для всех команд. |
 | location | Расположение по умолчанию для всех команд. |
@@ -84,11 +82,11 @@ log_dir=/var/log/azure
 
 Если указать значение по умолчанию, любая команда больше не будет требовать этот аргумент. Вместо этого используется значение по умолчанию.
 
-| Section | Имя      | Тип | Description|
+| Section | Имя      | Тип | Описание|
 |---------|-----------|------|------------|
 | __core__ | output | строка | Формат вывода по умолчанию. Может иметь значение `json`, `jsonc`, `tsv` или `table`. |
 | | disable\_confirm\_prompt | Логическое | Включает и отключает запросы на подтверждение. |
-| | collect\_telemetry | Логическое | Разрешает корпорации Майкрософт собирать анонимные данные об использовании CLI. Сведения о конфиденциальности см. в описании [условий использования Azure CLI](http://aka.ms/AzureCliLegal). |
+| | collect\_telemetry | Логическое | Разрешает корпорации Майкрософт собирать анонимные данные об использовании CLI. Сведения о конфиденциальности см. в описании [условий использования Azure CLI](https://aka.ms/AzureCliLegal). |
 | __logging__ | enable\_log\_file | Логическое | Включение и отключение ведения журнала. |
 | | log\_dir | строка | Каталог для записи журналов. По умолчанию это значение равно `${AZURE_CONFIG_DIR}/logs`. |
 | __storage__ | connection\_string | строка | Строка подключения по умолчанию для команд `az storage`. |
