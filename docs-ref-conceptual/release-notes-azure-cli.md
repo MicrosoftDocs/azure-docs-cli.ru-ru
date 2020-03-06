@@ -6,15 +6,14 @@ ms.author: dbradish
 manager: barbkess
 ms.date: 02/18/2020
 ms.topic: article
-ms.prod: azure
-ms.technology: azure-cli
+ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 6c07b93752df2dab6ca0b210675a48b5c7b85c1c
-ms.sourcegitcommit: 91c1e5423bd054a948620999b559bc3a9828a688
+ms.openlocfilehash: 49bb108372225146be8ffc6bb38cf793da8cdb74
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453483"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779947"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
@@ -711,7 +710,7 @@ ms.locfileid: "77453483"
 ### <a name="acr"></a>ACR
 
 * В `acr config retention update` добавлен обязательный параметр `--type`.
-* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Переименованный параметр `--name -n` изменен на `--registry -r ` для группы команд `acr config`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Переименованный параметр `--name -n` изменен на `--registry -r ` для группы команд `acr config`.
 
 ### <a name="aks"></a>AKS
 
@@ -4497,7 +4496,7 @@ vm (2.0.11)
 ### <a name="rdbms"></a>Реляционная СУБД
 
 * Поддержка вывода списка серверов в подписке (3417).
-* Исправлена проблема, когда объект `%s` не обрабатывался из-за отсутствия `% server_type` (3393).
+* Исправлена проблема с обработкой `%s` из-за отсутствия `% server_type` (3393).
 * Исправлено сопоставление источника документа и добавлена задача непрерывной интеграции для проверки (3361).
 * Исправлена справка по MySQL и PostgreSQL (3369).
 

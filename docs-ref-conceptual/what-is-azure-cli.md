@@ -8,12 +8,12 @@ ms.date: 01/30/2020
 ms.topic: overview
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 95463c0c72aaf03386ee6755997652217ff68711
-ms.sourcegitcommit: d0b2763cc856eef44a6ecb78f6b8c64291625750
+ms.openlocfilehash: 6aeb296c635d3efa35af08af227f165c7bd8f7d2
+ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013534"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "77779811"
 ---
 # <a name="what-is-azure-cli"></a>Что такое Azure CLI
 
@@ -23,10 +23,11 @@ ms.locfileid: "77013534"
 
 Возможности Azure CLI упрощают работу с различными языками программирования и программными средами.  Например, Azure CLI:
 
-- доступен для установки в средах Windows, maxOS и Linux;
+- можно установить в средах Windows, maOS и Linux;
 
 - также может работать в Docker и Azure Cloud Shell;
 - обеспечивает гибкость командной строки при управлении решением Azure;
+
 - поддерживает длительные операции;
 - дает возможность использовать одну подписку для всех команд или разные подписки для определенных команд;
 - позволяет запрашивать результаты операций командной строки в выбранном формате;
