@@ -4,18 +4,143 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 02/18/2020
+ms.date: 03/10/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 49bb108372225146be8ffc6bb38cf793da8cdb74
-ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
+ms.openlocfilehash: ff3a1da2343b96bfd78b20742c2c15707932f3d7
+ms.sourcegitcommit: 21bc2a7125b6c38bf1c4def0a0e66e6673de4805
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77779947"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037954"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="march-10-2020"></a>10 марта 2020 г.
+
+Версия 2.2.0
+
+### <a name="acr"></a>ACR
+
+* Исправлена команда `az acr login`, которая неправильно вызывала ошибку.
+* Добавлена новая команда `az acr helm install-cli`.
+* Добавлена частная ссылка и включена поддержка CMK.
+* Добавлена команда private-link-resource list.
+
+### <a name="aks"></a>AKS
+
+* Исправлена функция поиска AKS в Cloud Shell.
+* az aks: устранены ошибки NoneType при мониторинге надстроек и пула агентов.
+* Добавлен параметр --nodepool-tags в пуле узлов при создании кластера Azure Kubernetes.
+* Добавлен параметр --tags при добавлении пула узлов в кластер или его обновлении.
+* aks create: добавлен параметр `--enable-private-cluster`.
+* Добавлен параметр --nodepool-labels в пуле узлов при создании кластера Azure Kubernetes.
+* Добавлен параметр --labels при добавлении нового пула узлов в кластер Azure Kubernetes.
+* Добавлен отсутствующий символ / в URL-адрес панели мониторинга.
+* Включена поддержка создания кластеров AKS для управляемых удостоверений
+* az aks: включена проверка состояния сетевого подключаемого модуля: Azure или Kubenet.
+* az aks: включена поддержка ключа сеанса AAD.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] az aks: включена поддержка изменений MSI для GF и BF для omsagent (мониторинг контейнеров) (1)
+* az aks use-dev-spaces: добавлен параметр типа конечной точки в команду use-dev-spaces для настройки конечной точки, созданной в контроллере Azure Dev Spaces.
+
+### <a name="appconfig"></a>AppConfig
+
+* Включена разблокировка с использованием kv set для добавления функции и ссылки на хранилище ключей.
+
+### <a name="appservice"></a>AppService
+
+* az webapp create: устранена проблема с выполнением команды с параметром --runtime.
+* az functionapp deployment source config-zip: добавлено сообщение об ошибке, если группа ресурсов или имя функции недействительны или не существуют.
+* functionapp create: исправлено сообщение с предупреждением, которое появляется с `functionapp create` и в котором указан флаг `--functions_version`, но в имени флага ошибочно используется `_` вместо `-`.
+* az functionapp create: обновлен способ настройки linuxFxVersion и имени образа контейнера для приложений с функциями Linux.
+* az functionapp deployment source config-zip: устранена проблема, вызванная изменением параметров приложения во время развертывания ZIP, что приводит к ошибкам 5xx во время развертывания.
+* Исправление 5720946: не удается задать имя с помощью az webapp backup.
+
+### <a name="arm"></a>ARM
+
+* az resource: улучшены примеры для модуля ресурсов.
+* az policy assignment list: Включена поддержка списков назначений политик в области группы управления.
+* Добавлены команды `az deployment group` и `az deployment operation group` для развертывания шаблонов в группах ресурсов. Это дубликат `az group deployment` и `az group deployment operation`.
+* Добавлены команды `az deployment sub` и `az deployment operation sub` для развертывания шаблонов в области подписки. Это дубликат `az deployment` и `az deployment operation`.
+* Добавлены команды `az deployment mg` и `az deployment operation mg` для развертывания шаблонов в группах управления.
+* Добавлены команды `az deployment tenant` и `az deployment operation tenant` для развертывания шаблонов в области арендатора.
+* az policy assignment create: добавлено описание параметра `--location`.
+* az group deployment create: добавлен параметр `--aux-tenants` для включения поддержки перекрестных арендаторов.
+
+### <a name="cdn"></a>CDN
+
+* Добавлены команды WAF CDN.
+
+### <a name="compute"></a>Службы вычислений
+
+* az sig image-version: добавлен параметр --data-snapshot-luns
+* az ppg show: добавлен параметр --colocation-status, чтобы включить выборку состояния совместного размещения всех ресурсов в группе размещения близкого взаимодействия.
+* az vmss create/update: включена поддержка автоматического исправления.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] az image template: шаблон переименован в построитель.
+* az image builder create: добавлен параметр --image-template.
+
+### <a name="cosmos-db"></a>Cosmos DB
+
+* Добавлены командлеты хранимой процедуры SQL, определяемых пользователем функций и триггеров.
+* az cosmosdb create: добавлен параметр --key-uri для добавления сведений о шифровании хранилища ключей.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* keyvault create: включена функция обратимого удаления по умолчанию.
+
+### <a name="monitor"></a>Монитор
+
+* az monitor metrics alert create: включена поддержка `~` в `--condition`.
+
+### <a name="network"></a>Сеть
+
+* az network application-gateway rewrite-rule create: включена поддержка конфигурации URL-адресов.
+* az network dns zone import: для параметра --zone-name в будущем можно будет не учитывать регистр.
+* az network private-endpoint/private-link-service: удалена метка предварительной версии.
+* az network bastion: включена поддержка бастиона.
+* az network vnet list-available-ips: включена поддержка списка доступных IP-адресов в виртуальной сети.
+* az network watcher flow-log create/list/delete/update: добавлены новые команды для управления журналами потоков Наблюдателя и предоставлен параметр --location для явного определения Наблюдателя.
+* az network watcher flow-log configure: поддержка прекращена.
+* az network watcher flow-log show: включена поддержка параметров --location и --name для получения результатов в формате ARM; поддержка предыдущего форматированного вывода прекращена.
+
+### <a name="policy"></a>Политика
+
+* az policy assignment create: исправлена ошибка, из-за которой автоматически генерируемое имя назначения политики превышало предельное значение.
+
+### <a name="rbac"></a>RBAC
+
+* az ad group show: исправлено значение --group, обрабатываемое как проблема с регулярными выражениями.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Обновлена версия пакета SDK azure-mgmt-rdbms до 2.0.0.
+* az postgres private-endpoint-connection: включено управление подключениями частных конечных точек Postgres.
+* az postgres private-link-resource: включено управление ресурсами частных ссылок Postgres.
+* az mysql private-endpoint-connection: включено управление подключениями частных конечных точек MySQL.
+* az mysql private-link-resource: включено управление ресурсами частных ссылок MySQL.
+* az mariadb private-endpoint-connection: включено управление подключениями частных конечных точек MariaDB.
+* az mariadb private-link-resource: включено управление ресурсами частных ссылок MariaDB.
+* Обновление тестов частной конечной точки RDBMS
+
+### <a name="sql"></a>SQL
+
+* Sql midb Add: list-deleted, show-deleted, update-retention, show-retention.
+* (sql server create:) добавлен необязательный флаг включения и отключения доступа к общедоступным сетям в команду создания SQL Server.
+* (sql server update:) внесены некоторые изменения для клиентов.
+* Добавлено свойство minimal_tls_version для MI и SQL DB.
+
+### <a name="storage"></a>Память
+
+* az storage blob delete-batch: исправлено неправильное поведение флага `--dryrun`.
+* az storage account network-rule add (исправление): добавлено требование того, чтобы операция была идемпотентной.
+* az storage account create/update: включена поддержка предпочтения маршрутизации.
+* Обновлена версия azure-mgmt-storage до 8.0.0.
+* az storage container immutability create: добавлен параметр --allow-protected-append-write.
+* az storage account private-link-resource list: включена поддержка вывода списка ресурсов частной ссылки для учетной записи хранения.
+* az storage account private-endpoint-connection approve/reject/show/delete: включена поддержка управления подключениями к частным конечным точкам.
+* az storage account blob-service-properties update: добавлены параметры --enable-restore-policy и --restore-days.
+* az storage blob restore: включена поддержка восстановления диапазонов BLOB-объектов.
 
 ## <a name="february-18-2020"></a>18 февраля 2020 г.
 

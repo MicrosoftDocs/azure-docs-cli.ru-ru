@@ -8,12 +8,12 @@ ms.date: 09/09/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 40312c2b6a741d3373d335b6db4797126ee2f3b3
-ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
+ms.openlocfilehash: d07fe2e807bd6e1fac6d0e9f883bcc8092be46bb
+ms.sourcegitcommit: 21bc2a7125b6c38bf1c4def0a0e66e6673de4805
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77779556"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79037985"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
@@ -46,8 +46,9 @@ ms.locfileid: "77779556"
 4. Обновите индекс пакета `zypper` и выполните установку:
 
    ```bash
-   sudo zypper install --from azure-cli -y azure-cli
+   sudo zypper install --from azure-cli azure-cli
    ```
+   Используйте вход 2 чтобы продолжить установку, игнорируя некоторые зависимости.
 
 Запустите Azure CLI с помощью команды `az`. Чтобы войти, используйте команду [az login](/cli/azure/reference-index#az-login).
 
