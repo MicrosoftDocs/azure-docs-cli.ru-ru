@@ -4,18 +4,143 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 03/10/2020
+ms.date: 03/31/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ff3a1da2343b96bfd78b20742c2c15707932f3d7
-ms.sourcegitcommit: 21bc2a7125b6c38bf1c4def0a0e66e6673de4805
+ms.openlocfilehash: aed043bcb900937a405fd71dafe24016fa0972d7
+ms.sourcegitcommit: b5ecfc168489cd0d96462d6decf83e8b26a10194
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79037954"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80417815"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="march-31-2020"></a>31 марта 2020 г.
+
+Версия 2.3.0
+
+### <a name="acr"></a>ACR
+
+* az acr task update: исключение пустого указателя.
+* `az acr import`: Отредактировано справочное сообщение и сообщение об ошибке для уточнения того, как использовать параметры --source и --registry.
+* Добавлено средство проверки для аргумента registry_name.
+* `az acr login`: удален флаг предпросмотра для --expose-token.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален параметр ветви az acr task create/update.
+* Клиент az acr task update теперь может независимо обновлять контекст, токен GitHub и триггеры.
+* az acr agentpool: новая функция.
+
+### <a name="aks"></a>AKS
+
+* Исправлена ошибка с apiServerAccessProfile при обновлении --api-server-authorized-ip-ranges.
+* Обновление AKS: при обновлении исходящие IP-адреса переопределяются с помощью входных значений.
+* Не создаются имена субъектов-служб для кластеров MSI и реализована поддержка присоединение ACR к кластерам MSI.
+
+### <a name="ams"></a>AMS
+
+* Исправление 12469: не удается добавить content-key-policy для FairPlay из-за проблем с параметром ask.
+
+### <a name="appconfig"></a>AppConfig
+
+* Добавлен параметр --skip-keyvault для экспорта kv.
+
+### <a name="appservice"></a>AppService
+
+* Исправление 12509: удален тег, добавлявшийся по умолчанию при создании приложения с помощью az webapp up.
+* az functionapp create: обновлено меню справки для --runtime-version и добавлено предупреждение, когда пользователь указывает параметр --runtime-version для DotNet.
+* az functionapp create: изменен способ установки JavaVersion для приложений-функций Windows.
+
+### <a name="arm"></a>ARM
+
+* az deployment create/validate: по умолчанию используется параметр --handle-extended-json-format.
+* az lock create: в справочную документацию добавлены примеры создания подресурсов.
+* Список az deployment {group/mg/sub/tenant}: реализована поддержка фильтрации ProvisioningState.
+* az deployment: исправлена ошибка синтаксического анализа комментария в последнем аргументе.
+
+### <a name="backup"></a>Резервное копирование
+
+* Добавлена возможность восстановления нескольких файлов.
+* Добавлена возможность резервного копирования только дисков с ОС.
+* Добавлен параметр restore-as-unmanaged-disk, позволяющий задать неуправляемое восстановление.
+
+### <a name="compute"></a>Службы вычислений
+
+* az vm create: для --nsg-rule добавлен вариант NONE.
+* az vmss create/update: удален тег предпросмотра для автоматического восстановления VMSS.
+* az vm update: реализована поддержка --workspace.
+* Исправлена ошибка в коде инициализации VirtualMachineScaleSetExtension.
+* Версия VMAccessAgent обновлена до 2.4.
+* az vmss set-orchestration-service-state: реализована поддержка состояния службы оркестрации наборов VMSS.
+* Версия API диска обновлена до 2019-11-01.
+* az disk create: add --disk-iops-read-only, --disk-mbps-read-only, --max-shares, --image-reference, --image-reference-lun, --gallery-image-reference, --gallery-image-reference-lun.
+
+### <a name="cosmos-db"></a>Cosmos DB
+
+* Добавлен отсутствовавший параметр --type для перенаправления в связи с устареванием.
+
+### <a name="docker"></a>Docker
+
+* Обновление до Alpine 3.11 и Python 3.6.10.
+
+### <a name="extension"></a>Расширение
+
+* Добавлена возможность загрузки расширений в системный путь через пакеты.
+
+### <a name="hdinsight"></a>HDInsight
+
+* (az hdinsight create:) Добавлена возможность указания клиентами минимальной поддерживаемой версии TLS с помощью параметра `--minimal-tls-version`. Допустимые значения: 1.0,1.1,1.2.
+
+### <a name="iot"></a>Интернет вещей
+
+* Добавлен параметр codeowner.
+* az iot hub create: номер SKU по умолчанию изменен с F1 на S1.
+* iot hub: реализована поддержка IotHub в профиле 2019-03-01-hybrid.
+
+### <a name="iotcentral"></a>IoT Central
+
+* Обновлены сведения об ошибках, шаблон приложения по умолчанию и сообщение с подсказкой.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* Реализована поддержка резервного копирования и восстановления сертификатов.
+* keyvault create/update: добавлена поддержка параметра --retention-days.
+* При перечислении больше не показываются управляемые ключи и секреты.
+* az keyvault create: реализована поддержка `--network-acls`, `--network-acls-ips` и `--network-acls-vnets` для указания сетевых правил при создании хранилища.
+
+### <a name="lock"></a>Блокировка
+
+* Исправлена ошибка с командой az lock delete, не работавшей с Microsoft.DocumentDB.
+
+### <a name="monitor"></a>Монитор
+
+* az monitor clone: добавлена возможность клонирования правил метрики из одного ресурса в другой.
+* Исправлена ошибка IcM179210086: не удается создать настраиваемое оповещение для метрики Application Insights.
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* az volume create: для томов защиты данных добавлены операции репликации (approve, suspend, resume, status, remove).
+
+### <a name="network"></a>Сеть
+
+* az network application-gateway waf-policy managed-rule rule-set add: добавлена поддержка Microsoft_BotManagerRuleSet.
+* Журнал потоков наблюдателя за сетями: исправлены неправильные сведения об устаревании.
+* Добавлена поддержка имен узлов в прослушивателе шлюза приложений.
+* az network nat gateway: добавлена возможность создания пустого ресурса без общедоступного IP-адреса или общедоступного IP-префикса.
+* Добавлена возможность создания VPN-шлюза.
+* Реализована поддержка `--if-none-match` для `az network dns record-set {} add-record`.
+
+### <a name="packaging"></a>Упаковка
+
+* Прекращена поддержка Python 3.5.
+
+### <a name="profile"></a>Профиль
+
+* az login: добавлен показ предупреждений об ошибках MFA.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Добавлены команды управления ключами шифрования данных сервера для PostgreSQL и MySQL.
 
 ## <a name="march-10-2020"></a>10 марта 2020 г.
 
@@ -1548,7 +1673,7 @@ ms.locfileid: "79037954"
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален флаг `--local-git` для команды `devops-build`. Обнаружение и обработка локального репозитория Git являются обязательными для создания конвейеров DevOps в Azure.
 * Добавлена поддержка создания плана функций Linux.
 * Добавлена возможность менять план для приложения-функции с помощью `functionapp update --plan`.
-* Добавлена поддержка параметров масштабирования плана "Премиум" для Функций Azure.
+* Добавлена поддержка параметров горизонтального увеличения масштаба плана "Премиум" для Функций Azure.
 
 ### <a name="cdn"></a>CDN
 * Добавлена поддержка `Microsoft_Standard` и `Standard_ChinaCdn`.

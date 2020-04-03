@@ -8,12 +8,12 @@ ms.date: 10/14/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: c84d5093f670b397a3035dc0f08edc22fa990ff4
-ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
+ms.openlocfilehash: 302b98717ee422de9bd60a57b18d900bcf5fcaf9
+ms.sourcegitcommit: b5ecfc168489cd0d96462d6decf83e8b26a10194
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77780134"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80417915"
 ---
 # <a name="install-azure-cli-with-apt"></a>Установка Azure CLI с помощью apt
 
@@ -58,8 +58,8 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 2. Скачайте и установите ключ подписывания (Майкрософт):
 
     ```bash
-    curl -sL https://packages.microsoft.com/keys/microsoft.asc | 
-        gpg --dearmor | 
+    curl -sL https://packages.microsoft.com/keys/microsoft.asc |
+        gpg --dearmor |
         sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
     ```
 
@@ -67,7 +67,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
     ```bash
     AZ_REPO=$(lsb_release -cs)
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | 
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
         sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
@@ -97,6 +97,22 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 Иногда между выпуском дистрибутива и выпуском пакета Azure CLI для этого дистрибутива может пройти некоторое время. Azure CLI использует минимально возможный набор зависимостей и разработан таким образом, чтобы свести к минимуму вероятность нарушения работы при обновлении зависимостей. Если для вашего базового дистрибутива отсутствует пакет, попробуйте установить пакет для более ранней версии дистрибутива.
 
 Для этого вручную установите значение `AZ_REPO` при [добавлении репозитория](#set-release). Для дистрибутивов Ubuntu используйте репозиторий `bionic`, а для дистрибутивов Debian используйте репозиторий `stretch`. Более ранние версии дистрибутивов, чем Ubuntu Trusty и Debian Wheezy, не поддерживаются.
+
+### <a name="elementary-os-eos-fails-to-install-the-azure-cli"></a>В Elementary OS (EOS) не удалось установить Azure CLI
+
+В EOS не удалось установить Azure CLI, так как `lsb_release` возвращает `HERA`, то есть имя выпуска EOS.  Чтобы устранить проблему, нужно исправить файл `/etc/apt/sources.list.d/azure-cli.list` и изменить `hera main` на `bionic main`.
+
+Исходное содержимое файла:
+
+```
+deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ hera main
+```
+
+Измененное содержимое файла:
+
+```
+deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ bionic main
+```
 
 ### <a name="proxy-blocks-connection"></a>Прокси-сервер блокирует подключения
 
@@ -133,7 +149,7 @@ Acquire {
 > [!NOTE]
 > Эта команда позволяет обновить все установленные в системе пакеты, зависимости которых не были изменены.
 > Чтобы обновить только CLI, используйте `apt-get install`.
-> 
+>
 > ```bash
 > sudo apt-get update && sudo apt-get install --only-upgrade -y azure-cli
 > ```

@@ -8,14 +8,14 @@ ms.date: 02/15/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 1bde944f1c443ef1a8d5aa918575fa09e6bb4714
-ms.sourcegitcommit: 7caa6673f65e61deb8d6def6386e4eb9acdac923
+ms.openlocfilehash: c18adbee84fd3e5c73367b07bbd0b03ac61008cd
+ms.sourcegitcommit: b5ecfc168489cd0d96462d6decf83e8b26a10194
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77779624"
+ms.lasthandoff: 03/31/2020
+ms.locfileid: "80417878"
 ---
-# <a name="create-an-azure-service-principal-with-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
+# <a name="create-an-azure-service-principal-with-the-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
 Разрешения для автоматизированных средств, которые используют службы Azure, всегда должны быть ограничены. В качестве замены входу в приложения с использованием учетной записи пользователя с полными правами Azure предлагает субъекты-службы.
 
@@ -25,7 +25,7 @@ ms.locfileid: "77779624"
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
-Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac). При создании субъекта-службы вы задаете используемый им тип аутентификации для входа. 
+Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac). При создании субъекта-службы вы задаете используемый им тип аутентификации для входа.
 
 > [!NOTE]
 >
@@ -53,6 +53,9 @@ ms.locfileid: "77779624"
 
 Аргумент `--cert` позволяет воспользоваться аутентификацией на основе сертификата. При этом он требует указать существующий сертификат. Убедитесь, что все средства, которые используют этот субъект-службу, имеют доступ к закрытому ключу сертификата. Сертификаты должны иметь формат ASCII, например PEM, CER или DER. Передайте сертификат в виде строки или воспользуйтесь форматом `@path`, чтобы загрузить сертификат из файла.
 
+> [!NOTE]
+> В используемый PEM-файл нужно добавить **CERTIFICATE** к **PRIVATE KEY**.
+
 ```azurecli-interactive
 az ad sp create-for-rbac --name ServicePrincipalName --cert "-----BEGIN CERTIFICATE-----
 ...
@@ -74,6 +77,35 @@ az ad sp create-for-rbac --name ServicePrincipalName --cert CertName --keyvault 
 ```azurecli-interactive
 az ad sp create-for-rbac --name ServicePrincipalName --create-cert
 ```
+
+Выходные данные консоли:
+
+```
+Creating a role assignment under the scope of "/subscriptions/myId"
+Please copy C:\myPath\myNewFile.pem to a safe place.
+When you run 'az login', provide the file path in the --password argument
+{
+  "appId": "myAppId",
+  "displayName": "myDisplayName",
+  "fileWithCertAndPrivateKey": "C:\\myPath\\myNewFile.pem",
+  "name": "http://myName",
+  "password": null,
+  "tenant": "myTenantId"
+}
+```
+
+Содержимое нового PEM-файла:
+```
+-----BEGIN PRIVATE KEY-----
+myPrivateKeyValue
+-----END PRIVATE KEY-----
+-----BEGIN CERTIFICATE-----
+myCertificateValue
+-----END CERTIFICATE-----
+```
+
+> [!NOTE]
+> Команда `az ad sp create-for-rbac --create-cert` создает субъект-службу и PEM-файл. PEM-файл содержит правильно отформатированные **PRIVATE KEY** и **CERTIFICATE**.
 
 Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault. Если используется аргумент `--keyvault`, аргумент `--cert`__обязателен__.
 
@@ -149,7 +181,7 @@ az role assignment list --assignee APP_ID
 az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
 ```
 
-Чтобы войти с использованием сертификата, он должен быть доступен локально как PEM- или DER-файл в формате ASCII:
+Чтобы войти с использованием сертификата, этот сертификат должен быть доступным локально как PEM- или DER-файл в формате ASCII. В используемый PEM-файл нужно добавить **CERTIFICATE** к **PRIVATE KEY**.
 
 ```azurecli-interactive
 az login --service-principal --username APP_ID --tenant TENANT_ID --password /path/to/cert
