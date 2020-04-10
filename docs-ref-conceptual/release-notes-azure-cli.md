@@ -4,18 +4,30 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 03/31/2020
+ms.date: 04/01/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: aed043bcb900937a405fd71dafe24016fa0972d7
-ms.sourcegitcommit: b5ecfc168489cd0d96462d6decf83e8b26a10194
+ms.openlocfilehash: cca6f42f29467126553c6e8a332907b1ad1ebc74
+ms.sourcegitcommit: 712c8ca6457552b6b7a8866c1370a6ec51d07f2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80417815"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80525259"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="april-01-2020"></a>01 апреля 2020 г.
+
+Версия 2.3.1
+
+### <a name="acr"></a>ACR
+
+* Исправлена неправильная версия azure-mgmt-containerregistry для Linux.
+
+### <a name="profile"></a>Профиль
+
+* az login: Исправлена ошибка входа в облачных профилях, отличающихся от `latest`.
 
 ## <a name="march-31-2020"></a>31 марта 2020 г.
 
@@ -5138,4 +5150,3 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 - добавив информацию о проблемах в наш [список на сайте GitHub](https://github.com/azure/azure-cli/issues/);
 - Свяжитесь с командой разработчиков ([azfeedback@microsoft.com](mailto:azfeedback@microsoft.com)),
 - отправив отзыв из командной строки с помощью команды `az feedback`.
-
