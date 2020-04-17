@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: haroldrandom
 ms.author: jianzen
 manager: yonzhan,yungezz
-ms.date: 04/08/2020
+ms.date: 04/14/2020
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 93d876624c371269dc593aad9cde02fa2033ecc3
-ms.sourcegitcommit: 85e1fe2f122236279e3d59f3af9f7230e63c947e
+ms.openlocfilehash: 2774a2c24dc42afe980080e184f63fb97c5becd8
+ms.sourcegitcommit: f7d793aa1e56457c01d592a05e9bb3033b6c502b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
-ms.locfileid: "81006879"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81386741"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -36,7 +36,7 @@ az extension list-available --output table
 | [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.6 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Да |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 5.0.1 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.8.9 | Расширение Azure IoT для Azure CLI. |  |
-| [azure-cli-ml](https://docs.microsoft.com/azure/machine-learning/service/) | 1.2.0 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
+| [azure-cli-ml](https://docs.microsoft.com/azure/machine-learning/service/) | 1.3.0 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
 | [azure-devops](https://github.com/Microsoft/azure-devops-cli-extension) | 0.18.0 | Инструменты для управления Azure DevOps. |  |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.3.0 | Управление ресурсами Брандмауэра Azure. | Да |
 | [azure-iot](https://github.com/azure/azure-iot-cli-extension) | 0.9.1 | Расширение Azure IoT для Azure CLI. |  |
@@ -45,7 +45,7 @@ az extension list-available --output table
 | [connection-monitor-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/connection-monitor-preview) | 0.1.0 | Расширение Connection Monitor для командной строки Microsoft Azure (версия 2) | Да |
 | [csvmware](https://github.com/Azure/az-vmware-cli) | 0.3.0 | Управление решением VMware в Azure от CloudSimple. | Да |
 | [databox](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Data Box для программ командной строки Microsoft Azure |  |
-| [databricks](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение DatabricksClient для программ командной строки Microsoft Azure |  |
+| [databricks](https://github.com/Azure/azure-cli-extensions) | 0.2.0 | Расширение DatabricksClient для программ командной строки Microsoft Azure |  |
 | [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.13 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Да |
 | [deploy-to-azure](https://github.com/Azure/deploy-to-azure-cli-extension) | 0.2.0 | Развертывание в Azure с помощью действий GitHub. | Да |
 | [dev-spaces](https://github.com/Azure/azure-cli-extensions) | 1.0.5 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. |  |
