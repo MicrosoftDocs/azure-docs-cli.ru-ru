@@ -4,18 +4,129 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 04/01/2020
+ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: cca6f42f29467126553c6e8a332907b1ad1ebc74
-ms.sourcegitcommit: 712c8ca6457552b6b7a8866c1370a6ec51d07f2c
+ms.openlocfilehash: 10dfdc316ba00f8a7019f0724aab231e344c1c6d
+ms.sourcegitcommit: 89ec9fa7ebd2170b55201cd51fb386fd9351d7ca
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80525259"
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81728599"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="april-21-2020"></a>21 апреля 2020 г.
+
+Версия 2.4.0
+
+### <a name="acr"></a>ACR
+
+* `az acr run --cmd`: отключает переопределение рабочего каталога.
+* Включена поддержка выделенной конечной точки данных.
+
+### <a name="aks"></a>AKS
+
+* `az aks list -o table` теперь показывает privateFqdn как FQDN для частных кластеров.
+* Добавлен параметр --uptime-sla.
+* Обновлен пакет containerservice.
+* Включена поддержка общедоступных IP-адресов узлов.
+* Исправлена опечатка в команде справки.
+
+### <a name="appconfig"></a>AppConfig
+
+* Разрешена ссылка на хранилище ключей для команд kv list и export.
+* Исправлена ошибка при отображении значений ключей.
+
+### <a name="appservice"></a>AppService
+
+* `az functionapp create`: изменен способ настройки linuxFxVersion для приложений-функций dotnet в Linux. Это должно исправить ошибку, препятствующую созданию приложений dotnet для использования в Linux.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az webapp create` Исправлена ошибка для сохранения существующих параметров AppSettings с помощью az webapp create.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az webapp up` Исправлена ошибка для создания группы ресурсов для команды az webapp up при использовании флага -g.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az webapp config` Исправлена ошибка для отображения значений для выходных данных не в формате JSON с помощью команды az webapp config connection-string list.
+
+### <a name="arm"></a>ARM
+
+* `az deployment create/validate`: Добавлен параметр `--no-prompt` для пропуска запроса отсутствующих параметров для шаблона ARM.
+* `az deployment group/mg/sub/tenant validate`: включена поддержка комментариев в файле параметров развертывания.
+* `az deployment`: удалено `is_preview` для параметра `--handle-extended-json-format`.
+* `az deployment group/mg/sub/tenant cancel`: включена поддержка отмены развертывания для шаблона ARM.
+* `az deployment group/mg/sub/tenant validate`: улучшено отображение сообщения об ошибке при сбое проверки развертывания.
+* `az deployment-scripts`: добавлена новая команда для DeploymentScripts.
+* `az resource tag`: добавлен параметр `--is-incremental` для инкрементного добавления тегов к ресурсам.
+
+### <a name="aro"></a>ARO
+
+* `az aro`:  добавлен модуль команды aro Azure RedHat OpenShift версии 4.
+
+### <a name="batch"></a>Пакетная служба Azure
+
+* Обновлен API пакетной службы.
+
+### <a name="compute"></a>Службы вычислений
+
+* `az sig image-version create`: добавлен тип учетной записи хранения Premium_LRS.
+* `az vmss update`: устранена проблема с обновлением уведомления о завершении.
+* `az vm/vmss create`: включена поддержка версии специализированного образа.
+* API SIG версии 2019-12-01
+* `az sig image-version create`: добавлен параметр --target-region-encryption.
+* Исправлена ошибка, из-за которой тесты завершались сбоем при последовательном выполнении из-за дублирования имени хранилища ключей в глобальном кэше в памяти.
+
+### <a name="cosmosdb"></a>Cosmos DB
+
+* Включена поддержка `az cosmosdb private-link-resource/private-endpoint-connection`.
+
+### <a name="iot-central"></a>IoT Central
+
+* Прекращена поддержка `az iotcentral`.
+* Добавлен модуль команды `az iot central`.
+
+### <a name="monitor"></a>Монитор
+
+* Включена поддержка сценария приватного канала для монитора.
+* Исправлен неправильный способ имитации в test_monitor_general_operations.py.
+
+### <a name="network"></a>Сеть
+
+* Прекращена поддержка SKU для команды public ip update.
+* `az network private-endpoint`: включена поддержка закрытой группы зон DNS.
+* Включена функция локального контекста для параметра vnet/subnet.
+* Исправлен неправильный пример использования в test_nw_flow_log_delete.
+
+### <a name="packaging"></a>Упаковка
+
+* Прекращена поддержка пакета Ubuntu/Disco.
+
+### <a name="rbac"></a>RBAC
+
+* `az ad app create/update`: включена поддержка параметра --optional-claims.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Добавлены команды администратора Azure Active Directory для PostgreSQL и MySQL.
+
+### <a name="service-fabric"></a>Service Fabric
+
+* Исправление 12891: `az sf application update --application-parameters` удаляет старые параметры, отсутствующие в запросе.
+* Исправление 12470: включена поддержка az sf create cluster, исправлены ошибки в устойчивости и надежности обновления, поиск VMSS выполняется корректно в коде при указании имени типа узла.
+
+### <a name="sql"></a>SQL
+
+* Добавлены `az sql mi op list`, `az sql mi op get`, `az sql mi op cancel`.
+* `az sql midb`: обновление и отображение политик долгосрочного хранения, отображение и удаление долгосрочных резервных копий, восстановление долгосрочных резервных копий.
+
+### <a name="storage"></a>Память
+
+* Обновлена версия azure-mgmt-storage до 9.0.0.
+* `az storage logging off`: включено отключение ведения журналов для учетной записи хранения.
+* `az storage account update`: включена автоматическая смена ключа для CMK.
+* `az storage account encryption-scope create/update/list/show`: включена настройка области шифрования.
+* `az storage container create`: добавлены параметры --default-encryption-scope и --deny-encryption-scope-override для настройки области шифрования на уровне контейнера.
+
+### <a name="survey"></a>Опрос
+
+* Добавлен параметр для отключения ссылки опроса.
 
 ## <a name="april-01-2020"></a>01 апреля 2020 г.
 
