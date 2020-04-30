@@ -4,18 +4,72 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 04/21/2020
+ms.date: 04/28/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 10dfdc316ba00f8a7019f0724aab231e344c1c6d
-ms.sourcegitcommit: 89ec9fa7ebd2170b55201cd51fb386fd9351d7ca
+ms.openlocfilehash: 032039cc5a51f0d158fbd3616a30263df139f53b
+ms.sourcegitcommit: 1e5d8f04091803d68ac6833d2e2af37a863486ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81728599"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82199399"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="april-28-2020"></a>28 апреля 2020 г.
+
+Версия 2.5.0
+
+### <a name="acs"></a>ACS
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] az openshift create: удален параметр --vnet-peer.
+* `az openshift create`: добавлены флаги для поддержки частного кластера.
+* `az openshift`: обновление до версии API `2019-10-27-preview`.
+* `az openshift`: добавлена команда `update`.
+
+### <a name="aks"></a>AKS
+
+* `az aks create`: включена поддержка Windows.
+
+### <a name="appservice"></a>AppService
+
+* `az webapp deployment source config-zip`: удалена функция перевода в спящий режим после выполнения request.get().
+
+### <a name="arm"></a>ARM
+
+* Добавлены команды What-If развертывания шаблона.
+
+### <a name="aro"></a>ARO
+
+* `az aro`: исправлены выходные данные таблицы.
+
+### <a name="ci"></a>CI
+
+* Включена поддержка PyTest и прекращена поддержка Nose для автотестов.
+
+### <a name="compute"></a>Службы вычислений
+
+* `az vmss disk detach`: устранена проблема с NoneType для диска данных.
+* `az vm availability-set list`: включена поддержка отображения списка виртуальных машин.
+* `az vm list-skus`: исправлена проблема с отображением формата таблицы.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* Добавлен новый параметр `--enable-rbac-authorization` для использования во время создания или обновления.
+
+### <a name="monitor"></a>Монитор
+
+* Включена поддержка компонентов CMK в кластере LA.
+* `az monitor log-analytics workspace linked-storage`: включена поддержка функций BYOS.
+
+### <a name="network"></a>Сеть
+
+* `az network security-partner`: включена поддержка поставщика партнера по безопасности.
+
+### <a name="privatedns"></a>Частная зона DNS
+
+* Добавлена функция в частной зоне DNS для импорта и экспорта файла зоны.
 
 ## <a name="april-21-2020"></a>21 апреля 2020 г.
 
@@ -48,9 +102,9 @@ ms.locfileid: "81728599"
 
 ### <a name="arm"></a>ARM
 
-* `az deployment create/validate`: Добавлен параметр `--no-prompt` для пропуска запроса отсутствующих параметров для шаблона ARM.
+* `az deployment create/validate`: добавлен параметр `--no-prompt` для пропуска запроса отсутствующих параметров для шаблона ARM.
 * `az deployment group/mg/sub/tenant validate`: включена поддержка комментариев в файле параметров развертывания.
-* `az deployment`: удалено `is_preview` для параметра `--handle-extended-json-format`.
+* `az deployment`: удалено значение `is_preview` для параметра `--handle-extended-json-format`.
 * `az deployment group/mg/sub/tenant cancel`: включена поддержка отмены развертывания для шаблона ARM.
 * `az deployment group/mg/sub/tenant validate`: улучшено отображение сообщения об ошибке при сбое проверки развертывания.
 * `az deployment-scripts`: добавлена новая команда для DeploymentScripts.
@@ -109,11 +163,11 @@ ms.locfileid: "81728599"
 ### <a name="service-fabric"></a>Service Fabric
 
 * Исправление 12891: `az sf application update --application-parameters` удаляет старые параметры, отсутствующие в запросе.
-* Исправление 12470: включена поддержка az sf create cluster, исправлены ошибки в устойчивости и надежности обновления, поиск VMSS выполняется корректно в коде при указании имени типа узла.
+* Исправление 12470: включена поддержка az sf create cluster, исправлены ошибки, связанные с устойчивостью и надежностью обновления, поиск VMSS выполняется корректно в коде при указании имени типа узла.
 
 ### <a name="sql"></a>SQL
 
-* Добавлены `az sql mi op list`, `az sql mi op get`, `az sql mi op cancel`.
+* Добавлены команды `az sql mi op list`, `az sql mi op get`, `az sql mi op cancel`.
 * `az sql midb`: обновление и отображение политик долгосрочного хранения, отображение и удаление долгосрочных резервных копий, восстановление долгосрочных резервных копий.
 
 ### <a name="storage"></a>Память
