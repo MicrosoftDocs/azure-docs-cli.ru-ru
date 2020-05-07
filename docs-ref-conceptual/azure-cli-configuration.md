@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 97f9fe767d8f7a6a1360c9068985b2fcfe1b7c6f
-ms.sourcegitcommit: 1e5d8f04091803d68ac6833d2e2af37a863486ac
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "82199433"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI

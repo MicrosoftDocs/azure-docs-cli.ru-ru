@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4e359c261849ccc877eb7d4b235f04ae560bb709
-ms.sourcegitcommit: e5e6cec0d44f914df6f6584e1105a3b296363207
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "70387420"
 ---
 # <a name="azure-cli-documentation"></a>Документация по Azure CLI
@@ -19,6 +19,6 @@ ms.locfileid: "70387420"
 
 ## <a name="microsoft-open-source-code-of-conduct"></a>Правила поведения при работе с открытым кодом, принятые в проектах корпорации Майкрософт
 
-Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+В рамках этого проекта действуют [правила поведения в отношении продуктов с открытым исходным кодом Майкрософт](https://opensource.microsoft.com/codeofconduct/).
 Дополнительные сведения:[вопросы и ответы по правилам поведения](https://opensource.microsoft.com/codeofconduct/faq/). С любыми другими вопросами или комментариями обращайтесь по адресу[opencode@microsoft.com](mailto:opencode@microsoft.com).
 
