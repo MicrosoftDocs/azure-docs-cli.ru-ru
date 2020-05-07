@@ -1,7 +1,7 @@
-- name: Таблицы Azure
+- name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       tocHref: /cli/azure/
       topicHref: /cli/azure

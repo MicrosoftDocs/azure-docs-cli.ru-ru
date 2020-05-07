@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: a98a51e4dc3ac85d27e27ef9b9164a7f98431d31
-ms.sourcegitcommit: 465f2402b71e3de8c699798dc2a766fc90df241a
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "78953334"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum

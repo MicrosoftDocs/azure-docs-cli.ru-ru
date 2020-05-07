@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: d07fe2e807bd6e1fac6d0e9f883bcc8092be46bb
-ms.sourcegitcommit: 21bc2a7125b6c38bf1c4def0a0e66e6673de4805
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "79037985"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper

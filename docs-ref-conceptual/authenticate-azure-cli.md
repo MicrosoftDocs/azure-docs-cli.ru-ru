@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 26112c9a7f338a7f178dc627d89f6e1f33d97714
-ms.sourcegitcommit: 85e1fe2f122236279e3d59f3af9f7230e63c947e
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/10/2020
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "81006862"
 ---
 # <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI 

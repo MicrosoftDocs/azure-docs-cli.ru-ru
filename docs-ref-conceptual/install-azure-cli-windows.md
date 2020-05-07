@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: c5e9118a04b0dc608309093866307fdc7083f591
-ms.sourcegitcommit: b5ecfc168489cd0d96462d6decf83e8b26a10194
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "80417839"
 ---
 # <a name="install-azure-cli-on-windows"></a>Установка Azure CLI в Windows

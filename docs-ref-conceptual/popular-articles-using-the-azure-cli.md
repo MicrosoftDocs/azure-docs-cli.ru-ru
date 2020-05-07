@@ -10,10 +10,10 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 3a0b2e315e0eaf6c352aa2737f33da043b5feb7d
-ms.sourcegitcommit: 93d8137f37e974f7d314a0b1deb65ac563c2e2c5
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "80075939"
 ---
 # <a name="popular-articles-using-the-azure-cli"></a>Популярные статьи, в которых используется Azure CLI

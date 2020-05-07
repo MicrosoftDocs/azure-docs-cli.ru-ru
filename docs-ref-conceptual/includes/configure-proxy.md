@@ -7,10 +7,10 @@ ms.topic: include
 ms.prod: azure
 ms.technology: azure-cli
 ms.openlocfilehash: 676f33377a4e7122941bc789c51465b7f34aa1d3
-ms.sourcegitcommit: 08043c47d3ccf23522b91e6bba3932e312c04c7f
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "66516236"
 ---
 Если вы не можете подключиться к внешнему ресурсу из-за прокси-сервера, убедитесь, что вы правильно задали переменные `HTTP_PROXY` и `HTTPS_PROXY` в оболочке. Обратитесь к системному администратору, чтобы узнать, какие узлы и порты использовать для этих прокси-серверов.

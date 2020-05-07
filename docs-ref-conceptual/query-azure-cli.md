@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: c9f0afdd626ac8d9af027db02275e5a553595473
-ms.sourcegitcommit: 21bc2a7125b6c38bf1c4def0a0e66e6673de4805
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 05/06/2020
 ms.locfileid: "79060464"
 ---
 # <a name="query-azure-cli-command-output"></a>Запросы к выходным данным команд Azure CLI
