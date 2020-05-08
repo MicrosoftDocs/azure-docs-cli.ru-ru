@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: haroldrandom
 ms.author: jianzen
 manager: yonzhan,yungezz
-ms.date: 04/28/2020
+ms.date: 05/02/2020
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: f14ba4c0230407ee072ff4b51841d33da5d33b72
-ms.sourcegitcommit: 1e5d8f04091803d68ac6833d2e2af37a863486ac
+ms.openlocfilehash: d9e92e3b2e03185c9f9ba446bd10ef5237f3297d
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199365"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82835685"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -34,7 +34,7 @@ az extension list-available --output table
 | [aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) | 0.4.43 | Предварительное знакомство с будущими возможностями AKS. | Да |
 | [alertsmanagement](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение оповещений для программ командной строки Microsoft Azure |  |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.2 | Поддержка псевдонимов команд. | Да |
-| [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.6 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Да |
+| [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.7 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Да |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 5.0.1 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.8.9 | Расширение Azure IoT для Azure CLI. |  |
 | [azure-cli-ml](https://docs.microsoft.com/azure/machine-learning/service/) | 1.4.0 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
@@ -66,7 +66,9 @@ az extension list-available --output table
 | [internet-analyzer](https://github.com/Azure/azure-cli-extensions) | 0.1.0rc5 | Расширение Internet Analyzer программ командной строки Microsoft Azure | Да |
 | [ip-group](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Расширение IpGroup программ командной строки Microsoft Azure |  |
 | [keyvault-preview](https://github.com/Azure/azure-keyvault-cli-extension) | 0.1.3 | Команды предварительной версии Azure Key Vault. | Да |
+| [kusto](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение KustoManagementClient для программ командной строки Microsoft Azure |  |
 | [log-analytics](https://github.com/Azure/azure-cli-extensions/tree/master/src/log-analytics) | 0.1.4 | Поддержка возможностей запросов Azure Log Analytics. | Да |
+| [log-analytics-solution](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение операций для программ командной строки Microsoft Azure |  |
 | [logic](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение LogicManagementClient для программ командной строки Microsoft Azure |  |
 | [maintenance](https://github.com/Azure/azure-cli-extensions) | 1.0.1 | Поддержка управления обслуживанием Azure. |  |
 | [managementpartner](https://github.com/Azure/azure-cli-extensions) | 0.1.2 | Поддержка партнера управления (предварительная версия). |  |
@@ -87,6 +89,7 @@ az extension list-available --output table
 | [subscription](https://github.com/Azure/azure-cli-extensions) | 0.1.3 | Поддержка управления подписками (предварительная версия). |  |
 | [support](https://github.com/azure/azure-cli-extensions/tree/master/src/support) | 1.0.2 | Расширение Support для программ командной строки Microsoft Azure |  |
 | [synapse](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Synapse для программ командной строки Microsoft Azure | Да |
+| [timeseriesinsights](https://github.com/Azure/azure-cli-extensions/src/timeseriesinsights) | 0.1.0 | Расширение TimeSeriesInsightsClient для программ командной строки Microsoft Azure |  |
 | [virtual-network-tap](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-network-tap) | 0.1.0 | Управление точками доступа к виртуальным сетям (VTAP). | Да |
 | [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.1.3 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Да |
 | [vm-repair](https://github.com/Azure/azure-cli-extensions/tree/master/src/vm-repair) | 0.2.7 | Команды автоматического восстановления для исправления виртуальных машин. |  |

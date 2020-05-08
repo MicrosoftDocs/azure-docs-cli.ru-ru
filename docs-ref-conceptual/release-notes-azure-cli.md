@@ -4,18 +4,55 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 04/28/2020
+ms.date: 04/30/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 032039cc5a51f0d158fbd3616a30263df139f53b
-ms.sourcegitcommit: 1e5d8f04091803d68ac6833d2e2af37a863486ac
+ms.openlocfilehash: efb17acb25b2268496efe313cac0a8189a78930a
+ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199399"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82591430"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="april-30-2020"></a>30 апреля 2020 г.
+
+Версия 2.5.1
+
+### <a name="acr"></a>ACR
+
+* `az acr check-health`: исправлена ошибка DOCKER_PULL_ERROR в Windows.
+
+### <a name="compute"></a>Службы вычислений
+
+* `az vm list-ip-addresses`: Обработка ошибок
+* Исправлена ошибка создания виртуальной машины, которая возникает, если в профиле облака не задано значение endpoint_vm_image_alias_doc.
+* `az vmss create`: добавлен параметр --os-disk-size-gb.
+
+### <a name="cosmos-db"></a>Cosmos DB
+
+* `az cosmosdb create/update`: добавлена поддержка --enable-public-network.
+
+### <a name="extension"></a>Расширение
+
+* Исправлена загрузка неправильных метаданных для расширения типа колеса.
+
+### <a name="packaging"></a>Упаковка
+
+* Добавлен скрипт az для Git Bash/Cygwin в Windows.
+
+### <a name="sql"></a>SQL
+
+* `az sql instance-pool`: добавлена группа команд для пулов экземпляров.
+
+### <a name="storage"></a>Память
+
+* Пакет azure-multiapi-storage обновлен до версии 0.3.0.
+* Добавлена поддержка GZRS при создании и обновлении учетной записи хранения.
+* `az storage account failover`: добавлена поддержка отработки отказа учетной записи хранения GRS или GZRS.
+* `az storage blob upload`: добавлен параметр --encryption-scope для указания сведений об области шифрования.
 
 ## <a name="april-28-2020"></a>28 апреля 2020 г.
 
