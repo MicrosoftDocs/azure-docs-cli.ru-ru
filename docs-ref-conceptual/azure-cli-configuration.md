@@ -8,12 +8,12 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 97f9fe767d8f7a6a1360c9068985b2fcfe1b7c6f
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.openlocfilehash: 24a798e9b3c08f3cd9e66c017cc45f5346d8995e
+ms.sourcegitcommit: d05660a42b2a77c4b05a7f96c386e656bd2db0fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82199433"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83569176"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI
 
@@ -86,7 +86,7 @@ log_dir=/var/log/azure
 |---------|-----------|------|------------|
 | __core__ | output | строка | Формат вывода по умолчанию. Может иметь значение `json`, `jsonc`, `tsv` или `table`. |
 | | disable\_confirm\_prompt | Логическое | Включает и отключает запросы на подтверждение. |
-| | collect\_telemetry | Логическое | Разрешает корпорации Майкрософт собирать анонимные данные об использовании CLI. Сведения о конфиденциальности см. в описании [условий использования Azure CLI](https://aka.ms/AzureCliLegal). |
+| | collect\_telemetry | Логическое | Разрешает корпорации Майкрософт собирать анонимные данные об использовании CLI. Сведения о конфиденциальности см. в [лицензии MIT для Azure CLI](https://github.com/Azure/azure-cli/blob/dev/LICENSE). |
 | | only\_show\_errors | Логическое | Показывает ошибки только при вызове команды. Иными словами, в `stderr`будут записываться только ошибки. При этом подавляются предупреждения от команд предварительной версии, а также нерекомендуемых и экспериментальных команд. Также предоставляется для отдельных команд с параметром `--only-show-errors`. |
 | | no\_color | Логическое | Отключает цвет. Сообщения, выделенные цветом, будут иметь префикс `DEBUG`, `INFO`, `WARNING` и `ERROR`. Так устраняется проблема со сторонней библиотекой, при использовании которой цвет терминала нельзя отменить изменения после перенаправления `stdout`. |
 | __logging__ | enable\_log\_file | Логическое | Включение и отключение ведения журнала. |
