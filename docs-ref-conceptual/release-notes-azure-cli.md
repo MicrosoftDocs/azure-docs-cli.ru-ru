@@ -4,18 +4,85 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 05/19/2020
+ms.date: 06/02/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: c95a635cc58afcc7956c230d0e3f47351fa0893d
-ms.sourcegitcommit: d05660a42b2a77c4b05a7f96c386e656bd2db0fe
+ms.openlocfilehash: be0db24ca312825aba03256119d1b5e43afbd902
+ms.sourcegitcommit: 62355a77ca59addf7b19db6b95027676e52fd936
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83569193"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84275068"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+## <a name="june-02-2020"></a>02 июня 2020 г.
+
+Версия 2.7.0
+
+### <a name="acr"></a>ACR
+
+* Исправлена опечатка в сообщении об ошибке, возникающем при создании токена.
+
+### <a name="aks"></a>AKS
+
+* Номер SKU виртуальной машины по умолчанию изменен на Standard_D2s_v3.
+* Исправлен процесс создания назначения ролей для кластера MSI и настраиваемой подсети.
+
+### <a name="appservice"></a>AppService
+
+* Исправлена ошибка 12739, из-за которой команда az appservice list-locations возвращает недопустимые расположения.
+
+### <a name="arm"></a>ARM
+
+* `az deployment`: Исправлена ошибка 13159, из-за которой отображается неправильное сообщение JSON после удаления комментариев и сжатия.
+* `az resource tag`: Исправлена ошибка 13255, связанная с добавлением тегов к ресурсам с помощью типа ресурса `Microsoft.ContainerRegistry/registries/webhooks`.
+* Улучшены примеры для модуля ресурсов.
+
+### <a name="aro"></a>ARO
+
+* Исправлена ошибка CLIError, связанная с неправильным флагом для --worker-vm-disk-size-gb.
+
+### <a name="eventhub"></a>концентратор событий.
+
+* Исправлена ошибка 12406, из-за которой аргумент --capture-interval не обновляет intervalInSeconds.
+
+### <a name="hdinsight"></a>HDInsight
+
+* Объект get_json_object изменен на shell_safe_json_parse.
+
+### <a name="monitor"></a>Монитор
+
+* `az monitor metrics alert`: уточнены нескольких справочных сообщений.
+* `az monitor diagnostic-settings create`: включена поддержка аргумента --export-to-resource-specific.
+* Включена поддержка восстановления рабочей области LA.
+
+### <a name="network"></a>Сеть
+
+* `az network dns zone`: включена поддержка символа -.
+* `az network vpn-connection ipsec-policy`: изменены значения --sa-lifetime и --sa-max-size на более крупные в примере.
+* Обновление сети до версии 2020-04-01
+* `az network private-endpoint-connection`: включена поддержка Сетки событий.
+* `az network express-route list-route-tables`: исправлена ошибка, из-за которой нельзя было перечислять маршруты в виде таблицы.
+
+### <a name="packaging"></a>Упаковка
+
+* Добавлен пакет Ubuntu Focal.
+
+### <a name="rbac"></a>RBAC
+
+* `az ad sp credential reset`: изменен процесс создания учетных данных, чтобы не использовать проблемные специальные символы.
+
+### <a name="redis"></a>Redis
+
+* Исправление 13529: изменена документация по параметру enable_non_ssl_port.
+
+### <a name="storage"></a>Память
+
+* `az storage copy`: Добавлен параметр `--follow-symlinks` для включения поддержки символических ссылок.
+* Включен локальный контекст для учетной записи хранения.
+* `az storage logging`: Исправление 11969: уточнено сообщение об ошибке.
 
 ## <a name="may-19-2020"></a>19 мая 2020 г.
 
