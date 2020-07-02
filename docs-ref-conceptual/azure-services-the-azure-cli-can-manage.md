@@ -1,6 +1,6 @@
 ---
 title: Службы Azure, которыми можно управлять с помощью Azure CLI
-description: Ссылки на службы с доступными справочниками по Azure CLI, Конфигурация приложений, Служба приложений, Active Directory (AD), резервное копирование, Когнитивный поиск, Cosmos DB, Data Lake Storage, база данных, MariaDB, MySQL, PostgreSQL, PostgreSQL, DevOps, DevTest Labs, DNS, Функции, IoT, IoT Central, IoT Edge, Центр Интернета вещей, Служба Azure Kubernetes (AKS), Службы лабораторий, Машинное обучение, Управляемые приложения, Приватный канал, Resource Manager, Spring Cloud, База данных SQL, пакетная служба, Cognitive Services, Экземпляры контейнеров, Реестр контейнеров, Data Lake Analytics, Сетка событий, Центры событий, HDInsight, Key Vault, Load Balancer, Управляемые диски, Службы мультимедиа, Центры уведомлений, Служебная шина, Service Fabric, учетные записи хранения, Диспетчер трафика, Масштабируемые наборы виртуальных машин, виртуальная сеть, Вычислительная среда, Сеть, Интернет вещей, Средства для разработчиков, базы данных, аналитика, управление и система управления, гибридная среда, хранилище, безопасность, ИИ, искусственный интеллект и машинное обучение
+description: 'Ссылки на службы с доступными справочниками по Azure CLI: Конфигурация приложений, Служба приложений, Active Directory (AD), Backup, Когнитивный поиск, Cosmos DB, Data Lake Storage, База данных, MariaDB, MySQL, PostgreSQL, PostgreSQL, DevOps, DevTest Labs, DNS, Функции, Интернет вещей, IoT Central, IoT Edge, Центр Интернета вещей, Служба Kubernetes (AKS), Службы лабораторий, Машинное обучение, Управляемые приложения, Приватный канал, Resource Manager, Spring Cloud, База данных SQL, пакетная служба, Cognitive Services, Экземпляры контейнеров, Реестр контейнеров, Data Lake Analytics, Сетка событий, Центры событий, HDInsight, Key Vault, Load Balancer, Управляемые диски, Службы мультимедиа, Центры уведомлений, Служебная шина, Service Fabric, учетные записи хранения, Диспетчер трафика, Масштабируемые наборы виртуальных машин, виртуальная сеть, Вычисления, Сеть, Интернет вещей, Средства для разработчиков, базы данных, Analytics, Управление, гибридная среда, служба хранилища, безопасность, ИИ, ИИ и Машинное обучение, Azure Data Explorer'
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: aaf9969030512668b22c1b5bbfbd2a9a7d7ae47d
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.openlocfilehash: 04957e3f0da96e1523867da98ade27b80fe45e22
+ms.sourcegitcommit: 252e80dc48481f3c51267dd3c35f8665632d4f04
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "80417888"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84902176"
 ---
 # <a name="azure-services-the-azure-cli-can-manage"></a>Службы Azure, которыми можно управлять с помощью Azure CLI
 
@@ -26,7 +26,8 @@ Azure CLI предоставляется во многих службах Azure
 |-|-|
 |[ИИ и Машинное обучение](/cli/azure/popular-articles-using-the-azure-cli?#ai--machine-learning)| [Машинное обучение Azure](/azure/machine-learning/)
 ||[Cognitive Services](/azure/cognitive-services/)
-|[Analytics](/cli/azure/popular-articles-using-the-azure-cli?#analytics)|[Хранилище озера данных Azure](/azure/storage/blobs/data-lake-storage-introduction/)
+|[Analytics](/cli/azure/popular-articles-using-the-azure-cli?#analytics)|[Azure Data Explorer](/azure/data-explorer/)
+||[Хранилище озера данных Azure](/azure/storage/blobs/data-lake-storage-introduction/)
 ||[Аналитика озера данных](/azure/data-lake-analytics/)
 ||[Центры событий](/azure/event-hubs/)
 ||[HDInsight](/azure/hdinsight/)

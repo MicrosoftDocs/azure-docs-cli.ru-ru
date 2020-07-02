@@ -4,18 +4,162 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 06/02/2020
+ms.date: 06/23/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: be0db24ca312825aba03256119d1b5e43afbd902
-ms.sourcegitcommit: 62355a77ca59addf7b19db6b95027676e52fd936
+ms.openlocfilehash: 68ba21af45850bc11b7568860607dc5bcb379b9f
+ms.sourcegitcommit: a13a02e99e8eefb91f11e4a40f5fa0d3b5e758e0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84275068"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256326"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
+
+# <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="june-23-2020"></a>23 июня 2020 года
+
+Версия 2.8.0
+
+### <a name="acr"></a>ACR
+
+* Добавлена поддержка отключения конечных точек региона и отключения маршрутизации.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]  `az acr login --expose-token` не принимает имя пользователя и пароль.
+
+### <a name="acs"></a>ACS
+
+* Удален частный кластер и API 2019-10-27-preview.
+
+### <a name="aks"></a>AKS
+
+* Включена поддержка параметра --yes для команды az aks upgrade.
+* Отменено изменение SKU виртуальной машины по умолчанию на Standard_D2s_v3 (№ 13541).
+* Добавлена команда az aks update --uptime-sla.
+* Исправлена опечатка в команде az aks update.
+* Включена поддержка пула агентов узла 0 и блокировка ручного масштабирования для пула с поддержкой CAS.
+* Исправлена опечатка в VirtualMachineScaleSets и обновлены ссылки на версии Kubernetes.
+
+### <a name="ams"></a>AMS
+
+* Изменен текст справки по параметру --expires.
+
+### <a name="appservice"></a>AppService
+
+* `az webapp log deployment show`: включено отображение журнала последнего развертывания или журналов конкретного развертывания, если указан идентификатор развертывания.
+* `az webapp log deployment list`: список доступных журналов развертывания.
+* Исправление: ошибка поверхности при указании недопустимого имени веб-приложения.
+* Исправлена ошибка № 13261, и-за которой az webapp list-runtimes использует статический список до появления новых доступных API стеков.
+* `az appservice ase create`: исправлена ошибка создания № 13361.
+* `az appservice ase list-addresses`: исправлена ошибка изменения SDK № 13140.
+* Исправлена ошибка создания слота или веб-приложения для контейнеров Windows.
+* `az webapp auth update`: добавлен необязательный параметр для обновления версии среды выполнения.
+* Включена поддержка перечисления, удаления, утверждения и отклонения подключения к частной конечной точке для веб-приложения в интерфейсе командной строки.
+* Исправлена ошибка № 13888: включена поддержка команд get, list, create для статических веб-приложений.
+* Улучшены сообщения об ошибках для подключения туннеля SSH.
+
+### <a name="arm"></a>ARM
+
+* `az tag`: добавлены примеры для параметра -h.
+* `az deployment group/sub what-if`: добавлен параметр --exclude-change-types/-x.
+* `az deployment group/sub/mg/tenant create`: добавлен параметр --what-if-exclude-change-types/-x.
+* `az deployment group/sub/mg/tenant validate`: улучшен формат отображения сообщений об ошибках.
+* `az group export`: добавлены новые параметры `--skip-resource-name-params` и `--skip-all-params` для включения поддержки параметризации с целью пропуска.
+* Добавлена команда az feature unregister api.
+
+### <a name="aro"></a>ARO
+
+* Добавлены атрибуты Public и Private в параметры для получения справки по видимости входящего трафика или сервера API.
+
+### <a name="batch"></a>Пакетная служба Azure
+
+* `az batch account create`: добавлен новый параметр `--public-network-access`.
+* `az batch account create`: добавлен новый параметр `--identity-type`.
+* `az batch account set`: добавлен новый параметр `--identity-type`.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] az batch pool create. При создании пула с помощью пользовательского образа свойство --image теперь может ссылаться только на образ Общей коллекции образов.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] az batch pool create. При создании пула с параметром --json-file и указании networkConfiguration свойство publicIPs было перемещено в новое свойство publicIPAddressConfiguration. Это новое свойство также поддерживает новое свойство ipAddressProvisioningType, которое определяет, как пул должен выделять IP-адреса, и свойство publicIPs, которое позволяет настроить список ресурсов PublicIP для использования, когда для ipAddressProvisioningType указано значение UserManaged.
+* `az network private-link-resource`: включена поддержка ресурса Microsoft.Batch batchAccount.
+* `az network private-endpoint-connection`: включена поддержка ресурса Microsoft.Batch batchAccount.
+
+### <a name="cdn"></a>CDN
+
+* `az cdn custom-domain enable-https`: включена поддержка BYOC.
+* `az cdn custom-domain enable-https`: исправлена ошибка включения пользовательского HTTPS с использованием управляемых CDN сертификатов для SKU Standard_Verizon и Standard_Microsoft.
+
+### <a name="cognitive-services"></a>Cognitive Services
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]  `az cognitiveservices account` теперь имеет единую структуру для всех команд.
+* `az cognitiveservices account identity`: добавлена возможность управления удостоверениями для Cognitive Services.
+
+### <a name="compute"></a>Службы вычислений
+
+* `az image builder`: обновлена версия API до 2020-02-14.
+* `az image builder create`: добавлен параметр `--identity` для включения поддержки конфигурации удостоверений.
+* `az image builder customizer add`: включена поддержка настройщика Центра обновления Windows.
+* Новая команда `az image builder cancel`.
+* Включено отображение предупреждения, когда пользователь развертывает VMSS, прикрепленные к конкретной версии образа, а не к последней.
+
+### <a name="cosmos-db"></a>Cosmos DB
+
+* `az cosmosdb`: добавлена команда exists в базу данных и группы контейнеров.
+* Разрешено создание фиксированных коллекций.
+
+### <a name="eventhub"></a>концентратор событий.
+
+* `az eventhubs namespace create` : добавлены параметры управляемого удостоверения.
+
+### <a name="extension"></a>Расширение
+
+* Добавлен параметр --version для включения поддержки установки из конкретной версии.
+* Включены расширения CLI для включения пакетов в пространство имен Azure.
+
+### <a name="iot-hub"></a>Центр Интернета вещей
+
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] az iot hub job: удалены устаревшие команды заданий.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* `az keyvault key import`: включена поддержка импорта из строк с помощью двух новых параметров.
+* Включена поддержка шифрования и расшифровки строк или байтов с помощью хранимых ключей.
+
+### <a name="monitor"></a>Монитор
+
+* Включена поддержка возможности не дожидаться создания кластера.
+* `az monitor log-analytics workspace saved-search`: включена поддержка новых команд для сохраненного поиска.
+
+### <a name="network"></a>Сеть
+
+* `az network application-gateway address-pool update`: уточнено справочное сообщение и добавлены примеры.
+* `az network vnet create`: включена поддержка аргумента --nsg.
+* `az network lb address-pool`: включена поддержка создания внутреннего пула балансировки нагрузки с внутренним адресом.
+* `az network application-gateway address-pool`: исправлена ошибка с аргументом --add.
+
+### <a name="rbac"></a>RBAC
+
+* `az ad sp create-for-rabc`: включена поддержка имен с пробелом, косой чертой и обратной косой чертой.
+* `az ad sp create-for-rbac`: уточнено сообщение об ошибке при указании недопустимой области пользователем.
+
+### <a name="security"></a>Безопасность
+
+* Добавлены команды оценки безопасности.
+
+### <a name="sql"></a>SQL
+
+* `az sql db ltr-policy/ltr-backup`: обновление и отображение политик долгосрочного хранения, отображение и удаление долгосрочных резервных копий, восстановление долгосрочных резервных копий.
+
+### <a name="storage"></a>Память
+
+* Исправлена проблема с проверкой подлинности для включения поддержки получения токена для параметра --subscription.
+* `az storage remove`: исправлена ошибка № 13459 с возникновением исключения при сбое операции.
+* Устранены ошибки № 13012, 13632 и 13657 для удаления неиспользуемых аргументов для команд, связанных с generate-sas.
+* `az storage logging update`: добавлена проверка версии ведения журнала.
+* `az storage blob show`: добавлены дополнительные свойства для большого двоичного объекта с использованием пакета SDK для Track 2.
+* Исправление № 13708: уточнены предупреждающие сообщения об учетных данных.
+* `az storage share-rm create/update`: включена поддержка протокола NFS и корневого сжатия.
+* `az storage account create`: включена поддержка двойного шифрования.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.]  `az storage blob/container/file/share/table/queue generate-sas`: параметры --expiry и --permissions являются обязательными.
+* `az storage blob set-tier`: миграция на Track 2 для включения поддержки настройки приоритета восстановления.
 
 ## <a name="june-02-2020"></a>02 июня 2020 г.
 
@@ -5536,3 +5680,22 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 - добавив информацию о проблемах в наш [список на сайте GitHub](https://github.com/azure/azure-cli/issues/);
 - Свяжитесь с командой разработчиков ([azfeedback@microsoft.com](mailto:azfeedback@microsoft.com)),
 - отправив отзыв из командной строки с помощью команды `az feedback`.
+
+# <a name="beta-release-notes"></a>[Заметки о выпуске бета-версии](#tab/azure-cli-beta)
+
+Бета-версия Azure CLI позволяет перейти с метода аутентификации платформы AAD (версия 1.0) на [платформу удостоверений Майкрософт (версия 2.0)](/azure/active-directory/develop/v2-overview).
+
+## <a name="june-23-2020"></a>23 июня 2020 года
+
+### <a name="things-to-know-about-the-new-azure-cli-beta-release"></a>Сведения о новой бета-версии Azure CLI
+
+-   Бета-версия Azure CLI поддерживает все команды интерфейса командной строки, которые включены в текущую выпущенную версию.
+-   После установки бета-версии требуется выполнить повторный вход.
+-   Бета-версия поддерживает только платформу Windows.
+-   Azure Stack не поддерживается.
+-   Параметр `--use-cert-sn-issuer` не поддерживается, если для проверки подлинности используется ключ субъекта-службы.
+-   Пропуск проверки SSL с использованием `ADAL_PYTHON_SSL_NO_VERIFY` среды не поддерживается.
+
+Если у вас возникли проблемы с использованием бета-версии, вы можете обратиться к группе разработчиков Azure CLI на [GitHub](https://github.com/Azure/azure-cli/issues/new/choose).
+
+---
