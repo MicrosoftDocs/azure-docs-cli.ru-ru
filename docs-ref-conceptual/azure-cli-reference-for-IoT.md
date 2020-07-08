@@ -9,12 +9,12 @@ ms.date: 06/05/2020
 ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: paymaun.heidari
-ms.openlocfilehash: e3bf40eab68f09dfb94e14e59d8a746d87bb0766
-ms.sourcegitcommit: 415c6ddcce1da133d96b8c700e6aa570e4746b3f
+ms.openlocfilehash: 40d77899e2279430aa006b78a4526ff6b756f1c0
+ms.sourcegitcommit: d056d09dd6268b8d70ca65303a3ebf640a8d4b26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85765095"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85938112"
 ---
 # <a name="azure-cli-for-azure-iot"></a>Azure CLI для Azure IoT
 
@@ -58,6 +58,15 @@ ms.locfileid: "85765095"
 | [az maps](/cli/azure/maps) | core | Управление Azure Maps.
 | [az timeseriesinsights](/cli/azure/ext/timeseriesinsights/timeseriesinsights) | Расширение | Управление Аналитикой временных рядов Azure.
 
+### <a name="extension-reference-installation"></a>Установка расширений из справочника
+
+Перед использованием необходимо установить расширения Azure CLI из справочника.  Чтобы установить расширение из справочника по имени, используйте команду [az extension add](/cli/azure/azure-cli-extensions-overview).  Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+
+```azurecli
+# install the Azure CLI extension reference for Azure IoT
+az extension add --name azure-iot
+```
+
 ## <a name="popular-iot-articles-using-the-azure-cli"></a>Популярные статьи, посвященные Интернету вещей, в которых описывается Azure CLI
 
 - [Создание Центра Интернета вещей](/azure/iot-hub/iot-hub-create-using-cli)
@@ -97,5 +106,3 @@ az iot hub create --resource-group MyResourceGroup --name MyIotHub --location we
 - [Начните работу с Azure CLI](/cli/azure/get-started-with-azure-cli), чтобы узнать об установке и входе.
 
 - Найдите дополнительные справочники по [выпущенным командам](/cli/azure/reference-index) и [командам расширения](/cli/azure/azure-cli-extensions-list) в документации по Azure CLI.
-
-- Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
