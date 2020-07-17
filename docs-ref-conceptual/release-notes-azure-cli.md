@@ -4,20 +4,135 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 06/23/2020
+ms.date: 07/14/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 68ba21af45850bc11b7568860607dc5bcb379b9f
-ms.sourcegitcommit: a13a02e99e8eefb91f11e4a40f5fa0d3b5e758e0
+ms.openlocfilehash: cf9c4e1a86b3315d45a7533f67b731ee2f3d6bc0
+ms.sourcegitcommit: 857d0f19fd87d37d134efdf0dda0e7003260938b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85256326"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308684"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="july-14-2020"></a>14 июля 2020 г.
+
+Версия 2.9.0
+
+### <a name="acr"></a>ACR
+
+* Обработка ссылки на артефакт журнала из реестра для потоковой передачи журналов.
+* Устарели команды helm2.
+
+### <a name="aks"></a>AKS
+
+* `az aks create`: добавлен аргумент --enable-aad.
+* `az aks update`: добавлен аргумент --enable-aad.
+
+### <a name="apim"></a>APIM
+
+* Добавлены общие команды az apim api.
+
+### <a name="appconfig"></a>AppConfig
+
+* Добавлен пример для использования --fields в appconfig revision.
+
+### <a name="appservice"></a>AppService
+
+* `az functionapp create`: включена поддержка Java 11 и PowerShell 7. Включена поддержка API стеков.
+* Исправлена ошибка № 14208, из-за которой создание многоконтейнерного приложения завершается сбоем.
+* Исправлена ошибка с az webapp create, связанная с использованием вписанных в код стеков среды выполнения.
+
+### <a name="arm"></a>ARM
+
+* `az resource tag`: исправлена ошибка, связанная с добавлением тегов к ресурсам с помощью типа ресурса `Microsoft.ContainerInstance/containerGroups`.
+
+### <a name="compute"></a>Службы вычислений
+
+* Выполнено обновление версии дисков до 2020-05-01 и вычислительных ресурсов до 2020-06-01.
+* Включено двойное шифрование набора шифрования диска.
+* `az vmss update`: включена поддержка определения межклиентского образа.
+* `az sig image-version create`: включена поддержка определения межклиентского образа.
+* vm/vmss create. Включено шифрование кэша и передаваемых данных для дисков ОС и данных и временных дисков для виртуальных машин и Масштабируемых наборов виртуальных машин.
+* Добавлена операция имитации удаления для виртуальных машин и Масштабируемых наборов виртуальных машин.
+
+### <a name="cosmosdb"></a>Cosmos DB
+
+* Последние компоненты: Autoscale, IpRules, EnableFreeTier и EnableAnalyticalStorage.
+
+### <a name="eventgrid"></a>Сетка событий
+
+* Включена поддержка CLI для 2020-04-01-preview и отмечены предварительные версии функций как is_Preview=true.
+
+### <a name="find"></a>Поиск
+
+* Исправлена ошибка № 14094, связанная с az find. Исправлена ошибка, из-за которой не удается войти при отключенной телеметрии.
+
+### <a name="hdinsight"></a>HDInsight
+
+* Добавлены две команды для перезагрузки узла HDInsight.
+
+### <a name="monitor"></a>Монитор
+
+* Удален флаг предварительной версии для команд в рабочей области Log Analytics.
+* `az monitor diagnostic-settings subscription`: включена поддержка параметров диагностики для подписки.
+* `az monitor metrics`: включена поддержка символов "," и "|" в именах метрик.
+* `az monitor log-analytics workspace data-export`: включена поддержка экспорта данных аналитики журнала.
+
+### <a name="network"></a>Сеть
+
+* `az network application-gateway frontend-ip update`: Устарел параметр --public-ip-address.
+* Выполнено обновление azure-mgmt-network до 11.0.0.
+* `az network express-route gateway connection`: включена конфигурация маршрутизации.
+* `az network virtual-appliance`: Включена поддержка сетевого виртуального устройства Azure.
+* Включена поддержка компонента Приватного канала в Шлюзе приложений.
+
+### <a name="policyinsights"></a>Анализ политик
+
+* `az policy state`: добавлена команда trigger-scan для активации оценки соответствия политикам.
+* `az policy state list`: предоставлены версии сущностей политики в каждой записи соответствия.
+
+### <a name="profile"></a>Профиль
+
+* `az account get-access-token`: включено отображение expiresOn для управляемого удостоверения.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Включена поддержка минимальной версии TLS.
+* Включено шифрование инфраструктуры для Azure Postgres и MySQL
+
+### <a name="security"></a>Безопасность
+
+* Добавлены команды allowed_connections.
+* Добавлены команды адаптивного усиления защиты сети.
+* Добавлены команды adaptive_application_controls.
+* Добавлены команды REST az security iot-solution/iot-alerts/iot-recommendations/iot-analytics в Azure CLI.
+* Добавлен интерфейс командной строки для обеспечения соответствия нормативным требованиям.
+
+### <a name="signalr"></a>SignalR
+
+* Добавлены возможности, включая управление подключениями к частным конечным точкам, сетевыми правилами и вышестоящими компонентами.
+
+### <a name="sql"></a>SQL
+
+* `az sql mi create`, `az sql mi update`: добавлен параметр `--tags` для поддержки тегов ресурсов.
+* `az sql mi failover`: включена поддержка отработки отказа с основного сайта на дополнительный.
+
+### <a name="storage"></a>Память
+
+* `az storage account create/update`: добавлен параметр --allow-blob-public-access для включения и отключения общего доступа к большим двоичным объектам и контейнерам.
+* `az storage account create/update`: добавлен параметр `--min-tls-version` для настройки минимальной версии TLS, используемой при выполнении запросов к хранилищу.
+* Удален возврат учетных данных маркера.
+* Исправлено имя учетной записи хранения в примерах.
+
+### <a name="webapp"></a>Веб-приложения
+
+* Исправление. az webapp log deployment show: возврат журналов развертывания вместо метаданных журнала.
+* Исправление. az webapp vnet-integration add: исправлена обработка ошибок при неправильном имени виртуальной сети и включена поддержка идентификатора ресурса виртуальной сети.
 
 ## <a name="june-23-2020"></a>23 июня 2020 года
 
