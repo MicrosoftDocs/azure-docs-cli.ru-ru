@@ -4,20 +4,40 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 07/14/2020
+ms.date: 07/16/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: cf9c4e1a86b3315d45a7533f67b731ee2f3d6bc0
-ms.sourcegitcommit: 857d0f19fd87d37d134efdf0dda0e7003260938b
+ms.openlocfilehash: d8f134b28c3c2c288a0a0faa0fcb64c109cb1970
+ms.sourcegitcommit: c473377d1c08ac4efd2480bf852c30dbf1044a57
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308684"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415312"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="july-16-2020"></a>16 июля 2020 г.
+
+Версия 2.9.1
+
+### <a name="aks"></a>AKS
+
+* Явный параметр VMSS в примере команды для Windows удален, так как он теперь используется по умолчанию.
+
+### <a name="iot"></a>Интернет вещей
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az iot pnp`: удаление предварительной версии команд IoT PNP из основной версии CLI.
+
+### <a name="rest"></a>REST
+
+* Исправлена ошибка № 14152. `az rest`: URL-адреса ARM принимаются без идентификатора подписки.
+
+### <a name="storage"></a>Память
+
+* Исправлена ошибка № 14138. Некоторые разрешения стали необязательными.
 
 ## <a name="july-14-2020"></a>14 июля 2020 г.
 
