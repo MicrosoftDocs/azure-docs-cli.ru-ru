@@ -22,7 +22,7 @@
       "build_entry_point": "docs",
       "template_folder": "_themes",
       "customized_template_paths": [
-         "_dependentPackages/uref/content"
+        "_dependentPackages/uref/content"
       ],
       "customized_tasks": {
         "docset_prebuild": [
@@ -109,5 +109,8 @@
       "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-2018-03-01-hybrid",
       "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2018-03-01-hybrid"
     }
-  ]
+  ],
+  "docs_build_engine": {
+    "name": "docfx_v2"
+  }
 }
