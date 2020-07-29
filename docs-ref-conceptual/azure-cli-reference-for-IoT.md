@@ -9,12 +9,12 @@ ms.date: 06/05/2020
 ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: paymaun.heidari
-ms.openlocfilehash: 40d77899e2279430aa006b78a4526ff6b756f1c0
-ms.sourcegitcommit: d056d09dd6268b8d70ca65303a3ebf640a8d4b26
+ms.openlocfilehash: aa4653ceaba41709cd54a098f649a9c922e93fa8
+ms.sourcegitcommit: 05ef6cb6cf049d8c8eb54dd408f56cb145fb5905
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "85938112"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374394"
 ---
 # <a name="azure-cli-for-azure-iot"></a>Azure CLI для Azure IoT
 
@@ -36,7 +36,6 @@ ms.locfileid: "85938112"
 | [az iot central](/cli/azure/iot/central) | да | Управление ресурсами IoT Central.
 | [az iot dps](/en-us/cli/azure/iot/dps) | да | Управление службой подготовки устройств к добавлению в Центр Интернета вещей Azure.
 | [az iot hub](/cli/azure/iot/hub) | да | Управление инфраструктурой Центра Интернета вещей Azure.
-| [az iot pnp](/cli/azure/iot/pnp) | да | Управление репозиториями IoT Plug and Play и ключами доступа к репозиторию.
 
 ### <a name="extension-reference-commands"></a>Справочник по командам расширения
 
