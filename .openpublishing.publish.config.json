@@ -1,15 +1,11 @@
 {
   "build_entry_point": "docs",
-  "need_generate_pdf": false,
-  "need_preview_pull_request": true,
-  "need_generate_intellisense": false,
   "docsets_to_publish": [
     {
       "docset_name": "azure-cli-docs",
       "build_source_folder": ".",
       "build_output_subfolder": "cli/azure",
       "locale": "ru-ru",
-      "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -17,10 +13,12 @@
         "RestApi": "Content",
         "AzurePyCli": "Content",
         "UniversalReference": "Content",
+        "AzureCLIGroup": "Content",
         "Tutorial": "Content"
       },
       "build_entry_point": "docs",
       "template_folder": "_themes",
+      "version": 0,
       "customized_template_paths": [
         "_dependentPackages/uref/content"
       ],
@@ -32,13 +30,16 @@
     }
   ],
   "notification_subscribers": [],
+  "sync_notification_subscribers": [],
   "branches_to_filter": [
     "live"
   ],
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/azure-docs-cli.ru-ru",
+  "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
-  "git_repository_branch_open_to_public_contributors": "live",
-  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/azure-docs-cli.ru-ru",
+  "need_preview_pull_request": true,
+  "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
@@ -74,6 +75,10 @@
       "template_folder": "_themes.pdf"
     }
   },
+  "error_log_codes": [
+    "DuplicateOutputFiles"
+  ],
+  "need_generate_intellisense": false,
   "dependent_packages": [
     {
       "id": "opbuild.templates.uref",
@@ -110,6 +115,7 @@
       "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2018-03-01-hybrid"
     }
   ],
+  "need_generate_pdf": false,
   "docs_build_engine": {
     "name": "docfx_v2"
   }
