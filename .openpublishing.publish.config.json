@@ -13,6 +13,7 @@
         "RestApi": "Content",
         "AzurePyCli": "Content",
         "UniversalReference": "Content",
+        "AzureCLIGroup": "Content",
         "Tutorial": "Content"
       },
       "build_entry_point": "docs",
@@ -76,6 +77,9 @@
       "template_folder": "_themes.pdf"
     }
   },
+  "error_log_codes": [
+    "DuplicateOutputFiles"
+  ],
   "need_generate_intellisense": false,
   "dependent_packages": [
     {
