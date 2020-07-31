@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: haroldrandom
 ms.author: jianzen
 manager: yonzhan,yungezz
-ms.date: 07/18/2020
+ms.date: 07/28/2020
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 630476987df6dbfb43c77bccf2dff6adf48f9b55
-ms.sourcegitcommit: daec6ec05447f5e327605cd603fea8d74c73ddca
+ms.openlocfilehash: 9232bab4f17222e67101cb379967753f3d19dfe5
+ms.sourcegitcommit: 05ef6cb6cf049d8c8eb54dd408f56cb145fb5905
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86873317"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87374377"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -35,10 +35,10 @@ az extension list-available --output table
 | [aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) | 0.4.57 | Предварительное знакомство с будущими возможностями AKS. | Да |
 | [alertsmanagement](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение оповещений для программ командной строки Microsoft Azure |  |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.2 | Поддержка псевдонимов команд. | Да |
-| [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.8 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Да |
+| [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.9 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Да |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 6.0.0 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.8.9 | Расширение Azure IoT для Azure CLI. |  |
-| [azure-cli-ml](https://docs.microsoft.com/azure/machine-learning/service/) | 1.9.0 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
+| [azure-cli-ml](https://docs.microsoft.com/azure/machine-learning/service/) | 1.10.0 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
 | [azure-devops](https://github.com/Microsoft/azure-devops-cli-extension) | 0.18.0 | Инструменты для управления Azure DevOps. |  |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.5.0 | Управление ресурсами Брандмауэра Azure. | Да |
 | [azure-iot](https://github.com/azure/azure-iot-cli-extension) | 0.9.7 | Расширение Azure IoT для Azure CLI. |  |
@@ -55,7 +55,7 @@ az extension list-available --output table
 | [databricks](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Расширение DatabricksClient для программ командной строки Microsoft Azure | Да |
 | [datafactory](https://github.com/Azure/azure-cli-extensions/tree/master/src/datafactory) | 0.1.0 | Расширение DataFactoryManagementClient для программ командной строки Microsoft Azure |  |
 | [datashare](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение DataShareManagementClient для программ командной строки Microsoft Azure |  |
-| [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.14 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Да |
+| [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.15 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Да |
 | [deploy-to-azure](https://github.com/Azure/deploy-to-azure-cli-extension) | 0.2.0 | Развертывание в Azure с помощью действий GitHub. | Да |
 | [desktopvirtualization](https://github.com/Azure/azure-cli-extensions/tree/master/src/desktopvirtualization) | 0.1.0 | Расширение DesktopVirtualizationAPIClient для программ командной строки Microsoft Azure |  |
 | [dev-spaces](https://github.com/Azure/azure-cli-extensions) | 1.0.5 | Рабочие среды Azure для разработчиков предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. |  |
@@ -69,7 +69,7 @@ az extension list-available --output table
 | [hardware-security-modules](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение AzureDedicatedHSMResourceProvider для средств командной строки Microsoft Azure |  |
 | [healthcareapis](https://github.com/Azure/azure-cli-extensions) | 0.2.0 | Расширение HealthcareApisManagementClient для программ командной строки Microsoft Azure |  |
 | [hpc-cache](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение кэша хранилища для программ командной строки Microsoft Azure | Да |
-| [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.2.5 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
+| [image-copy-extension](https://github.com/Azure/azure-cli-extensions) | 0.2.6 | Поддержка копирования управляемых образов виртуальных машин в другие регионы |  |
 | [import-export](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Расширение StorageImportExport для программ командной строки Microsoft Azure |  |
 | [интерактивный](https://github.com/Azure/azure-cli) | 0.4.4 | Интерактивная оболочка командной строки Microsoft Azure | Да |
 | [internet-analyzer](https://github.com/Azure/azure-cli-extensions) | 0.1.0rc5 | Расширение Internet Analyzer программ командной строки Microsoft Azure | Да |
@@ -94,12 +94,12 @@ az extension list-available --output table
 | [sap-hana](https://github.com/Azure/azure-hanaonazure-cli-extension) | 0.6.4 | Дополнительные команды для работы с экземплярами SAP HanaOnAzure. |  |
 | [spring-cloud](https://github.com/Azure/azure-cli-extensions) | 0.3.1 | Расширение spring-cloud программ командной строки Microsoft Azure | Да |
 | [storage-or-preview](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Расширение Storage-or-preview для программ командной строки Microsoft Azure | Да |
-| [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.2.10 | Предварительная версия ожидаемых функций хранилища. | Да |
+| [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.2.11 | Предварительная версия ожидаемых функций хранилища. | Да |
 | [storagesync](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение синхронизации службы хранилища Майкрософт для программ командной строки Microsoft Azure |  |
 | [stream-analytics](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Stream Analytics для программ командной строки Microsoft Azure |  |
 | [subscription](https://github.com/Azure/azure-cli-extensions) | 0.1.4 | Поддержка управления подписками (предварительная версия). | Да |
 | [support](https://github.com/azure/azure-cli-extensions/tree/master/src/support) | 1.0.2 | Расширение Support для программ командной строки Microsoft Azure |  |
-| [synapse](https://github.com/Azure/azure-cli-extensions) | 0.2.0 | Расширение Synapse для программ командной строки Microsoft Azure | Да |
+| [synapse](https://github.com/Azure/azure-cli-extensions) | 0.3.0 | Расширение Synapse для программ командной строки Microsoft Azure | Да |
 | [timeseriesinsights](https://github.com/Azure/azure-cli-extensions/src/timeseriesinsights) | 0.1.2 | Расширение TimeSeriesInsightsClient для программ командной строки Microsoft Azure |  |
 | [virtual-network-tap](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-network-tap) | 0.1.0 | Управление точками доступа к виртуальным сетям (VTAP). | Да |
 | [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.1.3 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Да |
