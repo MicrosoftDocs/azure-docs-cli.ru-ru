@@ -8,12 +8,13 @@ ms.date: 02/12/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 1f5d9a4e3c83f7c498fb381f5d458c9ca9addde6
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: f0c13be20fb1364b9860a9bbd9b59454f9019efe
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "79989951"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551461"
 ---
 # <a name="install-the-azure-cli"></a>Установка Azure CLI
 

@@ -8,12 +8,13 @@ ms.date: 09/09/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 9a98da54f397c1fd03a7cc6b581a769afe84ef88
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: f6f1aad856f331e82deea963942956c27235795b
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "77779590"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551546"
 ---
 # <a name="install-azure-cli-on-linux-manually"></a>Установка Azure CLI в Linux вручную
 

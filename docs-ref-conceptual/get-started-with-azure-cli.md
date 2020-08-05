@@ -8,12 +8,13 @@ ms.date: 01/30/2020
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: bc9b86db6fb9c5b3731550df9dda96debcbfba9f
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: ffedd3d1fdbcba89106f2725b58ca62b11f4c27b
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "79990119"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551393"
 ---
 # <a name="get-started-with-azure-cli"></a>Начало работы с Azure CLI
 

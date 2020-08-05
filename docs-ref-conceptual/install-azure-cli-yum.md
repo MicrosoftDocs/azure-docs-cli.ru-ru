@@ -8,12 +8,13 @@ ms.date: 11/26/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: a98a51e4dc3ac85d27e27ef9b9164a7f98431d31
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 9b997a466d45ac5fb43f878420baf90ca2a3dc50
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "78953334"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551482"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 

@@ -8,12 +8,13 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 0cc1d7811223bf6f473c2c4516d0919306aa74c7
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 6e2032cf6db312474431796149b8dde990820671
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "77779488"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551444"
 ---
 # <a name="install-the-azure-classic-cli"></a>Установка классического интерфейса командной строки Azure (Azure Classic CLI)
 
@@ -39,7 +40,7 @@ ms.locfileid: "77779488"
 npm install -g azure-cli
 ```
 
-В дистрибутивах Linux для выполнения команды `sudo` может потребоваться команда `npm`:
+В дистрибутивах Linux для выполнения команды `npm` может потребоваться команда `sudo`:
 
 ```bash
 sudo npm install -g azure-cli

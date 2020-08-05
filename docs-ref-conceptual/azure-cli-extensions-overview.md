@@ -8,12 +8,13 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 73488fc464ed052f22f071f6373fb6b8f682b778
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 16d88ebab47e1572b967911dd9554fb2efb0d756
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "77779998"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551529"
 ---
 # <a name="use-extensions-with-azure-cli"></a>Использование расширений с Azure CLI 
 
