@@ -8,12 +8,12 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 24a798e9b3c08f3cd9e66c017cc45f5346d8995e
-ms.sourcegitcommit: d05660a42b2a77c4b05a7f96c386e656bd2db0fe
+ms.openlocfilehash: 09300c2b0da50e326fc3a7651741b71708c89ec8
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83569176"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551189"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI
 
@@ -102,6 +102,8 @@ log_dir=/var/log/azure
 | | endpoint | строка | Конечная точка по умолчанию для подключения для команд `az batch`. |
 | | auth\_mode | строка | Режим авторизации для команд `az batch`. Может иметь значение `shared_key` или `aad`. |
 | __cloud__ | name | строка | Облако по умолчанию для всех команд `az`.  Допустимые значения — `AzureCloud` (по умолчанию), `AzureChinaCloud`, `AzureUSGovernment` и `AzureGermanCloud`. Чтобы изменить облака, можно использовать команду `az cloud set –name`.  Пример см. в статье [Выбор облаков с помощью Azure CLI](manage-clouds-azure-cli.md). |
+| __extension__ | use_dynamic_install | строка | Установите расширение, если оно не было добавлено при выполнении команды. Допустимые значения — `no` (по умолчанию), `yes_prompt`, `yes_without_prompt`. |
+| | run_after_dynamic_install | Логическое | Продолжайте выполнять команду при динамической установке расширения. Значение по умолчанию — `False`. |
 
 > [!NOTE]
 > В файле конфигурации могут быть и другие значения, но управление ими осуществляется непосредственно с помощью команд CLI, включая `az configure`. Самостоятельно изменить можно только значения, перечисленные в таблице выше.

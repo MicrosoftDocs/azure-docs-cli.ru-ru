@@ -4,20 +4,119 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 07/16/2020
+ms.date: 08/04/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: d8f134b28c3c2c288a0a0faa0fcb64c109cb1970
-ms.sourcegitcommit: c473377d1c08ac4efd2480bf852c30dbf1044a57
+ms.openlocfilehash: 68cd2632e33dcd4e35f818d2a330f009fcbfbdbc
+ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415312"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87551563"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="august-04-2020"></a>04 августа 2020 г.
+
+Версия 2.10.0
+
+### <a name="aks"></a>AKS
+
+* `az aks update`: изменен аргумент --enable-aad для переноса кластера с поддержкой RBAC за пределами AAD в управляемый AKS кластер AAD.
+* `az aks install-cli`: добавлены аргументы --kubelogin-version и --kubelogin-install-location для установки kubelogin.
+* Добавлена команда az aks nodepool get-upgrades.
+
+### <a name="ams"></a>AMS
+
+* Исправление № 14021: команда az ams account sp не является идемпотентной.
+
+### <a name="apim"></a>APIM
+
+* apim api import: включена поддержка импорта API и расширены другие команды CLI уровня API.
+
+### <a name="app-service"></a>Служба приложений
+
+* Исправление № 13035: включена проверка для az webapp config access-restriction, чтобы предотвратить добавление дубликатов.
+
+### <a name="appconfig"></a>AppConfig
+
+* По умолчанию используется номер SKU "Стандартный", если не указано другое.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Поддерживаются параметры с типом содержимого JSON.
+
+### <a name="arm"></a>ARM
+
+* `az resource tag`: исправлена ошибка с добавлением тегов managedApp и устранены некоторые проблемы, связанные с тестами.
+* `az deployment mg/tenant what-if`: включена поддержка What-If для группы управления и развертывания на уровне арендатора.
+* `az deployment mg/tenant create`: добавлен параметр --confirm-with-what-if/-c.
+* `az deployment mg/tenant create`: добавлен параметр --what-if-result-format/-r.
+* `az deployment mg/tenant create`: добавлен параметр --what-if-exclude-change-types/-x.
+* `az tag`: включена поддержка az tag для параметра идентификатора ресурса.
+
+### <a name="backup"></a>Резервное копирование
+
+* Обнаружение элемента или контейнера AFS активируется только при необходимости.
+
+### <a name="cdn"></a>CDN
+
+* Добавлены поля Приватного канала в источник.
+
+### <a name="compute"></a>Службы вычислений
+
+* `az vm/vmss create`: возможность выбора допустимого имени пользователя, если имя пользователя по умолчанию является недопустимым.
+* `az vm update`: включена поддержка образа для разных арендаторов.
+* `az disk-access`: добавлена новая группа команд для использования ресурса доступа к диску.
+* Включена поддержка автоматического размещения выделенной группы узлов.
+* Включена поддержка ppg и spg в режиме оркестрации Масштабируемых наборов виртуальных машин.
+
+### <a name="config"></a>Config
+
+* `az config`: добавлен новый модуль команд `config`.
+
+### <a name="extension"></a>Расширение
+
+* Включена поддержка автоматической установки расширения, если расширение команды не установлено.
+
+### <a name="hdinsight"></a>HDInsight
+
+* Добавлены три параметра в команду `az hdinsight create` для включения поддержки Приватного канала и шифрования в функции передачи:
+
+### <a name="iot-hub"></a>Центр Интернета вещей
+
+* Исправление № 7792: создание Центра Интернета вещей не является идемпотентным.
+
+### <a name="iot-central"></a>IoT Central
+
+* Добавлен список вариантов параметра для IoT Central.
+
+### <a name="keyvault"></a>Хранилище ключей
+
+* `az keyvault key encrypt/decrypt`: добавлен параметр `--data-type` для явного определения типа исходных данных.
+
+### <a name="monitor"></a>Монитор
+
+* `az monitor log-analytics workspace data-export`: включена поддержка пространства имен концентратора событий в качестве назначения.
+* `az monitor autoscale`: включена поддержка пространства имен и измерений для --condition.
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* `az volume revert`:  включена поддержка возврата тома к одному из его моментальных снимков.
+* [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Удален командлет `az netappfiles mount-target`.
+* `az volume show`: добавлен сайт в свойства Active Directory.
+
+### <a name="network"></a>Сеть
+
+* `az application-gateway private-link add`: включена поддержка определение существующей подсети по идентификатору.
+* `az network application-gateway waf-policy create`: включена поддержка версии и типа.
+
+### <a name="storage"></a>Память
+
+* Исправление № 10302: включена поддержка подбора типа содержимого при синхронизации файлов.
+* `az storage blob lease`: добавлена возможность применить новую версию API для операций аренды BLOB-объектов.
+* `az storage fs access`: включена поддержка учетных данных AAD при управлении доступом для учетной записи ADLS 2-го поколения.
+* `az storage share-rm create/update`: добавлен аргумент --access-tier для включения поддержки уровня доступа.
 
 ## <a name="july-16-2020"></a>16 июля 2020 г.
 
