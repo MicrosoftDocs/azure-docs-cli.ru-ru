@@ -4,17 +4,17 @@ description: Полный список официально поддержива
 author: haroldrandom
 ms.author: jianzen
 manager: yonzhan,yungezz
-ms.date: 08/01/2020
+ms.date: 08/05/2020
 ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 39e4d797f98a16fcf9ef5a3b0a4c9d1c13441acc
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: 974ab535a89b09485c16c1535e93bcfaa1d72a59
+ms.sourcegitcommit: 04d3b43d7c960ff0e6188c9672d27046b45da6ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551376"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855905"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -31,8 +31,8 @@ az extension list-available --output table
 | [учетная запись](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение SubscriptionClient для программ командной строки Microsoft Azure |  |
 | [aem](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Управление расширениями для улучшенного мониторинга Azure для SAP. |  |
 | [ai-did-you-mean-this](https://github.com/Azure/azure-cli-extensions/tree/master/src/ai-did-you-mean-this) | 0.2.1 | Рекомендуемые параметры восстановления при сбое. |  |
-| [ai-examples](https://github.com/Azure/azure-cli-extensions/tree/master/src/ai-examples) | 0.2.2 | Добавление примеров на основе искусственного интеллекта в содержимое справки. | Да |
-| [aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) | 0.4.57 | Предварительное знакомство с будущими возможностями AKS. | Да |
+| [ai-examples](https://github.com/Azure/azure-cli-extensions/tree/master/src/ai-examples) | 0.2.3 | Добавление примеров на основе искусственного интеллекта в содержимое справки. | Да |
+| [aks-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview) | 0.4.58 | Предварительное знакомство с будущими возможностями AKS. | Да |
 | [alertsmanagement](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение оповещений для программ командной строки Microsoft Azure |  |
 | [alias](https://github.com/Azure/azure-cli-extensions) | 0.5.2 | Поддержка псевдонимов команд. | Да |
 | [application-insights](https://github.com/Azure/azure-cli-extensions/tree/master/src/application-insights) | 0.1.9 | Поддержка компонентов управления Application Insights, а также запрашивание метрик, событий и журналов из таких компонентов. | Да |
@@ -52,7 +52,7 @@ az extension list-available --output table
 | [csvmware](https://github.com/Azure/az-vmware-cli) | 0.3.0 | Управление решением VMware в Azure от CloudSimple. | Да |
 | [custom-providers](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Custom Providers для программ командной строки Microsoft Azure |  |
 | [databox](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение Data Box для программ командной строки Microsoft Azure |  |
-| [databricks](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Расширение DatabricksClient для программ командной строки Microsoft Azure | Да |
+| [databricks](https://github.com/Azure/azure-cli-extensions) | 0.5.0 | Расширение DatabricksClient для программ командной строки Microsoft Azure | Да |
 | [datafactory](https://github.com/Azure/azure-cli-extensions/tree/master/src/datafactory) | 0.1.0 | Расширение DataFactoryManagementClient для программ командной строки Microsoft Azure |  |
 | [datashare](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение DataShareManagementClient для программ командной строки Microsoft Azure |  |
 | [db-up](https://github.com/Azure/azure-cli-extensions/tree/master/src/db-up) | 0.1.15 | Дополнительные команды для упрощения рабочих процессов Базы данных Azure. | Да |
@@ -65,6 +65,7 @@ az extension list-available --output table
 | [express-route](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route) | 0.1.3 | Управление ExpressRoute с помощью предварительных версий функций. | Да |
 | [express-route-cross-connection](https://github.com/Azure/azure-cli-extensions/tree/master/src/express-route-cross-connection) | 0.1.1 | Управление пользовательскими каналами ExpressRoute с использованием перекрестного подключения ExpressRoute. |  |
 | [front-door](https://github.com/Azure/azure-cli-extensions/tree/master/src/front-door) | 1.0.9 | Управление сетевыми службами Front Door. |  |
+| [guestconfig](https://github.com/Azure/azure-cli-extensions/tree/master/src/guestconfig) | 0.1.0 | Расширение GuestConfigurationClient для программ командной строки Microsoft Azure |  |
 | [hack](https://github.com/Azure/azure-cli-extensions) | 0.4.2 | Расширение программ командной строки Microsoft Azure для взлома | Да |
 | [hardware-security-modules](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение AzureDedicatedHSMResourceProvider для средств командной строки Microsoft Azure |  |
 | [healthcareapis](https://github.com/Azure/azure-cli-extensions) | 0.2.0 | Расширение HealthcareApisManagementClient для программ командной строки Microsoft Azure |  |
@@ -92,7 +93,7 @@ az extension list-available --output table
 | [privatedns](https://github.com/Azure/azure-cli-extensions) | 0.1.1 | Команды для управления Частными зонами DNS. | Да |
 | [resource-graph](https://github.com/Azure/azure-cli-extensions/tree/master/src/resource-graph) | 1.1.0 | Поддержка запросов к ресурсам Azure с помощью Resource Graph. | Да |
 | [sap-hana](https://github.com/Azure/azure-hanaonazure-cli-extension) | 0.6.4 | Дополнительные команды для работы с экземплярами SAP HanaOnAzure. |  |
-| [spring-cloud](https://github.com/Azure/azure-cli-extensions) | 0.3.1 | Расширение spring-cloud программ командной строки Microsoft Azure | Да |
+| [spring-cloud](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Расширение spring-cloud программ командной строки Microsoft Azure | Да |
 | [storage-or-preview](https://github.com/Azure/azure-cli-extensions) | 0.4.0 | Расширение Storage-or-preview для программ командной строки Microsoft Azure | Да |
 | [storage-preview](https://github.com/Azure/azure-cli-extensions/tree/master/src/storage-preview) | 0.2.12 | Предварительная версия ожидаемых функций хранилища. | Да |
 | [storagesync](https://github.com/Azure/azure-cli-extensions) | 0.1.0 | Расширение синхронизации службы хранилища Майкрософт для программ командной строки Microsoft Azure |  |
@@ -102,7 +103,7 @@ az extension list-available --output table
 | [synapse](https://github.com/Azure/azure-cli-extensions) | 0.3.0 | Расширение Synapse для программ командной строки Microsoft Azure | Да |
 | [timeseriesinsights](https://github.com/Azure/azure-cli-extensions/src/timeseriesinsights) | 0.1.2 | Расширение TimeSeriesInsightsClient для программ командной строки Microsoft Azure |  |
 | [virtual-network-tap](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-network-tap) | 0.1.0 | Управление точками доступа к виртуальным сетям (VTAP). | Да |
-| [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.1.3 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Да |
+| [virtual-wan](https://github.com/Azure/azure-cli-extensions/tree/master/src/virtual-wan) | 0.2.0 | Управление виртуальными глобальными сетями, концентраторами, шлюзами и сайтами VPN. | Да |
 | [vm-repair](https://github.com/Azure/azure-cli-extensions/tree/master/src/vm-repair) | 0.3.1 | Команды автоматического восстановления для исправления виртуальных машин. |  |
 | [vmware](https://github.com/virtustream/azure-vmware-virtustream-cli-extension) | 0.6.0 | Команды предварительной версии решения Azure VMware. | Да |
 | [webapp](https://github.com/Azure/azure-cli-extensions/tree/master/src/webapp) | 0.2.24 | Дополнительные команды для Службы приложений Azure. | Да |

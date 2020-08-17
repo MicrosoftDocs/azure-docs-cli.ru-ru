@@ -4,20 +4,46 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 08/04/2020
+ms.date: 08/06/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 68cd2632e33dcd4e35f818d2a330f009fcbfbdbc
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: f81f5a69bd5806d2081a8eaa9b62a5b00b56edf9
+ms.sourcegitcommit: 04d3b43d7c960ff0e6188c9672d27046b45da6ed
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551563"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855939"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="august-11-2020"></a>11 августа 2020 г.
+
+Версия 2.10.1
+
+### <a name="app-service"></a>Служба приложений
+
+* Исправление № 9887: включена поддержка веб-приложений и приложений-функций, а также поддержка назначения и удаления управляемых удостоверений пользователя.
+* Исправление №№ 1382 и 14055: обновлены сообщения об ошибках для az webapp create и az webapp config container set.
+* `az webapp up`: исправлена логика выбора ASP по умолчанию, когда параметр --plan не указан.
+
+### <a name="appconfig"></a>AppConfig
+
+* Включена поддержка включения и отключения PublicNetworkAccess во время создания хранилища.
+
+### <a name="compute"></a>Вычисления
+
+* Включена поддержка связывания диска и моментального снимка с ресурсом доступа к диску.
+
+### <a name="lab"></a>Лаборатория
+
+* Исправлена ошибка № 7904, связанная с проверкой даты при создании виртуальной машины лаборатории.
+
+### <a name="storage"></a>Хранилище
+
+* `az storage blob upload-batch`: исправлена ошибка № 14660, связанная с непозиционными аргументами.
 
 ## <a name="august-04-2020"></a>04 августа 2020 г.
 
