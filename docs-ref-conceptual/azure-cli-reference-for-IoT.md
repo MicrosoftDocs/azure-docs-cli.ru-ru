@@ -9,12 +9,12 @@ ms.date: 06/05/2020
 ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: paymaun.heidari
-ms.openlocfilehash: aa4653ceaba41709cd54a098f649a9c922e93fa8
-ms.sourcegitcommit: 05ef6cb6cf049d8c8eb54dd408f56cb145fb5905
+ms.openlocfilehash: b3042b569267233f00a2bc1ea4b65089dae9cae5
+ms.sourcegitcommit: b9b310407d99662296998b6e23d3903d61cc3756
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87374394"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88216533"
 ---
 # <a name="azure-cli-for-azure-iot"></a>Azure CLI для Azure IoT
 
@@ -48,7 +48,7 @@ ms.locfileid: "87374394"
 | [az iot dps](/cli/azure/ext/azure-iot/iot/dps) | да | Управление сущностями в службе подготовки устройств к добавлению в Центр Интернета вещей.
 | [az iot edge](/cli/azure/ext/azure-iot/iot/edge) | | Управление решениями Интернета вещей в пограничной среде.
 | [az iot hub](/cli/azure/ext/azure-iot/iot/hub) | да | Управление сущностями в Центре Интернета вещей Azure.
-| [az iot pnp](/cli/azure/ext/azure-iot/iot/pnp) | да | Управление сущностями в репозитории моделей IoT Plug and Play.
+| [az iot pnp](/cli/azure/ext/azure-iot/iot/pnp) | | Управление сущностями в репозитории моделей IoT Plug and Play.
 
 ### <a name="additional-cli-commands-for-azure-services-used-by-iot"></a>Дополнительные команды CLI для служб Azure, используемых в Интернете вещей
 
