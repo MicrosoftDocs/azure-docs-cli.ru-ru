@@ -8,12 +8,12 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 09300c2b0da50e326fc3a7651741b71708c89ec8
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: 465a7c86a883c27e94ca21412bdb59476203afa5
+ms.sourcegitcommit: 58d839589858acc1a7a9f114af7f4fce13d883ea
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551189"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88601871"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI
 
@@ -78,7 +78,7 @@ log_dir=/var/log/azure
 
 ## <a name="cli-configuration-values-and-environment-variables"></a>Переменные среды и значения конфигурации CLI
 
-Следующая таблица содержит все разделы и имена параметров, которые могут быть включены в файл конфигурации. Соответствующие переменные среды имеют формат `AZURE_{section}_{name}` и записываются прописными. Например, значение `output` умолчанию для `core` задается в переменной `AZURE_CORE_OUTPUT`, а значение `storage_account` по умолчанию для `batchai` задается в переменной `AZURE_BATCHAI_STORAGE_ACCOUNT`.
+Следующая таблица содержит все разделы и имена параметров, которые могут быть включены в файл конфигурации. Соответствующие переменные среды имеют формат `AZURE_{section}_{name}` и записываются прописными. Например, значение по умолчанию `output` для `core` задается в переменной `AZURE_CORE_OUTPUT`, значение по умолчанию `storage_account` для `batchai` — в переменной `AZURE_BATCHAI_STORAGE_ACCOUNT`, а значение по умолчанию `location` — в переменной `AZURE_DEFAULTS_LOCATION`.
 
 Если указать значение по умолчанию, любая команда больше не будет требовать этот аргумент. Вместо этого используется значение по умолчанию.
 
@@ -91,6 +91,8 @@ log_dir=/var/log/azure
 | | no\_color | Логическое | Отключает цвет. Сообщения, выделенные цветом, будут иметь префикс `DEBUG`, `INFO`, `WARNING` и `ERROR`. Так устраняется проблема со сторонней библиотекой, при использовании которой цвет терминала нельзя отменить изменения после перенаправления `stdout`. |
 | __logging__ | enable\_log\_file | Логическое | Включение и отключение ведения журнала. |
 | | log\_dir | строка | Каталог для записи журналов. По умолчанию это значение равно `${AZURE_CONFIG_DIR}/logs`. |
+| __defaults__ | group | строка | Группа ресурсов по умолчанию для всех команд. |
+| | location | строка | Расположение по умолчанию для всех команд. |
 | __storage__ | connection\_string | строка | Строка подключения по умолчанию для команд `az storage`. |
 | | account | строка | Имя учетной записи по умолчанию для команд `az storage`. |
 | | ключ | строка | Ключ учетной записи по умолчанию для команд `az storage`. |
