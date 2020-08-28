@@ -4,17 +4,17 @@ description: Использование расширений с Azure CLI
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 09/07/2018
+ms.date: 08/06/2020
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 16d88ebab47e1572b967911dd9554fb2efb0d756
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: 72e5ca67f9d1d7a754dae098d89f2eb76d108b0b
+ms.sourcegitcommit: fd8c3e32f0f50feb6fea33ead636a80a050bcf2a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551529"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88713100"
 ---
 # <a name="use-extensions-with-azure-cli"></a>Использование расширений с Azure CLI 
 
@@ -33,6 +33,8 @@ az extension list-available --output table
 
 ## <a name="install-extensions"></a>Установка расширений
 
+### <a name="install-extensions-manually"></a>Установка расширений вручную
+
 Когда вы найдете расширение для установки, используйте команду [az extension add](https://docs.microsoft.com/cli/azure/extension#az-extension-add), чтобы получить его. Если расширение включено в список в `az extension list-available`, его можно установить по имени.
 
 ```azurecli-interactive
@@ -46,6 +48,28 @@ az extension add --source <URL-or-path>
 ```
 
 Установленное расширение можно найти в папке, указанной в переменной среды `$AZURE_EXTENSION_DIR`. Если эта переменная не задана, в Linux и macOS по умолчанию устанавливается значение `$HOME/.azure/cliextensions`, а в Windows — `%USERPROFILE%\.azure\cliextensions`.
+
+### <a name="install-extensions-automatically"></a>Установка расширений автоматически
+
+Начиная с версии `2.10.0`, при запуске команды расширения, которое не установлено, Azure CLI может распознать выполняемую команду и автоматически установить расширение. Эту возможность, называемую **динамической установкой**, можно включить в конфигурации.
+```azurecli-interactive
+az config set extension.use_dynamic_install=yes_prompt
+```
+
+Используйте следующую команду конфигурации, чтобы включить динамическую установку без запроса.
+```azurecli-interactive
+az config set extension.use_dynamic_install=yes_without_prompt
+```
+
+Используйте следующую команду конфигурации, чтобы отключить динамическую установку и вернуться к поведению по умолчанию. Если расширение не установлено, команда расширения вернет соответствующую ошибку.
+```azurecli-interactive
+az config set extension.use_dynamic_install=no
+```
+
+По умолчанию команда расширения, запрашивающая динамическую установку, не будет продолжать работу. Можно изменить поведение по умолчанию и продолжить выполнение команды, задав для свойства `run_after_dynamic_install` значение `yes`.
+```azurecli-interactive
+az config set extension.run_after_dynamic_install=yes
+```
 
 ## <a name="update-extensions"></a>Обновление расширений
 
