@@ -4,20 +4,165 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 08/06/2020
+ms.date: 08/28/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: f81f5a69bd5806d2081a8eaa9b62a5b00b56edf9
-ms.sourcegitcommit: 04d3b43d7c960ff0e6188c9672d27046b45da6ed
+ms.openlocfilehash: cc1ed8d904571fa7583445a8b7e7e79fa4f00b37
+ms.sourcegitcommit: 28e3282487dab68f9a4635f8bec161fbc412c3b9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855939"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89054620"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="august-28-2020"></a>28 августа 2020 г.
+
+Версия 2.11.1
+
+### <a name="acr"></a>ACR
+
+* В пул агентов добавлен изолированный уровень.
+* Добавлен контекст источника артефакта OCI.
+
+### <a name="aks"></a>AKS
+
+* Исправлена ошибка с созданием кластера AKS.
+
+### <a name="cognitive-services"></a>Службы Cognitive Services
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Отображены дополнительные условия использования для некоторых API-интерфейсов.
+
+### <a name="network"></a>Сеть
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] Включена возможность создавать общедоступные и частные IP-адреса при создании Шлюза приложений.
+* `az network list-service-tags`: добавлены сведения об использовании параметра расположения в справочном сообщении.
+
+### <a name="storage"></a>Служба хранилища
+
+* `az storage blob list`: включена поддержка свойств OR с новой версией API.
+
+## <a name="august-25-2020"></a>25 августа 2020 г.
+
+Версия 2.11.0
+
+### <a name="aks"></a>AKS
+
+* Из надстройки виртуальных узлов удален тег предварительной версии.
+* Добавлен аргумент CMK AKS, используемый при создании кластера.
+* Задан сетевой профиль при использовании базовой подсистемы балансировки нагрузки.
+* Из CLI удалена проверка максимального числа групп pod и включена предварительная обработка.
+* Исправлены ошибки с надстройками, доступными в справочном сообщении в `az aks create`.
+* В основном CLI включена поддержка профиля автомасштабирования кластера.
+
+### <a name="appservice"></a>AppService
+
+* `az webapp`: добавлена команда list-instances.
+* `az webapp ssh`: добавлен параметр --instance для подключения к определенному экземпляру.
+* `az webapp create-remote-connection`: добавлен параметр --instance для подключения к определенному экземпляру.
+* Исправление № 14758: az webapp вызывает ошибки при создании приложения Windows с помощью --runtime dotnetcore.
+* Исправление № 14701: реализовано functionapp create --assign-identity.
+* Исправление № 11244: `az webapp auth update`: Добавлен необязательный параметр для обновления client-secret-certificate-thumbprint.
+* `az functionapp keys`: добавлены команды, позволяющие пользователям управлять ключами приложения-функции.
+* `az functionapp function`: добавлены команды, позволяющие пользователям управлять отдельными функциями.
+* `az functionapp function keys`: добавлены команды, позволяющие пользователям управлять ключами функций.
+* Исправление № 14788: az webapp create не получает правильное веб-приложение, если имена являются подстроками.
+* `az functionapp create`: исключена возможность создания Функций 2.x в регионах, которые не поддерживают службу
+
+### <a name="arm"></a>ARM
+
+* `az resource list`: расширены возвращаемые данные `createdTime`, `changedTime` и `provisioningState`.
+* `az resource`: добавлен параметр `--latest-include-preview` для включения поддержки с использованием последней версии API, даже если это предварительная версия.
+
+### <a name="aro"></a>ARO
+
+* Улучшен CLI, включая добавление разрешений на проверку таблицы маршрутизации.
+
+### <a name="cloud"></a>Cloud
+
+* `az cloud register`: исправлена регистрация облаков с использованием файла конфигурации.
+
+### <a name="compute"></a>Вычисления
+
+* Обновлены номера SKU виртуальных машин, поддерживающих ускорение работы в сети.
+* `az vm create`: автоматическая установка исправлений в гостевой системе.
+* `az image builder create`: добавлены параметры --vm-size, --os-disk-size, --vnet, --subnet.
+* Новая команда az vm assess-patches.
+
+### <a name="container"></a>Контейнер
+
+* Исправление № 6235: обновлен текст справки для параметра ports в container create.
+
+### <a name="datalake-store"></a>Data Lake Store
+
+* Устранена ошибка № 14545 с операцией подключения к Data Lake.
+
+### <a name="eventhub"></a>концентратор событий.
+
+* `az eventhubs eventhub create/update`: изменена документация по destination_name.
+
+### <a name="extension"></a>Расширение
+
+* Добавлена команда `az extension list-versions` для выведения списка всех доступных версий расширения.
+
+### <a name="hdinsight"></a>HDInsight
+
+* Включена поддержка создания кластера с конфигурацией автомасштабирования и поддержка управления конфигурацией автомасштабирования.
+* Включена поддержка создания кластера с шифрованием в узле.
+
+### <a name="iotcentral"></a>IoT Central
+
+* Улучшения документации по CLI
+
+### <a name="monitor"></a>Azure Monitor
+
+* `az monitor metrics alert create`: включена поддержка RG и Sub в качестве значений области.
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] az netappfiles snapshot create: удален параметр file-system-id.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] az netappfiles snapshot show: удален параметр file-system-id.
+* `az netappfiles account`: в Model ActiveDirectory добавлен новый параметр backup_operators.
+* `az netappfiles volume show`: в Model dataProtection добавлен новый параметр snapshot.
+* `az netappfiles volume show`: в Model Volume добавлен новый параметр snapshot_directory_visible.
+
+### <a name="network"></a>Сеть
+
+* `az network dns export`: экспорт FQDN для типов MX, PTR, NS и SRV вместо относительного пути.
+* Включена поддержка Приватного канала для управляемых дисков.
+* `az network application-gateway auth-cert show`: добавлен пример для демонстрации формата сертификата.
+* `az network private-endpoint-connection`: включена поддержка конфигурации приложений.
+
+### <a name="rbac"></a>RBAC
+
+* `az ad group create`: включена поддержка указания описания при создании группы.
+* `az role definition create`: печать понятного для пользователя сообщения вместо исключения, если assignableScope является пустым массивом.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] `az ad sp create-for-rbac`: изменены разрешения по умолчанию для созданного сертификата.
+
+### <a name="sql"></a>SQL
+
+* `az sql server audit-policy`: включена поддержка аудита SQL Server.
+
+### <a name="storage"></a>Служба хранилища
+
+* `az storage blob copy start-batch`: Исправление № 6018: исправлен параметр --source-sas.
+* `az storage account or-policy`: включена поддержка политики репликации объектов учетных записей хранения.
+* Исправлена ошибка № 14083 с обновлением версии пакета хранилища azure-multiapi-storage для выпуска пакета и включения поддержки новой версии API.
+* `az storage blob generate-sas`: добавлены примеры для параметра --ip и уточнено сообщение об ошибке.
+* `az storage blob list`: исправлена ошибка с next_marker.
+
+### <a name="synapse"></a>Synapse
+
+* Добавлены командлеты, связанные с рабочей областью, пулом Spark и пулом SQL.
+* Добавлены команды, связанные с заданиями Spark, на основе пакета SDK для track2.
+* Добавлены команды, связанные с функцией управления доступом, на основе пакета SDK для track2.
+
+### <a name="upgrade"></a>Обновление
+
+* Добавлена команда `az upgrade` для обновления Azure CLI и расширений.
 
 ## <a name="august-11-2020"></a>11 августа 2020 г.
 
