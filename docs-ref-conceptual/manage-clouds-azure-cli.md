@@ -8,12 +8,13 @@ ms.date: 09/09/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 8e24a4740d97ddf67f81e60fef9217a4e72daab0
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 74297c7deaa080bf030cba3326e63ef3b1c9d9bb
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "77779471"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562997"
 ---
 # <a name="select-clouds-with-the-azure-cli"></a>Выбор облаков с помощью Azure CLI
 

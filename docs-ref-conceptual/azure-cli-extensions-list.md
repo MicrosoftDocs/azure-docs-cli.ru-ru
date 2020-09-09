@@ -9,12 +9,13 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 1c12add4370df3cdf9450164d4b4061863a0046f
-ms.sourcegitcommit: 28e3282487dab68f9a4635f8bec161fbc412c3b9
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 117ffca4074f30b0ea7496f65f671446e0cfe6a9
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054586"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562827"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 

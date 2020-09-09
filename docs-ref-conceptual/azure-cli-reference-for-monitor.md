@@ -9,12 +9,13 @@ ms.date: 06/30/2020
 ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: robb
-ms.openlocfilehash: 064ba33fb9c10043d7b68e472a53332f44ac1283
-ms.sourcegitcommit: 857d0f19fd87d37d134efdf0dda0e7003260938b
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 59d1c816c97c8f1463dc2579a2763bc2b073e238
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308718"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562810"
 ---
 # <a name="azure-cli-for-azure-monitor"></a>Azure CLI для Azure Monitor
 

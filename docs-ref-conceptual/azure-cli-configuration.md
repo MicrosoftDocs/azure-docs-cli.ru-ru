@@ -8,12 +8,13 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 465a7c86a883c27e94ca21412bdb59476203afa5
-ms.sourcegitcommit: 58d839589858acc1a7a9f114af7f4fce13d883ea
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 3e6727a9955582c66ecff6925e9847454e169ba1
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88601871"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562861"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI
 

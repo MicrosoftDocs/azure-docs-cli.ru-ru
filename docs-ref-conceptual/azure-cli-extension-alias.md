@@ -8,12 +8,13 @@ ms.date: 09/07/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 4d324235360e017970a215226572e3effeb9b917
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 576ed223887ff9a20cf5015d96ee4c949576d653
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "77780015"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562844"
 ---
 # <a name="the-azure-cli-alias-extension"></a>Расширение псевдонимов Azure CLI
 

@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 04957e3f0da96e1523867da98ade27b80fe45e22
-ms.sourcegitcommit: 252e80dc48481f3c51267dd3c35f8665632d4f04
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 14c6205e237d72a1c794fb1a115aace2488e7574
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84902176"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562759"
 ---
 # <a name="azure-services-the-azure-cli-can-manage"></a>Службы Azure, которыми можно управлять с помощью Azure CLI
 

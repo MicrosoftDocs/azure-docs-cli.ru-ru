@@ -9,12 +9,13 @@ ms.devlang: azurecli
 ms.topic: reference
 ms.date: 05/27/2020
 ms.author: dbradish
-ms.openlocfilehash: 404022b13f44174e4b647f0430a58fac5eeb81df
-ms.sourcegitcommit: c473377d1c08ac4efd2480bf852c30dbf1044a57
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e8d834864b2d967beb18e9cd304b922db859ef09
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415567"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562776"
 ---
 # <a name="azure-cli-for-azure-data-share"></a>Azure CLI для Azure Data Share
 

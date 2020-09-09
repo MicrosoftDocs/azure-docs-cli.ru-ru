@@ -9,12 +9,13 @@ ms.date: 06/30/2020
 ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: mohnader
-ms.openlocfilehash: b86d29d700437925390157af2f4379775de40350
-ms.sourcegitcommit: 7668cbf8b9fab82c3a4506cbc70e70392f149d12
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 27329dd3cb056ff386fb29f0d0143c27c3e62522
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455552"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562929"
 ---
 # <a name="azure-cli-for-azure-network"></a>Azure CLI для Сети Azure
 

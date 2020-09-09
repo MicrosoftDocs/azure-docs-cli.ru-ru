@@ -8,12 +8,13 @@ ms.date: 09/23/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: c9f0afdd626ac8d9af027db02275e5a553595473
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 17d62f7c6c5b819e34d6fce16caa0ded6faa53f0
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "79060464"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89563133"
 ---
 # <a name="query-azure-cli-command-output"></a>Запросы к выходным данным команд Azure CLI
 

@@ -9,12 +9,13 @@ ms.date: 06/05/2020
 ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: paymaun.heidari
-ms.openlocfilehash: b3042b569267233f00a2bc1ea4b65089dae9cae5
-ms.sourcegitcommit: b9b310407d99662296998b6e23d3903d61cc3756
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 9190140c64f6a9863666329206839bb2553ffe79
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88216533"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562793"
 ---
 # <a name="azure-cli-for-azure-iot"></a>Azure CLI для Azure IoT
 

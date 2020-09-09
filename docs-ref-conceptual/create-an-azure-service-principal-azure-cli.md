@@ -8,12 +8,13 @@ ms.date: 02/15/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: b9bd44e43c94c7e1a2ffa1281bf850d012f88504
-ms.sourcegitcommit: 252e80dc48481f3c51267dd3c35f8665632d4f04
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 3acf4272392d9ef9be37db74b2e7a5087cbeaefb
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84902196"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562538"
 ---
 # <a name="create-an-azure-service-principal-with-the-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 

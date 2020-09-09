@@ -8,12 +8,13 @@ ms.date: 07/12/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 3cd61d2166d03f7b9d58db1ee1cee77d17b5b336
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 93dd6fd3e026713779768d1ae4b4873f658d2898
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "77779981"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562555"
 ---
 # <a name="differences-between-azure-cli-products"></a>Различия между продуктами Azure CLI
 

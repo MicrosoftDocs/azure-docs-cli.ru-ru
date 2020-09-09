@@ -8,12 +8,13 @@ ms.date: 09/23/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 7f28a5cc7acd7e5d41e1ab91424a9f360a25b702
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: d4cc869aa7e23f87cf6f13b8aca9f10cbbca82b5
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "79134047"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89563167"
 ---
 # <a name="output-formats-for-azure-cli-commands"></a>Форматы выходных данных для команд Azure CLI
 

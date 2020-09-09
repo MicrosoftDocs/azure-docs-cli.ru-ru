@@ -8,12 +8,13 @@ ms.date: 08/28/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: cc1ed8d904571fa7583445a8b7e7e79fa4f00b37
-ms.sourcegitcommit: 28e3282487dab68f9a4635f8bec161fbc412c3b9
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 896e62b8db9597ee3ff02cec333031ac59f20705
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89054620"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89563099"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 

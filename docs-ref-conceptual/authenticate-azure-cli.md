@@ -8,12 +8,13 @@ ms.date: 02/22/2019
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 26112c9a7f338a7f178dc627d89f6e1f33d97714
-ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0c522e30bfc55ea9c87cbea3ffa56762f63d5025
+ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "81006862"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89562878"
 ---
 # <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI 
 
