@@ -45,11 +45,11 @@
         - name: Сценарий установки для Linux
           href: install-azure-cli-linux.md
           displayName: 'install, script, unix, bsd, linux, lfs, wsl, slackware'
-    - name: Запуск в Docker
+    - name: Запуск Azure CLI в контейнере Docker
       href: run-azure-cli-docker.md
       displayName: 'linux, unix, container, image'
-    - name: Запуск в Azure Cloud Shell
-      href: /azure/cloud-shell/quickstart
+    - name: Начало работы с Azure Cloud Shell
+      href: start-azure-cloud-shell.md
       displayName: 'bash, Powershell'
     - name: Вход
       href: authenticate-azure-cli.md
