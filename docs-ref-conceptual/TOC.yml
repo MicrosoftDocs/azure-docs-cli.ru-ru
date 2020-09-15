@@ -48,8 +48,8 @@
     - name: Запуск Azure CLI в контейнере Docker
       href: run-azure-cli-docker.md
       displayName: 'linux, unix, container, image'
-    - name: Начало работы с Azure Cloud Shell
-      href: start-azure-cloud-shell.md
+    - name: Запуск Azure Cloud Shell с помощью Bash
+      href: /azure/cloud-shell/quickstart
       displayName: 'bash, Powershell'
     - name: Вход
       href: authenticate-azure-cli.md
@@ -87,7 +87,7 @@
       href: /azure/batch/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
 - name: Практические руководства
   items:
-    - name: Советы по эффективному использованию CLI
+    - name: Эффективное использование CLI
       href: use-cli-effectively.md
     - name: Результаты запроса
       href: query-azure-cli.md
