@@ -4,21 +4,151 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 08/28/2020
+ms.date: 09/22/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 896e62b8db9597ee3ff02cec333031ac59f20705
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 54befd19d810d84dd076241bd0718c933b3ff2d8
+ms.sourcegitcommit: a0cc51d7b2b39a52c402af1d98d3b48ff369bd16
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89563099"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875933"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="september-22-2020"></a>22 сентября 2020 г.
+
+Версия 2.12.0
+
+### <a name="acr"></a>ACR
+
+* Исправление № 14811. Включена поддержка переопределения dockerignore.
+
+### <a name="aks"></a>AKS
+
+* В CLI должна быть поддержка пустого файла kubeconfig.
+* Исправление № 12871. az aks enable-addons: недопустимый пример автоматически сформированной справки для параметра vitual-node.
+* Удаление устаревших действий соединителя ACI.
+* Включена поддержка надстройки Политики Azure в azure-cli.
+* Исправлена ошибка, связанная с учетом регистра в надстройке панели мониторинга AKS.
+* Обновлена версия mgmt-containerservice до 9.4.0 и включена поддержка API 09-01.
+
+### <a name="apim"></a>APIM
+
+* Включена поддержка команд сущностей product, productapi и namedValue, а также обновлена версия пакета SDK.
+
+### <a name="app-config"></a>Конфигурация приложения
+
+* Включена поддержка включения и отключения PublicNetworkAccess для существующих хранилищ.
+
+### <a name="app-service"></a>Служба приложений
+
+* Включена поддержка ценовой категории "Премиум" версии 3.
+* Исправление № 12653. Значение false для az webapp log config --application-logging не приводит к отключению.
+* Исправление № 14684. Удаление ограничений доступа по IP-адресу не работает. № 13837. az webapp create: пример для разных RSgroups для плана и веб-приложения.
+* functionapp: включена поддержка пользовательских обработчиков. PowerShell 6.2 не рекомендуется к использованию.
+* functionapp: исправлена ошибка, из-за которой параметр приложения был неправильно задан для пользовательских образов Linux.
+
+### <a name="arm"></a>ARM
+
+* `az deployment group/sub/mg/tenant what-if`: отображение игнорируемых изменений ресурсов в последнюю очередь.
+
+### <a name="compute"></a>Службы вычислений
+
+* Добавлен новый параметр new license_type в команды создания и обновления виртуальной машины: RHEL_BYOS, SLES_BYOS.
+* Обновлена версия API диска до 2020-06-30.
+* disk create: добавлены параметры --logical-sector-size, --tier.
+* Обновление диска: включенна поддержка параметров --disk-iops-read-only, --disk-mbps-read-only, --max-shares.
+* Новая команда: disk-encryption-set list-associated-resources.
+* vm boot-diagnostics enable: параметр --storage стал необязательным.
+* Новая команда: vm boot-diagnostics get-boot-log-uris.
+* vm boot-diagnostics get-boot-log: включена поддержка управляемого хранилища.
+
+### <a name="config"></a>Config
+
+* local-context теперь называется config param-persist.
+
+### <a name="cosmos-db"></a>Cosmos DB
+
+* Включена поддержка API миграции для ресурса пропускной способности для функции автомасштабирования в Cosmos DB.
+
+### <a name="eventhub"></a>Eventhub
+
+Добавлены команды кластера и параметр trusted_service_access_enabled для Networkruleset.
+
+### <a name="extension"></a>Расширение
+
+* `az extension add`: добавлен параметр `--upgrade`, чтобы обновить расширение, если оно уже установлено.
+* Включена динамическая установка по умолчанию.
+
+### <a name="iot"></a>Интернет вещей
+
+* Включена минимальная версия TLS при создании Центра Интернета вещей.
+
+### <a name="iot-central"></a>IoT Central
+
+* Операция удаления приложения теперь является длительной.
+
+### <a name="iot-hub"></a>Центр Интернета вещей
+
+* Команда show-connection-string является нерекомендуемой.
+
+### <a name="key-vault"></a>Key Vault
+
+* Управляемое устройство HSM (общедоступная предварительная версия).
+* Устранена ошибка, из-за которой параметр `--maxresults` не работал при перечислении ресурсов или версий ресурсов.
+
+### <a name="kusto"></a>Kusto
+
+* Добавлено сообщение об устаревании.
+
+### <a name="monitor"></a>Azure Monitor
+
+* `az monitor log-analytics workspace linked-storage`: предоставление пользователям подробного сообщения об ошибке.
+
+### <a name="network"></a>Сеть
+
+* `az network vnet subnet`: включена поддержка параметров --disable-private-endpoint-network-policies и --disable-private-link-service-network-policies.
+* Исправлена ошибка при обновлении flow-log, если подсвойство network_watcher_flow_analytics_configuration имеет значение None.
+* Обновлена версия API до 2020-06-01.
+* Включена поддержка --tcp-port-behavior при настройке конфигурации TCP Монитора подключений версии 2.
+* Включена поддержка дополнительных типов и уровня покрытия при создании конечной точки Монитора подключений версии 2.
+* Включена поддержка параметра --host-subnet для создания VirtualHub в качестве VirtualRouter.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Обновления плоскости управления для PostgreSQL и MySQL.
+
+### <a name="role"></a>Роль
+
+* `az role assignment create/update`: включена поддержка `--description`, `--condition` и `--condition-version`.
+* `az ad app permission delete`: включена поддержка `--api-permissions` для удаления определенного `ResourceAccess`.
+
+### <a name="service-fabric"></a>Service Fabric
+
+* Добавлены команды управляемого кластера и типа узла.
+
+### <a name="sql"></a>SQL
+
+* Обновлена версия azure-mgmt-sql до 0.20.0.
+* Добавлен необязательный параметр избыточности хранилища резервных копий в командлет для создания MI.
+
+### <a name="storage"></a>Память
+
+* `az storage share-rm stats`: возможность получения сведений об используемых байтах для данных, которые хранятся в общей папке.
+* Общедоступная версия Хранилища BLOB-объектов — PITR.
+* `az storage blob query`: включена поддержка ускорения запросов службы хранилища Azure.
+* Включена поддержка обратимого удаления общих папок.
+* `az storage copy`: включена поддержка учетных данных и устаревание `--source-local-path`, `--destination-local-path` и `--destination-account-name`.
+* `az storage account blob-service-properties update`: включена поддержка политики хранения контейнера при удалении.
+
+### <a name="synapse"></a>Synapse
+
+* Исправлена опечатка в примере az synapse role assignment (create и delete).
 
 ## <a name="august-28-2020"></a>28 августа 2020 г.
 
