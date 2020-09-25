@@ -9,12 +9,12 @@ metadata:
   author: dbradish-microsoft
   ms.author: dbradish
   ms.date: 09/09/2019
-  ms.openlocfilehash: 804cf4efdcf88674f67f0d5e2afd2619ba1b892a
-  ms.sourcegitcommit: ee64dc738cfe689a2a479e32a87bf420f96c31c8
+  ms.openlocfilehash: ee08bf641076c20102511091fa26087fd0186dca
+  ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "79990098"
+  ms.lasthandoff: 09/25/2020
+  ms.locfileid: "91225938"
 landingContent:
 - title: Установка Azure CLI
   linkLists:
