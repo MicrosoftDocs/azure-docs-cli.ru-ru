@@ -98,5 +98,8 @@
       "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2018-03-01-hybrid"
     }
   ],
-  "need_generate_pdf": false
+  "need_generate_pdf": false,
+  "docs_build_engine": {
+    "name": "docfx_v3"
+  }
 }
