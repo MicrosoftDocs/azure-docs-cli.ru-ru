@@ -39,6 +39,7 @@
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
+  "enable_incremental_build": false,
   "contribution_branch_mappings": {
     "live-sxs": "live"
   },
@@ -99,19 +100,19 @@
   ],
   "JoinTOCPlugin": [
     {
-      "TopLevelTOC": "latest/docs-ref-autogen/toc.yml",
+      "ReferenceTOC": "latest/docs-ref-autogen/toc.yml",
       "ConceptualTOC": "docs-ref-conceptual/toc.yml",
       "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-latest",
       "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-latest"
     },
     {
-      "TopLevelTOC": "2017-03-09-profile/docs-ref-autogen/toc.yml",
+      "ReferenceTOC": "2017-03-09-profile/docs-ref-autogen/toc.yml",
       "ConceptualTOC": "docs-ref-conceptual/toc.yml",
       "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-2017-03-09-profile",
       "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2017-03-09-profile"
     },
     {
-      "TopLevelTOC": "2018-03-01-hybrid/docs-ref-autogen/toc.yml",
+      "ReferenceTOC": "2018-03-01-hybrid/docs-ref-autogen/toc.yml",
       "ConceptualTOC": "docs-ref-conceptual/toc.yml",
       "ReferenceTOCUrl": "/cli/azure/command/toc.json?view=azure-cli-2018-03-01-hybrid",
       "ConceptualTOCUrl": "/cli/azure/toc.json?view=azure-cli-2018-03-01-hybrid"
@@ -119,6 +120,6 @@
   ],
   "need_generate_pdf": false,
   "docs_build_engine": {
-    "name": "docfx_v2"
+    "name": "docfx_v3"
   }
 }
