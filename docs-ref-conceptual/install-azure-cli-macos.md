@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 826169e0792fc9a08213844468ee516f3e736f1d
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: ad2cda66e3876bafbc671b5a0593ca470d2308e6
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551169"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225802"
 ---
 # <a name="install-azure-cli-on-macos"></a>Установка Azure CLI в macOS
 

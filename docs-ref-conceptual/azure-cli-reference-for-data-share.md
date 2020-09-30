@@ -10,20 +10,20 @@ ms.topic: reference
 ms.date: 05/27/2020
 ms.author: dbradish
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: e8d834864b2d967beb18e9cd304b922db859ef09
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 5d6ed2fae3988bbf43a83d40b10a3dc37ad25dad
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562776"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225853"
 ---
 # <a name="azure-cli-for-azure-data-share"></a>Azure CLI для Azure Data Share
 
-Интерфейс командной строки Azure ([Azure CLI](/cli/azure/what-is-azure-cli)) — это набор команд для создания ресурсов Azure и управления ими.  Он доступен во многих службах Azure, включая Azure Data Share.  Для Data Share существует более 65 разных команд.  Эти команды дают возможность эффективно работать со службой с помощью командной строки.
+Интерфейс командной строки Azure ([Azure CLI](./what-is-azure-cli.md)) — это набор команд для создания ресурсов Azure и управления ими.  Он доступен во многих службах Azure, включая Azure Data Share.  Для Data Share существует более 65 разных команд.  Эти команды дают возможность эффективно работать со службой с помощью командной строки.
 
 ## <a name="references-for-data-share"></a>Справочники для Data Share
 
-Все команды Azure CLI для Azure Data Share сейчас являются расширениями Azure CLI.  Расширение предоставляет доступ к экспериментальным и предварительным версиям командам.  Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+Все команды Azure CLI для Azure Data Share сейчас являются расширениями Azure CLI.  Расширение предоставляет доступ к экспериментальным и предварительным версиям командам.  Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](./azure-cli-extensions-overview.md).
 
 |Справочник по Azure CLI |Описание
 |-|-|-|
@@ -61,6 +61,6 @@ az datashare account create --location "West US 2" --tags tag1=Red tag2=White --
 
 ## <a name="see-also"></a>См. также раздел
 
-* [Начните работу с Azure CLI](/cli/azure/get-started-with-azure-cli), чтобы узнать об установке и входе.
+* [Начните работу с Azure CLI](./get-started-with-azure-cli.md), чтобы узнать об установке и входе.
 
-* Найдите дополнительные справочники по [основным командам](/cli/azure/reference-index) и [командам расширения](/cli/azure/azure-cli-extensions-list) в документации по Azure CLI.
+* Найдите дополнительные справочники по [основным командам](/cli/azure/reference-index) и [командам расширения](./azure-cli-extensions-list.md) в документации по Azure CLI.

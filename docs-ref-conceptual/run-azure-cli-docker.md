@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 369a886c260177d86762dc736a596a262ad2739f
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 524eefb786fbe3029ea027acfdc2cdbb3dcb7040
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89563082"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225785"
 ---
 # <a name="run-azure-cli-in-a-docker-container"></a>Запуск Azure CLI в контейнере Docker
 

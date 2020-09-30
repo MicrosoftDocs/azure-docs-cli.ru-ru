@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 5f2ad8b4347257ee075d788d3cb500f464408724
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 30c964ae2724f56f4563c9e726affc154bcb22bf
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89563116"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225343"
 ---
 # <a name="overview-azure-cli-reference-types-and-status"></a>Общие сведения. Типы и состояния ссылок Azure CLI
 

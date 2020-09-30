@@ -10,16 +10,16 @@ ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: paymaun.heidari
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9190140c64f6a9863666329206839bb2553ffe79
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 0d1c117274d4e363c921d9161fbbf1051d0b078b
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562793"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225462"
 ---
 # <a name="azure-cli-for-azure-iot"></a>Azure CLI для Azure IoT
 
-Интерфейс командной строки Azure ([Azure CLI](/cli/azure/what-is-azure-cli)) — это набор команд для создания ресурсов Azure и управления ими.  Он доступен во многих службах Azure, включая Azure IoT.  Существует более 100 справочников для Azure IoT, которые помогают эффективно работать со службами Интернета вещей из командной строки.
+Интерфейс командной строки Azure ([Azure CLI](./what-is-azure-cli.md)) — это набор команд для создания ресурсов Azure и управления ими.  Он доступен во многих службах Azure, включая Azure IoT.  Существует более 100 справочников для Azure IoT, которые помогают эффективно работать со службами Интернета вещей из командной строки.
 
 ## <a name="references-for-iot"></a>Справочники для Интернета вещей
 
@@ -35,7 +35,7 @@ ms.locfileid: "89562793"
 |-|-|-|
 | [az iot](/cli/azure/iot) | да  | Все доступные основные команды Azure CLI для Azure IoT.
 | [az iot central](/cli/azure/iot/central) | да | Управление ресурсами IoT Central.
-| [az iot dps](/en-us/cli/azure/iot/dps) | да | Управление службой подготовки устройств к добавлению в Центр Интернета вещей Azure.
+| [az iot dps](/cli/azure/iot/dps) | да | Управление службой подготовки устройств к добавлению в Центр Интернета вещей Azure.
 | [az iot hub](/cli/azure/iot/hub) | да | Управление инфраструктурой Центра Интернета вещей Azure.
 
 ### <a name="extension-reference-commands"></a>Справочник по командам расширения
@@ -60,7 +60,7 @@ ms.locfileid: "89562793"
 
 ### <a name="extension-reference-installation"></a>Установка расширений из справочника
 
-Перед использованием необходимо установить расширения Azure CLI из справочника.  Чтобы установить расширение из справочника по имени, используйте команду [az extension add](/cli/azure/azure-cli-extensions-overview).  Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+Перед использованием необходимо установить расширения Azure CLI из справочника.  Чтобы установить расширение из справочника по имени, используйте команду [az extension add](./azure-cli-extensions-overview.md).  Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](./azure-cli-extensions-overview.md).
 
 ```azurecli
 # install the Azure CLI extension reference for Azure IoT
@@ -103,6 +103,6 @@ az iot hub create --resource-group MyResourceGroup --name MyIotHub --location we
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Начните работу с Azure CLI](/cli/azure/get-started-with-azure-cli), чтобы узнать об установке и входе.
+- [Начните работу с Azure CLI](./get-started-with-azure-cli.md), чтобы узнать об установке и входе.
 
-- Найдите дополнительные справочники по [выпущенным командам](/cli/azure/reference-index) и [командам расширения](/cli/azure/azure-cli-extensions-list) в документации по Azure CLI.
+- Найдите дополнительные справочники по [выпущенным командам](/cli/azure/reference-index) и [командам расширения](./azure-cli-extensions-list.md) в документации по Azure CLI.

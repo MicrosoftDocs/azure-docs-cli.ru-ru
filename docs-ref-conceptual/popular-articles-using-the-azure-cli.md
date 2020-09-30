@@ -10,12 +10,12 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 42e9de630530568a15bc6f9f05d2442d790d8b68
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 1b58fa03d93769a66ea4c02678a7409f27262fd7
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89563150"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225513"
 ---
 # <a name="popular-articles-using-the-azure-cli"></a>Популярные статьи, в которых используется Azure CLI
 
@@ -32,7 +32,7 @@ Azure CLI используется во многих службах Azure, по
 |Виртуальные машины | Практическое руководство. Linux | [Создание общей коллекции образов с помощью Azure CLI](/azure/virtual-machines/linux/shared-images) | Создайте общую коллекцию образов для пользовательских образов виртуальной машины, чтобы предоставить их другим пользователям вашей организации в пределах региона, между регионами или в клиенте Azure Active Directory.
 |Виртуальные машины | Практическое руководство. Linux | [Развертывание точечных виртуальных машин с помощью Azure CLI (предварительная версия)](/azure/virtual-machines/linux/spot-cli) | Разверните точечную виртуальную машину Linux, которая не будет вытесняться по критерию цены.
 |Виртуальные машины | Краткое руководство. Windows | [Создание виртуальной машины Windows с помощью Azure CLI](/azure/virtual-machines/windows/quick-create-cli) | Разверните в Azure виртуальную машину под управлением Windows Server 2016.
-|Виртуальные машины | Ознакомиться с модулем | [Управление виртуальными машинами с помощью Azure CLI](https://docs.microsoft.com/learn/modules/manage-virtual-machines-with-azure-cli/) | Создайте, запустите, остановите виртуальную машину и попробуйте другие задачи управления для нее.
+|Виртуальные машины | Ознакомиться с модулем | [Управление виртуальными машинами с помощью Azure CLI](/learn/modules/manage-virtual-machines-with-azure-cli/) | Создайте, запустите, остановите виртуальную машину и попробуйте другие задачи управления для нее.
 |Служба Azure Kubernetes (AKS)| Краткое руководство | [Развертывание кластера Службы Azure Kubernetes (AKS) с помощью Azure CLI](/azure/aks/kubernetes-walkthrough) | Разверните кластеры Службы контейнеров Azure и управляйте ими.  Также узнайте, как отслеживать работоспособность кластера и модулей pod, на которых выполняется приложение.
 |Пакетная служба Azure|Образец | [Выполнение задания и задач с пакетной службой Azure с помощью Azure CLI](/azure/batch/scripts/batch-cli-sample-run-job) | Создайте задание пакетной службы и добавьте в него ряд задач. Отслеживайте выполнение задания и его задач.
 |Пакетная служба Azure|Образец | [Создание пула Windows и управление им в пакетной службе Azure с помощью Azure CLI](/azure/batch/scripts/batch-cli-sample-manage-windows-pool) | Создайте пул вычислительных узлов Windows и управляйте им, используя конфигурацию Облачных служб.
@@ -108,7 +108,7 @@ Azure Stack Hub| Практическое руководство. Ресурсы
 
 | | | | |
 |-|-|-|-|
-Субъект-служба |Практическое руководство |[Создание субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli) | Создайте субъект-службу Azure, получите информацию о нем и выполните сброс с помощью Azure CLI.
+Субъект-служба |Практическое руководство |[Создание субъекта-службы Azure с помощью Azure CLI](./create-an-azure-service-principal-azure-cli.md) | Создайте субъект-службу Azure, получите информацию о нем и выполните сброс с помощью Azure CLI.
 RBAC |Практическое руководство |[Добавление и удаление назначений ролей с помощью Azure RBAC и Azure CLI](/azure/role-based-access-control/role-assignments-cli) | Присвойте роли для управления доступом на основе ролей в Azure.
 Key Vault |Практическое руководство |[Управление Key Vault с помощью интерфейса командной строки Azure](/azure/key-vault/key-vault-manage-with-cli2) | Создайте хранилище Azure Key Vault и управляйте им.  Зарегистрируйте приложение и разрешения для него, настройте расширенные политики доступа и изучите команды кроссплатформенного интерфейса командной строки.
 Key Vault |Учебник |[Управление ключами учетной записи хранения с помощью Key Vault и Azure CLI](/azure/key-vault/key-vault-ovw-storage-keys) | Управляйте ключами учетной записи хранения и создайте маркеры подписи для совместного доступа.

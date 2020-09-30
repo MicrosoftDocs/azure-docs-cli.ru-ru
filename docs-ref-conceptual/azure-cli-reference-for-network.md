@@ -10,16 +10,16 @@ ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: mohnader
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 27329dd3cb056ff386fb29f0d0143c27c3e62522
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 2155be0bca6b6aa297e4be07a685a379892523c6
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562929"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225921"
 ---
 # <a name="azure-cli-for-azure-network"></a>Azure CLI для Сети Azure
 
-Интерфейс командной строки Azure ([Azure CLI](/cli/azure/what-is-azure-cli)) — это набор команд для создания ресурсов Azure и управления ими.  CLI используется во многих службах Azure, включая Сеть Azure, позволяя управлять сетевыми службами из командной строки.
+Интерфейс командной строки Azure ([Azure CLI](./what-is-azure-cli.md)) — это набор команд для создания ресурсов Azure и управления ими.  CLI используется во многих службах Azure, включая Сеть Azure, позволяя управлять сетевыми службами из командной строки.
 
 ## <a name="references-for-azure-network"></a>Справочники для Сети Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "89562929"
 
 ## <a name="installing-extension-references"></a>Установка ссылок на расширения
 
-Перед использованием необходимо установить расширения Azure CLI из справочника.  Команда [az extension add](/cli/azure/azure-cli-extensions-overview) устанавливает ссылку на расширение по имени.  Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+Перед использованием необходимо установить расширения Azure CLI из справочника.  Команда [az extension add](./azure-cli-extensions-overview.md) устанавливает ссылку на расширение по имени.  Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](./azure-cli-extensions-overview.md).
 
 ```azurecli
 ## get a list of available Azure CLI extensions
@@ -139,8 +139,8 @@ az extension add --name peering
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Начните работу с Azure CLI](/cli/azure/get-started-with-azure-cli), чтобы узнать об установке и входе.
+- [Начните работу с Azure CLI](./get-started-with-azure-cli.md), чтобы узнать об установке и входе.
 
-- Найдите дополнительные справочники по [основным командам](/cli/azure/reference-index) и [командам расширения](/cli/azure/azure-cli-extensions-list) в документации по Azure CLI.
+- Найдите дополнительные справочники по [основным командам](/cli/azure/reference-index) и [командам расширения](./azure-cli-extensions-list.md) в документации по Azure CLI.
 
 - Управление виртуальными машинами Linux или Windows с помощью [az vm](/cli/azure/vm).

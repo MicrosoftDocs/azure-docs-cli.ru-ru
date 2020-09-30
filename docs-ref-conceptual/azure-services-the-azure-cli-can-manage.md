@@ -10,12 +10,12 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 14c6205e237d72a1c794fb1a115aace2488e7574
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: f50a23d21976d03b168d7611332ac1666c008ace
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562759"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225768"
 ---
 # <a name="azure-services-the-azure-cli-can-manage"></a>Службы Azure, которыми можно управлять с помощью Azure CLI
 
@@ -25,15 +25,15 @@ Azure CLI предоставляется во многих службах Azure
 
 | Категория со ссылкой на популярные статьи | Полная документация по службе
 |-|-|
-|[ИИ и Машинное обучение](/cli/azure/popular-articles-using-the-azure-cli?#ai--machine-learning)| [Машинное обучение Azure](/azure/machine-learning/)
+|[ИИ и Машинное обучение](./popular-articles-using-the-azure-cli.md#ai--machine-learning)| [Машинное обучение Azure](/azure/machine-learning/)
 ||[Cognitive Services](/azure/cognitive-services/)
-|[Analytics](/cli/azure/popular-articles-using-the-azure-cli?#analytics)|[Azure Data Explorer](/azure/data-explorer/)
+|[Analytics](./popular-articles-using-the-azure-cli.md#analytics)|[Azure Data Explorer](/azure/data-explorer/)
 ||[Хранилище озера данных Azure](/azure/storage/blobs/data-lake-storage-introduction/)
 ||[Аналитика озера данных](/azure/data-lake-analytics/)
 ||[Центры событий](/azure/event-hubs/)
 ||[HDInsight](/azure/hdinsight/)
 |[Блокчейн](popular-articles-using-the-azure-cli.md)|[Azure Cosmos DB](/azure/cosmos-db/)
-|[Среда выполнения приложений](/cli/azure/popular-articles-using-the-azure-cli?#compute)|[Служба приложений](/azure/app-service/)
+|[Среда выполнения приложений](./popular-articles-using-the-azure-cli.md#compute)|[Служба приложений](/azure/app-service/)
 ||[Функции Azure](/azure/azure-functions/)
 ||[Служба Azure Kubernetes (AKS)](/azure/aks/)
 ||[Azure Spring Cloud](/azure/spring-cloud/)
@@ -46,18 +46,18 @@ Azure CLI предоставляется во многих службах Azure
 ||[Экземпляры контейнеров](/azure/container-instances/)
 ||[Реестр контейнеров](/azure/container-registry/)
 ||[Service Fabric](/azure/service-fabric/)
-|[Базы данных](/cli/azure/popular-articles-using-the-azure-cli?#databases)|[Azure Cosmos DB](/azure/cosmos-db/)
+|[Базы данных](./popular-articles-using-the-azure-cli.md#databases)|[Azure Cosmos DB](/azure/cosmos-db/)
 ||[База данных Azure для MariaDB](/azure/mariadb/)
 ||[База данных Azure для MySQL](/azure/mysql/)
 ||[База данных Azure для PostgreSQL](/azure/postgresql/)
 ||[База данных SQL Azure](/azure/sql-database/)
-|[Инструменты разработчика](/cli/azure/popular-articles-using-the-azure-cli?#developer-tools)|[Конфигурация приложений](/azure/azure-app-configuration/)
+|[Инструменты разработчика](./popular-articles-using-the-azure-cli.md#developer-tools)|[Конфигурация приложений](/azure/azure-app-configuration/)
 ||[Azure DevOps](/azure/devops/)
 ||[Azure DevTest Labs](/azure/lab-services/)
 ||[Службы лабораторий Azure](/azure/lab-services/classroom-labs/)
-|[DevOps](/cli/azure/popular-articles-using-the-azure-cli?#developer-tools)|[Azure DevOps](/azure/devops/)
+|[DevOps](./popular-articles-using-the-azure-cli.md#developer-tools)|[Azure DevOps](/azure/devops/)
 ||[Azure DevTest Labs](/azure/lab-services/)
-|[Гибридный](/cli/azure/popular-articles-using-the-azure-cli?#hybrid)|[Azure Active Directory (AD)](/azure/active-directory/)
+|[Гибридный](./popular-articles-using-the-azure-cli.md#hybrid)|[Azure Active Directory (AD)](/azure/active-directory/)
 ||[База данных Azure для PostgreSQL](/azure/postgresql/)
 ||[Azure DevOps](/azure/devops/)
 ||[Azure IoT Edge](/azure/iot-edge/)
@@ -65,27 +65,27 @@ Azure CLI предоставляется во многих службах Azure
 |[Удостоверение](popular-articles-using-the-azure-cli.md)|[Azure Active Directory (AD)](/azure/active-directory/)
 |[Интеграция](popular-articles-using-the-azure-cli.md)|[Сетка событий](/azure/event-grid/)
 ||[Служебная шина](/azure/service-bus/)
-|[Интернет вещей](/cli/azure/popular-articles-using-the-azure-cli?#internet-of-things)|[Azure Cosmos DB](/azure/cosmos-db/)
+|[Интернет вещей](./popular-articles-using-the-azure-cli.md#internet-of-things)|[Azure Cosmos DB](/azure/cosmos-db/)
 ||[Функции Azure](/azure/azure-functions/)
 ||[Azure IoT Central](/azure/iot-central/)
 ||[Azure IoT Edge](/azure/iot-edge/)
 ||[Центр Интернета вещей Azure](/azure/iot-hub/)
 ||[Машинное обучение Azure](/azure/machine-learning/)
 ||[Сетка событий](/azure/event-grid/)
-|[Управление](/cli/azure/popular-articles-using-the-azure-cli?#management-and-governance)|[Azure Backup](/azure/backup/)
+|[Управление](./popular-articles-using-the-azure-cli.md#management-and-governance)|[Azure Backup](/azure/backup/)
 ||[Управляемые приложения Azure](/azure/azure-resource-manager/managed-applications/)
 ||[Azure Resource Manager](/azure/azure-resource-manager/)
 ||[Диспетчер трафика](/azure/traffic-manager/)
 |[Носитель](popular-articles-using-the-azure-cli.md)|[Службы мультимедиа](/azure/media-services/)
 |[Mobile](popular-articles-using-the-azure-cli.md)|[Служба приложений](/azure/app-service/)
-|[Сеть](/cli/azure/popular-articles-using-the-azure-cli?#networking)|[Azure DNS](/azure/dns/)
+|[Сеть](./popular-articles-using-the-azure-cli.md#networking)|[Azure DNS](/azure/dns/)
 ||[Приватный канал Azure](/azure/private-link/)
 ||[Load Balancer](/azure/load-balancer/)
 ||[Диспетчер трафика](/azure/traffic-manager/)
 ||[Виртуальная сеть](/azure/virtual-network/)
-|[Безопасность](/cli/azure/popular-articles-using-the-azure-cli?#security)|[Azure Active Directory (AD)](/azure/active-directory/)
+|[Безопасность](./popular-articles-using-the-azure-cli.md#security)|[Azure Active Directory (AD)](/azure/active-directory/)
 ||[хранилище ключей;](/azure/key-vault/)
-|[Память](/cli/azure/popular-articles-using-the-azure-cli?#storage)|[Azure Backup](/azure/backup/)
+|[Память](./popular-articles-using-the-azure-cli.md#storage)|[Azure Backup](/azure/backup/)
 ||[Хранилище озера данных Azure](/azure/storage/blobs/data-lake-storage-introduction/)
 ||[Управляемые диски](/azure/virtual-machines/windows/managed-disks-overview/)
 ||[Учетные записи хранения](/azure/storage/common/storage-account-overview/)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ffedd3d1fdbcba89106f2725b58ca62b11f4c27b
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: 92a873844516725eda7a79ecf2dcd3d89a2da1a3
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551393"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225632"
 ---
 # <a name="get-started-with-azure-cli"></a>Начало работы с Azure CLI
 

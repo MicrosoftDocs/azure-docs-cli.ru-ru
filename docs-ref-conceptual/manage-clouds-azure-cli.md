@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 74297c7deaa080bf030cba3326e63ef3b1c9d9bb
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: b59da347069f0df61756eac958c6a0119a31be18
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562997"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225326"
 ---
 # <a name="select-clouds-with-the-azure-cli"></a>Выбор облаков с помощью Azure CLI
 
-При работе в разных регионах или использовании [Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/) вам может понадобиться несколько облаков. Корпорация Майкрософт предоставляет доступные для использования облака в соответствии с местным законодательством в пределах каждого региона. В этой статье показано, как получить сведения об облаках, изменить текущее облако, а также зарегистрировать новые облака или отменить их регистрацию.
+При работе в разных регионах или использовании [Azure Stack](/azure/azure-stack/user/) вам может понадобиться несколько облаков. Корпорация Майкрософт предоставляет доступные для использования облака в соответствии с местным законодательством в пределах каждого региона. В этой статье показано, как получить сведения об облаках, изменить текущее облако, а также зарегистрировать новые облака или отменить их регистрацию.
 
 ## <a name="list-available-clouds"></a>Получение списка доступных облаков
 
@@ -74,7 +74,7 @@ az cloud show --name AzureChinaCloud --output json
 
 ## <a name="switch-the-active-cloud"></a>Изменение активного облака
 
-Чтобы задать облако по умолчанию с помощью файла конфигурации, ознакомьтесь с разделом [Переменные среды и значения конфигурации CLI](/cli/azure/azure-cli-configuration?view=azure-cli-latest#cli-configuration-values-and-environment-variables).  Чтобы переключиться с активного сейчас облака, выполните команду [az cloud set](/cli/azure/cloud#az-cloud-set). Эта команда принимает один обязательный аргумент — имя облака.
+Чтобы задать облако по умолчанию с помощью файла конфигурации, ознакомьтесь с разделом [Переменные среды и значения конфигурации CLI](./azure-cli-configuration.md?view=azure-cli-latest#cli-configuration-values-and-environment-variables).  Чтобы переключиться с активного сейчас облака, выполните команду [az cloud set](/cli/azure/cloud#az-cloud-set). Эта команда принимает один обязательный аргумент — имя облака.
 
 ```azurecli-interactive
 az cloud set --name AzureChinaCloud

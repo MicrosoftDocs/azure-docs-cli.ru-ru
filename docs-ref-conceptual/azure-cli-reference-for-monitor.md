@@ -10,16 +10,16 @@ ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: robb
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 59d1c816c97c8f1463dc2579a2763bc2b073e238
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: d16c745656b3d92942e66cfbcb6764d219d971ec
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562810"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225445"
 ---
 # <a name="azure-cli-for-azure-monitor"></a>Azure CLI для Azure Monitor
 
-Интерфейс командной строки Azure ([Azure CLI](/cli/azure/what-is-azure-cli)) — это набор команд для создания ресурсов Azure и управления ими.  Он доступен во многих службах Azure, включая Azure Monitor.  Существует более 100 справочников для Azure Monitor, которые помогают эффективно работать со службами мониторинга из командной строки.
+Интерфейс командной строки Azure ([Azure CLI](./what-is-azure-cli.md)) — это набор команд для создания ресурсов Azure и управления ими.  Он доступен во многих службах Azure, включая Azure Monitor.  Существует более 100 справочников для Azure Monitor, которые помогают эффективно работать со службами мониторинга из командной строки.
 
 ## <a name="references-for-azure-monitor"></a>Справочники для Azure Monitor
 
@@ -48,7 +48,7 @@ ms.locfileid: "89562810"
 
 ### <a name="installing-extension-references"></a>Установка ссылок на расширения
 
-Перед использованием необходимо установить расширения Azure CLI из справочника.  Команда [az extension add](/cli/azure/azure-cli-extensions-overview) устанавливает ссылку на расширение по имени.
+Перед использованием необходимо установить расширения Azure CLI из справочника.  Команда [az extension add](./azure-cli-extensions-overview.md) устанавливает ссылку на расширение по имени.
 
 ```azurecli
 # install the extension for az monitor app-insights
@@ -86,8 +86,8 @@ az monitor activity-log alert create --name MyAlertName --resource-group MyResou
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Начните работу с Azure CLI](/cli/azure/get-started-with-azure-cli), чтобы узнать об установке и входе.
+- [Начните работу с Azure CLI](./get-started-with-azure-cli.md), чтобы узнать об установке и входе.
 
-- Найдите дополнительные справочники по [выпущенным командам](/cli/azure/reference-index) и [командам расширения](/cli/azure/azure-cli-extensions-list) в документации по Azure CLI.
+- Найдите дополнительные справочники по [выпущенным командам](/cli/azure/reference-index) и [командам расширения](./azure-cli-extensions-list.md) в документации по Azure CLI.
 
-- Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](/cli/azure/azure-cli-extensions-overview).
+- Узнайте больше о расширениях из статьи [Использование расширений с Azure CLI](./azure-cli-extensions-overview.md).

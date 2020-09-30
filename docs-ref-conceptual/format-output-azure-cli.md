@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d4cc869aa7e23f87cf6f13b8aca9f10cbbca82b5
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: fd505aa70b847595d1b3dd02b6d88b60ca95db4c
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89563167"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225870"
 ---
 # <a name="output-formats-for-azure-cli-commands"></a>Форматы выходных данных для команд Azure CLI
 
@@ -138,7 +138,7 @@ RGDEMO001   KBDemo020
 > az vm list --query "[].{objectID:id}" -o table
 > ```
 
-Дополнительные сведения об использовании запросов для фильтрации данных см. в [руководстве по использованию запросов JMESPath в Azure CLI](/cli/azure/query-azure-cli).
+Дополнительные сведения об использовании запросов для фильтрации данных см. в [руководстве по использованию запросов JMESPath в Azure CLI](./query-azure-cli.md).
 
 ## <a name="tsv-output-format"></a>Формат выходных данных TSV
 
@@ -215,4 +215,4 @@ What default output format would you like?
 Please enter a choice [1]:
 ```
 
-Дополнительные сведения о настройке среды см. в [руководстве по конфигурации Azure CLI](/cli/azure/azure-cli-configuration).
+Дополнительные сведения о настройке среды см. в [руководстве по конфигурации Azure CLI](./azure-cli-configuration.md).

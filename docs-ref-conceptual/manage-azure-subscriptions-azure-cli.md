@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: dac21aa06817e18d29a181a5b1cb32069b8ea1f3
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 8f9e24a5770ad4793add9564e8f30b1bf68ba132
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562487"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225581"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Использование нескольких подписок Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "89562487"
 Пользователь может иметь доступ к нескольким _подпискам_. Подписки — это соглашения с корпорацией Майкрософт на использование облачных служб, в том числе Azure. Каждый ресурс связан с подпиской.
 
 Дополнительные сведения о различиях между клиентами, пользователями и подписками см. в [словаре терминов, связанных с облачной платформой Azure](/azure/azure-glossary-cloud-terminology).  Чтобы узнать, как добавить новую подписку в клиент Azure Active Directory, см. статью [Связывание или добавление подписки Azure в клиент Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).
-Сведения о том, как выполнить вход от имени определенного клиента см. в статье [Вход с помощью Azure CLI](/cli/azure/authenticate-azure-cli).
+Сведения о том, как выполнить вход от имени определенного клиента см. в статье [Вход с помощью Azure CLI](./authenticate-azure-cli.md).
 
 ## <a name="change-the-active-subscription"></a>Изменение активной подписки
 

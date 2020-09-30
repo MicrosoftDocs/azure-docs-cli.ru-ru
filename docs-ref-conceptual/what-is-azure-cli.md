@@ -9,12 +9,12 @@ ms.topic: overview
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 02cef6c95266e6f1e3e6f2e2de3d708dff73815c
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: bd49aebe175510145d6734e037632c031e48f7df
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551580"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225360"
 ---
 # <a name="what-is-azure-cli"></a>Что такое Azure CLI
 
