@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0c522e30bfc55ea9c87cbea3ffa56762f63d5025
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 5159716ac8e9ba0d09697035b6d0e3dd2a2286c2
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562878"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225972"
 ---
 # <a name="sign-in-with-azure-cli"></a>Вход с помощью Azure CLI 
 
 Azure CLI поддерживает несколько типов аутентификации. Проще всего приступить к работе можно с помощью оболочки [Azure Cloud Shell](/azure/cloud-shell/overview), которая автоматически выполняет вход в вашу учетную запись.
 На локальном компьютере можно выполнить интерактивную процедуру входа в браузере с помощью команды [az login](/cli/azure/reference-index#az-login). При написании скриптов рекомендуется использовать субъекты-службы. Предоставляя именно те разрешения, которые нужны субъекту-службе, можно обеспечить безопасность скрипта автоматизации.
 
-CLI не хранит ваши сведения о входе. [Маркер обновления аутентификации](https://docs.microsoft.com/azure/active-directory/develop/v1-id-and-access-tokens#refresh-tokens) создается и сохраняется в Azure. Начиная с августа 2018 г., маркер становится недействительным в случае бездействия пользователя в течение 90 дней. Этот срок может быть изменен корпорацией Майкрософт или администратором клиента. Если маркер становится недействительным, в CLI появится сообщение о необходимости повторно войти в учетную запись.
+CLI не хранит ваши сведения о входе. [Маркер обновления аутентификации](/azure/active-directory/develop/v1-id-and-access-tokens#refresh-tokens) создается и сохраняется в Azure. Начиная с августа 2018 г., маркер становится недействительным в случае бездействия пользователя в течение 90 дней. Этот срок может быть изменен корпорацией Майкрософт или администратором клиента. Если маркер становится недействительным, в CLI появится сообщение о необходимости повторно войти в учетную запись.
 
 После входа команды CLI будут выполняться в вашей подписке по умолчанию. Если у вас есть несколько подписок, можно [изменить подписку по умолчанию](manage-azure-subscriptions-azure-cli.md).
 
@@ -58,7 +58,7 @@ az login -u <username> -p <password>
 
 ## <a name="sign-in-with-a-service-principal"></a>Вход с использованием субъекта-службы
 
-Субъекты-службы — это учетные записи, не связаны с определенным пользователем. Они предоставляют разрешения, назначаемые с помощью предопределенных ролей. Аутентификация с помощью субъекта-службы лучше всего подходит для создания безопасных скриптов и программ, позволяя применять как ограничения разрешений, так и хранимые локально сведения о статических учетных данных. Дополнительные сведения о субъектах-службах см. в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI ](/cli/azure/create-an-azure-service-principal-azure-cli#sign-in-using-a-service-principal).
+Субъекты-службы — это учетные записи, не связаны с определенным пользователем. Они предоставляют разрешения, назначаемые с помощью предопределенных ролей. Аутентификация с помощью субъекта-службы лучше всего подходит для создания безопасных скриптов и программ, позволяя применять как ограничения разрешений, так и хранимые локально сведения о статических учетных данных. Дополнительные сведения о субъектах-службах см. в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI ](./create-an-azure-service-principal-azure-cli.md#sign-in-using-a-service-principal).
 
 Для входа с помощью субъекта-службы необходимы следующие сведения:
 
@@ -67,7 +67,7 @@ az login -u <username> -p <password>
 * идентификатор клиента, связанного с субъектом-службой, в виде домена `.onmicrosoft.com` или идентификатора объекта Azure.
 
 > [!NOTE]
-> В PEM-файле нужно добавить **CERTIFICATE** к **PRIVATE KEY**.  См. пример формата PEM-файла в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli#sign-in-using-a-service-principal). 
+> В PEM-файле нужно добавить **CERTIFICATE** к **PRIVATE KEY**.  См. пример формата PEM-файла в руководстве по [созданию субъекта-службы Azure с помощью Azure CLI](./create-an-azure-service-principal-azure-cli.md#sign-in-using-a-service-principal). 
 >
 
 > [!IMPORTANT]
@@ -108,4 +108,4 @@ az login --tenant <tenant>
 az login --identity
 ```
 
-Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в статьях о [настройке управляемых удостоверений для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm) и [использовании управляемых удостоверений для входа в ресурсы Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in).
+Дополнительные сведения об управляемых удостоверениях для ресурсов Azure см. в статьях о [настройке управляемых удостоверений для ресурсов Azure](/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm) и [использовании управляемых удостоверений для входа в ресурсы Azure](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in).
