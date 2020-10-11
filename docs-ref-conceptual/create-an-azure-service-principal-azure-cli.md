@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3acf4272392d9ef9be37db74b2e7a5087cbeaefb
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: f3fb0e589c4a32cc8a8e9e53c0fa3e69bf9576c2
+ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89562538"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91225955"
 ---
 # <a name="create-an-azure-service-principal-with-the-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
@@ -189,6 +189,49 @@ az login --service-principal --username APP_ID --tenant TENANT_ID --password /pa
 ```
 
 Дополнительные сведения о входе с использованием субъекта-службы см. в статье [Вход с помощью Azure CLI](authenticate-azure-cli.md).
+
+## <a name="create-a-resource-using-service-principal"></a>Создание ресурса с помощью субъекта-службы
+
+В следующем разделе показано, как создать ресурс для [службы хранилища Azure](/azure/storage/) с использованием субъекта-службы с помощью следующих команд:
+
+* [az login](/cli/azure/reference-index?view=azure-cli-latest#az_login)
+* [az group create](/cli/azure/group?view=azure-cli-latest#az_group_create)
+* [az storage account create](/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_create)
+* [az storage account keys list](/cli/azure/storage/account/keys?view=azure-cli-latest#az_storage_account_keys_list)
+
+Чтобы войти с помощью субъекта-службы, вам потребуются `appId`, `tenant` и `password`, возвращаемые в виде ответа при [создании субъекта-службы](#sign-in-using-a-service-principal).
+
+1. Выполните вход как субъект-служба.
+
+    ```azurecli-interactive
+    az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
+    ```
+
+1. Создайте группу ресурсов для хранения всех ресурсов, используемых для работы с одним кратким руководством, учебником или проектом разработки.
+
+    ```azurecli-interactive
+    az group create --location WESTUS --name MY_RESOURCE_GROUP
+    ```
+
+1. Создайте ресурс в службе Azure. Замените `<SERVICENAME>` именем службы Azure.
+
+    Для службы хранилища Azure допустимы следующие значения параметра `<KIND>`:
+
+    * BlobStorage
+    * BlockBlobStorage
+    * FileStorage
+    * Память
+    * Хранилище версии 2
+
+    ```azurecli-interactive
+    az storage account create --name MY_RESOURCE_<SERVICENAME> --resource-group MY_RESOURCE_GROUP --kind <KIND> --sku F0 --location WESTUS --yes
+    ```
+
+1. Получите ключи для нового ресурса, которые вы будете использовать в коде для аутентификации со службой Azure.
+
+    ```azurecli-interactive
+    az storage account keys list --name MY_RESOURCE_<SERVICENAME> --resource-group MY_RESOURCE_GROUP
+    ```
 
 ## <a name="reset-credentials"></a>Сброс учетных данных
 

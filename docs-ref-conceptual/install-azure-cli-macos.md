@@ -4,17 +4,17 @@ description: Как установить Azure CLI в macOS
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 11/05/2018
+ms.date: 09/25/2020
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ad2cda66e3876bafbc671b5a0593ca470d2308e6
-ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
+ms.openlocfilehash: a37faefc7e2d317daa7c37f967b461cd99a76f96
+ms.sourcegitcommit: aa44ec97af5c0e7558d254b3159f95921e22ff1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91225802"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91625403"
 ---
 # <a name="install-azure-cli-on-macos"></a>Установка Azure CLI в macOS
 
@@ -81,7 +81,11 @@ brew link --overwrite python3
 
 ## <a name="update"></a>Update
 
-CLI регулярно обновляется для исправления ошибок, а также реализации улучшений, новых возможностей и функции предварительного просмотра. Новый выпуск выходит примерно раз в две недели. Обновите сведения о локальном репозитории, а затем — сам пакет `azure-cli`.
+CLI регулярно обновляется для исправления ошибок, а также реализации улучшений, новых возможностей и функции предварительного просмотра. Новый выпуск выходит примерно раз в три недели.
+
+[!INCLUDE [az-upgrade](includes/az-upgrade.md)]
+
+Вы также можете обновить сведения о локальном репозитории Homebrew, а затем — сам пакет `azure-cli`.
 
 ```bash
 brew update && brew upgrade azure-cli

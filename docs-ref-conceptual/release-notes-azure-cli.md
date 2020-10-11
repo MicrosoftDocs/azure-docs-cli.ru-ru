@@ -4,21 +4,29 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 09/22/2020
+ms.date: 09/29/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 54befd19d810d84dd076241bd0718c933b3ff2d8
-ms.sourcegitcommit: a0cc51d7b2b39a52c402af1d98d3b48ff369bd16
+ms.openlocfilehash: 613411f9565298e606812af258486acb4b722fc0
+ms.sourcegitcommit: dd42eae9469c48f3cce66347e8e1cac317887a3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90875933"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91422517"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="september-29-2020"></a>29 сентября 2020 г.
+
+Версия 2.12.1
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Исправление команды `az postgres flexible-server create`: обновлено свойство VnetName для исключения servername, обновлен регион по умолчанию для MySQL.
 
 ## <a name="september-22-2020"></a>22 сентября 2020 г.
 

@@ -4,17 +4,17 @@ description: Как настроить Azure CLI
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 06/11/2018
+ms.date: 09/30/2020
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8a431f3303d900cc5d2f8787d531d17d41a68a9e
-ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
+ms.openlocfilehash: 232e08faca59c0cc0a7c4f2d94bce732bbeb9ebb
+ms.sourcegitcommit: aa44ec97af5c0e7558d254b3159f95921e22ff1c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91225309"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91625233"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI
 
@@ -94,6 +94,10 @@ log_dir=/var/log/azure
 | | log\_dir | строка | Каталог для записи журналов. По умолчанию это значение равно `${AZURE_CONFIG_DIR}/logs`. |
 | __defaults__ | group | строка | Группа ресурсов по умолчанию для всех команд. |
 | | location | строка | Расположение по умолчанию для всех команд. |
+| | web | строка | Имя приложения по умолчанию для команд `az webapp`. |
+| | vm | строка | Имя виртуальной машины по умолчанию для команд `az vm`. |
+| | vmss | строка | Имя масштабируемого набора виртуальных машин (VMSS) по умолчанию, используемое в командах `az vmss`. |
+| | acr | строка | Имя реестра контейнеров по умолчанию для `az acr` команд. |
 | __storage__ | connection\_string | строка | Строка подключения по умолчанию для команд `az storage`. |
 | | account | строка | Имя учетной записи по умолчанию для команд `az storage`. |
 | | ключ | строка | Ключ учетной записи по умолчанию для команд `az storage`. |
