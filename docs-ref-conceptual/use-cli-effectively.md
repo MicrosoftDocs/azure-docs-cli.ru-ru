@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 53fa51e3d17069c9d3af62d53214d366f33779b4
-ms.sourcegitcommit: 6c3032b1d74c65a8f186b3063ab6b301350e3704
+ms.openlocfilehash: 4ffd47b7d88dafc717f496fe40d9db68c7af28a3
+ms.sourcegitcommit: ce10a134cb3c73aec32bb4f5887b09d08f9bde53
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90012737"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92308069"
 ---
 # <a name="use-azure-cli-effectively"></a>Эффективное использование Azure CLI
 
@@ -254,6 +254,8 @@ az rest --method PATCH
     ```
 
    Часто возникает вопрос, нужно ли задавать переменные среды `HTTP_PROXY` или `HTTPS_PROXY`. Ответ на него может быть разным. Для Fiddler в Windows, который по умолчанию выступает в качестве системного прокси-сервера при запуске, ничего задавать не нужно. Если параметр отключен или используются другие средства, которые не выполняют функций системного прокси-сервера, переменные следует задать. Так как почти весь трафик из CLI передается по протоколу SSL, достаточно установить `HTTPS_PROXY`. Если вы не уверены, лучше установить их, но не забудьте удалить их после завершения работы прокси-сервера. Для Fiddler используется значение по умолчанию `http://localhost:8888`.
+
+   Для некоторых прокси-серверов требуется проверка подлинности, поэтому формат переменных среды `HTTP_PROXY` или `HTTPS_PROXY` должен поддерживать проверку подлинности, например `HTTPS_PROXY="https://username:password@proxy-server:port"`. Это требуется для базовых библиотек Python. Дополнительные сведения см. в статье [Настройка прокси-серверов для библиотек Azure](https://docs.microsoft.com/azure/developer/python/azure-sdk-configure-proxy?tabs=bash). 
 
    Другие сведения см. в [блоге Стефана](https://blog.jhnr.ch/2018/05/16/working-with-azure-cli-behind-ssl-intercepting-proxy-server/).
 
