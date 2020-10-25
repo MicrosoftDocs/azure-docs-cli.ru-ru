@@ -4,21 +4,119 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 09/29/2020
+ms.date: 10/13/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 613411f9565298e606812af258486acb4b722fc0
-ms.sourcegitcommit: dd42eae9469c48f3cce66347e8e1cac317887a3a
+ms.openlocfilehash: bc77b0601222b4956a6f5bed4159859fca4c3a81
+ms.sourcegitcommit: 19c24ebcd1e15ac23ca40ebc28b8c4804bd1327f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91422517"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92029665"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="october-13-2020"></a>13 октября 2020 г.
+
+Версия 2.13.0
+
+### <a name="acr"></a>ACR
+
+* `az acr helm`: обновлен устаревший URL-адрес.
+* Внесены изменения в logtemplate и systemtask для Задач ACR.
+
+### <a name="aks"></a>AKS
+
+* Включена поддержка virtual-node с aks create: `az aks create --enable-addons virtual-node`.
+* Добавлен вариант использования только образа узла для CLI.
+* Надстройка kube-dashboard будет отключена по умолчанию.
+* `az aks create/update`: добавлена поддержка LicenseType для Windows.
+* Включена возможность добавления пула точечных узлов.
+* Включена поддержка имен надстроек, определенных в Azure CLI.
+
+### <a name="ams"></a>AMS
+
+* Исправление № 14687. Добавлены группа ресурсов и имя учетной записи в команду az ams streaming-endpoint show.
+
+### <a name="app-config"></a>Конфигурация приложения
+
+* Исправлена проблема с тестированием.
+* Включена поддержка аутентификации AAD для операций с данными.
+
+### <a name="app-service"></a>Служба приложений
+
+* `az functionapp deployment source config-zip`: исправлена проблема, из-за которой config-zip вызывает исключение при успешном использовании Linux.
+* Исправление. Улучшены сообщения об ошибках для команд веб-приложений.
+* `az appservice domain create, show-terms`: добавлена возможность создания домена службы приложений.
+* `az functionapp create`: в Java 11 удален флаг предварительной версии при создании нового приложения-функции.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] az webapp create, az webapp up: обновлены доступные среды выполнения веб-приложений.
+
+### <a name="arm"></a>ARM
+
+* `az ts`: добавлены новые команды для спецификаций шаблонов.
+* `az deployment`: добавлена поддержка --template-spec -s.
+
+### <a name="compute"></a>Службы вычислений
+
+* Устранено ограничение счетчика домена сбоя для создания группы узлов.
+* Добавлена новая команда для обновления расширений для VMSS.
+* Исправлена проблема с отсутствующей ссылкой на образ.
+
+### <a name="hdinsight"></a>HDInsight
+
+* `az hdinsight create`: добавлены сведения об устаревании аргументов --public-networrk-access-type и --outbound-public-network-access-type.
+* `az hdinsight create`: добавлены сведения об устаревании для аргументов `--public-networrk-access-type` и `--outbound-public-network-access-type`.
+* `az hdinsight create`: добавлен параметр `--idbroker`, чтобы включить поддержку клиента для создания кластера ESP с помощью брокера удостоверений HDInsight.
+
+### <a name="iot-central"></a>IoT Central
+
+* Удален устаревший модуль команды az iotcentral.
+
+### <a name="key-vault"></a>Key Vault
+
+* Включена поддержка `--hsm-name` для `az keyvault key encrypt/decrypt`.
+
+### <a name="lab"></a>Лаборатория
+
+* Исправление № 14127. `__init__()` принимает 1 позиционный аргумент, хотя было указано 2.
+
+### <a name="network"></a>Сеть
+
+* `az network application-gateway ssl-cert show`: добавлен пример для демонстрации формата сертификата и сведений о получении.
+* `az network application-gateway rule`: включена поддержка параметра --priority.
+* `az network application-gateway create`: исправлена проблема, из-за которой операция создания не выполнялась без определенного общедоступного IP-адреса.
+* `az network application-gateway waf-policy managed-rule rule-set add`: включено отображение пользователю ошибки сервера, чтобы предоставить более интуитивно понятное сообщение подсказки.
+* `az network application-gateway waf-policy managed-rule rule-set update`: включена поддержка изменения версии типа набора правил.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Исправление. az postgres flexible-server create: удалена включенная в код версия API из клиента сети.
+
+### <a name="role"></a>Роль
+
+* Исправление № 15278. `az role assignment list/delete`: запрещены пустые строковые аргументы.
+
+### <a name="sql"></a>SQL
+
+* `az sql midb log-replay`: включена поддержка службы воспроизведения журналов в управляемой базе данных.
+* Регистр символов для значения параметра избыточности хранилища резервных копий для управляемого экземпляра игнорируется.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] az sql db create: добавлен параметр --backup-storage-redundancy; добавлено предупреждение о неуказанном bsr/bsr == Geo.
+
+### <a name="sql-vm"></a>Виртуальная машина SQL
+
+* `az sql vm show`: добавлены параметры конфигурации для флага --expand.
+
+### <a name="storage"></a>Память
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az storage blob copy start`: исправлена проблема с форматом для `--destination-if-modified-since` и `--destination-if-unmodified-since`.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az storage blob incremental-copy start`: исправлена проблема с форматом для `--destination-if-modified-since` и `--destination-if-unmodified-since`.
+* `az storage fs`: исправлена проблема со строкой подключения.
+* `az storage share-rm`: реализован уровень доступа для выпуска общедоступной версии.
+* `az storage container-rm`: добавлена новая группа команд для использования поставщика ресурсов Microsoft.Storage в операциях управления контейнерами.
 
 ## <a name="september-29-2020"></a>29 сентября 2020 г.
 
