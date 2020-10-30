@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0bf5fb04c90cea7185b169af756db29f9a97b235
-ms.sourcegitcommit: aa44ec97af5c0e7558d254b3159f95921e22ff1c
+ms.openlocfilehash: e501d05985b0483442ab11f78343d773fd7e55bf
+ms.sourcegitcommit: 1187fb75b68426c46e84b3f294c509ee7b7da9be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91625352"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92687096"
 ---
 # <a name="install-azure-cli-with-zypper"></a>Установка Azure CLI с помощью zypper
 
@@ -61,23 +61,49 @@ ms.locfileid: "91625352"
 
 Ниже описаны некоторые распространенные проблемы при установке с помощью `zypper`. Если у вас возникла проблема, не описанная здесь, [сообщите об этом на сайте GitHub](https://github.com/Azure/azure-cli/issues).
 
+### <a name="notimplementederror-on-opensuse-15-vm"></a>Ошибка NotImplementedError в виртуальной машине OpenSUSE 15
+Виртуальная машина OpenSUSE 15 поставляется с предварительно установленной версией Azure CLI `2.0.45`, которая устарела и имеет проблемы с `az login`. Удалите ее вместе с зависимостями, прежде чем переходить к [инструкции по установке](#install), чтобы добавить последнюю версию Azure CLI:
+```bash
+sudo zypper rm -y --clean-deps azure-cli
+```
+
+Если вы обновили Azure CLI без удаления зависимостей версии `2.0.45`, старые зависимости могут повлиять на работу последней версии Azure CLI. Необходимо вернуть старую версию, чтобы связать ее с зависимостями, а затем удалить `azure-cli` вместе с зависимостями:
+```bash
+# The package name may vary on different system version, run 'zypper --no-refresh info azure-cli' to check the source package format
+sudo zypper install --oldpackage azure-cli-2.0.45-4.22.noarch
+
+sudo zypper rm -y --clean-deps azure-cli
+```
+
+
 ### <a name="install-on-sles-12-or-other-systems-without-python-36"></a>Установка в SLES 12 или других системах без Python 3.6
 
-В SLES 12 пакет python3 по умолчанию теперь имеет версию 3.4 и не поддерживается в Azure CLI. Сначала можно создать более позднюю версию python3 из источника. Затем можно скачать пакет Azure CLI и установить его без зависимости.
+В SLES 12 пакет `python3` по умолчанию теперь имеет версию `3.4` и не поддерживается в Azure CLI. Вы можете сначала выполнить шаги 1–3 [инструкции по установке](#install), чтобы добавить репозиторий `azure-cli`. Затем выполните сборку более поздней версии `python3` из источника. Наконец, можно скачать пакет Azure CLI и установить его без зависимости.
+
+Для установки Azure CLI можно использовать следующую команду (помните, что существующая версия Python 3 будет переопределена версией Python 3.6):
 ```bash
+curl -sL https://azurecliprod.blob.core.windows.net/sles12_install.sh | sudo bash
+```
+
+Кроме того, это можно сделать пошагово:
+
+```bash
+# !Please add azure-cli repository first following step 1-3 of the install instruction before running below commands
+$ sudo zypper refresh
 $ sudo zypper install -y gcc gcc-c++ make ncurses patch wget tar zlib-devel zlib openssl-devel
 # Download Python source code
 $ PYTHON_VERSION="3.6.9"
 $ PYTHON_SRC_DIR=$(mktemp -d)
 $ wget -qO- https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tgz | tar -xz -C "$PYTHON_SRC_DIR"
 # Build Python
-$ $PYTHON_SRC_DIR/*/configure
+# Please be aware that with --prefix=/usr, the command will override the existing Python 3 version
+$ $PYTHON_SRC_DIR/*/configure --prefix=/usr
 $ make
 $ sudo make install
-#Download azure-cli package 
+# Download azure-cli package 
 $ AZ_VERSION=$(zypper --no-refresh info azure-cli |grep Version | awk -F': ' '{print $2}' | awk '{$1=$1;print}')
 $ wget https://packages.microsoft.com/yumrepos/azure-cli/azure-cli-$AZ_VERSION.x86_64.rpm
-#Install without dependency
+# Install without dependency
 $ sudo rpm -ivh --nodeps azure-cli-$AZ_VERSION.x86_64.rpm
 ```
 
