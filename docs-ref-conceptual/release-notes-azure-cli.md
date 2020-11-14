@@ -4,21 +4,37 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 10/27/2020
+ms.date: 11/09/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 4e1f03268ccd001d6fe371b1ecdecb869791b198
-ms.sourcegitcommit: 1187fb75b68426c46e84b3f294c509ee7b7da9be
+ms.openlocfilehash: 02a7cf83bbd3de7dba69a75eeff0d6676d1e0952
+ms.sourcegitcommit: 133d53a85073e3ce526a3de8de668e7bca79f48e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687129"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94484015"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="november-09-2020"></a>9 ноября 2020 г.
+
+Версия 2.14.2
+
+### <a name="app-service"></a>Служба приложений
+
+* Исправление 15604 и 15605: добавление поддержки Dotnet5
+
+## <a name="november-06-2020"></a>6 ноября 2020 г.
+
+Версия 2.14.1
+
+### <a name="arm"></a>ARM
+
+* Исправление: добавление поддержки нескольких строк в TS для входных данных шаблона
 
 ## <a name="october-27-2020"></a>27 октября 2020 г.
 
@@ -1062,7 +1078,7 @@ ms.locfileid: "92687129"
 * Исправлена ошибка, из-за которой значение ttl изменялось непредвиденным образом для add-record для dns
 * `az network public-ip create`: информирование клиентов о выпуске критического изменения
 * Поддержка универсальных команд для сценария Приватного канала
-* `az network private-endpoint-connection`: поддержка типов mysql, postgre и mariadb
+* `az network private-endpoint-connection`: поддержка типов mysql, postgres и mariadb
 * `az network private-endpoint-connection`: поддержка типов cosmosdb
 * `az network private-endpoint`: параметр --group-ids теперь является нерекомендуемым и перенаправляется на --group-id
 
@@ -3978,7 +3994,7 @@ ms.locfileid: "92687129"
 
 ### <a name="batchai"></a>Batch AI
 
-* Внесены изменения в выходные данные средства ведения журнала для автоматического создания учетной записи хранения и определения *группы ресурсов* .        
+* Внесены изменения в выходные данные средства ведения журнала для автоматического создания учетной записи хранения и определения *группы ресурсов*.        
 
 ### <a name="container"></a>Контейнер
 
@@ -6413,7 +6429,7 @@ Python (Darwin) 2.7.10 (default, Jul 30 2016, 19:40:32)
 ```
 
 > [!Note]
-> Некоторые командные модули имеют постфикс b *n* или rc *n* . Эти командные модули все еще находятся на стадии предварительной версии и станут общедоступными в будущем.
+> Некоторые командные модули имеют постфикс b *n* или rc *n*. Эти командные модули все еще находятся на стадии предварительной версии и станут общедоступными в будущем.
 
 У нас также есть предварительные ежедневные сборки CLI. Дополнительные сведения см. в инструкциях по [получению ежедневных сборок](https://github.com/Azure/azure-cli#nightly-builds), а также в инструкциях по [настройке среды разработки и участии в написании кода](https://github.com/Azure/azure-cli#developer-setup).
 
