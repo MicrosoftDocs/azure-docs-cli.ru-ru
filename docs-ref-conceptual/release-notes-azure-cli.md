@@ -4,21 +4,161 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 11/09/2020
+ms.date: 11/20/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 02a7cf83bbd3de7dba69a75eeff0d6676d1e0952
-ms.sourcegitcommit: 133d53a85073e3ce526a3de8de668e7bca79f48e
+ms.openlocfilehash: b28bfc9ef06b7bac5e789cdeb2b53ded0afea273
+ms.sourcegitcommit: 753de7d5c45062d5138be86ced7eacddd5696ca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94484015"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94976940"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="november-20-2020"></a>20 ноября 2020 г.
+
+Версия 2.15.1
+
+### <a name="profile"></a>Профиль
+
+* Исправление: Исправление 15961. az login — UnboundLocalError: локальная переменная token_entry используется перед ее назначением.
+
+## <a name="november-17-2020"></a>17 ноября 2020 г.
+
+Версия 2.15.0
+
+### <a name="acs"></a>ACS
+
+* Добавлены предупреждения о прекращении поддержки версии 3.
+
+### <a name="aks"></a>AKS
+
+* Добавлена функция временной ОС.
+* Улучшения для проектирования: замена строк надстройки константами.
+* `az aks install-cli`: включена поддержка настройки URL-адреса скачивания.
+* `az aks browse`: указание на представление ресурса Kubernetes на портале Azure, если версия Kubernetes больше или равна 1.19 или надстройка kube-dashboard отключена.
+* Включена поддержка для реализации собственной идентификации плоскости управления.
+* `az aks use-dev-spaces`: указывает, что команды, используемые в пространствах разработки, являются устаревшими.
+
+### <a name="ams"></a>AMS
+
+* Изменено region на location в выходной строке: az ams account sp create.
+
+### <a name="app-config"></a>Конфигурация приложения
+
+* Исправлена проблема с инициализацией клиента хранилища ключей.
+
+### <a name="app-service"></a>Служба приложений
+
+* Исправление 13646. Не удалось создать план службы приложений в другой группе ресурсов для Среды службы приложений.
+* Исправления 11698, 15198, 14862, 15409. az webapp/functionapp config access-restriction add.
+* `az functionapp create`: включена поддержка предварительной версии Node 14.
+* `az functionapp create`: удален флаг предварительной версии из пользовательских обработчиков.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] az functionapp update: для переноса functionapp из плана "Премиум" в план "Потребление" требуется флаг --force.
+* `az functionapp update`: добавлено сообщение об ошибке, если миграция functionapp предусматривает использование каких-либо планов в Linux.
+* `az functionapp update`: добавлено более описательное сообщение об ошибке, если миграция functionapp не удалась.
+
+### <a name="arm"></a>ARM
+
+* Исправлена проблема, из-за которой при использовании What-If отображаются две области группы ресурсов с разными регистрами.
+* `az deployment`: выводятся сведения об ошибках, связанных с развертыванием.
+
+### <a name="backup"></a>Резервное копирование
+
+* Исправление 14976. Исправлена ошибка KeyError и улучшен текст справки.
+
+### <a name="batch"></a>Пакетная служба
+
+* Исправление 15464. Проверка обновлений для PFX-файла без пароля в пакетной операции create_certificate.
+
+### <a name="billing"></a>Выставление счетов
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] az billing invoice: из ответа удалены свойства BillingPeriodsNames и DownloadUrlExpiry.
+* `az billing invoice`: включена поддержка многих других областей, таких как BillingAccount, BillingProfile и существующая подписка.
+* `az billing account`: добавлены новые команды для просмотра и обновления существующих учетных записей выставления счетов.
+* `az billing balance`: добавлены новые команды для просмотра баланса в профиле выставления счетов.
+* `az billing customer`: добавлены новые команды для отображения клиента учетной записи выставления счетов.
+* `az billing policy`: добавлены новые команды для отображения и обновления политики клиента или профиля выставления счетов.
+* `az billing product`: добавлены новые команды для управления продуктами учетной записи выставления счетов.
+* `az billing profile`: добавлены новые команды для управления профилем выставления счетов.
+* `az billing property`: добавлены новые команды для отображения и обновления свойств учетной записи выставления счетов.
+* `az billing subscription`: добавлены новые команды для управления подписками для учетной записи выставления счетов.
+* `az billing transaction`: добавлены новые команды для вывода списка транзакций по счету.
+* `az billing agreement`: добавлены новые команды для управления соглашением на выставление счетов.
+* `az billing permission`: добавлены новые команды для управления разрешением на выставление счетов.
+* `az billing role-assignment`: добавлены новые команды для управления назначением ролей.
+* `az billing role-definition`: добавлены новые команды для отображения определения роли.
+* `az billing instruction`: добавлены новые команды для управления инструкциями по выставлению счетов.
+
+### <a name="compute"></a>Службы вычислений
+
+* Устранена проблема с проверкой разрешений на обновление.
+* Улучшен формат таблицы vm list-skus.
+* vm host group create: параметр --platform-fault-domain-count сделан обязательным (справка обновлена).
+* Включено обновление виртуальной машины или версии ее образа, даже если в ней используется межклиентский образ.
+
+### <a name="dps"></a>DPS
+
+* Разрешены теги в команде create IoT DPS.
+
+### <a name="hdinsight"></a>HDInsight
+
+* az hdinsight create: добавлены два параметра `--resource-provider-connection` и `--enable-private-link` для включения поддержки исходящих подключений ретранслятора и приватного канала.
+
+### <a name="key-vault"></a>Key Vault
+
+* Уточнены сообщения об ошибках для HSM `list-deleted` и `purge`.
+* Включена поддержка выборочного восстановления ключей для управляемых HSM.
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] az netappfiles pool update: удален параметр service-level.
+* `az netappfiles pool update`: добавлен необязательный параметр qos-type.
+* `az netappfiles pool create`: добавлен необязательный параметр qos-type.
+* `az netappfiles volume replication suspend`: добавлен необязательный параметр force-break-replication.
+* az netappfiles volume replication re-initialize: добавлена новая команда для повторной инициализации репликации.
+* az netappfiles volume pool-change: добавлена новая команда для изменения пула тома.
+* az netappfiles snapshot policy: добавлена новая группа команд с командами для выведения списка, удаления, обновления, отображения, создания и использования тома.
+* az netappfiles account backup: добавлена новая группа команд с командами для отображения, выведения списка и удаления.
+* az netappfiles volume backups: добавлена новая группа команд с командами для отображения, выведения списка, удаления, обновления и создания.
+* az netappfiles account backup-policy: добавлена новая группа команд с командами для отображения, выведения списка, удаления и обновления.
+* az netappfiles vault list: добавлена новая команда.
+* `az netappfiles account ad add`: добавлены необязательные параметры kdc-ip, ad-name, server-root-ca-certificate и backup-operators.
+* `az netappfiles volumes create`: добавлены необязательные параметры snapshot-policy-id, backup-policy-id, backup-enabled, backup-id, policy-enforced, vault-id, kerberos-enabled, throughput-mibps, snapshot-directory-visible, security-style, kerberos5-read-only, kerberos5-read-write, kerberos5i-read-only, kerberos5i-read-write, kerberos5p-read-only, kerberos5p-read-write и has-root-access.
+* `az netappfiles volume update`: добавлены необязательные параметры vault-id, backup-enabled, backup-policy-id, policy-enforced и throughput-mibps.
+
+### <a name="network"></a>Сеть
+
+* Исправлена ошибка, из-за которой не удавалось создать шлюз приложений Standard_v2 без частного статического IP-адреса.
+* `az network dns zone import`: вызывается ошибка FileOperationError вместо ошибки FileNotFoundError, если файл зоны не существует.
+* Устранена ошибка NoneType со сбоем при удалении несуществующих ресурсов ApplicationGateway, LoadBalancer, Nic.
+
+### <a name="private-dns"></a>Частная зона DNS
+
+* `az network private-dns zone import`: вызывается ошибка FileOperationError вместо ошибки FileNotFoundError, если файл зоны не существует.
+
+### <a name="profile"></a>Профиль
+
+* `az login`: добавлено предупреждение о том, что браузер открыт.
+
+### <a name="role"></a>Роль
+
+* `az role assignment create`: `--description`, `--condition`, `--condition-version` переведены в предварительную версию.
+
+### <a name="security"></a>Безопасность
+
+* `az security pricing`: обновлена справка для отражения вызываемой текущей версии API.
+
+### <a name="storage"></a>Память
+
+* Исправление 15600. az storage fs exists: если fs не существует, возвращается ошибка ResourceNotFoundError.
+* Исправление 15706. Неправильные примеры для создания контейнера хранилища.
+* `az storage blob delete-batch`: исправлена опечатка в документации.
 
 ## <a name="november-09-2020"></a>9 ноября 2020 г.
 
@@ -530,7 +670,7 @@ ms.locfileid: "94484015"
 
 * Включена поддержка включения и отключения PublicNetworkAccess во время создания хранилища.
 
-### <a name="compute"></a>Вычисления
+### <a name="compute"></a>Службы вычислений
 
 * Включена поддержка связывания диска и моментального снимка с ресурсом доступа к диску.
 

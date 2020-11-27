@@ -9,18 +9,22 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 17d62f7c6c5b819e34d6fce16caa0ded6faa53f0
-ms.sourcegitcommit: 2da241715d25407ed22c1065c0c793acfd865996
+ms.openlocfilehash: 780fc2dc87f949a1f36228af7a49cd987cb10cf6
+ms.sourcegitcommit: 753de7d5c45062d5138be86ced7eacddd5696ca3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89563133"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94976838"
 ---
 # <a name="query-azure-cli-command-output"></a>Запросы к выходным данным команд Azure CLI
 
 Интерфейс Azure CLI использует аргумент `--query` для выполнения [запроса JMESPath](http://jmespath.org) к результатам выполнения команд. JMESPath — это язык запросов для JSON, который позволяет выбирать и изменять выходные данные команд CLI. Запросы выполняются к выходным данным в формате JSON до их форматирования для отображения.
 
 Аргумент `--query` поддерживается всеми командами в Azure CLI. В этой статье описано использование возможностей JMESPath на основе ряда небольших простых примеров.
+
+> [!NOTE]
+>
+> При использовании Azure CLI в PowerShell в Windows для аргумента запроса может потребоваться несколько дополнительных экранирований. Дополнительные сведения см. в статье о [проблемах с заключением в кавычки в PowerShell](https://github.com/Azure/azure-cli/blob/dev/doc/quoting-issues-with-powershell.md).
 
 ## <a name="dictionary-and-list-cli-results"></a>Результаты команд CLI в виде словарей и списков
 
