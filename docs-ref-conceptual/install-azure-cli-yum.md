@@ -4,17 +4,17 @@ description: Как установить Azure CLI с помощью yum
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 09/25/2020
+ms.date: 11/24/2020
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: fac9f37969ac23245568c521d5d3e50efa5c050d
-ms.sourcegitcommit: 1187fb75b68426c46e84b3f294c509ee7b7da9be
+ms.openlocfilehash: 9053140a35c7bc1443a636d4150ee8f0ee94dba9
+ms.sourcegitcommit: 05b58a872cdd165805df62614000637144d80066
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687060"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470475"
 ---
 # <a name="install-azure-cli-with-yum"></a>Установка Azure CLI с помощью yum
 
@@ -35,12 +35,12 @@ ms.locfileid: "92687060"
 2. Создайте сведения о локальном репозитории `azure-cli`.
 
    ```bash
-   sudo sh -c 'echo -e "[azure-cli]
+   echo -e "[azure-cli]
    name=Azure CLI
    baseurl=https://packages.microsoft.com/yumrepos/azure-cli
    enabled=1
    gpgcheck=1
-   gpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/azure-cli.repo'
+   gpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/azure-cli.repo
    ```
 
 3. Выполните установку с помощью команды `yum install`.
