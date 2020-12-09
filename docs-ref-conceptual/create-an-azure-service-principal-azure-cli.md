@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 17f550e2ce1df2e171d51c262d7a5e0428965039
-ms.sourcegitcommit: 1187fb75b68426c46e84b3f294c509ee7b7da9be
+ms.openlocfilehash: a17c0c24335dea634fb364dd5f1eab4bbac95eac
+ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92687004"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96850207"
 ---
 # <a name="create-an-azure-service-principal-with-the-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
@@ -43,7 +43,7 @@ ms.locfileid: "92687004"
   ```
 
 > [!IMPORTANT]
-> Начиная с версии Azure CLI 2.0.68, параметр `--password` для создания субъекта-службы с пользовательским паролем __больше не поддерживается__ , что должно предотвратить случайное использование ненадежных паролей.
+> Начиная с версии Azure CLI 2.0.68, параметр `--password` для создания субъекта-службы с пользовательским паролем __больше не поддерживается__, что должно предотвратить случайное использование ненадежных паролей.
 
 Выходные данные для субъекта-службы с аутентификацией на основе пароля включают ключ `password`. __Обязательно__ скопируйте это значение, так как его нельзя получить повторно. Если вы забыли пароль, [сбросьте учетные данные для субъекта-службы](#reset-credentials).
 
@@ -55,7 +55,7 @@ ms.locfileid: "92687004"
 Аргумент `--cert` позволяет воспользоваться аутентификацией на основе сертификата. При этом он требует указать существующий сертификат. Убедитесь, что все средства, которые используют этот субъект-службу, имеют доступ к закрытому ключу сертификата. Сертификаты должны иметь формат ASCII, например PEM, CER или DER. Передайте сертификат в виде строки или воспользуйтесь форматом `@path`, чтобы загрузить сертификат из файла.
 
 > [!NOTE]
-> В используемый PEM-файл нужно добавить **CERTIFICATE** к **PRIVATE KEY** .
+> В используемый PEM-файл нужно добавить **CERTIFICATE** к **PRIVATE KEY**.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name ServicePrincipalName --cert "-----BEGIN CERTIFICATE-----
@@ -106,9 +106,9 @@ myCertificateValue
 ```
 
 > [!NOTE]
-> Команда `az ad sp create-for-rbac --create-cert` создает субъект-службу и PEM-файл. PEM-файл содержит правильно отформатированные **PRIVATE KEY** и **CERTIFICATE** .
+> Команда `az ad sp create-for-rbac --create-cert` создает субъект-службу и PEM-файл. PEM-файл содержит правильно отформатированные **PRIVATE KEY** и **CERTIFICATE**.
 
-Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault. Если используется аргумент `--keyvault`, аргумент `--cert`__обязателен__ .
+Вы можете добавить аргумент `--keyvault`, чтобы сохранить сертификат в Azure Key Vault. Если используется аргумент `--keyvault`, аргумент `--cert`__обязателен__.
 
 ```azurecli-interactive
 az ad sp create-for-rbac --name ServicePrincipalName --create-cert --cert CertName --keyvault VaultName
@@ -126,7 +126,7 @@ __Обязательно__ скопируйте сертификат в безо
 
 Список субъектов-служб в клиенте можно получить с помощью команды [az ad sp list](/cli/azure/ad/sp#az-ad-sp-list). По умолчанию эта команда возвращает первые 100 субъектов-служб для вашего клиента. Чтобы получить все субъекты-службы клиента, укажите аргумент `--all`. На получение такого списка может потребоваться длительное время, поэтому мы рекомендуем отфильтровать список с помощью одного из следующих аргументов:
 
-* `--display-name` — запрашивает субъекты-службы с _префиксом_ , который совпадает с указанным именем. Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `--name`. Если вы не указали параметр `--name` при создании субъекта-службы, используется префикс имени `azure-cli-`.
+* `--display-name` — запрашивает субъекты-службы с _префиксом_, который совпадает с указанным именем. Отображаемое имя субъекта-службы представляет собой значение, заданное при создании с помощью параметра `--name`. Если вы не указали параметр `--name` при создании субъекта-службы, используется префикс имени `azure-cli-`.
 * `--spn` — отфильтровывает точные совпадения имен субъектов-служб. Имя субъекта-службы всегда начинается с `https://`.
   Если значение, которое вы использовали для аргумента `--name`, не было универсальным кодом ресурса (URI), им будет значение `https://` с последующим отображаемым именем.
 * `--show-mine` — запрашивает только те субъекты-службы, которые были созданы пользователем, вошедшим в систему.
@@ -152,9 +152,9 @@ az ad sp list --show-mine --query "[].{id:appId, tenant:appOwnerTenantId}"
 * [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create);
 * [az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete).
 
-По умолчанию субъекту-службе назначена роль **участника** . Эта роль имеет все разрешения на чтение из учетной записи Azure и запись в нее. Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.  Дополнительные сведения об управлении доступом на основе ролей см. в статье [Встроенные роли для управления доступом на основе ролей в Azure](/azure/active-directory/role-based-access-built-in-roles).
+По умолчанию субъекту-службе назначена роль **участника**. Эта роль имеет все разрешения на чтение из учетной записи Azure и запись в нее. Роль **читателя** имеет больше ограничений, предоставляя права доступа только на чтение.  Дополнительные сведения об управлении доступом на основе ролей см. в статье [Встроенные роли для управления доступом на основе ролей в Azure](/azure/active-directory/role-based-access-built-in-roles).
 
-В этом примере мы добавим роль **читателя** и удалим роль **участника** .
+В этом примере мы добавим роль **читателя** и удалим роль **участника**.
 
 ```azurecli-interactive
 az role assignment create --assignee APP_ID --role Reader
@@ -164,7 +164,7 @@ az role assignment delete --assignee APP_ID --role Contributor
 > [!NOTE]
 > Если ваша учетная запись не позволяет назначать роли, вы увидите сообщение об ошибке о том, что ваша учетная запись не авторизована для выполнения действия Microsoft.Authorization/roleAssignments/write. Чтобы получить возможность управлять ролями, обратитесь к администратору Azure Active Directory.
 
-Добавление роли _не_ ограничивает назначенные ранее разрешения. При ограничении разрешений субъекта-службы обязательно удалите роль __участника__ .
+Добавление роли _не_ ограничивает назначенные ранее разрешения. При ограничении разрешений субъекта-службы обязательно удалите роль __участника__.
 
 Чтобы проверить изменения, выведите назначенные роли:
 
@@ -182,7 +182,7 @@ az role assignment list --assignee APP_ID
 az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
 ```
 
-Чтобы войти с использованием сертификата, этот сертификат должен быть доступным локально как PEM- или DER-файл в формате ASCII. В используемый PEM-файл нужно добавить **CERTIFICATE** к **PRIVATE KEY** .
+Чтобы войти с использованием сертификата, этот сертификат должен быть доступным локально как PEM- или DER-файл в формате ASCII. В используемый PEM-файл нужно добавить **CERTIFICATE** к **PRIVATE KEY**.
 
 ```azurecli-interactive
 az login --service-principal --username APP_ID --tenant TENANT_ID --password /path/to/cert
@@ -194,7 +194,7 @@ az login --service-principal --username APP_ID --tenant TENANT_ID --password /pa
 
 В следующем разделе показано, как создать ресурс для [службы хранилища Azure](/azure/storage/) с использованием субъекта-службы с помощью следующих команд:
 
-* [az login](/cli/azure/reference-index?#az_login)
+* [az login](/cli/azure/reference-index#az_login)
 * [az group create](/cli/azure/group#az_group_create)
 * [az storage account create](/cli/azure/storage/account#az_storage_account_create)
 * [az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list)
@@ -241,7 +241,7 @@ az login --service-principal --username APP_ID --tenant TENANT_ID --password /pa
 az ad sp credential reset --name APP_ID
 ```
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
-* [Объекты приложения и субъекта-службы в Azure Active Directory](/azure/active-directory/develop/app-objects-and-service-principals)
+* [Application and service principal objects in Azure Active Directory](/azure/active-directory/develop/app-objects-and-service-principals) (Объекты приложения и субъекта-службы в Azure Active Directory)
 * [Управление субъектами-службами](/azure/developer/python/how-to-manage-service-principals)

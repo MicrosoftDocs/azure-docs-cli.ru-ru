@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.devlang: azurecli
 ms.technology: azure-cli
 ms.custom: devex-track-azurecli
-ms.openlocfilehash: 9db3035c9a50a2a3cc356f3fd7a49ab4f28652ee
-ms.sourcegitcommit: 05b58a872cdd165805df62614000637144d80066
+ms.openlocfilehash: fc214285b947650e06ff9ee3db20e19c78e9b14e
+ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96470440"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96850139"
 ---
 # <a name="tutorial-use-persisted-parameters-to-simplify-sequential-azure-cli-commands"></a>Руководство по использованию сохраненных параметров для упрощения выполнения последовательных команд Azure CLI
 
@@ -56,7 +56,7 @@ Azure CLI предлагает функцию хранимых параметр
      ```azurecli
      az login
      ```
-    - Для этого учебника требуется пакет Azure CLI версии 2.12.0 или более поздней.  Выполните команду [az version](/cli/azure/reference-index?#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index?#az_upgrade).
+    - Для этого учебника требуется пакет Azure CLI версии 2.12.0 или более поздней.  Выполните команду [az version](/cli/azure/reference-index#az_version), чтобы узнать установленную версию и зависимые библиотеки. Чтобы обновиться до последней версии, выполните команду [az upgrade](/cli/azure/reference-index#az_upgrade).
 
 ## <a name="1-determine-your-local-directory"></a>1. Определение локального каталога
 

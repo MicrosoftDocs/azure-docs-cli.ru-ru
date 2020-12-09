@@ -10,12 +10,12 @@ ms.author: dbradish
 ms.service: azure-cli
 ms.reviewer: robb
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d16c745656b3d92942e66cfbcb6764d219d971ec
-ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
+ms.openlocfilehash: 18b8dcb9d22cf4f0177e329f9080bf7693eade0e
+ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91225445"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96850292"
 ---
 # <a name="azure-cli-for-azure-monitor"></a>Azure CLI для Azure Monitor
 
@@ -23,7 +23,7 @@ ms.locfileid: "91225445"
 
 ## <a name="references-for-azure-monitor"></a>Справочники для Azure Monitor
 
-Интерфейс командной строки для [Azure Monitor](/azure/azure-monitor/) состоит из двух частей: Azure CLI (обычно называется **основным** CLI) и **расширение** CLI для Azure Monitor.  Перед использованием необходимо установить расширения Azure CLI из справочника. Команда [az extension add](/cli/azure/extension?view=azure-cli-latest#az-extension-add) устанавливает ссылку на расширение по имени.
+Интерфейс командной строки для [Azure Monitor](/azure/azure-monitor/) состоит из двух частей: Azure CLI (обычно называется **основным** CLI) и **расширение** CLI для Azure Monitor.  Перед использованием необходимо установить расширения Azure CLI из справочника. Команда [az extension add](/cli/azure/extension#az-extension-add) устанавливает ссылку на расширение по имени.
 
 > [!IMPORTANT]
 >
