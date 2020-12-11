@@ -4,21 +4,113 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 11/20/2020
+ms.date: 12/08/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: b28bfc9ef06b7bac5e789cdeb2b53ded0afea273
-ms.sourcegitcommit: 753de7d5c45062d5138be86ced7eacddd5696ca3
+ms.openlocfilehash: bcbf52e6321e283864fb585cd314be22c2241c9d
+ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94976940"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96850309"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="december-08-2020"></a>8 декабря 2020 г.
+
+Версия 2.16.0
+
+### <a name="acr"></a>ACR
+
+* Обновления описания для параметра KEK
+
+### <a name="aks"></a>AKS
+
+* `az aks nodepool add/update/upgrade`. Принимает параметр, определяющий максимальную пиковую нагрузку.
+* Включена поддержка надстройки AGIC.
+* Кластер MSI изменен на кластер по умолчанию.
+
+### <a name="apim"></a>APIM
+
+* `az apim restore`. Новая команда для восстановления резервной копии службы Управления API.
+
+### <a name="app-service"></a>Служба приложений
+
+* Исправление № 14857. Пользователям предоставлена возможность обновлять конфигурацию webapp даже с ограничением доступа.
+* `az functionapp create`. Принимаются `--runtime python` и `--runtime-version 3.9` как параметры Функций Azure версии 3.
+* Исправление № 16041. az webapp config ssl возвращает результаты с неизвестной ошибкой.
+
+### <a name="arm"></a>ARM
+
+* `az deployment-scripts`. Удален флаг предварительной версии.
+
+### <a name="backup"></a>Резервное копирование
+
+* Исправление 14976. Улучшена обработка ошибок ValueError и AttributeError в CLI.
+* `az backup protection undelete`. Включена поддержка отмены удаления защиты AzureWorkload с использованием CLI.
+* Исправлена ошибка неверного запроса для ввода правильного типа рабочей нагрузки.
+
+### <a name="cdn"></a>CDN
+
+* Добавлена поддержка нескольких источников предварительной версии.
+* Включена автоматическая смена BYOC.
+
+### <a name="key-vault"></a>Key Vault
+
+* `az keyvault key/secret list`. Добавлен параметр `--include-managed` для перечисления управляемых ресурсов.
+
+### <a name="monitor"></a>Монитор
+
+* `az monitor metrics alert create`. Включена поддержка динамических порогов для параметра условия.
+* `az monitor metrics alert update`. Включена поддержка динамических порогов для параметра условия.
+* `az monitor metrics alert dimension create`. Создано измерение правила оповещения метрики.
+* `az monitor metrics alert condition create`. Создано условие правила оповещения метрики.
+
+### <a name="mysql"></a>MySQL
+
+* Добавлен интерфейс командной строки для обновления версии MySQL.
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* `az netappfiles account ad add`. Добавлены два необязательных параметра: aes_encryption и ldap_signing.
+* `az netappfiles account backup-policy update`. Добавлены три необязательных параметра: tags, type и id.
+* `az netappfiles snapshot policy create`. Добавлен необязательный параметр provisioning_state.
+
+### <a name="network"></a>Сеть
+
+* `az network network watcher configure`. Исправлена ошибка NetworkWatcherCountLimitReached из-за чувствительности к регистру значения расположения.
+* `az network application-gateway http-listener`. Исправлена ошибка создания и обновления с помощью имени политики WAF.
+* `az network route-table`. Прекращена поддержка таблицы маршрутов версии 1.
+* `az network cross-region-lb`. Включена поддержка подсистемы балансировки нагрузки в нескольких регионах.
+* `az network express-route port generate-loa`. Новая команда для создания и загрузки PDF-письма авторизации для ExpressRoutePort.
+
+### <a name="packaging"></a>Упаковка
+
+* Добавлен пакет Ubuntu Groovy.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Добавлены команды для отображения строки подключения отдельного сервера и тесты для команд, выполняемых в локальном контексте, при создании сервера.
+
+### <a name="role"></a>Роль
+
+* Добавлены сводка и предупреждение для команд, создающих учетные данные.
+
+### <a name="search"></a>Поиск
+
+* Добавлен вариант SKU.
+
+### <a name="service-fabric"></a>Service Fabric
+
+* Обновлена документация по приложениям SF; включена поддержка только для развернутых ресурсов ARM.
+
+### <a name="synapse"></a>Synapse
+
+* Включена поддержка командлетов synapse sql dw и командлета update az synapse workspace create.
 
 ## <a name="november-20-2020"></a>20 ноября 2020 г.
 
@@ -670,7 +762,7 @@ ms.locfileid: "94976940"
 
 * Включена поддержка включения и отключения PublicNetworkAccess во время создания хранилища.
 
-### <a name="compute"></a>Службы вычислений
+### <a name="compute"></a>Вычисления
 
 * Включена поддержка связывания диска и моментального снимка с ресурсом доступа к диску.
 
