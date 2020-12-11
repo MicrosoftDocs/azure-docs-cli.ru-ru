@@ -22,7 +22,7 @@
     - name: Версии CLI
       href: cli-versioning-identifiers.md
       displayName: 'version, classic, 2.0, 1.0, xplat'
-- name: Установка и запуск
+- name: 'Установка, обновление и выполнение'
   items:
     - name: Установка
       href: install-azure-cli.md
@@ -45,6 +45,9 @@
         - name: Сценарий установки для Linux
           href: install-azure-cli-linux.md
           displayName: 'install, script, unix, bsd, linux, lfs, wsl, slackware'
+    - name: Update
+      href: update-azure-cli.md
+      displayName: 'update, upgrade'
     - name: Запуск Azure CLI в контейнере Docker
       href: run-azure-cli-docker.md
       displayName: 'linux, unix, container, image'
