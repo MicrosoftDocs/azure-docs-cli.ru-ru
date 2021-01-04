@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ade9772e9287fef2e937a7a2106f1fc0e949f773
-ms.sourcegitcommit: aa44ec97af5c0e7558d254b3159f95921e22ff1c
+ms.openlocfilehash: 2a3e2c96a9ec3a294f076fc8c86506e277425619
+ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91625297"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "97820213"
 ---
 # <a name="install-the-azure-cli"></a>Установка Azure CLI
 
@@ -37,9 +37,7 @@ Azure CLI доступен для установки в средах Windows, ma
 > [!NOTE]
 > Если вы используете классическую модель развертывания Azure, [установите классический интерфейс командной строки Azure](install-classic-cli.md).
 
-## <a name="update"></a>Update
-[!INCLUDE [az-upgrade](includes/az-upgrade.md)]
+## <a name="see-also"></a>См. также раздел
 
-## <a name="next-steps"></a>Next Steps
-
-Ключевые характеристики описаны в разделе [Что такое Azure CLI?](what-is-azure-cli.md)
+* [Обновление Azure CLI](update-azure-cli.md)
+* [Что такое Azure CLI?](what-is-azure-cli.md)
