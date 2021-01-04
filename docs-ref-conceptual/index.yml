@@ -9,12 +9,12 @@ metadata:
   author: dbradish-microsoft
   ms.author: dbradish
   ms.date: 09/09/2019
-  ms.openlocfilehash: ee08bf641076c20102511091fa26087fd0186dca
-  ms.sourcegitcommit: 5d29362589078b66d15f5cd494fe903a5195658d
+  ms.openlocfilehash: aebd695ec3f97d6d9cadabf304442a454b36dd0d
+  ms.sourcegitcommit: d5f026468ea20bbd7ef35bdbf9852bcb2b812d83
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 09/25/2020
-  ms.locfileid: "91225938"
+  ms.lasthandoff: 12/23/2020
+  ms.locfileid: "97744584"
 landingContent:
 - title: Установка Azure CLI
   linkLists:
@@ -26,13 +26,7 @@ landingContent:
       url: install-azure-cli-windows.md
     - text: Установка для macOS
       url: install-azure-cli-macos.md
-    - text: Установка для Linux с помощью apt
-      url: install-azure-cli-apt.md
-    - text: Установка для Linux с помощью yum
-      url: install-azure-cli-yum.md
-    - text: Установка для Linux с помощью zypper
-      url: install-azure-cli-zypper.md
-    - text: Установка для Linux без использования диспетчера пакетов
+    - text: Установка в Linux
       url: install-azure-cli-linux.md
     - text: Выполнение в Docker
       url: run-azure-cli-docker.md
