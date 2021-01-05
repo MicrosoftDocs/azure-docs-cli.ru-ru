@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6e2032cf6db312474431796149b8dde990820671
-ms.sourcegitcommit: bf84dfb62e910ea246586481863bb43d09d07795
+ms.openlocfilehash: b53fb38c26ac8ad4dba4a956105b91e789334053
+ms.sourcegitcommit: d5f026468ea20bbd7ef35bdbf9852bcb2b812d83
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87551444"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97744550"
 ---
 # <a name="install-the-azure-classic-cli"></a>Установка классического интерфейса командной строки Azure (Azure Classic CLI)
 
@@ -67,7 +67,7 @@ npm install -g <path to downloaded tar file>
 Если вы настроили компьютер в качестве узла [Docker](https://docs.docker.com/engine/understanding-docker/), то можно запустить классический интерфейс командной строки Azure в контейнере Docker. Выполните следующую команду (возможно, для дистрибутивов Linux потребуется использовать `sudo`):
 
 ```bash
-docker run -it microsoft/azure-cli:0.10.17
+docker run -it mcr.microsoft.com/azure-cli:0.10.14
 ```
 
 ## <a name="run-azure-classic-cli-commands"></a>Выполнение команд классического интерфейса командной строки Azure
