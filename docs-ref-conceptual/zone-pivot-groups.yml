@@ -1,0 +1,21 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: cli-linux-installation-method
+  title: Метод установки Azure CLI в Linux
+  prompt: Выберите метод установки
+  pivots:
+  - id: apt
+    title: apt (Ubuntu, Debian)
+  - id: yum
+    title: yum (RHEL, Fedora, CentOS)
+  - id: zypper
+    title: zypper (openSUSE, SLES)
+  - id: script
+    title: Скрипт установки (любой)
+metadata:
+  ms.openlocfilehash: a3fd1889d01c194a0c46c28acb81dff1a494d627
+  ms.sourcegitcommit: d5f026468ea20bbd7ef35bdbf9852bcb2b812d83
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 12/23/2020
+  ms.locfileid: "97745461"

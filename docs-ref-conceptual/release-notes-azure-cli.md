@@ -4,21 +4,138 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 12/08/2020
+ms.date: 01/04/2021
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: bcbf52e6321e283864fb585cd314be22c2241c9d
-ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
+ms.openlocfilehash: 9e7fd550f5ec6957287f0c7a865517eb5332a604
+ms.sourcegitcommit: bd2dbc80328936dadd211764d25c32a14fc58083
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96850309"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857875"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="january-04-2021"></a>04 января 2021 г.
+
+Версия 2.17.1
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Исправление: `az mysql create`. Изменение неправильного имени параметра serv_name на service_name.
+
+## <a name="december-29-2020"></a>29 декабря 2020 г.
+
+Версия 2.17.0
+
+### <a name="acr"></a>ACR
+
+* Включение поддержки избыточности между зонами
+* `az acr connected-registry`. Новая функция для локального Реестра контейнеров Azure
+* `az acr scope-map update`. Параметры --add и --remove являются устаревшими. Они изменены на --add-repo и --remove-repo.
+* `az acr scope-map create/update`. Включена поддержка управления действиями шлюза.
+* `az acr token create`. Включена поддержка действий шлюза.
+
+### <a name="aks"></a>AKS
+
+* Исправление. Добавлены аргументы, удаленные предыдущим запросом на вытягивание.
+* `az aks get-credentials`. Уточнена документация по get-credentials.
+
+### <a name="app-service"></a>Служба приложений
+
+* Клиенту разрешено создавать приложение функции Python 3.9.
+* Исправление № 14583. Командлет az webapp up должен создать имя по умолчанию, если имя не указано.
+* Исправление: Улучшена обработка ошибок при попытке создать дублирующийся ASP в другом расположении.
+
+### <a name="arm"></a>ARM
+
+* `az ts`.  Включена поддержка --tags.
+* `az ts`. Включена поддержка удаления одной версии.
+* `az provider register`. Добавлен параметр --accept-terms для регистрации RPaaS.
+* Исправлен синтаксический анализ JSON-файлов с помощью строкового значения с несколькими строками.
+
+### <a name="aro"></a>ARO
+
+* `az aro delete`. Включена проверка RBAC при удалении кластера.
+* `az aro update`. Включена проверка RBAC при обновлении кластера.
+* Убедитесь, что значение worker_profile не равно None перед получением подсетей из
+
+### <a name="backup"></a>Резервное копирование
+
+* `az backup job list`. Исправлена ошибка с -o table и добавлена строка ввода команды backup_management_type.
+
+### <a name="batch"></a>Пакетная служба Azure
+
+* Обновлена плоскость данных до [пакетной службы Azure 10.0.0](https://pypi.org/project/azure-batch/10.0.0/).
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] az batch job task-counts. Изменены выходные данные объекта JSON, возвращающего число задач, в сложный объект JSON, включающий число задач (`taskCounts`), а также число слотов задач (`taskSlotCounts`).
+
+### <a name="compute"></a>Службы вычислений
+
+* Новый тип лицензии — RHEL_ELS_6.
+* Подключен пакет SDK для track2, azure-mgmt-compute==18.0.0.
+
+### <a name="container"></a>Контейнер
+
+* Исправлена ошибка в тексте примера `az container create` CLI.
+
+### <a name="databoxedge"></a>DataBoxEdge
+
+* Новый модуль команд: включена поддержка устройств Data Box Edge и функций управления.
+
+### <a name="iot"></a>Интернет вещей
+
+* Обновлена процедура создания ключа устройства.
+* Обновлены тесты центра с поддержкой удостоверений для устранения проблем с конечной точкой RBAC.
+
+### <a name="key-vault"></a>Key Vault
+
+* `az keyvault key import`. Включена поддержка `--kty` для импорта ключей BYOK.
+
+### <a name="monitor"></a>Монитор
+
+* `az monitor metrics alert create`. Улучшено сообщение об ошибке для предоставления дополнительных практических сведений.
+
+### <a name="network"></a>Сеть
+
+* `az network private-endpoint create`. Добавлено дополнительное объявление --subnet и --private-connection-resource-id.
+* Изменен проверяющий элемент управления application-gateway ssl-cert create.
+* Миграция сети для работы с пакетом SDK для track2.
+* Исправлена ошибка для az network traffic-manager profile create при использовании --routing-method MultiValue.
+
+### <a name="profile"></a>Профиль
+
+* Исправлена ошибка с отсутствующим секретом или сертификатом для аутентификации с помощью субъекта-службы.
+
+### <a name="role"></a>Роль
+
+* `az ad sp create-for-rbac`. Не рекомендуется создавать назначение роли участника по умолчанию.
+
+### <a name="security"></a>Безопасность
+
+* Добавлены команды безопасной оценки.
+* Исправлена команда оповещения об обновлении и включена поддержка нового значения.
+
+### <a name="sql"></a>SQL
+
+* `az sql dw update`. Не принимается аргумент backup-storage-redundancy.
+* `az sql db update`. Обновлена избыточность хранилища резервных копий по запросу из команды.
+
+### <a name="storage"></a>Память
+
+* Исправление ошибки № 15965. Уточнено, как удалить несколько тегов юридического удержания с помощью `az storage container legal-hold [clear|set]`.
+* `az storage account encryption-scope`. Включена поддержка общедоступной версии.
+* Исправление ошибки № 9959. Попытка скачать версию моментального снимка общей папки завершается сбоем с сообщением ResourceNotFound.
+
+### <a name="synapse"></a>Synapse
+
+* Добавлены новые командлеты az synapse sql ad-admin show, create, update, delete.
+* Добавлен новый командлет az synapse workspace firewall-rule update.
+* Добавлены новые командлеты az synapse sql audit-policy show, update.
+* Добавлены командлеты, связанные со средой выполнения интеграции.
 
 ## <a name="december-08-2020"></a>8 декабря 2020 г.
 
@@ -762,7 +879,7 @@ ms.locfileid: "96850309"
 
 * Включена поддержка включения и отключения PublicNetworkAccess во время создания хранилища.
 
-### <a name="compute"></a>Вычисления
+### <a name="compute"></a>Службы вычислений
 
 * Включена поддержка связывания диска и моментального снимка с ресурсом доступа к диску.
 

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0f1985425328492c96262a835eb7ffd8be333cc5
-ms.sourcegitcommit: 753de7d5c45062d5138be86ced7eacddd5696ca3
+ms.openlocfilehash: 598d7498d17078bdd9f3f1aa9dc2ca4447ca97b2
+ms.sourcegitcommit: bd2dbc80328936dadd211764d25c32a14fc58083
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94976906"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97857807"
 ---
 # <a name="use-azure-cli-effectively"></a>Эффективное использование Azure CLI
 
@@ -123,9 +123,9 @@ ms.locfileid: "94976906"
 
 Если вам не подходят ни универсальные аргументы обновления, ни `az resource`, можно применить команду `az rest` для вызова REST API. Будет автоматически выполнена проверка подлинности с использованием учетных данных пользователя, вошедшего в систему, и установлен заголовок `Content-Type: application/json`.
 
-Это очень полезно для вызова [API Microsoft Graph](/graph/api/overview?toc=./ref/toc.json&view=graph-rest-1.0), который сейчас не поддерживают команды интерфейса командной строки ([#12946](https://github.com/Azure/azure-cli/issues/12946)).
+Это очень полезно для вызова [API Microsoft Graph](/graph/api/overview?toc=./ref/toc.json), который сейчас не поддерживают команды интерфейса командной строки ([#12946](https://github.com/Azure/azure-cli/issues/12946)).
 
-Например, чтобы обновить `redirectUris` для [приложения](/graph/api/resources/application?view=graph-rest-1.0), мы можем вызвать REST API [обновления приложения](/graph/api/application-update?view=graph-rest-1.0&tabs=http) следующим образом:
+Например, чтобы обновить `redirectUris` для [приложения](/graph/api/resources/application), мы можем вызвать REST API [обновления приложения](/graph/api/application-update?tabs=http) следующим образом:
 
 ```sh
 # Line breaks for legibility only
@@ -142,7 +142,12 @@ az rest --method PATCH
 
 При использовании `--uri-parameters` для запросов в форме OData обязательно экранируйте `$`. В разных средах это делается так: в `Bash` символ `$` записывается как `\$`, а в `PowerShell` символ `$` записывается как `` `$``.
 
-## <a name="quoting-issues"></a>Проблемы с кавычками
+## <a name="pass-arguments"></a>Передача аргументов
+
+1. Если значение аргумента начинается с дефиса (например, `-VerySecret`), оно будет распознано как параметр (имя аргумента, например `-n`) в [argparse](https://docs.python.org/3/library/argparse.html) (https://bugs.python.org/issue9334). Чтобы имя распознавалось как значение, используйте `--password="-VerySecret"`. ([Azure/azure-cli#7054](https://github.com/Azure/azure-cli/issues/7054)).
+2. Если значение аргумента содержит специальные символы, например пробелы (` `) или кавычки (`"`, `'`), применяются правила заключения в кавычки. См. раздел ниже:
+
+### <a name="quoting-issues"></a>Проблемы с кавычками
 
 Эта проблема связана с тем, что при анализе команды CLI командная оболочка (Bash, Zsh, командная строка Windows, PowerShell и т. д.) преобразует кавычки и пробелы. Обязательно сверьтесь с соответствующей документацией, если вы не до конца разобрались с правилами использования оболочки:
 
