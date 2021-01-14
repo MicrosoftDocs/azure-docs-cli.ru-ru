@@ -5,12 +5,12 @@ manager: barbkess
 ms.date: 09/29/2020
 ms.topic: include
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: caf16d07ba6bbf6010a3e8e01ef6b49108853566
-ms.sourcegitcommit: bd2dbc80328936dadd211764d25c32a14fc58083
+ms.openlocfilehash: 31b6a6e1c4c987ea351ccebc5d5bf23313ed856f
+ms.sourcegitcommit: 547d3db8a1469f11d33e738a82d96cb51de61bd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858050"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98147468"
 ---
 ## <a name="overview"></a>Обзор
 
@@ -18,11 +18,11 @@ ms.locfileid: "97858050"
 
 | Distribution | Версия |
 |:-------------|:--------|
-| Ubuntu       | 14.04 LTS (Trusty Tahir), 16.04 LTS (Xenial Xerus), 18.04 LTS (Bionic Beaver), 19.10 (Eoan Ermine), 20.04 LTS (Focal Fossa) |
+| Ubuntu       | 14.04 LTS (Trusty Tahir), 16.04 LTS (Xenial Xerus), 18.04 LTS (Bionic Beaver), 20.04 LTS (Focal Fossa), 20.10 (Groovy Gorilla) |
 | Debian       | Debian 8 (Jessie), Debian 9 (Stretch), Debian 10 (Buster) |
 
 > [!WARNING]
-> Для Ubuntu 20.04 (Focal) доступен пакет `azure-cli` с версией `2.0.81`, предоставляемый репозиторием `focal/universe`. Этот пакет устарел и не рекомендуется к использованию. Если этот пакет установлен, удалите его, прежде чем продолжать работу, выполнив команду `sudo apt remove azure-cli -y && sudo apt autoremove -y`.
+> Для Ubuntu 20.04 (Focal Fossa) и 20.10 (Groovy Gorilla) доступен пакет `azure-cli` с версией `2.0.81`, предоставляемый репозиторием `universe`. Этот пакет устарел и не рекомендуется к использованию. Если этот пакет установлен, удалите его, прежде чем продолжать работу, выполнив команду `sudo apt remove azure-cli -y && sudo apt autoremove -y`.
 
 ## <a name="installation-options"></a>Варианты установки
 
