@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c2197028048799f70f92d0f40525f7c4b17baa62
-ms.sourcegitcommit: 8d514f4147d6edfc02d8d95d5a4243d100a7fcc9
+ms.openlocfilehash: 2ca07510cf4f4cf1980d6a91f9fe880f371a0db6
+ms.sourcegitcommit: 59f08c5a7a967fa68adb9eefbf5beb92acda9e08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93413282"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569056"
 ---
 # <a name="azure-cli-configuration"></a>Настройка Azure CLI
 
@@ -31,7 +31,7 @@ ms.locfileid: "93413282"
 ## <a name="cli-configuration-with-az-configure"></a>Настройка CLI с использованием команды az configure
 
 Задать значения по умолчанию для CLI можно с помощью команды [az configure](/cli/azure/reference-index#az-configure).
-Эта команда принимает один аргумент **--defaults** , который является разделенным пробелами списком пар `key=value`. Предоставленные значения используются в CLI вместо обязательных аргументов.
+Эта команда принимает один аргумент **--defaults**, который является разделенным пробелами списком пар `key=value`. Предоставленные значения используются в CLI вместо обязательных аргументов.
 
 Следующая таблица содержит список доступных ключей конфигурации.
 
@@ -46,9 +46,9 @@ ms.locfileid: "93413282"
 
 Вот пример того, как можно задать группу ресурсов и расположение по умолчанию для всех команд:
 
-`azurecli-interactive
+```azurecli-interactive
 az configure --defaults location=westus2 group=MyResourceGroup
-`
+```
 
 ## <a name="cli-configuration-file"></a>Файл конфигурации CLI
 
@@ -67,21 +67,26 @@ az configure --defaults location=westus2 group=MyResourceGroup
 
 Ниже приведен пример файла конфигурации CLI, который отключает все запросы на подтверждение и настраивает для ведения журнала папку `/var/log/azure`.
 
-`ini [core] disable_confirm_prompt=Yes
+```ini
+[core]
+disable_confirm_prompt=Yes
 
-[logging] enable_log_file=yes log_dir=/var/log/azure `
+[logging]
+enable_log_file=yes
+log_dir=/var/log/azure
+```
 
 Сведения обо всех доступных значениях параметров конфигурации и их описание см. в следующем разделе. Дополнительные сведения о формате INI см. в [документации Python по файлам INI](https://docs.python.org/3/library/configparser.html#supported-ini-file-structure).
 
 ## <a name="cli-configuration-values-and-environment-variables"></a>Переменные среды и значения конфигурации CLI
 
-Следующая таблица содержит все разделы и имена параметров, которые могут быть включены в файл конфигурации. Соответствующие переменные среды имеют формат **AZURE_{section}_{name}** и записываются прописными. Например, по умолчанию в переменной **AZURE_CORE_OUTPUT** для `core` задается значение `output`, в переменной **AZURE_BATCHAI_STORAGE_ACCOUNT** для `batchai` — значение `storage_account`, а в переменной **AZURE_DEFAULTS_LOCATION**  — значение `location`.
+Следующая таблица содержит все разделы и имена параметров, которые могут быть включены в файл конфигурации. Соответствующие переменные среды имеют формат **AZURE_{section}_{name}** и записываются прописными. Например, по умолчанию в переменной **AZURE_CORE_OUTPUT** для `core` задается значение `output`, в переменной **AZURE_BATCHAI_STORAGE_ACCOUNT** для `batchai` — значение `storage_account`, а в переменной **AZURE_DEFAULTS_LOCATION** — значение `location`.
 
 Если указать значение по умолчанию, любая команда больше не будет требовать этот аргумент. Вместо этого используется значение по умолчанию.
 
 | Section | Имя      | Тип | Описание|
 |---------|-----------|------|------------|
-| __core__ | output | строка | Формат вывода по умолчанию. Один из следующих: **json** , **jsonc** , **tsv** или **table**. |
+| __core__ | output | строка | Формат вывода по умолчанию. Один из следующих: **json**, **jsonc**, **tsv** или **table**. |
 | | disable\_confirm\_prompt | Логическое | Включает и отключает запросы на подтверждение. |
 | | collect\_telemetry | Логическое | Разрешает корпорации Майкрософт собирать анонимные данные об использовании CLI. Сведения о конфиденциальности см. в [лицензии MIT для Azure CLI](https://github.com/Azure/azure-cli/blob/dev/LICENSE). |
 | | only\_show\_errors | Логическое | Показывает ошибки только при вызове команды. Иными словами, в **stderr** будут записываться только ошибки. При этом подавляются предупреждения от команд предварительной версии, а также нерекомендуемых и экспериментальных команд. Также предоставляется для отдельных команд с параметром **--only-show-errors**. |
