@@ -4,21 +4,88 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 01/04/2021
+ms.date: 01/19/2021
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9e7fd550f5ec6957287f0c7a865517eb5332a604
-ms.sourcegitcommit: bd2dbc80328936dadd211764d25c32a14fc58083
+ms.openlocfilehash: 0eed53a8eec57c4329bce934c90e90b72282f548
+ms.sourcegitcommit: 59f08c5a7a967fa68adb9eefbf5beb92acda9e08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857875"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569019"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="january-19-2021"></a>19 января 2021 г.
+
+Версия 2.18.0
+
+### <a name="acr"></a>ACR
+
+* `az acr create / update`. Добавьте `--allow-trusted-services`. Этот параметр определяет, разрешен ли доверенным службам Azure доступ к ограниченным сетевым реестрам. По умолчанию доступ разрешен.
+
+### <a name="aks"></a>AKS
+
+* `az aks check-acr`. Добавлена новая команда check-acr.
+
+### <a name="app-service"></a>Служба приложений
+
+* Исправление № 13907. `az webapp config ssl import`. Команда изменена, чтобы можно было дополнительно импортировать Сертификаты службы приложений.
+* Исправление № 16125. `az webapp ssh`. Если используется клиент Windows, в браузере открывается ссылка на SCM.
+* Исправление № 13291. `az webapp deployment slot swap`. Команда должна поддерживать сохранение виртуальной сети.
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] Исправлена регрессия, при которой нельзя было использовать версию среды выполнения с пробелом в имени.
+
+### <a name="arm"></a>ARM
+
+* `az deployment`: добавлена поддержка `--query-string`.
+* `az ts`. Улучшена обработка ошибок для `--template-file` без запрета `--version`.
+
+### <a name="backup"></a>Резервное копирование
+
+* `az backup protection backup-now`. Для периода хранения по умолчанию задано значение 30 дней.
+
+### <a name="compute"></a>Службы вычислений
+
+* Исправлена проблема, при которой наблюдалось отсутствие storage_profile.
+* Улучшена обработка ошибок внешних токенов.
+* Исправлена проблема, при которой повторно создавался образ VMSS.
+* `az vm/vmss extension set`. Новый параметр `--enable-auto-upgrade`.
+
+### <a name="container"></a>Контейнер
+
+* `az container exec`. Удалена проверка конца строки, чтобы терминал не закрывался перед запуском в Linux.
+
+### <a name="dms"></a>DMS
+
+* `az dms project task create`. Добавлен параметр типа задачи, помогающий различать сценарии миграции в подключенном и отключенном режиме.
+* `az dms project task cutover`. Добавлена новая команда, которая позволяет типу задач миграции в подключенном режиме выполнять прямую миграцию и завершать ее.
+* `az dms project create/az dms project task create`. Включена поддержка создания проектов и задач MySQL и PostgreSQL.
+
+### <a name="iot"></a>Интернет вещей
+
+* В команды создания и обновления Центра Интернета вещей добавлен параметр --tags.
+
+### <a name="monitor"></a>Azure Monitor
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az monitor log-analytics workspace data-export`: Удален нерекомендуемый параметр `--export-all-tables` и включено требование параметра `--tables`.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* Удален тег preview для команд server key и ad admin для Postgres и MySql.
+
+### <a name="role"></a>Роль
+
+* Исправление № 11594. `az role assignment create`. Отображаются только поддерживаемые значения для `--assignee-principal-type`.
+
+### <a name="storage"></a>Память
+
+* Исправление № 16072. Отправка файла большого размера.
+* Исправление № 12291. `az storage blob generate-sas` неправильно кодирует `--full-uri`.
+* Восстановление до точки во времени (общая доступность) и свойства службы BLOB-объектов в SRP.
 
 ## <a name="january-04-2021"></a>04 января 2021 г.
 
