@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azure-cli
-ms.openlocfilehash: 034c9814215522d8a25a8d08ad0c3f15c63a4e63
-ms.sourcegitcommit: bd2dbc80328936dadd211764d25c32a14fc58083
+ms.openlocfilehash: 0dd2dbcf6d290e2a1309e150da5a37e57bc99f78
+ms.sourcegitcommit: 2a0ae2ffc14ce325f9adb9c09d6b5eac534df8a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857858"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98887075"
 ---
 # <a name="available-extensions-for-the-azure-cli"></a>Доступные расширения для Azure CLI
 
@@ -39,7 +39,7 @@ az extension list-available --output table
 | [automation](https://github.com/Azure/azure-cli-extensions/tree/master/src/automation) | 0.1.0 | Расширение AutomationClient для программ командной строки Microsoft Azure |  |
 | [azure-batch-cli-extensions](https://github.com/Azure/azure-batch-cli-extensions) | 6.0.0 | Дополнительные команды для работы с пакетной службой Azure. |  |
 | [azure-cli-iot-ext](https://github.com/azure/azure-iot-cli-extension) | 0.8.10 | Не рекомендуется: удалите azure-cli-iot-ext и установите расширение azure-iot. Удаление устаревшего расширения azure-cli-iot-ext планируется после 15.09.2020. |  |
-| [azure-cli-ml](https://docs.microsoft.com/python/api/overview/azure/ml/?view=azure-ml-py) | 1.19.0 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
+| [azure-cli-ml](/python/api/overview/azure/ml/?view=azure-ml-py) | 1.19.0 | Командный модуль средств командной строки Azure ML в Microsoft Azure |  |
 | [azure-devops](https://github.com/Microsoft/azure-devops-cli-extension) | 0.18.0 | Инструменты для управления Azure DevOps. |  |
 | [azure-firewall](https://github.com/Azure/azure-cli-extensions/tree/master/src/azure-firewall) | 0.8.0 | Управление ресурсами Брандмауэра Azure. | Да |
 | [azure-iot](https://github.com/azure/azure-iot-cli-extension) | 0.10.8 | Расширение Azure IoT для Azure CLI. |  |

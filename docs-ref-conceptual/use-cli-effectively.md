@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 598d7498d17078bdd9f3f1aa9dc2ca4447ca97b2
-ms.sourcegitcommit: bd2dbc80328936dadd211764d25c32a14fc58083
+ms.openlocfilehash: 2473f3ade5cf37e2c57835cfc9ac928d155caf9e
+ms.sourcegitcommit: 2a0ae2ffc14ce325f9adb9c09d6b5eac534df8a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857807"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98887041"
 ---
 # <a name="use-azure-cli-effectively"></a>Эффективное использование Azure CLI
 
@@ -26,7 +26,7 @@ ms.locfileid: "97857807"
 
 2. Формат `table` полезен для получения сводки о конкретных параметрах, в частности для команд получения списков. Если вы не хотите использовать поля в формате таблицы по умолчанию (или формата по умолчанию нет), можете указать `--output json` для просмотра полной информации или `--query` для выбора нужного формата.
 
-    ```sh
+    ```azurelcli
     az vm show -g my_rg -n my_vm --query "{name: name, os:storageProfile.imageReference.offer}" -otable
     Name    Os
     ------  ------------
@@ -35,7 +35,7 @@ ms.locfileid: "97857807"
 
 3. Формат `tsv` полезен для краткого вывода и работы со скриптами. В формате TSV удаляются двойные кавычки, которые сохраняются в формате JSON. Чтобы указать формат TSV, используйте аргумент `--query`.
 
-    ```sh
+    ```bash
     export vm_ids=$(az vm list -d -g my_rg --query "[?powerState=='VM running'].id" -o tsv)
     az vm stop --ids $vm_ids
     ```
@@ -44,17 +44,20 @@ ms.locfileid: "97857807"
 
 1. Если значение будет использоваться более одного раза, сохраните его в переменной. Обратите внимание, как применяется `-o tsv` в следующем примере:
 
-    ```sh
+    ```bash
     running_vm_ids=$(az vm list -d -g my_rg --query "[?powerState=='VM running'].id" -o tsv)
     ```
 2. Если значение используется только один раз, лучше использовать синтаксис конвейера:
-    ```sh
+
+    ```azurecli
     az vm list --query "[?powerState=='VM running'].name" | grep my_vm
     ```
-3. Для списков учитывайте следующие рекомендации:
+
+1. Для списков учитывайте следующие рекомендации:
 
    Если вам важно точнее настроить результат, используйте цикл for:
-    ```sh
+    
+    ```bash
     #!/usr/bin/env bash
     for vm in $(az vm list -d -g my_rg --query "[?powerState=='VM running'].id" -o tsv); do
         echo stopping $vm
@@ -68,11 +71,14 @@ ms.locfileid: "97857807"
     ```
 
     Также можно применить `xargs` и, при желании, флаг `-P` для параллельного выполнения операций для повышения производительности.
-    ```sh
+
+    ```azurecli
     az vm list -d -g my_rg --query "[?powerState=='VM stopped'].id" -o tsv | xargs -I {} -P 10 az vm start --ids "{}"
     ```
+
     Наконец, Azure CLI имеет встроенную поддержку параллельного выполнения для команд с несколькими `--ids`. Это дает результат, аналогичный применению xargs. Обратите внимание, что для получения значений из конвейера используется `@-`:
-    ```sh
+
+    ```azurecli
     az vm list -d -g my_rg --query "[?powerState=='VM stopped'].id" -o tsv | az vm start --ids @-
     ```
 
@@ -81,12 +87,13 @@ ms.locfileid: "97857807"
 Многие команды и группы поддерживают флаги `--no-wait` для длительных операций. Кроме того, есть отдельная команда `wait`. Эти механизмы полезны для нескольких сценариев:
 
 1. Для очистки ресурсов, если вы не можете гарантировать выполнение какой-либо последующей операции, например удаления группы ресурсов:
-    ```sh
+    
+    ```azurecli
     az group delete -n my_rg --no-wait
     ```
 2. Для создания нескольких независимых ресурсов в параллельном режиме. Это действует так же, как создание и присоединение потоков:
 
-    ```sh
+    ```azurecli
     az vm create -g my_rg -n vm1 --image centos --no-wait
     az vm create -g my_rg -n vm2 --image centos --no-wait
 
@@ -105,18 +112,21 @@ ms.locfileid: "97857807"
 3. Используйте команду `show` для нужного ресурса, чтобы выяснить путь для указания в универсальных аргументах. Например, перед попыткой применить `az vm update` выполните `az vm show`, чтобы определить правильный путь. Обычно для доступа к свойствам словаря используется синтаксис с точкой, а для обращения к элементам списка — квадратные скобки.
 4. Чтобы было проще начать работу, изучите готовые рабочие примеры. Чтобы получить их, примените `az vm update -h`.
 5. `--set` и `--add` принимают список пар "ключ — значение" в формате `<key1>=<value1> <key2>=<value2>`. Используйте их для создания нетипичных полезных данных. Если синтаксис получается слишком громоздкий, попробуйте перейти на формат строки JSON. Например, подключить новый диск данных к виртуальной машине можно так:
-    ```sh
+    
+    ```azurecli
     az vm update -g my_rg -n my_vm --add storageProfile.dataDisks "{\"createOption\": \"Attach\", \"managedDisk\": {\"id\": \"/subscriptions/0b1f6471-1bf0-4dda-aec3-cb9272f09590/resourceGroups/yg/providers/Microsoft.Compute/disks/yg-disk\"}, \"lun\": 1}"
     ```
+
 6. Иногда будет удобнее использовать соглашение `@{file}` для CLI, помещая код JSON в файл и загружая его. Так, представленная выше команда упростится до следующей:
-    ```sh
+    
+    ```azurecli
     az vm update -g my_rg -n my_vm --add storageProfile.dataDisks @~/my_disk.json
     ```
 
 ## <a name="generic-resource-commands---az-resource"></a>Универсальные команды для ресурсов — `az resource`
 
 Иногда нужная служба не поддерживает команды CLI. Для работы с такими ресурсами можно использовать команды `az resource create/show/list/delete/update/invoke-action`. Вот несколько рекомендаций:
-1. Если используются только команды `create/update`, можно применить `az group deployment create`. Изучите готовые [шаблоны быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
+1. Если используются только команды `create/update`, можно применить `az deployment group create`. Изучите готовые [шаблоны быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
 2. Ознакомьтесь с документацией по REST API, чтобы узнать формат полезных данных, URL-адрес и версию API для запроса. Для примера изучите комментарии сообщества по [созданию AppInsights](https://github.com/Azure/azure-cli/issues/5543).
 
 ## <a name="rest-api-command---az-rest"></a>Команда REST API — `az rest`
@@ -127,7 +137,7 @@ ms.locfileid: "97857807"
 
 Например, чтобы обновить `redirectUris` для [приложения](/graph/api/resources/application), мы можем вызвать REST API [обновления приложения](/graph/api/application-update?tabs=http) следующим образом:
 
-```sh
+```bash
 # Line breaks for legibility only
 
 # Get the application
@@ -164,20 +174,24 @@ az rest --method PATCH
 4. Если команда будет выполняться в командной строке Windows, следует использовать исключительно двойные кавычки. Если значение содержит двойные кавычки, их необходимо экранировать: `"i like to use \" a lot"`. Эквивалент этой команды для командной строки Windows: `"{\"foo\": \"bar\"}"`.
 5. Экспортированные переменные в Bash, заключенные в двойные кавычки, будут оцениваться. Если это вам не нужно, также экранируйте их с помощью `\ `, как и для `"\$var"`, или используйте одинарные кавычки `'$var'`.
 6. Несколько аргументов CLI, в том числе универсальные аргументы обновления, принимают список значений, разделенных пробелами, например `<key1>=<value1> <key2>=<value2>`. Так как имя и значение ключа могут содержать произвольную строку, в том числе с пробелами, потребуется использовать кавычки. Заключайте в кавычки всю пару, а не отдельно ключ и (или) значение. Так, запись `"my name"=john` ошибочна. Вместо этого используйте `"my name=john"`. Пример:
-    ```sh
+    
+    ```azurecli
     az webapp config appsettings set -g my_rg -n my_web --settings "client id=id1" "my name=john"
     ```
+
 7. Используйте соглашение `@<file>` в CLI для загрузки данных из файла, чтобы обойти механизмы преобразования в оболочках:
-    ```sh
+    
+    ```azurecli
     az ad app create --display-name my-native --native-app --required-resource-accesses @manifest.json
     ```
 8. Если для аргумента CLI указано, что он принимает список с разделителями-пробелами, принимаются следующие форматы:
     - `--arg foo bar`: Все в порядке. Список с разделителями-пробелами без кавычек
     - `--arg "foo" "bar"`: Хорошо. Список с разделителями-пробелами с кавычками
     - `--arg "foo bar"`: Плохо. Это строка с пробелом, а не список с разделителями-пробелами.
-9. При выполнении команд Azure CLI в PowerShell могут возникать ошибки анализа, если аргументы содержат специальные символы PowerShell, как, например, `@`. Чтобы решить эту проблему, добавьте `` ` `` перед специальным символом, чтобы экранировать его, или заключите аргумент в одинарные либо двойные кавычки: `'`/`"`. Например, `az group deployment create --parameters @parameters.json` не работает в PowerShell, так как `@` воспринимается как [символ сплаттинга](/powershell/module/microsoft.powershell.core/about/about_splatting). Чтобы устранить эту проблему, вместо аргумента `` `@parameters.json`` используйте `'@parameters.json'`.
+9. При выполнении команд Azure CLI в PowerShell могут возникать ошибки анализа, если аргументы содержат специальные символы PowerShell, как, например, `@`. Чтобы решить эту проблему, добавьте `` ` `` перед специальным символом, чтобы экранировать его, или заключите аргумент в одинарные либо двойные кавычки: `'`/`"`. Например, `az deployment group create --parameters @parameters.json` не работает в PowerShell, так как `@` воспринимается как [символ сплаттинга](/powershell/module/microsoft.powershell.core/about/about_splatting). Чтобы устранить эту проблему, вместо аргумента `` `@parameters.json`` используйте `'@parameters.json'`.
 10. При использовании `--query` в команде некоторые символы [JMESPath](https://jmespath.org/specification.html) нужно экранировать от оболочки. Пример (bash):
-    ```sh
+    
+    ```bash
     # Wrong, as the dash needs to be quoted in a JMESPath query
     $ az version --query azure-cli
     az version: error: argument --query: invalid jmespath_type value: 'azure-cli'
@@ -226,7 +240,7 @@ az rest --method PATCH
 
 11. Лучший способ устранить проблему с кавычками — выполнить команду с флагом `--debug`. Отобразятся реальные полученные аргументы CLI с использованием синтаксиса [Python](https://docs.python.org/3/tutorial/introduction.html#strings). Пример (bash):
 
-    ```sh
+    ```bash
     # Wrong, as quotes and spaces are interpreted by Bash
     $ az {"key": "value"} --debug
     Command arguments: ['{key:', 'value}', '--debug']
@@ -250,7 +264,7 @@ az rest --method PATCH
 
 1. В переменную среды `REQUESTS_CA_BUNDLE` поместите путь к файлу сертификатов из пакета ЦС в формате PEM. Это рекомендуемый вариант, если вы часто используете CLI за корпоративным прокси-сервером. По умолчанию CLI использует следующие пакеты ЦС: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\Lib\site-packages\certifi\cacert.pem` в Windows и ` /opt/az/lib/python3.6/site-packages/certifi/cacert.pem` в Ubuntu/Debian или `/usr/lib64/az/lib/python3.6/site-packages/certifi/cacert.pem` в CentOS/RHEL/SUSE в Linux. Вы можете добавить в этот файл сертификат прокси-сервера или скопировать его содержимое в другой файл сертификата, а затем сохранить путь к нему в переменной `REQUESTS_CA_BUNDLE`. Пример:
 
-    ```
+    ```console
     <Original cacert.pem>
 
     -----BEGIN CERTIFICATE-----
@@ -260,7 +274,7 @@ az rest --method PATCH
 
    Часто возникает вопрос, нужно ли задавать переменные среды `HTTP_PROXY` или `HTTPS_PROXY`. Ответ на него может быть разным. Для Fiddler в Windows, который по умолчанию выступает в качестве системного прокси-сервера при запуске, ничего задавать не нужно. Если параметр отключен или используются другие средства, которые не выполняют функций системного прокси-сервера, переменные следует задать. Так как почти весь трафик из CLI передается по протоколу SSL, достаточно установить `HTTPS_PROXY`. Если вы не уверены, лучше установить их, но не забудьте удалить их после завершения работы прокси-сервера. Для Fiddler используется значение по умолчанию `http://localhost:8888`.
 
-   Для некоторых прокси-серверов требуется проверка подлинности, поэтому формат переменных среды `HTTP_PROXY` или `HTTPS_PROXY` должен поддерживать проверку подлинности, например `HTTPS_PROXY="https://username:password@proxy-server:port"`. Это требуется для базовых библиотек Python. Дополнительные сведения см. в статье [Настройка прокси-серверов для библиотек Azure](https://docs.microsoft.com/azure/developer/python/azure-sdk-configure-proxy?tabs=bash). 
+   Для некоторых прокси-серверов требуется проверка подлинности, поэтому формат переменных среды `HTTP_PROXY` или `HTTPS_PROXY` должен поддерживать проверку подлинности, например `HTTPS_PROXY="https://username:password@proxy-server:port"`. Это требуется для базовых библиотек Python. Дополнительные сведения см. в статье [Настройка прокси-серверов для библиотек Azure](/azure/developer/python/azure-sdk-configure-proxy?tabs=bash). 
 
    Другие сведения см. в [блоге Стефана](https://blog.jhnr.ch/2018/05/16/working-with-azure-cli-behind-ssl-intercepting-proxy-server/).
 
@@ -291,6 +305,7 @@ az vm stop --ids $vm_ids # CLI stops all VMs in parallel
 ```
 
 ### <a name="windows-batch-scripts-to-loop-through-a-list"></a>Пакетные скрипты Windows для циклического перебора списка
+
 ```batch
 ECHO OFF
 SETLOCAL
@@ -301,6 +316,7 @@ FOR /F "tokens=* USEBACKQ" %%F IN (`az vm list -d -g my_rg --query "[?powerState
 ```
 
 ### <a name="windows-powershell-scripts-to-loop-through-a-list"></a>Скрипты Windows PowerShell для циклического перебора списка
+
 ```powershell
 $vm_ids=(az vm list -d -g my_rg --query "[?powerState=='VM running'].id" -o tsv)
 foreach ($vm_id in $vm_ids) {
