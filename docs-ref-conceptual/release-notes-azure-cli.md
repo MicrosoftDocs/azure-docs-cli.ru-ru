@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0eed53a8eec57c4329bce934c90e90b72282f548
-ms.sourcegitcommit: 59f08c5a7a967fa68adb9eefbf5beb92acda9e08
+ms.openlocfilehash: ab837615dc4055abf7c08499dbab68c3ebefe515
+ms.sourcegitcommit: 2a0ae2ffc14ce325f9adb9c09d6b5eac534df8a6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569019"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98887024"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
@@ -2741,8 +2741,8 @@ ms.locfileid: "98569019"
 ### <a name="batch"></a>Пакетная служба Azure
 
 * Добавлены новые параметры конфигурации JSON в `--json-file` для `batch pool create`:
-  * Добавлен параметр `MountConfigurations` для подключений файловой системы (дополнительные сведения см. в разделе https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body ).
-  * Добавлено необязательное свойство `publicIPs` в `NetworkConfiguration` для общедоступных IP-адресов в пулах (дополнительные сведения см. в разделе https://docs.microsoft.com/rest/api/batchservice/pool/add#request-body ).
+  * Добавлен параметр `MountConfigurations` для подключений файловой системы (дополнительные сведения см. в разделе [Текст запроса](/rest/api/batchservice/pool/add#request-body)).
+  * Добавлено необязательное свойство `publicIPs` в `NetworkConfiguration` для общедоступных IP-адресов в пулах (дополнительные сведения см. в разделе [Текст запроса](/rest/api/batchservice/pool/add#request-body)).
 * В `--image` добавлена поддержка коллекций общих образов.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию для `--start-task-wait-for-success` в `batch pool create` изменено на `true`.
 * [КРИТИЧЕСКИ ВАЖНОЕ ИЗМЕНЕНИЕ.] Значение по умолчанию для `Scope` в `AutoUserSpecification` задано как Pool (ранее `Task` на узлах Windows и `Pool` на узлах Linux).
@@ -4068,7 +4068,7 @@ ms.locfileid: "98569019"
 * Добавлена поддержка назначения разрешения для приложений AAD.
 
 ### <a name="storage"></a>Память
-* Добавлена поддержка подключения к службам хранения с использованием только подписанных URL-адресов и конечных точек (без имени или ключа учетной записи), как описано в `Configure Azure Storage connection strings <https://docs.microsoft.com/azure/storage/common/storage-configure-connection-string>`.
+* Включена поддержка подключения к службам хранения с использованием только подписанных URL-адресов и конечных точек (без имени или ключа учетной записи); см. статью [Настройка строк подключения службы хранилища Azure](/azure/storage/common/storage-configure-connection-string).
 
 ### <a name="vm"></a>ВМ
 * Добавлен аргумент `storage-sku` в команду `image create`, позволяющий указать тип учетной записи хранения по умолчанию для образа.
