@@ -101,7 +101,7 @@
     - name: Управление подписками
       href: manage-azure-subscriptions-azure-cli.md
       displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
-    - name: Управление эталонными группами
+    - name: Управление группами ресурсов
       href: manage-azure-groups-azure-cli.md
     - name: Работа в интерактивном режиме
       href: interactive-azure-cli.md
