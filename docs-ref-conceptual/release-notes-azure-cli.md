@@ -4,21 +4,147 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 01/19/2021
+ms.date: 02/09/2021
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ab837615dc4055abf7c08499dbab68c3ebefe515
-ms.sourcegitcommit: 2a0ae2ffc14ce325f9adb9c09d6b5eac534df8a6
+ms.openlocfilehash: f84a71be28b7128c904b3a30e9b13a91a56395d1
+ms.sourcegitcommit: df9d6597535ef9103775afbaee5a8282e0e218ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98887024"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99987208"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="february-09-2021"></a>9 февраля 2021 г.
+
+Версия 2.19.0
+
+### <a name="acr"></a>ACR
+
+* `az acr connected-registry install info`. Добавлен новый ключ `ACR_SYNC_TOKEN_NAME` с тем же значением, что и `ACR_SYNC_TOKEN_USERNAME`. Отображается предупреждение о том, что последний больше не рекомендуется.
+* `az acr connected-registry install renew-credentials`. Добавлен новый ключ `ACR_SYNC_TOKEN_NAME` с тем же значением, что и `ACR_SYNC_TOKEN_USERNAME`. Отображается предупреждение о том, что последний больше не рекомендуется.
+
+### <a name="aks"></a>AKS
+
+* Добавлены привязки остановки и запуска для управляемого кластера.
+* `az aks check-acr`. Исправлена проверка версии Kubernetes.
+
+### <a name="apim"></a>APIM
+
+* Группа команд теперь предоставляется в общедоступной версии.
+
+### <a name="app-config"></a>Конфигурация приложения
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az appconfig feature filter add`: реализована поддержка добавления объектов JSON в качестве значений параметров фильтра компонентов. Дополнительные сведения см. в этом [запросе на вытягивание](https://github.com/Azure/azure-cli/pull/16536).
+
+### <a name="app-service"></a>Служба приложений
+
+* `az appservice ase/plan`. Поддержка ASE версии 3.
+* Исправление № 16026 и № 16118 для az appservice plan.
+* Исправление № 16509: добавлена поддержка для os-preference.
+* Улучшено поведение appservice ase create-inbound-services для разрешения пропуска служб DNS и поддержки DNS для ASE версии 2.
+* `az webapp up/az webapp create`. Исправлены ошибки NoneType.
+* `az webapp up/create`: улучшена обработка ошибок для имен приложений с точкой.
+* Исправление № 16681: `az webapp config ssl import`. Исправлена ошибка, которая приводила к сбоям в национальных облаках.
+
+### <a name="arm"></a>ARM
+
+* `az provider register`. Поддержка регистрации группы управления.
+
+### <a name="backup"></a>Backup
+
+* Добавлена функциональность CRR для IaaSVM и других команд CRR.
+* `az backup protectable-item list`. Добавлен protectable-item-type в качестве необязательного аргумента.
+
+### <a name="botservice"></a>Служба Bot
+
+* `az bot create/update`. Добавлены функции шифрования `--cmk-key-url` и `--encryption-off`.
+* `az bot update`. Переименован аргумент Encryption-OFF в CMK-OFF и обновлена версия API.
+
+### <a name="compute"></a>Службы вычислений
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ] vmss create: переименованы значения режима оркестрации.
+* Новая команда group sshkey. Разрешено создание ссылки на ресурс ключа SSH при создании виртуальной машины.
+* `az disk create/update`. Добавлен параметр `--enable-bursting` для поддержки ускорения дисков.
+
+### <a name="extension"></a>Расширение
+
+* Реализована поддержка сопоставления префикса команды расширения для динамической установки.
+
+### <a name="hdinsight"></a>HDInsight
+
+* `az hdinsight create`. Добавлен новый параметр `--enable-compute-isolation` для поддержки функции создания кластера с изоляцией вычислений.
+
+### <a name="key-vault"></a>Key Vault
+
+* `az keyvault key import`. Реализована поддержка параметра `--curve` для импорта собственных ключей (BYOK).
+* `az keyvault certificate download`. Исправлен вызов нерекомендуемого или удаленного метода.
+* `az keyvault create/update`. Удален тег предварительной версии для `--enable-rbac-authorization`.
+
+### <a name="monitor"></a>Монитор
+
+* `az monitor metrics alert create`. Исправлена ошибка "Ресурс не найден".
+
+### <a name="netappfiles"></a>NetAppFiles
+
+* `az netappfiles account ad add`. Добавлен параметр `--security-operators`.
+* `az netappfiles volume create`. Добавлен параметр `--smb-continuously-available`.
+* `az netappfiles volume create`. Добавлен параметр `--smb-encryption`.
+* `az netappfiles`. Больше не находится в предварительной версии.
+
+### <a name="network"></a>Сеть
+
+* [КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ.] `az network vrouter`: эта группа команд не рекомендуется, используйте `az network routeserver`.
+* `az network routeserver`. Добавлена новая группа команд.
+* `az network application-gateway create`. Добавлен параметр `--ssl-profile-id`.
+* `az network application-gateway client-cert`. Управление доверенным сертификатом клиента для шлюза приложений.
+* `az network application-gateway ssl-profile`. Управление профилями SSL для шлюза приложений.
+* Добавлена поддержка подключений к частной конечной точке для DigitalTwins.
+
+### <a name="profile"></a>Профиль
+
+* `az login`. Реализован запуск браузера в WSL 2.
+
+### <a name="rdbms"></a>Реляционная СУБД
+
+* `az mysql flexible-server create --iops`. Пользователю разрешено выбирать число операций ввода-вывода в секунду для своих номеров SKU.
+* Команда restore в Postgres обновлена для поддержки зон доступности.
+
+### <a name="search"></a>Поиск
+
+* Обновлен для использования последней версии (8.0.0) пакета SDK Python azure-mgmt-search.
+
+### <a name="security"></a>Безопасность
+
+* Добавлены новые команды для `az security`.
+
+### <a name="sql"></a>SQL
+
+* Добавлено управляемое сопоставление регулярного выражения HSM в SQL.
+* Обновлена версия azure-mgmt-sql до 0.26.0.
+* `az sql mi create/update`. Добавлена поддержка для конфигурации обслуживания в операциях управляемого экземпляра.
+* Реализована поддержка команд политик аудита DevOps на SQL Server.
+
+### <a name="storage"></a>Память
+
+* Исправление № 16079: общедоступный BLOB-объект выдает ошибку.
+* Ссылка, которая перенаправляет на общедоступное хранилище.
+* Исправление № 9158. Не удается создать рабочий ключ SAS из политики.
+* Исправление № 16489. Обновлена версия azcopy до 10.8.0.
+* `az storage account blob-service-properties`. Поддержка версии службы по умолчанию.
+* Исправление № 16519. Для azcopy предоставляется SAS с более широкими правами, чем требуется (имеет права на запись, требуются только права на чтение).
+
+### <a name="synapse"></a>Synapse
+
+* `az synapse workspace create `. Добавлен параметр `--key-identifier` для поддержки создания рабочей области с использованием управляемого клиентом ключа.
+* `az synapse workspace key`. Добавлены командлеты CRUD для поддержки управления ключами в указанной рабочей области Synapse.
+* `az synapse workspace managed-identity`. Добавлены командлеты для поддержки управляемого удостоверения CRUD в параметре доступа SQL.
+* `az synapse workspace`. Добавлена поддержка защиты от кражи данных, добавлен параметр `--allowed-tenant-ids`.
 
 ## <a name="january-19-2021"></a>19 января 2021 г.
 

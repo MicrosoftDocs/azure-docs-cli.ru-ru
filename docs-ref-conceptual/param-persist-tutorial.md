@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.devlang: azurecli
 ms.technology: azure-cli
 ms.custom: devex-track-azurecli
-ms.openlocfilehash: fc214285b947650e06ff9ee3db20e19c78e9b14e
-ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
+ms.openlocfilehash: 75833b18da0aea04dfc2aa33d9d7d18910525e98
+ms.sourcegitcommit: 4c41593455b473c796735c73590403d9b6be87a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96850139"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99572788"
 ---
 # <a name="tutorial-use-persisted-parameters-to-simplify-sequential-azure-cli-commands"></a>Руководство по использованию сохраненных параметров для упрощения выполнения последовательных команд Azure CLI
 
@@ -24,7 +24,7 @@ Azure CLI предлагает функцию хранимых параметр
 Из этого руководства вы узнаете следующее:
 
 > [!div class="checklist"]
-> * Использование ссылочных команд **az config param-persist**.
+> * Использование ссылочных команд `az config param-persist`.
 > * Выполнение последовательных команд с помощью хранимых параметров.
 
 В рамках этого учебника использованы следующие команды Azure CLI:
@@ -77,7 +77,7 @@ cd azCLI
 
 ## <a name="2-turn-on-persisted-parameters"></a>2. Включение хранимых параметров
 
-[Хранимые параметры](/cli/azure/param-persist) необходимо включить перед сохранением значений.  Вы будете получать предупреждение, пока **az config param-persist** не перейдет из экспериментального этапа.  Сведения о ссылочных типах, состоянии и уровнях поддержки Azure CLI см. в статье [Обзор. Ссылочные типы и состояние Azure CLI](/cli/azure/reference-types-and-status).
+[Хранимые параметры](/cli/azure/param-persist) необходимо включить перед сохранением значений.  Вы будете получать предупреждение, пока `az config param-persist` не перейдет из экспериментального этапа.  Сведения о ссылочных типах, состоянии и уровнях поддержки Azure CLI см. в статье [Обзор. Ссылочные типы и состояние Azure CLI](/cli/azure/reference-types-and-status).
 
 ```azurecli
 az config param-persist on
@@ -85,7 +85,7 @@ az config param-persist on
 
 ## <a name="3-create-persisted-parameters"></a>3. Создание хранимых параметров
 
-Чтобы сохранить значения для хранимых параметров, выполните любую команду Azure CLI, содержащую параметры, которые необходимо сохранить.  Например, создайте группу ресурсов, и параметры **--location** и **--name** будут сохранены для будущего использования.
+Чтобы сохранить значения для хранимых параметров, выполните любую команду Azure CLI, содержащую параметры, которые необходимо сохранить.  Например, создайте группу ресурсов, и параметры `--location` и `--name` будут сохранены для будущего использования.
 
 1. Сохраните расположение и имя группы ресурсов.
    ```azurecli
@@ -127,13 +127,13 @@ az config param-persist on
 
 1. Создайте хранимый параметр без создания нового ресурса.
 
-   Если вы не хотите создавать новый ресурс Azure, параметры **resource_group_name** и **location** можно сохранить с помощью команд без функции создания, таких как **show** или **list**.   Полный список поддерживаемых параметров и действия, необходимых для сохранения значений, см. на [этой странице](/cli/azure/param-persist-howto#compare-parameter-persistence-and-global-variables).  В этом примере также выполняется удаление всех значений параметров с помощью команды [az config param-persist delete](/cli/azure/config/param-persist#az-param-persist-delete).
+   Если вы не хотите создавать новый ресурс Azure, параметры `resource_group_name` и `location` можно сохранить с помощью команд без функции создания, таких как `show` или `list`.   Полный список поддерживаемых параметров и действия, необходимых для сохранения значений, см. на [этой странице](/cli/azure/param-persist-howto#compare-parameter-persistence-and-global-variables).  В этом примере также выполняется удаление всех значений параметров с помощью команды [az config param-persist delete](/cli/azure/config/param-persist#az-param-persist-delete).
 
    ```azurecli
    # Clear all persisted parameters for demonstration.
    az config param-persist delete --all
 
-   # List all storage accounts which will create the **resource_group_name** stored parameter value.
+   # List all storage accounts which will create the `resource_group_name` stored parameter value.
    az storage account show --resource-group RG1forTutorial --name sa1fortutorial
 
    # See the new stored value created for resource group.  The storage account name is only stored with a 'create' command.
