@@ -4,21 +4,29 @@ description: Узнайте о последних обновлениях в Azur
 author: dbradish-microsoft
 ms.author: dbradish
 manager: barbkess
-ms.date: 02/09/2021
+ms.date: 02/10/2021
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f84a71be28b7128c904b3a30e9b13a91a56395d1
-ms.sourcegitcommit: df9d6597535ef9103775afbaee5a8282e0e218ee
+ms.openlocfilehash: 6f60c62974be947de8b1a2efbc7d0be9e9724e98
+ms.sourcegitcommit: a75bc3963fb815e8f19b7b3d575d3bd065b5b0cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99987208"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100090247"
 ---
 # <a name="azure-cli-release-notes"></a>Заметки о выпуске Azure CLI
 
 # <a name="current-release-notes"></a>[Заметки о текущем выпуске](#tab/azure-cli)
+
+## <a name="february-10-2021"></a>10 февраля 2021 г.
+
+Версия 2.19.1
+
+### <a name="key-vault"></a>Key Vault
+
+* Исправление: пакет зависимостей `azure-keyvault-administration` закреплен за версией 4.0.0b1.
 
 ## <a name="february-09-2021"></a>9 февраля 2021 г.
 
@@ -118,6 +126,11 @@ ms.locfileid: "99987208"
 ### <a name="search"></a>Поиск
 
 * Обновлен для использования последней версии (8.0.0) пакета SDK Python azure-mgmt-search.
+* `az search create`. Добавлена поддержка создания службы поиска с правилами для IP-адресов, общедоступным доступом к конечной точке и (или) MSI.
+* `az search update`. Добавлена поддержка обновления службы поиска с правилами для IP-адресов, общедоступным доступом к конечной точке и (или) MSI.
+* `az search private-endpoint-connection`. Управление подключением частной конечной точки к службе поиска.
+* `az search shared-private-link-resource`. Управление общими ресурсами приватного канала в службе поиска.
+* `az search private-link-resource`. Вывод списка ресурсов приватного канала в службе поиска.
 
 ### <a name="security"></a>Безопасность
 
