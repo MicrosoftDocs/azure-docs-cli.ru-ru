@@ -6,16 +6,16 @@ groups:
   pivots:
   - id: apt
     title: apt (Ubuntu, Debian)
-  - id: yum
-    title: yum (RHEL, Fedora, CentOS)
+  - id: dnf
+    title: dnf (RHEL, Fedora, CentOS)
   - id: zypper
     title: zypper (openSUSE, SLES)
   - id: script
     title: Скрипт установки (любой)
 metadata:
-  ms.openlocfilehash: a3fd1889d01c194a0c46c28acb81dff1a494d627
-  ms.sourcegitcommit: d5f026468ea20bbd7ef35bdbf9852bcb2b812d83
+  ms.openlocfilehash: 69161a6fb04caf7e2da3a1b4ae8c6610b5e1ed59
+  ms.sourcegitcommit: 594e9c620a6f74f5eaedf91a7f6a791e03a64c74
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 12/23/2020
-  ms.locfileid: "97745461"
+  ms.lasthandoff: 02/17/2021
+  ms.locfileid: "100631056"
