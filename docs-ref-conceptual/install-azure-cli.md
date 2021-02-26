@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 2a3e2c96a9ec3a294f076fc8c86506e277425619
-ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
+ms.openlocfilehash: 2fcd8e8be4fe188143d0032822070b57f6474975
+ms.sourcegitcommit: 594e9c620a6f74f5eaedf91a7f6a791e03a64c74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "97820213"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630971"
 ---
 # <a name="install-the-azure-cli"></a>Установка Azure CLI
 
@@ -28,7 +28,7 @@ Azure CLI доступен для установки в средах Windows, ma
 * [Установка в macOS](install-azure-cli-macos.md)
 * Установка в Linux или [подсистеме Windows для Linux (WSL)](/windows/wsl/about)
   * [Установка с помощью apt в Debian и Ubuntu](install-azure-cli-apt.md)
-  * [Установка с помощью yum в RHEL, Fedora или CentOS](install-azure-cli-yum.md).
+  * [Установка с помощью dnf в RHEL, Fedora или CentOS](install-azure-cli-yum.md)
   * [Установка с помощью zypper в openSUSE или SLE](install-azure-cli-zypper.md).
   * [установка из скрипта](install-azure-cli-linux.md).
 * [Выполнение в контейнере Docker](run-azure-cli-docker.md).

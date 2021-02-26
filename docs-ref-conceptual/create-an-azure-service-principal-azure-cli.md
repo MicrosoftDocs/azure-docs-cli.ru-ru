@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a17c0c24335dea634fb364dd5f1eab4bbac95eac
-ms.sourcegitcommit: 9beaf9abb794f1006a56acee4e1cfb8ea7fe2405
+ms.openlocfilehash: 6b64a8f781907977d6123561d91fb8266a0ebe08
+ms.sourcegitcommit: 594e9c620a6f74f5eaedf91a7f6a791e03a64c74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96850207"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100631073"
 ---
 # <a name="create-an-azure-service-principal-with-the-azure-cli"></a>Создание субъекта-службы Azure с помощью Azure CLI
 
@@ -28,11 +28,18 @@ ms.locfileid: "96850207"
 
 Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac). При создании субъекта-службы вы задаете используемый им тип аутентификации для входа.
 
+Субъектам-службам доступно два вида аутентификации: на основе пароля и на основе сертификата.
+
 > [!NOTE]
 >
 > Если у вашей учетной записи нет прав на создание субъекта-службы, команда `az ad sp create-for-rbac` возвратит сообщение об ошибке, уведомляющее о том, что привилегий недостаточно для выполнения операции. Чтобы получить возможность создавать субъекты-службы, обратитесь к администратору Azure Active Directory.
 
-Субъектам-службам доступно два вида аутентификации: на основе пароля и на основе сертификата.
+> [!WARNING]
+> При создании субъекта-службы с помощью команды `az ad sp create-for-rbac` в выходные данные включаются учетные данные, которые необходимо защитить. Убедитесь, что эти учетные данные не включены в код, или проверьте учетные данные в системе управления версиями. В качестве альтернативы можно использовать [управляемые удостоверения](/azure/active-directory/managed-identities-azure-resources/overview) (если они доступны), чтобы не работать с учетными данными.
+>
+> По умолчанию `az ad sp create-for-rbac` присваивает субъекту-службе в области действия подписки роль [Участник](/azure/role-based-access-control/built-in-roles#contributor). Чтобы снизить риск компрометации субъекта-службы, назначьте более конкретную роль и ограничьте область ресурсом или группой ресурсов. Дополнительные сведения см. в статье [Шаги по добавлению назначения ролей](/azure/role-based-access-control/role-assignments-steps).
+>
+> В будущих выпусках `az ad sp create-for-rbac` не будет создавать назначение роли **Участник** по умолчанию. При необходимости используйте аргумент `--role`, чтобы явно создать назначение роли.
 
 ### <a name="password-based-authentication"></a>Аутентификация на основе пароля
 

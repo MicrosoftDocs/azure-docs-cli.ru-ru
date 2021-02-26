@@ -11,12 +11,12 @@ ms.devlang: azurecli
 ms.custom: devx-track-azurecli
 zone_pivot_group_filename: azure/zone-pivot-groups.json
 zone_pivot_groups: cli-linux-installation-method
-ms.openlocfilehash: 3b6a3c9faa8424189bb5d4ffaeb17bdfc7de0d6d
-ms.sourcegitcommit: d5f026468ea20bbd7ef35bdbf9852bcb2b812d83
+ms.openlocfilehash: 03c7e7e4915f48dce70d2bc2cab16b4688f8b5fd
+ms.sourcegitcommit: 594e9c620a6f74f5eaedf91a7f6a791e03a64c74
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97744665"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100631031"
 ---
 # <a name="install-the-azure-cli-on-linux"></a>Установка Azure CLI в Linux
 
@@ -30,9 +30,9 @@ ms.locfileid: "97744665"
 
 ::: zone-end
 
-::: zone pivot="yum"
+::: zone pivot="dnf"
 
-[!INCLUDE [cli-install-linux-apt](includes/cli-install-linux-yum.md)]
+[!INCLUDE [cli-install-linux-apt](includes/cli-install-linux-dnf.md)]
 
 ::: zone-end
 
